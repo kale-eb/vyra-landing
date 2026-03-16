@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   title: "Vyra — AI Video Editor",
   description:
     "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   keywords: [
     "AI video editor",
     "video editing",
