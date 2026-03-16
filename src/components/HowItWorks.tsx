@@ -125,6 +125,11 @@ export default function HowItWorks() {
         );
       });
 
+      // Play icons fade in after cards land
+      cardIcons.forEach((icon, i) => {
+        tl.to(icon, { opacity: 1, duration: 0.03, ease: "power2.out" }, 0.06 + i * 0.025);
+      });
+
       // ===== TRANSITION 1→2: Cards shrink & drift (0.25–0.35) =====
       tl.to(labels[0], { opacity: 0, y: -20, duration: 0.03 }, 0.25);
 
@@ -184,9 +189,7 @@ export default function HowItWorks() {
 
       // Hide play icons before cards become timeline clips
       cardIcons.forEach((icon) => {
-        tl.to(icon, { opacity: 0, scale: 0.5, duration: 0.04, onComplete: () => {
-          icon.style.visibility = "hidden";
-        }}, 0.55);
+        tl.to(icon, { opacity: 0, scale: 0.5, duration: 0.04 }, 0.55);
       });
 
       // Cards transform: resize to trimmed dimensions + slide into timeline positions
@@ -323,10 +326,25 @@ export default function HowItWorks() {
               }}
             >
               {/* Video play icon — visible in upload phase, hidden in timeline */}
-              <div className="hw-card-icon absolute inset-0 flex items-center justify-center">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="opacity-[0.12]">
-                  <path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28a1 1 0 00-1.5.86z" fill="currentColor" />
-                </svg>
+              <div className="hw-card-icon absolute inset-0 flex items-center justify-center" style={{ opacity: 0 }}>
+                <div
+                  className="flex items-center justify-center rounded-full"
+                  style={{
+                    width: Math.min(card.w, card.h) * 0.28,
+                    height: Math.min(card.w, card.h) * 0.28,
+                    backgroundColor: card.color + "18",
+                  }}
+                >
+                  <svg
+                    width={Math.min(card.w, card.h) * 0.12}
+                    height={Math.min(card.w, card.h) * 0.12}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="ml-[1px]"
+                  >
+                    <path d="M8 5.14v13.72a1 1 0 001.5.86l11.04-6.86a1 1 0 000-1.72L9.5 4.28a1 1 0 00-1.5.86z" fill={card.color} opacity="0.5" />
+                  </svg>
+                </div>
               </div>
               {/* Trim handles — only visible in stage 3 */}
               <div
