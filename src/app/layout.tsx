@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://usevyra.com"),
   title: "Vyra — AI Video Editor",
   description:
     "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
@@ -77,6 +78,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Cabinet Grotesk from Fontshare CDN */}
+        <link rel="preconnect" href="https://api.fontshare.com" />
         <link
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&display=swap"
           rel="stylesheet"

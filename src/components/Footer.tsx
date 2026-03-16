@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const footerLinks = {
   product: [
     { label: "Features", href: "#features" },
@@ -23,13 +25,13 @@ export default function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand column — takes up more space */}
           <div className="lg:col-span-5">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="mb-5 inline-block text-[22px] font-extrabold tracking-tight text-[var(--foreground)]"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
             >
               Vyra
-            </a>
+            </Link>
             <p className="mb-6 max-w-xs text-[14px] leading-[1.7] text-[var(--foreground-subtle)]">
               AI-powered video editing. Your footage, your vision, finished in
               minutes. No editing skills required.
@@ -138,12 +140,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-[13px] text-[var(--foreground-subtle)] transition-colors duration-200 hover:text-[var(--foreground-muted)]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

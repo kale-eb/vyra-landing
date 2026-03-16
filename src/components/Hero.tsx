@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback, FormEvent } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import BrowserFrame from "./BrowserFrame";
 
 const SCROLL_VIDEO_URL =
@@ -25,7 +26,6 @@ export default function Hero() {
     if (videoRef.current) {
       videoDuration.current = videoRef.current.duration;
       videoRef.current.currentTime = 0;
-      console.log("[Hero] video loaded, duration:", videoDuration.current);
     }
   }, []);
 
@@ -72,16 +72,23 @@ export default function Hero() {
     <section ref={sectionRef} className="relative flex flex-col items-center overflow-hidden px-6 pt-16">
       {/* ---- Painted sky background ---- */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[65%]">
-        <motion.img
-          src="/hero-bg.jpg"
-          alt=""
-          className="absolute top-0 left-1/2 w-full min-w-[120%] -translate-x-1/2 origin-top object-cover h-full"
+        <motion.div
+          className="absolute top-0 left-1/2 w-full min-w-[120%] -translate-x-1/2 origin-top h-full"
           style={{
             scale: bgScale,
             maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
           }}
-        />
+        >
+          <Image
+            src="/hero-bg.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="120vw"
+          />
+        </motion.div>
       </div>
 
       {/* Soft white fog behind content — fades the sky gently */}
@@ -218,7 +225,7 @@ export default function Hero() {
             src={SCROLL_VIDEO_URL}
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             onLoadedMetadata={handleVideoLoaded}
             className="w-full"
           />

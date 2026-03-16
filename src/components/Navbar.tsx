@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -45,8 +46,8 @@ export default function Navbar() {
       >
         <div className="relative mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6">
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             className="group flex items-center gap-2"
           >
             <span
@@ -55,7 +56,7 @@ export default function Navbar() {
             >
               Vyra
             </span>
-          </a>
+          </Link>
 
           {/* Desktop links — pill navigation (centered) */}
           <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border border-[var(--surface-border)] bg-white/60 px-1.5 py-1 backdrop-blur-sm md:flex">
