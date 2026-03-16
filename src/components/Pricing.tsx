@@ -70,7 +70,7 @@ const plans: Plan[] = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-28 px-6">
+    <section id="pricing" className="relative py-28 px-6 bg-[var(--surface)]">
       <div className="relative mx-auto max-w-5xl">
         {/* Section heading */}
         <motion.div
@@ -214,7 +214,7 @@ export default function Pricing() {
 
               {/* CTA button */}
               <a
-                href="https://app.usevyra.com"
+                href="https://app.usevyra.com/signup"
                 className={`flex items-center justify-center rounded-xl px-4 py-3 text-[14px] font-semibold transition-all duration-300 ${
                   plan.highlighted
                     ? "btn-shimmer bg-[var(--brand-blue)] text-white shadow-md shadow-[var(--brand-blue)]/15 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"

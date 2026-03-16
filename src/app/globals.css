@@ -4,15 +4,15 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #fafafa;
+  --background: #faf9f7;
   --foreground: #111111;
   --foreground-muted: #666666;
   --foreground-subtle: #999999;
-  --brand-blue: #5A8AEF;
-  --brand-blue-hover: #4A7ADF;
-  --brand-blue-glow: rgba(90, 138, 239, 0.1);
-  --brand-blue-glow-strong: rgba(90, 138, 239, 0.2);
-  --surface: #f5f5f7;
+  --brand-blue: #6490D0;
+  --brand-blue-hover: #5480C0;
+  --brand-blue-glow: rgba(100, 144, 208, 0.1);
+  --brand-blue-glow-strong: rgba(100, 144, 208, 0.2);
+  --surface: #f5f4f2;
   --surface-elevated: #ffffff;
   --surface-border: rgba(0, 0, 0, 0.08);
   --surface-border-hover: rgba(0, 0, 0, 0.15);
@@ -135,9 +135,9 @@ body {
   background-image: linear-gradient(
     90deg,
     var(--brand-blue) 0%,
-    #7CA8FF 25%,
+    #88B0E0 25%,
     var(--brand-blue) 50%,
-    #7CA8FF 75%,
+    #88B0E0 75%,
     var(--brand-blue) 100%
   );
 }

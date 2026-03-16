@@ -7,8 +7,8 @@ const footerLinks = {
     { label: "Pricing", href: "#pricing" },
   ],
   account: [
-    { label: "Log In", href: "https://app.usevyra.com" },
-    { label: "Sign Up", href: "https://app.usevyra.com" },
+    { label: "Log In", href: "https://app.usevyra.com/signup" },
+    { label: "Sign Up", href: "https://app.usevyra.com/signup" },
   ],
   legal: [
     { label: "Terms of Service", href: "/terms" },

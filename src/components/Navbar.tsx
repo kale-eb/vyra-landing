@@ -43,7 +43,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6">
+        <div className="relative mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6">
           {/* Logo */}
           <a
             href="#"
@@ -57,8 +57,8 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* Desktop links — pill navigation */}
-          <div className="hidden items-center gap-1 rounded-full border border-[var(--surface-border)] bg-white/60 px-1.5 py-1 backdrop-blur-sm md:flex">
+          {/* Desktop links — pill navigation (centered) */}
+          <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border border-[var(--surface-border)] bg-white/60 px-1.5 py-1 backdrop-blur-sm md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -73,13 +73,13 @@ export default function Navbar() {
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="https://app.usevyra.com"
+              href="https://app.usevyra.com/signup"
               className="hidden text-[13px] font-medium text-[var(--foreground-muted)] transition-colors duration-200 hover:text-[var(--foreground)] md:inline-flex"
             >
               Log in
             </a>
             <a
-              href="https://app.usevyra.com"
+              href="https://app.usevyra.com/signup"
               className="hidden rounded-full bg-[var(--foreground)] px-4 py-1.5 text-[13px] font-semibold text-white transition-all duration-200 hover:bg-[#222] hover:shadow-lg hover:shadow-black/10 md:inline-flex"
             >
               Get Started
@@ -145,7 +145,7 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <motion.a
-                href="https://app.usevyra.com"
+                href="https://app.usevyra.com/signup"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}

@@ -5,15 +5,12 @@ import { motion } from "framer-motion";
 export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-36 px-6">
-      {/* Subtle light background glows */}
+      {/* Background gradient wash */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[var(--brand-blue)]/[0.03] to-transparent" />
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute bottom-0 left-1/2 h-[500px] w-[700px] -translate-x-1/2 translate-y-1/4 rounded-full opacity-[0.04] blur-[140px]"
+          className="absolute top-1/2 left-1/2 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.07] blur-[120px]"
           style={{ background: "var(--brand-blue)" }}
-        />
-        <div
-          className="absolute top-0 left-1/2 h-[250px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.03] blur-[100px]"
-          style={{ background: "rgba(120, 100, 255, 0.8)" }}
         />
       </div>
 
@@ -56,7 +53,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a
-            href="https://app.usevyra.com"
+            href="https://app.usevyra.com/signup"
             className="btn-shimmer inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
           >
             Get started free

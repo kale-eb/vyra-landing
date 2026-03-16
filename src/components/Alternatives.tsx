@@ -71,7 +71,7 @@ function DashCircle() {
 
 export default function Alternatives() {
   return (
-    <section className="relative py-28 px-6">
+    <section className="relative py-28 px-6 bg-[var(--surface)]">
       <div className="relative mx-auto max-w-5xl">
         {/* Section heading */}
         <motion.div
@@ -119,7 +119,7 @@ export default function Alternatives() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.7 }}
-          className="rounded-[28px] border border-[var(--surface-border)] bg-[var(--surface)] px-6 py-10 shadow-xl shadow-black/[0.03] sm:px-10 sm:py-12"
+          className="rounded-[28px] border border-[var(--surface-border)] bg-white px-6 py-10 shadow-xl shadow-black/[0.03] sm:px-10 sm:py-12"
         >
           <div className="flex flex-col items-center gap-6 md:flex-row md:items-stretch md:justify-center md:gap-5 lg:gap-6">
             {columns.map((col, colIndex) => (

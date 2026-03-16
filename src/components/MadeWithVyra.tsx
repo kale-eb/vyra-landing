@@ -1,30 +1,16 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import VideoPlaceholder from "./VideoPlaceholder";
+import { motion } from "framer-motion";
+
+const STORAGE_BASE =
+  "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing";
 
 const examples = [
-  {
-    label: "Recipe Video",
-    creator: "@homecook",
-    videoLabel: "Cooking video example",
-  },
-  {
-    label: "Travel Montage",
-    creator: "@wanderlens",
-    videoLabel: "Travel montage example",
-  },
-  {
-    label: "Fitness Tutorial",
-    creator: "@fitcoach",
-    videoLabel: "Fitness tutorial example",
-  },
-  {
-    label: "Social Media Clip",
-    creator: "@creator",
-    videoLabel: "Social media example",
-  },
+  { src: `${STORAGE_BASE}/caleb1.mp4`, aspect: "9/16" },
+  { src: `${STORAGE_BASE}/sulan1.mp4`, aspect: "9/16" },
+  { src: `${STORAGE_BASE}/export1.mp4`, aspect: "16/9" },
+  { src: `${STORAGE_BASE}/boston-vlog.mp4`, aspect: "16/9" },
 ];
 
 export default function MadeWithVyra() {
@@ -121,7 +107,7 @@ export default function MadeWithVyra() {
 
               return (
                 <motion.div
-                  key={example.label}
+                  key={example.src}
                   animate={{
                     x: translateX,
                     scale,
@@ -136,7 +122,7 @@ export default function MadeWithVyra() {
                   className="absolute cursor-pointer"
                   style={{
                     zIndex,
-                    width: 260,
+                    width: example.aspect === "16/9" ? 600 : 260,
                   }}
                   onClick={() => {
                     if (offset === 1) next();
@@ -144,27 +130,20 @@ export default function MadeWithVyra() {
                   }}
                 >
                   <div
-                    className={`overflow-hidden rounded-2xl border bg-white shadow-sm transition-shadow duration-300 ${
+                    className={`overflow-hidden rounded-2xl border bg-black shadow-sm transition-shadow duration-300 ${
                       isActive
                         ? "border-[var(--surface-border-hover)] shadow-xl shadow-black/[0.08]"
                         : "border-[var(--surface-border)]"
                     }`}
                   >
-                    <VideoPlaceholder
-                      label={example.videoLabel}
-                      aspectRatio="9/16"
+                    <video
+                      src={example.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className={`w-full object-cover ${example.aspect === "16/9" ? "aspect-[16/9]" : "aspect-[9/16]"}`}
                     />
-                    <div className="flex items-center justify-between bg-white px-3.5 py-3">
-                      <span
-                        className="text-[13px] font-semibold text-[var(--foreground)]"
-                        style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                      >
-                        {example.label}
-                      </span>
-                      <span className="text-[11px] text-[var(--foreground-subtle)]">
-                        {example.creator}
-                      </span>
-                    </div>
                   </div>
                 </motion.div>
               );

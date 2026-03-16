@@ -1,35 +1,95 @@
 "use client";
 
-import { useState, FormEvent } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState, useEffect, useCallback, FormEvent } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import BrowserFrame from "./BrowserFrame";
-import VideoPlaceholder from "./VideoPlaceholder";
+
+const SCROLL_VIDEO_URL =
+  "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing/scroll-demo.mp4";
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoDuration = useRef(0);
   const [prompt, setPrompt] = useState("");
+
+  // Scroll-linked zoom on the sky background
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
+  const handleVideoLoaded = useCallback(() => {
+    if (videoRef.current) {
+      videoDuration.current = videoRef.current.duration;
+      videoRef.current.currentTime = 0;
+      console.log("[Hero] video loaded, duration:", videoDuration.current);
+    }
+  }, []);
+
+  // Native scroll listener for video scrubbing
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const container = videoContainerRef.current;
+        const video = videoRef.current;
+        if (!container || !video) return;
+        // Use ref if set, otherwise read directly from video element
+        const dur = videoDuration.current || video.duration;
+        if (!dur || isNaN(dur)) return;
+        videoDuration.current = dur;
+        const rect = container.getBoundingClientRect();
+        const start = window.innerHeight;
+        const end = -rect.height;
+        const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+        video.currentTime = progress * dur;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const trimmed = prompt.trim();
     if (trimmed) {
       window.location.href =
-        "https://app.usevyra.com?prompt=" + encodeURIComponent(trimmed);
+        "https://app.usevyra.com/signup?prompt=" + encodeURIComponent(trimmed);
     } else {
-      window.location.href = "https://app.usevyra.com";
+      window.location.href = "https://app.usevyra.com/signup";
     }
   }
 
   return (
-    <section className="relative flex flex-col items-center overflow-hidden px-6 pt-16">
+    <section ref={sectionRef} className="relative flex flex-col items-center overflow-hidden px-6 pt-16">
       {/* ---- Painted sky background ---- */}
-      <div className="pointer-events-none absolute inset-0">
-        <img
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[65%]">
+        <motion.img
           src="/hero-bg.jpg"
           alt=""
-          className="absolute top-0 left-1/2 w-[120%] -translate-x-1/2"
+          className="absolute top-0 left-1/2 w-full min-w-[120%] -translate-x-1/2 origin-top object-cover h-full"
           style={{
-            maskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 100%)",
+            scale: bgScale,
+            maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+          }}
+        />
+      </div>
+
+      {/* Soft white fog behind content — fades the sky gently */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[70%]">
+        <div
+          className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[90%] h-[60%] rounded-full"
+          style={{
+            background: "radial-gradient(ellipse, rgba(245,243,240,0.65) 0%, rgba(245,243,240,0.3) 40%, transparent 70%)",
           }}
         />
       </div>
@@ -44,12 +104,12 @@ export default function Hero() {
           className="mb-5"
         >
           <span
-            className="block text-[clamp(2.25rem,5.5vw,4rem)] leading-[0.95] font-black tracking-[-0.03em] text-[var(--foreground)]"
+            className="block text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] font-black tracking-[-0.03em] text-[var(--foreground)]"
           >
             Your footage,
           </span>
           <span
-            className="block text-[clamp(2.25rem,5.5vw,4rem)] leading-[0.95] tracking-[-0.02em] text-[var(--foreground)]"
+            className="block text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] tracking-[-0.02em] text-[var(--foreground)]"
           >
             <span className="serif-italic font-normal">edited</span>
             <span className="font-black tracking-[-0.03em]">
@@ -112,7 +172,7 @@ export default function Hero() {
           <div className="flex items-center gap-3 text-[14px]">
             <span className="text-[var(--foreground-subtle)]">or</span>
             <a
-              href="https://app.usevyra.com"
+              href="https://app.usevyra.com/signup"
               className="inline-flex items-center gap-1.5 rounded-full border border-[var(--surface-border)] px-4 py-1.5 font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
             >
               <svg
@@ -136,12 +196,13 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating product shot */}
+      {/* Floating product shot — scroll-scrubbed video */}
+      <div ref={videoContainerRef} className="relative z-10 mx-auto mt-10 w-full max-w-6xl px-4 pb-12">
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1, delay: 0.9, ease: [0.21, 0.68, 0.35, 1] }}
-        className="relative z-10 mx-auto mt-10 w-full max-w-5xl px-4 pb-12"
+        className="relative"
       >
         {/* Subtle glow behind the browser frame */}
         <div className="pointer-events-none absolute inset-0">
@@ -152,9 +213,18 @@ export default function Hero() {
         </div>
 
         <BrowserFrame>
-          <VideoPlaceholder label="Product demo video" aspectRatio="16/9" />
+          <video
+            ref={videoRef}
+            src={SCROLL_VIDEO_URL}
+            muted
+            playsInline
+            preload="auto"
+            onLoadedMetadata={handleVideoLoaded}
+            className="w-full"
+          />
         </BrowserFrame>
       </motion.div>
+      </div>
     </section>
   );
 }
