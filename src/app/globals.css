@@ -166,6 +166,6 @@ body {
 
 /* Serif italic display style */
 .serif-italic {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
   font-style: italic;
 }

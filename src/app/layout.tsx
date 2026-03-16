@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif, Abril_Fatface } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const abrilFatface = Abril_Fatface({
+  variable: "--font-abril-fatface",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -77,21 +93,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Cabinet Grotesk from Fontshare CDN */}
+        {/* Cabinet Grotesk from Fontshare CDN — preload to reduce render-blocking */}
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link
+          rel="preload"
+          as="style"
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&display=swap"
-          rel="stylesheet"
-        />
-        {/* Instrument Serif from Google Fonts — editorial italic display */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Instrument+Serif:ital@0;1&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&display=swap"
           rel="stylesheet"
         />
         {/* JSON-LD Structured Data */}
@@ -139,8 +149,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} ${abrilFatface.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

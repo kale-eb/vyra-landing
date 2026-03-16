@@ -101,7 +101,7 @@ export default function Alternatives() {
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 50, damping: 8, delay: 0.4 }}
               className="inline-block origin-top-left font-normal"
-              style={{ fontFamily: "'Abril Fatface', serif" }}
+              style={{ fontFamily: "var(--font-abril-fatface), 'Abril Fatface', serif" }}
             >
               expensive
             </motion.span>{" "}
