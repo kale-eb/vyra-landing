@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif, Abril_Fatface } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { PostHogInit } from "./posthog";
 import "./globals.css";
 
 const inter = Inter({
@@ -152,6 +153,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${instrumentSerif.variable} ${abrilFatface.variable} antialiased`}>
         {children}
         <Analytics />
+        <PostHogInit />
       </body>
     </html>
   );
