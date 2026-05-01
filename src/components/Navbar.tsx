@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Docs", href: "/docs" },
 ];
 
 export default function Navbar() {
@@ -60,15 +61,25 @@ export default function Navbar() {
 
           {/* Desktop links — pill navigation (centered) */}
           <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border border-[var(--surface-border)] bg-white/60 px-1.5 py-1 backdrop-blur-sm md:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-full px-4 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)]"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith("#") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full px-4 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)]"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full px-4 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)]"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* CTA + Mobile toggle */}
@@ -131,20 +142,38 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-white/98 backdrop-blur-2xl md:hidden"
           >
             <div className="flex h-full flex-col items-center justify-center gap-6">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.08 }}
-                  className="text-3xl font-bold tracking-tight text-[var(--foreground)] transition-colors hover:text-[var(--brand-blue)]"
-                  style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {navLinks.map((link, i) =>
+                link.href.startsWith("#") ? (
+                  <motion.a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.08 }}
+                    className="text-3xl font-bold tracking-tight text-[var(--foreground)] transition-colors hover:text-[var(--brand-blue)]"
+                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+                  >
+                    {link.label}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.08 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-3xl font-bold tracking-tight text-[var(--foreground)] transition-colors hover:text-[var(--brand-blue)]"
+                      style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                )
+              )}
               <motion.a
                 href="https://app.usevyra.com/signup"
                 initial={{ opacity: 0, y: 20 }}
