@@ -6,6 +6,7 @@ interface PricingTier {
   name: string;
   display_name: string;
   monthly_price: number;
+  yearly_price: number | null;
   monthly_credits: number;
   monthly_exports: number;
   storage_gb: number;
@@ -52,10 +53,13 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
     }
 
     const isPro = name === "pro";
+    const displayPrice = tier.yearly_price
+      ? Math.round(tier.yearly_price / 12)
+      : tier.monthly_price;
 
     return {
       name: tier.display_name,
-      price: `$${tier.monthly_price}`,
+      price: `$${displayPrice}`,
       period: "/mo",
       description: DESCRIPTIONS[name] || "",
       features: [
@@ -91,7 +95,7 @@ const FALLBACK_PLANS: Plan[] = [
   },
   {
     name: "Plus",
-    price: "$65",
+    price: "$55",
     period: "/mo",
     description: "For creators who publish regularly.",
     features: [
@@ -107,7 +111,7 @@ const FALLBACK_PLANS: Plan[] = [
   },
   {
     name: "Pro",
-    price: "$130",
+    price: "$105",
     period: "/mo",
     description: "For power users and teams.",
     features: [
