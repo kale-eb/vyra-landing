@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             <p>
               This Privacy Policy explains how Vyra (&quot;we,&quot;
               &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects
-              your information when you use our video ad creation platform.
+              your information when you use our video editing platform.
             </p>
           </section>
 
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
                 <span className="font-medium text-[var(--foreground)]">
                   AI Processing:
                 </span>{" "}
-                OpenAI and Google
+                Anthropic, OpenAI, and Google
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
@@ -155,7 +155,33 @@ export default function PrivacyPage() {
           {/* 5 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              5. Data Sharing
+              5. Third-Party Agent Access (MCP)
+            </h2>
+            <p className="mb-3">
+              Vyra supports the Model Context Protocol (MCP), which allows
+              external AI agents (such as Claude Code, Codex, or other
+              MCP-compatible tools) to interact with your editor on your behalf.
+            </p>
+            <p className="mb-3">
+              When you authorize a third-party agent:
+            </p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>The agent can view your project assets, timeline state, and editor settings</li>
+              <li>The agent can execute editing actions (adding media, editing properties, etc.) in your browser session</li>
+              <li>Access is scoped to the project open in your editor and requires your explicit OAuth consent</li>
+              <li>You can revoke access at any time from your account settings</li>
+            </ul>
+            <p className="mt-3">
+              We do not control how third-party agents process or store the data
+              they access. Please review the privacy policy of any agent you
+              authorize.
+            </p>
+          </section>
+
+          {/* 6 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              6. Data Sharing
             </h2>
             <p className="mb-3">
               We do not sell your personal information.
@@ -170,10 +196,10 @@ export default function PrivacyPage() {
             </ul>
           </section>
 
-          {/* 6 */}
+          {/* 7 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              6. Data Security
+              7. Data Security
             </h2>
             <p>
               We implement appropriate security measures including encrypted
@@ -183,10 +209,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 7 */}
+          {/* 8 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              7. Cookies &amp; Local Storage
+              8. Cookies &amp; Local Storage
             </h2>
             <p>
               We use cookies and browser storage to maintain your login session
@@ -194,10 +220,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 8 */}
+          {/* 9 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              8. Data Retention
+              9. Data Retention
             </h2>
             <p>
               Your data is retained while your account is active. You may delete
@@ -206,10 +232,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 9 */}
+          {/* 10 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              9. Your Rights
+              10. Your Rights
             </h2>
             <p className="mb-2">You have the right to:</p>
             <ul className="list-disc space-y-1 pl-6">
@@ -230,10 +256,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 10 */}
+          {/* 11 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              10. Children&apos;s Privacy
+              11. Children&apos;s Privacy
             </h2>
             <p>
               Vyra is not intended for users under 13. We do not knowingly
@@ -241,10 +267,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 11 */}
+          {/* 12 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              11. Changes to This Policy
+              12. Changes to This Policy
             </h2>
             <p>
               We may update this policy periodically, and update the effective
@@ -258,10 +284,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 12 */}
+          {/* 13 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              12. Contact Us
+              13. Contact Us
             </h2>
             <p>
               Questions about this Privacy Policy? Contact us at:
