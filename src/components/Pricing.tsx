@@ -2,6 +2,16 @@
 
 import { motion } from "framer-motion";
 
+interface PricingTier {
+  name: string;
+  display_name: string;
+  monthly_price: number;
+  monthly_credits: number;
+  monthly_exports: number;
+  storage_gb: number;
+  max_export_seconds: number;
+}
+
 interface PlanFeature {
   text: string;
   included: boolean;
@@ -17,7 +27,52 @@ interface Plan {
   cta: string;
 }
 
-const plans: Plan[] = [
+const DESCRIPTIONS: Record<string, string> = {
+  free: "Try Vyra with no commitment.",
+  plus: "For creators who publish regularly.",
+  pro: "For power users and teams.",
+};
+
+function formatExportDuration(seconds: number): string {
+  const minutes = Math.round(seconds / 60);
+  return `${minutes} min`;
+}
+
+function buildPlans(tiers: PricingTier[] | null): Plan[] {
+  if (!tiers || tiers.length === 0) return FALLBACK_PLANS;
+
+  const tierMap = Object.fromEntries(tiers.map((t) => [t.name, t]));
+  const names = ["free", "plus", "pro"];
+
+  return names.map((name) => {
+    const tier = tierMap[name];
+    if (!tier) {
+      const fallback = FALLBACK_PLANS.find((p) => p.name.toLowerCase() === name);
+      return fallback || FALLBACK_PLANS[0];
+    }
+
+    const isPro = name === "pro";
+
+    return {
+      name: tier.display_name,
+      price: `$${tier.monthly_price}`,
+      period: "/mo",
+      description: DESCRIPTIONS[name] || "",
+      features: [
+        { text: `${tier.monthly_credits.toLocaleString()} AI credits`, included: true },
+        { text: `${tier.monthly_exports.toLocaleString()} exports per month`, included: true },
+        { text: `${tier.storage_gb} GB storage`, included: true },
+        { text: `Max ${formatExportDuration(tier.max_export_seconds)} exports`, included: true },
+        { text: "Priority processing", included: name !== "free" },
+        { text: "Advanced effects", included: isPro },
+      ],
+      highlighted: name === "plus",
+      cta: name === "free" ? "Get started free" : "Get started",
+    };
+  });
+}
+
+const FALLBACK_PLANS: Plan[] = [
   {
     name: "Free",
     price: "$0",
@@ -26,7 +81,7 @@ const plans: Plan[] = [
     features: [
       { text: "200 AI credits", included: true },
       { text: "30 exports per month", included: true },
-      { text: "5 GB storage", included: true },
+      { text: "10 GB storage", included: true },
       { text: "Max 5 min exports", included: true },
       { text: "Priority processing", included: false },
       { text: "Advanced effects", included: false },
@@ -36,11 +91,11 @@ const plans: Plan[] = [
   },
   {
     name: "Plus",
-    price: "$40",
+    price: "$65",
     period: "/mo",
     description: "For creators who publish regularly.",
     features: [
-      { text: "2,300 AI credits", included: true },
+      { text: "3,000 AI credits", included: true },
       { text: "1,000 exports per month", included: true },
       { text: "100 GB storage", included: true },
       { text: "Max 15 min exports", included: true },
@@ -52,11 +107,11 @@ const plans: Plan[] = [
   },
   {
     name: "Pro",
-    price: "$95",
+    price: "$130",
     period: "/mo",
     description: "For power users and teams.",
     features: [
-      { text: "6,000 AI credits", included: true },
+      { text: "7,500 AI credits", included: true },
       { text: "1,000 exports per month", included: true },
       { text: "500 GB storage", included: true },
       { text: "Max 30 min exports", included: true },
@@ -68,7 +123,9 @@ const plans: Plan[] = [
   },
 ];
 
-export default function Pricing() {
+export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
+  const plans = buildPlans(tiers ?? null);
+
   return (
     <section id="pricing" className="relative py-28 px-6 bg-[var(--surface)]">
       <div className="relative mx-auto max-w-5xl">

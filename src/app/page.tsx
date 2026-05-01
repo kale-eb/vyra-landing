@@ -9,7 +9,23 @@ import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+async function fetchPricingTiers() {
+  try {
+    const res = await fetch(
+      "https://api.usevyra.com/api/billing/pricing-tiers",
+      { next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.tiers || null;
+  } catch {
+    return null;
+  }
+}
+
+export default async function Home() {
+  const tiers = await fetchPricingTiers();
+
   return (
     <>
       <Navbar />
@@ -19,7 +35,7 @@ export default function Home() {
         <MadeWithVyra />
         <Alternatives />
         <Features />
-        <Pricing />
+        <Pricing tiers={tiers} />
         <FAQ />
         <FinalCTA />
       </main>
