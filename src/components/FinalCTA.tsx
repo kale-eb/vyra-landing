@@ -26,13 +26,13 @@ export default function FinalCTA() {
             className="block text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] font-extrabold tracking-[-0.03em] text-[var(--foreground)]"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
-            Your first video
+            Your AI already knows
           </span>
           <span
             className="block text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] font-extrabold tracking-[-0.03em] text-[var(--foreground)]"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
-            takes five minutes.
+            how to edit video.
           </span>
         </motion.h2>
 
@@ -43,7 +43,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="mb-12 text-[17px] leading-relaxed text-[var(--foreground-muted)]"
         >
-          Upload your footage and see the difference.
+          Connect Vyra and start editing in minutes.
         </motion.p>
 
         <motion.div

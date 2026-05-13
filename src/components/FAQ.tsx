@@ -6,32 +6,32 @@ const faqs = [
   {
     question: "What is Vyra?",
     answer:
-      "Vyra is an AI video editor that works with your real footage — not AI-generated content. Upload your clips, and the AI analyzes speech, scenes, and objects to build a complete edit with cuts, pacing, and captions.",
+      "Vyra is a video editor you control through AI assistants like Claude and ChatGPT. Connect it via MCP, describe your edit, and the AI handles cuts, captions, effects, and more \u2014 using your real footage.",
   },
   {
-    question: "How does it work?",
+    question: "What is MCP?",
     answer:
-      "Upload your footage, pick a template or describe what you want in plain English, and the AI assembles a first draft. Review it, make changes through chat or the timeline editor, then export.",
+      "MCP (Model Context Protocol) lets AI assistants connect to external tools. Vyra uses MCP so Claude, ChatGPT, or any compatible client can control the editor directly.",
   },
   {
-    question: "What types of videos can I make?",
+    question: "Which AI clients work with Vyra?",
     answer:
-      "Recipe videos, travel montages, fitness tutorials, social media clips, product demos, talking-head content — anything where you have raw footage that needs editing.",
-  },
-  {
-    question: "How is this different from CapCut?",
-    answer:
-      "CapCut is template-based — you fill in slots. Vyra understands what's in your footage and makes intelligent editing decisions adapted to your content. Templates guide creative direction, not rigid structure.",
+      "Any MCP-compatible client works. We\u2019ve tested with Claude (Anthropic), ChatGPT, and several open-source clients. If your client supports MCP, it works with Vyra.",
   },
   {
     question: "Do I need editing experience?",
     answer:
-      "Not at all. Most users go from upload to export in under 5 minutes. But if you want manual control, the full timeline editor with professional tools is there.",
+      "Not at all. Most users go from upload to export in under 5 minutes. The AI handles the technical work, and you can always open the full timeline editor for fine-grained control.",
   },
   {
-    question: "How quickly can I make a video?",
+    question: "How is this different from other AI video tools?",
     answer:
-      "Under 5 minutes for most videos. Upload, describe, export. The AI handles cuts, pacing, captions, and styling.",
+      "Most AI video tools generate synthetic content. Vyra edits your real footage \u2014 it understands what\u2019s in your clips and makes intelligent editing decisions, not templates.",
+  },
+  {
+    question: "What does the free plan include?",
+    answer:
+      "600 processing credits per month, 720p exports, 2GB storage, and full MCP access. Enough to try Vyra and see if it fits your workflow.",
   },
 ];
 

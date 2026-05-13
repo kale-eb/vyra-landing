@@ -9,7 +9,7 @@ const footerLinks = {
     { label: "Pricing", href: "#pricing" },
   ],
   account: [
-    { label: "Log In", href: "https://app.usevyra.com/signup" },
+    { label: "Log In", href: "https://app.usevyra.com/login" },
     { label: "Sign Up", href: "https://app.usevyra.com/signup" },
   ],
   legal: [
@@ -33,8 +33,7 @@ export default function Footer() {
               Vyra
             </Link>
             <p className="mb-6 max-w-xs text-[14px] leading-[1.7] text-[var(--foreground-subtle)]">
-              AI-powered video editing. Your footage, your vision, finished in
-              minutes. No editing skills required.
+              AI-powered video editing through Claude, ChatGPT, and any MCP client.
             </p>
 
             {/* Social links */}

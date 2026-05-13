@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 async function fetchPricingTiers() {
   try {
     const res = await fetch(
-      "https://api.usevyra.com/api/billing/pricing-tiers",
+      (process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://api.usevyra.com") + "/api/billing/pricing-tiers",
       { next: { revalidate: 3600 } }
     );
     if (!res.ok) return null;

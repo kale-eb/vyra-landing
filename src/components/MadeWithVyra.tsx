@@ -9,6 +9,7 @@ const STORAGE_BASE =
 const examples = [
   { src: `${STORAGE_BASE}/caleb1.mp4`, aspect: "9/16" },
   { src: `${STORAGE_BASE}/sulan1.mp4`, aspect: "9/16" },
+  { src: `${STORAGE_BASE}/aaa.mp4`, aspect: "9/16" },
   { src: `${STORAGE_BASE}/export1.mp4`, aspect: "16/9" },
   { src: `${STORAGE_BASE}/boston-vlog.mp4`, aspect: "16/9" },
 ];

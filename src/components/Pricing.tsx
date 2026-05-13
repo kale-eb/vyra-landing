@@ -11,6 +11,9 @@ interface PricingTier {
   monthly_exports: number;
   storage_gb: number;
   max_export_seconds: number;
+  max_export_resolution?: number;
+  max_projects?: number;
+  processing_credits?: number;
 }
 
 interface PlanFeature {
@@ -26,36 +29,58 @@ interface Plan {
   features: PlanFeature[];
   highlighted: boolean;
   cta: string;
+  trialNote?: string;
 }
 
 const DESCRIPTIONS: Record<string, string> = {
-  free: "Try Vyra with no commitment.",
-  plus: "For creators who publish regularly.",
-  pro: "For power users and teams.",
+  free: "Get started with basic editing.",
+  mcp_starter: "For creators who publish regularly.",
+  mcp_pro: "For professionals and teams.",
 };
 
-function formatExportDuration(seconds: number): string {
-  const minutes = Math.round(seconds / 60);
-  return `${minutes} min`;
+function formatResolution(height: number): string {
+  if (height >= 2160) return "4K";
+  if (height >= 1440) return "1440p";
+  if (height >= 1080) return "1080p";
+  if (height >= 720) return "720p";
+  return `${height}p`;
 }
 
 function buildPlans(tiers: PricingTier[] | null): Plan[] {
   if (!tiers || tiers.length === 0) return FALLBACK_PLANS;
 
   const tierMap = Object.fromEntries(tiers.map((t) => [t.name, t]));
-  const names = ["free", "plus", "pro"];
+  const names = ["free", "mcp_starter", "mcp_pro"];
+
+  // If the API doesn't have our MCP tiers yet, use fallbacks
+  if (!tierMap["mcp_starter"] && !tierMap["mcp_pro"]) return FALLBACK_PLANS;
+  // If processing_credits aren't populated, use fallbacks
+  const starter = tierMap["mcp_starter"];
+  if (starter && !starter.processing_credits && !starter.monthly_credits) return FALLBACK_PLANS;
 
   return names.map((name) => {
     const tier = tierMap[name];
     if (!tier) {
-      const fallback = FALLBACK_PLANS.find((p) => p.name.toLowerCase() === name);
+      const fallback = FALLBACK_PLANS.find((p) => p.name.toLowerCase().replace(/\s+/g, "_") === name);
       return fallback || FALLBACK_PLANS[0];
     }
 
-    const isPro = name === "pro";
+    const isPaid = name !== "free";
     const displayPrice = tier.yearly_price
       ? Math.round(tier.yearly_price / 12)
       : tier.monthly_price;
+
+    const resolution = tier.max_export_resolution
+      ? formatResolution(tier.max_export_resolution)
+      : name === "mcp_pro" ? "4K" : name === "mcp_starter" ? "1440p" : "720p";
+
+    const exportsText = tier.monthly_exports >= 9999
+      ? "Unlimited exports"
+      : `${tier.monthly_exports.toLocaleString()} exports/month`;
+
+    const projectsText = (tier.max_projects && tier.max_projects < 9999)
+      ? `${tier.max_projects} projects`
+      : "Unlimited projects";
 
     return {
       name: tier.display_name,
@@ -63,15 +88,16 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
       period: "/mo",
       description: DESCRIPTIONS[name] || "",
       features: [
-        { text: `${tier.monthly_credits.toLocaleString()} AI credits`, included: true },
-        { text: `${tier.monthly_exports.toLocaleString()} exports per month`, included: true },
+        { text: `${(tier.processing_credits || tier.monthly_credits || 0).toLocaleString()} processing credits`, included: (tier.processing_credits || tier.monthly_credits || 0) > 0 },
         { text: `${tier.storage_gb} GB storage`, included: true },
-        { text: `Max ${formatExportDuration(tier.max_export_seconds)} exports`, included: true },
-        { text: "Priority processing", included: name !== "free" },
-        { text: "Advanced effects", included: isPro },
+        { text: `${resolution} export resolution`, included: true },
+        { text: exportsText, included: true },
+        { text: projectsText, included: true },
+        { text: "MCP access", included: true },
       ],
-      highlighted: name === "plus",
-      cta: name === "free" ? "Get started free" : "Get started",
+      highlighted: name === "mcp_starter",
+      cta: name === "free" ? "Get started free" : "Start free trial",
+      trialNote: isPaid ? "7-day free trial" : undefined,
     };
   });
 }
@@ -81,49 +107,51 @@ const FALLBACK_PLANS: Plan[] = [
     name: "Free",
     price: "$0",
     period: "/mo",
-    description: "Try Vyra with no commitment.",
+    description: "Get started with basic editing.",
     features: [
-      { text: "200 AI credits", included: true },
-      { text: "30 exports per month", included: true },
-      { text: "10 GB storage", included: true },
-      { text: "Max 5 min exports", included: true },
-      { text: "Priority processing", included: false },
-      { text: "Advanced effects", included: false },
+      { text: "600 processing credits", included: true },
+      { text: "2 GB storage", included: true },
+      { text: "720p export resolution", included: true },
+      { text: "20 exports/month", included: true },
+      { text: "5 projects", included: true },
+      { text: "MCP access", included: true },
     ],
     highlighted: false,
     cta: "Get started free",
   },
   {
-    name: "Plus",
-    price: "$55",
+    name: "MCP Starter",
+    price: "$9",
     period: "/mo",
     description: "For creators who publish regularly.",
     features: [
-      { text: "3,000 AI credits", included: true },
-      { text: "1,000 exports per month", included: true },
-      { text: "100 GB storage", included: true },
-      { text: "Max 15 min exports", included: true },
-      { text: "Priority processing", included: true },
-      { text: "Advanced effects", included: false },
+      { text: "6,000 processing credits", included: true },
+      { text: "50 GB storage", included: true },
+      { text: "1440p export resolution", included: true },
+      { text: "Unlimited exports", included: true },
+      { text: "Unlimited projects", included: true },
+      { text: "MCP access", included: true },
     ],
     highlighted: true,
-    cta: "Get started",
+    cta: "Start free trial",
+    trialNote: "7-day free trial",
   },
   {
-    name: "Pro",
-    price: "$105",
+    name: "MCP Pro",
+    price: "$24",
     period: "/mo",
-    description: "For power users and teams.",
+    description: "For professionals and teams.",
     features: [
-      { text: "7,500 AI credits", included: true },
-      { text: "1,000 exports per month", included: true },
-      { text: "500 GB storage", included: true },
-      { text: "Max 30 min exports", included: true },
-      { text: "Priority processing", included: true },
-      { text: "Advanced effects", included: true },
+      { text: "18,000 processing credits", included: true },
+      { text: "200 GB storage", included: true },
+      { text: "4K export resolution", included: true },
+      { text: "Unlimited exports", included: true },
+      { text: "Unlimited projects", included: true },
+      { text: "MCP access", included: true },
     ],
     highlighted: false,
-    cta: "Get started",
+    cta: "Start free trial",
+    trialNote: "7-day free trial",
   },
 ];
 
@@ -222,6 +250,13 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
                 </span>
               </div>
 
+              {/* Trial note */}
+              {plan.trialNote && (
+                <p className="mb-4 -mt-4 text-[12px] font-medium text-[var(--brand-blue)]">
+                  {plan.trialNote}
+                </p>
+              )}
+
               {/* Divider */}
               <div className="mb-6 h-px bg-[var(--surface-border)]" />
 
@@ -296,7 +331,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          All plans include unlimited projects. No credit card required to start.
+          All plans include MCP access. 7-day free trial on paid plans. No credit card required to start.
         </motion.p>
       </div>
     </section>

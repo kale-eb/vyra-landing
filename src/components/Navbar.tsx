@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="https://app.usevyra.com/signup"
+              href="https://app.usevyra.com/login"
               className="hidden text-[13px] font-medium text-[var(--foreground-muted)] transition-colors duration-200 hover:text-[var(--foreground)] md:inline-flex"
             >
               Log in
