@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   description: "Guides and documentation for the Vyra video editor.",
 };
 
+function BookIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+    </svg>
+  );
+}
+
 function TerminalIcon({ className }: { className?: string }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -15,6 +23,13 @@ function TerminalIcon({ className }: { className?: string }) {
 }
 
 const guides = [
+  {
+    title: "Getting Started",
+    description:
+      "Everything you need to know — from uploading footage to getting the most out of the AI agent.",
+    href: "/docs/guide",
+    icon: BookIcon,
+  },
   {
     title: "MCP Server",
     description:
