@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ClientTabs } from "./client-tabs";
 
 export const metadata: Metadata = {
   title: "MCP Server — Vyra Docs",
@@ -43,81 +44,39 @@ export default function McpDocsPage() {
         </p>
 
         <div className="space-y-12 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
-          {/* Quick Start */}
+          {/* Setup */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
-              Quick Start
+              Setup
+            </h2>
+            <p className="mb-4">
+              Pick your client below. The first time you connect, your browser will open to
+              authorize the agent with your Vyra account.
+            </p>
+            <ClientTabs />
+          </section>
+
+          {/* After connecting */}
+          <section>
+            <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
+              After Connecting
             </h2>
             <div className="space-y-4">
-              <Step number={1} title="Add the MCP server">
-                <p>Run this in your terminal:</p>
-                <CodeBlock>claude mcp add vyra --transport http https://api.usevyra.com/mcp</CodeBlock>
-                <p className="mt-2 text-[13px] text-[var(--foreground-subtle)]">
-                  For other MCP clients, use the server URL{" "}
-                  <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[13px]">
-                    https://api.usevyra.com/mcp
-                  </code>
-                </p>
-              </Step>
-              <Step number={2} title="Authenticate">
-                <p>
-                  The first time you connect, your browser will open to authorize the agent
-                  with your Vyra account. Sign in and click Approve.
-                </p>
-              </Step>
-              <Step number={3} title="Open a project">
+              <Step number={1} title="Open a project">
                 <p>
                   Open any project in the Vyra editor at{" "}
                   <a href="https://app.usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
                     app.usevyra.com
                   </a>
-                  . The agent needs the editor open to execute timeline editing tools.
+                  . The agent needs the editor open in your browser to execute timeline tools.
                 </p>
               </Step>
-              <Step number={4} title="Start editing">
+              <Step number={2} title="Start editing">
                 <p>
                   Ask the agent to edit your video. It has access to 50+ tools covering the full
-                  editing workflow.
+                  editing workflow. Changes appear in the editor in real time.
                 </p>
               </Step>
-            </div>
-          </section>
-
-          {/* Claude Desktop & claude.ai */}
-          <section>
-            <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
-              Other Clients
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="mb-2 text-[15px] font-semibold text-[var(--foreground)]">
-                  Claude Desktop App
-                </h3>
-                <p className="mb-2">
-                  Add to your{" "}
-                  <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[13px]">
-                    claude_desktop_config.json
-                  </code>
-                  :
-                </p>
-                <CodeBlock>{`{
-  "mcpServers": {
-    "vyra": {
-      "type": "url",
-      "url": "https://api.usevyra.com/mcp"
-    }
-  }
-}`}</CodeBlock>
-              </div>
-              <div>
-                <h3 className="mb-2 text-[15px] font-semibold text-[var(--foreground)]">
-                  claude.ai
-                </h3>
-                <p>
-                  Go to <strong>Settings &rarr; Integrations &rarr; Add MCP Server</strong> and
-                  paste <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[13px]">https://api.usevyra.com/mcp</code>.
-                </p>
-              </div>
             </div>
           </section>
 
@@ -155,45 +114,6 @@ export default function McpDocsPage() {
             </div>
           </section>
 
-          {/* How It Works */}
-          <section>
-            <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
-              How It Works
-            </h2>
-            <p className="mb-3">
-              Vyra&apos;s MCP server implements the{" "}
-              <a
-                href="https://modelcontextprotocol.io"
-                className="text-[var(--brand-blue)] underline underline-offset-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Model Context Protocol
-              </a>{" "}
-              (2025-03-26 Streamable HTTP transport).
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>
-                <strong className="text-[var(--foreground)]">Authentication:</strong>{" "}
-                OAuth 2.1 with PKCE. The agent authenticates with your Vyra account through a
-                browser consent flow.
-              </li>
-              <li>
-                <strong className="text-[var(--foreground)]">Backend tools</strong> (asset search,
-                project info, stock search) execute on the server directly.
-              </li>
-              <li>
-                <strong className="text-[var(--foreground)]">Frontend tools</strong> (timeline edits,
-                adding media, effects) are dispatched to your browser where the editor is open,
-                executed against the live editor state, and results are returned to the agent.
-              </li>
-              <li>
-                <strong className="text-[var(--foreground)]">Resources</strong> provide read access
-                to project state, assets, template, and style configuration.
-              </li>
-            </ul>
-          </section>
-
           {/* Requirements */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
@@ -228,11 +148,22 @@ export default function McpDocsPage() {
             </h2>
             <div className="space-y-4">
               <TroubleshootItem title="&quot;No browser connected&quot;">
-                The editor isn&apos;t open. Open a project at app.usevyra.com — timeline tools
-                require the editor to be active in your browser.
+                The agent can&apos;t reach your editor. Make sure you have a project open
+                at{" "}
+                <a href="https://app.usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
+                  app.usevyra.com
+                </a>
+                . If you do have one open, try reloading the page — the connection
+                refreshes on load.
+              </TroubleshootItem>
+              <TroubleshootItem title="Multiple projects open">
+                The agent connects to whichever project was opened or refreshed most
+                recently. If it&apos;s editing the wrong project, reload the one you
+                want to work on.
               </TroubleshootItem>
               <TroubleshootItem title="Authentication fails">
-                Try removing and re-adding the MCP server. Run{" "}
+                Try removing and re-adding the MCP server in your client. If using Claude
+                Code, run{" "}
                 <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[13px]">
                   claude mcp remove vyra
                 </code>{" "}
@@ -240,7 +171,7 @@ export default function McpDocsPage() {
               </TroubleshootItem>
               <TroubleshootItem title="Tools not appearing">
                 Reconnect the MCP session. The tool list is fetched on initialization —
-                if tools were updated, you need to restart the connection.
+                if tools were updated, restart the connection.
               </TroubleshootItem>
             </div>
           </section>
