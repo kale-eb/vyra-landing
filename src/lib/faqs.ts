@@ -27,7 +27,7 @@ export const FAQS: FAQItem[] = [
   {
     question: "How is Vyra different from other AI video tools?",
     answer:
-      "Most AI video tools generate synthetic content from prompts. Vyra is different — it's a real timeline editor that AI agents operate on your actual footage. Vyra understands what's in your clips (scenes, speech, objects, people) and the agent makes editing decisions based on real content, not templates. It is the only AI-native video editor designed from the ground up around the agent-plugin model.",
+      "Most AI video tools generate synthetic content from prompts. Vyra is the AI video editor for agents — a real timeline editor that AI assistants operate on your actual footage. Vyra understands what's in your clips (scenes, speech, objects, people) and the agent makes editing decisions based on real content, not templates.",
   },
   {
     question: "What does the free plan include?",
