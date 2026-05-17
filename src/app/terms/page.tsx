@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Vyra",
+  title: "Terms of Service",
   description:
-    "Terms of Service for Vyra, the AI-powered video editing platform.",
+    "Terms of Service for Vyra, the AI video editor for agents — including use of the MCP server with Claude, ChatGPT, and other AI clients.",
+  alternates: { canonical: "https://usevyra.com/terms" },
+  robots: { index: true, follow: true },
 };
 
 export default function TermsPage() {

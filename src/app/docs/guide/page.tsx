@@ -3,14 +3,64 @@ import Link from "next/link";
 import { TabbedCapabilities } from "./tabbed-capabilities";
 
 export const metadata: Metadata = {
-  title: "Getting Started — Vyra Docs",
+  title: "Getting Started",
   description:
-    "Everything you need to know to start editing with AI — from uploading footage to getting the most out of the agent.",
+    "Everything you need to know to start editing video with an AI agent in Vyra — uploading footage, connecting Claude or ChatGPT through MCP, working with the agent, and exporting your finished video.",
+  keywords: [
+    "Vyra getting started",
+    "AI video editing tutorial",
+    "agent video editing guide",
+    "MCP video editing",
+    "Claude video editing",
+    "ChatGPT video editing",
+  ],
+  alternates: { canonical: "https://usevyra.com/docs/guide" },
+  openGraph: {
+    title: "Getting Started with Vyra — edit video with an AI agent",
+    description:
+      "From uploading footage to exporting a finished video — learn how to edit with an AI agent through Vyra.",
+    url: "https://usevyra.com/docs/guide",
+    type: "article",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://usevyra.com" },
+    { "@type": "ListItem", position: 2, name: "Documentation", item: "https://usevyra.com/docs" },
+    { "@type": "ListItem", position: 3, name: "Getting Started", item: "https://usevyra.com/docs/guide" },
+  ],
+};
+
+const techArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: "Getting Started with Vyra — edit video with an AI agent",
+  name: "Getting Started",
+  url: "https://usevyra.com/docs/guide",
+  description:
+    "Step-by-step guide to editing video with an AI agent in Vyra: uploading footage, connecting an MCP client, prompting the agent, and exporting.",
+  about: { "@id": "https://usevyra.com#software" },
+  isPartOf: { "@id": "https://usevyra.com#website" },
+  inLanguage: "en-US",
+  proficiencyLevel: "Beginner",
+  author: { "@id": "https://usevyra.com#organization" },
+  publisher: { "@id": "https://usevyra.com#organization" },
 };
 
 export default function GuidePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleJsonLd) }}
+      />
       <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-4 px-6">
           <Link

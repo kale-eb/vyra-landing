@@ -2,14 +2,106 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Your First Project — Vyra Docs",
+  title: "Your First Project",
   description:
-    "A step-by-step walkthrough for creating your first video project in Vyra.",
+    "Step-by-step walkthrough for creating your first AI-edited video in Vyra — from signing up and connecting your AI agent through MCP to exporting a finished video.",
+  keywords: [
+    "Vyra first project",
+    "AI video editor tutorial",
+    "Vyra walkthrough",
+    "MCP video editor setup",
+    "Claude video editor setup",
+    "ChatGPT video editor setup",
+  ],
+  alternates: { canonical: "https://usevyra.com/docs/first-project" },
+  openGraph: {
+    title: "Your First Project in Vyra — sign up to first export",
+    description:
+      "A step-by-step walkthrough for creating your first AI-edited video in Vyra, from sign-up through export.",
+    url: "https://usevyra.com/docs/first-project",
+    type: "article",
+  },
+};
+
+const FIRST_PROJECT_STEPS = [
+  {
+    name: "Create an account",
+    text: "Sign up for a free Vyra account to access the editor and the MCP server.",
+  },
+  {
+    name: "Connect your AI agent",
+    text: "Connect Claude, ChatGPT, Codex, Cursor, or any MCP-compatible AI client to Vyra through the Model Context Protocol.",
+  },
+  {
+    name: "Create a new project",
+    text: "Start a new project in Vyra and upload the footage you want the agent to work with.",
+  },
+  {
+    name: "Wait for processing",
+    text: "Vyra analyzes your footage — detecting scenes, transcribing speech, and tagging objects and people — so the agent understands what's in every clip.",
+  },
+  {
+    name: "Get familiar with the editor",
+    text: "Tour the three panels of the Vyra editor: the footage panel on the left, the canvas in the center, and the tools and properties panel on the right.",
+  },
+  {
+    name: "Start editing with the agent",
+    text: "Describe what you want in natural language. The AI agent operates the editor on your behalf — cutting clips, adding captions, applying effects, and generating motion graphics.",
+  },
+  {
+    name: "Export your video",
+    text: "Export the finished video at your plan's maximum resolution (up to 4K on MCP Pro).",
+  },
+  {
+    name: "What's next",
+    text: "Explore advanced workflows in the Getting Started guide and the MCP Server reference.",
+  },
+];
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://usevyra.com" },
+    { "@type": "ListItem", position: 2, name: "Documentation", item: "https://usevyra.com/docs" },
+    { "@type": "ListItem", position: 3, name: "Your First Project", item: "https://usevyra.com/docs/first-project" },
+  ],
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to create your first AI-edited video in Vyra",
+  description:
+    "Sign up for Vyra, connect an MCP-compatible AI agent (Claude, ChatGPT, Codex, Cursor, etc.), upload footage, and let the agent edit and export your first video.",
+  totalTime: "PT15M",
+  estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+  supply: [
+    { "@type": "HowToSupply", name: "A Vyra account (free tier works)" },
+    { "@type": "HowToSupply", name: "Video footage to edit" },
+    { "@type": "HowToSupply", name: "An MCP-compatible AI client (Claude, ChatGPT, Codex, Cursor, etc.)" },
+  ],
+  tool: [{ "@type": "HowToTool", name: "Vyra — the AI video editor for agents" }],
+  step: FIRST_PROJECT_STEPS.map((s, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: s.name,
+    text: s.text,
+    url: `https://usevyra.com/docs/first-project#step-${i + 1}`,
+  })),
 };
 
 export default function FirstProjectPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
       <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-4 px-6">
           <Link

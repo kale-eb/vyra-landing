@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Vyra",
+  title: "Privacy Policy",
   description:
-    "Learn how Vyra collects, uses, and protects your information when you use our video editing platform.",
+    "How Vyra collects, uses, and protects your information when you use the AI video editor for agents, including the MCP server.",
+  alternates: { canonical: "https://usevyra.com/privacy" },
+  robots: { index: true, follow: true },
 };
 
 export default function PrivacyPage() {

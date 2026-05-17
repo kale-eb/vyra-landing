@@ -2,8 +2,54 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Documentation — Vyra",
-  description: "Guides and documentation for the Vyra video editor.",
+  title: "Documentation",
+  description:
+    "Guides for using Vyra — the AI video editor for agents. Connect Claude, ChatGPT, Codex, or any MCP-compatible client and learn how to edit video by describing what you want.",
+  alternates: { canonical: "https://usevyra.com/docs" },
+  openGraph: {
+    title: "Vyra Documentation",
+    description:
+      "Guides for using Vyra — the AI video editor for agents. Connect Claude, ChatGPT, Codex, or any MCP client.",
+    url: "https://usevyra.com/docs",
+    type: "website",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://usevyra.com" },
+    { "@type": "ListItem", position: 2, name: "Documentation", item: "https://usevyra.com/docs" },
+  ],
+};
+
+const collectionPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Vyra Documentation",
+  url: "https://usevyra.com/docs",
+  description:
+    "Guides for using Vyra, the AI video editor for agents — including the MCP server, getting started, and your first project.",
+  isPartOf: { "@id": "https://usevyra.com#website" },
+  about: { "@id": "https://usevyra.com#software" },
+  hasPart: [
+    {
+      "@type": "TechArticle",
+      name: "Your First Project",
+      url: "https://usevyra.com/docs/first-project",
+    },
+    {
+      "@type": "TechArticle",
+      name: "Getting Started",
+      url: "https://usevyra.com/docs/guide",
+    },
+    {
+      "@type": "TechArticle",
+      name: "MCP Server",
+      url: "https://usevyra.com/docs/mcp",
+    },
+  ],
 };
 
 function BookIcon({ className }: { className?: string }) {
@@ -60,6 +106,14 @@ const guides = [
 export default function DocsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
+      />
       <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center px-6">
           <Link

@@ -1,39 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const faqs = [
-  {
-    question: "What is Vyra?",
-    answer:
-      "Vyra is a video editor you control through AI assistants like Claude and ChatGPT. Connect it via MCP, describe your edit, and the AI handles cuts, captions, effects, and more \u2014 using your real footage.",
-  },
-  {
-    question: "What is MCP?",
-    answer:
-      "MCP (Model Context Protocol) lets AI assistants connect to external tools. Vyra uses MCP so Claude, ChatGPT, or any compatible client can control the editor directly.",
-  },
-  {
-    question: "Which AI clients work with Vyra?",
-    answer:
-      "Any MCP-compatible client works. We\u2019ve tested with Claude (Anthropic), ChatGPT, and several open-source clients. If your client supports MCP, it works with Vyra.",
-  },
-  {
-    question: "Do I need editing experience?",
-    answer:
-      "Not at all. Most users go from upload to export in under 5 minutes. The AI handles the technical work, and you can always open the full timeline editor for fine-grained control.",
-  },
-  {
-    question: "How is this different from other AI video tools?",
-    answer:
-      "Most AI video tools generate synthetic content. Vyra edits your real footage \u2014 it understands what\u2019s in your clips and makes intelligent editing decisions, not templates.",
-  },
-  {
-    question: "What does the free plan include?",
-    answer:
-      "600 processing credits per month, 720p exports, 2GB storage, and full MCP access. Enough to try Vyra and see if it fits your workflow.",
-  },
-];
+import { FAQS as faqs } from "@/lib/faqs";
 
 export default function FAQ() {
   return (

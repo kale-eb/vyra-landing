@@ -3,14 +3,74 @@ import Link from "next/link";
 import { ClientTabs } from "./client-tabs";
 
 export const metadata: Metadata = {
-  title: "MCP Server — Vyra Docs",
+  title: "MCP Server",
   description:
-    "Connect Claude Code, Codex, or any MCP-compatible agent to control the Vyra video editor.",
+    "Connect Claude, ChatGPT, Claude Code, Codex, Cursor, or any MCP-compatible AI agent to the Vyra video editor. Vyra ships a Model Context Protocol server so agents can view your timeline, add media, apply effects, animate motion graphics, and export video — all in real time.",
+  keywords: [
+    "Vyra MCP",
+    "Vyra MCP server",
+    "MCP video editor",
+    "Model Context Protocol video",
+    "Claude video MCP",
+    "ChatGPT video MCP",
+    "Codex video MCP",
+    "Cursor video MCP",
+    "agent video editing",
+    "AI video editor for agents",
+  ],
+  alternates: { canonical: "https://usevyra.com/docs/mcp" },
+  openGraph: {
+    title: "Vyra MCP Server — control the editor from Claude, ChatGPT, or any MCP client",
+    description:
+      "Plug Vyra into Claude, ChatGPT, Codex, Cursor, or any MCP-compatible AI agent and edit video by describing what you want.",
+    url: "https://usevyra.com/docs/mcp",
+    type: "article",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://usevyra.com" },
+    { "@type": "ListItem", position: 2, name: "Documentation", item: "https://usevyra.com/docs" },
+    { "@type": "ListItem", position: 3, name: "MCP Server", item: "https://usevyra.com/docs/mcp" },
+  ],
+};
+
+const techArticleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: "Vyra MCP Server — connect AI agents to the Vyra video editor",
+  name: "MCP Server",
+  url: "https://usevyra.com/docs/mcp",
+  description:
+    "How to connect Claude, ChatGPT, Claude Code, Codex, Cursor, and other MCP-compatible AI agents to the Vyra video editor through the Model Context Protocol.",
+  about: { "@id": "https://usevyra.com#software" },
+  isPartOf: { "@id": "https://usevyra.com#website" },
+  inLanguage: "en-US",
+  proficiencyLevel: "Beginner",
+  dependencies: "Model Context Protocol (MCP) compatible AI client",
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Users of Claude, ChatGPT, Claude Code, Codex, Cursor, and other MCP-compatible AI assistants",
+  },
+  author: { "@id": "https://usevyra.com#organization" },
+  publisher: { "@id": "https://usevyra.com#organization" },
 };
 
 export default function McpDocsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleJsonLd) }}
+      />
       <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-4 px-6">
           <Link
