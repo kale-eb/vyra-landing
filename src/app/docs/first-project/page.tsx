@@ -128,7 +128,26 @@ export default function FirstProjectPage() {
           </Step>
 
           {/* Step 6 */}
-          <Step number={6} title="Start editing with the agent">
+          <Step number={6} title="Connect this tab to the agent">
+            <p>
+              The editor and the agent live in different places — the editor is this browser tab,
+              the agent runs wherever you set up MCP (Claude Code in your terminal, claude.ai,
+              etc.). To let the agent drive THIS tab, click the{" "}
+              <strong className="text-[var(--foreground)]">Connect MCP</strong> button in the top
+              bar.
+            </p>
+            <div className="mt-3 max-w-[400px]">
+              <DocImage src="/docs/connect-mcp.png" alt="Connect MCP button in the editor's top bar, showing the connection popover with a Connect this tab button" />
+            </div>
+            <p className="mt-3">
+              A green dot means you&apos;re bound. If you open a second tab and connect it, the
+              agent shifts to driving that one (it offers a &quot;Take over&quot; option). Only
+              one tab is bound at a time.
+            </p>
+          </Step>
+
+          {/* Step 7 */}
+          <Step number={7} title="Start editing with the agent">
             <p>
               Open your MCP client and tell the agent what you want. It can do anything
               you&apos;d do manually — just describe what you&apos;re going for:
@@ -146,8 +165,8 @@ export default function FirstProjectPage() {
             </p>
           </Step>
 
-          {/* Step 7 */}
-          <Step number={7} title="Export your video">
+          {/* Step 8 */}
+          <Step number={8} title="Export your video">
             <p>
               Click the <strong className="text-[var(--foreground)]">Export</strong> button in the
               top-right corner. Choose a preset or configure custom settings:
@@ -164,8 +183,8 @@ export default function FirstProjectPage() {
             </p>
           </Step>
 
-          {/* Step 8 */}
-          <Step number={8} title="What's next">
+          {/* Step 9 */}
+          <Step number={9} title="What's next">
             <p>
               Now that you have a project under your belt:
             </p>

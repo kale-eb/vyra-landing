@@ -103,6 +103,12 @@ const CLIENTS = [
     label: "Codex",
     content: (
       <>
+        <div className="mb-3 rounded-md border border-amber-500/30 bg-amber-500/5 px-3 py-2 text-[12px] text-amber-200/90">
+          <strong className="text-amber-100">Codex CLI only for now.</strong> The Codex desktop app has
+          a known OAuth bug that prevents it from completing the Vyra auth flow — use the CLI
+          (<code className="rounded bg-[var(--surface)] px-1 py-0.5 text-[11px]">codex</code> in your terminal)
+          until that ships.
+        </div>
         <p><strong className="text-[var(--foreground)]">1. Add the server:</strong></p>
         <Pre>{`codex mcp add vyra --url ${SERVER_URL}`}</Pre>
         <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">

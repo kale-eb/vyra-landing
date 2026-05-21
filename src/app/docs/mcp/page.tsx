@@ -71,7 +71,18 @@ export default function McpDocsPage() {
                   . The agent needs the editor open in your browser to execute timeline tools.
                 </p>
               </Step>
-              <Step number={2} title="Start editing">
+              <Step number={2} title="Connect this tab">
+                <p>
+                  Click the <strong className="text-[var(--foreground)]">Connect MCP</strong> button in the editor&apos;s top
+                  bar to bind this specific browser tab to your agent. Editing-tool calls from the agent only land in the
+                  tab you&apos;ve connected — if you have multiple tabs open, this is how you pick which one the agent drives.
+                  A green status dot means you&apos;re bound.
+                </p>
+                <div className="mt-3 max-w-[400px] overflow-hidden rounded-xl border border-[var(--surface-border)] shadow-sm">
+                  <img src="/docs/connect-mcp.png" alt="Connect MCP button in the editor top bar, with the popover showing a Connect this tab button" className="w-full" />
+                </div>
+              </Step>
+              <Step number={3} title="Start editing">
                 <p>
                   Ask the agent to edit your video. It has access to 50+ tools covering the full
                   editing workflow. Changes appear in the editor in real time.
@@ -152,14 +163,15 @@ export default function McpDocsPage() {
                 at{" "}
                 <a href="https://app.usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
                   app.usevyra.com
-                </a>
-                . If you do have one open, try reloading the page — the connection
-                refreshes on load.
+                </a>{" "}
+                AND that you&apos;ve clicked <strong className="text-[var(--foreground)]">Connect MCP</strong> in the
+                top bar of that tab. Editor tools require an explicit tab binding — opening the project alone
+                isn&apos;t enough.
               </TroubleshootItem>
-              <TroubleshootItem title="Multiple projects open">
-                The agent connects to whichever project was opened or refreshed most
-                recently. If it&apos;s editing the wrong project, reload the one you
-                want to work on.
+              <TroubleshootItem title="Multiple tabs / projects open">
+                Only one tab can be bound to the agent at a time. If you click <strong className="text-[var(--foreground)]">Connect MCP</strong> in a
+                second tab, it offers a &quot;Take over&quot; option that disconnects the first. The agent&apos;s
+                tool calls always land in the most-recently-bound tab.
               </TroubleshootItem>
               <TroubleshootItem title="Authentication fails">
                 Try removing and re-adding the MCP server in your client. If using Claude
