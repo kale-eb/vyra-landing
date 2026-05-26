@@ -53,6 +53,18 @@ export default function McpDocsPage() {
               Pick your client below. The first time you connect, your browser will open to
               authorize the agent with your Vyra account.
             </p>
+            <div className="mb-6 overflow-hidden rounded-xl border border-[var(--surface-border)] shadow-sm">
+              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/NLVotJ3-Mng"
+                  title="Vyra MCP server setup walkthrough"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
             <ClientTabs />
           </section>
 
