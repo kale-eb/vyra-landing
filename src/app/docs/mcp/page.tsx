@@ -53,7 +53,7 @@ export default function McpDocsPage() {
               Pick your client below. The first time you connect, your browser will open to
               authorize the agent with your Vyra account.
             </p>
-            <div className="mb-6 overflow-hidden rounded-xl border border-[var(--surface-border)] shadow-sm">
+            <div className="mb-2 overflow-hidden rounded-xl border border-[var(--surface-border)] shadow-sm">
               <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                 <iframe
                   className="absolute inset-0 h-full w-full"
@@ -65,6 +65,33 @@ export default function McpDocsPage() {
                 />
               </div>
             </div>
+            <a
+              href="https://www.youtube.com/watch?v=NLVotJ3-Mng"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-6 inline-block text-[13px] text-[var(--foreground-subtle)] underline underline-offset-2 hover:text-[var(--foreground-muted)]"
+            >
+              Watch on YouTube &rarr;
+            </a>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "VideoObject",
+                  name: "Vyra MCP server setup walkthrough",
+                  description:
+                    "How to connect Claude Code, Codex, or any MCP-compatible agent to the Vyra video editor and start driving the timeline from chat.",
+                  thumbnailUrl: [
+                    "https://i.ytimg.com/vi/NLVotJ3-Mng/maxresdefault.jpg",
+                    "https://i.ytimg.com/vi/NLVotJ3-Mng/hqdefault.jpg",
+                  ],
+                  uploadDate: "2026-05-26",
+                  embedUrl: "https://www.youtube.com/embed/NLVotJ3-Mng",
+                  contentUrl: "https://www.youtube.com/watch?v=NLVotJ3-Mng",
+                }),
+              }}
+            />
             <ClientTabs />
           </section>
 
