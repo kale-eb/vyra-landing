@@ -26,7 +26,7 @@ const abrilFatface = Abril_Fatface({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://usevyra.com"),
+  metadataBase: new URL("https://www.usevyra.com"),
   title: "Vyra — AI Video Editor",
   description:
     "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://usevyra.com",
+    url: "https://www.usevyra.com",
     siteName: "Vyra",
     title: "Vyra — AI Video Editor",
     description:
@@ -117,7 +117,7 @@ export default function RootLayout({
               operatingSystem: "Web",
               description:
                 "AI-powered video editor that turns raw footage into finished videos in minutes.",
-              url: "https://usevyra.com",
+              url: "https://www.usevyra.com",
               offers: [
                 {
                   "@type": "Offer",

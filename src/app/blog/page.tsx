@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { comparisons } from "./[slug]/data";
+import { posts } from "./[slug]/data";
 
-const SITE_URL = "https://usevyra.com";
+const SITE_URL = "https://www.usevyra.com";
 
 export const metadata: Metadata = {
   title: "Blog — Vyra",
@@ -54,20 +54,20 @@ export default function BlogIndexPage() {
         </p>
 
         <div className="space-y-3">
-          {comparisons.map((c) => (
+          {posts.map((p) => (
             <Link
-              key={c.slug}
-              href={`/blog/${c.slug}`}
+              key={p.slug}
+              href={`/blog/${p.slug}`}
               className="group block rounded-xl border border-[var(--surface-border)] bg-white p-5 transition-all duration-200 hover:border-[var(--surface-border-hover)] hover:shadow-md hover:shadow-black/[0.03]"
             >
               <p className="mb-1 text-[12px] font-medium tracking-wide text-[var(--foreground-subtle)] uppercase">
-                Vyra vs {c.competitor}
+                {p.kicker}
               </p>
               <h2 className="mb-1.5 text-[16px] font-semibold text-[var(--foreground)] group-hover:text-[var(--brand-blue)]">
-                {c.title}
+                {p.title}
               </h2>
               <p className="text-[13px] leading-relaxed text-[var(--foreground-muted)]">
-                {c.description}
+                {p.description}
               </p>
             </Link>
           ))}

@@ -8,6 +8,10 @@ const footerLinks = {
     { label: "How It Works", href: "#how-it-works" },
     { label: "Pricing", href: "#pricing" },
   ],
+  resources: [
+    { label: "Blog", href: "/blog" },
+    { label: "Docs", href: "/docs" },
+  ],
   account: [
     { label: "Log In", href: "https://app.usevyra.com/login" },
     { label: "Sign Up", href: "https://app.usevyra.com/signup" },
@@ -24,7 +28,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand column — takes up more space */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <Link
               href="/"
               className="mb-5 inline-block text-[22px] font-extrabold tracking-tight text-[var(--foreground)]"
@@ -113,6 +117,27 @@ export default function Footer() {
               className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
             >
+              Resources
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {footerLinks.resources.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[13px] text-[var(--foreground-subtle)] transition-colors duration-200 hover:text-[var(--foreground-muted)]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h4
+              className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            >
               Account
             </h4>
             <ul className="flex flex-col gap-3">
@@ -129,7 +154,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h4
               className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
