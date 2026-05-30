@@ -16,9 +16,17 @@ const examples = [
 
 export default function MadeWithVyra() {
   const [active, setActive] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const total = examples.length;
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % total);
@@ -90,21 +98,25 @@ export default function MadeWithVyra() {
           onMouseLeave={() => { pausedRef.current = false; }}
         >
           {/* Card stage — fixed height, overflow hidden to clip far cards */}
-          <div className="relative mx-auto flex h-[480px] items-center justify-center overflow-hidden">
+          <div className="relative mx-auto flex h-[420px] items-center justify-center overflow-hidden sm:h-[480px]">
             {examples.map((example, i) => {
               const offset = getOffset(i);
               const isActive = offset === 0;
               const absOffset = Math.abs(offset);
 
-              // Only render cards within visible range
-              if (absOffset > 2) return null;
+              // Only render cards within visible range (drop neighbors on mobile)
+              const maxVisible = isMobile ? 1 : 2;
+              if (absOffset > maxVisible) return null;
 
               // Position, scale, blur based on distance from center
-              const translateX = offset * 240;
+              const translateX = offset * (isMobile ? 130 : 240);
               const scale = isActive ? 1 : absOffset === 1 ? 0.82 : 0.65;
               const blur = isActive ? 0 : absOffset === 1 ? 3 : 8;
               const opacity = isActive ? 1 : absOffset === 1 ? 0.55 : 0.25;
               const zIndex = isActive ? 30 : absOffset === 1 ? 20 : 10;
+
+              const wideWidth = isMobile ? 320 : 600;
+              const portraitWidth = isMobile ? 180 : 260;
 
               return (
                 <motion.div
@@ -123,7 +135,7 @@ export default function MadeWithVyra() {
                   className="absolute cursor-pointer"
                   style={{
                     zIndex,
-                    width: example.aspect === "16/9" ? 600 : 260,
+                    width: example.aspect === "16/9" ? wideWidth : portraitWidth,
                   }}
                   onClick={() => {
                     if (offset === 1) next();

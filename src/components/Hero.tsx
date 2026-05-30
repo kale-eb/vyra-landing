@@ -289,7 +289,7 @@ export default function Hero() {
       {/* Hero visual — browser frame + floating chat */}
       <div
         ref={videoContainerRef}
-        className="relative z-10 mx-auto mt-8 w-full max-w-6xl px-4 pb-48 md:translate-x-[6%] md:-translate-y-2"
+        className="relative z-10 mx-auto mt-8 w-full max-w-6xl px-4 pb-16 md:pb-48 md:translate-x-[6%] md:-translate-y-2"
       >
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.96 }}
@@ -327,7 +327,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20, x: -10 }}
             animate={{ opacity: 1, y: 0, x: 0 }}
             transition={{ duration: 0.6, delay: 1.4, ease: [0.21, 0.68, 0.35, 1] }}
-            className="absolute -bottom-40 -left-16 z-20 w-[340px] rounded-xl border border-[#3d3830]/60 bg-[#2d2a25] shadow-2xl shadow-black/30 sm:-left-28 sm:w-[400px]"
+            className="absolute -bottom-40 -left-16 z-20 hidden w-[340px] rounded-xl border border-[#3d3830]/60 bg-[#2d2a25] shadow-2xl shadow-black/30 sm:-left-28 sm:w-[400px] md:block"
           >
             {/* Title bar */}
             <div className="flex items-center gap-2 px-3.5 py-2 bg-[#272420] rounded-t-xl">

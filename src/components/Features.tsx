@@ -354,7 +354,7 @@ function FootageUnderstandingCard({ card }: { card: FeatureCard }) {
     <div className="flex flex-col h-full">
       <div className="relative bg-[var(--surface)] p-5 overflow-hidden">
         {/* Real footage thumbnail grid with analysis tags */}
-        <div className="grid grid-cols-3 gap-2.5">
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
           {FOOTAGE_CLIPS.map((clip, i) => (
             <div key={i} className="group relative rounded-lg bg-white border border-[var(--surface-border)] overflow-hidden shadow-sm transition-shadow hover:shadow-md">
               <div className="relative aspect-video overflow-hidden">
@@ -371,10 +371,10 @@ function FootageUnderstandingCard({ card }: { card: FeatureCard }) {
                 </div>
               </div>
               <div className="px-2 py-1.5">
-                <p className="text-[9px] font-medium text-[var(--foreground)] truncate">{clip.label}</p>
+                <p className="text-[10px] sm:text-[9px] font-medium text-[var(--foreground)] truncate">{clip.label}</p>
                 <div className="flex flex-wrap gap-1 mt-1">
                   {clip.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-[var(--brand-blue)]/[0.08] px-1.5 py-0.5 text-[7px] font-medium text-[var(--brand-blue)]">
+                    <span key={tag} className="rounded-full bg-[var(--brand-blue)]/[0.08] px-1.5 py-0.5 text-[8px] sm:text-[7px] font-medium text-[var(--brand-blue)]">
                       {tag}
                     </span>
                   ))}
@@ -384,15 +384,15 @@ function FootageUnderstandingCard({ card }: { card: FeatureCard }) {
           ))}
         </div>
 
-        {/* Floating analysis summary */}
-        <div className="absolute top-3 right-3 flex flex-col gap-1.5">
-          <span className="rounded-full bg-white/95 backdrop-blur-sm border border-[var(--surface-border)] shadow-sm px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
+        {/* Analysis summary pills — inline so they never overlap thumbnails */}
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
             6 clips analyzed
           </span>
-          <span className="rounded-full bg-white/95 backdrop-blur-sm border border-[var(--surface-border)] shadow-sm px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
+          <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
             Speech transcribed
           </span>
-          <span className="rounded-full bg-white/95 backdrop-blur-sm border border-[var(--surface-border)] shadow-sm px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
+          <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
             18 tags generated
           </span>
         </div>
