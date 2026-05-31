@@ -132,36 +132,55 @@ export default function McpDocsPage() {
 
           {/* What You Can Do */}
           <section>
-            <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
-              What You Can Do
-            </h2>
-            <div className="space-y-3">
-              <CapabilityGroup title="View & Search">
-                <li>Browse project assets and references</li>
-                <li>View timeline state, tracks, items, and timing</li>
-                <li>Search footage by visual content, transcript, location, or date</li>
-                <li>Capture screenshots of the canvas at any timestamp</li>
-                <li>Search stock media (Pexels, Freesound)</li>
-              </CapabilityGroup>
-              <CapabilityGroup title="Edit & Build">
-                <li>Add video, audio, images to the timeline with trim control</li>
-                <li>Add text overlays, shapes, and styled captions</li>
-                <li>Edit properties — position, scale, opacity, volume, speed</li>
-                <li>Move, split, slip, clone, and delete timeline items</li>
-                <li>Set keyframes for animation</li>
-              </CapabilityGroup>
-              <CapabilityGroup title="Effects & Compositing">
-                <li>Apply and configure effects (color, stylize, distort)</li>
-                <li>Create and animate masks (rectangle, ellipse, pen tool)</li>
-                <li>AI-powered background removal</li>
-                <li>Build motion graphics with React/Remotion code</li>
-              </CapabilityGroup>
-              <CapabilityGroup title="Project & Assets">
-                <li>Read project template and style configuration</li>
-                <li>Add assets from your library or stock to a project</li>
-                <li>Manage markers and consolidate tracks</li>
-              </CapabilityGroup>
-            </div>
+            <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
+                <h2 className="text-xl font-semibold text-[var(--foreground)]">
+                  What You Can Do
+                </h2>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-[var(--foreground-subtle)] transition-transform duration-200 group-open:rotate-180"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <div className="space-y-3 border-t border-[var(--surface-border)] p-5">
+                <CapabilityGroup title="View & Search">
+                  <li>Browse project assets and references</li>
+                  <li>View timeline state, tracks, items, and timing</li>
+                  <li>Search footage by visual content, transcript, location, or date</li>
+                  <li>Capture screenshots of the canvas at any timestamp</li>
+                  <li>Search stock media (Pexels, Freesound)</li>
+                </CapabilityGroup>
+                <CapabilityGroup title="Edit & Build">
+                  <li>Add video, audio, images to the timeline with trim control</li>
+                  <li>Add text overlays, shapes, and styled captions</li>
+                  <li>Edit properties — position, scale, opacity, volume, speed</li>
+                  <li>Move, split, slip, clone, and delete timeline items</li>
+                  <li>Set keyframes for animation</li>
+                </CapabilityGroup>
+                <CapabilityGroup title="Effects & Compositing">
+                  <li>Apply and configure effects (color, stylize, distort)</li>
+                  <li>Create and animate masks (rectangle, ellipse, pen tool)</li>
+                  <li>AI-powered background removal</li>
+                  <li>Build motion graphics with React/Remotion code</li>
+                </CapabilityGroup>
+                <CapabilityGroup title="Project & Assets">
+                  <li>Read project template and style configuration</li>
+                  <li>Add assets from your library or stock to a project</li>
+                  <li>Manage markers and consolidate tracks</li>
+                </CapabilityGroup>
+              </div>
+            </details>
           </section>
 
           {/* Requirements */}
