@@ -137,21 +137,7 @@ export default function McpDocsPage() {
                 <h2 className="text-xl font-semibold text-[var(--foreground)]">
                   What You Can Do
                 </h2>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="shrink-0 text-[var(--foreground-subtle)] transition-transform duration-200 group-open:rotate-180"
-                  aria-hidden="true"
-                >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
+                <ChevronDown />
               </summary>
               <div className="space-y-3 border-t border-[var(--surface-border)] p-5">
                 <CapabilityGroup title="View & Search">
@@ -210,13 +196,25 @@ export default function McpDocsPage() {
             </p>
           </section>
 
-          {/* Troubleshooting */}
-          <section>
-            <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
+        </div>
+
+        {/* Troubleshooting — visually separated as a "Stuck?" panel */}
+        <section className="mt-16 border-t border-[var(--surface-border)] pt-12">
+          <div className="mb-5 text-center">
+            <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-[var(--foreground-subtle)]">
+              Stuck?
+            </p>
+            <h2 className="text-xl font-semibold text-[var(--foreground)]">
               Troubleshooting
             </h2>
-            <div className="space-y-4">
-              <TroubleshootItem title="&quot;No browser connected&quot;">
+          </div>
+          <div className="space-y-2 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
+            <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-[14px] font-semibold text-[var(--foreground)] [&::-webkit-details-marker]:hidden">
+                &quot;No browser connected&quot;
+                <ChevronDown />
+              </summary>
+              <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
                 The agent can&apos;t reach your editor. Make sure you have a project open
                 at{" "}
                 <a href="https://app.usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
@@ -225,27 +223,45 @@ export default function McpDocsPage() {
                 AND that you&apos;ve clicked <strong className="text-[var(--foreground)]">Connect MCP</strong> in the
                 top bar of that tab. Editor tools require an explicit tab binding — opening the project alone
                 isn&apos;t enough.
-              </TroubleshootItem>
-              <TroubleshootItem title="Multiple tabs / projects open">
+              </div>
+            </details>
+            <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-[14px] font-semibold text-[var(--foreground)] [&::-webkit-details-marker]:hidden">
+                Multiple tabs / projects open
+                <ChevronDown />
+              </summary>
+              <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
                 Only one tab can be bound to the agent at a time. If you click <strong className="text-[var(--foreground)]">Connect MCP</strong> in a
                 second tab, it offers a &quot;Take over&quot; option that disconnects the first. The agent&apos;s
                 tool calls always land in the most-recently-bound tab.
-              </TroubleshootItem>
-              <TroubleshootItem title="Authentication fails">
+              </div>
+            </details>
+            <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-[14px] font-semibold text-[var(--foreground)] [&::-webkit-details-marker]:hidden">
+                Authentication fails
+                <ChevronDown />
+              </summary>
+              <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
                 Try removing and re-adding the MCP server in your client. If using Claude
                 Code, run{" "}
                 <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[13px]">
                   claude mcp remove vyra
                 </code>{" "}
                 then add it again.
-              </TroubleshootItem>
-              <TroubleshootItem title="Tools not appearing">
+              </div>
+            </details>
+            <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-[14px] font-semibold text-[var(--foreground)] [&::-webkit-details-marker]:hidden">
+                Tools not appearing
+                <ChevronDown />
+              </summary>
+              <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
                 Reconnect the MCP session. The tool list is fetched on initialization —
                 if tools were updated, restart the connection.
-              </TroubleshootItem>
-            </div>
-          </section>
-        </div>
+              </div>
+            </details>
+          </div>
+        </section>
 
         <div className="mt-16 border-t border-[var(--surface-border)] pt-8">
           <Link
@@ -315,19 +331,22 @@ function CapabilityGroup({
   );
 }
 
-function TroubleshootItem({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function ChevronDown() {
   return (
-    <div>
-      <h3 className="mb-1 text-[14px] font-semibold text-[var(--foreground)]">
-        {title}
-      </h3>
-      <p className="text-[14px] text-[var(--foreground-muted)]">{children}</p>
-    </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 text-[var(--foreground-subtle)] transition-transform duration-200 group-open:rotate-180"
+      aria-hidden="true"
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
   );
 }
