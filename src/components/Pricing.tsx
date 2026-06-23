@@ -66,9 +66,9 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
     }
 
     const isPaid = name !== "free";
-    const displayPrice = tier.yearly_price
-      ? Math.round(tier.yearly_price / 12)
-      : tier.monthly_price;
+    // Show the headline monthly price ($24 / $65) — matches the in-app pricing
+    // page. (Don't divide the yearly price by 12; that undersells the plan.)
+    const displayPrice = tier.monthly_price;
 
     const resolution = tier.max_export_resolution
       ? formatResolution(tier.max_export_resolution)
@@ -98,7 +98,7 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
       ],
       highlighted: name === "mcp_starter",
       cta: name === "free" ? "Get started free" : "Start free trial",
-      trialNote: isPaid ? "7-day free trial" : undefined,
+      trialNote: isPaid ? "3-day free trial" : undefined,
     };
   });
 }
@@ -123,12 +123,12 @@ const FALLBACK_PLANS: Plan[] = [
   },
   {
     name: "MCP Starter",
-    price: "$9",
+    price: "$24",
     period: "/mo",
     description: "For creators who publish regularly.",
     features: [
       { text: "6,000 processing credits", included: true },
-      { text: "50 GB storage", included: true },
+      { text: "100 GB storage", included: true },
       { text: "1440p export resolution", included: true },
       { text: "Unlimited exports", included: true },
       { text: "100 projects", included: true },
@@ -137,16 +137,16 @@ const FALLBACK_PLANS: Plan[] = [
     ],
     highlighted: true,
     cta: "Start free trial",
-    trialNote: "7-day free trial",
+    trialNote: "3-day free trial",
   },
   {
     name: "MCP Pro",
-    price: "$24",
+    price: "$65",
     period: "/mo",
     description: "For professionals and teams.",
     features: [
-      { text: "18,000 processing credits", included: true },
-      { text: "200 GB storage", included: true },
+      { text: "20,000 processing credits", included: true },
+      { text: "500 GB storage", included: true },
       { text: "4K export resolution", included: true },
       { text: "Unlimited exports", included: true },
       { text: "Unlimited projects", included: true },
@@ -155,7 +155,7 @@ const FALLBACK_PLANS: Plan[] = [
     ],
     highlighted: false,
     cta: "Start free trial",
-    trialNote: "7-day free trial",
+    trialNote: "3-day free trial",
   },
 ];
 
@@ -335,7 +335,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          All plans include MCP access. 7-day free trial on paid plans. No credit card required to start.
+          All plans include MCP access. 3-day free trial on paid plans. No credit card required to start.
         </motion.p>
       </div>
     </section>

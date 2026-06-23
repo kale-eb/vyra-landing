@@ -121,24 +121,17 @@ export default function RootLayout({
               offers: [
                 {
                   "@type": "Offer",
-                  price: "0",
+                  price: "24",
                   priceCurrency: "USD",
-                  name: "Free",
-                  description: "200 credits, 30 exports per month",
+                  name: "MCP Starter",
+                  description: "6,000 processing credits, 100 GB storage, unlimited exports, 1440p",
                 },
                 {
                   "@type": "Offer",
-                  price: "40",
+                  price: "65",
                   priceCurrency: "USD",
-                  name: "Plus",
-                  description: "2,300 credits, 1,000 exports per month",
-                },
-                {
-                  "@type": "Offer",
-                  price: "95",
-                  priceCurrency: "USD",
-                  name: "Pro",
-                  description: "6,000 credits, 1,000 exports per month",
+                  name: "MCP Pro",
+                  description: "20,000 processing credits, 500 GB storage, unlimited exports, 4K",
                 },
               ],
               aggregateRating: {
