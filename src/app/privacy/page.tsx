@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mb-12 text-[15px] text-[var(--foreground-subtle)]">
-          Effective Date: February 3, 2026
+          Effective Date: June 22, 2026
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
@@ -43,14 +43,84 @@ export default function PrivacyPage() {
             <p>
               This Privacy Policy explains how Vyra (&quot;we,&quot;
               &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects
-              your information when you use our video editing platform.
+              your information when you use our video editing platform. We built
+              Vyra to be a place you can trust with your work — this policy spells
+              out exactly what we do, and just as importantly, what we never do,
+              with your data.
             </p>
           </section>
 
-          {/* 2 */}
+          {/* 2 — the trust section, up front on purpose */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              2. Information We Collect
+              2. Your Videos &amp; Content — Our Core Commitment
+            </h2>
+            <p className="mb-3">
+              Your projects, uploads, and exports are yours. This is the part of
+              the policy that matters most, so we&apos;ll be direct:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  You own your content.
+                </span>{" "}
+                We claim no ownership of the videos, images, audio, or projects
+                you upload or create.
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  We use it only to run and improve Vyra.
+                </span>{" "}
+                Your content is used to provide the editing, analysis, and
+                rendering features you ask for, and to improve our service
+                internally. That&apos;s it.
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  We never sell it. We never use it for advertising.
+                </span>{" "}
+                We do not sell, rent, or trade your content or personal data, and
+                we never use your content to serve you ads.
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  It is never shared outside Vyra
+                </span>{" "}
+                except with the specific service providers we rely on to actually
+                deliver the product — for example, the AI services that understand
+                your video, transcribe your audio, and render your exports. Those
+                providers act only on our behalf, only to deliver those features.
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Our providers do not train on your content.
+                </span>{" "}
+                Under the commercial terms of the plans we use, the third-party AI
+                and infrastructure providers that process your content are not
+                permitted to use it to train their own models or for any purpose
+                other than providing services to Vyra.
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  It&apos;s encrypted and access-controlled.
+                </span>{" "}
+                Your content is encrypted in transit and at rest, isolated per
+                account, and protected by access controls.
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  You can delete it.
+                </span>{" "}
+                Delete a file, a project, or your whole account, and the
+                underlying data is removed (see Data Retention below).
+              </li>
+            </ul>
+          </section>
+
+          {/* 3 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              3. Information We Collect
             </h2>
 
             <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
@@ -59,7 +129,11 @@ export default function PrivacyPage() {
             <ul className="list-disc space-y-1 pl-6">
               <li>Email address</li>
               <li>Name</li>
-              <li>Password</li>
+              <li>
+                Authentication credentials (we store a securely hashed password —
+                never your password in plain text — or rely on your Google
+                Sign-In)
+              </li>
             </ul>
 
             <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
@@ -67,7 +141,7 @@ export default function PrivacyPage() {
             </h3>
             <ul className="list-disc space-y-1 pl-6">
               <li>Projects and all project data</li>
-              <li>Uploaded files (videos, images, documents)</li>
+              <li>Uploaded files (videos, images, audio, documents)</li>
               <li>Video editor compositions and exports</li>
             </ul>
 
@@ -76,7 +150,7 @@ export default function PrivacyPage() {
             </h3>
             <ul className="list-disc space-y-1 pl-6">
               <li>Feature usage and API requests</li>
-              <li>Performance metrics</li>
+              <li>Performance and reliability metrics</li>
             </ul>
 
             <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
@@ -90,42 +164,72 @@ export default function PrivacyPage() {
             </ul>
           </section>
 
-          {/* 3 */}
+          {/* 4 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              3. How We Use Your Information
+              4. How We Use Your Information
             </h2>
             <ul className="list-disc space-y-1 pl-6">
               <li>Provide and operate our service</li>
               <li>Authenticate your account</li>
-              <li>Generate AI-powered scripts and analyze videos</li>
+              <li>Generate AI-powered scripts and analyze your videos</li>
               <li>Process and render video exports</li>
               <li>Track usage for billing</li>
-              <li>Improve our service</li>
+              <li>
+                Improve our service internally (for example, diagnosing issues
+                and making our features work better)
+              </li>
               <li>Send important service updates</li>
             </ul>
           </section>
 
-          {/* 4 */}
+          {/* 5 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              4. Third-Party Services
+              5. Service Providers (Sub-Processors)
             </h2>
             <p className="mb-3">
-              We use the following types of services to operate Vyra:
+              We use a small set of trusted providers to operate Vyra. They
+              process your data only on our behalf and only to deliver the
+              features below. Under the plans we use, they do not use your content
+              to train their own models or for any unrelated purpose.
             </p>
             <ul className="list-disc space-y-1 pl-6">
               <li>
                 <span className="font-medium text-[var(--foreground)]">
-                  Authentication:
+                  AI video understanding &amp; scripting:
                 </span>{" "}
-                Supabase, Google (for Google Sign-In)
+                Google (Gemini)
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
-                  AI Processing:
+                  Audio transcription:
                 </span>{" "}
-                Anthropic, OpenAI, and Google
+                ElevenLabs
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Embeddings (semantic search):
+                </span>{" "}
+                OpenAI
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Authentication &amp; database:
+                </span>{" "}
+                Supabase, and Google for Google Sign-In
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Storage &amp; video processing:
+                </span>{" "}
+                Cloudflare R2, Google Cloud, and Amazon Web Services
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Hosting:
+                </span>{" "}
+                Vercel and Railway
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
@@ -135,36 +239,29 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
-                  Cloud Infrastructure:
+                  Product analytics:
                 </span>{" "}
-                Cloud providers for hosting, storage, and video processing
-              </li>
-              <li>
-                <span className="font-medium text-[var(--foreground)]">
-                  Analytics:
-                </span>{" "}
-                Performance monitoring tools
+                Privacy-respecting analytics to understand feature usage and
+                performance
               </li>
             </ul>
             <p className="mt-3">
-              Your content may be processed by these services to provide our
-              features. Each service operates under its own privacy policy.
+              We keep this list current. Each provider operates under its own
+              privacy policy and contractual data-protection terms with Vyra.
             </p>
           </section>
 
-          {/* 5 */}
+          {/* 6 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              5. Third-Party Agent Access (MCP)
+              6. Third-Party Agent Access (MCP)
             </h2>
             <p className="mb-3">
-              Vyra supports the Model Context Protocol (MCP), which allows
-              external AI agents (such as Claude Code, Codex, or other
-              MCP-compatible tools) to interact with your editor on your behalf.
+              Vyra supports the Model Context Protocol (MCP), which lets external
+              AI agents you choose (such as Claude Code, Codex, or other
+              MCP-compatible tools) interact with your editor on your behalf.
             </p>
-            <p className="mb-3">
-              When you authorize a third-party agent:
-            </p>
+            <p className="mb-3">When you authorize a third-party agent:</p>
             <ul className="list-disc space-y-1 pl-6">
               <li>The agent can view your project assets, timeline state, and editor settings</li>
               <li>The agent can execute editing actions (adding media, editing properties, etc.) in your browser session</li>
@@ -172,80 +269,133 @@ export default function PrivacyPage() {
               <li>You can revoke access at any time from your account settings</li>
             </ul>
             <p className="mt-3">
-              We do not control how third-party agents process or store the data
-              they access. Please review the privacy policy of any agent you
-              authorize.
+              In this MCP flow, the external agent is the AI you bring — Vyra does
+              not route your MCP-session data through its own AI providers. The
+              agent processes the data it accesses under its own provider&apos;s
+              policy, which we do not control. Please review the privacy policy of
+              any agent you authorize.
             </p>
-          </section>
-
-          {/* 6 */}
-          <section>
-            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              6. Data Sharing
-            </h2>
-            <p className="mb-3">
-              We do not sell your personal information.
-            </p>
-            <p className="mb-2">We share data only with:</p>
-            <ul className="list-disc space-y-1 pl-6">
-              <li>Service providers necessary to operate our service</li>
-              <li>Legal authorities when required by law</li>
-              <li>
-                In connection with a merger, acquisition, or sale of assets
-              </li>
-            </ul>
           </section>
 
           {/* 7 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              7. Data Security
+              7. Data Sharing
             </h2>
-            <p>
-              We implement appropriate security measures including encrypted
-              passwords, secure authentication tokens, and access controls.
-              However, no method of transmission over the internet is 100%
-              secure.
+            <p className="mb-3">
+              We do not sell your personal information or your content. We share
+              data only in these limited cases:
+            </p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>
+                With the service providers (sub-processors) listed above, solely
+                to operate Vyra
+              </li>
+              <li>
+                With legal authorities when required by law, or to protect the
+                rights, safety, and security of Vyra and its users
+              </li>
+              <li>
+                In connection with a merger, acquisition, financing, or sale of
+                assets — see below
+              </li>
+            </ul>
+            <p className="mt-3">
+              <span className="font-medium text-[var(--foreground)]">
+                Business transfers:
+              </span>{" "}
+              If Vyra is involved in a merger, acquisition, financing, or sale of
+              all or part of our business, your information may be transferred as
+              part of that transaction. We will notify you of any such change, and
+              any successor entity will be required to honor the commitments in
+              this Privacy Policy, or to give you notice and a choice before your
+              data is used under a materially different policy.
             </p>
           </section>
 
           {/* 8 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              8. Cookies &amp; Local Storage
+              8. Data Security
             </h2>
             <p>
-              We use cookies and browser storage to maintain your login session
-              and cache preferences for faster loading.
+              We implement strong, layered security measures, including encryption
+              of your content in transit (TLS) and at rest, securely hashed
+              passwords, scoped authentication tokens, per-account data isolation,
+              and access controls. No method of transmission or storage is 100%
+              secure, but we work hard to protect your data and to limit who and
+              what can access it.
             </p>
           </section>
 
           {/* 9 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              9. Data Retention
+              9. International Data Transfers
             </h2>
             <p>
-              Your data is retained while your account is active. You may delete
-              your projects and files at any time. Upon account deletion, your
-              personal data will be removed.
+              Vyra is operated from the United States, and our infrastructure and
+              service providers are primarily located in the United States. If you
+              access Vyra from outside the U.S., your information will be
+              transferred to and processed in the U.S. and other countries where
+              our providers operate. Where required, we rely on appropriate
+              safeguards (such as Standard Contractual Clauses) for these
+              transfers.
             </p>
           </section>
 
           {/* 10 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              10. Your Rights
+              10. Cookies &amp; Local Storage
             </h2>
-            <p className="mb-2">You have the right to:</p>
+            <p>
+              We use cookies and browser storage to maintain your login session
+              and cache preferences for faster loading. We do not use them for
+              cross-site advertising.
+            </p>
+          </section>
+
+          {/* 11 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              11. Data Retention
+            </h2>
+            <p>
+              We retain your content and account data while your account is
+              active. You may delete individual files and projects at any time.
+              When you delete your account, we remove your personal data and
+              content from our active systems within 30 days, except where we are
+              required to retain limited records to comply with legal, tax, or
+              accounting obligations. Backups are purged on a rolling basis.
+            </p>
+          </section>
+
+          {/* 12 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              12. Your Rights
+            </h2>
+            <p className="mb-2">
+              Depending on where you live, you may have the right to:
+            </p>
             <ul className="list-disc space-y-1 pl-6">
-              <li>Access your personal data</li>
+              <li>Access the personal data we hold about you</li>
               <li>Correct inaccurate information</li>
               <li>Delete your content and account</li>
               <li>Export your data</li>
+              <li>
+                Object to or restrict certain processing, and withdraw consent
+              </li>
             </ul>
             <p className="mt-3">
-              To exercise these rights, contact us at{" "}
+              If you are in the EEA/UK, these rights are provided under the GDPR.
+              If you are a California resident, you have rights under the CCPA/CPRA
+              — including the right to know, delete, and opt out of the
+              &quot;sale&quot; or &quot;sharing&quot; of personal information.
+              Vyra does not sell or share your personal information as those terms
+              are defined under California law. To exercise any of these rights,
+              contact us at{" "}
               <a
                 href="mailto:caleb@usevyra.com"
                 className="text-[var(--brand-blue)] underline decoration-[var(--brand-blue)]/30 underline-offset-2 transition-colors hover:text-[var(--brand-blue-hover)]"
@@ -256,42 +406,41 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 11 */}
-          <section>
-            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              11. Children&apos;s Privacy
-            </h2>
-            <p>
-              Vyra is not intended for users under 13. We do not knowingly
-              collect information from children.
-            </p>
-          </section>
-
-          {/* 12 */}
-          <section>
-            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              12. Changes to This Policy
-            </h2>
-            <p>
-              We may update this policy periodically, and update the effective
-              date accordingly. Under certain circumstances (for example with
-              certain material changes or where it is required by applicable
-              privacy laws) we will provide notice to you of these changes and,
-              where required by applicable law, we will obtain your consent.
-              Notice may be by email to you, by posting a notice of such changes
-              on our Services and Software, or by other means consistent with
-              applicable law.
-            </p>
-          </section>
-
           {/* 13 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              13. Contact Us
+              13. Children&apos;s Privacy
             </h2>
             <p>
-              Questions about this Privacy Policy? Contact us at:
+              Vyra is not intended for users under 13 (or the minimum age of
+              digital consent in your country). We do not knowingly collect
+              information from children. If you believe a child has provided us
+              information, contact us and we will delete it.
             </p>
+          </section>
+
+          {/* 14 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              14. Changes to This Policy
+            </h2>
+            <p>
+              We may update this policy at any time, and will update the effective
+              date accordingly. Under certain circumstances (for example, with
+              certain material changes or where required by applicable privacy
+              laws) we will provide notice to you of these changes and, where
+              required by applicable law, we will obtain your consent. Notice may
+              be by email to you, by posting a notice on our Services, or by other
+              means consistent with applicable law.
+            </p>
+          </section>
+
+          {/* 15 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              15. Contact Us
+            </h2>
+            <p>Questions about this Privacy Policy? Contact us at:</p>
             <p className="mt-2">
               Email:{" "}
               <a
