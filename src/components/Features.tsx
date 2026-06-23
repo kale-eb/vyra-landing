@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AudioWaveform } from "./AudioWaveform";
 
 const STORAGE_BASE =
-  "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/showcase";
+  "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/showcase";
 
 interface TimeRemapVariant {
   label: string;
@@ -55,9 +55,9 @@ const FEATURES: FeatureCard[] = [
       </svg>
     ),
     mgVideos: [
-      { label: "Title Card", url: "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing/mg-cooking-quest.mp4", fit: "contain" as const },
-      { label: "Podcast Title", url: "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing/mg-lower-third.mp4", fit: "cover" as const, scale: 0.75 },
-      { label: "Animated Counter", url: "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing/mg-counter.mp4", fit: "cover" as const },
+      { label: "Title Card", url: "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/mg-cooking-quest.mp4", fit: "contain" as const },
+      { label: "Podcast Title", url: "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/mg-lower-third.mp4", fit: "cover" as const, scale: 0.75 },
+      { label: "Animated Counter", url: "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/mg-counter.mp4", fit: "cover" as const },
     ],
     gridClass: "md:col-span-2",
   },
@@ -338,7 +338,7 @@ function SmartMaskCard({ card }: { card: FeatureCard }) {
   );
 }
 
-const FOOTAGE_BASE = "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing/footage";
+const FOOTAGE_BASE = "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/footage";
 
 const FOOTAGE_CLIPS = [
   { src: `${FOOTAGE_BASE}/pizza.jpg`, label: "Restaurant dinner", tags: ["food", "indoor", "pizza"], duration: "0:02" },

@@ -6,7 +6,7 @@ import Image from "next/image";
 import BrowserFrame from "./BrowserFrame";
 
 const SCROLL_VIDEO_URL =
-  "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing/hero-mcp-demo.mp4";
+  "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/hero-mcp-demo.mp4";
 
 const TYPEWRITER_CLIENTS = ["Claude", "ChatGPT", "Gemini", "AI assistant"];
 

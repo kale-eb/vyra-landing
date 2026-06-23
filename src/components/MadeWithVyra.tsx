@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const STORAGE_BASE =
-  "https://uskviqibopshckqsmyvk.supabase.co/storage/v1/object/public/demo-assets/landing";
+  "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
 
 const examples = [
   { src: `${STORAGE_BASE}/caleb1.mp4`, aspect: "9/16" },
