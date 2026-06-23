@@ -56,7 +56,7 @@ export default function FinalCTA() {
             href="https://app.usevyra.com/signup"
             className="btn-shimmer inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
           >
-            Get started free
+            Start free trial
             <svg
               width="18"
               height="18"

@@ -50,7 +50,8 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
   if (!tiers || tiers.length === 0) return FALLBACK_PLANS;
 
   const tierMap = Object.fromEntries(tiers.map((t) => [t.name, t]));
-  const names = ["free", "mcp_starter", "mcp_pro"];
+  // No free tier — paid plans only, each with a free trial.
+  const names = ["mcp_starter", "mcp_pro"];
 
   // If the API doesn't have our MCP tiers yet, use fallbacks
   if (!tierMap["mcp_starter"] && !tierMap["mcp_pro"]) return FALLBACK_PLANS;
@@ -104,23 +105,6 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
 }
 
 const FALLBACK_PLANS: Plan[] = [
-  {
-    name: "Free",
-    price: "$0",
-    period: "/mo",
-    description: "Get started with basic editing.",
-    features: [
-      { text: "600 processing credits", included: true },
-      { text: "2 GB storage", included: true },
-      { text: "720p export resolution", included: true },
-      { text: "20 exports/month", included: true },
-      { text: "5 projects", included: true },
-      { text: "Motion graphic export", included: false },
-      { text: "MCP access", included: true },
-    ],
-    highlighted: false,
-    cta: "Get started free",
-  },
   {
     name: "MCP Starter",
     price: "$24",
@@ -189,12 +173,12 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
             Simple, honest pricing
           </h2>
           <p className="mx-auto max-w-md text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Start free. Upgrade when you need more. No surprises.
+            Pay for processing only. Every plan starts with a free trial.
           </p>
         </motion.div>
 
         {/* Pricing cards */}
-        <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+        <div className="mx-auto grid max-w-3xl gap-5 md:grid-cols-2 md:gap-6">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -335,7 +319,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          All plans include MCP access. 3-day free trial on paid plans. No credit card required to start.
+          All plans include MCP access and a 3-day free trial. Cancel anytime before it ends.
         </motion.p>
       </div>
     </section>

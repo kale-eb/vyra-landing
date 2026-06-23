@@ -253,7 +253,7 @@ export default function Hero() {
             href="https://app.usevyra.com/signup"
             className="btn-shimmer inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
-            Get Started Free
+            Start Free Trial
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"

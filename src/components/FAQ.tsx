@@ -29,9 +29,9 @@ const faqs = [
       "Most AI video tools generate synthetic content. Vyra edits your real footage \u2014 it understands what\u2019s in your clips and makes intelligent editing decisions, not templates.",
   },
   {
-    question: "What does the free plan include?",
+    question: "Is there a free trial?",
     answer:
-      "600 processing credits per month, 720p exports, 2GB storage, and full MCP access. Enough to try Vyra and see if it fits your workflow.",
+      "Yes — every plan starts with a 3-day free trial, so you can see if Vyra fits your workflow before you’re charged. Cancel anytime before it ends.",
   },
 ];
 
