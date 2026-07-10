@@ -6,7 +6,12 @@ const faqs = [
   {
     question: "What is Vyra?",
     answer:
-      "Vyra is a video editor you control through AI assistants like Claude and ChatGPT. Connect it via MCP, describe your edit, and the AI handles cuts, captions, effects, and more \u2014 using your real footage.",
+      "Vyra is a video editor you control by chatting with AI. Describe your edit in plain English and the AI handles cuts, captions, effects, and more \u2014 using your real footage. Use Vyra's built-in AI chat, or connect your own assistant like Claude or ChatGPT via MCP.",
+  },
+  {
+    question: "Do I need an AI subscription to use Vyra?",
+    answer:
+      "No. Vyra AI plans include a built-in AI editor right in the app \u2014 no external AI subscription needed. If you already pay for Claude, ChatGPT, or another MCP client, the MCP plans let you bring your own AI at a lower price.",
   },
   {
     question: "What is MCP?",

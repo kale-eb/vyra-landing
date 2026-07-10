@@ -8,12 +8,11 @@ import BrowserFrame from "./BrowserFrame";
 const SCROLL_VIDEO_URL =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/hero-mcp-demo.mp4";
 
-const TYPEWRITER_CLIENTS = ["Claude", "ChatGPT", "Gemini", "AI assistant"];
+const TYPED_HEADLINE = "a conversation.";
 
-function useClientTypewriter() {
+function useHeadlineTypewriter() {
   const [displayed, setDisplayed] = useState("");
   const [settled, setSettled] = useState(false);
-  const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -23,47 +22,23 @@ function useClientTypewriter() {
       await wait(700);
       if (cancelled) return;
 
-      for (let w = 0; w < TYPEWRITER_CLIENTS.length; w++) {
+      // Type each character
+      for (let i = 1; i <= TYPED_HEADLINE.length; i++) {
         if (cancelled) return;
-        const word = TYPEWRITER_CLIENTS[w];
-        const isLast = w === TYPEWRITER_CLIENTS.length - 1;
-        setWordIndex(w);
-
-        // Type each character
-        for (let i = 1; i <= word.length; i++) {
-          if (cancelled) return;
-          setDisplayed(word.slice(0, i));
-          await wait(90);
-        }
-
-        if (isLast) {
-          // Final word — settle
-          setSettled(true);
-          return;
-        }
-
-        // Hold the word
-        await wait(1200);
-        if (cancelled) return;
-
-        // Delete each character
-        for (let i = word.length - 1; i >= 0; i--) {
-          if (cancelled) return;
-          setDisplayed(word.slice(0, i));
-          await wait(50);
-        }
-
-        // Pause before next word
-        await wait(500);
+        setDisplayed(TYPED_HEADLINE.slice(0, i));
+        await wait(90);
       }
+
+      // Let the cursor blink briefly, then settle
+      await wait(1200);
+      if (!cancelled) setSettled(true);
     }
 
     run();
     return () => { cancelled = true; };
   }, []);
 
-  const isProviderName = !settled && wordIndex < TYPEWRITER_CLIENTS.length - 1;
-  return { displayed, settled, isProviderName, wordIndex };
+  return { displayed, settled };
 }
 
 function wait(ms: number) {
@@ -75,7 +50,7 @@ export default function Hero() {
   const videoContainerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoDuration = useRef(0);
-  const { displayed, settled, isProviderName, wordIndex } = useClientTypewriter();
+  const { displayed, settled } = useHeadlineTypewriter();
 
   // Scroll-linked zoom on the sky background
   const { scrollYProgress } = useScroll({
@@ -165,69 +140,20 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="mb-5"
         >
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] tracking-[-0.02em] text-[var(--foreground)]">
-            <span className="font-black tracking-[-0.03em]">Your </span>
-            {isProviderName ? (
-              <>
-                {wordIndex === 1 ? (
-                  <span className="font-black tracking-[-0.03em]">
-                    <span className="text-[var(--foreground)]">{displayed.slice(0, Math.min(displayed.length, 4))}</span>
-                    <span style={{ color: "#10a37f" }}>{displayed.slice(4)}</span>
-                  </span>
-                ) : (
-                  <span
-                    className="font-black tracking-[-0.03em]"
-                    style={
-                      wordIndex === 0
-                        ? { color: "#e07a3a" }
-                        : wordIndex === 2
-                          ? {
-                              background: "linear-gradient(135deg, #4285f4, #9b72cb, #d96570, #d2a544)",
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              backgroundSize: "200% 200%",
-                              animation: "gemini-shimmer 2s ease infinite",
-                            }
-                          : undefined
-                    }
-                  >
-                    {displayed}
-                  </span>
-                )}
-                {!settled && (
-                  <span
-                    className="inline-block w-[2px] h-[0.85em] ml-[2px] align-middle"
-                    style={{
-                      animation: "blink 0.7s step-end infinite",
-                      backgroundColor:
-                        wordIndex === 0 ? "#e07a3a"
-                        : wordIndex === 1 ? "#10a37f"
-                        : wordIndex === 2 ? "#9b72cb"
-                        : "var(--brand-blue)",
-                    }}
-                  />
-                )}
-                <span className="font-black tracking-[-0.03em]"> subscription</span>
-              </>
-            ) : (
-              <>
-                <span className="serif-italic font-normal">
-                  {displayed}
-                </span>
-                {!settled && (
-                  <span
-                    className="inline-block w-[2px] h-[0.85em] ml-[2px] align-middle"
-                    style={{
-                      animation: "blink 0.7s step-end infinite",
-                      backgroundColor: "var(--brand-blue)",
-                    }}
-                  />
-                )}
-              </>
-            )}
+          <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] font-black tracking-[-0.03em] text-[var(--foreground)]">
+            Video editing is now
           </span>
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] font-black tracking-[-0.03em] text-[var(--foreground)]">
-            now edits video.
+          <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.02em] text-[var(--foreground)]">
+            <span className="serif-italic font-normal">{displayed}</span>
+            {!settled && (
+              <span
+                className="inline-block w-[2px] h-[0.85em] ml-[2px] align-middle"
+                style={{
+                  animation: "blink 0.7s step-end infinite",
+                  backgroundColor: "var(--brand-blue)",
+                }}
+              />
+            )}
           </span>
         </motion.h1>
 
@@ -238,8 +164,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.55 }}
           className="mb-6 max-w-lg text-[15px] leading-[1.7] font-normal text-[var(--foreground-muted)]"
         >
-          Connect Vyra to Claude, ChatGPT, or any MCP client. Describe your
-          edit in natural language — the AI does the rest.
+          Describe your edit naturally. Vyra cuts, captions, and styles your
+          real footage — no editing skills, no external AI needed.
         </motion.p>
 
         {/* CTA */}
@@ -268,14 +194,20 @@ export default function Hero() {
           {/* Works with */}
           <div className="flex items-center gap-2 text-[13px]">
             <span className="text-[var(--foreground-subtle)] mr-1">
-              Works with
+              Edit with
             </span>
-            {["Claude", "ChatGPT", "Any MCP Client"].map((badge, i) => (
+            {["Vyra AI", "Claude", "ChatGPT", "Any MCP Client"].map((badge, i) => (
               <span key={badge} className="flex items-center gap-2">
-                <span className="rounded-full border border-[var(--surface-border)] px-3 py-1 font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]">
+                <span
+                  className={`rounded-full border px-3 py-1 font-medium transition-all duration-200 ${
+                    badge === "Vyra AI"
+                      ? "border-[var(--brand-blue)]/40 text-[var(--brand-blue)]"
+                      : "border-[var(--surface-border)] text-[var(--foreground-muted)] hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
+                  }`}
+                >
                   {badge}
                 </span>
-                {i < 2 && (
+                {i < 3 && (
                   <span className="text-[var(--foreground-subtle)]">
                     &middot;
                   </span>
@@ -337,15 +269,15 @@ export default function Hero() {
                 <div className="h-[9px] w-[9px] rounded-full bg-[#28c840]" />
               </div>
               <div className="flex-1 text-center">
-                <span className="text-[10px] text-white/25 font-medium">Video editing session</span>
+                <span className="text-[10px] text-white/25 font-medium">Vyra AI — Editing session</span>
               </div>
             </div>
 
             {/* Tab bar */}
             <div className="flex items-center gap-1 px-3.5 py-1.5 border-b border-white/[0.05]">
-              <span className="rounded-md px-2 py-0.5 text-[9px] text-white/25">Chat</span>
-              <span className="rounded-md px-2 py-0.5 text-[9px] bg-[#e09850]/[0.12] text-[#e09850]/80 font-medium">Cowork</span>
-              <span className="rounded-md px-2 py-0.5 text-[9px] text-white/25">&lt;/&gt; Code</span>
+              <span className="rounded-md px-2 py-0.5 text-[9px] bg-[#6490D0]/[0.15] text-[#8fb3e8] font-medium">Chat</span>
+              <span className="rounded-md px-2 py-0.5 text-[9px] text-white/25">Timeline</span>
+              <span className="rounded-md px-2 py-0.5 text-[9px] text-white/25">Assets</span>
             </div>
 
             {/* Chat content */}
@@ -363,22 +295,22 @@ export default function Hero() {
               <div className="flex flex-col gap-1">
                 <p className="text-white/25 text-[10px]">Used 4 tools</p>
                 <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   <span className="text-[10px] text-white/35">addMedia</span>
                   <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
                 </div>
                 <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   <span className="text-[10px] text-white/35">addCaptions</span>
                   <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
                 </div>
                 <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   <span className="text-[10px] text-white/35">addMotionGraphic</span>
                   <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
                 </div>
                 <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#e09850" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   <span className="text-[10px] text-white/35">addEffect</span>
                   <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
                 </div>
@@ -398,7 +330,7 @@ export default function Hero() {
               {/* Input bar */}
               <div className="mt-1 rounded-xl bg-white/[0.03] border border-white/[0.05] px-3 py-2 flex items-center justify-between">
                 <span className="text-white/15 text-[10px]">Write a message...</span>
-                <span className="text-white/10 text-[9px]">Sonnet 4.6</span>
+                <span className="text-white/10 text-[9px]">Vyra AI</span>
               </div>
             </div>
           </motion.div>
@@ -409,17 +341,6 @@ export default function Hero() {
         @keyframes blink {
           50% {
             opacity: 0;
-          }
-        }
-        @keyframes gemini-shimmer {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
           }
         }
       `}</style>

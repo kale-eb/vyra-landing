@@ -37,7 +37,8 @@ export default function Footer() {
               Vyra
             </Link>
             <p className="mb-6 max-w-xs text-[14px] leading-[1.7] text-[var(--foreground-subtle)]">
-              AI-powered video editing through Claude, ChatGPT, and any MCP client.
+              AI-powered video editing — built-in AI chat, or bring Claude,
+              ChatGPT, or any MCP client.
             </p>
 
             {/* Social links */}

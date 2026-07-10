@@ -121,17 +121,31 @@ export default function RootLayout({
               offers: [
                 {
                   "@type": "Offer",
+                  price: "54",
+                  priceCurrency: "USD",
+                  name: "Vyra AI Starter",
+                  description: "Built-in AI editor, 6,000 processing credits, 100 GB storage, 1,000 exports/month, 1440p",
+                },
+                {
+                  "@type": "Offer",
+                  price: "129",
+                  priceCurrency: "USD",
+                  name: "Vyra AI Pro",
+                  description: "Built-in AI editor, 20,000 processing credits, 500 GB storage, 1,000 exports/month, 4K",
+                },
+                {
+                  "@type": "Offer",
                   price: "24",
                   priceCurrency: "USD",
                   name: "MCP Starter",
-                  description: "6,000 processing credits, 100 GB storage, unlimited exports, 1440p",
+                  description: "6,000 processing credits, 100 GB storage, 1,000 exports/month, 1440p",
                 },
                 {
                   "@type": "Offer",
                   price: "65",
                   priceCurrency: "USD",
                   name: "MCP Pro",
-                  description: "20,000 processing credits, 500 GB storage, unlimited exports, 4K",
+                  description: "20,000 processing credits, 500 GB storage, 1,000 exports/month, 4K",
                 },
               ],
               aggregateRating: {

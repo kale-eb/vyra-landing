@@ -15,9 +15,9 @@ const columns = [
     rotate: -2,
   },
   {
-    title: "With Vyra MCP",
+    title: "With Vyra",
     items: [
-      "Edit directly from your AI chat",
+      "Edit by chatting — built-in AI or your own",
       "AI sees and understands your footage",
       "Full editor when you need control",
       "One conversation, start to finish",
@@ -94,18 +94,7 @@ export default function Alternatives() {
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
-            Alternatives are{" "}
-            <motion.span
-              initial={{ rotate: 10, y: -4 }}
-              whileInView={{ rotate: 3.5, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 50, damping: 8, delay: 0.4 }}
-              className="inline-block origin-top-left font-normal"
-              style={{ fontFamily: "var(--font-abril-fatface), 'Abril Fatface', serif" }}
-            >
-              expensive
-            </motion.span>{" "}
-            and slow
+            Alternatives are expensive and slow
           </h2>
           <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
             Whether you learn a pro tool or hire someone, the current options

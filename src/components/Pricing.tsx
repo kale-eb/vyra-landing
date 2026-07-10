@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface PricingTier {
@@ -11,7 +12,7 @@ interface PricingTier {
   monthly_exports: number;
   storage_gb: number;
   max_export_seconds: number;
-  max_export_resolution?: number;
+  max_export_resolution?: number | string;
   max_projects?: number;
   processing_credits?: number;
 }
@@ -38,12 +39,21 @@ const DESCRIPTIONS: Record<string, string> = {
   mcp_pro: "For professionals and teams.",
 };
 
-function formatResolution(height: number): string {
-  if (height >= 2160) return "4K";
-  if (height >= 1440) return "1440p";
-  if (height >= 1080) return "1080p";
-  if (height >= 720) return "720p";
-  return `${height}p`;
+function formatResolution(value: number | string): string {
+  // The API may send either a height (1440) or a label ("1440p", "4k")
+  if (typeof value === "string") {
+    const label = value.trim().toLowerCase();
+    if (label === "4k" || label === "2160p") return "4K";
+    if (/^\d+p$/.test(label)) return label;
+    const parsed = parseInt(label, 10);
+    if (!isNaN(parsed) && /^\d+$/.test(label)) return formatResolution(parsed);
+    return value;
+  }
+  if (value >= 2160) return "4K";
+  if (value >= 1440) return "1440p";
+  if (value >= 1080) return "1080p";
+  if (value >= 720) return "720p";
+  return `${value}p`;
 }
 
 function buildPlans(tiers: PricingTier[] | null): Plan[] {
@@ -104,6 +114,47 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
   });
 }
 
+const VYRA_AI_PLANS: Plan[] = [
+  {
+    name: "Vyra AI Starter",
+    price: "$54",
+    period: "/mo",
+    description: "Built-in AI editing for creators who publish regularly.",
+    features: [
+      { text: "Built-in AI editor — no AI subscription needed", included: true },
+      { text: "6,000 processing credits", included: true },
+      { text: "100 GB storage", included: true },
+      { text: "1440p export resolution", included: true },
+      { text: "1,000 exports/month", included: true },
+      { text: "1,000 projects", included: true },
+      { text: "Motion graphic export", included: true },
+      { text: "MCP access", included: true },
+    ],
+    highlighted: true,
+    cta: "Start free trial",
+    trialNote: "3-day free trial",
+  },
+  {
+    name: "Vyra AI Pro",
+    price: "$129",
+    period: "/mo",
+    description: "Full power for professionals and teams.",
+    features: [
+      { text: "Built-in AI editor — no AI subscription needed", included: true },
+      { text: "20,000 processing credits", included: true },
+      { text: "500 GB storage", included: true },
+      { text: "4K export resolution", included: true },
+      { text: "1,000 exports/month", included: true },
+      { text: "1,000 projects", included: true },
+      { text: "Motion graphic export", included: true },
+      { text: "MCP access", included: true },
+    ],
+    highlighted: false,
+    cta: "Start free trial",
+    trialNote: "3-day free trial",
+  },
+];
+
 const FALLBACK_PLANS: Plan[] = [
   {
     name: "MCP Starter",
@@ -114,7 +165,7 @@ const FALLBACK_PLANS: Plan[] = [
       { text: "6,000 processing credits", included: true },
       { text: "100 GB storage", included: true },
       { text: "1440p export resolution", included: true },
-      { text: "Unlimited exports", included: true },
+      { text: "1,000 exports/month", included: true },
       { text: "100 projects", included: true },
       { text: "Motion graphic export", included: true },
       { text: "MCP access", included: true },
@@ -132,8 +183,8 @@ const FALLBACK_PLANS: Plan[] = [
       { text: "20,000 processing credits", included: true },
       { text: "500 GB storage", included: true },
       { text: "4K export resolution", included: true },
-      { text: "Unlimited exports", included: true },
-      { text: "Unlimited projects", included: true },
+      { text: "1,000 exports/month", included: true },
+      { text: "1,000 projects", included: true },
       { text: "Motion graphic export", included: true },
       { text: "MCP access", included: true },
     ],
@@ -144,7 +195,8 @@ const FALLBACK_PLANS: Plan[] = [
 ];
 
 export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
-  const plans = buildPlans(tiers ?? null);
+  const [tab, setTab] = useState<"vyra_ai" | "mcp">("vyra_ai");
+  const plans = tab === "vyra_ai" ? VYRA_AI_PLANS : buildPlans(tiers ?? null);
 
   return (
     <section id="pricing" className="relative py-28 px-6 bg-[var(--surface)]">
@@ -173,9 +225,35 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
             Simple, honest pricing
           </h2>
           <p className="mx-auto max-w-md text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Pay for processing only. Every plan starts with a free trial.
+            Use Vyra&apos;s built-in AI, or bring your own via MCP. Every plan
+            starts with a free trial.
           </p>
         </motion.div>
+
+        {/* Plan type tabs */}
+        <div className="mb-10 flex justify-center">
+          <div className="inline-flex rounded-full border border-[var(--surface-border)] bg-white p-1">
+            {(
+              [
+                { key: "vyra_ai", label: "Vyra AI" },
+                { key: "mcp", label: "Bring your own AI (MCP)" },
+              ] as const
+            ).map(({ key, label }) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setTab(key)}
+                className={`rounded-full px-5 py-2 text-[13px] font-semibold transition-all duration-200 ${
+                  tab === key
+                    ? "bg-[var(--brand-blue)] text-white shadow-sm"
+                    : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Pricing cards */}
         <div className="mx-auto grid max-w-3xl gap-5 md:grid-cols-2 md:gap-6">
@@ -319,7 +397,9 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          All plans include MCP access and a 3-day free trial. Cancel anytime before it ends.
+          All plans include MCP access and a 3-day free trial — cancel anytime
+          before it ends. Vyra AI plans add the built-in AI editor, no external
+          AI subscription required.
         </motion.p>
       </div>
     </section>
