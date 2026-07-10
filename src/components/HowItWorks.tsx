@@ -1,6 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+function LogoRow({ logos }: { logos: { src: string; alt: string }[] }) {
+  return (
+    <div className="ml-2.5 flex shrink-0 items-center gap-2">
+      {logos.map(({ src, alt }) => (
+        <Image
+          key={src}
+          src={src}
+          alt={alt}
+          title={alt}
+          width={16}
+          height={16}
+          className="shrink-0"
+        />
+      ))}
+    </div>
+  );
+}
 
 const containerVariants = {
   hidden: {},
@@ -135,22 +154,22 @@ function TerminalMock() {
   );
 }
 
-/* ---- Web App Mock (ChatGPT-like) ---- */
+/* ---- In-App Chat Mock (Vyra's built-in AI) ---- */
 function WebAppMock() {
   return (
-    <div className="bg-white flex-1">
+    <div className="bg-[#15171c] flex-1">
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-3 py-2 bg-[#f8f8f8] border-b border-black/[0.06]">
+      <div className="flex items-center gap-2 px-3 py-2 bg-[#1a1d23] border-b border-white/[0.06]">
         <div className="flex gap-1.5">
-          <div className="h-[9px] w-[9px] rounded-full bg-black/[0.08]" />
-          <div className="h-[9px] w-[9px] rounded-full bg-black/[0.08]" />
-          <div className="h-[9px] w-[9px] rounded-full bg-black/[0.08]" />
+          <div className="h-[9px] w-[9px] rounded-full bg-[#ff5f57]" />
+          <div className="h-[9px] w-[9px] rounded-full bg-[#febc2e]" />
+          <div className="h-[9px] w-[9px] rounded-full bg-[#28c840]" />
         </div>
-        <div className="flex-1 mx-8 rounded-md bg-white border border-black/[0.08] px-3 py-1 flex items-center gap-1.5">
+        <div className="flex-1 mx-8 rounded-md bg-white/[0.04] border border-white/[0.08] px-3 py-1 flex items-center gap-1.5">
           <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-            <path d="M8 1a7 7 0 100 14A7 7 0 008 1z" stroke="currentColor" strokeWidth="1.2" className="text-black/20" />
+            <path d="M8 1a7 7 0 100 14A7 7 0 008 1z" stroke="currentColor" strokeWidth="1.2" className="text-white/20" />
           </svg>
-          <span className="text-[10px] text-black/40">chatgpt.com</span>
+          <span className="text-[10px] text-white/40">app.usevyra.com</span>
         </div>
       </div>
 
@@ -158,30 +177,30 @@ function WebAppMock() {
       <div className="p-4 flex flex-col gap-3">
         {/* User */}
         <div className="flex items-start gap-2.5">
-          <div className="mt-0.5 h-5 w-5 rounded-full bg-black/[0.06] flex items-center justify-center shrink-0">
-            <span className="text-[8px] text-black/30 font-bold">Y</span>
+          <div className="mt-0.5 h-5 w-5 rounded-full bg-white/[0.08] flex items-center justify-center shrink-0">
+            <span className="text-[8px] text-white/40 font-bold">Y</span>
           </div>
-          <p className="text-[11px] leading-relaxed text-[#111] bg-[#f7f7f8] rounded-xl px-3 py-2">
+          <p className="text-[11px] leading-relaxed text-white/80 bg-white/[0.07] rounded-xl px-3 py-2">
             Remove the background music and add captions
           </p>
         </div>
 
         {/* AI */}
         <div className="flex items-start gap-2.5">
-          <div className="mt-0.5 h-5 w-5 rounded-full bg-[#10a37f]/10 flex items-center justify-center shrink-0">
-            <span className="text-[8px] text-[#10a37f] font-bold">G</span>
+          <div className="mt-0.5 h-5 w-5 rounded-full bg-[#6490D0]/20 flex items-center justify-center shrink-0">
+            <span className="text-[8px] text-[#8fb3e8] font-bold">V</span>
           </div>
           <div className="flex flex-col gap-1.5">
-            <p className="text-[11px] leading-relaxed text-[#333]">
+            <p className="text-[11px] leading-relaxed text-white/60">
               I&apos;ll remove the audio track and generate captions from the speech.
             </p>
             {/* Tool badge */}
-            <div className="inline-flex items-center gap-1.5 rounded-md bg-black/[0.03] border border-black/[0.06] px-2 py-1 self-start">
-              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              <span className="text-[9px] text-black/35 font-medium">vyra.addCaptions</span>
+            <div className="inline-flex items-center gap-1.5 rounded-md bg-white/[0.04] border border-white/[0.06] px-2 py-1 self-start">
+              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
+              <span className="text-[9px] text-white/40 font-medium">addCaptions</span>
             </div>
-            <p className="text-[11px] leading-relaxed text-[#333]">
-              <span className="text-emerald-600">Done</span> — audio track removed, 31 captions synced to speech.
+            <p className="text-[11px] leading-relaxed text-white/60">
+              <span className="text-emerald-400">Done</span> — audio track removed, 31 captions synced to speech.
             </p>
           </div>
         </div>
@@ -218,8 +237,8 @@ export default function HowItWorks() {
             One editor, every interface
           </h2>
           <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Whether you use a desktop app, terminal, or web browser — Vyra works
-            wherever your AI assistant lives.
+            Chat with the AI built right into Vyra — or connect the assistant
+            you already use, wherever it lives.
           </p>
         </motion.div>
 
@@ -231,15 +250,15 @@ export default function HowItWorks() {
           viewport={{ once: true, margin: "-60px" }}
           className="grid gap-6 md:grid-cols-3"
         >
-          {/* Desktop App */}
+          {/* In Vyra */}
           <motion.div variants={cardVariants} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
-            <DesktopMock />
+            <WebAppMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Desktop App
+                In Vyra
               </h3>
               <p className="text-[12px] text-[var(--foreground-subtle)]">
-                Claude Desktop, ChatGPT app, Cursor
+                Built-in AI chat — no external AI needed
               </p>
             </div>
           </motion.div>
@@ -248,24 +267,42 @@ export default function HowItWorks() {
           <motion.div variants={cardVariants} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <TerminalMock />
             <div className="border-t border-[var(--surface-border)] p-5">
-              <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Terminal
-              </h3>
+              <div className="flex items-center">
+                <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                  Terminal
+                </h3>
+                <LogoRow
+                  logos={[
+                    { src: "/logos/claude.svg", alt: "Claude Code" },
+                    { src: "/logos/codex.svg", alt: "Codex CLI" },
+                    { src: "/logos/mcp.svg", alt: "Model Context Protocol" },
+                  ]}
+                />
+              </div>
               <p className="text-[12px] text-[var(--foreground-subtle)]">
-                Claude Code, CLI clients, developer tools
+                Claude Code, Codex CLI, any MCP client
               </p>
             </div>
           </motion.div>
 
-          {/* Web App */}
+          {/* Desktop App */}
           <motion.div variants={cardVariants} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
-            <WebAppMock />
+            <DesktopMock />
             <div className="border-t border-[var(--surface-border)] p-5">
-              <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-                Web App
-              </h3>
+              <div className="flex items-center">
+                <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
+                  Desktop App
+                </h3>
+                <LogoRow
+                  logos={[
+                    { src: "/logos/claude.svg", alt: "Claude Desktop" },
+                    { src: "/logos/openai.svg", alt: "ChatGPT" },
+                    { src: "/logos/cursor.svg", alt: "Cursor" },
+                  ]}
+                />
+              </div>
               <p className="text-[12px] text-[var(--foreground-subtle)]">
-                claude.ai, chatgpt.com, any web client
+                Claude Desktop, ChatGPT app, Cursor
               </p>
             </div>
           </motion.div>
