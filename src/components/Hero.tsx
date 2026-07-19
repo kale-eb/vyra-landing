@@ -8,7 +8,7 @@ import BrowserFrame from "./BrowserFrame";
 const SCROLL_VIDEO_URL =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/hero-mcp-demo.mp4";
 
-const TYPED_HEADLINE = "a conversation.";
+const TYPED_HEADLINE = "Finished video out.";
 
 function useHeadlineTypewriter() {
   const [displayed, setDisplayed] = useState("");
@@ -141,7 +141,7 @@ export default function Hero() {
           className="mb-5"
         >
           <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] font-black tracking-[-0.03em] text-[var(--foreground)]">
-            Video editing is now
+            Raw footage in.
           </span>
           <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.02em] text-[var(--foreground)]">
             <span className="serif-italic font-normal">{displayed}</span>
@@ -164,8 +164,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.55 }}
           className="mb-6 max-w-lg text-[15px] leading-[1.7] font-normal text-[var(--foreground-muted)]"
         >
-          Describe your edit naturally. Vyra cuts, captions, and styles your
-          real footage — no editing skills, no external AI needed.
+          Drop in your clips, describe what you want, and Vyra cuts, captions,
+          and styles it for you. All in a real timeline editor you can still
+          touch up by hand.
         </motion.p>
 
         {/* CTA */}
@@ -269,7 +270,7 @@ export default function Hero() {
                 <div className="h-[9px] w-[9px] rounded-full bg-[#28c840]" />
               </div>
               <div className="flex-1 text-center">
-                <span className="text-[10px] text-white/25 font-medium">Vyra AI — Editing session</span>
+                <span className="text-[10px] text-white/25 font-medium">Vyra AI · Editing session</span>
               </div>
             </div>
 

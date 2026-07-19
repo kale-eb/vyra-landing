@@ -6,12 +6,12 @@ const faqs = [
   {
     question: "What is Vyra?",
     answer:
-      "Vyra is a video editor you control by chatting with AI. Describe your edit in plain English and the AI handles cuts, captions, effects, and more \u2014 using your real footage. Use Vyra's built-in AI chat, or connect your own assistant like Claude or ChatGPT via MCP.",
+      "Vyra is a video editor you control by chatting with AI. Describe your edit in plain English and the AI handles cuts, captions, effects, and more, all using your real footage. Use Vyra's built-in AI chat, or connect your own assistant like Claude or ChatGPT via MCP.",
   },
   {
     question: "Do I need an AI subscription to use Vyra?",
     answer:
-      "No. Vyra AI plans include a built-in AI editor right in the app \u2014 no external AI subscription needed. If you already pay for Claude, ChatGPT, or another MCP client, the MCP plans let you bring your own AI at a lower price.",
+      "No. Vyra AI plans include a built-in AI editor right in the app, so no external AI subscription is needed. If you already pay for Claude, ChatGPT, or another MCP client, the MCP plans let you bring your own AI at a lower price.",
   },
   {
     question: "What is MCP?",
@@ -31,12 +31,12 @@ const faqs = [
   {
     question: "How is this different from other AI video tools?",
     answer:
-      "Most AI video tools generate synthetic content. Vyra edits your real footage \u2014 it understands what\u2019s in your clips and makes intelligent editing decisions, not templates.",
+      "Most AI video tools generate synthetic content. Vyra edits your real footage. It understands what\u2019s in your clips and makes intelligent editing decisions, not templates.",
   },
   {
     question: "Is there a free trial?",
     answer:
-      "Yes — every plan starts with a 3-day free trial, so you can see if Vyra fits your workflow before you’re charged. Cancel anytime before it ends.",
+      "Yes. Every plan starts with a 3-day free trial, so you can see if Vyra fits your workflow before you’re charged. Cancel anytime before it ends.",
   },
 ];
 

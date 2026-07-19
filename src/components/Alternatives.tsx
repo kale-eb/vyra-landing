@@ -17,7 +17,7 @@ const columns = [
   {
     title: "With Vyra",
     items: [
-      "Edit by chatting — built-in AI or your own",
+      "Edit by chatting, with built-in AI or your own",
       "AI sees and understands your footage",
       "Full editor when you need control",
       "One conversation, start to finish",

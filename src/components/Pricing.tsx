@@ -121,7 +121,7 @@ const VYRA_AI_PLANS: Plan[] = [
     period: "/mo",
     description: "Built-in AI editing for creators who publish regularly.",
     features: [
-      { text: "Built-in AI editor — no AI subscription needed", included: true },
+      { text: "Built-in AI editor, no AI subscription needed", included: true },
       { text: "6,000 processing credits", included: true },
       { text: "100 GB storage", included: true },
       { text: "1440p export resolution", included: true },
@@ -140,7 +140,7 @@ const VYRA_AI_PLANS: Plan[] = [
     period: "/mo",
     description: "Full power for professionals and teams.",
     features: [
-      { text: "Built-in AI editor — no AI subscription needed", included: true },
+      { text: "Built-in AI editor, no AI subscription needed", included: true },
       { text: "20,000 processing credits", included: true },
       { text: "500 GB storage", included: true },
       { text: "4K export resolution", included: true },
@@ -397,7 +397,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          All plans include MCP access and a 3-day free trial — cancel anytime
+          All plans include MCP access and a 3-day free trial. Cancel anytime
           before it ends. Vyra AI plans add the built-in AI editor, no external
           AI subscription required.
         </motion.p>

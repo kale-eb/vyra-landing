@@ -31,10 +31,10 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Features />
         <HowItWorks />
         <MadeWithVyra />
         <Alternatives />
-        <Features />
         <Pricing tiers={tiers} />
         <FAQ />
         <FinalCTA />

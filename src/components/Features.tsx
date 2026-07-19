@@ -37,7 +37,7 @@ const FEATURES: FeatureCard[] = [
     id: "motion-graphics",
     title: "Motion Graphics",
     description:
-      "The AI generates animated titles, lower thirds, data visualizations, and more — written as code components and rendered in real-time on your timeline.",
+      "The AI generates animated titles, lower thirds, data visualizations, and more, written as code components and rendered in real-time on your timeline.",
     icon: (
       <svg
         width="16"
@@ -65,7 +65,7 @@ const FEATURES: FeatureCard[] = [
     id: "footage-understanding",
     title: "Understands Your Footage",
     description:
-      "Vyra analyzes every clip — detecting scenes, transcribing speech, identifying objects and people. Your AI assistant sees what's actually in your footage and makes editing decisions based on real content, not guesses.",
+      "Vyra analyzes every clip, detecting scenes, transcribing speech, identifying objects and people. Your AI assistant sees what's actually in your footage and makes editing decisions based on real content, not guesses.",
     tryPrompt: '"Find the best moments and cut them together"',
     icon: (
       <svg
@@ -113,7 +113,7 @@ const FEATURES: FeatureCard[] = [
     id: "reference-style",
     title: "Match Reference Style",
     description:
-      "Drop in a reference video and the AI analyzes its pacing, color, and transitions — then applies that same style to your footage.",
+      "Drop in a reference video and the AI analyzes its pacing, color, and transitions, then applies that same style to your footage.",
     tryPrompt: '"Match the style and pacing of this reference"',
     icon: (
       <svg
@@ -140,7 +140,7 @@ const FEATURES: FeatureCard[] = [
     id: "captions",
     title: "AI Captions",
     description:
-      "AI generates and syncs captions from speech, placed on the timeline automatically. Style them with a prompt — bold, minimal, animated, anything.",
+      "AI generates and syncs captions from speech, placed on the timeline automatically. Style them with a prompt: bold, minimal, animated, anything.",
     tryPrompt: '"Add captions in bold white"',
     icon: (
       <svg
@@ -841,7 +841,7 @@ export default function Features() {
         {/* Disclaimer */}
         <p className="text-center text-[12px] text-[var(--foreground-subtle)] mt-6">
           Every result shown above was generated entirely by Vyra&apos;s AI
-          agent — the only human input was a prompt.
+          agent. The only human input was a prompt.
         </p>
       </div>
     </section>

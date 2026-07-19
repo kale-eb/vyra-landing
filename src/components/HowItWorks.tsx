@@ -200,7 +200,7 @@ function WebAppMock() {
               <span className="text-[9px] text-white/40 font-medium">addCaptions</span>
             </div>
             <p className="text-[11px] leading-relaxed text-white/60">
-              <span className="text-emerald-400">Done</span> — audio track removed, 31 captions synced to speech.
+              <span className="text-emerald-400">Done</span>. Audio track removed, 31 captions synced to speech.
             </p>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function HowItWorks() {
             One editor, every interface
           </h2>
           <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Chat with the AI built right into Vyra — or connect the assistant
+            Chat with the AI built right into Vyra, or connect the assistant
             you already use, wherever it lives.
           </p>
         </motion.div>
@@ -258,7 +258,7 @@ export default function HowItWorks() {
                 In Vyra
               </h3>
               <p className="text-[12px] text-[var(--foreground-subtle)]">
-                Built-in AI chat — no external AI needed
+                Built-in AI chat, no external AI needed
               </p>
             </div>
           </motion.div>
