@@ -85,7 +85,7 @@ export const posts: Post[] = [
     sections: [
       {
         kind: "flowDiagram",
-        caption: "Your existing AI agent connects to Vyra through MCP — it gets eyes on your footage and hands on the timeline.",
+        caption: "Your existing AI agent connects to Vyra through MCP - it gets eyes on your footage and hands on the timeline.",
         sources: ["Claude", "ChatGPT", "Cursor"],
         via: "MCP",
         target: "Vyra",
@@ -117,7 +117,7 @@ export const posts: Post[] = [
         items: [
           {
             title: "Connect your agent",
-            body: "Connect your AI agent to Vyra through MCP. Setup takes a few minutes — once it's wired up, every conversation has access to the editor.",
+            body: "Connect your AI agent to Vyra through MCP. Setup takes a few minutes - once it's wired up, every conversation has access to the editor.",
           },
           {
             title: "Index your footage",
@@ -125,7 +125,7 @@ export const posts: Post[] = [
           },
           {
             title: "Talk to your agent",
-            body: "Describe what you want in the chat you already use. The agent searches, cuts, animates, and assembles the edit — you watch it happen in real time.",
+            body: "Describe what you want in the chat you already use. The agent searches, cuts, animates, and assembles the edit - you watch it happen in real time.",
           },
         ],
       },
@@ -183,7 +183,7 @@ export const posts: Post[] = [
             label: "Vyra",
             price: "$29.99",
             breakdown: ["Claude Pro: $20", "Vyra: $9.99"],
-            note: "Your AI works across every task — writing, code, editing.",
+            note: "Your AI works across every task - writing, code, editing.",
             highlight: true,
           },
           {
@@ -666,7 +666,7 @@ export const posts: Post[] = [
         heading: "When to use Vyra",
         paragraphs: [
           "Vyra is the right choice if you want AI to do the editing for you. If you have real footage and you want an AI agent to search through it, find the right moments, build edits, and create custom motion graphics, Vyra handles all of that.",
-          "It's also the better choice if you care about editing quality. VEED's editing toolkit is constrained — basic text animations, no keyframing, and AI features locked to its own UI. Vyra has a full editing toolkit that any AI agent can drive.",
+          "It's also the better choice if you care about editing quality. VEED's editing toolkit is constrained - basic text animations, no keyframing, and AI features locked to its own UI. Vyra has a full editing toolkit that any AI agent can drive.",
           "And at $9.99/month for Vyra's base tier vs $18/month for VEED's cheapest paid plan, Vyra costs less while offering significantly more editing capability.",
         ],
       },

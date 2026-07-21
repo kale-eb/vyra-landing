@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Force dark mode to class-based only — prevents prefers-color-scheme from overriding light theme */
+/* Force dark mode to class-based only - prevents prefers-color-scheme from overriding light theme */
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -16,6 +16,10 @@
   --surface-elevated: #ffffff;
   --surface-border: rgba(0, 0, 0, 0.08);
   --surface-border-hover: rgba(0, 0, 0, 0.15);
+
+  /* Loaded from the Fontshare CDN in layout.tsx. Declared here so
+     --font-display below resolves to an actual family. */
+  --font-cabinet-grotesk: "Cabinet Grotesk";
 }
 
 @theme inline {
@@ -48,6 +52,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings run on Cabinet Grotesk. Anything that opts into .serif-italic
+   overrides this, so the hero's italic line is unaffected. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-cabinet-grotesk), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
 /* Selection color */
 ::selection {
   background: var(--brand-blue);
@@ -72,7 +89,7 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* Section divider — subtle gray line */
+/* Section divider - subtle gray line */
 .section-divider {
   height: 1px;
   background: linear-gradient(

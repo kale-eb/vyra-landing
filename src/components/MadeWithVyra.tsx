@@ -97,7 +97,7 @@ export default function MadeWithVyra() {
           onMouseEnter={() => { pausedRef.current = true; }}
           onMouseLeave={() => { pausedRef.current = false; }}
         >
-          {/* Card stage — fixed height, overflow hidden to clip far cards */}
+          {/* Card stage - fixed height, overflow hidden to clip far cards */}
           <div className="relative mx-auto flex h-[420px] items-center justify-center overflow-hidden sm:h-[480px]">
             {examples.map((example, i) => {
               const offset = getOffset(i);

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, Abril_Fatface } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { PostHogInit } from "./posthog";
 import "./globals.css";
@@ -18,16 +18,9 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-const abrilFatface = Abril_Fatface({
-  variable: "--font-abril-fatface",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.usevyra.com"),
-  title: "Vyra — AI Video Editor",
+  title: "Vyra - AI Video Editor",
   description:
     "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
   icons: {
@@ -54,7 +47,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.usevyra.com",
     siteName: "Vyra",
-    title: "Vyra — AI Video Editor",
+    title: "Vyra - AI Video Editor",
     description:
       "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
     images: [
@@ -62,13 +55,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Vyra — AI Video Editor",
+        alt: "Vyra - AI Video Editor",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vyra — AI Video Editor",
+    title: "Vyra - AI Video Editor",
     description:
       "Turn raw footage into finished videos in minutes. AI-powered editing with full control.",
     images: ["/og-image.png"],
@@ -94,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Cabinet Grotesk from Fontshare CDN — preload to reduce render-blocking */}
+        {/* Cabinet Grotesk from Fontshare CDN - preload to reduce render-blocking */}
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link
           rel="preload"
@@ -157,7 +150,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${instrumentSerif.variable} ${abrilFatface.variable} antialiased`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} antialiased`}>
         {children}
         <Analytics />
         <PostHogInit />

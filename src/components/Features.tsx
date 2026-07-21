@@ -384,7 +384,7 @@ function FootageUnderstandingCard({ card }: { card: FeatureCard }) {
           ))}
         </div>
 
-        {/* Analysis summary pills — inline so they never overlap thumbnails */}
+        {/* Analysis summary pills - inline so they never overlap thumbnails */}
         <div className="mt-3 flex flex-wrap gap-1.5">
           <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
             6 clips analyzed
@@ -805,7 +805,7 @@ export default function Features() {
           transition={{ staggerChildren: 0.12 }}
           className="grid gap-5 md:grid-cols-2"
         >
-          {/* Row 1: Smart Masks — full width */}
+          {/* Row 1: Smart Masks - full width */}
           <motion.div
             variants={cardVariants}
             className="md:col-span-2 overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm"
@@ -828,7 +828,7 @@ export default function Features() {
             <MusicSyncCard card={FEATURES[2]} />
           </motion.div>
 
-          {/* Row 3: Reference Style — full width */}
+          {/* Row 3: Reference Style - full width */}
           <motion.div
             variants={cardVariants}
             className="md:col-span-2 overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm"

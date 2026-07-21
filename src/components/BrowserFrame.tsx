@@ -15,7 +15,7 @@ export default function BrowserFrame({
     <div
       className={`overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.03)] ${className}`}
     >
-      {/* Browser chrome — light */}
+      {/* Browser chrome - light */}
       <div className="flex items-center gap-3 border-b border-black/[0.06] bg-[#f0f0f2] px-4 py-3">
         {/* Window dots */}
         <div className="flex gap-2">
@@ -24,7 +24,7 @@ export default function BrowserFrame({
           <div className="h-[10px] w-[10px] rounded-full bg-[#28c840]" />
         </div>
 
-        {/* URL bar — centered */}
+        {/* URL bar - centered */}
         <div className="ml-2 flex flex-1 items-center justify-center">
           <div className="flex items-center gap-2 rounded-lg border border-black/[0.06] bg-white/80 px-3.5 py-[5px]">
             <svg

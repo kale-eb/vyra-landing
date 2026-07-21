@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ClientTabs } from "./client-tabs";
 
 export const metadata: Metadata = {
-  title: "MCP Server — Vyra Docs",
+  title: "MCP Server - Vyra Docs",
   description:
     "Connect Claude Code, Codex, or any MCP-compatible agent to control the Vyra video editor.",
 };
@@ -39,7 +39,7 @@ export default function McpDocsPage() {
         </h1>
         <p className="mb-12 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
           Connect Claude Code, Codex, or any MCP-compatible agent to control your Vyra editor remotely.
-          The agent can view your timeline, add media, edit properties, apply effects, and more —
+          The agent can view your timeline, add media, edit properties, apply effects, and more -
           all while you see changes in real time in your browser.
         </p>
 
@@ -114,7 +114,7 @@ export default function McpDocsPage() {
                 <p>
                   Click the <strong className="text-[var(--foreground)]">Connect MCP</strong> button in the editor&apos;s top
                   bar to bind this specific browser tab to your agent. Editing-tool calls from the agent only land in the
-                  tab you&apos;ve connected — if you have multiple tabs open, this is how you pick which one the agent drives.
+                  tab you&apos;ve connected - if you have multiple tabs open, this is how you pick which one the agent drives.
                   A green status dot means you&apos;re bound.
                 </p>
                 <div className="mt-3 max-w-[400px] overflow-hidden rounded-xl border border-[var(--surface-border)] shadow-sm">
@@ -150,7 +150,7 @@ export default function McpDocsPage() {
                 <CapabilityGroup title="Edit & Build">
                   <li>Add video, audio, images to the timeline with trim control</li>
                   <li>Add text overlays, shapes, and styled captions</li>
-                  <li>Edit properties — position, scale, opacity, volume, speed</li>
+                  <li>Edit properties - position, scale, opacity, volume, speed</li>
                   <li>Move, split, slip, clone, and delete timeline items</li>
                   <li>Set keyframes for animation</li>
                 </CapabilityGroup>
@@ -198,7 +198,7 @@ export default function McpDocsPage() {
 
         </div>
 
-        {/* Troubleshooting — visually separated as a "Stuck?" panel */}
+        {/* Troubleshooting - visually separated as a "Stuck?" panel */}
         <section className="mt-16 border-t border-[var(--surface-border)] pt-12">
           <div className="mb-5 text-center">
             <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-[var(--foreground-subtle)]">
@@ -221,7 +221,7 @@ export default function McpDocsPage() {
                   app.usevyra.com
                 </a>{" "}
                 AND that you&apos;ve clicked <strong className="text-[var(--foreground)]">Connect MCP</strong> in the
-                top bar of that tab. Editor tools require an explicit tab binding — opening the project alone
+                top bar of that tab. Editor tools require an explicit tab binding - opening the project alone
                 isn&apos;t enough.
               </div>
             </details>
@@ -256,7 +256,7 @@ export default function McpDocsPage() {
                 <ChevronDown />
               </summary>
               <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
-                Reconnect the MCP session. The tool list is fetched on initialization —
+                Reconnect the MCP session. The tool list is fetched on initialization -
                 if tools were updated, restart the connection.
               </div>
             </details>

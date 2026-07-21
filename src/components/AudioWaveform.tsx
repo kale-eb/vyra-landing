@@ -1,5 +1,5 @@
 /**
- * AudioWaveform — exaggerated mirrored waveform synced to a <video> element.
+ * AudioWaveform - exaggerated mirrored waveform synced to a <video> element.
  *
  * Uses @remotion/media-utils to decode audio and extract amplitude bars,
  * then renders them on a <canvas> with a moving playhead.

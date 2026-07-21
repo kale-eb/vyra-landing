@@ -66,7 +66,7 @@ export default function Hero() {
     }
   }, []);
 
-  // Scroll-scrub video — plays from page top to just past the hero
+  // Scroll-scrub video - plays from page top to just past the hero
   useEffect(() => {
     let raf = 0;
     const onScroll = () => {
@@ -219,7 +219,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero visual — browser frame + floating chat */}
+      {/* Hero visual - browser frame + floating chat */}
       <div
         ref={videoContainerRef}
         className="relative z-10 mx-auto mt-8 w-full max-w-6xl px-4 pb-16 md:pb-48 md:translate-x-[6%] md:-translate-y-2"
@@ -255,7 +255,7 @@ export default function Hero() {
             />
           </BrowserFrame>
 
-          {/* Floating chat window — Claude Desktop style */}
+          {/* Floating chat window - Claude Desktop style */}
           <motion.div
             initial={{ opacity: 0, y: 20, x: -10 }}
             animate={{ opacity: 1, y: 0, x: 0 }}

@@ -60,7 +60,7 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
   if (!tiers || tiers.length === 0) return FALLBACK_PLANS;
 
   const tierMap = Object.fromEntries(tiers.map((t) => [t.name, t]));
-  // No free tier — paid plans only, each with a free trial.
+  // No free tier - paid plans only, each with a free trial.
   const names = ["mcp_starter", "mcp_pro"];
 
   // If the API doesn't have our MCP tiers yet, use fallbacks
@@ -77,7 +77,7 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
     }
 
     const isPaid = name !== "free";
-    // Show the headline monthly price ($24 / $65) — matches the in-app pricing
+    // Show the headline monthly price ($24 / $65) - matches the in-app pricing
     // page. (Don't divide the yearly price by 12; that undersells the plan.)
     const displayPrice = tier.monthly_price;
 

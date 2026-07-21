@@ -27,7 +27,7 @@ export default function Footer() {
     <footer className="relative border-t border-[var(--surface-border)] bg-[var(--background)] px-6 pt-16 pb-10">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
-          {/* Brand column — takes up more space */}
+          {/* Brand column - takes up more space */}
           <div className="lg:col-span-4">
             <Link
               href="/"

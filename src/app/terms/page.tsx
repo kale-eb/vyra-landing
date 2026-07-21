@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Vyra",
+  title: "Terms of Service - Vyra",
   description:
     "Terms of Service for Vyra, the AI-powered video editing platform.",
 };
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      {/* Minimal nav — just the logo */}
+      {/* Minimal nav - just the logo */}
       <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center px-6">
           <Link

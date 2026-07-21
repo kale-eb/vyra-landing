@@ -45,7 +45,7 @@ export default function FAQ() {
     <section className="relative py-28 px-6">
       <div className="relative mx-auto max-w-5xl">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left column — heading */}
+          {/* Left column - heading */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function FAQ() {
             </h2>
           </motion.div>
 
-          {/* Right column — Q&A cards */}
+          {/* Right column - Q&A cards */}
           <div className="flex flex-col gap-4 lg:col-span-8">
             {faqs.map((faq, i) => (
               <motion.div

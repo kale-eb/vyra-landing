@@ -29,12 +29,12 @@ export default function VideoPlaceholder({
         }}
       />
 
-      {/* Ambient color wash — top-left corner glow */}
+      {/* Ambient color wash - top-left corner glow */}
       <div className="absolute -top-1/4 -left-1/4 h-3/4 w-3/4 rounded-full bg-[var(--brand-blue)] opacity-[0.03] blur-[80px]" />
 
       {/* Center content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-        {/* Play button — light frosted glass */}
+        {/* Play button - light frosted glass */}
         <div className="group/play flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-black/[0.08] bg-white/60 backdrop-blur-sm transition-all duration-300 hover:border-black/[0.12] hover:bg-white/80 hover:scale-105 hover:shadow-lg hover:shadow-black/[0.06]">
           <svg
             width="16"

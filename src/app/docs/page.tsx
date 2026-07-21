@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Documentation — Vyra",
+  title: "Documentation - Vyra",
   description: "Guides and documentation for the Vyra video editor.",
 };
 
@@ -44,7 +44,7 @@ const guides = [
   {
     title: "Getting Started",
     description:
-      "Everything you need to know — from uploading footage to getting the most out of the AI agent.",
+      "Everything you need to know - from uploading footage to getting the most out of the AI agent.",
     href: "/docs/guide",
     icon: BookIcon,
   },

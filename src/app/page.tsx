@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import SocialProof from "@/components/SocialProof";
 import RealFootage from "@/components/RealFootage";
 import HowItWorks from "@/components/HowItWorks";
 import MadeWithVyra from "@/components/MadeWithVyra";
@@ -32,6 +33,7 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero />
+        <SocialProof />
         <RealFootage />
         <Features />
         <HowItWorks />

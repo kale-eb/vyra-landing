@@ -37,7 +37,7 @@ const cardVariants = {
   },
 };
 
-/* ---- Desktop App Mock (Claude Desktop — warm brown tones) ---- */
+/* ---- Desktop App Mock (Claude Desktop - warm brown tones) ---- */
 function DesktopMock() {
   return (
     <div className="bg-[#1c1917] flex-1 text-[11px]">
@@ -86,7 +86,7 @@ function DesktopMock() {
               <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               <span className="text-white/40 text-[10px]">Done</span>
             </div>
-            <p className="text-white/60 leading-relaxed">Applied 0.5x speed ramp to 0:00–0:03. The intro now plays in slow motion.</p>
+            <p className="text-white/60 leading-relaxed">Applied 0.5x speed ramp to 0:00-0:03. The intro now plays in slow motion.</p>
           </div>
 
           {/* Input bar */}
@@ -137,7 +137,7 @@ function TerminalMock() {
         <p>
           <span className="text-white/20">  </span>
           <span className="text-emerald-400/70">✓</span>
-          <span className="text-white/50"> Kept 0:47–1:18 (best segment)</span>
+          <span className="text-white/50"> Kept 0:47-1:18 (best segment)</span>
         </p>
         <p>
           <span className="text-white/20">  </span>
