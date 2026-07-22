@@ -87,16 +87,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Cabinet Grotesk from Fontshare CDN - preload to reduce render-blocking */}
-        <link rel="preconnect" href="https://api.fontshare.com" />
+        {/* Cabinet Grotesk is self-hosted; @font-face lives in globals.css */}
         <link
           rel="preload"
-          as="style"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&display=swap"
-        />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,600,700,800,900&display=swap"
-          rel="stylesheet"
+          as="font"
+          type="font/woff2"
+          href="/fonts/CabinetGrotesk-Variable.woff2"
+          crossOrigin="anonymous"
         />
         {/* JSON-LD Structured Data */}
         <script

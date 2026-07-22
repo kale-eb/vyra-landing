@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -21,7 +22,7 @@ const faqs = [
   {
     question: "Which AI clients work with Vyra?",
     answer:
-      "Any MCP-compatible client works. We\u2019ve tested with Claude (Anthropic), ChatGPT, and several open-source clients. If your client supports MCP, it works with Vyra.",
+      "Any MCP-compatible client works. We’ve tested with Claude (Anthropic), ChatGPT, and several open-source clients. If your client supports MCP, it works with Vyra.",
   },
   {
     question: "Do I need editing experience?",
@@ -31,16 +32,76 @@ const faqs = [
   {
     question: "How is this different from other AI video tools?",
     answer:
-      "Most AI video tools generate synthetic content. Vyra edits your real footage. It understands what\u2019s in your clips and makes intelligent editing decisions, not templates.",
+      "Most AI video tools generate synthetic content. Vyra edits your real footage. It understands what’s in your clips and makes intelligent editing decisions, not templates.",
   },
   {
-    question: "Is there a free trial?",
+    question: "Can I try Vyra before paying?",
     answer:
-      "Yes. Every plan starts with a 3-day free trial, so you can see if Vyra fits your workflow before you’re charged. Cancel anytime before it ends.",
+      "Yes. Getting started is free, so you can see if Vyra fits your workflow before committing. Cancel anytime.",
   },
 ];
 
+function FAQItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="rounded-2xl border border-[var(--surface-border)] bg-white">
+      <button
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left sm:px-7"
+      >
+        <h3
+          className="text-[16px] font-bold text-[var(--foreground)]"
+          style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+        >
+          {question}
+        </h3>
+        <span
+          className={`flex h-6 w-6 shrink-0 items-center justify-center text-[var(--foreground-subtle)] transition-transform duration-200 ${
+            isOpen ? "rotate-45" : ""
+          }`}
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M7 1v12M1 7h12"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.21, 0.68, 0.35, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="px-6 pb-6 text-[14px] leading-[1.7] text-[var(--foreground-muted)] sm:px-7">
+              {answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="relative py-28 px-6">
       <div className="relative mx-auto max-w-5xl">
@@ -53,18 +114,15 @@ export default function FAQ() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-4"
           >
-            <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]">
-              FAQ
-            </p>
             <h2
-              className="text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl"
+              className="text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
             >
               Frequently asked questions
             </h2>
           </motion.div>
 
-          {/* Right column - Q&A cards */}
+          {/* Right column - accordion */}
           <div className="flex flex-col gap-4 lg:col-span-8">
             {faqs.map((faq, i) => (
               <motion.div
@@ -73,17 +131,13 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="rounded-2xl border border-[var(--surface-border)] bg-white p-6 sm:p-7"
               >
-                <h3
-                  className="mb-2.5 text-[16px] font-bold text-[var(--foreground)]"
-                  style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-                >
-                  {faq.question}
-                </h3>
-                <p className="text-[14px] leading-[1.7] text-[var(--foreground-muted)]">
-                  {faq.answer}
-                </p>
+                <FAQItem
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openIndex === i}
+                  onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                />
               </motion.div>
             ))}
           </div>

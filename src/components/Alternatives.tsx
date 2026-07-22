@@ -12,7 +12,6 @@ const columns = [
       "Disconnected workflow",
     ],
     highlighted: false,
-    rotate: -2,
   },
   {
     title: "With Vyra",
@@ -23,7 +22,6 @@ const columns = [
       "One conversation, start to finish",
     ],
     highlighted: true,
-    rotate: 0,
   },
   {
     title: "Other AI Video Tools",
@@ -34,7 +32,6 @@ const columns = [
       "Can't iterate on edits",
     ],
     highlighted: false,
-    rotate: 2,
   },
 ];
 
@@ -81,15 +78,6 @@ export default function Alternatives() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]"
-          >
-            Compare
-          </motion.p>
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
@@ -97,8 +85,8 @@ export default function Alternatives() {
             Alternatives are expensive and slow
           </h2>
           <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Whether you learn a pro tool or hire someone, the current options
-            cost too much time and money.
+            Learning a pro tool or hiring an editor costs too much time and
+            money.
           </p>
         </motion.div>
 
@@ -108,22 +96,14 @@ export default function Alternatives() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.7 }}
-          className="rounded-[28px] border border-[var(--surface-border)] bg-white px-6 py-10 shadow-xl shadow-black/[0.03] sm:px-10 sm:py-12"
+          className="rounded-2xl border border-[var(--surface-border)] bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12"
         >
           <div className="flex flex-col items-center gap-6 md:flex-row md:items-stretch md:justify-center md:gap-5 lg:gap-6">
             {columns.map((col, colIndex) => (
               <motion.div
                 key={col.title}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                  rotate: col.rotate * 2,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  rotate: col.rotate,
-                }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{
                   duration: 0.6,
@@ -132,7 +112,7 @@ export default function Alternatives() {
                   stiffness: 200,
                   damping: 25,
                 }}
-                className={`w-full max-w-sm flex-1 rounded-2xl border bg-white shadow-md shadow-black/[0.03] ${
+                className={`w-full max-w-sm flex-1 rounded-2xl border bg-white shadow-sm ${
                   col.highlighted
                     ? "relative z-10 border-[var(--surface-border-hover)] shadow-lg shadow-black/[0.06]"
                     : "border-[var(--surface-border)]"

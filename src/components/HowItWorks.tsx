@@ -92,7 +92,7 @@ function DesktopMock() {
           {/* Input bar */}
           <div className="mt-auto rounded-xl bg-white/[0.04] border border-white/[0.06] px-3 py-2 flex items-center justify-between">
             <span className="text-white/20 text-[10px]">Write a message...</span>
-            <span className="text-white/15 text-[9px]">Opus 4.7</span>
+            <span className="text-white/15 text-[9px]">Claude</span>
           </div>
         </div>
       </div>
@@ -157,9 +157,9 @@ function TerminalMock() {
 /* ---- In-App Chat Mock (Vyra's built-in AI) ---- */
 function WebAppMock() {
   return (
-    <div className="bg-[#15171c] flex-1">
+    <div className="bg-[#0d0d0d] flex-1">
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-3 py-2 bg-[#1a1d23] border-b border-white/[0.06]">
+      <div className="flex items-center gap-2 px-3 py-2 bg-[#141414] border-b border-white/[0.06]">
         <div className="flex gap-1.5">
           <div className="h-[9px] w-[9px] rounded-full bg-[#ff5f57]" />
           <div className="h-[9px] w-[9px] rounded-full bg-[#febc2e]" />
@@ -173,36 +173,27 @@ function WebAppMock() {
         </div>
       </div>
 
-      {/* Chat area */}
-      <div className="p-4 flex flex-col gap-3">
-        {/* User */}
-        <div className="flex items-start gap-2.5">
-          <div className="mt-0.5 h-5 w-5 rounded-full bg-white/[0.08] flex items-center justify-center shrink-0">
-            <span className="text-[8px] text-white/40 font-bold">Y</span>
-          </div>
-          <p className="text-[11px] leading-relaxed text-white/80 bg-white/[0.07] rounded-xl px-3 py-2">
+      {/* Vyra AI panel, same look as the real app */}
+      <div className="flex gap-1 p-1.5">
+        <span className="flex-1 rounded-md py-1 text-center text-[10px] text-white/40">
+          Footage
+        </span>
+        <span className="flex-1 rounded-md bg-gradient-to-r from-[#2735b5] to-[#4553ee] py-1 text-center text-[10px] font-semibold text-white">
+          Vyra AI
+        </span>
+      </div>
+      <div className="px-3 pb-4 pt-1 flex flex-col gap-2.5">
+        <div className="rounded-xl bg-white/[0.07] px-3 py-2">
+          <p className="text-[11px] leading-relaxed text-white/85">
             Remove the background music and add captions
           </p>
         </div>
-
-        {/* AI */}
-        <div className="flex items-start gap-2.5">
-          <div className="mt-0.5 h-5 w-5 rounded-full bg-[#6490D0]/20 flex items-center justify-center shrink-0">
-            <span className="text-[8px] text-[#8fb3e8] font-bold">V</span>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <p className="text-[11px] leading-relaxed text-white/60">
-              I&apos;ll remove the audio track and generate captions from the speech.
-            </p>
-            {/* Tool badge */}
-            <div className="inline-flex items-center gap-1.5 rounded-md bg-white/[0.04] border border-white/[0.06] px-2 py-1 self-start">
-              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
-              <span className="text-[9px] text-white/40 font-medium">addCaptions</span>
-            </div>
-            <p className="text-[11px] leading-relaxed text-white/60">
-              <span className="text-emerald-400">Done</span>. Audio track removed, 31 captions synced to speech.
-            </p>
-          </div>
+        <p className="text-[11px] leading-relaxed text-white/60">
+          Done. Music track removed and 31 captions synced to speech.
+        </p>
+        <div className="mt-1 flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-1.5">
+          <span className="text-[12px] leading-none text-white/30">+</span>
+          <span className="text-[10px] text-white/25">Ask anything...</span>
         </div>
       </div>
     </div>
@@ -221,15 +212,6 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]"
-          >
-            Connect
-          </motion.p>
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}

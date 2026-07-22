@@ -109,7 +109,7 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
       ],
       highlighted: name === "mcp_starter",
       cta: name === "free" ? "Get started free" : "Start free trial",
-      trialNote: isPaid ? "3-day free trial" : undefined,
+      trialNote: undefined,
     };
   });
 }
@@ -131,8 +131,7 @@ const VYRA_AI_PLANS: Plan[] = [
       { text: "MCP access", included: true },
     ],
     highlighted: true,
-    cta: "Start free trial",
-    trialNote: "3-day free trial",
+    cta: "Get started for free",
   },
   {
     name: "Vyra AI Pro",
@@ -150,8 +149,7 @@ const VYRA_AI_PLANS: Plan[] = [
       { text: "MCP access", included: true },
     ],
     highlighted: false,
-    cta: "Start free trial",
-    trialNote: "3-day free trial",
+    cta: "Get started for free",
   },
 ];
 
@@ -171,8 +169,7 @@ const FALLBACK_PLANS: Plan[] = [
       { text: "MCP access", included: true },
     ],
     highlighted: true,
-    cta: "Start free trial",
-    trialNote: "3-day free trial",
+    cta: "Get started for free",
   },
   {
     name: "MCP Pro",
@@ -189,8 +186,7 @@ const FALLBACK_PLANS: Plan[] = [
       { text: "MCP access", included: true },
     ],
     highlighted: false,
-    cta: "Start free trial",
-    trialNote: "3-day free trial",
+    cta: "Get started for free",
   },
 ];
 
@@ -209,15 +205,6 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]"
-          >
-            Pricing
-          </motion.p>
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
@@ -225,8 +212,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
             Simple, honest pricing
           </h2>
           <p className="mx-auto max-w-md text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Use Vyra&apos;s built-in AI, or bring your own via MCP. Every plan
-            starts with a free trial.
+            Use Vyra&apos;s built-in AI, or bring your own via MCP.
           </p>
         </motion.div>
 
@@ -397,9 +383,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          All plans include MCP access and a 3-day free trial. Cancel anytime
-          before it ends. Vyra AI plans add the built-in AI editor, no external
-          AI subscription required.
+          Every plan includes MCP access. Cancel anytime.
         </motion.p>
       </div>
     </section>

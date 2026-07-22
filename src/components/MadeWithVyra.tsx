@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { formatUserCount } from "./TrustedBy";
 
 const STORAGE_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
@@ -14,7 +15,11 @@ const examples = [
   { src: `${STORAGE_BASE}/boston-vlog.mp4`, aspect: "16/9" },
 ];
 
-export default function MadeWithVyra() {
+export default function MadeWithVyra({
+  userCount = null,
+}: {
+  userCount?: number | null;
+}) {
   const [active, setActive] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const total = examples.length;
@@ -66,15 +71,6 @@ export default function MadeWithVyra() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]"
-          >
-            Gallery
-          </motion.p>
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
@@ -143,10 +139,8 @@ export default function MadeWithVyra() {
                   }}
                 >
                   <div
-                    className={`overflow-hidden rounded-2xl border bg-black shadow-sm transition-shadow duration-300 ${
-                      isActive
-                        ? "border-[var(--surface-border-hover)] shadow-xl shadow-black/[0.08]"
-                        : "border-[var(--surface-border)]"
+                    className={`overflow-hidden rounded-2xl bg-black transition-shadow duration-300 ${
+                      isActive ? "shadow-xl shadow-black/[0.08]" : "shadow-sm"
                     }`}
                   >
                     <video
@@ -178,6 +172,28 @@ export default function MadeWithVyra() {
               />
             ))}
           </div>
+
+          {/* User count banner, stacked on the gallery */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto mt-10 max-w-xl rounded-2xl border border-[var(--surface-border)] bg-white px-6 py-4 text-center shadow-sm"
+          >
+            <p className="text-[15px] text-[var(--foreground-muted)]">
+              <span className="font-bold text-[var(--foreground)]">
+                {formatUserCount(userCount)} creators
+              </span>{" "}
+              and counting.{" "}
+              <a
+                href="https://app.usevyra.com/signup"
+                className="font-medium text-[var(--brand-blue)] underline underline-offset-2 hover:opacity-80"
+              >
+                Join them
+              </a>
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

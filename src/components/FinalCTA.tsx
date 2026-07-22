@@ -43,7 +43,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="mb-12 text-[17px] leading-relaxed text-[var(--foreground-muted)]"
         >
-          Start your free trial and go from footage to finished in minutes.
+          Go from footage to finished in minutes.
         </motion.p>
 
         <motion.div
@@ -56,7 +56,7 @@ export default function FinalCTA() {
             href="https://app.usevyra.com/signup"
             className="btn-shimmer inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
           >
-            Start free trial
+            Get started for free
             <svg
               width="18"
               height="18"

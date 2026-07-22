@@ -1,12 +1,21 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "framer-motion";
 import Image from "next/image";
-import BrowserFrame from "./BrowserFrame";
+import EditorMockup, { type ClientKey } from "./EditorMockup";
 
-const SCROLL_VIDEO_URL =
-  "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/hero-mcp-demo.mp4";
+const CLIENTS: { key: ClientKey; label: string; logo: string | null }[] = [
+  { key: "vyra", label: "Vyra AI", logo: null },
+  { key: "claude", label: "Claude", logo: "/logos/claude.svg" },
+  { key: "chatgpt", label: "ChatGPT", logo: "/logos/openai.svg" },
+  { key: "mcp", label: "Any MCP Client", logo: "/logos/mcp.svg" },
+];
 
 const TYPED_HEADLINE = "Finished video out.";
 
@@ -47,9 +56,7 @@ function wait(ms: number) {
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const videoContainerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const videoDuration = useRef(0);
+  const storyRef = useRef<HTMLDivElement>(null);
   const { displayed, settled } = useHeadlineTypewriter();
 
   // Scroll-linked zoom on the sky background
@@ -59,46 +66,24 @@ export default function Hero() {
   });
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
-  const handleVideoLoaded = useCallback(() => {
-    if (videoRef.current) {
-      videoDuration.current = videoRef.current.duration;
-      videoRef.current.currentTime = 0;
-    }
-  }, []);
+  // Scroll-driven editor story: the mockup pins while progress 0->1 plays
+  // the chat -> thinking -> timeline assembly -> reply sequence.
+  const { scrollYProgress: storyScroll } = useScroll({
+    target: storyRef,
+    offset: ["start 0.55", "end 0.95"],
+  });
+  const [storyProgress, setStoryProgress] = useState(0);
+  useMotionValueEvent(storyScroll, "change", (v) => setStoryProgress(v));
 
-  // Scroll-scrub video - plays from page top to just past the hero
-  useEffect(() => {
-    let raf = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const section = sectionRef.current;
-        const video = videoRef.current;
-        if (!section || !video) return;
-        const dur = videoDuration.current || video.duration;
-        if (!dur || isNaN(dur)) return;
-        videoDuration.current = dur;
-        // Map scroll from top of page (0) to bottom of hero section (1)
-        const sectionBottom = section.offsetTop + section.offsetHeight;
-        const progress = Math.max(0, Math.min(1, window.scrollY / (sectionBottom * 0.7)));
-        video.currentTime = progress * dur;
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
+  const [client, setClient] = useState<ClientKey>("vyra");
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center overflow-hidden px-6 pt-16"
+      className="relative flex flex-col items-center overflow-x-clip px-6 pt-16"
     >
       {/* ---- Painted sky background ---- */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[65%]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[110vh]">
         <motion.div
           className="absolute top-0 left-1/2 w-full min-w-[120%] -translate-x-1/2 origin-top h-full"
           style={{
@@ -121,7 +106,7 @@ export default function Hero() {
       </div>
 
       {/* Soft fog behind content */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[70%]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[120vh]">
         <div
           className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[90%] h-[60%] rounded-full"
           style={{
@@ -132,7 +117,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center pt-12 text-center">
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center pt-10 text-center md:pt-14">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
@@ -140,10 +125,10 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="mb-5"
         >
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] font-black tracking-[-0.03em] text-[var(--foreground)]">
+          <span className="block text-[clamp(2rem,5vw,3.75rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-[var(--foreground)]">
             Raw footage in.
           </span>
-          <span className="block text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.02em] text-[var(--foreground)]">
+          <span className="block text-[clamp(2rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em] text-[var(--foreground)]">
             <span className="serif-italic font-normal">{displayed}</span>
             {!settled && (
               <span
@@ -157,16 +142,17 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtext */}
+        {/* Subtext - two short lines, FLORA-style */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="mb-6 max-w-lg text-[15px] leading-[1.7] font-normal text-[var(--foreground-muted)]"
+          className="mb-7 text-[16px] leading-[1.6] text-[var(--foreground-muted)] md:text-[17px]"
         >
-          Drop in your clips, describe what you want, and Vyra cuts, captions,
-          and styles it for you. All in a real timeline editor you can still
-          touch up by hand.
+          <span className="block">
+            Describe your edit naturally, get a finished draft in minutes.
+          </span>
+          <span className="block">Every editing tool, one conversation.</span>
         </motion.p>
 
         {/* CTA */}
@@ -180,7 +166,7 @@ export default function Hero() {
             href="https://app.usevyra.com/signup"
             className="btn-shimmer inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
-            Start Free Trial
+            Get started for free
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
@@ -192,151 +178,61 @@ export default function Hero() {
             </svg>
           </a>
 
-          {/* Works with */}
-          <div className="flex items-center gap-2 text-[13px]">
+          {/* Client switcher - changes the editor preview below */}
+          <div className="flex flex-wrap items-center justify-center gap-2 text-[13px]">
             <span className="text-[var(--foreground-subtle)] mr-1">
               Edit with
             </span>
-            {["Vyra AI", "Claude", "ChatGPT", "Any MCP Client"].map((badge, i) => (
-              <span key={badge} className="flex items-center gap-2">
-                <span
-                  className={`rounded-full border px-3 py-1 font-medium transition-all duration-200 ${
-                    badge === "Vyra AI"
-                      ? "border-[var(--brand-blue)]/40 text-[var(--brand-blue)]"
-                      : "border-[var(--surface-border)] text-[var(--foreground-muted)] hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
-                  }`}
-                >
-                  {badge}
-                </span>
-                {i < 3 && (
-                  <span className="text-[var(--foreground-subtle)]">
-                    &middot;
-                  </span>
+            {CLIENTS.map((c) => (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => setClient(c.key)}
+                className={`flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1 font-medium transition-all duration-200 ${
+                  client === c.key
+                    ? "border-[var(--brand-blue)]/50 bg-[var(--brand-blue)]/[0.06] text-[var(--brand-blue)]"
+                    : "border-[var(--surface-border)] text-[var(--foreground-muted)] hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                {c.logo && (
+                  <Image src={c.logo} alt="" width={13} height={13} />
                 )}
-              </span>
+                {c.label}
+              </button>
             ))}
           </div>
         </motion.div>
       </div>
 
-      {/* Hero visual - browser frame + floating chat */}
+      {/* Hero visual - the Vyra editor, pinned while scroll plays the story */}
       <div
-        ref={videoContainerRef}
-        className="relative z-10 mx-auto mt-8 w-full max-w-6xl px-4 pb-16 md:pb-48 md:translate-x-[6%] md:-translate-y-2"
+        ref={storyRef}
+        className="relative z-10 mx-auto mt-10 h-[145vh] w-full max-w-5xl px-0 sm:px-4 md:mt-12"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 60, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.9,
-            ease: [0.21, 0.68, 0.35, 1],
-          }}
-          className="relative"
-        >
-          {/* Subtle glow */}
-          <div className="pointer-events-none absolute inset-0">
-            <div
-              className="absolute top-1/3 left-1/2 h-[300px] w-[80%] -translate-x-1/2 rounded-full opacity-[0.06] blur-[100px]"
-              style={{ background: "var(--brand-blue)" }}
-            />
-          </div>
-
-          {/* Main editor in browser frame */}
-          <BrowserFrame>
-            <video
-              ref={videoRef}
-              src={SCROLL_VIDEO_URL}
-              muted
-              playsInline
-              preload="metadata"
-              onLoadedMetadata={handleVideoLoaded}
-              className="w-full"
-            />
-          </BrowserFrame>
-
-          {/* Floating chat window - Claude Desktop style */}
+        <div className="sticky top-16 md:top-20">
           <motion.div
-            initial={{ opacity: 0, y: 20, x: -10 }}
-            animate={{ opacity: 1, y: 0, x: 0 }}
-            transition={{ duration: 0.6, delay: 1.4, ease: [0.21, 0.68, 0.35, 1] }}
-            className="absolute -bottom-40 -left-16 z-20 hidden w-[340px] rounded-xl border border-[#3d3830]/60 bg-[#2d2a25] shadow-2xl shadow-black/30 sm:-left-28 sm:w-[400px] md:block"
+            initial={{ opacity: 0, y: 60, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.9,
+              ease: [0.21, 0.68, 0.35, 1],
+            }}
+            className="relative"
           >
-            {/* Title bar */}
-            <div className="flex items-center gap-2 px-3.5 py-2 bg-[#272420] rounded-t-xl">
-              <div className="flex gap-1.5">
-                <div className="h-[9px] w-[9px] rounded-full bg-[#ff5f57]" />
-                <div className="h-[9px] w-[9px] rounded-full bg-[#febc2e]" />
-                <div className="h-[9px] w-[9px] rounded-full bg-[#28c840]" />
-              </div>
-              <div className="flex-1 text-center">
-                <span className="text-[10px] text-white/25 font-medium">Vyra AI · Editing session</span>
-              </div>
+            {/* Subtle glow */}
+            <div className="pointer-events-none absolute inset-0">
+              <div
+                className="absolute top-1/3 left-1/2 h-[300px] w-[80%] -translate-x-1/2 rounded-full opacity-[0.06] blur-[100px]"
+                style={{ background: "var(--brand-blue)" }}
+              />
             </div>
 
-            {/* Tab bar */}
-            <div className="flex items-center gap-1 px-3.5 py-1.5 border-b border-white/[0.05]">
-              <span className="rounded-md px-2 py-0.5 text-[9px] bg-[#6490D0]/[0.15] text-[#8fb3e8] font-medium">Chat</span>
-              <span className="rounded-md px-2 py-0.5 text-[9px] text-white/25">Timeline</span>
-              <span className="rounded-md px-2 py-0.5 text-[9px] text-white/25">Assets</span>
-            </div>
-
-            {/* Chat content */}
-            <div className="p-3.5 flex flex-col gap-2.5">
-              {/* User message */}
-              <div className="flex justify-end">
-                <div className="rounded-2xl rounded-tr-sm bg-white/[0.08] px-3.5 py-2 max-w-[85%]">
-                  <p className="text-[12px] leading-relaxed text-white/80">
-                    Make a color wheel trend montage with my clips, add bilingual captions and a motion graphic intro
-                  </p>
-                </div>
-              </div>
-
-              {/* Tool calls */}
-              <div className="flex flex-col gap-1">
-                <p className="text-white/25 text-[10px]">Used 4 tools</p>
-                <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span className="text-[10px] text-white/35">addMedia</span>
-                  <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span className="text-[10px] text-white/35">addCaptions</span>
-                  <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span className="text-[10px] text-white/35">addMotionGraphic</span>
-                  <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-md bg-white/[0.03] border border-white/[0.04] px-2.5 py-1.5">
-                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round"/><path d="M4 4h8v8" stroke="#6490D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span className="text-[10px] text-white/35">addEffect</span>
-                  <span className="text-[8px] text-white/20 ml-auto bg-white/[0.05] rounded px-1.5 py-0.5">Result</span>
-                </div>
-              </div>
-
-              {/* Done + response */}
-              <div className="flex flex-col gap-1.5">
-                <div className="flex items-center gap-1.5">
-                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span className="text-white/40 text-[10px]">Done</span>
-                </div>
-                <p className="text-[12px] leading-relaxed text-white/55">
-                  Built the montage with 8 clips on the timeline. Added bilingual captions (EN + ZH), a color wheel motion graphic intro, and the Elegant Editorial style. Ready to preview.
-                </p>
-              </div>
-
-              {/* Input bar */}
-              <div className="mt-1 rounded-xl bg-white/[0.03] border border-white/[0.05] px-3 py-2 flex items-center justify-between">
-                <span className="text-white/15 text-[10px]">Write a message...</span>
-                <span className="text-white/10 text-[9px]">Vyra AI</span>
-              </div>
-            </div>
+            <EditorMockup progress={storyProgress} client={client} />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
+      <div className="h-8 md:h-10" />
 
       <style jsx>{`
         @keyframes blink {

@@ -17,9 +17,17 @@
   --surface-border: rgba(0, 0, 0, 0.08);
   --surface-border-hover: rgba(0, 0, 0, 0.15);
 
-  /* Loaded from the Fontshare CDN in layout.tsx. Declared here so
+  /* Self-hosted variable font, see @font-face below. Declared here so
      --font-display below resolves to an actual family. */
   --font-cabinet-grotesk: "Cabinet Grotesk";
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
