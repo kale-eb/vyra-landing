@@ -6,10 +6,10 @@ const columns = [
   {
     title: "Traditional Editors",
     items: [
-      "Switch between apps constantly",
-      "Copy-paste prompts manually",
-      "No context about your footage",
-      "Disconnected workflow",
+      "Weeks to learn, hours per edit",
+      "Manual cutting, syncing, captioning",
+      "You scrub through every clip yourself",
+      "Complex timelines, endless menus",
     ],
     highlighted: false,
   },
@@ -72,8 +72,8 @@ export default function Alternatives() {
       <div className="relative mx-auto max-w-5xl">
         {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
@@ -84,7 +84,7 @@ export default function Alternatives() {
           >
             Alternatives are expensive and slow
           </h2>
-          <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+          <p className="mx-auto max-w-lg text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
             Learning a pro tool or hiring an editor costs too much time and
             money.
           </p>

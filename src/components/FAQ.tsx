@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "What is Vyra?",
     answer:
-      "Vyra is a video editor you control by chatting with AI. Describe your edit in plain English and the AI handles cuts, captions, effects, and more, all using your real footage. Use Vyra's built-in AI chat, or connect your own assistant like Claude or ChatGPT via MCP.",
+      "Vyra is a video editor you control by chatting with AI. Describe your edit in your own words and the AI handles cuts, captions, effects, and more, all using your real footage. Use Vyra's built-in AI chat, or connect your own assistant like Claude or ChatGPT via MCP.",
   },
   {
     question: "Do I need an AI subscription to use Vyra?",
@@ -53,7 +53,7 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="rounded-2xl border border-[var(--surface-border)] bg-white">
+    <div className="rounded-2xl border border-[var(--surface-border)] bg-white transition-colors duration-200 hover:border-[var(--surface-border-hover)]">
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
@@ -108,8 +108,8 @@ export default function FAQ() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left column - heading */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-4"

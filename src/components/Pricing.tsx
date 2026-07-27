@@ -108,7 +108,7 @@ function buildPlans(tiers: PricingTier[] | null): Plan[] {
         { text: "MCP access", included: true },
       ],
       highlighted: name === "mcp_starter",
-      cta: name === "free" ? "Get started free" : "Start free trial",
+      cta: "Get started for free",
       trialNote: undefined,
     };
   });
@@ -199,8 +199,8 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
       <div className="relative mx-auto max-w-5xl">
         {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
@@ -211,7 +211,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           >
             Simple, honest pricing
           </h2>
-          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+          <p className="mx-auto max-w-md text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
             Use Vyra&apos;s built-in AI, or bring your own via MCP.
           </p>
         </motion.div>
@@ -249,6 +249,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
+              whileHover={{ y: -5 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className={`relative flex flex-col rounded-2xl p-7 transition-all duration-400 sm:p-8 ${
                 plan.highlighted
@@ -365,7 +366,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
                 href="https://app.usevyra.com/signup"
                 className={`flex items-center justify-center rounded-xl px-4 py-3 text-[14px] font-semibold transition-all duration-300 ${
                   plan.highlighted
-                    ? "btn-shimmer bg-[var(--brand-blue)] text-white shadow-md shadow-[var(--brand-blue)]/15 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
+                    ? "bg-[var(--brand-blue)] text-white shadow-md shadow-[var(--brand-blue)]/15 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
                     : "border border-[var(--surface-border)] text-[var(--foreground)] hover:border-[var(--surface-border-hover)] hover:bg-[var(--surface)]"
                 }`}
               >
@@ -383,7 +384,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
-          Every plan includes MCP access. Cancel anytime.
+          Free to start, upgrade when you publish. Every plan includes MCP access. Cancel anytime.
         </motion.p>
       </div>
     </section>

@@ -281,7 +281,7 @@ export default function EditorMockup({
   );
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-black/20 bg-[#0d0d0d] text-left shadow-2xl shadow-black/25">
+    <div className="overflow-hidden rounded-2xl border border-black/20 bg-[#0d0d0d] text-left shadow-lg shadow-black/10">
       {/* ---- Top bar ---- */}
       <div className="flex h-10 items-center justify-between border-b border-white/[0.06] px-4">
         <div className="flex items-center gap-3">

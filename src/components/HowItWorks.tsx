@@ -202,12 +202,12 @@ function WebAppMock() {
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative bg-[var(--surface)] py-28 px-6">
+    <section id="how-it-works" className="relative py-28 px-6">
       <div className="mx-auto max-w-5xl">
         {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
@@ -216,9 +216,9 @@ export default function HowItWorks() {
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
-            One editor, every interface
+            One editor, <span className="serif-italic font-normal">every interface</span>
           </h2>
-          <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+          <p className="mx-auto max-w-lg text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
             Chat with the AI built right into Vyra, or connect the assistant
             you already use, wherever it lives.
           </p>
@@ -233,7 +233,7 @@ export default function HowItWorks() {
           className="grid gap-6 md:grid-cols-3"
         >
           {/* In Vyra */}
-          <motion.div variants={cardVariants} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
+          <motion.div variants={cardVariants} whileHover={{ y: -6 }} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <WebAppMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
@@ -246,7 +246,7 @@ export default function HowItWorks() {
           </motion.div>
 
           {/* Terminal */}
-          <motion.div variants={cardVariants} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
+          <motion.div variants={cardVariants} whileHover={{ y: -6 }} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <TerminalMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <div className="flex items-center">
@@ -268,7 +268,7 @@ export default function HowItWorks() {
           </motion.div>
 
           {/* Desktop App */}
-          <motion.div variants={cardVariants} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
+          <motion.div variants={cardVariants} whileHover={{ y: -6 }} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <DesktopMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <div className="flex items-center">

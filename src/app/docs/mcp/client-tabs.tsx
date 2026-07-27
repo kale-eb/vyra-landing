@@ -18,7 +18,7 @@ const CLIENTS = [
             Enter the name <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">Vyra</code> and
             the URL <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">{SERVER_URL}</code>
           </li>
-          <li>Click <strong className="text-[var(--foreground)]">Add</strong> &mdash; you&apos;ll be redirected to authorize</li>
+          <li>Click <strong className="text-[var(--foreground)]">Add</strong> and you&apos;ll be redirected to authorize</li>
         </ol>
         <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">
           To use in a conversation, click the <strong className="text-[var(--foreground-muted)]">+</strong> button

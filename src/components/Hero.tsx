@@ -83,9 +83,11 @@ export default function Hero() {
       className="relative flex flex-col items-center overflow-x-clip px-6 pt-16"
     >
       {/* ---- Painted sky background ---- */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[110vh]">
+      {/* Shorter + less overscan than the image's cover crop wants, so more
+          of the panorama is visible (reads as zoomed out) */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[85vh]">
         <motion.div
-          className="absolute top-0 left-1/2 w-full min-w-[120%] -translate-x-1/2 origin-top h-full"
+          className="absolute top-0 left-1/2 w-full min-w-[110%] -translate-x-1/2 origin-top h-full"
           style={{
             scale: bgScale,
             maskImage:
@@ -147,7 +149,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="mb-7 text-[16px] leading-[1.6] text-[var(--foreground-muted)] md:text-[17px]"
+          className="mb-7 text-[14px] leading-[1.6] text-[var(--foreground-muted)] md:text-[15px]"
         >
           <span className="block">
             Describe your edit naturally, get a finished draft in minutes.
@@ -164,43 +166,10 @@ export default function Hero() {
         >
           <a
             href="https://app.usevyra.com/signup"
-            className="btn-shimmer inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
             Get started for free
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
           </a>
-
-          {/* Client switcher - changes the editor preview below */}
-          <div className="flex flex-wrap items-center justify-center gap-2 text-[13px]">
-            <span className="text-[var(--foreground-subtle)] mr-1">
-              Edit with
-            </span>
-            {CLIENTS.map((c) => (
-              <button
-                key={c.key}
-                type="button"
-                onClick={() => setClient(c.key)}
-                className={`flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1 font-medium transition-all duration-200 ${
-                  client === c.key
-                    ? "border-[var(--brand-blue)]/50 bg-[var(--brand-blue)]/[0.06] text-[var(--brand-blue)]"
-                    : "border-[var(--surface-border)] text-[var(--foreground-muted)] hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
-                }`}
-              >
-                {c.logo && (
-                  <Image src={c.logo} alt="" width={13} height={13} />
-                )}
-                {c.label}
-              </button>
-            ))}
-          </div>
         </motion.div>
       </div>
 
@@ -229,6 +198,35 @@ export default function Hero() {
             </div>
 
             <EditorMockup progress={storyProgress} client={client} />
+
+            {/* Client switcher - swaps the editor preview above */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.15 }}
+              className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[13px]"
+            >
+              <span className="text-[var(--foreground-subtle)] mr-1">
+                Edit with
+              </span>
+              {CLIENTS.map((c) => (
+                <button
+                  key={c.key}
+                  type="button"
+                  onClick={() => setClient(c.key)}
+                  className={`flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1 font-medium transition-all duration-200 ${
+                    client === c.key
+                      ? "border-[var(--brand-blue)]/50 bg-[var(--brand-blue)]/[0.06] text-[var(--brand-blue)]"
+                      : "border-[var(--surface-border)] text-[var(--foreground-muted)] hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
+                  }`}
+                >
+                  {c.logo && (
+                    <Image src={c.logo} alt="" width={13} height={13} />
+                  )}
+                  {c.label}
+                </button>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </div>

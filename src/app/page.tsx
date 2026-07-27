@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustedBy from "@/components/TrustedBy";
 import Steps from "@/components/Steps";
 import HowItWorks from "@/components/HowItWorks";
 import MadeWithVyra from "@/components/MadeWithVyra";
@@ -58,7 +57,6 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustedBy count={userCount} />
         <Steps />
         <Features />
         <HowItWorks />

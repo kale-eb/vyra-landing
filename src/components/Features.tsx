@@ -1,22 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const STORAGE_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/showcase";
 const LANDING_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
-const FOOTAGE_BASE = `${LANDING_BASE}/footage`;
-
-const FOOTAGE_CLIPS = [
-  { src: `${FOOTAGE_BASE}/pizza.jpg`, label: "Restaurant dinner", tags: ["food", "indoor"] },
-  { src: `${FOOTAGE_BASE}/hotpot.jpg`, label: "Hot pot close-up", tags: ["food", "reaction"] },
-  { src: `${FOOTAGE_BASE}/painting.jpg`, label: "Art studio session", tags: ["art", "studio"] },
-  { src: `${FOOTAGE_BASE}/snowboard.jpg`, label: "Halfpipe trick", tags: ["sports", "aerial"] },
-  { src: `${FOOTAGE_BASE}/selfiewalk.jpg`, label: "Selfie walk", tags: ["selfie", "winter"] },
-  { src: `${FOOTAGE_BASE}/dance.jpg`, label: "Dance performance", tags: ["stage", "group"] },
-];
 
 function AutoVideo({ src, contain }: { src: string; contain?: boolean }) {
   return (
@@ -28,6 +18,232 @@ function AutoVideo({ src, contain }: { src: string; contain?: boolean }) {
       playsInline
       className={`h-full w-full ${contain ? "object-contain" : "object-cover"}`}
     />
+  );
+}
+
+/* Deterministic bar heights so SSR and client render identically */
+function barH(i: number, min: number, max: number) {
+  return min + (((i * 37 + 11) % 53) / 53) * (max - min);
+}
+
+/* Footage understanding: live analysis over a real frame */
+function AnalysisMedia() {
+  return (
+    <div className="flex h-[400px] gap-3 bg-[var(--surface)] p-5">
+      <div className="relative h-full flex-1 overflow-hidden rounded-xl">
+        <AutoVideo src="/videos/footage-understanding.mp4" />
+        {/* Scanning sweep */}
+        <motion.div
+          animate={{ left: ["0%", "99%"] }}
+          transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
+          className="absolute inset-y-0 w-[2px] bg-gradient-to-b from-transparent via-[var(--brand-blue)]/70 to-transparent"
+        />
+        {/* Tag chips */}
+        <div className="absolute left-3 top-3 flex gap-1.5">
+          {["vlog", "indoors", "speech"].map((t, i) => (
+            <motion.span
+              key={t}
+              initial={{ opacity: 0, y: -6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 + i * 0.25, duration: 0.4 }}
+              className="rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-medium text-[var(--foreground)] shadow-sm backdrop-blur-sm"
+            >
+              {t}
+            </motion.span>
+          ))}
+        </div>
+        {/* Subject detection box */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.9, type: "spring", stiffness: 260, damping: 20 }}
+          className="absolute left-[30%] top-[4%] h-[92%] w-[40%]"
+        >
+          {/* Gentle drift sells the box as live tracking on the talking head */}
+          <motion.div
+            animate={{
+              opacity: [1, 0.55, 1],
+              x: [0, 4, -3, 2, 0],
+              y: [0, 3, -2, 4, 0],
+            }}
+            transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+            className="h-full w-full rounded-md border-2 border-[var(--brand-blue)]"
+          />
+          <span className="absolute -top-5 left-0 rounded bg-[var(--brand-blue)] px-1.5 py-0.5 text-[9px] font-semibold text-white">
+            person
+          </span>
+        </motion.div>
+        {/* Transcript strip with living waveform */}
+        <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 rounded-lg bg-black/55 px-3 py-2 backdrop-blur-sm">
+          <span className="flex items-end gap-[2px]">
+            {Array.from({ length: 7 }, (_, i) => (
+              <motion.span
+                key={i}
+                animate={{ scaleY: [0.4, 1, 0.55, 0.9, 0.4] }}
+                transition={{ duration: 1.6 + (i % 3) * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.12 }}
+                className="w-[2px] origin-bottom rounded-full bg-white/70"
+                style={{ height: `${barH(i, 5, 12)}px` }}
+              />
+            ))}
+          </span>
+          <span className="truncate text-[11px] text-white/85">
+            &ldquo;vlogs that usually take hours to edit... edited in under an hour&rdquo;
+          </span>
+        </div>
+      </div>
+      {/* Scene strip */}
+      <div className="flex h-full w-[96px] flex-col gap-2">
+        {["scene-1", "scene-2", "scene-3"].map((f, i) => (
+          <motion.div
+            key={f}
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 + i * 0.2, duration: 0.4 }}
+            className="relative flex-1 overflow-hidden rounded-lg"
+          >
+            <img src={`/images/boston/${f}.jpg`} alt="" className="h-full w-full object-cover" />
+            <span className="absolute bottom-1 left-1 rounded bg-black/55 px-1.5 py-0.5 text-[8px] font-medium text-white/85">
+              Scene {i + 1}
+            </span>
+          </motion.div>
+        ))}
+        <span className="rounded-full border border-[var(--surface-border)] bg-white px-2 py-1 text-center text-[9px] font-medium text-[var(--foreground-muted)]">
+          9 clips &middot; speech &#10003;
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* Music sync: cropped video + a live track bar showing cuts on beats */
+const SEGMENTS = [13, 8, 11, 7, 14, 9, 12, 8, 11, 7];
+
+function MusicSyncMedia() {
+  return (
+    <div className="flex h-[400px] flex-col gap-3 bg-[var(--surface)] p-5">
+      <div className="min-h-0 flex-1 overflow-hidden rounded-xl">
+        <AutoVideo src="/videos/music-sync.mp4" />
+      </div>
+      {/* Track bar */}
+      <div className="relative shrink-0 overflow-hidden rounded-xl bg-[#0e0e0e] px-3 pb-3 pt-2.5">
+        {/* Clip segments, split on the beats */}
+        <div className="mb-2 flex h-5 gap-[3px]">
+          {SEGMENTS.map((w, i) => (
+            <div
+              key={i}
+              style={{ width: `${w}%` }}
+              className={`h-full rounded-[4px] ${i % 2 ? "bg-[#b3a5ef]" : "bg-[#a988f0]"}`}
+            />
+          ))}
+        </div>
+        {/* Mirrored waveform, full track width, beats glowing on the grid */}
+        <div className="flex h-12 w-full items-center gap-[2px]">
+          {Array.from({ length: 72 }, (_, i) => {
+            const beat = i % 8 === 3;
+            const h = 8 + (((i * 37 + 11) % 53) / 53) * 22 * (0.6 + 0.4 * Math.sin(i / 4));
+            return beat ? (
+              <motion.span
+                key={i}
+                animate={{ scaleY: [1, 0.7, 1] }}
+                transition={{
+                  duration: 1.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: (i % 5) * 0.2,
+                }}
+                className="min-w-0 flex-1 rounded-full bg-[#5fd4ea] shadow-[0_0_8px_rgba(95,212,234,0.7)]"
+                style={{ height: 44 }}
+              />
+            ) : (
+              <span
+                key={i}
+                className="min-w-0 flex-1 rounded-full bg-white/30"
+                style={{ height: `${h}px` }}
+              />
+            );
+          })}
+        </div>
+        {/* Playhead sweeping in time */}
+        <motion.div
+          animate={{ left: ["2%", "98%"] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1 top-1 w-[2px] rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]"
+        />
+      </div>
+    </div>
+  );
+}
+
+/* Captions: real captioned export + transcript filling itself in */
+const CAPTION_LINES = [
+  { t: "0:01", text: "two of my classmates" },
+  { t: "0:04", text: "said they never cooked before" },
+  { t: "0:07", text: "so we fixed that tonight" },
+  { t: "0:11", text: "starting with the basics" },
+];
+
+function CaptionsMedia() {
+  return (
+    <div className="flex h-[400px] items-center justify-center gap-4 bg-[var(--surface)] p-5">
+      <div className="h-full shrink-0 overflow-hidden rounded-xl shadow-lg shadow-black/15">
+        <video
+          src={`${LANDING_BASE}/caleb1.mp4`}
+          muted
+          autoPlay
+          loop
+          playsInline
+          className="h-full w-auto"
+        />
+      </div>
+      <div className="flex w-[240px] flex-col gap-2">
+        <motion.span
+          initial={{ opacity: 0, y: -6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="inline-flex items-center gap-1.5 self-start rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-emerald-600 shadow-sm"
+        >
+          <svg width="9" height="9" viewBox="0 0 16 16" fill="none">
+            <path d="M13 4.5L6.5 11L3 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          31 captions synced in seconds
+        </motion.span>
+        {CAPTION_LINES.map((line, i) => (
+          <motion.div
+            key={line.t}
+            initial={{ opacity: 0, x: 12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 + i * 0.35, duration: 0.4 }}
+            className="flex items-baseline gap-2 rounded-lg border border-[var(--surface-border)] bg-white px-3 py-2 shadow-sm"
+          >
+            <span className="text-[9px] font-medium tabular-nums text-[var(--foreground-subtle)]">
+              {line.t}
+            </span>
+            <span className="text-[12px] leading-snug text-[var(--foreground)]">
+              {line.text}
+            </span>
+          </motion.div>
+        ))}
+        <div className="mt-1 flex gap-1.5">
+          {["Serif", "Bold", "Karaoke"].map((s, i) => (
+            <span
+              key={s}
+              className={`rounded-full px-2.5 py-1 text-[10px] font-medium ${
+                i === 0
+                  ? "bg-[var(--foreground)] text-white"
+                  : "border border-[var(--surface-border)] bg-white text-[var(--foreground-muted)]"
+              }`}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -45,8 +261,8 @@ const FEATURES: {
       "Animated titles, lower thirds, and counters, generated as code and rendered live on your timeline.",
     tryPrompt: "Make me an animated title card",
     media: (
-      <div className="aspect-video bg-black">
-        <AutoVideo src={`${LANDING_BASE}/mg-cooking-quest.mp4`} contain />
+      <div className="aspect-video">
+        <AutoVideo src="/videos/shake-mg.mp4" />
       </div>
     ),
   },
@@ -56,35 +272,7 @@ const FEATURES: {
     description:
       "Every clip is analyzed: scenes detected, speech transcribed, subjects tagged. Edits follow what's actually in your footage.",
     tryPrompt: "Find the best moments and cut them together",
-    media: (
-      <div className="grid grid-cols-3 gap-2.5 bg-[var(--surface)] p-4">
-        {FOOTAGE_CLIPS.map((clip) => (
-          <div
-            key={clip.src}
-            className="overflow-hidden rounded-lg border border-[var(--surface-border)] bg-white shadow-sm"
-          >
-            <div className="aspect-video overflow-hidden">
-              <img src={clip.src} alt={clip.label} className="h-full w-full object-cover" />
-            </div>
-            <div className="px-2 py-1.5">
-              <p className="truncate text-[9px] font-medium text-[var(--foreground)]">
-                {clip.label}
-              </p>
-              <div className="mt-1 flex flex-wrap gap-1">
-                {clip.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-[var(--brand-blue)]/[0.08] px-1.5 py-0.5 text-[7px] font-medium text-[var(--brand-blue)]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    ),
+    media: <AnalysisMedia />,
   },
   {
     id: "music-sync",
@@ -92,11 +280,7 @@ const FEATURES: {
     description:
       "Vyra finds the beats in your track and lands every cut on the rhythm.",
     tryPrompt: "Sync the cuts to the beat drops",
-    media: (
-      <div className="aspect-video bg-black">
-        <AutoVideo src={`${STORAGE_BASE}/music-sync-preview.mp4`} contain />
-      </div>
-    ),
+    media: <MusicSyncMedia />,
   },
   {
     id: "reference-style",
@@ -121,26 +305,55 @@ const FEATURES: {
       </div>
     ),
   },
+  {
+    id: "captions",
+    title: "One-Click Captions",
+    description:
+      "Every word timed to your speech and styled to your edit. Serif, bold, karaoke, any look you can name.",
+    tryPrompt: "Add captions in a serif font",
+    media: <CaptionsMedia />,
+  },
 ];
 
 export default function Features() {
   const pinRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: pinRef,
-    offset: ["start start", "end end"],
-  });
   const [active, setActive] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    setActive(Math.min(FEATURES.length - 1, Math.floor(v * FEATURES.length)));
-  });
+
+  // Measure live on every scroll: framer's useScroll caches element bounds,
+  // which go stale when media loads shift the layout and desync the scroller.
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const el = pinRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const total = el.offsetHeight - window.innerHeight;
+        if (total <= 0) return;
+        const p = Math.min(1, Math.max(0, -rect.top / total));
+        setActive(
+          Math.min(FEATURES.length - 1, Math.floor(p * FEATURES.length))
+        );
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <section id="features" className="relative pt-16 pb-20 md:pb-0 px-6">
       <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-12 text-center md:mb-0"
@@ -149,15 +362,15 @@ export default function Features() {
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
-            What your AI can do
+            What your AI <span className="serif-italic font-normal">can do</span>
           </h2>
-          <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Every tool in the editor is available through natural language.
+          <p className="mx-auto max-w-lg text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
+            If you can describe it, Vyra can edit it.
           </p>
         </motion.div>
 
         {/* ---- Desktop: pinned scroller, FLORA-style ---- */}
-        <div ref={pinRef} className="relative hidden h-[300vh] md:-mt-28 md:block">
+        <div ref={pinRef} className="relative hidden h-[270vh] md:-mt-28 md:block">
           <div className="sticky top-0 flex h-screen items-center">
             <div className="grid w-full grid-cols-5 items-center gap-14">
               {/* Left: feature list, active one lights up */}
@@ -172,6 +385,7 @@ export default function Features() {
                     }`}
                     style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
                   >
+                    <span className="mr-3 text-[14px] font-medium tabular-nums align-middle opacity-40">0{i + 1}</span>
                     {f.title}
                   </h3>
                 ))}
@@ -240,7 +454,7 @@ export default function Features() {
         </div>
 
         {/* Disclaimer */}
-        <p className="pb-8 pt-6 text-center text-[12px] text-[var(--foreground-subtle)] md:pb-16">
+        <p className="pb-8 pt-6 text-center text-[12px] text-[var(--foreground-subtle)] md:-mt-32 md:pb-12">
           Everything above was made by Vyra&apos;s AI. The only human input was
           a prompt.
         </p>
