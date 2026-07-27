@@ -121,11 +121,61 @@ function AnalysisMedia() {
 /* Music sync: cropped video + a live track bar showing cuts on beats */
 const SEGMENTS = [13, 8, 11, 7, 14, 9, 12, 8, 11, 7];
 
+/* The one video on the page with sound. Unmuting restarts playback so
+   the listener hears the cuts land on the beats from the top. */
+function MusicSyncVideo() {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+  return (
+    <div className="relative h-full w-full">
+      <video
+        ref={ref}
+        src="/videos/music-sync.mp4"
+        muted={muted}
+        autoPlay
+        loop
+        playsInline
+        className="h-full w-full object-cover"
+      />
+      <button
+        type="button"
+        onClick={() => {
+          const v = ref.current;
+          if (!v) return;
+          const nextMuted = !muted;
+          setMuted(nextMuted);
+          v.muted = nextMuted;
+          if (!nextMuted) {
+            v.currentTime = 0;
+            v.play();
+          }
+        }}
+        className="absolute bottom-3 right-3 flex cursor-pointer items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-sm transition-colors duration-200 hover:bg-black/80"
+      >
+        {muted ? (
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M11 5 6 9H2v6h4l5 4V5z" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+          </svg>
+        ) : (
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M11 5 6 9H2v6h4l5 4V5z" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+          </svg>
+        )}
+        {muted ? "Unmute" : "Mute"}
+      </button>
+    </div>
+  );
+}
+
 function MusicSyncMedia() {
   return (
     <div className="flex h-[400px] flex-col gap-3 bg-[var(--surface)] p-5">
       <div className="min-h-0 flex-1 overflow-hidden rounded-xl">
-        <AutoVideo src="/videos/music-sync.mp4" />
+        <MusicSyncVideo />
       </div>
       {/* Track bar */}
       <div className="relative shrink-0 overflow-hidden rounded-xl bg-[#0e0e0e] px-3 pb-3 pt-2.5">
@@ -179,10 +229,10 @@ function MusicSyncMedia() {
 
 /* Captions: real captioned export + transcript filling itself in */
 const CAPTION_LINES = [
-  { t: "0:01", text: "two of my classmates" },
-  { t: "0:04", text: "said they never cooked before" },
-  { t: "0:07", text: "so we fixed that tonight" },
-  { t: "0:11", text: "starting with the basics" },
+  { t: "0:00", text: "big bag" },
+  { t: "0:02", text: "wow" },
+  { t: "0:03", text: "fit check" },
+  { t: "0:04", text: "oh my god" },
 ];
 
 function CaptionsMedia() {
@@ -190,7 +240,7 @@ function CaptionsMedia() {
     <div className="flex h-[400px] items-center justify-center gap-4 bg-[var(--surface)] p-5">
       <div className="h-full shrink-0 overflow-hidden rounded-xl shadow-lg shadow-black/15">
         <video
-          src={`${LANDING_BASE}/caleb1.mp4`}
+          src="/videos/captions-fitcheck.mp4"
           muted
           autoPlay
           loop
@@ -307,7 +357,7 @@ const FEATURES: {
   },
   {
     id: "captions",
-    title: "One-Click Captions",
+    title: "Instant Captions",
     description:
       "Every word timed to your speech and styled to your edit. Serif, bold, karaoke, any look you can name.",
     tryPrompt: "Add captions in a serif font",
