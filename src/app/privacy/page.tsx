@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Vyra",
+  title: "Privacy Policy - Vyra",
   description:
     "Learn how Vyra collects, uses, and protects your information when you use our video editing platform.",
 };
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      {/* Minimal nav — just the logo */}
+      {/* Minimal nav - just the logo */}
       <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="mx-auto flex h-[72px] max-w-6xl items-center px-6">
           <Link
@@ -44,16 +44,16 @@ export default function PrivacyPage() {
               This Privacy Policy explains how Vyra (&quot;we,&quot;
               &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects
               your information when you use our video editing platform. We built
-              Vyra to be a place you can trust with your work — this policy spells
+              Vyra to be a place you can trust with your work - this policy spells
               out exactly what we do, and just as importantly, what we never do,
               with your data.
             </p>
           </section>
 
-          {/* 2 — the trust section, up front on purpose */}
+          {/* 2 - the trust section, up front on purpose */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              2. Your Videos &amp; Content — Our Core Commitment
+              2. Your Videos &amp; Content - Our Core Commitment
             </h2>
             <p className="mb-3">
               Your projects, uploads, and exports are yours. This is the part of
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
                   It is never shared outside Vyra
                 </span>{" "}
                 except with the specific service providers we rely on to actually
-                deliver the product — for example, the AI services that understand
+                deliver the product - for example, the AI services that understand
                 your video, transcribe your audio, and render your exports. Those
                 providers act only on our behalf, only to deliver those features.
               </li>
@@ -130,8 +130,8 @@ export default function PrivacyPage() {
               <li>Email address</li>
               <li>Name</li>
               <li>
-                Authentication credentials (we store a securely hashed password —
-                never your password in plain text — or rely on your Google
+                Authentication credentials (we store a securely hashed password -
+                never your password in plain text - or rely on your Google
                 Sign-In)
               </li>
             </ul>
@@ -269,7 +269,7 @@ export default function PrivacyPage() {
               <li>You can revoke access at any time from your account settings</li>
             </ul>
             <p className="mt-3">
-              In this MCP flow, the external agent is the AI you bring — Vyra does
+              In this MCP flow, the external agent is the AI you bring - Vyra does
               not route your MCP-session data through its own AI providers. The
               agent processes the data it accesses under its own provider&apos;s
               policy, which we do not control. Please review the privacy policy of
@@ -297,7 +297,7 @@ export default function PrivacyPage() {
               </li>
               <li>
                 In connection with a merger, acquisition, financing, or sale of
-                assets — see below
+                assets - see below
               </li>
             </ul>
             <p className="mt-3">
@@ -391,7 +391,7 @@ export default function PrivacyPage() {
             <p className="mt-3">
               If you are in the EEA/UK, these rights are provided under the GDPR.
               If you are a California resident, you have rights under the CCPA/CPRA
-              — including the right to know, delete, and opt out of the
+              - including the right to know, delete, and opt out of the
               &quot;sale&quot; or &quot;sharing&quot; of personal information.
               Vyra does not sell or share your personal information as those terms
               are defined under California law. To exercise any of these rights,

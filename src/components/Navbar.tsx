@@ -60,7 +60,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop links — pill navigation (centered) */}
+          {/* Desktop links - pill navigation (centered) */}
           <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border border-[var(--surface-border)] bg-white/60 px-1.5 py-1 backdrop-blur-sm md:flex">
             {navLinks.map((link) =>
               link.href.startsWith("#") ? (

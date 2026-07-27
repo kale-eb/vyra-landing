@@ -5,7 +5,7 @@ import { posts } from "./[slug]/data";
 const SITE_URL = "https://www.usevyra.com";
 
 export const metadata: Metadata = {
-  title: "Blog — Vyra",
+  title: "Blog - Vyra",
   description:
     "Comparisons and guides for AI video editing. How Vyra stacks up against CapCut, Descript, VEED, and more.",
   alternates: { canonical: `${SITE_URL}/blog` },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${SITE_URL}/blog`,
     siteName: "Vyra",
-    title: "Blog — Vyra",
+    title: "Blog - Vyra",
     description:
       "Comparisons and guides for AI video editing. How Vyra stacks up against CapCut, Descript, VEED, and more.",
     images: [

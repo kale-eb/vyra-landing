@@ -3,9 +3,9 @@ import Link from "next/link";
 import { PathTabs } from "./PathTabs";
 
 export const metadata: Metadata = {
-  title: "Your First Project — Vyra Docs",
+  title: "Your First Project - Vyra Docs",
   description:
-    "A step-by-step walkthrough for creating your first video project in Vyra — with the built-in Vyra AI agent or your own MCP client.",
+    "A step-by-step walkthrough for creating your first video project in Vyra - with the built-in Vyra AI agent or your own MCP client.",
 };
 
 export default function FirstProjectPage() {
@@ -39,7 +39,7 @@ export default function FirstProjectPage() {
         </h1>
         <p className="mb-8 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
           A step-by-step walkthrough from signing up to your first export. Vyra&apos;s AI
-          comes two ways — pick the path that matches your plan:
+          comes two ways - pick the path that matches your plan:
         </p>
 
         <PathTabs ai={<AiSteps />} mcp={<McpSteps />} />
@@ -69,7 +69,7 @@ function AiSteps() {
             app.usevyra.com
           </a>{" "}
           and sign up with an <strong className="text-[var(--foreground)]">AI Starter</strong> or{" "}
-          <strong className="text-[var(--foreground)]">AI Pro</strong> plan. Both include Vyra AI —
+          <strong className="text-[var(--foreground)]">AI Pro</strong> plan. Both include Vyra AI -
           the editing agent built directly into the editor. There&apos;s nothing to install or
           configure.
         </p>
@@ -77,7 +77,7 @@ function AiSteps() {
 
       <Step number={2} title="Create a new project">
         <p>
-          From the home page, drop your footage onto the upload area — or click to browse
+          From the home page, drop your footage onto the upload area - or click to browse
           your files. You can add videos, images, and audio.
         </p>
         <DocImage src="/docs/drop-files.png" alt="Dropping footage onto the upload area" />
@@ -95,7 +95,7 @@ function AiSteps() {
         </p>
         <p className="mt-3">
           Click <strong className="text-[var(--foreground)]">Create Project</strong>. Your footage
-          will start processing — this takes a minute or two depending on file sizes.
+          will start processing - this takes a minute or two depending on file sizes.
         </p>
       </Step>
 
@@ -119,11 +119,11 @@ function AiSteps() {
       <Step number={4} title="Meet Vyra AI">
         <p>
           The editor opens with the <strong className="text-[var(--foreground)]">Vyra AI</strong> tab
-          on the left — that&apos;s your agent, and it can already see every clip you uploaded,
+          on the left - that&apos;s your agent, and it can already see every clip you uploaded,
           what&apos;s in them, and what was said. Just tell it what you&apos;re making:
         </p>
         <div className="mt-3 space-y-2">
-          <ExamplePrompt>&ldquo;Cut a first draft from my footage — it&apos;s a travel vlog&rdquo;</ExamplePrompt>
+          <ExamplePrompt>&ldquo;Cut a first draft from my footage - it&apos;s a travel vlog&rdquo;</ExamplePrompt>
           <ExamplePrompt>&ldquo;Build a 60-second highlight reel&rdquo;</ExamplePrompt>
           <ExamplePrompt>&ldquo;Add captions to the whole video&rdquo;</ExamplePrompt>
           <ExamplePrompt>&ldquo;Make the intro clip slow motion&rdquo;</ExamplePrompt>
@@ -131,7 +131,7 @@ function AiSteps() {
         </div>
         <p className="mt-3">
           You&apos;ll see the edit happen on the timeline in real time as the agent works. You
-          can edit manually at any point — use whichever feels faster, and switch to the{" "}
+          can edit manually at any point - use whichever feels faster, and switch to the{" "}
           <strong className="text-[var(--foreground)]">Footage</strong> tab any time to browse
           your clips yourself.
         </p>
@@ -140,12 +140,12 @@ function AiSteps() {
       <Step number={5} title="Get familiar with the editor">
         <p>The editor has three main areas:</p>
         <div className="mt-4 space-y-3">
-          <AreaCard title="Left — Vyra AI & Footage" description="Your agent chat and your footage library, in tabs. Search footage by what's in it, drag clips onto the timeline, or just ask the agent." />
-          <AreaCard title="Center — Canvas" description="The video preview. What you see here is what you'll export." />
-          <AreaCard title="Right — Tools & Properties" description="Tool panels (text, effects, captions, etc.) when nothing is selected. Properties and effects when an item is selected on the timeline." />
+          <AreaCard title="Left - Vyra AI & Footage" description="Your agent chat and your footage library, in tabs. Search footage by what's in it, drag clips onto the timeline, or just ask the agent." />
+          <AreaCard title="Center - Canvas" description="The video preview. What you see here is what you'll export." />
+          <AreaCard title="Right - Tools & Properties" description="Tool panels (text, effects, captions, etc.) when nothing is selected. Properties and effects when an item is selected on the timeline." />
         </div>
         <p className="mt-3">
-          The <strong className="text-[var(--foreground)]">timeline</strong> runs along the bottom —
+          The <strong className="text-[var(--foreground)]">timeline</strong> runs along the bottom -
           everything the agent builds lands there, and you can rearrange it by hand any time.
         </p>
       </Step>
@@ -156,12 +156,12 @@ function AiSteps() {
           top-right corner. Choose a preset or configure custom settings:
         </p>
         <ul className="mt-2 list-disc space-y-1.5 pl-6">
-          <li><strong className="text-[var(--foreground)]">Resolution</strong> — up to 1440p on AI Starter, 4K on AI Pro</li>
-          <li><strong className="text-[var(--foreground)]">Format</strong> — MP4 (best compatibility) or WebM</li>
-          <li><strong className="text-[var(--foreground)]">Quality</strong> — drag the bitrate slider between smaller file and higher quality</li>
+          <li><strong className="text-[var(--foreground)]">Resolution</strong> - up to 1440p on AI Starter, 4K on AI Pro</li>
+          <li><strong className="text-[var(--foreground)]">Format</strong> - MP4 (best compatibility) or WebM</li>
+          <li><strong className="text-[var(--foreground)]">Quality</strong> - drag the bitrate slider between smaller file and higher quality</li>
         </ul>
         <p className="mt-3">
-          Exports happen entirely in your browser — keep the tab open until it finishes.
+          Exports happen entirely in your browser - keep the tab open until it finishes.
           Your video is saved to your downloads and also appears in the Exports section of
           the Assets page.
         </p>
@@ -172,12 +172,12 @@ function AiSteps() {
         <ul className="mt-2 list-disc space-y-1.5 pl-6">
           <li>
             Try adding a{" "}
-            <strong className="text-[var(--foreground)]">reference video</strong> — the agent
+            <strong className="text-[var(--foreground)]">reference video</strong> - the agent
             matches its pacing, style, and visual treatment
           </li>
           <li>
             Explore{" "}
-            <strong className="text-[var(--foreground)]">semantic search</strong> — search your
+            <strong className="text-[var(--foreground)]">semantic search</strong> - search your
             footage by describing what&apos;s in it, not by filename
             <div className="mt-2 max-w-[200px]">
               <DocImage src="/docs/semantic-search.png" alt="Semantic search for 'jump' returning ice skating clips" />
@@ -185,7 +185,7 @@ function AiSteps() {
           </li>
           <li>
             Experiment with{" "}
-            <strong className="text-[var(--foreground)]">effects and masks</strong> — ask the agent
+            <strong className="text-[var(--foreground)]">effects and masks</strong> - ask the agent
             for color grading, smart masks, and background removal
           </li>
           <li>
@@ -213,7 +213,7 @@ function McpSteps() {
           <a href="https://app.usevyra.com/signup" className="text-[var(--brand-blue)] underline underline-offset-2">
             app.usevyra.com
           </a>{" "}
-          and sign up with an <strong className="text-[var(--foreground)]">MCP</strong> plan —
+          and sign up with an <strong className="text-[var(--foreground)]">MCP</strong> plan -
           made for driving Vyra from an agent you already use, like Claude Code, Claude
           Desktop, claude.ai, or Cursor.
         </p>
@@ -225,14 +225,14 @@ function McpSteps() {
           <Link href="/docs/mcp" className="text-[var(--brand-blue)] underline underline-offset-2">
             MCP setup guide
           </Link>{" "}
-          to connect your preferred client — Claude Code, Claude Desktop, claude.ai, Cursor,
+          to connect your preferred client - Claude Code, Claude Desktop, claude.ai, Cursor,
           and more are all supported.
         </p>
       </Step>
 
       <Step number={3} title="Create a new project">
         <p>
-          From the home page, drop your footage onto the upload area — or click to browse
+          From the home page, drop your footage onto the upload area - or click to browse
           your files. You can add videos, images, and audio.
         </p>
         <DocImage src="/docs/drop-files.png" alt="Dropping footage onto the upload area" />
@@ -250,7 +250,7 @@ function McpSteps() {
         </p>
         <p className="mt-3">
           Click <strong className="text-[var(--foreground)]">Create Project</strong>. Your footage
-          will start processing — this takes a minute or two depending on file sizes.
+          will start processing - this takes a minute or two depending on file sizes.
         </p>
       </Step>
 
@@ -274,19 +274,19 @@ function McpSteps() {
       <Step number={5} title="Get familiar with the editor">
         <p>The editor has three main areas:</p>
         <div className="mt-4 space-y-3">
-          <AreaCard title="Left — Footage Panel" description="Your uploaded footage and reference videos. Search for clips, drag them onto the timeline, or click to add." />
-          <AreaCard title="Center — Canvas" description="The video preview. What you see here is what you'll export." />
-          <AreaCard title="Right — Tools & Properties" description="Tool panels (text, effects, captions, etc.) when nothing is selected. Properties and effects when an item is selected on the timeline." />
+          <AreaCard title="Left - Footage Panel" description="Your uploaded footage and reference videos. Search for clips, drag them onto the timeline, or click to add." />
+          <AreaCard title="Center - Canvas" description="The video preview. What you see here is what you'll export." />
+          <AreaCard title="Right - Tools & Properties" description="Tool panels (text, effects, captions, etc.) when nothing is selected. Properties and effects when an item is selected on the timeline." />
         </div>
         <p className="mt-3">
-          The <strong className="text-[var(--foreground)]">timeline</strong> runs along the bottom —
+          The <strong className="text-[var(--foreground)]">timeline</strong> runs along the bottom -
           this is where you arrange your clips, text, audio, and graphics.
         </p>
       </Step>
 
       <Step number={6} title="Connect this tab to the agent">
         <p>
-          The editor and the agent live in different places — the editor is this browser tab,
+          The editor and the agent live in different places - the editor is this browser tab,
           the agent runs wherever you set up MCP (Claude Code in your terminal, claude.ai,
           etc.). To let the agent drive THIS tab, click the{" "}
           <strong className="text-[var(--foreground)]">Connect MCP</strong> button in the top
@@ -305,7 +305,7 @@ function McpSteps() {
       <Step number={7} title="Start editing with the agent">
         <p>
           Open your MCP client and tell the agent what you want. It can do anything
-          you&apos;d do manually — just describe what you&apos;re going for:
+          you&apos;d do manually - just describe what you&apos;re going for:
         </p>
         <div className="mt-3 space-y-2">
           <ExamplePrompt>&ldquo;Build a 60-second highlight reel from my footage&rdquo;</ExamplePrompt>
@@ -316,7 +316,7 @@ function McpSteps() {
         </div>
         <p className="mt-3">
           You&apos;ll see changes happen in the editor in real time as the agent works.
-          You can also edit manually in the UI at any point — use whichever feels faster.
+          You can also edit manually in the UI at any point - use whichever feels faster.
         </p>
       </Step>
 
@@ -326,12 +326,12 @@ function McpSteps() {
           top-right corner. Choose a preset or configure custom settings:
         </p>
         <ul className="mt-2 list-disc space-y-1.5 pl-6">
-          <li><strong className="text-[var(--foreground)]">Resolution</strong> — up to 1440p on Starter, 4K on Pro</li>
-          <li><strong className="text-[var(--foreground)]">Format</strong> — MP4 (best compatibility) or WebM</li>
-          <li><strong className="text-[var(--foreground)]">Quality</strong> — drag the bitrate slider between smaller file and higher quality</li>
+          <li><strong className="text-[var(--foreground)]">Resolution</strong> - up to 1440p on Starter, 4K on Pro</li>
+          <li><strong className="text-[var(--foreground)]">Format</strong> - MP4 (best compatibility) or WebM</li>
+          <li><strong className="text-[var(--foreground)]">Quality</strong> - drag the bitrate slider between smaller file and higher quality</li>
         </ul>
         <p className="mt-3">
-          Exports happen entirely in your browser — keep the tab open until it finishes.
+          Exports happen entirely in your browser - keep the tab open until it finishes.
           Your video is saved to your downloads and also appears in the Exports section of
           the Assets page.
         </p>
@@ -342,12 +342,12 @@ function McpSteps() {
         <ul className="mt-2 list-disc space-y-1.5 pl-6">
           <li>
             Try adding a{" "}
-            <strong className="text-[var(--foreground)]">reference video</strong> — the agent
+            <strong className="text-[var(--foreground)]">reference video</strong> - the agent
             matches its pacing, style, and visual treatment
           </li>
           <li>
             Explore{" "}
-            <strong className="text-[var(--foreground)]">semantic search</strong> — search your
+            <strong className="text-[var(--foreground)]">semantic search</strong> - search your
             footage by describing what&apos;s in it, not by filename
             <div className="mt-2 max-w-[200px]">
               <DocImage src="/docs/semantic-search.png" alt="Semantic search for 'jump' returning ice skating clips" />
@@ -355,7 +355,7 @@ function McpSteps() {
           </li>
           <li>
             Experiment with{" "}
-            <strong className="text-[var(--foreground)]">effects and masks</strong> — the agent
+            <strong className="text-[var(--foreground)]">effects and masks</strong> - the agent
             can apply color grading, smart masks, and background removal
           </li>
           <li>

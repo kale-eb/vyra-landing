@@ -3,9 +3,9 @@ import Link from "next/link";
 import { TabbedCapabilities } from "./tabbed-capabilities";
 
 export const metadata: Metadata = {
-  title: "Getting Started — Vyra Docs",
+  title: "Getting Started - Vyra Docs",
   description:
-    "Everything you need to know to start editing with AI — from uploading footage to getting the most out of the agent.",
+    "Everything you need to know to start editing with AI - from uploading footage to getting the most out of the agent.",
 };
 
 export default function GuidePage() {
@@ -38,7 +38,7 @@ export default function GuidePage() {
           Getting Started
         </h1>
         <p className="mb-12 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-          Everything you need to know to start editing with AI — from uploading your first
+          Everything you need to know to start editing with AI - from uploading your first
           footage to getting the most out of the agent.
         </p>
 
@@ -78,12 +78,12 @@ export default function GuidePage() {
             <SectionHeading id="your-first-project">Your First Project</SectionHeading>
             <p>
               Vyra is a video editor built around an AI agent. You upload your footage, and the
-              agent helps you assemble, search, and edit — from a first rough cut to polished
+              agent helps you assemble, search, and edit - from a first rough cut to polished
               motion graphics.
             </p>
             <p className="mt-3">
               To get started, create a new project and add your footage. Once your files are uploaded
-              and processed, you can start editing — either manually through the UI like a traditional
+              and processed, you can start editing - either manually through the UI like a traditional
               editor, or by talking to the agent through conversation.
             </p>
           </section>
@@ -132,8 +132,8 @@ export default function GuidePage() {
 
             <p className="mt-4">
               Regardless of how you upload, all footage is automatically processed and indexed.
-              This means the agent can understand what&apos;s in your footage — every scene, every
-              moment — which powers semantic search and intelligent editing.
+              This means the agent can understand what&apos;s in your footage - every scene, every
+              moment - which powers semantic search and intelligent editing.
             </p>
           </section>
 
@@ -170,7 +170,7 @@ export default function GuidePage() {
             </div>
 
             <p className="mt-4">
-              Search results return specific clips and timestamps — not just whole files. This works
+              Search results return specific clips and timestamps - not just whole files. This works
               within a single project or across your entire library, so you can pull the perfect
               moment from any video you&apos;ve ever uploaded.
             </p>
@@ -190,7 +190,7 @@ export default function GuidePage() {
                 MCP
               </a>{" "}
               (Model Context Protocol). This means you can use it from Claude, Cursor, Windsurf,
-              or any MCP-compatible client — not just the built-in chat.
+              or any MCP-compatible client - not just the built-in chat.
             </p>
 
             <Link
@@ -225,7 +225,7 @@ export default function GuidePage() {
             <SectionHeading id="agent-vs-you">Agent vs. Doing It Yourself</SectionHeading>
             <p>
               The agent can do everything, but that doesn&apos;t mean it should. Some things are
-              faster by hand — especially small, precise adjustments.
+              faster by hand - especially small, precise adjustments.
             </p>
 
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
@@ -267,7 +267,7 @@ export default function GuidePage() {
           <section>
             <SectionHeading id="working-with-agent">Communicating with the Agent</SectionHeading>
             <p>
-              The agent sees your editor state — your selection, playhead position, and timeline.
+              The agent sees your editor state - your selection, playhead position, and timeline.
               The more context you give it, the better the results.
             </p>
 
@@ -338,7 +338,7 @@ export default function GuidePage() {
             </div>
 
             <Callout type="note" className="mt-5">
-              Reference videos are for inspiration and style — they&apos;re not your footage. The
+              Reference videos are for inspiration and style - they&apos;re not your footage. The
               agent won&apos;t use clips from the reference in your edit. It only uses the reference
               to understand the vibe you&apos;re going for.
             </Callout>
@@ -349,7 +349,7 @@ export default function GuidePage() {
             <SectionHeading id="motion-graphics">Motion Graphics</SectionHeading>
             <p>
               Motion graphics in Vyra are generated by the agent as code. This means they&apos;re
-              fully dynamic — animated, responsive, and unique to your project. But it also means
+              fully dynamic - animated, responsive, and unique to your project. But it also means
               you edit them through conversation, not by dragging handles.
             </p>
 
@@ -360,21 +360,21 @@ export default function GuidePage() {
               <div className="space-y-4">
                 <Step number={1} title="Describe what you want">
                   &ldquo;Create a lower third with the name John Smith and the title Creative Director&rdquo;
-                  — the more detail you give, the closer the first result.
+                  - the more detail you give, the closer the first result.
                 </Step>
                 <Step number={2} title="The agent generates and places it">
                   It writes animated code and places the motion graphic on your timeline. You&apos;ll
                   see it appear in real time.
                 </Step>
                 <Step number={3} title="Refine through conversation">
-                  To modify it, ask the agent — &ldquo;make the text bigger&rdquo; or &ldquo;change
+                  To modify it, ask the agent - &ldquo;make the text bigger&rdquo; or &ldquo;change
                   the animation to slide in from the left.&rdquo;
                 </Step>
               </div>
             </div>
 
             <Callout type="important" className="mt-5">
-              You can&apos;t manually edit motion graphics by clicking on them — they&apos;re
+              You can&apos;t manually edit motion graphics by clicking on them - they&apos;re
               rendered from code. To make changes, ask the agent. It can modify colors, text,
               animations, sizing, and timing.
             </Callout>

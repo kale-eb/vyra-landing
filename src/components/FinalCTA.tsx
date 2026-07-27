@@ -28,10 +28,7 @@ export default function FinalCTA() {
           >
             Your next video is
           </span>
-          <span
-            className="block text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] font-extrabold tracking-[-0.03em] text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
+          <span className="serif-italic block text-[clamp(2.5rem,6vw,4.5rem)] font-normal leading-[1.05] tracking-[-0.02em] text-[var(--foreground)]">
             a conversation away.
           </span>
         </motion.h2>
@@ -43,7 +40,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="mb-12 text-[17px] leading-relaxed text-[var(--foreground-muted)]"
         >
-          Start your free trial and go from footage to finished in minutes.
+          Go from footage to finished in minutes.
         </motion.p>
 
         <motion.div
@@ -54,24 +51,9 @@ export default function FinalCTA() {
         >
           <a
             href="https://app.usevyra.com/signup"
-            className="btn-shimmer inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
+            className="inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
           >
-            Start free trial
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 16 16"
-              fill="none"
-              className="ml-2.5"
-            >
-              <path
-                d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            Get started for free
           </a>
         </motion.div>
       </div>

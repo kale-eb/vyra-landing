@@ -1,847 +1,462 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { AudioWaveform } from "./AudioWaveform";
 
 const STORAGE_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/showcase";
+const LANDING_BASE =
+  "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
 
-interface TimeRemapVariant {
-  label: string;
-  videoUrl: string;
-  curvePath: string;
+function AutoVideo({ src, contain }: { src: string; contain?: boolean }) {
+  return (
+    <video
+      src={src}
+      muted
+      autoPlay
+      loop
+      playsInline
+      className={`h-full w-full ${contain ? "object-contain" : "object-cover"}`}
+    />
+  );
 }
 
-interface FeatureCard {
+/* Deterministic bar heights so SSR and client render identically */
+function barH(i: number, min: number, max: number) {
+  return min + (((i * 37 + 11) % 53) / 53) * (max - min);
+}
+
+/* Footage understanding: live analysis over a real frame */
+function AnalysisMedia() {
+  return (
+    <div className="flex h-[400px] gap-3 bg-[var(--surface)] p-5">
+      <div className="relative h-full flex-1 overflow-hidden rounded-xl">
+        <AutoVideo src="/videos/footage-understanding.mp4" />
+        {/* Scanning sweep */}
+        <motion.div
+          animate={{ left: ["0%", "99%"] }}
+          transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
+          className="absolute inset-y-0 w-[2px] bg-gradient-to-b from-transparent via-[var(--brand-blue)]/70 to-transparent"
+        />
+        {/* Tag chips */}
+        <div className="absolute left-3 top-3 flex gap-1.5">
+          {["vlog", "indoors", "speech"].map((t, i) => (
+            <motion.span
+              key={t}
+              initial={{ opacity: 0, y: -6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 + i * 0.25, duration: 0.4 }}
+              className="rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-medium text-[var(--foreground)] shadow-sm backdrop-blur-sm"
+            >
+              {t}
+            </motion.span>
+          ))}
+        </div>
+        {/* Subject detection box */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.9, type: "spring", stiffness: 260, damping: 20 }}
+          className="absolute left-[30%] top-[4%] h-[92%] w-[40%]"
+        >
+          {/* Gentle drift sells the box as live tracking on the talking head */}
+          <motion.div
+            animate={{
+              opacity: [1, 0.55, 1],
+              x: [0, 4, -3, 2, 0],
+              y: [0, 3, -2, 4, 0],
+            }}
+            transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+            className="h-full w-full rounded-md border-2 border-[var(--brand-blue)]"
+          />
+          <span className="absolute -top-5 left-0 rounded bg-[var(--brand-blue)] px-1.5 py-0.5 text-[9px] font-semibold text-white">
+            person
+          </span>
+        </motion.div>
+        {/* Transcript strip with living waveform */}
+        <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 rounded-lg bg-black/55 px-3 py-2 backdrop-blur-sm">
+          <span className="flex items-end gap-[2px]">
+            {Array.from({ length: 7 }, (_, i) => (
+              <motion.span
+                key={i}
+                animate={{ scaleY: [0.4, 1, 0.55, 0.9, 0.4] }}
+                transition={{ duration: 1.6 + (i % 3) * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.12 }}
+                className="w-[2px] origin-bottom rounded-full bg-white/70"
+                style={{ height: `${barH(i, 5, 12)}px` }}
+              />
+            ))}
+          </span>
+          <span className="truncate text-[11px] text-white/85">
+            &ldquo;vlogs that usually take hours to edit... edited in under an hour&rdquo;
+          </span>
+        </div>
+      </div>
+      {/* Scene strip */}
+      <div className="flex h-full w-[96px] flex-col gap-2">
+        {["scene-1", "scene-2", "scene-3"].map((f, i) => (
+          <motion.div
+            key={f}
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 + i * 0.2, duration: 0.4 }}
+            className="relative flex-1 overflow-hidden rounded-lg"
+          >
+            <img src={`/images/boston/${f}.jpg`} alt="" className="h-full w-full object-cover" />
+            <span className="absolute bottom-1 left-1 rounded bg-black/55 px-1.5 py-0.5 text-[8px] font-medium text-white/85">
+              Scene {i + 1}
+            </span>
+          </motion.div>
+        ))}
+        <span className="rounded-full border border-[var(--surface-border)] bg-white px-2 py-1 text-center text-[9px] font-medium text-[var(--foreground-muted)]">
+          9 clips &middot; speech &#10003;
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* Music sync: cropped video + a live track bar showing cuts on beats */
+const SEGMENTS = [13, 8, 11, 7, 14, 9, 12, 8, 11, 7];
+
+function MusicSyncMedia() {
+  return (
+    <div className="flex h-[400px] flex-col gap-3 bg-[var(--surface)] p-5">
+      <div className="min-h-0 flex-1 overflow-hidden rounded-xl">
+        <AutoVideo src="/videos/music-sync.mp4" />
+      </div>
+      {/* Track bar */}
+      <div className="relative shrink-0 overflow-hidden rounded-xl bg-[#0e0e0e] px-3 pb-3 pt-2.5">
+        {/* Clip segments, split on the beats */}
+        <div className="mb-2 flex h-5 gap-[3px]">
+          {SEGMENTS.map((w, i) => (
+            <div
+              key={i}
+              style={{ width: `${w}%` }}
+              className={`h-full rounded-[4px] ${i % 2 ? "bg-[#b3a5ef]" : "bg-[#a988f0]"}`}
+            />
+          ))}
+        </div>
+        {/* Mirrored waveform, full track width, beats glowing on the grid */}
+        <div className="flex h-12 w-full items-center gap-[2px]">
+          {Array.from({ length: 72 }, (_, i) => {
+            const beat = i % 8 === 3;
+            const h = 8 + (((i * 37 + 11) % 53) / 53) * 22 * (0.6 + 0.4 * Math.sin(i / 4));
+            return beat ? (
+              <motion.span
+                key={i}
+                animate={{ scaleY: [1, 0.7, 1] }}
+                transition={{
+                  duration: 1.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: (i % 5) * 0.2,
+                }}
+                className="min-w-0 flex-1 rounded-full bg-[#5fd4ea] shadow-[0_0_8px_rgba(95,212,234,0.7)]"
+                style={{ height: 44 }}
+              />
+            ) : (
+              <span
+                key={i}
+                className="min-w-0 flex-1 rounded-full bg-white/30"
+                style={{ height: `${h}px` }}
+              />
+            );
+          })}
+        </div>
+        {/* Playhead sweeping in time */}
+        <motion.div
+          animate={{ left: ["2%", "98%"] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1 top-1 w-[2px] rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]"
+        />
+      </div>
+    </div>
+  );
+}
+
+/* Captions: real captioned export + transcript filling itself in */
+const CAPTION_LINES = [
+  { t: "0:01", text: "two of my classmates" },
+  { t: "0:04", text: "said they never cooked before" },
+  { t: "0:07", text: "so we fixed that tonight" },
+  { t: "0:11", text: "starting with the basics" },
+];
+
+function CaptionsMedia() {
+  return (
+    <div className="flex h-[400px] items-center justify-center gap-4 bg-[var(--surface)] p-5">
+      <div className="h-full shrink-0 overflow-hidden rounded-xl shadow-lg shadow-black/15">
+        <video
+          src={`${LANDING_BASE}/caleb1.mp4`}
+          muted
+          autoPlay
+          loop
+          playsInline
+          className="h-full w-auto"
+        />
+      </div>
+      <div className="flex w-[240px] flex-col gap-2">
+        <motion.span
+          initial={{ opacity: 0, y: -6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="inline-flex items-center gap-1.5 self-start rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-emerald-600 shadow-sm"
+        >
+          <svg width="9" height="9" viewBox="0 0 16 16" fill="none">
+            <path d="M13 4.5L6.5 11L3 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          31 captions synced in seconds
+        </motion.span>
+        {CAPTION_LINES.map((line, i) => (
+          <motion.div
+            key={line.t}
+            initial={{ opacity: 0, x: 12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 + i * 0.35, duration: 0.4 }}
+            className="flex items-baseline gap-2 rounded-lg border border-[var(--surface-border)] bg-white px-3 py-2 shadow-sm"
+          >
+            <span className="text-[9px] font-medium tabular-nums text-[var(--foreground-subtle)]">
+              {line.t}
+            </span>
+            <span className="text-[12px] leading-snug text-[var(--foreground)]">
+              {line.text}
+            </span>
+          </motion.div>
+        ))}
+        <div className="mt-1 flex gap-1.5">
+          {["Serif", "Bold", "Karaoke"].map((s, i) => (
+            <span
+              key={s}
+              className={`rounded-full px-2.5 py-1 text-[10px] font-medium ${
+                i === 0
+                  ? "bg-[var(--foreground)] text-white"
+                  : "border border-[var(--surface-border)] bg-white text-[var(--foreground-muted)]"
+              }`}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const FEATURES: {
   id: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
-  mediaUrl?: string;
-  mediaType?: "video" | "image";
-  timeRemapOriginal?: string;
-  timeRemapVariants?: TimeRemapVariant[];
-  referenceOriginal?: string;
-  referenceResult?: string;
-  maskBefore?: string;
-  maskAfter?: string;
-  mgVideos?: { label: string; url: string; fit?: "contain" | "cover"; scale?: number }[];
-  showWaveform?: boolean;
   tryPrompt?: string;
-  gridClass?: string;
-}
-
-const FEATURES: FeatureCard[] = [
+  media: React.ReactNode;
+}[] = [
   {
     id: "motion-graphics",
     title: "Motion Graphics",
     description:
-      "The AI generates animated titles, lower thirds, data visualizations, and more — written as code components and rendered in real-time on your timeline.",
-    icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
+      "Animated titles, lower thirds, and counters, generated as code and rendered live on your timeline.",
+    tryPrompt: "Make me an animated title card",
+    media: (
+      <div className="aspect-video">
+        <AutoVideo src="/videos/shake-mg.mp4" />
+      </div>
     ),
-    mgVideos: [
-      { label: "Title Card", url: "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/mg-cooking-quest.mp4", fit: "contain" as const },
-      { label: "Podcast Title", url: "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/mg-lower-third.mp4", fit: "cover" as const, scale: 0.75 },
-      { label: "Animated Counter", url: "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/mg-counter.mp4", fit: "cover" as const },
-    ],
-    gridClass: "md:col-span-2",
   },
   {
     id: "footage-understanding",
-    title: "Understands Your Footage",
+    title: "Footage Understanding",
     description:
-      "Vyra analyzes every clip — detecting scenes, transcribing speech, identifying objects and people. Your AI assistant sees what's actually in your footage and makes editing decisions based on real content, not guesses.",
-    tryPrompt: '"Find the best moments and cut them together"',
-    icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
+      "Every clip is analyzed: scenes detected, speech transcribed, subjects tagged. Edits follow what's actually in your footage.",
+    tryPrompt: "Find the best moments and cut them together",
+    media: <AnalysisMedia />,
   },
   {
     id: "music-sync",
     title: "Music Sync",
     description:
-      "The AI detects beats and energy in your audio track, then automatically cuts and transitions your footage to match the rhythm.",
-    tryPrompt: '"Sync the cuts to the beat drops"',
-    icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M9 18V5l12-2v13" />
-        <circle cx="6" cy="18" r="3" />
-        <circle cx="18" cy="16" r="3" />
-      </svg>
-    ),
-    mediaUrl: `${STORAGE_BASE}/music-sync-preview.mp4`,
-    mediaType: "video",
-    showWaveform: true,
+      "Vyra finds the beats in your track and lands every cut on the rhythm.",
+    tryPrompt: "Sync the cuts to the beat drops",
+    media: <MusicSyncMedia />,
   },
   {
     id: "reference-style",
-    title: "Match Reference Style",
+    title: "Reference Style",
     description:
-      "Drop in a reference video and the AI analyzes its pacing, color, and transitions — then applies that same style to your footage.",
-    tryPrompt: '"Match the style and pacing of this reference"',
-    icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="13.5" cy="6.5" r="2.5" />
-        <circle cx="17.5" cy="15.5" r="2.5" />
-        <circle cx="8.5" cy="15.5" r="2.5" />
-        <path d="M13.5 9v1.5a2 2 0 01-2 2h-1a2 2 0 00-2 2V15" />
-        <path d="M13.5 9v1.5a2 2 0 002 2h1a2 2 0 012 2V15" />
-      </svg>
+      "Drop in a reference video and Vyra applies its pacing, color, and transitions to your footage.",
+    tryPrompt: "Match the style and pacing of this reference",
+    media: (
+      <div className="grid grid-cols-2 bg-black">
+        <div className="relative aspect-[4/5]">
+          <AutoVideo src={`${STORAGE_BASE}/reference-style-original.mp4`} />
+          <span className="absolute left-2 top-2 rounded bg-black/60 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-white/80">
+            Reference
+          </span>
+        </div>
+        <div className="relative aspect-[4/5]">
+          <AutoVideo src={`${STORAGE_BASE}/reference-style-result.mp4`} />
+          <span className="absolute left-2 top-2 rounded bg-black/60 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-white/80">
+            Your footage
+          </span>
+        </div>
+      </div>
     ),
-    referenceOriginal: `${STORAGE_BASE}/reference-style-original.mp4`,
-    referenceResult: `${STORAGE_BASE}/reference-style-result.mp4`,
   },
   {
     id: "captions",
-    title: "AI Captions",
+    title: "One-Click Captions",
     description:
-      "AI generates and syncs captions from speech, placed on the timeline automatically. Style them with a prompt — bold, minimal, animated, anything.",
-    tryPrompt: '"Add captions in bold white"',
-    icon: (
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="M7 15h4" />
-        <path d="M13 15h4" />
-        <path d="M7 11h10" />
-      </svg>
-    ),
+      "Every word timed to your speech and styled to your edit. Serif, bold, karaoke, any look you can name.",
+    tryPrompt: "Add captions in a serif font",
+    media: <CaptionsMedia />,
   },
 ];
-
-function MotionGraphicsCard({ card }: { card: FeatureCard }) {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const videos = card.mgVideos || [];
-
-  return (
-    <div className="flex flex-col md:flex-row h-full">
-      {/* Video */}
-      <div className="relative flex-1 min-h-[340px] bg-black overflow-hidden">
-        {videos.map((v, i) => (
-          <video
-            key={v.url}
-            src={v.url}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-200 ${
-              i === activeIdx ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-            style={{
-              objectFit: v.fit || "contain",
-              transform: v.scale ? `scale(${v.scale})` : undefined,
-            }}
-            muted
-            autoPlay
-            loop
-            playsInline
-          />
-        ))}
-      </div>
-      {/* Text + selector */}
-      <div className="w-full md:w-72 flex-none flex flex-col justify-center p-5 border-t md:border-t-0 md:border-l border-[var(--surface-border)]">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3
-            className="text-lg font-bold text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)] mb-4">
-          {card.description}
-        </p>
-        {/* Type selector buttons */}
-        <div className="flex flex-col gap-2">
-          {videos.map((v, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIdx(i)}
-              className={`rounded-lg border px-3 py-2.5 text-left transition-all cursor-pointer ${
-                i === activeIdx
-                  ? "border-black/[0.2] bg-black/[0.05] shadow-sm ring-1 ring-black/[0.03]"
-                  : "border-[var(--surface-border)] hover:border-[var(--surface-border-hover)] hover:bg-black/[0.02]"
-              }`}
-            >
-              <span
-                className={`text-[13px] font-medium ${
-                  i === activeIdx ? "text-[var(--foreground)]" : "text-[var(--foreground-muted)]"
-                }`}
-              >
-                {v.label}
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SmartMaskCard({ card }: { card: FeatureCard }) {
-  const [showAfter, setShowAfter] = useState(false);
-
-  return (
-    <div className="flex flex-col md:flex-row">
-      {/* Media */}
-      <div className="relative flex-1 min-h-[340px] bg-black/[0.02] overflow-hidden">
-        <video
-          src={card.maskBefore}
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            !showAfter ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
-        <video
-          src={card.maskAfter}
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            showAfter ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
-        {/* Prompt overlay */}
-      </div>
-      {/* Text + controls */}
-      <div className="w-full md:w-72 flex-none flex flex-col justify-center p-5 border-t md:border-t-0 md:border-l border-[var(--surface-border)]">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3
-            className="text-lg font-bold text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)] mb-4">
-          {card.description}
-        </p>
-        {/* Before/After toggle */}
-        <div className="flex gap-2">
-          <button
-            onClick={() => setShowAfter(false)}
-            className={`flex-1 rounded-lg border px-4 py-3 transition-all cursor-pointer ${
-              !showAfter
-                ? "border-black/[0.2] bg-black/[0.05] shadow-sm ring-1 ring-black/[0.03]"
-                : "border-[var(--surface-border)] hover:border-[var(--surface-border-hover)] hover:bg-black/[0.02]"
-            }`}
-          >
-            <span
-              className={`text-xs font-medium uppercase tracking-wider block mb-1 ${
-                !showAfter
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-subtle)]"
-              }`}
-            >
-              Before
-            </span>
-            <span
-              className={`text-sm ${
-                !showAfter
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-muted)]"
-              }`}
-            >
-              Original
-            </span>
-          </button>
-          <button
-            onClick={() => setShowAfter(true)}
-            className={`flex-1 rounded-lg border px-4 py-3 transition-all cursor-pointer ${
-              showAfter
-                ? "border-black/[0.2] bg-black/[0.05] shadow-sm ring-1 ring-black/[0.03]"
-                : "border-[var(--surface-border)] hover:border-[var(--surface-border-hover)] hover:bg-black/[0.02]"
-            }`}
-          >
-            <span
-              className={`text-xs font-medium uppercase tracking-wider block mb-1 ${
-                showAfter
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-subtle)]"
-              }`}
-            >
-              After
-            </span>
-            <span
-              className={`text-sm ${
-                showAfter
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-muted)]"
-              }`}
-            >
-              Masked
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const FOOTAGE_BASE = "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/footage";
-
-const FOOTAGE_CLIPS = [
-  { src: `${FOOTAGE_BASE}/pizza.jpg`, label: "Restaurant dinner", tags: ["food", "indoor", "pizza"], duration: "0:02" },
-  { src: `${FOOTAGE_BASE}/hotpot.jpg`, label: "Hot pot close-up", tags: ["food", "reaction", "dining"], duration: "0:05" },
-  { src: `${FOOTAGE_BASE}/painting.jpg`, label: "Art studio session", tags: ["art", "creative", "studio"], duration: "0:25" },
-  { src: `${FOOTAGE_BASE}/snowboard.jpg`, label: "Halfpipe trick", tags: ["snowboard", "aerial", "sports"], duration: "0:03" },
-  { src: `${FOOTAGE_BASE}/selfiewalk.jpg`, label: "Selfie walk", tags: ["selfie", "walking", "winter"], duration: "0:05" },
-  { src: `${FOOTAGE_BASE}/dance.jpg`, label: "Dance performance", tags: ["stage", "energetic", "group"], duration: "0:14" },
-];
-
-function FootageUnderstandingCard({ card }: { card: FeatureCard }) {
-  return (
-    <div className="flex flex-col h-full">
-      <div className="relative bg-[var(--surface)] p-5 overflow-hidden">
-        {/* Real footage thumbnail grid with analysis tags */}
-        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
-          {FOOTAGE_CLIPS.map((clip, i) => (
-            <div key={i} className="group relative rounded-lg bg-white border border-[var(--surface-border)] overflow-hidden shadow-sm transition-shadow hover:shadow-md">
-              <div className="relative aspect-video overflow-hidden">
-                <img src={clip.src} alt={clip.label} className="w-full h-full object-cover" />
-                {/* Duration badge */}
-                <span className="absolute bottom-1 right-1 rounded bg-black/60 px-1.5 py-0.5 text-[9px] font-medium text-white">
-                  {clip.duration}
-                </span>
-                {/* Play icon */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="h-6 w-6 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
-                    <svg width="8" height="8" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="white"/></svg>
-                  </div>
-                </div>
-              </div>
-              <div className="px-2 py-1.5">
-                <p className="text-[10px] sm:text-[9px] font-medium text-[var(--foreground)] truncate">{clip.label}</p>
-                <div className="flex flex-wrap gap-1 mt-1">
-                  {clip.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-[var(--brand-blue)]/[0.08] px-1.5 py-0.5 text-[8px] sm:text-[7px] font-medium text-[var(--brand-blue)]">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Analysis summary pills — inline so they never overlap thumbnails */}
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
-            6 clips analyzed
-          </span>
-          <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
-            Speech transcribed
-          </span>
-          <span className="rounded-full bg-white border border-[var(--surface-border)] px-2.5 py-1 text-[10px] font-medium text-[var(--foreground-muted)]">
-            18 tags generated
-          </span>
-        </div>
-      </div>
-      <div className="flex-1 p-5">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3 className="text-lg font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)]">
-          {card.description}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function TimeRemapCard({ card }: { card: FeatureCard }) {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  return (
-    <div className="flex flex-col h-full">
-      {/* Media */}
-      <div className="relative aspect-[4/3] bg-black/[0.02] overflow-hidden">
-        <video
-          key={
-            selectedIndex === null ? "original" : `variant-${selectedIndex}`
-          }
-          src={
-            selectedIndex === null
-              ? card.timeRemapOriginal
-              : card.timeRemapVariants![selectedIndex].videoUrl
-          }
-          className="w-full h-full object-contain"
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
-      </div>
-      {/* Text + curve selectors */}
-      <div className="flex-1 p-5">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3
-            className="text-lg font-bold text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)] mb-4">
-          {card.description}
-        </p>
-        {/* Curve selectors */}
-        <p className="text-[12px] text-[var(--foreground-subtle)] mb-2">
-          Click a curve to try it:
-        </p>
-        <div className="flex gap-2">
-          {card.timeRemapVariants!.map((variant, i) => (
-            <button
-              key={i}
-              onClick={() => setSelectedIndex(i)}
-              className={`relative flex-1 rounded-lg border p-2.5 transition-all cursor-pointer ${
-                selectedIndex === i
-                  ? "border-black/[0.2] bg-black/[0.05] shadow-sm ring-1 ring-black/[0.03]"
-                  : "border-[var(--surface-border)] hover:border-[var(--surface-border-hover)] hover:bg-black/[0.02]"
-              }`}
-            >
-              {selectedIndex !== i && (
-                <span className="absolute top-1 right-1.5 text-[9px] font-medium text-[var(--foreground-subtle)] uppercase tracking-wider">
-                  Try
-                </span>
-              )}
-              <svg viewBox="0 0 100 100" className="w-full h-10">
-                <path
-                  d={variant.curvePath}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className={
-                    selectedIndex === i
-                      ? "text-[var(--foreground)]"
-                      : "text-[var(--foreground-muted)]"
-                  }
-                />
-              </svg>
-              <span
-                className={`text-[10px] mt-1 block font-medium ${
-                  selectedIndex === i
-                    ? "text-[var(--foreground)]"
-                    : "text-[var(--foreground-subtle)]"
-                }`}
-              >
-                {variant.label}
-              </span>
-            </button>
-          ))}
-        </div>
-        {selectedIndex !== null && (
-          <button
-            onClick={() => setSelectedIndex(null)}
-            className="mt-2 text-[12px] text-[var(--foreground-subtle)] hover:text-[var(--foreground-muted)] transition-colors font-medium"
-          >
-            &larr; Reset to original
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function MusicSyncCard({ card }: { card: FeatureCard }) {
-  const [muted, setMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  return (
-    <div className="flex flex-col h-full">
-      <div className="relative aspect-video bg-black/[0.02] overflow-hidden">
-        <video
-          ref={videoRef}
-          src={card.mediaUrl}
-          className="w-full h-full object-contain"
-          muted={muted}
-          autoPlay
-          loop
-          playsInline
-        />
-        <button
-          onClick={() => setMuted((m) => !m)}
-          className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-md bg-black/50 backdrop-blur-sm px-2 py-1.5 text-white/80 hover:text-white transition-colors"
-        >
-          {muted ? (
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <line x1="23" y1="9" x2="17" y2="15" />
-              <line x1="17" y1="9" x2="23" y2="15" />
-            </svg>
-          ) : (
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <path d="M19.07 4.93a10 10 0 010 14.14" />
-              <path d="M15.54 8.46a5 5 0 010 7.07" />
-            </svg>
-          )}
-          {muted && (
-            <span className="text-xs font-medium">Tap to unmute</span>
-          )}
-        </button>
-        <div className="absolute bottom-3 right-3 rounded-lg bg-white/90 backdrop-blur-sm border border-[var(--surface-border)] px-3 py-2 text-[12px]">
-          <span className="text-[var(--foreground-subtle)]">Try: </span>
-          <span className="text-[var(--foreground-muted)]">
-            {card.tryPrompt}
-          </span>
-        </div>
-      </div>
-      {/* Waveform */}
-      {card.showWaveform && card.mediaUrl && (
-        <AudioWaveform
-          audioUrl={card.mediaUrl}
-          videoRef={videoRef}
-          className="h-16 flex-none border-t border-black/[0.04]"
-        />
-      )}
-      <div className="flex-1 p-5">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3
-            className="text-lg font-bold text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)]">
-          {card.description}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function ReferenceStyleCard({ card }: { card: FeatureCard }) {
-  const [showResult, setShowResult] = useState(false);
-
-  return (
-    <div className="flex flex-col md:flex-row h-full">
-      <div className="relative flex-1 min-h-[340px] bg-black/[0.02] overflow-hidden">
-        <video
-          src={card.referenceOriginal}
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            !showResult ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
-        <video
-          src={card.referenceResult}
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            showResult ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
-      </div>
-      <div className="w-full md:w-80 flex-none flex flex-col justify-center p-6 md:p-8 border-t md:border-t-0 md:border-l border-[var(--surface-border)]">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3
-            className="text-lg font-bold text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)] mb-4">
-          {card.description}
-        </p>
-        {/* Before/After toggle */}
-        <div className="flex gap-2">
-          <button
-            onClick={() => setShowResult(false)}
-            className={`flex-1 rounded-lg border px-3 py-2.5 transition-all cursor-pointer ${
-              !showResult
-                ? "border-black/[0.2] bg-black/[0.05] shadow-sm ring-1 ring-black/[0.03]"
-                : "border-[var(--surface-border)] hover:border-[var(--surface-border-hover)] hover:bg-black/[0.02]"
-            }`}
-          >
-            <span
-              className={`text-xs font-medium uppercase tracking-wider block mb-0.5 ${
-                !showResult
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-subtle)]"
-              }`}
-            >
-              Reference
-            </span>
-            <span
-              className={`text-[13px] ${
-                !showResult
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-muted)]"
-              }`}
-            >
-              Original
-            </span>
-          </button>
-          <button
-            onClick={() => setShowResult(true)}
-            className={`flex-1 rounded-lg border px-3 py-2.5 transition-all cursor-pointer ${
-              showResult
-                ? "border-black/[0.2] bg-black/[0.05] shadow-sm ring-1 ring-black/[0.03]"
-                : "border-[var(--surface-border)] hover:border-[var(--surface-border-hover)] hover:bg-black/[0.02]"
-            }`}
-          >
-            <span
-              className={`text-xs font-medium uppercase tracking-wider block mb-0.5 ${
-                showResult
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-subtle)]"
-              }`}
-            >
-              Result
-            </span>
-            <span
-              className={`text-[13px] ${
-                showResult
-                  ? "text-[var(--foreground)]"
-                  : "text-[var(--foreground-muted)]"
-              }`}
-            >
-              AI-Styled
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CaptionsCard({ card }: { card: FeatureCard }) {
-  return (
-    <div className="flex flex-col h-full">
-      {/* Illustration area */}
-      <div className="relative aspect-video bg-black/[0.02] overflow-hidden flex items-center justify-center">
-        {/* Mock caption preview */}
-        <div className="flex flex-col items-center gap-3">
-          <div className="flex flex-col items-center gap-1.5">
-            <div className="rounded bg-[var(--foreground)] px-4 py-1.5">
-              <span className="text-[14px] font-bold text-white">
-                This is what your captions
-              </span>
-            </div>
-            <div className="rounded bg-[var(--foreground)] px-4 py-1.5">
-              <span className="text-[14px] font-bold text-white">
-                will look like
-              </span>
-            </div>
-          </div>
-          {/* Timeline hint */}
-          <div className="mt-2 flex gap-1">
-            {[3, 2, 4, 2, 3, 2, 4, 3].map((w, i) => (
-              <div
-                key={i}
-                className="h-2 rounded-sm bg-amber-400/40"
-                style={{ width: `${w * 8}px` }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="flex-1 p-5">
-        <div className="flex items-center gap-2.5 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-[var(--brand-blue)]/[0.08] border border-[var(--brand-blue)]/[0.12] flex items-center justify-center text-[var(--brand-blue)]">
-            {card.icon}
-          </div>
-          <h3
-            className="text-lg font-bold text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            {card.title}
-          </h3>
-        </div>
-        <p className="text-[14px] leading-relaxed text-[var(--foreground-muted)]">
-          {card.description}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.21, 0.68, 0.35, 1] as const },
-  },
-};
 
 export default function Features() {
+  const pinRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  // Measure live on every scroll: framer's useScroll caches element bounds,
+  // which go stale when media loads shift the layout and desync the scroller.
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const el = pinRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const total = el.offsetHeight - window.innerHeight;
+        if (total <= 0) return;
+        const p = Math.min(1, Math.max(0, -rect.top / total));
+        setActive(
+          Math.min(FEATURES.length - 1, Math.floor(p * FEATURES.length))
+        );
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section id="features" className="relative py-28 px-6">
-      <div className="relative mx-auto max-w-5xl">
+    <section id="features" className="relative pt-16 pb-20 md:pb-0 px-6">
+      <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12 text-center md:mb-0"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]"
-          >
-            Capabilities
-          </motion.p>
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
             style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
           >
-            What your AI can do
+            What your AI <span className="serif-italic font-normal">can do</span>
           </h2>
-          <p className="mx-auto max-w-lg text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-            Every tool in the editor is available through natural language.
+          <p className="mx-auto max-w-lg text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
+            If you can describe it, Vyra can edit it.
           </p>
         </motion.div>
 
-        {/* Bento grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ staggerChildren: 0.12 }}
-          className="grid gap-5 md:grid-cols-2"
-        >
-          {/* Row 1: Smart Masks — full width */}
-          <motion.div
-            variants={cardVariants}
-            className="md:col-span-2 overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm"
-          >
-            <MotionGraphicsCard card={FEATURES[0]} />
-          </motion.div>
+        {/* ---- Desktop: pinned scroller, FLORA-style ---- */}
+        <div ref={pinRef} className="relative hidden h-[270vh] md:-mt-28 md:block">
+          <div className="sticky top-0 flex h-screen items-center">
+            <div className="grid w-full grid-cols-5 items-center gap-14">
+              {/* Left: feature list, active one lights up */}
+              <div className="col-span-2 flex flex-col gap-7">
+                {FEATURES.map((f, i) => (
+                  <h3
+                    key={f.id}
+                    className={`text-3xl font-bold tracking-tight transition-colors duration-300 lg:text-4xl ${
+                      i === active
+                        ? "text-[var(--foreground)]"
+                        : "text-[var(--foreground)]/[0.22]"
+                    }`}
+                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+                  >
+                    <span className="mr-3 text-[14px] font-medium tabular-nums align-middle opacity-40">0{i + 1}</span>
+                    {f.title}
+                  </h3>
+                ))}
+              </div>
 
-          {/* Row 2: Time Remap (tall) + Music Sync */}
-          <motion.div
-            variants={cardVariants}
-            className="overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm"
-          >
-            <FootageUnderstandingCard card={FEATURES[1]} />
-          </motion.div>
+              {/* Right: swapping media + caption */}
+              <div className="col-span-3">
+                <div className="relative h-[400px]">
+                  {FEATURES.map((f, i) => (
+                    <div
+                      key={f.id}
+                      className="absolute inset-0 flex items-center transition-opacity duration-400"
+                      style={{
+                        opacity: i === active ? 1 : 0,
+                        pointerEvents: i === active ? "auto" : "none",
+                      }}
+                    >
+                      <div className="w-full overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm">
+                        {f.media}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 min-h-[72px]">
+                  <p className="text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+                    {FEATURES[active].description}
+                  </p>
+                  {FEATURES[active].tryPrompt && (
+                    <a
+                      href="https://app.usevyra.com/signup"
+                      className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--surface-border)] bg-white px-4 py-1.5 shadow-sm transition-all duration-200 hover:border-[var(--brand-blue)]/40 hover:shadow-md"
+                    >
+                      <span className="text-[12px] text-[var(--foreground-subtle)]">Try:</span>
+                      <span className="text-[13px] text-[var(--foreground-muted)]">
+                        &ldquo;{FEATURES[active].tryPrompt}&rdquo;
+                      </span>
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="text-[var(--brand-blue)]">
+                        <path d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <motion.div
-            variants={cardVariants}
-            className="overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm"
-          >
-            <MusicSyncCard card={FEATURES[2]} />
-          </motion.div>
-
-          {/* Row 3: Reference Style — full width */}
-          <motion.div
-            variants={cardVariants}
-            className="md:col-span-2 overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm"
-          >
-            <ReferenceStyleCard card={FEATURES[3]} />
-          </motion.div>
-
-        </motion.div>
+        {/* ---- Mobile: simple stacked rows ---- */}
+        <div className="flex flex-col gap-16 md:hidden">
+          {FEATURES.map((feature) => (
+            <div key={feature.id}>
+              <h3
+                className="text-2xl font-bold tracking-tight text-[var(--foreground)]"
+                style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+              >
+                {feature.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+                {feature.description}
+              </p>
+              <div className="mt-4 overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-sm">
+                {feature.media}
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* Disclaimer */}
-        <p className="text-center text-[12px] text-[var(--foreground-subtle)] mt-6">
-          Every result shown above was generated entirely by Vyra&apos;s AI
-          agent — the only human input was a prompt.
+        <p className="pb-8 pt-6 text-center text-[12px] text-[var(--foreground-subtle)] md:-mt-32 md:pb-12">
+          Everything above was made by Vyra&apos;s AI. The only human input was
+          a prompt.
         </p>
       </div>
     </section>
