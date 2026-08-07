@@ -5,10 +5,13 @@ import HowItWorks from "@/components/HowItWorks";
 import MadeWithVyra from "@/components/MadeWithVyra";
 import Alternatives from "@/components/Alternatives";
 import Features from "@/components/Features";
-import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+
+// Pricing section removed 2026-07-31: in-app pricing is per-user (price-book
+// experiment), so the landing page no longer advertises canonical prices —
+// users see their prices at the in-app paywall.
 
 async function fetchUserCount(): Promise<number | null> {
   try {
@@ -32,25 +35,8 @@ async function fetchUserCount(): Promise<number | null> {
   }
 }
 
-async function fetchPricingTiers() {
-  try {
-    const res = await fetch(
-      (process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://api.usevyra.com") + "/api/billing/pricing-tiers",
-      { next: { revalidate: 3600 } }
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data.tiers || null;
-  } catch {
-    return null;
-  }
-}
-
 export default async function Home() {
-  const [tiers, userCount] = await Promise.all([
-    fetchPricingTiers(),
-    fetchUserCount(),
-  ]);
+  const userCount = await fetchUserCount();
 
   return (
     <>
@@ -62,7 +48,6 @@ export default async function Home() {
         <HowItWorks />
         <MadeWithVyra userCount={userCount} />
         <Alternatives />
-        <Pricing tiers={tiers} />
         <FAQ />
         <FinalCTA />
       </main>
