@@ -2,20 +2,25 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Reveal from "./Reveal";
+import LazyVideo from "./LazyVideo";
 
 const STORAGE_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/showcase";
 const LANDING_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
 
+/** Poster frames live alongside the videos, named after the file. */
+function posterFor(src: string) {
+  const name = src.split("/").pop()?.replace(/\.mp4$/, "");
+  return name ? `/images/posters/${name}.jpg` : undefined;
+}
+
 function AutoVideo({ src, contain }: { src: string; contain?: boolean }) {
   return (
-    <video
+    <LazyVideo
       src={src}
-      muted
-      autoPlay
-      loop
-      playsInline
+      poster={posterFor(src)}
       className={`h-full w-full ${contain ? "object-contain" : "object-cover"}`}
     />
   );
@@ -29,8 +34,8 @@ function barH(i: number, min: number, max: number) {
 /* Footage understanding: live analysis over a real frame */
 function AnalysisMedia() {
   return (
-    <div className="flex h-[400px] gap-3 bg-[var(--surface)] p-5">
-      <div className="relative h-full flex-1 overflow-hidden rounded-xl">
+    <div className="flex h-[400px] gap-2.5 bg-[var(--surface)] p-4 md:gap-3 md:p-5">
+      <div className="relative h-full min-w-0 flex-1 overflow-hidden rounded-xl">
         <AutoVideo src="/videos/footage-understanding.mp4" />
         {/* Scanning sweep */}
         <motion.div
@@ -59,7 +64,9 @@ function AnalysisMedia() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.9, type: "spring", stiffness: 260, damping: 20 }}
-          className="absolute left-[30%] top-[4%] h-[92%] w-[40%]"
+          /* Starts lower on phones so its "person" label clears the tag chips,
+             which sit much closer to the box in a narrow frame. */
+          className="absolute left-[30%] top-[17%] h-[74%] w-[40%] md:top-[4%] md:h-[92%]"
         >
           {/* Gentle drift sells the box as live tracking on the talking head */}
           <motion.div
@@ -94,7 +101,7 @@ function AnalysisMedia() {
         </div>
       </div>
       {/* Scene strip */}
-      <div className="flex h-full w-[96px] flex-col gap-2">
+      <div className="flex h-full w-[78px] shrink-0 flex-col gap-2 md:w-[96px]">
         {["scene-1", "scene-2", "scene-3"].map((f, i) => (
           <motion.div
             key={f}
@@ -128,13 +135,11 @@ function MusicSyncVideo() {
   const [muted, setMuted] = useState(true);
   return (
     <div className="relative h-full w-full">
-      <video
-        ref={ref}
+      <LazyVideo
+        videoRef={ref}
         src="/videos/music-sync.mp4"
+        poster="/images/posters/music-sync.jpg"
         muted={muted}
-        autoPlay
-        loop
-        playsInline
         className="h-full w-full object-cover"
       />
       <button
@@ -237,18 +242,17 @@ const CAPTION_LINES = [
 
 function CaptionsMedia() {
   return (
-    <div className="flex h-[400px] items-center justify-center gap-4 bg-[var(--surface)] p-5">
-      <div className="h-full shrink-0 overflow-hidden rounded-xl shadow-lg shadow-black/15">
-        <video
+    <div className="flex h-[400px] items-center justify-center gap-3 bg-[var(--surface)] p-4 md:gap-4 md:p-5">
+      {/* Percentage width on phones; the intrinsic 9:16 width plus a fixed
+          240px column used to run past the card edge. */}
+      <div className="h-full w-[40%] shrink-0 overflow-hidden rounded-xl shadow-lg shadow-black/15 md:w-auto">
+        <LazyVideo
           src="/videos/captions-fitcheck.mp4"
-          muted
-          autoPlay
-          loop
-          playsInline
-          className="h-full w-auto"
+          poster="/images/posters/captions-fitcheck.jpg"
+          className="h-full w-full object-cover md:w-auto"
         />
       </div>
-      <div className="flex w-[240px] flex-col gap-2">
+      <div className="flex min-w-0 flex-1 flex-col gap-2 md:w-[240px] md:flex-none">
         <motion.span
           initial={{ opacity: 0, y: -6 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +282,7 @@ function CaptionsMedia() {
             </span>
           </motion.div>
         ))}
-        <div className="mt-1 flex gap-1.5">
+        <div className="mt-1 flex flex-wrap gap-1.5">
           {["Serif", "Bold", "Karaoke"].map((s, i) => (
             <span
               key={s}
@@ -398,14 +402,12 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" className="relative pt-16 pb-20 md:pb-0 px-6">
+    <section id="features" className="relative pt-16 pb-4 md:pb-0 px-6">
       <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+        <Reveal
+          y={24}
+          blur={8}
           className="mb-12 text-center md:mb-0"
         >
           <h2
@@ -417,7 +419,7 @@ export default function Features() {
           <p className="mx-auto max-w-lg text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
             If you can describe it, Vyra can edit it.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* ---- Desktop: pinned scroller, FLORA-style ---- */}
         <div ref={pinRef} className="relative hidden h-[270vh] md:-mt-28 md:block">
@@ -484,7 +486,7 @@ export default function Features() {
         </div>
 
         {/* ---- Mobile: simple stacked rows ---- */}
-        <div className="flex flex-col gap-16 md:hidden">
+        <div className="flex flex-col gap-12 md:hidden">
           {FEATURES.map((feature) => (
             <div key={feature.id}>
               <h3

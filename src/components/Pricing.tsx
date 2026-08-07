@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
 interface PricingTier {
   name: string;
@@ -195,15 +196,13 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
   const plans = tab === "vyra_ai" ? VYRA_AI_PLANS : buildPlans(tiers ?? null);
 
   return (
-    <section id="pricing" className="relative py-28 px-6 bg-[var(--surface)]">
+    <section id="pricing" className="relative py-20 px-6 md:py-28 bg-[var(--surface)]">
       <div className="relative mx-auto max-w-5xl">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+        <Reveal
+          y={24}
+          blur={8}
+          className="mb-12 text-center md:mb-16"
         >
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
@@ -214,7 +213,7 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
           <p className="mx-auto max-w-md text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
             Use Vyra&apos;s built-in AI, or bring your own via MCP.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Plan type tabs */}
         <div className="mb-10 flex justify-center">
@@ -244,14 +243,11 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
         {/* Pricing cards */}
         <div className="mx-auto grid max-w-3xl gap-5 md:grid-cols-2 md:gap-6">
           {plans.map((plan, i) => (
+            <Reveal key={plan.name} y={36} duration={0.6} delay={i * 0.1}>
             <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
               whileHover={{ y: -5 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative flex flex-col rounded-2xl p-7 transition-all duration-400 sm:p-8 ${
+              transition={{ duration: 0.3 }}
+              className={`relative flex h-full flex-col rounded-2xl p-7 transition-all duration-400 sm:p-8 ${
                 plan.highlighted
                   ? "border-2 border-[var(--brand-blue)]/30 bg-white shadow-[0_0_40px_rgba(90,138,239,0.08),0_4px_20px_rgba(0,0,0,0.04)]"
                   : "border border-[var(--surface-border)] bg-white hover:border-[var(--surface-border-hover)] hover:shadow-md hover:shadow-black/[0.03]"
@@ -373,19 +369,19 @@ export default function Pricing({ tiers }: { tiers?: PricingTier[] | null }) {
                 {plan.cta}
               </a>
             </motion.div>
+            </Reveal>
           ))}
         </div>
 
         {/* Sub-note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+        <Reveal
+          y={0}
+          duration={0.5}
+          delay={0.4}
           className="mt-10 text-center text-[13px] text-[var(--foreground-subtle)]"
         >
           Free to start, upgrade when you publish. Every plan includes MCP access. Cancel anytime.
-        </motion.p>
+        </Reveal>
       </div>
     </section>
   );

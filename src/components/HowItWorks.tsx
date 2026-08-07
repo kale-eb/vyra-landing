@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 import Image from "next/image";
 
 function LogoRow({ logos }: { logos: { src: string; alt: string }[] }) {
@@ -20,22 +21,6 @@ function LogoRow({ logos }: { logos: { src: string; alt: string }[] }) {
     </div>
   );
 }
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.21, 0.68, 0.35, 1] as const },
-  },
-};
 
 /* ---- Desktop App Mock (Claude Desktop - warm brown tones) ---- */
 function DesktopMock() {
@@ -202,15 +187,13 @@ function WebAppMock() {
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-28 px-6">
+    <section id="how-it-works" className="relative py-20 px-6 md:py-28">
       <div className="mx-auto max-w-5xl">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+        <Reveal
+          y={24}
+          blur={8}
+          className="mb-12 text-center md:mb-16"
         >
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
@@ -222,18 +205,13 @@ export default function HowItWorks() {
             Chat with the AI built right into Vyra, or connect the assistant
             you already use, wherever it lives.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid gap-6 md:grid-cols-3"
-        >
+        <div className="grid gap-6 md:grid-cols-3">
           {/* In Vyra */}
-          <motion.div variants={cardVariants} whileHover={{ y: -6 }} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
+          <Reveal y={32} duration={0.6} delay={0} className="h-full">
+            <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="glow-card flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <WebAppMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <h3 className="text-[15px] font-bold text-[var(--foreground)]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
@@ -243,10 +221,12 @@ export default function HowItWorks() {
                 Built-in AI chat, no external AI needed
               </p>
             </div>
-          </motion.div>
+            </motion.div>
+          </Reveal>
 
           {/* Terminal */}
-          <motion.div variants={cardVariants} whileHover={{ y: -6 }} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
+          <Reveal y={32} duration={0.6} delay={0.15} className="h-full">
+            <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="glow-card flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <TerminalMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <div className="flex items-center">
@@ -265,10 +245,12 @@ export default function HowItWorks() {
                 Claude Code, Codex CLI, any MCP client
               </p>
             </div>
-          </motion.div>
+            </motion.div>
+          </Reveal>
 
           {/* Desktop App */}
-          <motion.div variants={cardVariants} whileHover={{ y: -6 }} className="glow-card flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
+          <Reveal y={32} duration={0.6} delay={0.3} className="h-full">
+            <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="glow-card flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white">
             <DesktopMock />
             <div className="border-t border-[var(--surface-border)] p-5">
               <div className="flex items-center">
@@ -287,8 +269,9 @@ export default function HowItWorks() {
                 Claude Desktop, ChatGPT app, Cursor
               </p>
             </div>
-          </motion.div>
-        </motion.div>
+            </motion.div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

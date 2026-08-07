@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Reveal from "./Reveal";
 
 const faqs = [
   {
@@ -103,15 +104,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-28 px-6">
+    <section className="relative py-20 px-6 md:py-28">
       <div className="relative mx-auto max-w-5xl">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left column - heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+          <Reveal
+            y={24}
+            blur={8}
             className="lg:col-span-4"
           >
             <h2
@@ -120,25 +119,19 @@ export default function FAQ() {
             >
               Frequently asked questions
             </h2>
-          </motion.div>
+          </Reveal>
 
           {/* Right column - accordion */}
           <div className="flex flex-col gap-4 lg:col-span-8">
             {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-              >
+              <Reveal key={i} y={20} duration={0.5} delay={i * 0.06}>
                 <FAQItem
                   question={faq.question}
                   answer={faq.answer}
                   isOpen={openIndex === i}
                   onToggle={() => setOpenIndex(openIndex === i ? null : i)}
                 />
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>

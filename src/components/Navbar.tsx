@@ -36,11 +36,15 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
+      <nav
+        style={
+          {
+            "--rise-y": "-20px",
+            "--rise-dur": "0.6s",
+            "--rise-delay": "0.1s",
+          } as React.CSSProperties
+        }
+        className={`rise fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
           scrolled
             ? "border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150"
             : "bg-transparent"
@@ -130,7 +134,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile menu overlay */}
       <AnimatePresence>

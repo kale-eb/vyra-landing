@@ -72,8 +72,14 @@ export default function Hero() {
     target: storyRef,
     offset: ["start 0.55", "end 0.95"],
   });
+  // Quantize before it hits React state. The raw motion value fires on every
+  // scroll frame; re-rendering the whole mockup that often drops frames on
+  // phones. The story beats sit on ~0.02 boundaries, so 1/200 loses nothing.
   const [storyProgress, setStoryProgress] = useState(0);
-  useMotionValueEvent(storyScroll, "change", (v) => setStoryProgress(v));
+  useMotionValueEvent(storyScroll, "change", (v) => {
+    const q = Math.round(v * 200) / 200;
+    setStoryProgress((prev) => (prev === q ? prev : q));
+  });
 
   const [client, setClient] = useState<ClientKey>("vyra");
 
@@ -90,6 +96,10 @@ export default function Hero() {
           className="absolute top-0 left-1/2 w-full min-w-[110%] -translate-x-1/2 origin-top h-full"
           style={{
             scale: bgScale,
+            // Promoted up front: rescaling a masked full-bleed image on every
+            // scroll frame otherwise repaints on the main thread and tears.
+            willChange: "transform",
+            backfaceVisibility: "hidden",
             maskImage:
               "linear-gradient(to bottom, black 60%, transparent 100%)",
             WebkitMaskImage:
@@ -121,17 +131,27 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center pt-10 text-center md:pt-14">
         {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="mb-5"
+        <h1
+          className="rise mb-5"
+          style={
+            {
+              "--rise-y": "30px",
+              "--rise-blur": "6px",
+              "--rise-delay": "0.35s",
+            } as React.CSSProperties
+          }
         >
-          <span className="block text-[clamp(2rem,5vw,3.75rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-[var(--foreground)]">
+          <span className="block text-[clamp(2.25rem,10.5vw,3rem)] leading-[0.95] font-extrabold tracking-[-0.03em] text-[var(--foreground)] md:text-[clamp(3rem,5vw,3.75rem)]">
             Raw footage in.
           </span>
-          <span className="block text-[clamp(2rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em] text-[var(--foreground)]">
-            <span className="serif-italic font-normal">{displayed}</span>
+          <span className="block text-[clamp(2.25rem,10.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-[var(--foreground)] md:text-[clamp(3rem,5vw,3.75rem)]">
+            {/* The typed text is decorative; the full line is exposed once,
+                unstyled, so crawlers and screen readers get the whole H1 even
+                before the typewriter has run. */}
+            <span className="serif-italic font-normal" aria-hidden="true">
+              {displayed}
+            </span>
+            <span className="sr-only">{TYPED_HEADLINE}</span>
             {!settled && (
               <span
                 className="inline-block w-[2px] h-[0.85em] ml-[2px] align-middle"
@@ -142,27 +162,40 @@ export default function Hero() {
               />
             )}
           </span>
-        </motion.h1>
+        </h1>
 
         {/* Subtext - two short lines, FLORA-style */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          className="mb-7 text-[14px] leading-[1.6] text-[var(--foreground-muted)] md:text-[15px]"
+        <p
+          className="rise mb-7 text-pretty text-[15px] leading-[1.65] text-[var(--foreground-muted)] md:text-[15px]"
+          style={
+            {
+              "--rise-y": "20px",
+              "--rise-dur": "0.6s",
+              "--rise-delay": "0.55s",
+            } as React.CSSProperties
+          }
         >
+          {/* Three balanced lines on phones; the first two rejoin on desktop
+              so it stays the original two-line subhead there. */}
           <span className="block">
-            Describe your edit naturally, get a finished draft in minutes.
+            Describe your edit naturally.{" "}
+            <span className="block md:inline">
+              Get a finished draft in minutes.
+            </span>
           </span>
           <span className="block">Every editing tool, one conversation.</span>
-        </motion.p>
+        </p>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex flex-col items-center gap-4"
+        <div
+          className="rise flex flex-col items-center gap-4"
+          style={
+            {
+              "--rise-y": "20px",
+              "--rise-dur": "0.6s",
+              "--rise-delay": "0.7s",
+            } as React.CSSProperties
+          }
         >
           <a
             href="https://app.usevyra.com/signup"
@@ -170,24 +203,31 @@ export default function Hero() {
           >
             Get started for free
           </a>
-        </motion.div>
+        </div>
       </div>
 
       {/* Hero visual - the Vyra editor, pinned while scroll plays the story */}
       <div
         ref={storyRef}
-        className="relative z-10 mx-auto mt-10 h-[145vh] w-full max-w-5xl px-0 sm:px-4 md:mt-12"
+        className="relative z-10 mx-auto mt-8 h-[115vh] w-full max-w-5xl px-0 sm:px-4 md:mt-12 md:h-[145vh]"
       >
-        <div className="sticky top-16 md:top-20">
-          <motion.div
-            initial={{ opacity: 0, y: 60, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{
-              duration: 1,
-              delay: 0.9,
-              ease: [0.21, 0.68, 0.35, 1],
-            }}
-            className="relative"
+        {/* Clears the 72px navbar so the pinned mockup never tucks under it.
+            translateZ keeps the pinned card on its own compositor layer, so
+            mobile Safari repaints it cleanly instead of flashing mid-scroll. */}
+        <div
+          className="sticky top-[84px] md:top-20"
+          style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
+        >
+          <div
+            className="rise relative"
+            style={
+              {
+                "--rise-y": "60px",
+                "--rise-scale": "0.96",
+                "--rise-dur": "1s",
+                "--rise-delay": "0.9s",
+              } as React.CSSProperties
+            }
           >
             {/* Subtle glow */}
             <div className="pointer-events-none absolute inset-0">
@@ -200,13 +240,17 @@ export default function Hero() {
             <EditorMockup progress={storyProgress} client={client} />
 
             {/* Client switcher - swaps the editor preview above */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.15 }}
-              className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[13px]"
+            <div
+              className="rise mt-4 flex flex-wrap items-center justify-center gap-1.5 px-4 text-[12px] md:mt-5 md:gap-2 md:text-[13px]"
+              style={
+                {
+                  "--rise-y": "12px",
+                  "--rise-dur": "0.6s",
+                  "--rise-delay": "1.15s",
+                } as React.CSSProperties
+              }
             >
-              <span className="text-[var(--foreground-subtle)] mr-1">
+              <span className="mr-0.5 w-full text-center text-[var(--foreground-subtle)] sm:w-auto sm:text-left md:mr-1">
                 Edit with
               </span>
               {CLIENTS.map((c) => (
@@ -214,7 +258,7 @@ export default function Hero() {
                   key={c.key}
                   type="button"
                   onClick={() => setClient(c.key)}
-                  className={`flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1 font-medium transition-all duration-200 ${
+                  className={`flex cursor-pointer items-center gap-1.5 rounded-full border px-2.5 py-1 font-medium transition-all duration-200 md:px-3 ${
                     client === c.key
                       ? "border-[var(--brand-blue)]/50 bg-[var(--brand-blue)]/[0.06] text-[var(--brand-blue)]"
                       : "border-[var(--surface-border)] text-[var(--foreground-muted)] hover:border-[var(--surface-border-hover)] hover:text-[var(--foreground)]"
@@ -226,8 +270,8 @@ export default function Hero() {
                   {c.label}
                 </button>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="h-8 md:h-10" />
