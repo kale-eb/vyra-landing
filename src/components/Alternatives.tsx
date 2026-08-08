@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
 const columns = [
   {
@@ -68,15 +68,13 @@ function DashCircle() {
 
 export default function Alternatives() {
   return (
-    <section className="relative py-28 px-6 bg-[var(--surface)]">
+    <section className="relative py-20 px-6 md:py-28 bg-[var(--surface)]">
       <div className="relative mx-auto max-w-5xl">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+        <Reveal
+          y={24}
+          blur={8}
+          className="mb-12 text-center md:mb-16"
         >
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
@@ -88,30 +86,21 @@ export default function Alternatives() {
             Learning a pro tool or hiring an editor costs too much time and
             money.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Outer container card */}
-        <motion.div
-          initial={{ opacity: 0, y: 36 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7 }}
+        <Reveal
+          y={36}
+          duration={0.7}
           className="rounded-2xl border border-[var(--surface-border)] bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12"
         >
           <div className="flex flex-col items-center gap-6 md:flex-row md:items-stretch md:justify-center md:gap-5 lg:gap-6">
             {columns.map((col, colIndex) => (
-              <motion.div
+              <Reveal
                 key={col.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: colIndex * 0.1,
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 25,
-                }}
+                y={40}
+                duration={0.6}
+                delay={colIndex * 0.1}
                 className={`w-full max-w-sm flex-1 rounded-2xl border bg-white shadow-sm ${
                   col.highlighted
                     ? "relative z-10 border-[var(--surface-border-hover)] shadow-lg shadow-black/[0.06]"
@@ -153,10 +142,10 @@ export default function Alternatives() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

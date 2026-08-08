@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import LazyVideo from "./LazyVideo";
 
 export type ClientKey = "vyra" | "claude" | "chatgpt" | "mcp";
 
@@ -161,22 +162,34 @@ function ChatStream({
   visibleMessages: { at: number; text: string }[];
 }) {
   return (
-    <div className="flex flex-1 flex-col justify-end gap-2 overflow-hidden px-3 py-3">
+    /* justify-end + overflow-hidden makes this a stream: the panel height is
+       fixed, so new messages push older ones out the top instead of growing
+       the card and reflowing the pinned hero mid-scroll. */
+    <div
+      className="flex min-h-0 flex-1 flex-col justify-end gap-1.5 overflow-hidden px-2.5 py-2.5 md:gap-2 md:px-3 md:py-3"
+      style={{
+        maskImage: "linear-gradient(to bottom, transparent 0, black 40px)",
+        WebkitMaskImage: "linear-gradient(to bottom, transparent 0, black 40px)",
+      }}
+    >
       <div
-        className="rounded-xl bg-white/[0.07] px-3 py-2 transition-all duration-300"
+        className="shrink-0 rounded-xl bg-white/[0.07] px-2.5 py-1.5 transition-all duration-300 md:px-3 md:py-2"
         style={{ opacity: sent ? 1 : 0, transform: sent ? "translateY(0)" : "translateY(6px)" }}
       >
-        <p className="text-[13px] leading-relaxed text-white/90">{MSG}</p>
+        <p className="text-[11px] leading-relaxed text-white/90 md:text-[13px]">{MSG}</p>
       </div>
 
       {visibleMessages.map((m) => (
-        <p key={m.at} className="text-[12px] leading-snug text-white/55 transition-all duration-300">
+        <p
+          key={m.at}
+          className="shrink-0 text-[10.5px] leading-snug text-white/55 transition-all duration-300 md:text-[12px]"
+        >
           {m.text}
         </p>
       ))}
 
       {thinking && (
-        <div className="flex items-center gap-1.5 pl-0.5">
+        <div className="flex shrink-0 items-center gap-1.5 pl-0.5">
           <span className="h-1 w-1 animate-pulse rounded-full bg-white/50" />
           <span className="h-1 w-1 animate-pulse rounded-full bg-white/50 [animation-delay:150ms]" />
           <span className="h-1 w-1 animate-pulse rounded-full bg-white/50 [animation-delay:300ms]" />
@@ -185,11 +198,11 @@ function ChatStream({
 
       {replied && (
         <>
-          <p className="text-[12px] leading-snug text-white/75 transition-opacity duration-300">
+          <p className="shrink-0 text-[10.5px] leading-snug text-white/75 transition-opacity duration-300 md:text-[12px]">
             Done. 12 cuts synced to the beat, color wheel spinning on top,
             captions placed.
           </p>
-          <span className="flex items-center gap-1 text-[10px] text-white/25">
+          <span className="flex shrink-0 items-center gap-1 text-[10px] text-white/25">
             <RevertIcon />
             Revert
           </span>
@@ -202,7 +215,7 @@ function ChatStream({
 function SendButton({ active }: { active: boolean }) {
   return (
     <span
-      className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-200"
+      className="ml-auto flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-200 md:h-6 md:w-6"
       style={{ transform: active ? "scale(1.1)" : "scale(1)" }}
     >
       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -238,13 +251,15 @@ export default function EditorMockup({
 
   const typingRow = (
     <>
+      {/* One clipped line: letting the typed prompt wrap would resize the
+          input row on every keystroke frame. */}
       {!sent && typed ? (
-        <span className="text-[12px] text-white/85">
+        <span className="min-w-0 flex-1 truncate whitespace-nowrap text-[11px] text-white/85 md:text-[12px]">
           {typed}
           <span className="ml-px inline-block h-[11px] w-px animate-pulse bg-white/70 align-middle" />
         </span>
       ) : (
-        <span className="text-[12px] text-white/25">
+        <span className="min-w-0 flex-1 truncate text-[11px] text-white/25 md:text-[12px]">
           {external ? external.input : "Ask anything..."}
         </span>
       )}
@@ -253,7 +268,9 @@ export default function EditorMockup({
   );
 
   const previewCanvas = (
-    <div className="relative flex aspect-[9/16] h-full items-center justify-center overflow-hidden rounded-md bg-black ring-1 ring-white/[0.08]">
+    /* Width-driven on phones (the column is narrow and the body is short),
+       height-driven from md up where there's room to spare. */
+    <div className="relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-md bg-black ring-1 ring-white/[0.08] md:h-full md:w-auto">
       {activeThumb && (
         <img
           src={activeThumb}
@@ -262,13 +279,9 @@ export default function EditorMockup({
           style={{ opacity: replied ? 0 : 1 }}
         />
       )}
-      <video
+      <LazyVideo
         src={PREVIEW_VIDEO}
-        muted
-        autoPlay
-        loop
-        playsInline
-        preload="auto"
+        poster="/images/posters/color-wheel.jpg"
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
         style={{ opacity: replied ? 1 : 0 }}
       />
@@ -283,15 +296,17 @@ export default function EditorMockup({
   return (
     <div className="overflow-hidden rounded-2xl border border-black/20 bg-[#0d0d0d] text-left shadow-lg shadow-black/10">
       {/* ---- Top bar ---- */}
-      <div className="flex h-10 items-center justify-between border-b border-white/[0.06] px-4">
-        <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1 text-[11px] text-white/40">
+      <div className="flex h-9 items-center justify-between gap-2 border-b border-white/[0.06] px-3 md:h-10 md:px-4">
+        <div className="flex min-w-0 items-center gap-2 md:gap-3">
+          <span className="flex shrink-0 items-center gap-1 text-[11px] text-white/40">
             <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
               <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Back
           </span>
-          <span className="text-[12px] font-medium text-white/85">color wheel trend</span>
+          <span className="truncate text-[11.5px] font-medium text-white/85 md:text-[12px]">
+            color wheel trend
+          </span>
           <span className="hidden items-center gap-1.5 text-[10px] text-white/40 sm:flex">
             <span className="h-1.5 w-1.5 rounded-full bg-[#8b7bf0]" />
             Vyra Default
@@ -300,12 +315,12 @@ export default function EditorMockup({
             <path d="M13 4.5L6.5 11L3 7.5" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <span className="hidden items-center gap-1.5 text-[10px] text-white/45 sm:flex">
             <span className="h-1.5 w-1.5 rounded-full bg-[#4ade80]" />
             {external ? `${external.name} connected` : "Connected"}
           </span>
-          <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-black">
+          <span className="rounded-full bg-white px-2.5 py-[3px] text-[10.5px] font-semibold text-black md:px-3 md:py-1 md:text-[11px]">
             Export
           </span>
         </div>
@@ -314,20 +329,23 @@ export default function EditorMockup({
       {/* ---- Body ---- */}
       {!external ? (
         /* Vyra AI: built-in chat panel + preview */
-        <div className="flex flex-col md:h-[400px] md:flex-row">
-          <div className="flex flex-col border-b border-white/[0.06] md:w-[290px] md:shrink-0 md:border-b-0 md:border-r">
+        /* Fixed height at every breakpoint. The old mobile layout was
+           auto-height, so each streamed message grew the card and made the
+           pinned hero jump. */
+        <div className="flex h-[244px] min-[360px]:h-[264px] flex-row md:h-[400px]">
+          <div className="flex min-w-0 flex-1 flex-col border-r border-white/[0.06] md:w-[290px] md:flex-none md:shrink-0">
             {/* Tabs */}
             <div className="flex gap-1 p-1.5">
-              <span className="flex-1 rounded-md py-1.5 text-center text-[11px] text-white/40">
+              <span className="flex-1 rounded-md py-1 text-center text-[10px] text-white/40 md:py-1.5 md:text-[11px]">
                 Footage
               </span>
-              <span className="flex-1 rounded-md bg-gradient-to-r from-[#2735b5] to-[#4553ee] py-1.5 text-center text-[11px] font-semibold text-white">
+              <span className="flex-1 rounded-md bg-gradient-to-r from-[#2735b5] to-[#4553ee] py-1 text-center text-[10px] font-semibold text-white md:py-1.5 md:text-[11px]">
                 Vyra AI
               </span>
             </div>
             {/* Panel header */}
-            <div className="flex items-center justify-between border-b border-white/[0.06] px-3 pb-2 pt-1">
-              <span className="flex items-center gap-1.5 text-[12px] font-medium text-white/80">
+            <div className="flex items-center justify-between border-b border-white/[0.06] px-2.5 pb-1.5 pt-0.5 md:px-3 md:pb-2 md:pt-1">
+              <span className="flex items-center gap-1.5 text-[11px] font-medium text-white/80 md:text-[12px]">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z" />
                 </svg>
@@ -342,14 +360,14 @@ export default function EditorMockup({
             </div>
             <ChatStream sent={sent} replied={replied} thinking={thinking} visibleMessages={visibleMessages} />
             {/* Input */}
-            <div className="flex flex-col gap-1.5 px-3 pb-3">
-              <span className="flex items-center gap-1 text-[10px] text-white/40">
+            <div className="flex shrink-0 flex-col gap-1 px-2.5 pb-2.5 md:gap-1.5 md:px-3 md:pb-3">
+              <span className="flex items-center gap-1 text-[9px] text-white/40 md:text-[10px]">
                 Fast
                 <svg width="8" height="8" viewBox="0 0 16 16" fill="none">
                   <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              <div className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2">
+              <div className="flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-2 py-1.5 md:gap-2 md:rounded-xl md:px-3 md:py-2">
                 <span className="text-[13px] leading-none text-white/30">+</span>
                 {typingRow}
               </div>
@@ -357,8 +375,8 @@ export default function EditorMockup({
           </div>
 
           {/* Preview canvas */}
-          <div className="relative hidden flex-1 items-center justify-center bg-[#0a0a0a] p-5 md:flex">
-            <span className="absolute right-3 top-3 text-white/25">
+          <div className="relative flex w-[124px] shrink-0 items-center justify-center bg-[#0a0a0a] p-2.5 md:w-auto md:flex-1 md:p-5">
+            <span className="absolute right-3 top-3 hidden text-white/25 md:block">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
               </svg>
@@ -368,10 +386,10 @@ export default function EditorMockup({
         </div>
       ) : (
         /* External client: no built-in chat; a separate app window drives Vyra */
-        <div className="relative flex flex-col md:h-[400px]">
+        <div className="relative flex h-[244px] min-[360px]:h-[264px] flex-row md:h-[400px] md:flex-col">
           {/* Preview area */}
-          <div className="relative order-1 hidden flex-1 items-center justify-center bg-[#0a0a0a] p-5 md:flex md:pl-[320px]">
-            <span className="absolute right-3 top-3 text-white/25">
+          <div className="relative order-2 flex w-[124px] shrink-0 items-center justify-center bg-[#0a0a0a] p-2.5 md:order-1 md:w-auto md:flex-1 md:p-5 md:pl-[320px]">
+            <span className="absolute right-3 top-3 hidden text-white/25 md:block">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
               </svg>
@@ -381,31 +399,33 @@ export default function EditorMockup({
 
           {/* Floating client window over the editor */}
           <div
-            className="order-2 z-10 flex flex-col border-t border-white/[0.06] md:absolute md:bottom-4 md:left-4 md:top-4 md:order-none md:w-[290px] md:rounded-xl md:border md:border-white/[0.12] md:shadow-2xl md:shadow-black/50"
+            className="order-1 z-10 flex min-w-0 flex-1 flex-col border-r border-white/[0.06] md:absolute md:bottom-4 md:left-4 md:top-4 md:order-none md:w-[290px] md:flex-none md:rounded-xl md:border md:border-white/[0.12] md:shadow-2xl md:shadow-black/50"
             style={{ backgroundColor: external.window }}
           >
             {/* Window title bar */}
-            <div className="flex items-center gap-2 rounded-t-xl px-3 py-2">
-              <div className="flex gap-1.5">
-                <span className="h-[9px] w-[9px] rounded-full bg-[#ff5f57]" />
-                <span className="h-[9px] w-[9px] rounded-full bg-[#febc2e]" />
-                <span className="h-[9px] w-[9px] rounded-full bg-[#28c840]" />
+            <div className="flex shrink-0 items-center gap-2 rounded-t-xl px-2.5 py-1.5 md:px-3 md:py-2">
+              <div className="flex gap-1 md:gap-1.5">
+                <span className="h-[7px] w-[7px] rounded-full bg-[#ff5f57] md:h-[9px] md:w-[9px]" />
+                <span className="h-[7px] w-[7px] rounded-full bg-[#febc2e] md:h-[9px] md:w-[9px]" />
+                <span className="h-[7px] w-[7px] rounded-full bg-[#28c840] md:h-[9px] md:w-[9px]" />
               </div>
-              <span className="flex flex-1 items-center justify-center gap-1.5 text-[11px] font-medium text-white/70">
+              <span className="flex flex-1 items-center justify-center gap-1.5 text-[10px] font-medium text-white/70 md:text-[11px]">
                 <Image src={external.logo} alt="" width={12} height={12} />
                 {external.name}
               </span>
-              <span className="w-10" />
+              <span className="w-6 md:w-10" />
             </div>
             {/* Connected pill */}
-            <div className="mx-3 mb-1 flex items-center gap-1.5 rounded-md border border-white/[0.07] bg-white/[0.04] px-2 py-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#4ade80]" />
-              <span className="text-[10px] text-white/55">Connected to Vyra via MCP</span>
+            <div className="mx-2.5 mb-1 flex shrink-0 items-center gap-1.5 rounded-md border border-white/[0.07] bg-white/[0.04] px-1.5 py-1 md:mx-3 md:px-2">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#4ade80]" />
+              <span className="truncate text-[9px] text-white/55 md:text-[10px]">
+                Connected to Vyra via MCP
+              </span>
             </div>
             <ChatStream sent={sent} replied={replied} thinking={thinking} visibleMessages={visibleMessages} />
             {/* Input */}
-            <div className="px-3 pb-3">
-              <div className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.04] px-3 py-2">
+            <div className="shrink-0 px-2.5 pb-2.5 md:px-3 md:pb-3">
+              <div className="flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.04] px-2 py-1.5 md:gap-2 md:rounded-xl md:px-3 md:py-2">
                 {typingRow}
               </div>
             </div>
@@ -416,7 +436,10 @@ export default function EditorMockup({
       {/* ---- Timeline ---- */}
       <div className="border-t border-white/[0.06] bg-[#0f0f0f]">
         {/* Toolbar */}
-        <div className="flex items-center gap-3 px-3 py-1.5 text-[10px] text-white/35">
+        {/* Fixed height + clipped: the "is editing" label appears partway
+            through the story, and on a 320px screen it used to wrap onto a
+            second line and grow the whole pinned card mid-scroll. */}
+        <div className="flex h-7 shrink-0 items-center gap-3 overflow-hidden px-3 text-[10px] text-white/35">
           <span className="hidden sm:block">Delete</span>
           <span className="hidden sm:block">Split</span>
           <span className="hidden sm:block">Clone</span>
@@ -429,8 +452,8 @@ export default function EditorMockup({
           <span className="text-white/70">00:00</span>
           <span>| 00:15</span>
           {thinking && (
-            <span className="ml-auto flex items-center gap-1.5 text-[9px] text-[#5fd4ea]">
-              <span className="h-1 w-1 animate-pulse rounded-full bg-[#5fd4ea]" />
+            <span className="ml-auto flex shrink-0 items-center gap-1.5 whitespace-nowrap text-[9px] text-[#5fd4ea]">
+              <span className="h-1 w-1 shrink-0 animate-pulse rounded-full bg-[#5fd4ea]" />
               {external ? `${external.name} is editing` : "Vyra is editing"}
             </span>
           )}

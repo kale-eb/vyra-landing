@@ -165,6 +165,42 @@ h6,
   animation-play-state: paused;
 }
 
+/* ---- Entrance animations ----
+   These run in CSS, not JS. framer-motion's `initial` prop server-renders
+   `opacity:0` inline, which left the whole page invisible until the bundle
+   downloaded and hydrated - a white screen on a phone. A CSS animation plays
+   off the server-rendered HTML at first paint, no hydration required.
+
+   Tunable per element:
+     --rise-y      starting Y offset   (default 24px)
+     --rise-scale  starting scale      (default 1)
+     --rise-blur   starting blur       (default 0px)
+     --rise-dur    duration            (default .7s)
+     --rise-delay  delay               (default 0s) */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise-y, 24px)) scale(var(--rise-scale, 1));
+    filter: blur(var(--rise-blur, 0px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.rise {
+  animation: rise-in var(--rise-dur, 0.7s) cubic-bezier(0.21, 0.68, 0.35, 1)
+    var(--rise-delay, 0s) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
 /* Serif italic display style */
 .serif-italic {
   font-family: var(--font-instrument-serif), "Instrument Serif", serif;

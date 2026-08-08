@@ -8,6 +8,8 @@ import {
   useInView,
   animate,
 } from "framer-motion";
+import Reveal from "./Reveal";
+import LazyVideo from "./LazyVideo";
 
 const COUNT_RPC =
   "https://uskviqibopshckqsmyvk.supabase.co/rest/v1/rpc/public_user_count";
@@ -21,7 +23,7 @@ function LiveCount({ initial }: { initial: number | null }) {
   const mv = useMotionValue(0);
   const [display, setDisplay] = useState<string | null>(null);
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: true, margin: "160px" });
 
   useEffect(() => {
     let alive = true;
@@ -71,11 +73,11 @@ const STORAGE_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
 
 const examples = [
-  { src: `${STORAGE_BASE}/caleb1.mp4`, aspect: "9/16", label: "first time cooking" },
-  { src: `${STORAGE_BASE}/sulan1.mp4`, aspect: "9/16", label: "painting final all-nighter" },
-  { src: `${STORAGE_BASE}/aaa.mp4`, aspect: "9/16", label: "color wheel trend" },
-  { src: `${STORAGE_BASE}/export1.mp4`, aspect: "16/9", label: "snowboard edit" },
-  { src: `${STORAGE_BASE}/boston-vlog.mp4`, aspect: "16/9", label: "week in boston" },
+  { src: `${STORAGE_BASE}/caleb1.mp4`, poster: "/images/posters/caleb1.jpg", aspect: "9/16", label: "first time cooking" },
+  { src: `${STORAGE_BASE}/sulan1.mp4`, poster: "/images/posters/sulan1.jpg", aspect: "9/16", label: "painting final all-nighter" },
+  { src: `${STORAGE_BASE}/aaa.mp4`, poster: "/images/posters/aaa.jpg", aspect: "9/16", label: "color wheel trend" },
+  { src: `${STORAGE_BASE}/export1.mp4`, poster: "/images/posters/export1.jpg", aspect: "16/9", label: "snowboard edit" },
+  { src: `${STORAGE_BASE}/boston-vlog.mp4`, poster: "/images/posters/boston-vlog.jpg", aspect: "16/9", label: "week in boston" },
 ];
 
 export default function MadeWithVyra({
@@ -125,15 +127,13 @@ export default function MadeWithVyra({
   }
 
   return (
-    <section className="relative py-28 px-6">
+    <section className="relative py-20 px-6 md:py-28">
       <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+        <Reveal
+          y={24}
+          blur={8}
+          className="mb-12 text-center md:mb-16"
         >
           <h2
             className="mb-5 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
@@ -145,20 +145,16 @@ export default function MadeWithVyra({
             Real content from real creators. From raw footage to published in
             minutes.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Focus carousel */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.8 }}
+        <div
           className="relative"
           onMouseEnter={() => { pausedRef.current = true; }}
           onMouseLeave={() => { pausedRef.current = false; }}
         >
           {/* Card stage - fixed height, overflow hidden to clip far cards */}
-          <div className="relative mx-auto flex h-[420px] items-center justify-center overflow-hidden sm:h-[480px]">
+          <div className="relative mx-auto flex h-[360px] items-center justify-center overflow-hidden sm:h-[480px]">
             {examples.map((example, i) => {
               const offset = getOffset(i);
               const isActive = offset === 0;
@@ -169,14 +165,16 @@ export default function MadeWithVyra({
               if (absOffset > maxVisible) return null;
 
               // Position, scale, blur based on distance from center
-              const translateX = offset * (isMobile ? 130 : 240);
+              const translateX = offset * (isMobile ? 140 : 240);
               const scale = isActive ? 1 : absOffset === 1 ? 0.82 : 0.65;
               const blur = isActive ? 0 : absOffset === 1 ? 3 : 8;
               const opacity = isActive ? 1 : absOffset === 1 ? 0.55 : 0.25;
               const zIndex = isActive ? 30 : absOffset === 1 ? 20 : 10;
 
-              const wideWidth = isMobile ? 320 : 600;
-              const portraitWidth = isMobile ? 180 : 260;
+              // Kept clear of the screen edges on phones so the neighbouring
+              // cards read as a deliberate peek instead of a clipped card.
+              const wideWidth = isMobile ? 288 : 600;
+              const portraitWidth = isMobile ? 168 : 260;
 
               return (
                 <motion.div
@@ -207,12 +205,9 @@ export default function MadeWithVyra({
                       isActive ? "shadow-xl shadow-black/[0.08]" : "shadow-sm"
                     }`}
                   >
-                    <video
+                    <LazyVideo
                       src={example.src}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
+                      poster={example.poster}
                       className={`w-full object-cover ${example.aspect === "16/9" ? "aspect-[16/9]" : "aspect-[9/16]"}`}
                     />
                     {/* Project label, FLORA-style asset metadata */}
@@ -246,11 +241,9 @@ export default function MadeWithVyra({
           </div>
 
           {/* User count banner, stacked on the gallery */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5 }}
+          <Reveal
+            y={16}
+            duration={0.5}
             className="mx-auto mt-10 max-w-xl rounded-2xl border border-[var(--surface-border)] bg-white px-6 py-4 text-center shadow-sm"
           >
             <p className="text-[15px] text-[var(--foreground-muted)]">
@@ -260,13 +253,13 @@ export default function MadeWithVyra({
               and counting.{" "}
               <a
                 href="https://app.usevyra.com/signup"
-                className="font-medium text-[var(--brand-blue)] underline underline-offset-2 hover:opacity-80"
+                className="whitespace-nowrap font-medium text-[var(--brand-blue)] underline underline-offset-2 hover:opacity-80"
               >
                 Join them
               </a>
             </p>
-          </motion.div>
-        </motion.div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

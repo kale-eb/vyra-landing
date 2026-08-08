@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LazyVideo from "./LazyVideo";
+import Reveal from "./Reveal";
 
 
 /* Gentle infinite bob, offset per element so nothing moves in lockstep */
@@ -141,14 +143,11 @@ function AskVisual() {
 function ExportVisual() {
   return (
     <div className="relative flex h-full w-full items-center justify-center">
-      <Float delay={0.2} duration={6.2} className="relative h-[86%]">
-        <div className="relative aspect-[9/16] h-full overflow-hidden rounded-2xl shadow-xl shadow-black/20 ring-1 ring-black/10">
-          <video
+      <Float delay={0.2} duration={6.2} className="relative h-[86%] max-w-full">
+        <div className="relative aspect-[9/16] h-full max-w-full overflow-hidden rounded-2xl bg-[#12111a] shadow-xl shadow-black/20 ring-1 ring-black/10">
+          <LazyVideo
             src="https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing/sulan1.mp4"
-            muted
-            autoPlay
-            loop
-            playsInline
+            poster="/images/posters/sulan1.jpg"
             className="h-full w-full object-cover"
           />
         </div>
@@ -214,36 +213,36 @@ export default function Steps() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-4 md:grid-cols-3">
           {STEPS.map((step, i) => (
-            <motion.div
-              key={step.num}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.55, delay: i * 0.12, ease: [0.21, 0.68, 0.35, 1] }}
-              className="relative flex flex-col overflow-hidden rounded-3xl border border-[var(--surface-border)] bg-white p-7 shadow-sm md:h-[clamp(480px,62vh,560px)]"
-            >
+            <Reveal key={step.num} y={28} duration={0.45} delay={i * 0.06}>
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3, ease: [0.21, 0.68, 0.35, 1] }}
+                /* The visuals position their pieces in percentages, so the card
+                   needs a real height on phones too - an auto-height card
+                   collapsed them into each other. */
+                className="relative flex h-[clamp(430px,64vh,500px)] flex-col overflow-hidden rounded-3xl border border-[var(--surface-border)] bg-white p-6 shadow-sm sm:p-7 md:h-[clamp(480px,62vh,560px)]"
+              >
               <DotGrid />
-              <div className="relative flex items-baseline gap-2.5 pb-4">
+              <div className="relative flex items-baseline gap-2.5 pb-3 md:pb-4">
                 <span
-                  className="text-5xl font-medium tracking-tight text-[var(--foreground)]/[0.16] md:text-6xl"
+                  className="text-4xl font-medium tracking-tight text-[var(--foreground)]/[0.16] sm:text-5xl md:text-6xl"
                   style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
                 >
                   {step.num}
                 </span>
                 <span
-                  className="text-5xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl"
+                  className="text-4xl font-medium tracking-tight text-[var(--foreground)] sm:text-5xl md:text-6xl"
                   style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
                 >
                   {step.title}
                 </span>
               </div>
-              <div className="relative min-h-[240px] flex-1 py-3">
+              <div className="relative min-h-0 flex-1 py-3">
                 {step.visual}
               </div>
-              <div className="relative pt-5">
+              <div className="relative pt-4 md:pt-5">
                 <p
-                  className="text-[19px] font-semibold text-[var(--foreground)]"
+                  className="text-[18px] font-semibold text-[var(--foreground)] md:text-[19px]"
                   style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
                 >
                   {step.captionTitle}
@@ -252,7 +251,8 @@ export default function Steps() {
                   {step.caption}
                 </p>
               </div>
-            </motion.div>
+              </motion.div>
+            </Reveal>
           ))}
         </div>
       </div>
