@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { trackLead } from "./MetaPixel";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -96,6 +97,7 @@ export default function Navbar() {
             </a>
             <a
               href="https://app.usevyra.com/signup"
+              onClick={() => trackLead()}
               className="hidden rounded-full bg-[var(--foreground)] px-4 py-1.5 text-[13px] font-semibold text-white transition-all duration-200 hover:bg-[#222] hover:shadow-lg hover:shadow-black/10 md:inline-flex"
             >
               Get Started
@@ -180,6 +182,7 @@ export default function Navbar() {
               )}
               <motion.a
                 href="https://app.usevyra.com/signup"
+                onClick={() => trackLead()}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}

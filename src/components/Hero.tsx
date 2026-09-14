@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { trackLead } from "./MetaPixel";
 import {
   motion,
   useScroll,
@@ -199,6 +200,7 @@ export default function Hero() {
         >
           <a
             href="https://app.usevyra.com/signup"
+            onClick={() => trackLead()}
             className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
             Get started for free
