@@ -11,6 +11,7 @@ const footerLinks = {
     { label: "Edit with ChatGPT", href: "/chatgpt" },
   ],
   resources: [
+    { label: "About us", href: "/about" },
     { label: "Docs", href: "/docs" },
     { label: "Pricing", href: "/pricing" },
     { label: "Tutorials", href: "/tutorials" },
