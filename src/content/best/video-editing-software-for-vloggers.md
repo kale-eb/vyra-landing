@@ -18,7 +18,7 @@ category: best
 
 1. **Vyra.** Best for cutting a day of footage down fast. Because it describes every scene, not just speech, it can pull "the shot where the train arrives" or "the three best walking shots at night" without you scrubbing. Captions on speech, off on b-roll, music ducking under voice, all from one prompt. Drive it from the built-in chat or from Claude, ChatGPT, or Cursor over MCP, then fine-tune on the timeline. Watch out for: it will follow a vague prompt vaguely. Say the length, the order, and what to keep.
 
-2. **DaVinci Resolve.** Best for vloggers who enjoy editing. The free version has a full NLE, strong color tools, and voice isolation. Version 21.1 added MCP assistant control (TODO verify scope). Watch out for: no AI first cut; you still watch everything.
+2. **DaVinci Resolve.** Best for vloggers who enjoy editing. The free version has a full NLE, strong color tools, and voice isolation. Version 21.1 added MCP assistant control for Claude, Claude Code, and ChatGPT Codex: highlight edits from long-form, organizing media, settings, and rendering. Watch out for: no AI first cut; you still watch everything.
 
 3. **CapCut.** Best for phone-first vloggers. Shoot, cut, caption, and post from one device, with auto captions and templates. Watch out for: large multi-clip projects on mobile get slow, and long files are a problem.
 
@@ -26,20 +26,20 @@ category: best
 
 5. **Adobe Premiere Pro.** Best for high-production vlogs. Text-based editing, AI reframe, and the Firefly Quick Cut first draft. Watch out for: cost and learning curve.
 
-6. **Final Cut Pro.** Best for Mac vloggers who want a one-time purchase. Fast, stable, magnetic timeline, Magnetic Mask for layered effects. Watch out for: fewer AI cutting features than the tools above (TODO verify current AI set).
+6. **Final Cut Pro.** Best for Mac vloggers who want a one-time purchase. Fast, stable, magnetic timeline, Magnetic Mask for layered effects. Watch out for: its AI covers captions, Magnetic Mask, auto reframe, visual and transcript search, and beat detection, not cutting the story for you.
 
 7. **Filmora.** Best budget desktop option. Beat detection, auto sync for external mics, motion tracking, auto captions. Watch out for: AI is assistive, not a first-cut generator.
 
-8. **Gling.** Best single-purpose tool for talking-head vlog cleanup. Removes silences and bad takes automatically. Watch out for: it is a cleanup step, not a full editor (TODO verify current scope).
+8. **Gling.** Best single-purpose tool for talking-head vlog cleanup. Removes silences and bad takes automatically. Watch out for: it is a cleanup step, not a full editor; it hands off to Final Cut, Resolve, or Premiere for the rest.
 
 ## Comparison table
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Cutting a day of footage |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Hands-on editors |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Phone-first |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Talk-heavy vlogs |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Hands-on editors |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Phone-first |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Talk-heavy vlogs |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | High production |
 | Final Cut Pro | Yes | No | No | Yes | see site | Mac, one-time buy |
 | Filmora | Yes | No | No | Yes | see site | Budget desktop |

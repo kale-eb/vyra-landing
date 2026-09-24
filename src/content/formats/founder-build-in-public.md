@@ -18,6 +18,7 @@ typical_length: 30-90s
 aspect: '9:16'
 difficulty: beginner
 gear: 'phone, screen recorder, your real numbers'
+example: https://www.instagram.com/reel/DdcjJBPva-m/
 ---
 
 **A build-in-public video is a founder sharing a specific update, decision, or number from their company, mixing face, screen, and metrics so the audience follows the story of the product as it happens.**

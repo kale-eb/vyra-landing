@@ -16,7 +16,7 @@ typical_length: '60-90s short, 8-20 min long'
 aspect: '9:16 short, 16:9 long'
 difficulty: intermediate
 gear: 'phone or camera, a small mic, a day'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DZwM74ytJxF/
 ---
 
 **A vlog is a first-person video diary that mixes talking to camera, b-roll of what is happening, and music, edited so the day has a beginning, a point, and an end.**

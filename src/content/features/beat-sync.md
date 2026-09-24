@@ -3,6 +3,7 @@ title: "Beat sync: cut any footage to any track automatically"
 description: Vyra detects the beats in a track you upload and lands cuts on them, with control over which beats, which clips, and how the energy rises and falls.
 updated: 2026-09-24
 category: feature
+example: https://www.instagram.com/reel/DZCKNJiupPa/
 ---
 
 **Vyra beat-syncs your footage to a track you upload. It detects the beats, you say which beats to cut on and which clips to use, and it lands every cut on the grid. One clip per beat in the chorus, every two beats in the verse, hold the final shot. It works for montages, travel recaps, product reels, and any edit where the music drives the rhythm.**

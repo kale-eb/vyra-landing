@@ -15,6 +15,7 @@ typical_length: 15-45s
 aspect: '9:16'
 difficulty: beginner
 gear: 'phone, tripod, same framing twice'
+example: https://www.instagram.com/reel/DZh-0ccu_cv/
 ---
 
 **A before-and-after transformation video shows a starting state, compresses the process, and reveals the result, with the reveal held as the payoff of the whole video.**

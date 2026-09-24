@@ -19,13 +19,13 @@ InVideo AI is a script-to-video generator. Type a topic, get a video assembled f
 | Edits your real footage | Partial, can insert your clips | Yes, agent-driven |
 | Edit by chat / natural language | Yes, for generation and revisions | Yes, full edit by chat |
 | Bring your own AI (MCP: Claude, ChatGPT, Cursor) | No | Yes |
-| Understands footage (transcript + scene analysis) | TODO verify | Transcript plus every scene described |
+| Understands footage (transcript + scene analysis) | AI edits uploaded rushes from a brief | Transcript plus every scene described |
 | Captions | Yes | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Beat sync | Not a listed feature | Yes |
 | Motion graphics | Templated | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Limited | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 4K on paid plans | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser | Browser |
 | Best for | Faceless stock videos from a script | Editing real footage from a brief |
 

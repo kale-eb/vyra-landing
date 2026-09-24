@@ -18,21 +18,21 @@ category: best
 
 1. **Vyra.** Best for full editing from your assistant. Connect Claude Desktop, Claude Code, ChatGPT, or Cursor over MCP and the assistant can list assets, read transcripts and scene descriptions, build the cut, caption, add motion graphics, and capture frames to check its work. You use the subscription you already pay for; the MCP Starter plan is $24 a month. Watch out for: ask the assistant to read the timeline back before trusting a summary of what it changed.
 
-2. **Descript.** Best transcript editor with MCP. Descript's hosted MCP server lets Claude run edits and exports through Underlord. Watch out for: the assistant prompts Descript's AI rather than operating the tools directly, so results depend on Underlord's interpretation (TODO verify scope).
+2. **Descript.** Best transcript editor with MCP. Descript's hosted MCP server lets Claude run edits and exports through Underlord. Watch out for: Descript's docs describe the assistant as running edits on your behalf; how much of the timeline is exposed depends on the task, so test your workflow first.
 
-3. **Daydream.** Best purpose-built editor for Claude Code and Codex. A timeline editor designed to be driven from the terminal assistant. Watch out for: newer tool, smaller feature set (TODO verify).
+3. **Daydream.** Best purpose-built editor for Claude Code and Codex. A timeline editor designed to be driven from the terminal assistant. Watch out for: footage stays on your device, so it depends on your machine, and it is built for Claude Code and Codex users rather than an in-app chat.
 
 4. **Opus Clip.** Best MCP for clipping. The assistant can clip, caption, reframe, and repurpose long videos. Watch out for: clipping only, no general editing.
 
-5. **Rendley.** Best MCP automation for programmatic editing. Build and edit projects from Claude or ChatGPT, aimed at workflows more than creators. Watch out for: developer-leaning (TODO verify).
+5. **Rendley.** Best MCP automation for programmatic editing. Build and edit projects from Claude or ChatGPT, aimed at workflows more than creators. Watch out for: it also sells API and SDK products, so the creator experience is chat-first but the ecosystem is developer-leaning.
 
-6. **ChatCut.** Best chat-first editor that also runs from ChatGPT desktop and Claude Code. Watch out for: check how much of the timeline is exposed to the external assistant (TODO verify).
+6. **ChatCut.** Best chat-first editor that also runs from ChatGPT desktop and Claude Code. Watch out for: the ChatGPT and Claude Code plugins are the entry point, so you live in those apps rather than a standalone editor.
 
-7. **DaVinci Resolve.** Best pro NLE with native MCP control since 21.1: media organization, settings, rendering. Watch out for: assistant control is operational, not creative cutting (TODO verify).
+7. **DaVinci Resolve.** Best pro NLE with native MCP control since 21.1: media organization, settings, rendering. Watch out for: assistant control covers organizing, highlight edits, settings, and rendering; fine cutting is still yours.
 
-8. **Kapwing.** Best browser editor with an MCP connector for uploads, subtitles, and exports. Watch out for: scope is narrower than Vyra or Descript (TODO verify).
+8. **Kapwing.** Best browser editor with an MCP connector for uploads, subtitles, and exports. Watch out for: scope is uploads, subtitles, dubbing, and exports, not cutting.
 
-9. **CapCut.** Best for a ChatGPT-only rough draft via CapCut x Codex. Watch out for: no Claude path (TODO verify).
+9. **CapCut.** Best for a ChatGPT-only rough draft via CapCut x Codex. Watch out for: ChatGPT desktop on PC only; no Claude path.
 
 ## Comparison table
 
@@ -43,9 +43,9 @@ category: best
 | Daydream | Yes | Yes | Yes, Claude Code and Codex | Yes | see site | Terminal-first |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Clipping |
 | Rendley | Yes | Partial | Yes, MCP | Yes | see site | Automation |
-| ChatCut | Yes | Yes | Yes (TODO verify) | Yes | see site | Chat-first |
+| ChatCut | Yes | Yes | Yes, ChatGPT and Claude Code plugins | Yes | see site | Chat-first |
 | DaVinci Resolve | Yes | No | MCP in 21.1 | Yes | see site | Pro operations |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Browser tasks |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Browser tasks |
 | CapCut | Yes | No | Codex only | Yes | see site | ChatGPT drafts |
 
 ## Which one should you pick

@@ -17,6 +17,7 @@ typical_length: 30-90s
 aspect: '9:16'
 difficulty: intermediate
 gear: 'screen recorder, phone or webcam for face, script'
+example: https://www.instagram.com/reel/DZumPohtfW8/
 ---
 
 **An app walkthrough is a screen recording of a real task inside an app, with the creator's face in a corner or split frame narrating each step so the viewer can follow along and copy it.**

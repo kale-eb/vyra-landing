@@ -18,7 +18,7 @@ category: best
 
 1. **Vyra.** Best for matching the edit itself. "Match the attached reference: same cut rhythm, roughly one cut per 1 to 2 seconds in the intro, same caption font weight and placement, music drops out when I make the point, warm grade. Do not match its length or content." Vyra analyzes the reference and applies those properties to your clips. Say which wins if your instructions and the reference disagree. Watch out for: attaching a reference is not an instruction. Name what to take from it.
 
-2. **Adobe Firefly.** Best for matching a visual look. Style reference and generative tools transfer color, texture, and lighting characteristics. Watch out for: it does not match pacing or caption behavior (TODO verify current editing features).
+2. **Adobe Firefly.** Best for matching a visual look. Style reference and generative tools transfer color, texture, and lighting characteristics. Watch out for: it matches look, not pacing or caption behavior.
 
 3. **Runway.** Best for video-to-video stylization when you want the reference's aesthetic applied frame by frame. Watch out for: generative output, not an edit of your cut.
 
@@ -39,11 +39,11 @@ category: best
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Match the edit |
 | Adobe Firefly | Partial | Partial | No | Via Premiere | see site | Match the look |
 | Runway | Generative | Partial | No | No | see site | Stylize frames |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Trend templates |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Trend templates |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Manual match |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Free color match |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Caption templates |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Style presets |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Free color match |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Caption templates |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Style presets |
 
 ## Which one should you pick
 

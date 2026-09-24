@@ -16,6 +16,7 @@ typical_length: 15-40s
 aspect: '9:16'
 difficulty: beginner
 gear: 'phone, the product, natural light'
+example: https://www.instagram.com/reel/Da_tDQwtc-M/
 ---
 
 **A UGC hook-and-demo video is a creator-style ad that opens with a relatable problem or bold claim, then shows the product solving it on camera in under 40 seconds, shot to look native to the feed rather than like an ad.**

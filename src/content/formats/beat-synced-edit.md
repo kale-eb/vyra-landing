@@ -14,7 +14,7 @@ typical_length: 10-30s
 aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, 15-30 clips, a track with a clear beat'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DZCKNJiupPa/
 ---
 
 **A beat-synced edit is a sequence where every cut, zoom, or flash lands exactly on a beat of the music, so the visuals feel like they are playing the song.**

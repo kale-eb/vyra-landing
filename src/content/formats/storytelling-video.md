@@ -16,7 +16,7 @@ typical_length: 45-120s
 aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, some footage or photos from the story'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DdInaC0NGql/
 ---
 
 **A storytelling video is a short narrative with a setup, a turn, and a resolution, told in voiceover or to camera and covered with footage that shows the story rather than the storyteller.**

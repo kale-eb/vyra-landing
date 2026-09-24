@@ -26,22 +26,22 @@ category: best
 
 5. **Veed.** Best for captions and translation in the browser. Accurate transcription, customizable subtitle styles, translation, and social safe-zone guides. Watch out for: less AI-led cutting than Vyra or Descript.
 
-6. **Kapwing.** Best for speed. Every step is fast, and the caption styling tools are good. MCP connection available (TODO verify scope). Watch out for: fewer deep editing features.
+6. **Kapwing.** Best for speed. Every step is fast, and the caption styling tools are good. MCP connection for uploads, subtitles, dubbing, and exports. Watch out for: fewer deep editing features.
 
 7. **Opus Clip.** Best for repurposing long videos into shorts. Highlight detection, vertical reframing, captions, virality score. Watch out for: not a general editor.
 
-8. **Adobe Firefly Quick Cut.** Best for a fast first draft inside the Adobe ecosystem. Generates an edited draft from raw footage based on a text description of type, pacing, and length (launched February 2026). Watch out for: finishing still means Premiere or the Firefly web editor (TODO verify).
+8. **Adobe Firefly Quick Cut.** Best for a fast first draft inside the Adobe ecosystem. Generates an edited draft from raw footage based on a text description of type, pacing, and length (launched February 2026). Watch out for: Adobe positions it as a starting point you refine afterward, not a conversational editor.
 
 ## Comparison table
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Multi-format creators |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Short-form volume |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Speech-heavy |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Short-form volume |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Speech-heavy |
 | Canva | Yes | Partial | No | Yes | see site | Designers |
 | Veed | Yes | Partial | No | Yes, translation | see site | Captions |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Speed |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Speed |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Repurposing |
 | Firefly Quick Cut | Yes | Partial | No | Via Premiere | see site | Adobe users |
 

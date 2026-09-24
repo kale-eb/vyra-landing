@@ -8,7 +8,7 @@ updated: '2026-09-24'
 category: how-to
 level: beginner
 reading_time: 5 min
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DZCKNJiupPa/
 ---
 
 **Music sets the energy before the first word. Match tempo to the format: 90 to 110 BPM for vlogs and relaxed process videos, 120 to 140 BPM for montages and hype edits, slower or ambient for cinematic pieces, and minimal or no music under talking heads where the voice is the content. Under speech, duck the track 6 to 10 dB. In music-led edits, cut on the beat and change shots on phrase boundaries. Use platform-licensed or royalty-free tracks unless you have rights.**

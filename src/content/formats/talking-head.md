@@ -15,7 +15,7 @@ typical_length: 30-90s
 aspect: '9:16'
 difficulty: beginner
 gear: 'phone, window light, a quiet room'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DY_kJF4uI9-/
 ---
 
 **A talking head video is a single person speaking directly to camera, cut tight so every sentence earns its place, usually with captions and no b-roll.**

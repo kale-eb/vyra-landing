@@ -26,7 +26,7 @@ category: best
 
 5. **CapCut.** Best quick text animations and stickers inside a social editor. Watch out for: template-bound.
 
-6. **Synthesia.** Best for avatar-led explainer graphics. Watch out for: it is an avatar video tool, not a graphics layer for your footage (TODO verify scope).
+6. **Synthesia.** Best for avatar-led explainer graphics. Watch out for: it is an avatar video generator, not a graphics layer for your own footage.
 
 7. **FlexClip.** Best simple template-based motion text. Watch out for: shallow.
 
@@ -40,10 +40,10 @@ category: best
 | Jitter | Export only | No | No | No | see site | Designed animation |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Prompted, speech-timed graphics |
 | After Effects | Compositing | No | Via scripts | No | see site | Anything, slowly |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Quick text animation |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Quick text animation |
 | Synthesia | Avatar video | Partial | No | Yes | see site | Avatar explainers |
 | FlexClip | Yes | No | No | Yes | see site | Simple templates |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Browser text |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Browser text |
 
 ## Which one should you pick
 

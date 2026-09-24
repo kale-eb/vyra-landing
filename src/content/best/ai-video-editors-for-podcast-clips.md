@@ -16,7 +16,7 @@ category: best
 
 ## The list
 
-1. **Descript.** Best for transcript-first clipping. Find the quote in the text, delete the ums, let Automatic Multicam switch speakers, and export. Studio Sound cleans room audio. The Underlord agent handles multi-step requests, and an MCP server lets Claude drive edits (TODO verify scope). Watch out for: custom graphics beyond templates take manual work.
+1. **Descript.** Best for transcript-first clipping. Find the quote in the text, delete the ums, let Automatic Multicam switch speakers, and export. Studio Sound cleans room audio. The Underlord agent handles multi-step requests, and an MCP server lets Claude or ChatGPT run edits for you. Watch out for: custom graphics beyond templates take manual work.
 
 2. **Opus Clip.** Best for hands-off highlight batches. Upload the episode and get a set of captioned, reframed clips ranked by a virality score, each editable afterward. MCP server for Claude, Cursor, and ChatGPT. Watch out for: you get its picks, not yours, unless you go in and re-trim.
 
@@ -24,7 +24,7 @@ category: best
 
 4. **Riverside.** Best if you also record there. The AI editing agent takes chat commands, and Magic Clips pulls highlights. Watch out for: less flexible once you leave the Riverside pipeline.
 
-5. **Vizard.** Best for volume clipping with captions and reframing. Watch out for: limited editing after the clip is generated (TODO verify).
+5. **Vizard.** Best for volume clipping with captions and reframing. Watch out for: post-generation editing is transcript trims, timeline nudges, reframing, and brand templates, not a full compositor.
 
 6. **Kapwing.** Best browser tool for fast caption styling on a clip you already cut. Watch out for: weaker highlight detection.
 
@@ -36,13 +36,13 @@ category: best
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
-| Descript | Yes | Yes, Underlord | Yes, MCP (TODO verify) | Yes | see site | Transcript clipping |
+| Descript | Yes | Yes, Underlord | Yes, MCP server | Yes | see site | Transcript clipping |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Batch highlights |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Custom overlays |
-| Riverside | Yes | Yes, agent | Via connector (TODO verify) | Yes | see site | Record and clip |
+| Riverside | Yes | Yes, agent | Yes, MCP | Yes | see site | Record and clip |
 | Vizard | Clips only | Partial | No | Yes | see site | Volume clipping |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Caption styling |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Phone polish |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Caption styling |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Phone polish |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Pro shows |
 
 ## Which one should you pick

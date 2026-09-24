@@ -7,6 +7,8 @@ import Alternatives from "@/components/Alternatives";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import ExploreDirectory from "@/components/ExploreDirectory";
+import { HOME_FAQS } from "@/components/faq-data";
 import Footer from "@/components/Footer";
 
 // Pricing section removed 2026-07-31: in-app pricing is per-user (price-book
@@ -38,8 +40,19 @@ async function fetchUserCount(): Promise<number | null> {
 export default async function Home() {
   const userCount = await fetchUserCount();
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: HOME_FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <main>
         <Hero />
@@ -49,6 +62,7 @@ export default async function Home() {
         <MadeWithVyra userCount={userCount} />
         <Alternatives />
         <FAQ />
+        <ExploreDirectory />
         <FinalCTA />
       </main>
       <Footer />

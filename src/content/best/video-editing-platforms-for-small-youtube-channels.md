@@ -18,7 +18,7 @@ category: best
 
 1. **Vyra.** Best for one-person channels on a weekly schedule. Upload, then prompt: "cut to 8 minutes, keep the four main points, remove pauses and retakes, phrase captions, add a title card for each section." Review, correct in one or two messages, finish on the timeline. Free to start, and the MCP Starter plan is $24 a month if you already pay for Claude or ChatGPT. Watch out for: your prompt has to say what to keep; vague prompts give vague cuts.
 
-2. **DaVinci Resolve.** Best free professional editor. Full NLE, color, audio, and Fusion effects at no cost. Version 21.1 added MCP assistant control (TODO verify). Watch out for: you still do every cut by hand, and it needs a decent computer.
+2. **DaVinci Resolve.** Best free professional editor. Full NLE, color, audio, and Fusion effects at no cost. Version 21.1 added MCP assistant control for Claude, Claude Code, and ChatGPT Codex: highlight edits from long-form, organizing media, settings, and rendering. Watch out for: you still do every cut by hand, and it needs a decent computer.
 
 3. **Descript.** Best for talking-head channels. Transcript editing, filler removal, retake detection, and the Underlord agent make it fast for speech-driven uploads. Watch out for: b-roll-heavy channels get less help.
 
@@ -30,18 +30,18 @@ category: best
 
 7. **Filmora.** Best low-cost desktop editor with AI extras. Auto captions, beat detection, motion tracking. Watch out for: AI is assistive, not a first-cut generator.
 
-8. **iMovie.** Best if you are on a Mac and have never edited. Free, stable, simple. Watch out for: no AI features and limited layout control (TODO verify current version).
+8. **iMovie.** Best if you are on a Mac and have never edited. Free, stable, simple. Watch out for: limited layout control and no AI cutting; fine for a first channel, not for scale.
 
 ## Comparison table
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Weekly solo channels |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Free pro tools |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Talking heads |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Shorts too |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Free pro tools |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Talking heads |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Shorts too |
 | Clipchamp | Yes | No | No | Yes | see site | Beginners |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Weak computers |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Weak computers |
 | Filmora | Yes | No | No | Yes | see site | Budget desktop |
 | iMovie | Yes | No | No | Basic | see site | Mac beginners |
 

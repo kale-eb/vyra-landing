@@ -8,7 +8,7 @@ updated: '2026-09-24'
 category: how-to
 level: intermediate
 reading_time: 6 min
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DdInaC0NGql/
 ---
 
 **A storytelling video has four parts in order: setup (who, where, what is at stake, in one line), tension (a specific problem or question), turn (the moment something changes), and payoff (the result and what it means). Open loops planted early and closed late hold viewers through the middle, and a callback to the opening line makes the ending feel finished. In short-form the whole arc fits in 45 to 90 seconds.**

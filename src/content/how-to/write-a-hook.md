@@ -8,7 +8,7 @@ updated: '2026-09-24'
 category: how-to
 level: beginner
 reading_time: 5 min
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/Da_tDQwtc-M/
 ---
 
 **A hook is the first 1.5 seconds of a short-form video. It works when three layers land at once: something moving in the frame, a spoken line that opens a specific question, and on-screen text that restates the promise for viewers watching muted. Weak hooks describe the video. Strong hooks make a claim, name a person, or start mid-action.**

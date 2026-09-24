@@ -16,7 +16,7 @@ category: best
 
 ## The list
 
-1. **Freebeat.** Best track-first AI music video tool. Upload the song and it builds a synced video, with options to use your clips. Watch out for: how much of your own footage it uses versus generated visuals (TODO verify).
+1. **Freebeat.** Best track-first AI music video tool. Upload the song and it builds a synced video, with options to use your clips. Watch out for: it leans generative; confirm it will use your footage rather than generated visuals.
 
 2. **Runway.** Best generative visuals. Gen-3 and later models produce clips from text or reference images, plus video-to-video stylization. Watch out for: it is not a beat-sync editor; you assemble elsewhere.
 
@@ -28,7 +28,7 @@ category: best
 
 6. **CapCut.** Best for a fast beat-template teaser from the finished video. Watch out for: template-bound, weak on long sources.
 
-7. **Kaiber.** Best for stylized, animated music visuals from audio and images. Watch out for: generative, not an editor (TODO verify current product).
+7. **Kaiber.** Best for stylized, animated music visuals from audio and images. Watch out for: generative, not an editor for your own footage.
 
 8. **Filmora.** Best budget desktop with beat detection markers. Watch out for: manual assembly.
 
@@ -40,8 +40,8 @@ category: best
 | Runway | Generative | Partial | No | No | see site | Generated visuals |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Real footage to the beat |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Pro finish |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Free color |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Beat-template teaser |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Free color |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Beat-template teaser |
 | Kaiber | Generative | Partial | No | No | see site | Stylized visuals |
 | Filmora | Yes | No | No | Yes | see site | Budget beat markers |
 

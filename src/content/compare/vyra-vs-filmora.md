@@ -25,7 +25,7 @@ Filmora sits between consumer apps and Premiere: a real desktop timeline, packs 
 | Motion graphics | Large template packs | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 4K | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Desktop app, mobile | Browser |
 | Best for | Hobbyists who like editing with effect packs | Creators who want the edit done from a brief |
 

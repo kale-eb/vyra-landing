@@ -18,7 +18,7 @@ Resolve is a full post-production suite: edit, color, Fairlight audio, Fusion ef
 | --- | --- | --- |
 | Edits your real footage | Yes, professional NLE | Yes, agent-driven |
 | Edit by chat / natural language | Partial, transcript-based editing | Yes, full edit by chat |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, Resolve 21.1 added MCP assistant control (TODO verify scope) | Yes, agent gets the full editing toolset |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, Resolve 21.1 MCP for Claude, Claude Code, ChatGPT Codex (organize, highlight edits, settings, render) | Yes, agent gets the full editing toolset |
 | Understands footage (transcript + scene analysis) | Transcript, scene cut detection | Transcript plus every scene described |
 | Captions | Yes, auto-subtitles | Yes, word-by-word or phrases |
 | Beat sync | Manual | Yes |

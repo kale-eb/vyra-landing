@@ -22,11 +22,11 @@ category: best
 
 3. **Vyra.** Best for described sync. "Cut to the beat, one clip per beat in the chorus, one every two beats in the verses, start on the first downbeat, hold the last shot for a second" is a prompt Vyra executes, and because it describes every scene it also picks the clips ("favor movement and faces"). Watch out for: it is not a one-tap template; you write two sentences.
 
-4. **Freebeat.** Best AI music-video generator that builds edits around a track. Watch out for: leans generative; check what it does with your own footage (TODO verify).
+4. **Freebeat.** Best AI music-video generator that builds edits around a track. Watch out for: leans generative; confirm it will use your footage rather than generated visuals.
 
 5. **Adobe Premiere Pro.** Best for pros who want beat markers plus full control (via the Remix and marker tools). Watch out for: manual assembly.
 
-6. **DaVinci Resolve.** Best free option; audio waveform and markers make manual beat cutting precise. Watch out for: no automatic beat detection in the free tier (TODO verify).
+6. **DaVinci Resolve.** Best free option; audio waveform and markers make manual beat cutting precise. Watch out for: beat cutting is manual with markers; there is no one-click beat sync.
 
 7. **InVideo.** Best for template montages with music built in. Watch out for: template-bound.
 
@@ -36,12 +36,12 @@ category: best
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Template beat sync |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Template beat sync |
 | Filmora | Yes | No | No | Yes | see site | Desktop beat markers |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Described sync |
 | Freebeat | Partial | Partial | No | No | see site | AI music video |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Pro control |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Free precision |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Free precision |
 | InVideo | Yes | Partial | No | Yes | see site | Template montage |
 | Canva | Yes | Partial | No | Yes | see site | Slideshows |
 

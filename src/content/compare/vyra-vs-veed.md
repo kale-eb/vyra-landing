@@ -21,11 +21,11 @@ Both run in a browser tab. The difference is what the AI is allowed to do. VEED'
 | Bring your own AI (MCP: Claude, ChatGPT, Cursor) | MCP exists, generates clips only | Yes, full editing tools |
 | Understands footage (transcript + scene analysis) | Transcript for subtitles only | Transcript plus scene analysis |
 | Captions | Yes, strong auto-subtitles | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Beat sync | No | Yes |
 | Motion graphics | Basic text animations | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, browser | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 720p free, 1080p to 4K paid | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser | Browser |
 | Best for | Quick subtitle and trim jobs, AI avatars | AI-edited real footage |
 

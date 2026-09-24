@@ -22,7 +22,7 @@ category: best
 
 3. **Opus Clip.** Best for batch repurposing. Feed it a finished long video and it returns a set of captioned, reframed clips with a virality score. Watch out for: no control over the source edit.
 
-4. **Submagic.** Best pure caption tool for shorts. Animated captions, emoji, auto b-roll, and zooms tuned for TikTok-style pacing. Watch out for: it is a finishing tool, not a cutter (TODO verify current feature set).
+4. **Submagic.** Best pure caption tool for shorts. Animated captions, emoji, auto b-roll, and zooms tuned for TikTok-style pacing. Watch out for: it is built for shorts finishing and clipping (captions, zooms, b-roll, silence removal, Magic clips); long-form structure is not its job.
 
 5. **InShot.** Best simple mobile editor. Quick trims, text, music, and export presets for every platform. Watch out for: minimal AI.
 
@@ -36,13 +36,13 @@ category: best
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes, styled | see site | Volume and trends |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes, styled | see site | Volume and trends |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Long-to-short by description |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Batch repurposing |
 | Submagic | Finishing | No | No | Yes, animated | see site | Caption styling |
 | InShot | Yes | No | No | Basic | see site | Simple mobile |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Talking-head shorts |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Browser speed |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Talking-head shorts |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Browser speed |
 | Canva | Yes | Partial | No | Yes | see site | Design-heavy |
 
 ## Which one should you pick

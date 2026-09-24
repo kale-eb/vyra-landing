@@ -19,13 +19,13 @@ Canva's video editor is built for the same job as its design editor: pick a temp
 | Edits your real footage | Yes, basic trims | Yes, agent-driven |
 | Edit by chat / natural language | Partial, Magic features | Yes, full edit by chat |
 | Bring your own AI (MCP: Claude, ChatGPT, Cursor) | No | Yes |
-| Understands footage (transcript + scene analysis) | Transcript for captions, TODO verify | Transcript plus every scene described |
+| Understands footage (transcript + scene analysis) | Transcript for captions only | Transcript plus every scene described |
 | Captions | Yes | Yes, word-by-word or phrases |
 | Beat sync | Yes, Beat Sync feature | Yes |
 | Motion graphics | Templates and animated elements | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, simple | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | Depends on plan; see site | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser, desktop, mobile | Browser |
 | Best for | Branded graphics and short template videos | Editing real footage into finished videos |
 

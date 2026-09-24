@@ -22,7 +22,7 @@ category: best
 
 3. **InShot.** Best lightweight mobile editor. Trims, text, stickers, music, and export presets. Watch out for: almost no AI assistance.
 
-4. **VN Video Editor.** Best free mobile editor with a real timeline. Keyframes, curves, and no watermark. Watch out for: manual everything (TODO verify current AI features).
+4. **VN Video Editor.** Best free mobile editor with a real timeline. Keyframes, curves, and no watermark. Watch out for: mostly manual editing; AI is limited to auto captions and templates.
 
 5. **Submagic.** Best for TikTok-style animated captions on a finished clip. Watch out for: it is not a cutting tool.
 
@@ -36,13 +36,13 @@ category: best
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes, styled | see site | Trend edits |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes, styled | see site | Trend edits |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Original edits by description |
 | InShot | Yes | No | No | Basic | see site | Simple mobile |
 | VN | Yes | No | No | Basic | see site | Free mobile timeline |
 | Submagic | Finishing | No | No | Yes, animated | see site | Caption styling |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Batch Reels |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Talking-head Reels |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Talking-head Reels |
 | Canva | Yes | Partial | No | Yes | see site | Graphics-led |
 
 ## Which one should you pick

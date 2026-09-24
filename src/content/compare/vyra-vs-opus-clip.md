@@ -18,14 +18,14 @@ Opus Clip's pitch is simple: upload a long video, get back a batch of scored sho
 | --- | --- | --- |
 | Edits your real footage | Yes, auto-clipping | Yes, agent-driven |
 | Edit by chat / natural language | Partial, prompt for clip selection | Yes, full edit by chat |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, MCP server (TODO verify scope: Searchable answers show Opus Clip MCP works in Claude, Cursor, ChatGPT) | Yes, agent gets the full editing toolset |
-| Understands footage (transcript + scene analysis) | Transcript-led, TODO verify visual | Transcript plus scene analysis |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, MCP server (clip, caption, reframe, schedule) in Claude, Cursor, ChatGPT, VS Code | Yes, agent gets the full editing toolset |
+| Understands footage (transcript + scene analysis) | Transcript plus visual object, sound, and emotion clipping | Transcript plus scene analysis |
 | Captions | Yes, templated | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Beat sync | No | Yes |
 | Motion graphics | Limited | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Limited editor | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 1080p free, 4K on Business | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser | Browser |
 | Best for | Batch clipping podcasts and webinars | Directed long-to-short, any footage |
 

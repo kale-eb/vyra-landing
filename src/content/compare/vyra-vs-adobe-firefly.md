@@ -18,16 +18,16 @@ Adobe added Quick Cut to the Firefly video editor in February 2026. You upload r
 | | Adobe Firefly (Quick Cut) | Vyra |
 | --- | --- | --- |
 | Edits your real footage | Yes, first draft from a brief | Yes, agent-driven |
-| Edit by chat / natural language | Partial, brief in, draft out; iteration is manual (TODO verify) | Yes, full edit by chat |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | No (TODO verify) | Yes |
-| Understands footage (transcript + scene analysis) | Analyzes footage to build the draft (TODO verify depth) | Transcript plus every scene described and searchable |
-| Captions | Yes (TODO verify styling options) | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Edit by chat / natural language | Partial, brief in, draft out; you refine by hand | Yes, full edit by chat |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | No | Yes |
+| Understands footage (transcript + scene analysis) | Analyzes uploaded clips to build the draft | Transcript plus every scene described and searchable |
+| Captions | Via the Firefly video editor | Yes, word-by-word or phrases |
+| Beat sync | Not a Quick Cut control | Yes |
 | Motion graphics | Templates and generative assets | Custom, built from a prompt |
-| Reference style matching | No (TODO verify) | Yes |
+| Reference style matching | No | Yes |
 | Generative fills and extends | Yes, Firefly generative video | No, edits real footage only |
 | Manual timeline | Yes, Firefly video editor | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | Paid plans up to 2K at launch | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser, Adobe account | Browser |
 | Best for | Adobe users who want an AI first draft | Creators who want to iterate by conversation |
 
@@ -70,7 +70,7 @@ Make a 45-second 9:16 Reel from this talking head. Open on the line "this is the
 ## FAQ
 
 **Is Firefly Quick Cut a full editor?**
-It produces a first draft inside the Firefly video editor. Detailed finishing is expected to happen there or in Premiere Pro. (TODO verify.)
+It produces a first draft inside the Firefly video editor. Adobe describes it as a starting point you shape and refine afterward.
 
 **Does Vyra generate video?**
 No. Vyra edits the footage you upload. If you need generated clips, make them elsewhere and upload them.

@@ -26,7 +26,7 @@ category: best
 
 5. **Riverside.** Best speed if you record in it; the editing agent starts from a transcript that already exists. Watch out for: tied to Riverside recordings.
 
-6. **InVideo.** Best fast agent-built rough cut from uploaded clips with a plain instruction. Watch out for: less control after the draft (TODO verify).
+6. **InVideo.** Best fast agent-built rough cut from uploaded clips with a plain instruction. Watch out for: the draft lands on a normal timeline, but the AI's first take sets the structure, so expect a manual pass.
 
 7. **CapCut.** Best fast phone edits on short clips. Watch out for: it timed out on our 35-minute source after 4 minutes.
 
@@ -37,12 +37,12 @@ category: best
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Raw footage to first cut |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Interface speed |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Interface speed |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Finished video to shorts |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Talking-head cleanup |
-| Riverside | Yes | Yes | Via connector (TODO verify) | Yes | see site | Recorded in Riverside |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Talking-head cleanup |
+| Riverside | Yes | Yes | Yes, MCP | Yes | see site | Recorded in Riverside |
 | InVideo | Yes | Yes, agent | No | Yes | see site | Agent rough cuts |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Short phone edits |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Short phone edits |
 | Firefly Quick Cut | Yes | Partial | No | Via Premiere | see site | Adobe first drafts |
 
 ## Which one should you pick

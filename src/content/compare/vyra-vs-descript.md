@@ -21,11 +21,11 @@ Descript treats video like a text document. You edit the transcript and the vide
 | Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Partial, MCP passes prompts to Underlord | Yes, agent gets the editing tools |
 | Understands footage (transcript + scene analysis) | Transcript only | Transcript plus every scene described |
 | Captions | Yes | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Beat sync | No | Yes |
 | Motion graphics | Templates only | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 720p free, 1080p Hobbyist, 4K Creator and up | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Desktop app and web | Browser |
 | Best for | Podcasts, interviews, screen recordings | Vlogs, b-roll, product, any visual footage |
 

@@ -17,7 +17,7 @@ typical_length: 45-90s
 aspect: '9:16 or 1:1'
 difficulty: beginner
 gear: 'phone, a specific outcome to talk about'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DdInaC0NGql/
 ---
 
 **A lessons-learned video ties a specific outcome, such as a number, a failure, or a milestone, to two or three concrete takeaways, delivered to camera with the outcome shown as proof.**

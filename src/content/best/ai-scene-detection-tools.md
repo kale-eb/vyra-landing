@@ -26,7 +26,7 @@ category: best
 
 5. **Riverside.** Best if you record there; Magic Clips finds highlights from the transcript. Watch out for: speech-only.
 
-6. **Gling.** Best narrow tool for detecting silences and bad takes in talking-head footage. Watch out for: that is the whole feature (TODO verify current scope).
+6. **Gling.** Best narrow tool for detecting silences and bad takes in talking-head footage. Watch out for: that is the whole feature, then you finish elsewhere.
 
 7. **DaVinci Resolve.** Best free NLE with scene cut detection for flattened footage. Watch out for: manual after detection.
 
@@ -37,13 +37,13 @@ category: best
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Content-level detection |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Speech-defined scenes |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Speech-defined scenes |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Cut detection, pro |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Highlight detection |
-| Riverside | Yes | Yes | Via connector (TODO verify) | Yes | see site | Recorded highlights |
+| Riverside | Yes | Yes | Yes, MCP | Yes | see site | Recorded highlights |
 | Gling | Yes | No | No | Partial | see site | Silence and takes |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Free cut detection |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Short auto-cut |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Free cut detection |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Short auto-cut |
 
 ## Which one should you pick
 

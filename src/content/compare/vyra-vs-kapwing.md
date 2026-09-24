@@ -18,14 +18,14 @@ Kapwing bundles a solid timeline with a long list of AI tools: subtitles, silenc
 | --- | --- | --- |
 | Edits your real footage | Yes, browser timeline | Yes, agent-driven |
 | Edit by chat / natural language | Partial, AI tools per task | Yes, full edit by chat |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, Kapwing MCP (TODO verify scope) | Yes, agent gets the full editing toolset |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, Kapwing MCP for uploads, subtitles, dubbing, exports | Yes, agent gets the full editing toolset |
 | Understands footage (transcript + scene analysis) | Transcript-based tools | Transcript plus every scene described |
 | Captions | Yes, strong | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Beat sync | No dedicated beat sync | Yes |
 | Motion graphics | Templates and text animations | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 720p free, 4K on paid | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser | Browser |
 | Best for | Teams applying AI utilities to clips | AI-edited long footage from a brief |
 

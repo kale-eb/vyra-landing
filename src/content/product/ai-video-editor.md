@@ -3,6 +3,7 @@ title: AI video editor that edits your real footage by describing the edit
 description: Vyra is an AI video editor that turns your raw footage into a finished video when you describe the edit in plain language. No templates, no generated clips.
 updated: 2026-09-24
 category: product
+example: https://www.instagram.com/reel/Da_tDQwtc-M/
 ---
 
 **Vyra is an AI video editor for real footage. You upload what you filmed, describe the video you want in plain language, and the editor cuts it, captions it, adds graphics and music, and exports it. If you can explain the edit to a friend, you can get it from Vyra. When you want to fine-tune, the full timeline is one click away.**

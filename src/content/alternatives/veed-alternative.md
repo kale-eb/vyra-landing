@@ -39,7 +39,7 @@ category: alternatives
 | Kapwing | Yes | Partial | No | Yes | Yes | Browser utilities, teams |
 | Clipchamp | Yes | No | No | Yes | Yes | Free Windows editing |
 | Descript | Yes | Partial | Partial | Yes | Yes | Transcript editing |
-| Runway | Partial | Partial | No | TODO verify | Basic | Generated video |
+| Runway | Partial | Partial | No | Not core | Basic | Generated video |
 | CapCut | Yes | No | No | Yes | Yes | Template shorts |
 
 ## How to switch

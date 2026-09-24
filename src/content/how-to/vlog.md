@@ -8,7 +8,7 @@ updated: '2026-09-24'
 category: how-to
 level: beginner
 reading_time: 6 min
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DZwM74ytJxF/
 ---
 
 **Proper vlogging means shooting for the edit. Instead of one continuous take, capture short pieces of coverage: a talking-to-camera line when something happens, a wide shot of where you are, a close detail of what you are doing, and a moving shot that carries you to the next place. Record audio close to your mouth, film 3 to 5 times more than you need, and edit it down to one throughline. A good 60 second vlog usually comes from 15 to 25 minutes of footage.**

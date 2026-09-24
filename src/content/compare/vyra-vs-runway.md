@@ -19,13 +19,13 @@ This is not a head-to-head so much as two halves of a workflow. Runway's strengt
 | Edits your real footage | Partial, light editor with AI tools | Yes, agent-driven |
 | Edit by chat / natural language | Partial, prompts drive generation | Yes, full edit by chat |
 | Bring your own AI (MCP: Claude, ChatGPT, Cursor) | No | Yes |
-| Understands footage (transcript + scene analysis) | TODO verify | Transcript plus every scene described |
-| Captions | TODO verify | Yes, word-by-word or phrases |
+| Understands footage (transcript + scene analysis) | Generative; not built around your footage's transcript | Transcript plus every scene described |
+| Captions | Not a core feature | Yes, word-by-word or phrases |
 | Beat sync | No | Yes |
 | Motion graphics | Generative effects | Custom, built from a prompt |
 | Reference style matching | Style transfer on generation | Yes, on the edit (pacing, text, music, grade) |
 | Manual timeline | Basic | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | Varies by plan; ProRes on the top tier | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Browser | Browser |
 | Best for | Generating shots and effects | Editing real footage into finished videos |
 

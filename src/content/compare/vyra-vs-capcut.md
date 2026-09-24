@@ -18,14 +18,14 @@ CapCut is a traditional editor with AI features sprinkled on top: auto-captions,
 | --- | --- | --- |
 | Edits your real footage | Yes, manual timeline | Yes, agent-driven |
 | Edit by chat / natural language | No | Yes, built-in chat |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Partial, CapCut x Codex (ChatGPT only, TODO verify) | Yes, Claude, ChatGPT, Cursor |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Partial, CapCut x Codex (ChatGPT desktop only) | Yes, Claude, ChatGPT, Cursor |
 | Understands footage (transcript + scene analysis) | No, transcript for captions only | Yes, every scene described and searchable |
 | Captions | Yes, built-in auto-captions | Yes, word-by-word or phrases |
 | Beat sync | Yes, auto beat templates | Yes, cut to any uploaded track |
 | Motion graphics | Templates only | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | High-res on free and Pro (CapCut lists up to 8K) | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Mobile and desktop apps | Browser |
 | Best for | Quick trend edits from templates | AI-edited real footage, long-to-short |
 

@@ -37,7 +37,7 @@ category: alternatives
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes | Yes | Yes | AI-edited real footage |
 | Canva | Partial | Partial | No | Yes | Simple | Branded template videos |
-| Runway | Partial | Partial | No | TODO verify | Basic | Generated shots |
+| Runway | Partial | Partial | No | Not core | Basic | Generated shots |
 | Descript | Yes | Partial | Partial | Yes | Yes | Transcript editing |
 | CapCut | Yes | No | No | Yes | Yes | Template shorts |
 | Pictory | Partial | Yes | No | Yes | Limited | Script to stock video |

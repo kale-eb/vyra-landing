@@ -21,11 +21,11 @@ Clipchamp ships with Windows and runs in a browser. It has auto-captions, an aut
 | Bring your own AI (MCP: Claude, ChatGPT, Cursor) | No | Yes |
 | Understands footage (transcript + scene analysis) | Transcript for captions | Transcript plus every scene described |
 | Captions | Yes, auto-captions | Yes, word-by-word or phrases |
-| Beat sync | TODO verify | Yes |
+| Beat sync | No | Yes |
 | Motion graphics | Text templates | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
-| Export cap | TODO verify | 1440p (AI Starter), 4K (AI Pro) |
+| Export cap | 1080p free, 4K Premium | 1440p (AI Starter), 4K (AI Pro) |
 | Platform | Windows app, browser | Browser |
 | Best for | Free basic edits on Windows | AI-edited real footage from a brief |
 

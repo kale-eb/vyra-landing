@@ -16,7 +16,7 @@ typical_length: 15-45s
 aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, 20-40 clips, a music track'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DZCKNJiupPa/
 ---
 
 **A montage is a sequence of short clips cut to music that compresses a period of time, a process, or a mood into under a minute, with the rhythm of the cuts carrying the feeling.**

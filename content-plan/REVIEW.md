@@ -28,6 +28,7 @@ Then open http://localhost:3000/compare (or any hub) and use the footer "Directo
 | Layout | src/app/layout.tsx | New title, canonical, Organization and WebSite schema. Existing SoftwareApplication schema untouched (note it carries an AggregateRating of 4.8 from 150 ratings; confirm that is real). |
 | Redirects | next.config.ts | /blog/vyra-vs-* now 301 to /compare/vyra-vs-*. |
 | Footer | src/components/Footer.tsx | Product and Directory columns. Directory is footer-only, as decided. |
+| Homepage | src/app/page.tsx, src/components/ExploreDirectory.tsx, src/components/faq-data.ts | FAQPage schema for the existing FAQ, plus an "Explore" section above the final CTA that links every hub so crawlers reach the tree from the root. Remove the section if you want the homepage untouched; the schema can stay. |
 | Blog | src/app/blog/[slug]/data.ts | $9.99 references replaced with current plan prices. |
 
 ## 3. What changed in content
@@ -56,7 +57,7 @@ Search for `TODO` across src/content to find every spot that needs a fact or an 
 - Whether the AggregateRating in layout.tsx is backed by real reviews.
 - Vyra's rank on each /best list.
 - Which Vyra projects to pull frames or clips from for /formats and /features (the all-nighter painting content, the color wheel trend video, the UGC and storytelling reels).
-- Which @sulansart reels to embed on which pages. Current mapping in content-plan/instagram-map.md.
+- Which @sulansart reels to embed on which pages. Twenty pages now link a specific reel as the example (mapping in content-plan/instagram-map.md); the rest link the profile.
 
 ## 5. After you approve
 

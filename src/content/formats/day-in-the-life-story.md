@@ -16,7 +16,7 @@ typical_length: 45-90s
 aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, a full day, voiceover recorded after'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DdcjJBPva-m/
 ---
 
 **A day-in-the-life story is a chronological vlog compressed into under 90 seconds with a narrative voiceover that gives the day a point, so it reads as a story rather than a diary.**

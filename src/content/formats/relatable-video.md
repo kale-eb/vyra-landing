@@ -15,7 +15,7 @@ typical_length: 7-25s
 aspect: '9:16'
 difficulty: beginner
 gear: 'phone, one location'
-example: 'https://www.instagram.com/sulansart'
+example: https://www.instagram.com/reel/DZZDVg9OkNp/
 ---
 
 **A relatable video captures one small, specific, shared experience in a single scene, with on-screen text naming the situation so the viewer recognizes themselves within the first second.**

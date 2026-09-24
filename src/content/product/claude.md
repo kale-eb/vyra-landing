@@ -3,6 +3,7 @@ title: Edit videos with Claude
 description: "Connect Vyra to Claude Desktop, Claude Code, or claude.ai over MCP and Claude edits your real footage: it sees the clips, cuts the timeline, and exports."
 updated: 2026-09-24
 category: product
+example: https://www.instagram.com/reel/DZumPohtfW8/
 ---
 
 **You can edit videos with Claude by connecting it to Vyra over MCP. Claude reads your transcripts and scene descriptions, builds the timeline, adds captions and graphics, and exports, all from the Claude chat you already use. It works in Claude Desktop, Claude Code, and claude.ai, on the Claude subscription you already have.**

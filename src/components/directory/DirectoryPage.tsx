@@ -118,6 +118,19 @@ function buildJsonLd(entry: Entry) {
   return graph;
 }
 
+/** The header already shows the description; drop a leading bold paragraph that repeats it. */
+function stripLeadingSummary(body: string, description: string): string {
+  const m = body.match(/^\*\*([\s\S]+?)\*\*\s*\n/);
+  if (!m) return body;
+  const norm = (s: string) => s.replace(/\s+/g, " ").replace(/[.…]+$/, "").trim().toLowerCase();
+  const lead = norm(m[1]);
+  const desc = norm(description.replace(/\.\.\.$/, ""));
+  if (lead === desc || lead.startsWith(desc) || desc.startsWith(lead)) {
+    return body.slice(m[0].length).trimStart();
+  }
+  return body;
+}
+
 function Meta({ entry }: { entry: Entry }) {
   const bits: string[] = [];
   const d = entry.data;
@@ -187,7 +200,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             />
           )}
 
-          <Markdown source={entry.body} />
+          <Markdown source={stripLeadingSummary(entry.body, entry.description)} />
         </article>
 
         {related.length > 0 && (

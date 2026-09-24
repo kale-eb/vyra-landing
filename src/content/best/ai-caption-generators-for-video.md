@@ -16,7 +16,7 @@ category: best
 
 ## The list
 
-1. **CapCut.** Best all-round caption generator. Auto captions are fast and accurate on clean audio, styling presets are strong, and it is free to start. Watch out for: auto captions moved behind Pro on some plans (TODO verify current tier), and noisy audio drops accuracy.
+1. **CapCut.** Best all-round caption generator. Auto captions are fast and accurate on clean audio, styling presets are strong, and it is free to start. Watch out for: auto captions are a Pro feature in CapCut's own Standard vs Pro guide, and noisy audio drops accuracy.
 
 2. **Submagic.** Best animated captions for shorts. Word highlights, emoji, sound effects, and zooms designed for retention. Watch out for: it is a finishing layer, not an editor.
 
@@ -36,12 +36,12 @@ category: best
 
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes, styled presets | see site | One-tap captions |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes, styled presets | see site | One-tap captions |
 | Submagic | Finishing | No | No | Yes, animated | see site | Shorts finishing |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase, prompted | $24/mo, free to start | Captions in a full edit |
 | Veed | Yes | Partial | No | Yes, translation | see site | Accuracy, languages |
-| Descript | Yes | Yes | Yes, MCP (TODO verify) | Yes | see site | Transcript editors |
-| Kapwing | Yes | Partial | MCP (TODO verify) | Yes | see site | Fast styling |
+| Descript | Yes | Yes | Yes, MCP server | Yes | see site | Transcript editors |
+| Kapwing | Yes | Partial | Yes, MCP (uploads, subtitles, dubbing, exports) | Yes | see site | Fast styling |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Highlight clips |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Pro styling |
 

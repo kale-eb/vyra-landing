@@ -37,9 +37,9 @@ category: best
 | Tool | Edits real footage | Chat editing | Works with Claude/ChatGPT | Captions | Price from | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes, MCP with editing tools | Word or phrase | $24/mo, free to start | Silent b-roll to story |
-| CapCut | Yes | No | Codex only (TODO verify) | Yes | see site | Phone editing |
+| CapCut | Yes | No | ChatGPT desktop only (CapCut x Codex) | Yes | see site | Phone editing |
 | Premiere Pro | Yes | Partial | Via plugins | Yes | see site | Polished films |
-| DaVinci Resolve | Yes | No | MCP in 21.1 (TODO verify) | Yes | see site | Color grading |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 (Claude, ChatGPT Codex) | Yes | see site | Color grading |
 | Veed | Yes | Partial | No | Yes, translation | see site | Captions |
 | Opus Clip | Clips only | Partial | Yes, MCP | Yes | see site | Shorts from vlogs |
 | Filmora | Yes | No | No | Yes | see site | Budget montage |

@@ -17,6 +17,7 @@ typical_length: 45-120s
 aspect: '9:16 or 16:9'
 difficulty: intermediate
 gear: 'phone or voiceover mic, simple graphics or diagrams'
+example: https://www.instagram.com/reel/DY_kJF4uI9-/
 ---
 
 **An explainer video breaks down one concept, system, or "why" question using a clear spoken argument supported by simple on-screen graphics, so the viewer understands something they didn't before.**

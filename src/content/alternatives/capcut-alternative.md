@@ -29,7 +29,7 @@ category: alternatives
 
 5. **Kapwing.** For teams working in the browser. Strengths: many one-click AI utilities; shared workspaces. Limitation: no agent that plans a whole edit.
 
-6. **VN Video Editor.** For mobile-first creators who want a free CapCut-like app. Strengths: capable phone timeline, no watermark on free exports (TODO verify). Limitation: manual editing, limited AI.
+6. **VN Video Editor.** For mobile-first creators who want a free CapCut-like app. Strengths: capable phone timeline, no watermark on free exports. Limitation: manual editing, limited AI.
 
 ## Comparison table
 
