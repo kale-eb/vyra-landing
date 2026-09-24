@@ -12,11 +12,14 @@
     "@remotion/media-utils": "^4.0.435",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.36.0",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.14.2",
     "next": "16.1.6",
     "posthog-js": "^1.362.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

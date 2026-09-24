@@ -22,7 +22,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.usevyra.com"),
-  title: "Vyra - AI Video Editor",
+  title: "Vyra: AI Video Editor That Edits Your Real Footage by Chat",
   description:
     "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
   icons: {
@@ -68,6 +68,7 @@ export const metadata: Metadata = {
       "Turn raw footage into finished videos in minutes. AI-powered editing with full control.",
     images: ["/og-image.png"],
   },
+  alternates: { canonical: "https://www.usevyra.com" },
   robots: {
     index: true,
     follow: true,
@@ -96,6 +97,36 @@ export default function RootLayout({
           type="font/woff2"
           href="/fonts/CabinetGrotesk-Variable.woff2"
           crossOrigin="anonymous"
+        />
+        {/* Organization + WebSite JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "@id": "https://www.usevyra.com/#organization",
+                name: "Vyra",
+                url: "https://www.usevyra.com",
+                logo: { "@type": "ImageObject", url: "https://www.usevyra.com/vyra-logo.png" },
+                sameAs: [
+                  "https://www.instagram.com/app.usevyra/",
+                  "https://www.youtube.com/@VyraVideo",
+                  "https://discord.com/invite/mFWxyvg4Nj",
+                ],
+                founder: { "@type": "Person", name: "Sulan Zhang", url: "https://www.usevyra.com/author/sulan" },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://www.usevyra.com/#website",
+                name: "Vyra",
+                url: "https://www.usevyra.com",
+                publisher: { "@id": "https://www.usevyra.com/#organization" },
+              },
+            ]),
+          }}
         />
         {/* JSON-LD Structured Data */}
         <script
