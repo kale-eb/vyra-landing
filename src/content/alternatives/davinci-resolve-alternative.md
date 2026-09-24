@@ -38,7 +38,7 @@ category: alternatives
 | Descript | Yes | Partial | Partial | Audio yes, color no | Yes | Transcript editing |
 | CapCut | Yes | No | Partial | Basic | Yes | Template shorts |
 | Kapwing | Yes | Partial | Partial | Basic | Yes | Browser utilities |
-| DaVinci Resolve | Yes | No | Yes (TODO verify) | Yes, best in class | Yes, pro | Free pro post |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 | Yes, best in class | Yes, pro | Free pro post |
 
 ## How to switch
 
@@ -56,7 +56,7 @@ Assemble a 3-minute YouTube cut from this footage. Structure: cold open on the s
 Premiere Pro and Final Cut Pro. Vyra applies a described grade but is not a grading suite.
 
 **Can Claude drive Resolve?**
-Resolve 21.1 added MCP assistant control (TODO verify scope). Vyra's MCP gives the assistant the full editing tool set.
+Resolve 21.1 added MCP assistant control for Claude, Claude Code, and ChatGPT Codex, covering media organization, settings, rendering, and highlight edits from long-form. Vyra's MCP gives the assistant the full editing tool set.
 
 **Which is free?**
 Resolve's free version is hard to beat. Vyra is free to start.

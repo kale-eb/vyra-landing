@@ -20,11 +20,11 @@ category: alternatives
 
 2. **VEED.** For a similar all-in-one browser editor. Strengths: accurate transcription, caption styling, translation, safe zones. Limitation: manual editing, no agent that plans the cut.
 
-3. **Clipchamp.** For free and simple on Windows. Strengths: generous free tier, screen recording, no watermark on exports (TODO verify). Limitation: basic timeline and AI.
+3. **Clipchamp.** For free and simple on Windows. Strengths: generous free tier, screen recording, 1080p exports free with no watermark. Limitation: basic timeline and AI.
 
 4. **Descript.** For talk-heavy content. Strengths: transcript editing, filler removal, audio cleanup, MCP passthrough to Underlord. Limitation: no visual understanding.
 
-5. **CapCut.** For templates and mobile. Strengths: trend templates, auto captions, phone and desktop. Limitation: no external AI beyond a Codex draft integration (TODO verify), weak on long files.
+5. **CapCut.** For templates and mobile. Strengths: trend templates, auto captions, phone and desktop. Limitation: the only external AI path is CapCut x Codex on ChatGPT desktop, weak on long files.
 
 6. **Canva.** For design-led social video. Strengths: brand kits, templates, Magic Design first drafts. Limitation: not a real editor for speech-heavy footage.
 
@@ -55,7 +55,7 @@ Cut this to 60 seconds for Reels, best takes, remove silences over half a second
 VEED. It has the widest set of one-click utilities in the browser.
 
 **Which alternative lets Claude or ChatGPT edit the video?**
-Vyra, with the agent holding the editing tools. Kapwing and Descript have MCP options that forward prompts (TODO verify Kapwing scope).
+Vyra, with the agent holding the editing tools. Kapwing's MCP covers uploads, subtitles, dubbing, and exports; Descript's hosted MCP runs edits inside its own editor.
 
 **Which is free?**
 Clipchamp's free tier is the most generous. Vyra is free to start.

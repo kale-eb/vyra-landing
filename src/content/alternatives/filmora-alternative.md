@@ -18,7 +18,7 @@ category: alternatives
 
 1. **Vyra.** For creators who want the edit built for them. Strengths: transcribed and scene-indexed footage, beat sync from a prompt, motion graphics from a description, reference matching, MCP for Claude, ChatGPT, and Cursor, full timeline in the browser. Limitation: no offline desktop app; no effects marketplace.
 
-2. **DaVinci Resolve.** For a free professional desktop editor. Strengths: color, audio, effects, free tier is generous, 21.1 added MCP assistant control (TODO verify scope). Limitation: steep learning curve.
+2. **DaVinci Resolve.** For a free professional desktop editor. Strengths: color, audio, effects, free tier is generous, 21.1 added MCP assistant control for Claude, Claude Code, and ChatGPT Codex. Limitation: steep learning curve.
 
 3. **CapCut.** For templates and mobile. Strengths: trend templates, beat templates, captions, phone and desktop. Limitation: template-bound, weak on long files.
 
@@ -33,7 +33,7 @@ category: alternatives
 | Tool | Edits real footage | Chat editing | BYO AI (MCP) | Captions | Manual timeline | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | Yes | Yes | Yes | Yes | Yes | AI-edited real footage |
-| DaVinci Resolve | Yes | No | Yes (TODO verify) | Yes | Yes, pro | Free pro editing |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 | Yes | Yes, pro | Free pro editing |
 | CapCut | Yes | No | Partial | Yes | Yes | Template shorts |
 | Descript | Yes | Partial | Partial | Yes | Yes | Transcript editing |
 | Premiere Pro | Yes | No | Via plugins | Yes | Yes, pro | Pro finishing |
@@ -58,7 +58,7 @@ DaVinci Resolve and Premiere Pro. Vyra uses tracked masks for reframing and can 
 DaVinci Resolve's free version is the most complete. Vyra is free to start.
 
 **Which alternative can Claude or ChatGPT drive?**
-Vyra over MCP with full editing tools. Resolve 21.1 added assistant control (TODO verify).
+Vyra over MCP with full editing tools. Resolve 21.1 added MCP assistant control for Claude and ChatGPT Codex.
 
 ## Related
 

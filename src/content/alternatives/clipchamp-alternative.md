@@ -11,7 +11,7 @@ category: alternatives
 
 - It is a beginner editor. The timeline and effects run out as videos get more ambitious.
 - AI features are basic: silence removal, captions, text to speech, background removal.
-- Windows-first; the experience elsewhere is thinner (TODO verify).
+- Web app plus a Windows app; no native Mac or mobile editor.
 - No agent that plans or executes an edit.
 
 ## The alternatives
@@ -36,7 +36,7 @@ category: alternatives
 | CapCut | Yes | No | Partial | Yes | Yes | Template shorts |
 | Kapwing | Yes | Partial | Partial | Yes | Yes | Browser utilities |
 | Descript | Yes | Partial | Partial | Yes | Yes | Transcript editing |
-| DaVinci Resolve | Yes | No | Yes (TODO verify) | Yes | Yes, pro | Free pro editing |
+| DaVinci Resolve | Yes | No | Yes, MCP in 21.1 | Yes | Yes, pro | Free pro editing |
 | iMovie | Yes | No | No | Basic | Yes | Simple Mac editing |
 
 ## How to switch

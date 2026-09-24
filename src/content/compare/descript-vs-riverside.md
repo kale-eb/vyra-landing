@@ -15,13 +15,13 @@ Podcasters end up choosing between these two more than any other pair. Riverside
 | --- | --- | --- |
 | Edits your real footage | Yes, transcript-driven | Yes, recordings and uploads |
 | Edit by chat / natural language | Partial, Underlord assistant | Yes, AI editing agent |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Partial, MCP passes prompts to Underlord | Partial, Claude connector (TODO verify scope) |
-| Remote recording | Basic (TODO verify) | Yes, its core, local per-participant tracks |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, hosted MCP runs edits in Descript | Listed MCP; scope not documented on its site |
+| Remote recording | Yes, Rooms, multitrack | Yes, its core, local per-participant tracks |
 | Understands footage (transcript + scene analysis) | Transcript, no visual understanding | Transcript-led |
 | Captions | Yes | Yes |
-| Filler word and retake removal | Yes, its strength | Yes, silence removal (TODO verify retakes) |
+| Filler word and retake removal | Yes, its strength | Yes, filler words and silences; no retake detection listed |
 | Multicam speaker switching | Yes | Yes |
-| Audio cleanup | Studio Sound, strong | Yes (TODO verify) |
+| Audio cleanup | Studio Sound, strong | Yes, Magic Audio noise removal |
 | Clips for social | Yes | Yes, Magic Clips |
 | Best for | Editing existing talk recordings by text | Recording remote shows and clipping them |
 

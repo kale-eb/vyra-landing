@@ -22,11 +22,11 @@ A note before the list. Runway is primarily a generative tool: text to video, im
 
 2. **Vyra.** For editing real footage with AI. Strengths: transcribed and scene-indexed footage, full edit from a description or from Claude, ChatGPT, and Cursor over MCP, captions, beat sync, motion graphics from a prompt, reference matching, full timeline. Limitation: no generation. Your footage only.
 
-3. **DaVinci Resolve.** For a free professional editor with strong AI assists. Strengths: color, Relight, Music Remixer, 21.1 assistant control (TODO verify). Limitation: manual and complex.
+3. **DaVinci Resolve.** For a free professional editor with strong AI assists. Strengths: color, Relight, Music Remixer, 21.1 MCP assistant control for Claude and ChatGPT Codex. Limitation: manual and complex.
 
 4. **Descript.** For talk-heavy footage. Strengths: transcript editing, audio cleanup. Limitation: no visual understanding.
 
-5. **CapCut.** For templates and a light generative layer. Strengths: templates, captions, mobile, some AI generation via Dreamina (TODO verify). Limitation: template-bound.
+5. **CapCut.** For templates and a light generative layer. Strengths: templates, captions, mobile, AI video generation via Seedance and Dreamina. Limitation: template-bound.
 
 6. **Adobe Firefly.** For generation plus editing inside Adobe. Strengths: Quick Cut first drafts from raw footage, generative fills, ecosystem. Limitation: Adobe subscription (see site).
 
@@ -36,7 +36,7 @@ A note before the list. Runway is primarily a generative tool: text to video, im
 | --- | --- | --- | --- | --- | --- |
 | Runway | Yes | Partial | Partial | No | Generated clips and effects |
 | Vyra | No | Yes | Yes | Yes | AI-edited real footage |
-| DaVinci Resolve | No | Yes | No | Yes (TODO verify) | Free pro editing |
+| DaVinci Resolve | No | Yes | No | Yes, MCP in 21.1 | Free pro editing |
 | Descript | No | Yes | Partial | Partial | Transcript editing |
 | CapCut | Partial | Yes | No | Partial | Template shorts |
 | Adobe Firefly | Yes | Yes | Partial | No | Adobe ecosystem |

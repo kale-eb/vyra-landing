@@ -33,7 +33,7 @@ category: alternatives
 | Tool | Remote recording | Edits real footage | Chat editing | BYO AI (MCP) | Captions | Best for |
 | --- | --- | --- | --- | --- | --- | --- |
 | Vyra | No | Yes | Yes | Yes | Yes | AI-edited real footage |
-| Descript | Basic (TODO verify) | Yes | Partial | Partial | Yes | Transcript editing |
+| Descript | Yes, Rooms, multitrack | Yes | Partial | Partial | Yes | Transcript editing |
 | Opus Clip | No | Clips | Partial | Yes | Yes | Clipping at volume |
 | Vizard | No | Clips | Partial | No | Yes | Clipping, lower cost |
 | Kapwing | No | Yes | Partial | Partial | Yes | Browser utilities |

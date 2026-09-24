@@ -33,24 +33,24 @@ Then open http://localhost:3000/compare (or any hub) and use the footer "Directo
 
 ## 3. What changed in content
 
-179 markdown files under src/content, one per page. Frontmatter is `title`, `description` (the quotable sentence, also the meta description), `updated`, `category`, plus optional `video`, `example`, and format-specific fields. Edit the markdown directly; no code changes needed to change copy.
+248 markdown files under src/content, one per page (about 132,000 words). Frontmatter is `title`, `description` (the quotable sentence, also the meta description), `updated`, `category`, plus optional `video`, `example`, and format-specific fields. Edit the markdown directly; no code changes needed to change copy.
 
 | Section | Count | Priority to read |
 | --- | --- | --- |
 | product | 5 | High. These carry the pricing tables and the biggest claims. |
 | features | 6 | High. Feature claims must match the app today. |
-| compare | 13 | High. Competitor cells marked "TODO verify" need a decision. |
-| best | 16 | High. Vyra's rank on each list is an editorial call. |
-| answers | 11 | Medium. Two pages want first-party numbers (transcription accuracy, low-light). |
-| prompts | 15 | Medium. These come straight from user calls; check they match how the agent behaves now. |
-| tutorials | 8 | Medium. `video: TODO` on all eight. Steps for the connect-* pages should be checked against the real client UIs. |
-| alternatives | 8 | Medium. |
+| compare | 26 | High. 13 vyra-vs pages, 10 more vyra-vs (Final Cut, Riverside, Submagic, Vizard, ChatCut, Daydream, Rendley, Gling, Captions, InShot), 3 rival-vs-rival with a "Where Vyra fits" box. Competitor facts were checked against vendor sites. |
+| best | 22 | High. Vyra's rank on each list is an editorial call. |
+| answers | 21 | Medium. A few want first-party numbers (transcription accuracy, low-light, supported formats, card at signup). |
+| prompts | 31 | Medium. 15 task pages plus 16 format-specific pages. These come from user calls; check they match how the agent behaves now. |
+| tutorials | 8 | Medium. `video: TODO` on all eight. |
+| alternatives | 14 | Medium. |
 | for | 14 | Medium. |
-| formats | 29 | Lower. Long tail. Eleven link to @sulansart as the example. |
-| how-to | 14 | Lower. Long tail. |
+| formats | 38 | Lower. Includes 9 art-and-process formats (speed paint, process video, studio tour, commission reveal, all-nighter painting vlog, semester recap). |
+| how-to | 23 | Lower. Includes 9 growth guides (grow on TikTok/Reels/Shorts, niche, analytics, series, batching). |
 | glossary | 40 | Low. |
 
-Search for `TODO` across src/content to find every spot that needs a fact or an asset.
+Search for `TODO` across src/content to find every spot that needs a fact or an asset. All competitor claims marked "TODO verify" were checked against vendor sites and resolved; the remaining TODOs (26 files) are Vyra facts or assets only you can supply.
 
 ## 4. Things only you can decide
 

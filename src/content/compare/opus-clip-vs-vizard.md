@@ -14,14 +14,14 @@ If you have a back catalog of podcasts or webinars and want shorts without editi
 | | Opus Clip | Vizard |
 | --- | --- | --- |
 | Edits your real footage | Clips it | Clips it |
-| Edit by chat / natural language | Partial, prompts guide clip selection (TODO verify) | Partial, prompts guide clip selection (TODO verify) |
-| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, MCP server for Claude, Cursor, ChatGPT (TODO verify scope) | No |
+| Edit by chat / natural language | Partial, natural-language prompts clip a specific moment | No, automatic highlight detection |
+| Bring your own AI (MCP: Claude, ChatGPT, Cursor) | Yes, MCP server for Claude, Cursor, ChatGPT, VS Code: clip, caption, reframe, schedule | No |
 | Understands footage (transcript + scene analysis) | Transcript-led | Transcript-led |
 | Captions | Yes, templates | Yes, templates |
-| Virality or clip score | Yes | Yes (TODO verify name) |
+| Virality or clip score | Yes | Not listed on its site |
 | Speaker tracking and reframing | Yes | Yes |
 | Manual timeline | Light clip editor | Light clip editor |
-| Publishing and scheduling | Yes | Yes (TODO verify) |
+| Publishing and scheduling | Yes | Yes, schedule social posts on Creator and above |
 | Best for | Podcasters who want the most polished clip pipeline | Podcasters who want the same thing for less (see site) |
 
 ## Where Opus Clip is stronger
@@ -33,7 +33,7 @@ If you have a back catalog of podcasts or webinars and want shorts without editi
 ## Where Vizard is stronger
 
 - Pricing tends to be lower for similar output (see both sites).
-- Simple interface with fewer upsells (TODO verify).
+- Simpler feature set with fewer moving parts.
 - Comparable clip quality for standard talking content.
 
 ## Choose Opus Clip if
@@ -62,7 +62,7 @@ From this 50-minute episode, find five self-contained moments of 30-45 seconds w
 Good enough to post for most podcasts. A human still picks better hooks and cuts tighter.
 
 **Which handles video with two hosts better?**
-Both track speakers. Opus Clip's reframing has more options (TODO verify).
+Both track speakers. Opus Clip's ReframeAnything adds AI object tracking and manual tracking control; Vizard centers key subjects automatically.
 
 **Can either edit a full episode?**
 They are clipping tools. Full episode edits belong in an editor.
