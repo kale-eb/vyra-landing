@@ -10,6 +10,7 @@ const footerLinks = {
   resources: [
     { label: "Blog", href: "/blog" },
     { label: "Docs", href: "/docs" },
+    { label: "Support", href: "/app-support" },
   ],
   account: [
     { label: "Log In", href: "https://app.usevyra.com/login" },
