@@ -1,0 +1,82 @@
+---
+title: "Vyra for photographers: behind-the-scenes, portfolio reels, and client delivery videos"
+description: "Vyra turns behind-the-scenes clips and your finished photos into portfolio reels, shoot recaps, and client delivery videos by describing the edit, with photos timed to music and your work kept as the focus."
+updated: 2026-09-24
+category: for
+facts:
+  - "Best for: Portrait, wedding, product, and brand photographers who post video to book clients"
+  - "Typical footage: Phone behind-the-scenes clips, finished photos, talking-to-camera tips"
+  - "Typical output: 15-30 second portfolio reels, 45-second shoot recaps, client delivery teasers"
+  - "Time saved: A shoot's behind-the-scenes clips and 40 finals to a 30-second reel in one conversation"
+  - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
+  - "Price: Free to start, plans from $24/mo"
+---
+
+**Photographers already have the hardest part: strong images. Vyra sequences your finals and behind-the-scenes clips to music, adds the text you want, and keeps the pacing tied to the beat, so a reel takes one conversation instead of an evening.**
+
+## What you make
+
+- Portfolio and final-image reels: [/formats/beat-synced-edit](/formats/beat-synced-edit)
+- Shoot recaps and behind-the-scenes: [/formats/montage](/formats/montage)
+- Before-and-after edits: [/formats/before-after-transformation](/formats/before-after-transformation)
+- Talking-to-camera tips and pricing explainers: [/formats/talking-head](/formats/talking-head)
+- Client testimonials: [/formats/testimonial](/formats/testimonial)
+
+## Your three most-used prompts
+
+Portfolio reel:
+```
+Make a 25-second 9:16 reel from the 30 photos and the behind-the-scenes clips. Open on the best three finals, one per beat of the attached track, then alternate a behind-the-scenes clip and a final. Slow zoom on each photo. End on my logo for 2 seconds. No captions.
+```
+
+Before-and-after:
+```
+Use the raw and edited versions of each photo. Show the raw for 1.5 seconds, then wipe to the edited version and hold 2 seconds. Six pairs, in order. Put "RAW" and "EDITED" as small labels in the top corner.
+```
+
+Shoot recap:
+```
+Cut a 45-second recap of the wedding day from the clips: getting ready, ceremony, portraits, reception. Hold moments with real emotion longer. Calm music, ducked under any speech. Add the couple's names as a title card at the start.
+```
+
+## A typical workflow
+
+1. Upload the finals, the raws if you want before-and-afters, and the behind-the-scenes clips.
+2. Ask for the reel with the order and the track.
+3. Adjust pacing: "hold the portraits longer, speed up the details."
+4. Add a logo, names, or a booking line.
+5. Export 9:16 and a 1:1 for the grid.
+
+## What Vyra does that matters for you
+
+- Photos and video in one timeline, with movement on stills from a sentence.
+- Beat sync so photo changes land on the music.
+- A reusable style across shoots: attach last month's reel and say "same treatment."
+- Masks and layouts for split before-and-after frames.
+
+## What it does not do
+
+- It does not retouch or edit photos. Bring the finals.
+- It does not deliver galleries. Export the video and send it with the gallery.
+
+## Example
+
+Example creator: TODO
+
+## FAQ
+
+**Will it crop my photos badly for 9:16?**
+Say "no cropping, letterbox with a blurred background" or "crop to the face" per photo.
+
+**Can it keep colors accurate?**
+Yes. It does not grade stills unless asked. Say "no color changes on the photos."
+
+**Can I make a client-facing version and a promo version?**
+Yes. Ask for two exports: one without your logo for the client, one with it for social.
+
+## Related
+
+- [/formats/beat-synced-edit](/formats/beat-synced-edit)
+- [/formats/before-after-transformation](/formats/before-after-transformation)
+- [/how-to/choose-music](/how-to/choose-music)
+- [/prompts/beat-sync](/prompts/beat-sync)

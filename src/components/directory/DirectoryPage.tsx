@@ -190,6 +190,24 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             </p>
           </header>
 
+          {entry.facts.length > 0 && (
+            <dl className="mb-10 grid gap-x-6 gap-y-3 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-6 sm:grid-cols-2">
+              {entry.facts.map((f) => {
+                const i = f.indexOf(":");
+                const label = i > 0 ? f.slice(0, i).trim() : "";
+                const value = i > 0 ? f.slice(i + 1).trim() : f;
+                return (
+                  <div key={f} className="min-w-0">
+                    {label && (
+                      <dt className="text-[11px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">{label}</dt>
+                    )}
+                    <dd className="text-[14px] leading-relaxed text-[var(--foreground)]">{value}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+          )}
+
           {entry.video && (
             <video
               className="mb-10 w-full rounded-xl border border-[var(--surface-border)]"

@@ -1,5 +1,6 @@
 import { SITE_URL, SECTION_KEYS, getEntries, type SectionKey } from "@/lib/content";
 import { posts } from "@/app/blog/[slug]/data";
+import reviews from "@/content/reviews.json";
 
 export type SitemapUrl = { loc: string; lastmod: string; video?: { title: string; description: string; contentLoc: string; thumbnail: string; uploadDate: string } };
 
@@ -9,6 +10,7 @@ const CORE_STATIC: SitemapUrl[] = [
   { loc: "/", lastmod: STATIC_LASTMOD },
   { loc: "/pricing", lastmod: STATIC_LASTMOD },
   { loc: "/about", lastmod: STATIC_LASTMOD },
+  ...((reviews as unknown[]).length ? [{ loc: "/reviews", lastmod: STATIC_LASTMOD }] : []),
   { loc: "/docs", lastmod: "2026-05-26" },
   { loc: "/docs/guide", lastmod: "2026-05-26" },
   { loc: "/docs/first-project", lastmod: "2026-05-26" },
@@ -31,7 +33,8 @@ function sectionUrls(section: SectionKey): SitemapUrl[] {
 export function childSitemaps(): Record<string, SitemapUrl[]> {
   const product = getEntries("product").map((e) => ({ loc: e.url, lastmod: e.updated }));
   const out: Record<string, SitemapUrl[]> = {
-    core: [...CORE_STATIC, ...product, ...sectionUrls("features")],
+    core: [...CORE_STATIC, ...product, ...sectionUrls("features"), ...sectionUrls("templates")],
+    tools: sectionUrls("tools"),
     compare: [...sectionUrls("compare"), ...sectionUrls("alternatives")],
     best: sectionUrls("best"),
     for: sectionUrls("for"),

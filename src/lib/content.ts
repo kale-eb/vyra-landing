@@ -15,7 +15,9 @@ export type SectionKey =
   | "best"
   | "features"
   | "tutorials"
-  | "glossary";
+  | "glossary"
+  | "tools"
+  | "templates";
 
 export type SectionMeta = {
   key: SectionKey;
@@ -106,6 +108,22 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
       "Step by step: upload footage, get a rough cut, add captions, match a reference, connect Claude or ChatGPT, export for TikTok.",
     schema: "HowTo",
   },
+  tools: {
+    key: "tools",
+    label: "Tools",
+    title: "Video editing tools, one task each",
+    description:
+      "Add subtitles, sync to a beat, generate motion graphics, remove silence, reframe to vertical, make podcast clips. Each page is one job and the prompts to do it.",
+    schema: "WebPage",
+  },
+  templates: {
+    key: "templates",
+    label: "Templates",
+    title: "Vyra templates and styles",
+    description:
+      "Project templates that give the agent structure (talking head, podcast, vlog) and styles that set type and color defaults.",
+    schema: "WebPage",
+  },
   glossary: {
     key: "glossary",
     label: "Glossary",
@@ -128,11 +146,31 @@ export type Entry = {
   category?: string;
   video?: string;
   example?: string;
+  facts: string[];
   data: Record<string, unknown>;
   body: string;
 };
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
+
+/** Build a lans-style facts list from typed frontmatter when no explicit `facts` is given. */
+function deriveFacts(d: Record<string, unknown>): string[] {
+  const out: string[] = [];
+  const add = (label: string, v: unknown) => {
+    if (v === undefined || v === null || v === "") return;
+    const s = Array.isArray(v) ? v.map(String).join(", ") : String(v);
+    if (/todo/i.test(s)) return;
+    out.push(`${label}: ${s}`);
+  };
+  add("Platforms", d.platforms);
+  add("Length", d.typical_length);
+  add("Aspect", d.aspect);
+  add("Difficulty", d.difficulty);
+  add("Gear", d.gear);
+  add("Level", d.level);
+  if (d.reading_time) add("Read time", `${d.reading_time} min`);
+  return out;
+}
 
 function readDir(section: SectionKey | "product"): Entry[] {
   const dir = path.join(CONTENT_DIR, section);
@@ -159,6 +197,7 @@ function readDir(section: SectionKey | "product"): Entry[] {
         category: data.category ? String(data.category) : undefined,
         video,
         example: typeof data.example === "string" ? data.example : undefined,
+        facts: Array.isArray(data.facts) ? data.facts.map(String) : deriveFacts(data),
         data,
         body: content.trim(),
       } satisfies Entry;

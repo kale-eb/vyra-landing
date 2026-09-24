@@ -5,7 +5,7 @@ updated: 2026-09-24
 category: answers
 ---
 
-**AI video editors typically accept the formats phones and cameras produce: MP4 and MOV containers with H.264, HEVC/H.265, or ProRes video, and AAC or PCM audio. They export MP4 (H.264) because every platform accepts it. Vyra accepts MP4, MOV, HEVC/H.265, H.264, and ProRes, and exports MP4 at up to 1440p on AI Starter and 4K on AI Pro. (TODO verify full list.)**
+**AI video editors typically accept the formats phones and cameras produce: MP4 and MOV containers with H.264, HEVC/H.265, or ProRes video, and AAC or PCM audio. They export MP4 (H.264) because every platform accepts it. Vyra accepts MP4, MOV, and common phone and camera formats for video, plus images and audio (TODO confirm HEVC and ProRes), makes 720p proxies for smooth editing, and exports MP4 (H.264) at 480p, 720p, 1080p, original resolution, or upscaled to 1440p and 4K, or WebM (VP8) up to 1080p.**
 
 ## Why
 
@@ -42,7 +42,7 @@ Yes. Upload the original 4K HEVC file. Export up to 1440p on AI Starter and 4K o
 MP4 or MOV screen recordings work. If the audio drifts, it is usually variable frame rate; the agent can flag it.
 
 **Can I export a ProRes master?**
-Vyra exports MP4. For a ProRes deliverable, export at the highest bitrate and transcode in a desktop tool. (TODO verify.)
+Vyra exports MP4 (H.264, 5 to 50 Mbps) or WebM (VP8, up to 1080p and 20 Mbps), not ProRes. For a ProRes deliverable, export the High Quality preset (original resolution, 35 Mbps) or a custom 50 Mbps MP4 and transcode in a desktop tool.
 
 ## Related
 

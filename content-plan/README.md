@@ -14,5 +14,8 @@ Drafted 2026-09-23 from Searchable data, the Fastlane and lans.app sitemaps, and
 | 07-compare-and-alternatives/ | 12 vyra-vs pages and 8 alternative pages |
 | 08-for-and-glossary/ | 10 audience pages and 40 glossary terms |
 | 09-searchable-review.md | Plan checked against Searchable docs and raw AI answers: three structural gaps, coverage map, revised phase 1 |
+| 10-gap-round-2.md | Second Searchable pass: tool pages, reviews, templates, facts box, llms.txt, and what is still open |
+| reviews-candidates.md | Quotes that could go on /reviews once the person agrees |
+| REVIEW.md | How to review the branch |
 
 Read 00, then 09, then 06, then dip into the sections.

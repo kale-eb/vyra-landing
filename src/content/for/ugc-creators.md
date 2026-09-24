@@ -1,0 +1,82 @@
+---
+title: "Vyra for UGC creators: hook-and-demo ads from raw takes, in the brand's style"
+description: "Vyra turns your raw takes into hook-and-demo ads, testimonials, and unboxings by describing the structure, picking the best take of each line, and matching the caption style a brand asks for."
+updated: 2026-09-24
+category: for
+facts:
+  - "Best for: UGC creators delivering paid ads and organic-style content to brands"
+  - "Typical footage: Phone takes of the hook, demo, and close, product b-roll, screen recordings"
+  - "Typical output: 15-45 second hook-and-demo ads, 3-5 variants per brief, testimonials, unboxings"
+  - "Time saved: One shoot to five ad variants with different hooks in one conversation"
+  - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
+  - "Price: Free to start, plans from $24/mo"
+---
+
+**UGC work is volume, variants, and brand specs. Vyra picks the cleanest take of each line, builds the hook-demo-close structure from a sentence, and reproduces the caption style a brand sends you as a reference.**
+
+## What you make
+
+- Hook-and-demo ads: [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)
+- Product demos: [/formats/product-demo](/formats/product-demo)
+- Unboxings: [/formats/unboxing](/formats/unboxing)
+- Testimonial-style ads: [/formats/testimonial](/formats/testimonial)
+- App walkthroughs with your face: [/formats/app-walkthrough](/formats/app-walkthrough)
+
+## Your three most-used prompts
+
+Hook-and-demo:
+```
+Build a 30-second 9:16 hook-and-demo ad. Hook: my cleanest take of "I stopped buying these." Demo: the product b-roll while I explain the three reasons, cut to the product each time I name one. Close: the take where I hold it up and say the brand name. Word-by-word captions, bold, centered high. No music.
+```
+
+Variants:
+```
+Make four more versions of that ad, each with a different hook take from the footage. Keep the demo and close identical. Name the exports hook-1 through hook-4.
+```
+
+Brand caption match:
+```
+Match the caption style from the brand's reference video: font weight, color, position, and the highlight color on the active word. Apply it to all five variants.
+```
+
+## A typical workflow
+
+1. Upload every take and the product b-roll. Vyra transcribes and analyzes them.
+2. Describe the structure once. Ask for the best take of each line.
+3. Ask for hook variants from the same footage.
+4. Attach the brand's reference and match the captions.
+5. Export all variants at 9:16 and deliver.
+
+## What Vyra does that matters for you
+
+- Take selection by transcript: "the cleanest take where I say X."
+- Variants without re-editing: swap one segment, keep the rest.
+- Reference style matching for brand caption specs.
+- Consistent output across a batch, which is what brands pay for.
+
+## What it does not do
+
+- It does not generate AI avatars or synthetic UGC. You are the creator on screen.
+- It does not run the ads or report performance.
+
+## Example
+
+Example creator: [@sulansart](https://www.instagram.com/reel/Da_tDQwtc-M/)
+
+## FAQ
+
+**Can I deliver raw plus edited?**
+Yes. Export the cut, and the original uploads stay in your library for the brand.
+
+**How do I hit a brand's exact spec sheet?**
+Paste the spec into the prompt: length, aspect, caption rules, logo placement, safe zones. The agent follows written rules well.
+
+**Can I reuse a structure for the next brand?**
+Yes. Say "same structure as the skincare ad, new footage."
+
+## Related
+
+- [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)
+- [/how-to/write-a-hook](/how-to/write-a-hook)
+- [/prompts/captions](/prompts/captions)
+- [/features/reference-style-matching](/features/reference-style-matching)

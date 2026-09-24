@@ -12,6 +12,7 @@ const footerLinks = {
   ],
   resources: [
     { label: "About us", href: "/about" },
+    { label: "Reviews", href: "/reviews" },
     { label: "Docs", href: "/docs" },
     { label: "Pricing", href: "/pricing" },
     { label: "Tutorials", href: "/tutorials" },
@@ -19,6 +20,8 @@ const footerLinks = {
     { label: "Blog", href: "/blog" },
   ],
   directory: [
+    { label: "Tools", href: "/tools" },
+    { label: "Templates", href: "/templates" },
     { label: "Compare", href: "/compare" },
     { label: "Alternatives", href: "/alternatives" },
     { label: "Best of", href: "/best" },

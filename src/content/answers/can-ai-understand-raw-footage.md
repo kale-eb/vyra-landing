@@ -45,7 +45,7 @@ Find every clip where the painting is visible on the easel and list them with a 
 Yes. Scene analysis runs on the picture. Silent b-roll gets described and is searchable by what is in it.
 
 **How long does the analysis take?**
-It runs on upload. A 35-minute file was fully indexed in under 2 minutes in a test on Vyra. (TODO verify current timing.)
+Transcription and scene analysis run automatically after upload; a 35-minute file indexed in under 2 minutes in a side-by-side test.
 
 **Can I see what the AI thinks is in a clip?**
 Yes. Ask for the description of any clip or open it in the footage library, where the summary and thumbnails are shown.

@@ -19,7 +19,7 @@ video: TODO
 
 1. **Create a project.** From the dashboard, choose New project and give it a name you will recognize later, such as "studio vlog sept 24".
 2. **Drag your clips into the footage library.** The library tab sits next to the agent chat. Drop all files at once; MP4, MOV, HEVC, H.264, and ProRes are accepted.
-3. **Wait for processing.** Each clip shows an upload status and then a processing status. Processing transcribes speech, describes scenes, and builds thumbnails. A 35-minute file finished in under 2 minutes in a test (TODO verify current timing).
+3. **Wait for processing.** Each clip shows an upload status and then a processing status. Processing transcribes speech, describes scenes, builds thumbnails, and makes a 720p proxy for smooth editing (the original is used on export). Transcription and scene analysis run automatically after upload; a 35-minute file indexed in under 2 minutes in a side-by-side test.
 4. **Open a clip in the library.** Read the summary Vyra wrote and scrub the thumbnails. This is what the agent sees.
 5. **Ask for a map.** In the agent chat, ask it to summarize the footage before you edit anything. Correct anything it got wrong, such as who is who.
 6. **Attach a reference, if you have one.** Add it in the reference area, not the footage library, so the agent does not put it on the timeline.

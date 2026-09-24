@@ -21,6 +21,10 @@ Then open http://localhost:3000/compare (or any hub) and use the footer "Directo
 | Hub template | src/components/directory/DirectoryHub.tsx | Card grid, grouping by subcategory (formats only). |
 | Markdown styling | src/components/directory/Markdown.tsx | Tables, lists, blockquotes and code fences render as copyable prompt blocks. |
 | Routes | src/app/{section}/page.tsx and [slug]/page.tsx, src/app/[slug]/page.tsx | One folder per section. Product pages (/ai-video-editor, /mcp, /claude, /chatgpt, /cursor) come from src/content/product. |
+| Tools and templates | src/content/tools, src/content/templates | Task-named tool pages and template pages, the shape competitors get cited for most. |
+| Facts box | src/components/directory/DirectoryPage.tsx, `facts:` frontmatter | Lans-style definition list at the top of every page. Explicit on tools, templates, and new /for pages; derived from format fields elsewhere. |
+| llms.txt | src/app/llms.txt/route.ts | Plain-text site map for AI agents, generated from content. |
+| Reviews | src/app/reviews/page.tsx, src/content/reviews.json | Live with the Buffer quote only. Add entries as people agree; see content-plan/reviews-candidates.md. |
 | Sitemaps | src/lib/sitemaps.ts, src/app/sitemap.xml/route.ts, src/app/sitemaps/[name]/route.ts | Index at /sitemap.xml with 11 children. lastmod comes from each file's `updated`. Video sitemap appears automatically once any page has a real `video:` URL. |
 | Pricing | src/app/pricing/page.tsx | Four plans with Product/Offer schema. Copy for credits/storage came from the existing SoftwareApplication schema in layout.tsx. |
 | Author | src/app/author/sulan/page.tsx | Person schema. Bio is a placeholder; add a headshot. |
