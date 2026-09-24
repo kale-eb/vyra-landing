@@ -11,11 +11,18 @@ ChatGPT is a strong planner and a fast writer. It is not a video editor. Vyra is
 
 ## How it works
 
-1. Add Vyra as a connector in ChatGPT. Setup is at /docs/mcp.
-2. Upload footage to a Vyra project. Each clip is transcribed and visually described on upload.
-3. Describe the video: length, platform, keep, cut, captions, music.
-4. ChatGPT calls the editing tools and the timeline updates live.
-5. Ask for frames or a timeline read-back, then correct one line at a time.
+1. Add the Vyra MCP server, `https://api.usevyra.com/mcp`. The ChatGPT desktop path uses the Codex-compatible MCP config: add the block below to the Codex MCP config and restart. The OAuth 2.1 flow opens on first use; sign in to Vyra and approve.
+
+   ```toml
+   [mcp_servers.vyra]
+   url = "https://api.usevyra.com/mcp"
+   ```
+
+2. Open `https://app.usevyra.com`, sign in with the same account you authorized, and open a project. The tab auto-binds as the editor's dispatch target and shows a green indicator top-right. Keep at least one Vyra tab open.
+3. Upload footage to a Vyra project. Each clip is transcribed and visually described on upload.
+4. Describe the video: length, platform, keep, cut, captions, music.
+5. ChatGPT calls the editing tools and the timeline updates live.
+6. Ask for frames or a timeline read-back, then correct one line at a time.
 
 ## What you can ask for
 
@@ -54,7 +61,7 @@ This project has ten clips of the same talking head. Keep only the best take of 
 ## Limits
 
 - ChatGPT edits what you uploaded. Vyra does not generate footage.
-- Keep the project open in a browser tab so edits apply live.
+- Keep a Vyra project open in a browser tab so edits apply live. The tab binds on focus; the green indicator top-right confirms it.
 - ChatGPT sometimes reports a step as complete early. Ask it to read the timeline back before you trust a summary.
 
 ## Pricing

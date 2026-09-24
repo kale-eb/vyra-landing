@@ -12,11 +12,27 @@ Claude on its own cannot open a video file. It needs an editor it can operate. V
 
 ## How it works
 
-1. Add the Vyra connector in Claude Desktop, Claude Code, or claude.ai. Instructions are at /docs/mcp.
-2. Upload footage to a Vyra project. Every clip is transcribed and visually described on upload.
-3. Tell Claude what to make. Ask for a plan first if the footage is long.
-4. Claude calls the editing tools: add clips, trim, split, captions, masks, motion graphics, keyframes, effects, export.
-5. Check frames or read the timeline back, then correct one thing at a time.
+1. Add the Vyra MCP server, `https://api.usevyra.com/mcp`. In Claude Code, run the command below and the next `claude` command opens the OAuth authorization URL in your browser. In Claude Desktop, add the JSON below to `claude_desktop_config.json` (macOS `~/Library/Application Support/Claude/`, Windows `%APPDATA%\Claude\`) and restart; it prompts for authorization the first time a session needs Vyra. On claude.ai, add it through the connector settings. Sign in to Vyra and approve.
+
+   ```
+   claude mcp add vyra https://api.usevyra.com/mcp
+   ```
+
+   ```json
+   {
+     "mcpServers": {
+       "vyra": {
+         "url": "https://api.usevyra.com/mcp"
+       }
+     }
+   }
+   ```
+
+2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. The tab auto-binds as the editor's dispatch target and shows a green indicator top-right. Keep at least one Vyra tab open.
+3. Upload footage to a Vyra project. Every clip is transcribed and visually described on upload.
+4. Tell Claude what to make. Ask for a plan first if the footage is long.
+5. Claude calls the editing tools: view and search assets, view the timeline, add media, text, shapes, layouts, motion graphics, and captions, edit properties, move, split, clone, and delete, color grade, apply effects, masks, transitions, and keyframes, and export MP4 or WebM.
+6. Check frames or read the timeline back, then correct one thing at a time.
 
 ## What you can ask for
 
@@ -55,7 +71,7 @@ Look at the reference video attached to the project. In three lines, tell me its
 ## Limits
 
 - Claude edits footage you uploaded. It does not generate clips.
-- Keep the Vyra project open in a browser tab so changes apply live.
+- Keep a Vyra project open in a browser tab so changes apply live. The tab binds on focus; the green indicator top-right confirms it.
 - Claude may describe a step as done before it is. Ask for the timeline read-back when it matters.
 
 ## Pricing
@@ -75,7 +91,7 @@ Free to start. See /pricing for the full breakdown.
 Yes. Claude Code is one of the most tested clients. Developers use it to script batch edits across projects.
 
 **Does it work on claude.ai in the browser?**
-Yes, through the connector settings. Claude Desktop is the smoothest for long sessions.
+Yes, through the connector settings. Claude Desktop is the smoothest for long sessions. Any client that supports Streamable HTTP with OAuth 2.1 and PKCE can connect to the same server URL.
 
 **Can Claude see the actual video?**
 It sees the transcript, the scene descriptions Vyra generated on upload, and any frames you ask it to capture. That is enough to pick takes, find moments, and check text placement.

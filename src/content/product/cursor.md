@@ -11,11 +11,12 @@ Cursor is where developers already run agents. Vyra makes video one more thing t
 
 ## How it works
 
-1. Add Vyra to Cursor's MCP configuration. Instructions are at /docs/mcp.
-2. Upload footage to a Vyra project. Clips are transcribed and visually described on upload.
-3. In the Cursor agent, describe the edit or write a task that loops over projects.
-4. The agent calls the editing tools: add, trim, split, captions, masks, motion graphics, keyframes, effects, export.
-5. Verify with a timeline read-back or captured frames.
+1. Add the Vyra MCP server to Cursor's MCP configuration. Cursor and other MCP clients that support Streamable HTTP with OAuth 2.1 and PKCE connect with the server URL `https://api.usevyra.com/mcp`; OAuth metadata is at `https://api.usevyra.com/.well-known/oauth-authorization-server`. On first use the client opens an authorization URL; sign in to Vyra and approve. The exact Cursor menu path for adding an MCP server is (TODO confirm). After auth, the client POSTs JSON-RPC requests to the server URL and can GET the same URL for an optional SSE notification stream.
+2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. The tab auto-binds as the editor's dispatch target and shows a green indicator top-right. Keep at least one Vyra tab open.
+3. Upload footage to a Vyra project. Clips are transcribed and visually described on upload.
+4. In the Cursor agent, describe the edit or write a task that loops over projects.
+5. The agent calls the editing tools: view and search assets, view the timeline, add media, text, shapes, layouts, motion graphics, and captions, edit properties, move, split, clone, and delete, color grade, effects, masks, transitions, keyframes, export MP4 or WebM and poll status, browse templates, styles, and presets.
+6. Verify with a timeline read-back or captured frames.
 
 ## What you can ask for
 
@@ -53,7 +54,7 @@ This is a 12-minute screen recording with voiceover. Find every moment I say "fo
 
 ## Limits
 
-- The Vyra project must be open in a browser tab for live changes.
+- A Vyra project must be open in a browser tab for live changes. The tab binds on focus; the green indicator top-right confirms it.
 - Vyra edits uploaded footage. It does not render generated video.
 - Agents can claim a step is done early. Ask for a timeline read-back in the task.
 
@@ -80,7 +81,7 @@ The MCP server is designed for interactive agents. Scripted batch tasks inside a
 Yes. Scene analysis describes what is on screen, so the agent can cut to UI changes, and tracked masks handle 16:9 to 9:16 reframing.
 
 **Is there a difference between Cursor and Claude Code here?**
-Both connect the same way and get the same tools. Use whichever you already run agents in.
+Both connect to the same server URL and get the same tools. Claude Code registers it with `claude mcp add vyra https://api.usevyra.com/mcp`. Use whichever you already run agents in.
 
 ## Related
 

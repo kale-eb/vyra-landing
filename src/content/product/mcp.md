@@ -11,11 +11,41 @@ MCP is the Model Context Protocol, the open standard that lets AI assistants cal
 
 ## How it works
 
-1. Connect Vyra to your MCP client. Claude Desktop, Claude Code, claude.ai, ChatGPT, and Cursor are supported. Setup is a single connector entry; see /docs/mcp.
-2. Open or name a project. The agent can list your projects and read what is in each one.
-3. Ask it to look before it cuts. "Summarize the footage and propose a 45-second structure with timestamps."
-4. Approve the plan, then execute step by step: rough cut, captions, music, graphics, export.
-5. Verify with frames. "Capture frames at 0:03, 0:15, and 0:40" shows you the composed canvas without leaving the chat.
+1. Connect your MCP client to the Vyra server at `https://api.usevyra.com/mcp`. It uses Streamable HTTP and OAuth 2.1 with PKCE: the client opens an authorization URL, you sign in to Vyra and approve, and the client stores the connection. Exact commands per client are below.
+2. Open `https://app.usevyra.com` in your browser, sign in with the same account you authorized, and open a project. The tab auto-binds as the editor's dispatch target and a green indicator appears top-right. Keep at least one Vyra tab open.
+3. Open or name a project in the chat. The agent can list your projects and read what is in each one.
+4. Ask it to look before it cuts. "Summarize the footage and propose a 45-second structure with timestamps."
+5. Approve the plan, then execute step by step: rough cut, captions, music, graphics, export.
+6. Verify with frames. "Capture frames at 0:03, 0:15, and 0:40" shows you the composed canvas without leaving the chat.
+
+## Setup by client
+
+Claude Code (CLI): run this, then any `claude` command opens the OAuth authorization URL in your browser.
+
+```
+claude mcp add vyra https://api.usevyra.com/mcp
+```
+
+Claude Desktop: add this to `claude_desktop_config.json` (macOS `~/Library/Application Support/Claude/`, Windows `%APPDATA%\Claude\`) and restart. It prompts for OAuth the first time a session needs Vyra.
+
+```json
+{
+  "mcpServers": {
+    "vyra": {
+      "url": "https://api.usevyra.com/mcp"
+    }
+  }
+}
+```
+
+OpenAI Codex and Codex-compatible clients (the ChatGPT desktop path): add this to the Codex MCP config and restart. The OAuth flow opens on first use.
+
+```toml
+[mcp_servers.vyra]
+url = "https://api.usevyra.com/mcp"
+```
+
+Any other client that implements Streamable HTTP with OAuth 2.1 and PKCE: use the server URL above. OAuth metadata is at `https://api.usevyra.com/.well-known/oauth-authorization-server`. After auth, the client POSTs JSON-RPC requests to the server URL; GET on the same URL gives an optional server-pushed SSE notification stream.
 
 ## What you can ask for
 
@@ -47,14 +77,14 @@ For each project in this folder, add 3-5 word phrase captions in the same style,
 
 | | Traditional editor | Passthrough MCP integration | Vyra MCP |
 | --- | --- | --- | --- |
-| What the agent can do | Nothing, you drive | Sends your prompt to the vendor's own AI | Calls add, trim, split, caption, mask, motion graphic, keyframe, effect, and export tools directly |
+| What the agent can do | Nothing, you drive | Sends your prompt to the vendor's own AI | Views and searches assets, views the timeline and item details, adds media, text, shapes, layouts, motion graphics, and captions, edits properties, moves, splits, clones, and deletes items, color grades, applies effects, masks, transitions, and keyframes, exports MP4 or WebM and polls status, browses templates, styles, and presets, uses reference videos |
 | What the agent can see | Nothing | Usually nothing | Transcripts, scene descriptions, timeline state, rendered frames |
 | Where you work | Their app | Their app plus your chat | Your chat, with the editor updating live |
 | Model | Theirs | Theirs | Yours |
 
 ## Limits
 
-- The agent needs the project open in a browser tab to apply changes live.
+- The agent needs a Vyra project open in a browser tab to apply changes live. The tab binds automatically on focus; the green indicator top-right confirms it.
 - External models sometimes narrate an intent as done. Ask the agent to read the timeline back before trusting a summary.
 - Vyra does not generate footage. The agent edits what you uploaded.
 
@@ -81,7 +111,7 @@ Those integrations forward your prompt to the vendor's own assistant. Vyra expos
 Yes. Same project, same timeline. Start in one, refine in the other.
 
 **Do I need to learn the tool names?**
-No. Describe the outcome. The assistant chooses the tools.
+No. Describe the outcome. The assistant chooses the tools. The full catalog is exposed through the standard MCP `tools/list` method, each with a description and JSON-schema input, and the server includes a `searchHelpDocs` tool that searches Vyra's help library.
 
 ## Related
 

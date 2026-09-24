@@ -12,18 +12,24 @@ video: TODO
 
 - A Vyra account on an MCP plan (MCP Starter or MCP Pro).
 - Claude Code installed and authenticated.
-- Your Vyra MCP server URL from your account settings. Full details at /docs/mcp.
+- The Vyra MCP server URL: `https://api.usevyra.com/mcp`. Full details at /docs/mcp.
 - Footage already uploaded and indexed in the projects you want to edit.
 
 ## Steps
 
-1. **Add the server.** In a terminal, register the Vyra MCP server with Claude Code using the add-server command and the URL from your account. Claude Code stores it in its MCP config.
-2. **Authorize.** On first use, Claude Code opens a browser for Vyra sign-in. Approve, then return to the terminal.
-3. **Confirm the tools.** Ask Claude Code to list connected MCP servers. Vyra should appear with its editing tools.
-4. **Open a project.** Start a session and name the project, or ask for the list.
-5. **Plan, then edit.** Ask for a footage summary and a structure. Approve. Then run the edit in steps.
-6. **Batch when ready.** Give one prompt and a list of projects. Ask for a status line per project as each finishes.
-7. **Export.** Ask for the export at the platform spec and confirm the file location.
+1. **Add the server.** In a terminal, run:
+
+   ```
+   claude mcp add vyra https://api.usevyra.com/mcp
+   ```
+
+2. **Authorize.** Run any `claude` command. Claude Code opens the OAuth authorization URL in your browser. Sign in to Vyra, approve, then return to the terminal.
+3. **Confirm the tools.** Ask Claude Code to list connected MCP servers. Vyra should appear with its editing tools, exposed through the standard `tools/list` method.
+4. **Open a project in the browser.** Go to `https://app.usevyra.com`, sign in with the same account you authorized, and open a project. The tab auto-binds as the editor's dispatch target and a green indicator appears top-right. Keep at least one Vyra tab open.
+5. **Name the project in the session.** Start a session and name the project, or ask for the list.
+6. **Plan, then edit.** Ask for a footage summary and a structure. Approve. Then run the edit in steps.
+7. **Batch when ready.** Give one prompt and a list of projects. Ask for a status line per project as each finishes.
+8. **Export.** Ask for the export at the platform spec and confirm the file location.
 
 ## The prompt to use
 
@@ -43,7 +49,7 @@ Open my Vyra project "podcast ep 12". Find every moment where the guest talks ab
 Yes. That is the main reason to use Claude Code over the desktop app. Name the projects and the prompt once.
 
 **Does it work with Cursor too?**
-Yes. Cursor registers MCP servers the same way. See /docs/mcp.
+Yes. Cursor and other MCP clients that support Streamable HTTP with OAuth 2.1 and PKCE connect to the same URL, `https://api.usevyra.com/mcp`. See /docs/mcp.
 
 ## Related
 

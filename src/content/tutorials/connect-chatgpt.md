@@ -11,19 +11,26 @@ video: TODO
 ## Before you start
 
 - A Vyra account on an MCP plan (MCP Starter or MCP Pro).
-- A ChatGPT plan that supports custom connectors or MCP servers.
-- Your Vyra MCP server URL from your account settings. Full details at /docs/mcp.
+- A ChatGPT plan that supports custom connectors or MCP servers. The ChatGPT desktop path uses the Codex-compatible MCP config.
+- The Vyra MCP server URL: `https://api.usevyra.com/mcp`. Full details at /docs/mcp.
 - A project with indexed footage.
 
 ## Steps
 
-1. **Open ChatGPT's connector settings.** In settings, find connectors or apps and choose to add a new one.
-2. **Add the Vyra server.** Paste the MCP server URL from your Vyra account and save.
-3. **Authorize.** Sign in to Vyra in the window that opens and approve access.
-4. **Enable Vyra in a chat.** Start a new conversation and turn on the Vyra connector for it.
-5. **Name the project and ask for a plan.** Have ChatGPT summarize the footage and propose a structure before it edits.
-6. **Edit in steps.** Rough cut, captions, music, export. One message each.
-7. **Verify.** Ask it to read the timeline back and to capture frames at a few timestamps.
+1. **Open the Codex MCP config.** ChatGPT's desktop path and other Codex-compatible clients read the same config.
+2. **Add the Vyra server and restart.**
+
+   ```toml
+   [mcp_servers.vyra]
+   url = "https://api.usevyra.com/mcp"
+   ```
+
+3. **Authorize.** On first use the OAuth 2.1 flow opens in your browser. Sign in to Vyra and approve access.
+4. **Open a project in the browser.** Go to `https://app.usevyra.com`, sign in with the same account you authorized, and open a project. The tab auto-binds as the editor's dispatch target and a green indicator appears top-right. Keep at least one Vyra tab open.
+5. **Enable Vyra in a chat.** Start a new conversation and make sure the Vyra tools are available to it.
+6. **Name the project and ask for a plan.** Have ChatGPT summarize the footage and propose a structure before it edits.
+7. **Edit in steps.** Rough cut, captions, music, export. One message each.
+8. **Verify.** Ask it to read the timeline back and to capture frames at a few timestamps.
 
 ## The prompt to use
 

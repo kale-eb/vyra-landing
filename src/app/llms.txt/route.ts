@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { SECTIONS, SECTION_KEYS, SITE_URL, getEntries } from "@/lib/content";
 
 export const dynamic = "force-static";
@@ -32,6 +34,15 @@ export function GET() {
   lines.push("## Optional");
   lines.push(`- [Sitemap index](${SITE_URL}/sitemap.xml)`);
   lines.push(`- [Author: Sulan Zhang](${SITE_URL}/author/sulan)`);
+  lines.push("");
+  // MCP server setup for AI clients (kept verbatim from the original hand-off file).
+  const mcpPath = path.join(process.cwd(), "src/content/llms-mcp.md");
+  if (fs.existsSync(mcpPath)) {
+    const mcp = fs.readFileSync(mcpPath, "utf8").replace(/^# Vyra\s*\n/, "").trim();
+    lines.push("# MCP server: connecting an AI client to Vyra");
+    lines.push("");
+    lines.push(mcp);
+  }
   return new Response(lines.join("\n") + "\n", {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
   });
