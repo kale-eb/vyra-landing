@@ -14,6 +14,16 @@ facts:
 
 **UGC work is volume, variants, and brand specs. Vyra picks the cleanest take of each line, builds the hook-demo-close structure from a sentence, and copies the caption style a brand sends you as a reference.**
 
+## A real week with Vyra
+
+A skincare brand sent a brief on Monday. 30 seconds, three hook options, word-by-word captions in their font, logo end card. She filmed 11 takes of the hook, one demo, and one close.
+
+```
+Build a 30-second 9:16 hook-and-demo ad. Demo is my take where I apply it and name the three ingredients, cut to the product close-up each time I name one. Close is the take where I say the brand name. Then make three versions that differ only in the hook. Use my three cleanest hook takes. Captions word-by-word, Montserrat Black, white, and a 3-second logo end card.
+```
+
+Three variants came back with the same demo and close and different first 4 seconds. The brand's reference video went in as a second prompt, "match this caption color and highlight," and all three updated. Delivered Wednesday, raw takes included from the library. The brand picked hook 2.
+
 ## What you make
 
 - [Hook-and-demo ads](/formats/ugc-hook-and-demo)
@@ -77,6 +87,7 @@ Yes. Say "same structure as the skincare ad, new footage."
 ## Related
 
 - [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)
+- [/prompts/ugc-hook-and-demo-structure](/prompts/ugc-hook-and-demo-structure)
+- [/prompts/product-demo-b-roll](/prompts/product-demo-b-roll)
 - [/how-to/write-a-hook](/how-to/write-a-hook)
-- [/prompts/captions](/prompts/captions)
 - [/features/reference-style-matching](/features/reference-style-matching)

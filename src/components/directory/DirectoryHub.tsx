@@ -3,14 +3,31 @@ import DirectoryNav from "./DirectoryNav";
 import Footer from "@/components/Footer";
 import { SECTIONS, SITE_URL, type Entry, type SectionKey } from "@/lib/content";
 
-export default function DirectoryHub({ section, entries }: { section: SectionKey; entries: Entry[] }) {
+function groupEntries(section: SectionKey, entries: Entry[]): { label: string; items: Entry[] }[] {
   const meta = SECTIONS[section];
+  if (meta.groups) {
+    const bySlug = new Map(entries.map((e) => [e.slug, e]));
+    const used = new Set<string>();
+    const out = meta.groups
+      .map((g) => ({ label: g.label, items: g.slugs.map((s) => bySlug.get(s)).filter((e): e is Entry => !!e) }))
+      .filter((g) => g.items.length > 0);
+    out.forEach((g) => g.items.forEach((e) => used.add(e.slug)));
+    const rest = entries.filter((e) => !used.has(e.slug));
+    if (rest.length) out.push({ label: "More", items: rest });
+    return out;
+  }
   const groups = new Map<string, Entry[]>();
   for (const e of entries) {
-    const g = typeof e.data.subcategory === "string" ? String(e.data.subcategory) : "";
+    const g = typeof e.data.subcategory === "string" ? String(e.data.subcategory).replace(/-/g, " ") : "";
     if (!groups.has(g)) groups.set(g, []);
     groups.get(g)!.push(e);
   }
+  return [...groups.entries()].map(([label, items]) => ({ label, items }));
+}
+
+export default function DirectoryHub({ section, entries }: { section: SectionKey; entries: Entry[] }) {
+  const meta = SECTIONS[section];
+  const groups = groupEntries(section, entries);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -31,17 +48,30 @@ export default function DirectoryHub({ section, entries }: { section: SectionKey
         >
           {meta.title}
         </h1>
-        <p className="mb-12 max-w-2xl text-[16px] leading-relaxed text-[var(--foreground-muted)]">{meta.description}</p>
+        <p className="mb-4 max-w-2xl text-[16px] leading-relaxed text-[var(--foreground-muted)]">{meta.description}</p>
+        {meta.intro && (
+          <p className="mb-10 max-w-2xl text-[15px] leading-relaxed text-[var(--foreground-muted)]">{meta.intro}</p>
+        )}
+        {groups.length > 1 && (
+          <p className="mb-10 text-[13px] text-[var(--foreground-subtle)]">
+            {groups.map((g, i) => (
+              <span key={g.label}>
+                {i > 0 && " · "}
+                <a href={`#${g.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="hover:text-[var(--foreground)]">
+                  {g.label}
+                </a>
+              </span>
+            ))}
+          </p>
+        )}
 
-        {[...groups.entries()].map(([group, items]) => (
-          <section key={group || "all"} className="mb-12">
-            {group && (
-              <h2 className="mb-4 text-[13px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">
-                {group.replace(/-/g, " ")}
-              </h2>
+        {groups.map((g) => (
+          <section key={g.label || "all"} id={g.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")} className="mb-12 scroll-mt-24">
+            {g.label && (
+              <h2 className="mb-4 text-[13px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">{g.label}</h2>
             )}
             <div className="grid gap-3 sm:grid-cols-2">
-              {items.map((e) => (
+              {g.items.map((e) => (
                 <Link
                   key={e.url}
                   href={e.url}

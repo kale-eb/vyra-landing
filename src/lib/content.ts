@@ -24,6 +24,10 @@ export type SectionMeta = {
   title: string;
   description: string;
   schema: "Article" | "HowTo" | "DefinedTerm" | "WebPage";
+  /** Two or three plain sentences shown under the hub title. */
+  intro?: string;
+  /** Ordered groups for the hub page. Slugs not listed land in "More". */
+  groups?: { label: string; slugs: string[] }[];
 };
 
 export const SECTIONS: Record<SectionKey, SectionMeta> = {
@@ -34,6 +38,12 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "Vyra next to CapCut, Descript, VEED, Opus Clip, Adobe, DaVinci Resolve and others. Same footage, same brief.",
     schema: "Article",
+    intro: "Same footage, same brief, and an honest read on where each editor wins. If you already use one of these, start with its page. If you are choosing from scratch, the AI editors group is the closest to what Vyra does.",
+    groups: [
+      { label: "Social and creator editors", slugs: ["vyra-vs-capcut", "vyra-vs-veed", "vyra-vs-canva", "vyra-vs-clipchamp", "vyra-vs-inshot", "vyra-vs-filmora", "vyra-vs-captions-app"] },
+      { label: "AI and agent editors", slugs: ["vyra-vs-descript", "vyra-vs-opus-clip", "vyra-vs-invideo", "vyra-vs-submagic", "vyra-vs-vizard", "vyra-vs-gling", "vyra-vs-chatcut", "vyra-vs-daydream", "vyra-vs-rendley", "vyra-vs-riverside", "vyra-vs-adobe-firefly", "vyra-vs-runway"] },
+      { label: "Professional timelines", slugs: ["vyra-vs-adobe-premiere", "vyra-vs-davinci-resolve", "vyra-vs-final-cut-pro"] },
+    ],
   },
   alternatives: {
     key: "alternatives",
@@ -42,6 +52,12 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "What to use instead of the editor you have now, if you want to describe edits instead of making them.",
     schema: "Article",
+    intro: "What people move to when their current editor stops fitting. Each list is ranked by fit for creators who film real footage, and Vyra is not always first.",
+    groups: [
+      { label: "Leaving a social editor", slugs: ["capcut-alternative", "veed-alternative", "canva-video-alternative", "clipchamp-alternative", "filmora-alternative", "kapwing-alternative"] },
+      { label: "Leaving an AI editor", slugs: ["descript-alternative", "opus-clip-alternative", "invideo-alternative", "submagic-alternative", "riverside-alternative", "runway-alternative"] },
+      { label: "Leaving a pro timeline", slugs: ["premiere-pro-alternative", "davinci-resolve-alternative"] },
+    ],
   },
   for: {
     key: "for",
@@ -50,6 +66,12 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "How different kinds of creators use Vyra, with the prompts they run most.",
     schema: "WebPage",
+    intro: "How different people use Vyra, with the prompts they run most and one real week of work on each page.",
+    groups: [
+      { label: "Creators", slugs: ["youtube-creators", "tiktok-creators", "vloggers", "travel-vloggers", "small-youtube-channels", "ugc-creators", "streamers", "fitness-creators", "artists", "musicians", "photographers"] },
+      { label: "Businesses and teams", slugs: ["marketers", "founders", "agencies", "ecommerce-brands", "real-estate-agents", "coaches-and-courses", "educators", "wedding-videographers"] },
+      { label: "If you already use an AI assistant", slugs: ["claude-users", "chatgpt-users", "developers"] },
+    ],
   },
   features: {
     key: "features",
@@ -58,6 +80,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "What Vyra can do with your footage, one feature per page.",
     schema: "WebPage",
+    intro: "What Vyra does with your footage, one feature per page, with the prompts that use it.",
   },
   formats: {
     key: "formats",
@@ -66,6 +89,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "One page per video format. How to shoot it, how to cut it, and the prompt to make it in Vyra.",
     schema: "HowTo",
+    intro: "One page per kind of video. How we shoot it, how we cut it, and the prompt that makes it in Vyra. Grouped by the kind of story you are telling.",
   },
   "how-to": {
     key: "how-to",
@@ -74,6 +98,13 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "Hooks, pacing, captions, framing, audio, music. Short guides with real numbers.",
     schema: "HowTo",
+    intro: "Short guides with real numbers, written from our own footage. Plan, film, edit, then grow. Each one ends with the prompt that does the same job in Vyra.",
+    groups: [
+      { label: "Plan", slugs: ["write-a-hook", "structure-a-storytelling-video", "find-your-niche", "build-a-series", "batch-film-a-week"] },
+      { label: "Film", slugs: ["frame-yourself", "light-a-talking-head", "record-clean-audio", "shoot-b-roll", "vlog"] },
+      { label: "Edit", slugs: ["pace-a-short-form-video", "choose-captions", "cut-a-talking-head", "make-motion-graphics", "choose-music", "edit-for-retention", "repurpose-long-form-to-shorts"] },
+      { label: "Grow", slugs: ["grow-on-tiktok", "grow-on-instagram-reels", "grow-on-youtube-shorts", "post-consistently", "read-your-analytics", "cross-post-without-watermark"] },
+    ],
   },
   prompts: {
     key: "prompts",
@@ -82,6 +113,16 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "Prompts you can paste into Vyra, from a first rough cut to captions and music.",
     schema: "Article",
+    intro: "Prompts you can paste into Vyra as they are. Start with how to prompt if this is your first edit. Every page shows a minimal, a standard, and a full version, and what to say when the result is off.",
+    groups: [
+      { label: "Start here", slugs: ["how-to-prompt-vyra", "using-claude-or-chatgpt-with-vyra", "troubleshooting"] },
+      { label: "Cut and clean up", slugs: ["rough-cut", "talking-head-cleanup", "remove-filler", "highlight-reel", "vlog-rough-cut", "podcast-clip-selection", "talking-head-punch-ins", "day-in-the-life-cut", "faceless-video-assembly", "storytelling-video-structure", "ugc-hook-and-demo-structure", "before-after-reveal", "travel-recap-highlight-reel"] },
+      { label: "Captions and text", slugs: ["captions", "podcast-clip-captions", "tutorial-captions-and-callouts"] },
+      { label: "Music and pacing", slugs: ["beat-sync", "add-music", "montage-beat-sync", "vlog-music-and-pacing"] },
+      { label: "Graphics and b-roll", slugs: ["motion-graphics", "b-roll", "product-demo-b-roll", "explainer-motion-graphics"] },
+      { label: "Style", slugs: ["reference-style"] },
+      { label: "Reframe and export", slugs: ["reframe-to-vertical", "screen-recording-reframe", "export-for-platform"] },
+    ],
   },
   answers: {
     key: "answers",
@@ -90,6 +131,12 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "Short answers to the questions people ask about AI editing.",
     schema: "Article",
+    intro: "Short answers to the questions people ask about AI video editing. Numbers where we have them, and what we do not know yet.",
+    groups: [
+      { label: "Picking an editor", slugs: ["best-video-editor-for-beginners", "easiest-video-editor-for-social-media", "can-i-try-an-ai-video-editor-free", "can-i-try-a-video-editor-before-buying", "how-to-switch-video-editors", "video-editor-free-vs-paid", "how-much-does-a-professional-video-editor-cost", "what-ai-tools-do-content-creators-use"] },
+      { label: "How AI editing works", slugs: ["can-ai-understand-raw-footage", "how-accurate-is-ai-transcription-for-captions", "what-video-formats-does-ai-editing-support", "can-ai-generate-motion-graphics-from-text", "does-beat-sync-work-for-every-genre", "does-scene-detection-work-in-low-light", "conversational-editing-vs-traditional-editing", "does-an-automated-video-maker-save-time", "automated-video-maker-vs-manual-editing", "can-ai-replace-content-creators"] },
+      { label: "Time and workflow", slugs: ["why-does-vlog-editing-take-so-long", "how-long-does-it-take-to-edit-a-video", "how-to-automate-a-tiktok-editing-workflow"] },
+    ],
   },
   tutorials: {
     key: "tutorials",
@@ -98,6 +145,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "Step by step in Vyra, from upload to export.",
     schema: "HowTo",
+    intro: "Step by step in Vyra, from upload to export. Each one is a few minutes.",
   },
   tools: {
     key: "tools",
@@ -106,6 +154,14 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "One job per page. Captions, beat sync, motion graphics, silence removal, reframing, clips.",
     schema: "WebPage",
+    intro: "One job per page. Pick the thing you need done, paste the prompt, and Vyra does it on your footage.",
+    groups: [
+      { label: "Captions and text", slugs: ["add-subtitles-to-video", "auto-caption-generator", "lower-third-generator", "title-card-maker"] },
+      { label: "Cut", slugs: ["edit-video-by-typing", "remove-silence-from-video", "video-trimmer", "highlight-reel-maker", "podcast-clip-maker"] },
+      { label: "Music", slugs: ["beat-sync-video-editor", "cut-video-to-music", "add-music-to-video"] },
+      { label: "Graphics and layout", slugs: ["ai-motion-graphics-generator", "picture-in-picture-video-maker"] },
+      { label: "Platforms", slugs: ["youtube-shorts-maker", "tiktok-video-editor", "instagram-reels-editor", "reframe-video-to-vertical"] },
+    ],
   },
   templates: {
     key: "templates",
@@ -114,6 +170,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     description:
       "Templates give the agent a structure. Styles set the fonts and colors.",
     schema: "WebPage",
+    intro: "Templates give the agent a structure to follow. Styles set the fonts and colors. Pick one when you start a project, or ask the agent to switch.",
   },
   glossary: {
     key: "glossary",
@@ -302,6 +359,7 @@ export function resolveUrl(url: string): { url: string; title: string; descripti
     if (section === "docs") return { url, title: `Docs: ${slug.replace(/-/g, " ")}` };
     if (section === "blog") return { url, title: `Blog: ${slug.replace(/-/g, " ")}` };
     const e = SECTIONS[section as SectionKey] ? getEntry(section as SectionKey, slug) : undefined;
+    if (e && section === "glossary") return { url: `/glossary#${e.slug}`, title: e.title, description: e.description };
     if (e) return { url: e.url, title: e.title, description: e.description };
   }
   return null;

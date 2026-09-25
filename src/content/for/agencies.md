@@ -7,6 +7,22 @@ category: for
 
 **Agency editing is the same job over and over. A locked style, a pile of footage, a list of deliverables due Friday. Vyra edits the footage from a written brief and keeps each client's caption, title, and logo rules across every cut. A junior editor gets the first pass done, a senior finishes it in the timeline.**
 
+## A real week with Vyra
+
+Three client projects open at once. A dental group, a SaaS founder, a local gym. Each project got a style lock on day one, so every later prompt inherited that client's captions, logo position, and music level.
+
+```
+From the founder interview, cut a 60-second 9:16 clip of the strongest answer about churn, a 30-second clip of the customer result, and a 15-second hook clip from "we doubled it in a quarter". Same style as this project. List the timestamps for each.
+```
+
+Nine deliverables across the three clients came out of Tuesday and Wednesday, three prompts each. Thursday the gym sent notes on cut 2. One follow-up handled all of them.
+
+```
+Move the logo to top right, cut the intro by 3 seconds, swap the b-roll at 0:18 for the squat rack shot. Nothing else changes. Frame at 0:18 when done.
+```
+
+The senior editor opened the timeline Friday for a two-minute polish on the SaaS clips and exported everything at 4K.
+
 ## What you make
 
 - [Talking heads](/formats/talking-head) for client and founder clips
@@ -70,7 +86,8 @@ Yes on Pro tiers. Starter tiers export up to 1440p.
 
 ## Related
 
-- [/formats/talking-head](/formats/talking-head)
+- [/tools/edit-video-by-typing](/tools/edit-video-by-typing)
+- [/tools/lower-third-generator](/tools/lower-third-generator)
+- [/prompts/reframe-to-vertical](/prompts/reframe-to-vertical)
 - [/formats/testimonial](/formats/testimonial)
-- [/how-to/choose-captions](/how-to/choose-captions)
-- [/prompts/reference-style](/prompts/reference-style)
+- [/features/ai-captions](/features/ai-captions)

@@ -7,6 +7,16 @@ category: for
 
 **Marketing video is a volume problem with a consistency requirement. Vyra edits your real footage from a written brief, keeps one caption and title style across every cut, and turns one shoot into a dozen platform-specific deliverables.**
 
+## A real week with Vyra
+
+A 52-minute webinar recording, one presenter, slides as a screen recording. Deliverables were five clips for LinkedIn and Reels and a 60-second recap for the follow-up email.
+
+```
+Find the five clearest moments under 45 seconds where the presenter states one takeaway with an example. Cut each as 16:9 and 9:16, show the slide when she says "on this slide", her in the bottom right corner while it's up. 3-4 word captions, white, lower third, our logo bottom right. Lower third with her name and title for the first 4 seconds of each.
+```
+
+Ten files came back Tuesday, five moments in two aspects. The recap was one more prompt, "a 60-second recap using the opening, the three strongest slides, and the closing line, same captions." Two clips had the wrong slide timing, fixed with "hold the slide at 1:10 for 4 more seconds." The recap went into Thursday's email and the clips ran over the next two weeks.
+
 ## What you make
 
 - [Product demos](/formats/product-demo)
@@ -69,7 +79,8 @@ The full timeline is included, so someone in-house can finish any cut by hand.
 
 ## Related
 
-- [/formats/product-demo](/formats/product-demo)
-- [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)
-- [/how-to/choose-captions](/how-to/choose-captions)
-- [/prompts/export-for-platform](/prompts/export-for-platform)
+- [/tools/highlight-reel-maker](/tools/highlight-reel-maker)
+- [/prompts/highlight-reel](/prompts/highlight-reel)
+- [/tools/lower-third-generator](/tools/lower-third-generator)
+- [/prompts/reframe-to-vertical](/prompts/reframe-to-vertical)
+- [/formats/explainer](/formats/explainer)
