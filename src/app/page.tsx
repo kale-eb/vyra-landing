@@ -6,13 +6,10 @@ import MadeWithVyra from "@/components/MadeWithVyra";
 import Alternatives from "@/components/Alternatives";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
+import Pricing from "@/components/Pricing";
 import FinalCTA from "@/components/FinalCTA";
 import { HOME_FAQS } from "@/components/faq-data";
 import Footer from "@/components/Footer";
-
-// Pricing section removed 2026-07-31: in-app pricing is per-user (price-book
-// experiment), so the landing page no longer advertises canonical prices —
-// users see their prices at the in-app paywall.
 
 async function fetchUserCount(): Promise<number | null> {
   try {
@@ -60,6 +57,7 @@ export default async function Home() {
         <HowItWorks />
         <MadeWithVyra userCount={userCount} />
         <Alternatives />
+        <Pricing />
         <FAQ />
         <FinalCTA />
       </main>
