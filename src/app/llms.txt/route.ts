@@ -17,7 +17,7 @@ export function GET() {
   lines.push("## Core");
   lines.push(`- [Home](${SITE_URL}/): AI video editor that edits your real footage by chat`);
   lines.push(`- [Pricing](${SITE_URL}/pricing): MCP Starter $24/mo, MCP Pro $65/mo, Vyra AI Starter $54/mo, Vyra AI Pro $129/mo`);
-  lines.push(`- [About](${SITE_URL}/about): Founded by Sulan and Caleb, two creators from Brown; based in San Francisco; Y Combinator`);
+  lines.push(`- [About](${SITE_URL}/about): Founded by Sulan Zhang and Caleb Pong, two creators from Brown; based in San Francisco; Y Combinator`);
   lines.push(`- [Docs](${SITE_URL}/docs): Getting started, first project, MCP server setup`);
   lines.push(`- [Reviews](${SITE_URL}/reviews): What creators and independent roundups say about Vyra`);
   for (const e of getEntries("product")) lines.push(`- [${e.title}](${SITE_URL}${e.url}): ${e.description}`);

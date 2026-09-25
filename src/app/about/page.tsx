@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/content";
 
 const TITLE = "About Vyra";
 const DESCRIPTION =
-  "Vyra was started by Sulan and Caleb, two students at Brown who made videos and hated how long editing took. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
+  "Vyra was started by Sulan Zhang and Caleb Pong, two students at Brown who made videos and hated how long editing took. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Vyra`,
@@ -76,7 +76,11 @@ export default function AboutPage() {
       location: { "@type": "Place", name: "San Francisco, California" },
       founder: [
         { "@type": "Person", name: "Sulan Zhang", url: `${SITE_URL}/author/sulan`, sameAs: ["https://www.instagram.com/sulansart"] },
-        { "@type": "Person", name: "Caleb" },
+        {
+          "@type": "Person",
+          name: "Caleb Pong",
+          sameAs: ["https://www.linkedin.com/in/cjpong/", "https://www.instagram.com/calebjunep/"],
+        },
       ],
       description: DESCRIPTION,
     },
@@ -171,7 +175,14 @@ export default function AboutPage() {
             </Link>
             , co-founder. Painter. On leave from Brown.
             <br />
-            Caleb, co-founder. {/* TODO: Caleb's last name, one line, and a link */}
+            <a href="https://www.linkedin.com/in/cjpong/" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-blue)] underline underline-offset-2">
+              Caleb Pong
+            </a>
+            , co-founder. Also at{" "}
+            <a href="https://www.instagram.com/calebjunep/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+              @calebjunep
+            </a>
+            .
           </p>
           <p className="mt-4 text-[13px] text-[var(--foreground-subtle)]">
             Questions go to{" "}

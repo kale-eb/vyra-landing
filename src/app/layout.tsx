@@ -115,7 +115,10 @@ export default function RootLayout({
                   "https://www.youtube.com/@VyraVideo",
                   "https://discord.com/invite/mFWxyvg4Nj",
                 ],
-                founder: { "@type": "Person", name: "Sulan Zhang", url: "https://www.usevyra.com/author/sulan" },
+                founder: [
+                  { "@type": "Person", name: "Sulan Zhang", url: "https://www.usevyra.com/author/sulan" },
+                  { "@type": "Person", name: "Caleb Pong", sameAs: ["https://www.linkedin.com/in/cjpong/"] },
+                ],
               },
               {
                 "@context": "https://schema.org",

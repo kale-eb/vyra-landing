@@ -28,7 +28,7 @@ Then open http://localhost:3000/compare (or any hub) and use the footer "Directo
 | Sitemaps | src/lib/sitemaps.ts, src/app/sitemap.xml/route.ts, src/app/sitemaps/[name]/route.ts | Index at /sitemap.xml with 11 children. lastmod comes from each file's `updated`. Video sitemap appears automatically once any page has a real `video:` URL. |
 | Pricing | src/app/pricing/page.tsx | Four plans with Product/Offer schema. Copy for credits/storage came from the existing SoftwareApplication schema in layout.tsx. |
 | Author | src/app/author/sulan/page.tsx | Person schema. Bio is a placeholder; add a headshot. |
-| About | src/app/about/page.tsx | Founder story and timeline (winter 2025 to YC). Needs Caleb's last name and bio, and a confirmed contact email. |
+| About | src/app/about/page.tsx | Founder story and timeline (winter 2025 to YC). Needs a confirmed contact email. |
 | Layout | src/app/layout.tsx | New title, canonical, Organization and WebSite schema. Existing SoftwareApplication schema untouched (note it carries an AggregateRating of 4.8 from 150 ratings; confirm that is real). |
 | Redirects | next.config.ts | /blog/vyra-vs-* now 301 to /compare/vyra-vs-*. |
 | Footer | src/components/Footer.tsx | Product and Directory columns. Directory is footer-only, as decided. |
