@@ -6,23 +6,23 @@ category: tutorial
 video: TODO
 ---
 
-**A rough cut prompt states the target (length, platform, purpose), what to keep, and what to cut. Leave captions and music for the second pass. The agent builds the timeline; you correct it one sentence at a time.**
+**Give it the length, the platform, what to keep, and what to cut. Leave captions and music for the second pass. Then fix one thing at a time.**
 
 ## Before you start
 
-- Footage is uploaded and shows as ready. See the upload tutorial if not.
-- You know the delivery target: platform, aspect ratio, and length.
-- You have one or two lines you definitely want in the video, quoted exactly.
+- Footage is uploaded and shows as ready.
+- You know the platform, aspect ratio, and length.
+- You have one or two lines you definitely want, quoted exactly.
 
 ## Steps
 
-1. **State the target.** Open the agent chat and give the format, length, and platform in the first sentence.
-2. **Say what must survive.** Quote the exact line or describe the exact moment for the opening and the ending.
-3. **Say what to cut.** Pauses over a threshold, filler words, retakes, looking at notes. Thresholds beat adjectives.
-4. **Say what not to add.** "Straight cuts only, no zooms or transitions" keeps the first draft clean.
-5. **Watch it once.** Use the preview. Note the single biggest problem.
-6. **Correct one thing.** "Cut 10 more seconds from the middle" or "swap the intro clip for the one outside." Then watch again.
-7. **Ask for the cut list.** When it looks right, ask for every cut with timestamps so you can verify the agent did what it said.
+1. **State the target.** Format, length, and platform in the first sentence.
+2. **Say what must survive.** Quote the line or describe the moment for the opening and the ending.
+3. **Say what to cut.** Pauses over a number, filler words, retakes, looking at notes.
+4. **Say what not to add.** "Straight cuts only, no zooms or transitions."
+5. **Watch it once.** Note the single biggest problem.
+6. **Fix one thing.** "Cut 10 more seconds from the middle." Watch again.
+7. **Ask for the cut list.** Every cut with timestamps, so you can check it did what it said.
 
 ## The prompt to use
 
@@ -32,17 +32,17 @@ Make a 60-second vertical rough cut for Reels from this footage. Open on the lin
 
 ## Check the result
 
-- Scrub the timeline. Every item should be footage you recognize, in the order you asked for.
-- Total length is within 10 percent of the target. If not, say which section to shorten.
-- Ask "List every cut you made with start and end timestamps" and spot-check three of them.
+- Scrub the timeline. Every clip should be footage you recognize, in the order you asked for.
+- Length within 10 percent of the target. If not, say which section to shorten.
+- Ask for the cut list and spot-check three.
 
 ## FAQ
 
-**The agent restructured my points. How do I stop that?**
-Add "keep it in the order I filmed it" or "keep it in this order: A, B, C" to the prompt.
+**It reordered my points.**
+Add "keep it in the order I filmed it."
 
 **It says it removed retakes but one is still there.**
-Quote the line: "At 0:34 the sentence starts twice. Keep only the second attempt." Pointing beats re-asking.
+Quote it. "At 0:34 the sentence starts twice. Keep only the second attempt."
 
 ## Related
 

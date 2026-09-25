@@ -1,13 +1,13 @@
 ---
 title: "Vyra vs Submagic (2026): which AI video editor should you use?"
-description: "Submagic is a captions-and-polish tool for short clips you have already cut; Vyra is an editor where an AI cuts the clip from your raw footage and then captions it, so it wins the moment the work starts before the clip exists."
+description: "Submagic adds captions and polish to short clips you have already cut. Vyra cuts the clip from your raw footage and then captions it."
 updated: '2026-09-24'
 category: compare
 ---
 
-**Submagic is a captions-and-polish tool for short clips you have already cut; Vyra is an editor where an AI cuts the clip from your raw footage and then captions it, so it wins the moment the work starts before the clip exists.**
+**Submagic adds captions and polish to short clips you have already cut. Vyra cuts the clip from your raw footage and then captions it, so it wins when the work starts before the clip exists.**
 
-Submagic got popular for one thing: drop in a finished short, get animated captions, emojis, b-roll suggestions, and zooms back in a minute. That is a finishing step. Vyra covers the finishing step and the hours before it, when you still have twelve minutes of raw footage and no clip.
+Submagic got popular for one thing. Drop in a finished short, get animated captions, emojis, b-roll suggestions, and zooms back in a minute. That is a finishing step. Vyra covers the finishing step and the hours before it, when you still have twelve minutes of raw footage and no clip.
 
 ## At a glance
 
@@ -27,15 +27,15 @@ Submagic got popular for one thing: drop in a finished short, get animated capti
 
 ## Where Submagic is stronger
 
-- Caption templates. Dozens of ready animated styles that match what is trending.
-- Speed on the last mile. Upload a clip, pick a template, export.
+- Caption templates. Dozens of animated styles that match what is trending.
+- Speed on the last step. Upload a clip, pick a template, export.
 - Auto b-roll and emoji suggestions for talking-head shorts.
 
 ## Where Vyra is stronger
 
 - It makes the clip. Rough cut, take selection, silence removal, and reframing from a description.
 - Captions styled by description or by copying a reference video, not only from a template list.
-- Full timeline when you want to adjust anything after the agent is done.
+- A full timeline when you want to adjust anything after.
 
 ## Choose Vyra if
 
@@ -53,7 +53,7 @@ Submagic got popular for one thing: drop in a finished short, get animated capti
 
 Task: a 30-second captioned short from a 6-minute recording.
 
-In Submagic: cut the 30 seconds somewhere else first, upload, pick a caption template, export.
+In Submagic you cut the 30 seconds somewhere else first, upload, pick a caption template, export.
 
 In Vyra:
 ```
@@ -63,13 +63,10 @@ Cut this 6-minute recording to the best 30 seconds for TikTok. Open on the stron
 ## FAQ
 
 **Are Vyra's captions as animated as Submagic's?**
-Vyra does word-by-word and phrase captions with emphasis words and entrance animation on request. Submagic has a larger library of preset caption effects.
+Vyra does word-by-word and phrase captions with emphasis words and entrance animation on request. Submagic has a bigger library of preset caption effects.
 
 **Can I use Vyra only for captions?**
-Yes. Upload a finished clip and ask for captions. It is more than you need if that is all you ever do.
-
-**Does Submagic edit long footage?**
-It is built for short clips. Long raw footage is not its job.
+Yes. Upload a finished clip and ask for captions. It is more than you need if that is all you do.
 
 **Which is cheaper?**
 Vyra starts at $24/mo and is free to start. Submagic pricing is on its site.

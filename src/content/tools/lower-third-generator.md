@@ -1,6 +1,6 @@
 ---
 title: "Lower third generator: name, handle, or title on screen from one sentence"
-description: "Describe the lower third you want and Vyra generates it as an animated motion graphic or native text, timed to the moment you name, and saves it as a preset for reuse."
+description: Describe the lower third and Vyra makes it as an animated motion graphic or plain text, timed to the moment you name, and saves it as a preset.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,26 +12,26 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**A lower third is the small label near the bottom of the frame that says who is talking or what this is. Vyra makes one from a description, either as a native text item you can drag or as an animated motion graphic that slides in, and can save it as a preset for the next video.**
+**A lower third is the small label near the bottom of the frame that says who's talking or what this is. Vyra makes one from a sentence, as plain text you can drag or as a motion graphic that slides in, and saves it as a preset for next time.**
 
 ## How it works
 
-1. Say what it should read, where it sits, and when it appears.
-2. Choose native text (directly editable, no animation needed) or a motion graphic (animated entrance and exit).
-3. The agent places it on the timeline at the time you named.
-4. Adjust by prompt or drag it on the canvas.
-5. Save as Preset from the Properties panel if you will reuse it.
+1. Say what it should read, where it sits, and when it shows.
+2. Pick plain text (editable on the canvas, no animation) or a motion graphic (animated in and out).
+3. The agent places it at the time you named.
+4. Adjust by prompt or drag it.
+5. Save as Preset if you'll reuse it.
 
 ## What you can control
 
 | Setting | Options |
 | --- | --- |
 | Text | Name, handle, title, location, any two lines |
-| Position | Bottom left, bottom right, or a described spot |
-| Timing | Start time and duration, or "while she is introduced" |
-| Animation | Slide, fade, or none (native text) |
+| Position | Bottom left, bottom right, or wherever you describe |
+| Timing | Start and duration, or "while she's introduced" |
+| Animation | Slide, fade, or none |
 | Style | Fonts and colors from the project style, or ones you name |
-| Presets | Save and reapply from My Presets, or use the built-in lower third presets |
+| Presets | Save and reuse, or pick a built-in lower third preset |
 
 ## Prompts to paste
 
@@ -49,23 +49,20 @@ Save that lower third as a preset called guest-tag so I can reuse it on the next
 
 ## When to use something else
 
-- You need a full broadcast-style graphics package with dozens of variants. A motion design tool is built for that.
-- The text is a title over the whole frame, not a label. Use a title card instead.
-- You want to edit the animation curve by hand. Motion graphics in Vyra are edited by prompt; native text is edited directly.
+- You need a broadcast graphics package with dozens of variants. That's a motion design tool.
+- The text is a title over the whole frame. Use a title card.
+- You want to edit the animation curve by hand. Motion graphics here are edited by prompt.
 
 ## FAQ
 
-**Native text or motion graphic?**
-Native text if you want to drag and edit it directly and do not need animation. Motion graphic if you want an entrance and exit.
+**Plain text or motion graphic?**
+Plain text if you want to drag it and don't need animation. Motion graphic if you want it to slide in and out.
 
 **Can I use my brand fonts?**
-Name them in the prompt or set them in the project style. If a font is unavailable, the agent reports a substitution rather than pretending it loaded.
+Name them, or set them in the project style. If a font isn't available the agent tells you instead of faking it.
 
 **Does it work on vertical video?**
-Yes. Ask for placement inside the safe zone so the platform overlay does not cover it.
-
-**Does this work over MCP?**
-Yes. Claude, ChatGPT, or Cursor can add text or motion graphics with the same controls.
+Yes. Ask for placement inside the safe zone.
 
 ## Related
 

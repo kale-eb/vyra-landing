@@ -1,20 +1,18 @@
 ---
 title: "Reference style matching: make your footage look like a video you love"
-description: Attach a reference video and Vyra applies its pacing, caption style, music behavior, and color to your own footage. Name what to copy and what to ignore.
+description: Attach a reference video and tell Vyra what to copy. Pacing, captions, music behavior, color. It applies that to your own footage.
 updated: 2026-09-24
 category: feature
 ---
 
-**Vyra can match a reference video. Attach the video you want yours to feel like, say which properties to copy, and the agent applies that video's cut rhythm, caption treatment, music behavior, and color grade to your footage. Your clips, your order, their style. Attaching the reference is not enough on its own; tell it what to take.**
-
-Every creator has a video they wish they had made. Reference matching turns that into an instruction instead of a mood board.
+**Attach the video you want yours to feel like, say what to copy, and Vyra applies that video's cut rhythm, caption style, music behavior, and color to your footage. Your clips, your order, their style. Attaching it isn't enough on its own. You have to tell it what to take.**
 
 ## How it works
 
-1. Attach a reference video to your project. Vyra analyzes it separately from your footage.
-2. Ask the agent to describe the reference first: pacing, captions, music, color. Correct anything it got wrong.
-3. Say what to match and what not to: "pacing and captions yes, length and content no."
-4. Vyra builds the edit from your footage using those properties.
+1. Attach a reference video to the project. Vyra analyzes it separately from your footage.
+2. Ask the agent to describe the reference first. Pacing, captions, music, color. Correct anything it got wrong.
+3. Say what to match and what to leave alone. "Pacing and captions yes, length and content no."
+4. Vyra builds the edit from your footage with those properties.
 5. If your instructions and the reference disagree, say which wins.
 
 ## What you can ask for
@@ -22,11 +20,11 @@ Every creator has a video they wish they had made. Reference matching turns that
 | You say | Vyra does |
 | --- | --- |
 | "Describe the reference in three lines" | Reports cut rhythm, caption style, music behavior |
-| "Match the cut rhythm" | Applies roughly the same cut frequency by section |
-| "Copy the caption style: blocky, all caps, drop shadow" | Matches font weight, case, effects, placement |
-| "Match how the music drops out on the punchline" | Reproduces the music behavior against your speech |
-| "Same warm grade" | Applies a comparable color treatment |
-| "Do not match its length or content" | Keeps your duration and story |
+| "Match the cut rhythm" | Same cut frequency by section |
+| "Copy the caption style, blocky, all caps, drop shadow" | Matches weight, case, effects, placement |
+| "Match how the music drops out on the punchline" | Does the same thing against your speech |
+| "Same warm grade" | Applies a similar color treatment |
+| "Don't match its length or content" | Keeps your duration and story |
 
 ## Prompts to paste
 
@@ -35,7 +33,7 @@ Look at the attached reference. Copy its cut rhythm, caption style, and where th
 ```
 
 ```
-Use the attached reference as the style guide. Match: the pace of cuts (about one per 1-2 seconds in the intro, slower in the middle), the caption font weight and placement, the way music drops out when the speaker makes a point, and the warm color grade. Do not match: its length or content. Where my instructions and the reference disagree, follow my instructions.
+Use the attached reference as the style guide. Match the pace of cuts, the caption font weight and placement, the way music drops out when the speaker makes a point, and the warm grade. Do not match its length or content. Where my instructions and the reference disagree, follow my instructions.
 ```
 
 ```
@@ -46,16 +44,15 @@ Describe the reference video's pacing, captions, and music in three lines before
 
 | | Traditional editor | Template AI tool | Vyra |
 | --- | --- | --- | --- |
-| Copying a style | Watch, note, rebuild by hand | Pick the closest template | Attach and describe |
+| Copying a style | Watch, take notes, rebuild by hand | Pick the closest template | Attach and describe |
 | Partial matching | Manual | No | "Pacing yes, color no" |
-| Applies to your real clips | Yes, hours of work | Often not | Yes, minutes |
-| Checking the result | Watch it all | Watch it all | Ask for frames |
+| On your real clips | Yes, hours of work | Often not | Yes, minutes |
 
 ## Limits
 
-- The agent matches what it can observe: rhythm, text, music behavior, grade. It does not copy the reference's footage or effects it cannot reproduce.
-- Vague references ("make it cinematic") match vaguely. Name the properties.
-- If you attach a reference and say nothing, the agent may not apply it. Say what to take.
+- The agent matches what it can see. Rhythm, text, music behavior, grade. It won't copy the reference's footage or effects it can't reproduce.
+- "Make it cinematic" matches vaguely. Name the properties.
+- If you attach a reference and say nothing, the agent may not use it.
 
 ## FAQ
 
@@ -63,13 +60,10 @@ Describe the reference video's pacing, captions, and music in three lines before
 It has access to it. Tell it what to copy, or ask it to describe the reference first so you know it looked.
 
 **My prompt and the reference conflicted. Which wins?**
-Whichever you say. Add "where my instructions and the reference disagree, follow my instructions."
+Whichever you say. Add "where they disagree, follow my instructions."
 
 **Can I match only the captions?**
 Yes. "Copy the caption style only. Keep my pacing and music."
-
-**Can I reuse a reference across projects?**
-Attach it to each project, or keep the description it produced and paste it as a prompt.
 
 ## Related
 

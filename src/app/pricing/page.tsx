@@ -64,19 +64,19 @@ const PLANS = [
 const FAQ = [
   {
     q: "Which plan should I pick?",
-    a: "If you already pay for Claude, ChatGPT, or Cursor, an MCP plan is cheaper and uses the AI you already have. If you want everything in one app with no setup, pick a Vyra AI plan. Starter tiers export up to 1440p; Pro tiers export up to 4K and include more processing credits and storage.",
+    a: "If you already pay for Claude, ChatGPT, or Cursor, get an MCP plan. It is cheaper and uses the AI you have. If you want it all in one app, get a Vyra AI plan. Pro tiers add 4K export, more credits, and more storage.",
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. Getting started is free so you can upload footage and try an edit before choosing a plan. Cancel anytime.",
+    a: "Yes. You can upload footage and try an edit before picking a plan. Cancel anytime.",
   },
   {
     q: "What are processing credits?",
-    a: "Credits cover the work Vyra does on your footage: transcription, scene analysis, and AI editing turns. Longer footage and more agent work use more credits.",
+    a: "Credits pay for the work Vyra does on your footage, like transcribing, analyzing scenes, and each editing turn. Longer footage uses more.",
   },
   {
     q: "Do MCP plans include Vyra's built-in AI chat?",
-    a: "MCP plans are designed for driving Vyra from your own assistant over MCP. The Vyra AI plans include the built-in editor chat so no external subscription is needed.",
+    a: "MCP plans are for driving Vyra from your own assistant. Vyra AI plans include the built-in chat, so you don't need another subscription.",
   },
 ];
 
@@ -126,8 +126,7 @@ export default function PricingPage() {
           Pricing
         </h1>
         <p className="mb-12 max-w-2xl text-[17px] leading-relaxed text-[var(--foreground-muted)]">
-          Two ways to pay. Bring the AI subscription you already have over MCP, or use Vyra&apos;s built-in AI. Free to start,
-          cancel anytime.
+          Bring the AI you already pay for, or use ours. Free to start, cancel anytime.
         </p>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

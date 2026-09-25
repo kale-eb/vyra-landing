@@ -1,9 +1,8 @@
 ---
 title: 'Talking head with b-roll video: how to shoot, edit, and prompt it'
 description: >-
-  A talking head with b-roll is a person speaking to camera while supporting
-  footage covers what they describe, so the viewer sees the evidence instead of
-  only hearing about it.
+  A talking head with b-roll is you talking to camera while clips of what you
+  describe cover the parts where you mention them.
 updated: '2026-09-24'
 category: formats
 subcategory: talking-head
@@ -19,70 +18,71 @@ gear: 'phone, tripod, 10-20 minutes of supporting footage'
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**A talking head with b-roll is a person speaking to camera while supporting footage covers what they describe, so the viewer sees the evidence instead of only hearing about it.**
+**A talking head with b-roll is you talking to camera while clips of what you describe cover the parts where you mention them.**
+
+Same as a plain talking head, but when you say "the brushes" the viewer sees the brushes.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Process explanations, reviews, "how I did X" stories |
-| Hook style | Spoken claim over the single strongest b-roll shot |
-| Pacing | Face for 4-8 seconds, b-roll for 2-4 seconds, repeat |
-| Caption style | Continuous 3-5 word phrases that stay on during b-roll |
+| Best for | Process explanations, reviews, "how I did this" |
+| Hook style | Your claim, spoken over your best b-roll shot |
+| Pacing | Face 4-8 seconds, b-roll 2-4 seconds, repeat |
+| Caption style | 3-5 word phrases that stay on during b-roll |
 | Music | Low bed, ducked under speech |
-| Shot list | A-camera talking head. 8-15 b-roll clips of 5-10 seconds each. Close-ups of hands, objects, screens. One wide establishing shot. |
-| Common mistakes | Using b-roll that doesn't match what's being said. Cutting to b-roll mid-word. Leaving the face off screen for more than 6 seconds. |
+| Shot list | The talking head. 8-15 b-roll clips of 5-10 seconds. Hands, objects, screens. One wide. |
+| Common mistakes | B-roll that doesn't match the words. Cutting away mid-word. Face gone for more than 6 seconds. |
 
 ## Structure
 
-- 0-3s: hook spoken over the best b-roll clip
-- 3-10s: cut to face, establish who and why
-- 10-70s: body, face and b-roll alternate on every new noun
-- 70-85s: payoff on face, no b-roll, viewer looks at you
-- 85-90s: closing frame, one b-roll or a still
+- 0-3s: hook over the best b-roll clip
+- 3-10s: cut to face, who you are and why this
+- 10-70s: face and b-roll alternate on every new noun
+- 70-85s: the payoff on your face, no b-roll
+- 85-90s: one last b-roll shot or a still
 
 ## How to shoot it
 
-- Record the talking head first, then list every concrete thing you mentioned.
-- Shoot 5-10 seconds of b-roll for each item on that list.
-- Move the camera on b-roll: slow push-in, slide, or a handheld reveal.
-- Match the light between the face and the b-roll so the grade is consistent.
-- Shoot b-roll vertically if the final is vertical. Cropped horizontal b-roll looks soft.
+- Record the talking head first. Then write down every concrete thing you mentioned.
+- Shoot 5-10 seconds of b-roll for each thing on the list.
+- Move the camera a little on b-roll. A slow push or a slide.
+- Match the light to the talking head so the grade stays even.
+- Shoot vertical if the final is vertical. Cropped horizontal looks soft.
 
 ## How to edit it
 
-- Cut the talking head first until it is tight on its own.
-- Lay b-roll on the exact word it illustrates, starting a few frames early.
-- Return to the face before every new claim so the viewer trusts it.
-- Keep captions running over b-roll. Never let the words disappear.
-- Duck music 6-10 dB under speech, let it swell on b-roll-only moments.
-- Use one transition type, usually a straight cut.
+- Cut the talking head tight first, on its own.
+- Put b-roll on the exact word it shows, starting a few frames early.
+- Come back to your face before every new claim.
+- Keep captions running over b-roll.
+- Music 6-10 dB under speech.
+- Straight cuts only.
 
 ## Prompt it in Vyra
 
 > Cut my talking head to 75 seconds, then cover everything I mention with matching clips from the project. Every time I name a tool, place, or step, cut to the b-roll that shows it for 2-4 seconds and come back to my face. Captions stay on throughout.
 
-> Find the moments in my footage where I mention the "morning routine" and overlay the kitchen and desk clips there. Keep the audio from the talking head only.
+> Find the moments where I mention the "morning routine" and overlay the kitchen and desk clips there. Keep the audio from the talking head only.
 
-> Use the attached reference to set the rhythm of face vs b-roll. Add a soft lo-fi music bed that ducks under my voice.
+> Use the attached reference to set the rhythm of face vs b-roll. Add a soft lo-fi bed that ducks under my voice.
 
 ## Variations
 
-- Screen b-roll: screen recordings cover software mentions.
-- Photo b-roll: stills with slow zoom for archival stories.
-- Split-frame: face on top, b-roll below, both visible.
-- Voiceover-heavy: face appears only for hook and payoff.
+- Screen b-roll, screen recordings cover software mentions.
+- Photo b-roll, stills with a slow zoom for old stories.
+- Split frame, face on top, b-roll below.
 
 ## FAQ
 
 **How much b-roll do I need?**
-Roughly 30-40% of the runtime. For a 90-second video, aim for 12-15 clips you can use for 2-4 seconds each.
+About a third of the runtime. For 90 seconds, 12-15 clips you can use for 2-4 seconds each.
 
 **Can the agent pick b-roll for me?**
-Yes. Vyra transcribes your speech and analyzes every clip on upload, so it can match the clip of a coffee pour to the sentence where you say "coffee".
+Yes. Vyra transcribes your speech and analyzes every clip, so it can put the coffee pour on the sentence where you say "coffee".
 
 **Should b-roll have sound?**
-Usually no. Keep the talking head audio, add music, and only bring in b-roll sound for one deliberate moment.
+Usually no. Keep the talking head audio and the music.
 
 ## Related
 

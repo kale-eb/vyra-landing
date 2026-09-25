@@ -1,6 +1,6 @@
 ---
 title: "Vyra for developers: drive a real video editor from Cursor or Claude Code over MCP"
-description: "Vyra exposes its editor as MCP tools, so an agent in Cursor, Claude Code, or Claude Desktop can add media, trim, split, caption, mask, animate, keyframe, apply effects, and export, with transcripts and scene analysis available to it."
+description: "Vyra exposes its editor as MCP tools. An agent in Cursor, Claude Code, or Claude Desktop can add media, trim, caption, mask, animate, and export, with transcripts and scene analysis available to it."
 updated: 2026-09-24
 category: for
 facts:
@@ -12,51 +12,51 @@ facts:
   - "Price: Free to start, MCP Starter $24/mo"
 ---
 
-**Vyra is a video editor with an MCP surface. The agent you already run in Cursor or Claude Code gets the real tools: add and search media, trim, split, captions, masks, motion graphics, keyframes, effects, and export, plus read access to the transcript and per-scene analysis of every asset.**
+**Vyra is a video editor with an MCP surface. The agent you already run in Cursor or Claude Code gets the real tools. Add and search media, trim, split, captions, masks, motion graphics, keyframes, effects, export. It can also read the transcript and per-scene analysis of every asset.**
 
 ## What you make
 
-- Product and feature demos: [/formats/product-demo](/formats/product-demo)
-- App walkthroughs from screen recordings: [/formats/app-walkthrough](/formats/app-walkthrough)
-- Build-in-public updates: [/formats/founder-build-in-public](/formats/founder-build-in-public)
-- Explainers for docs and onboarding: [/formats/explainer](/formats/explainer)
+- [Product and feature demos](/formats/product-demo)
+- [App walkthroughs](/formats/app-walkthrough) from screen recordings
+- [Build-in-public updates](/formats/founder-build-in-public)
+- [Explainers](/formats/explainer) for docs and onboarding
 
 ## Your three most-used prompts
 
-From Claude Code:
+**From Claude Code**
 ```
-Open the project "release 2.4 demo". List the assets and summarize the screen recording by section. Then build a 60-second cut: intro from the talking-head clip, then the three new features in the order they appear in the changelog I pasted, cropping the screen recording to the relevant region for each. Add 3-5 word captions. Export 16:9 at 1080p and a 9:16 version.
+Open the project "release 2.4 demo". List the assets and summarize the screen recording by section. Build a 60-second cut. Intro from the talking-head clip, then the three new features in the order they appear in the changelog I pasted, cropping the screen recording to the relevant region each time. 3-5 word captions. Export 16:9 at 1080p and a 9:16 version.
 ```
 
-Batch:
+**Batch**
 ```
 For every project tagged "support-clips", add phrase captions in the saved style and export a 9:16 MP4. Report each export path when done.
 ```
 
-Inspect before editing:
+**Inspect before editing**
 ```
 Read the timeline back with start and end times for every item. Then capture frames at 0:05, 0:20, and 0:45 so I can check text placement.
 ```
 
 ## A typical workflow
 
-1. Connect your MCP client to Vyra (see [/mcp](/mcp)).
+1. Connect your MCP client to Vyra. See [/mcp](/mcp).
 2. Have the agent list assets and read transcripts and scene summaries.
-3. Ask for a plan, then execute in steps: rough cut, captions, graphics, export.
-4. Verify with frame captures and a timeline readback.
-5. Wire it into your pipeline: changelog in, demo video out.
+3. Ask for a plan, then run it in steps. Rough cut, captions, graphics, export.
+4. Check with frame captures and a timeline readback.
+5. Wire it into your pipeline. Changelog in, demo video out.
 
 ## What Vyra does that matters for you
 
-- Tool-level access, not a prompt passthrough. The agent manipulates the timeline directly.
+- Tool-level access. The agent moves things on the timeline itself, it doesn't pass prompts to someone else's AI.
 - Transcript and scene analysis exposed as data the agent can search.
-- Motion graphics are code-based (React and Remotion), so the agent can generate and edit them from a description.
-- Client-side export with presets, or custom resolution, format, and bitrate.
+- Motion graphics are code (React and Remotion), so the agent can write and edit them from a description.
+- Export runs in the browser with presets, or custom resolution, format, and bitrate.
 
 ## What it does not do
 
-- It is not a headless rendering API. Exports run in the browser session.
-- It does not generate footage. It edits uploaded media and stock from Pexels.
+- It isn't a headless render API. Exports run in a browser session.
+- It doesn't generate footage. It edits uploaded media and Pexels stock.
 
 ## Example
 
@@ -65,10 +65,10 @@ Example creator: TODO
 ## FAQ
 
 **Which clients are tested?**
-Claude Desktop, Claude Code, claude.ai, ChatGPT, and Cursor. Any MCP-compatible client should work.
+Claude Desktop, Claude Code, claude.ai, ChatGPT, and Cursor. Any MCP client should work.
 
 **Can I keep the agent from touching certain items?**
-Say so in the prompt, or lock tracks in the editor. The agent respects existing placements when asked to change a property.
+Say so in the prompt, or lock tracks in the editor.
 
 **Is there a rate limit on tool calls?**
 Plan credits cover processing and agent work. See [/pricing](/pricing).

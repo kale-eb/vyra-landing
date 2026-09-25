@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { SITE_URL, getEntries } from "@/lib/content";
 
 const DESCRIPTION =
-  "Sulan Zhang is the co-founder of Vyra, an artist, and a creator at @sulansart. She writes Vyra's format, how-to, and prompting guides from her own footage.";
+  "Sulan Zhang is a co-founder of Vyra and a painter who posts at @sulansart. She writes the guides on this site from her own footage.";
 
 export const metadata: Metadata = {
   title: "Sulan Zhang, co-founder of Vyra | Vyra",
@@ -41,12 +41,11 @@ export default function AuthorPage() {
         </h1>
         <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{DESCRIPTION}</p>
         <p className="mt-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
-          Sulan builds Vyra in San Francisco with Y Combinator and posts talking head, storytelling, vlog, and painting
-          process videos to{" "}
+          Sulan builds Vyra in San Francisco and posts painting videos, vlogs, and talking heads to{" "}
           <a href="https://www.instagram.com/sulansart" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-blue)] underline underline-offset-2">
             @sulansart
           </a>
-          . Most of those videos are cut in Vyra, and the guides on this site use them as examples.
+          . Most of them are cut in Vyra. The guides here use them as examples.
           {/* TODO: Sulan to expand bio and add headshot at /public/sulan.jpg */}
         </p>
 

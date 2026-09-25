@@ -10,16 +10,16 @@ level: intermediate
 reading_time: 5 min
 ---
 
-**Through MCP, your assistant becomes the editor's operator. Ask it to look at the footage first, propose a cut plan, then execute step by step. The same five-part prompt applies, but you gain the ability to say "show me the plan before you touch the timeline".**
+**Over MCP your assistant runs the editor. Same five-part prompt as in the app, plus you can ask it to look first and show you a plan before it cuts anything.**
 
-## What is different from the in-app agent
+## What's different from the in-app chat
 
-| In-app agent | External assistant via MCP |
+| In-app | Over MCP |
 | --- | --- |
-| Already has the project open | You tell it which project, or it lists them |
-| Optimised for editing turns | Can also research, write scripts, and draft captions in the same chat |
-| Applies changes directly | You can ask for a plan first |
-| One model | Whatever model your subscription gives you |
+| Project is already open | You name the project, or ask for the list |
+| Built for editing turns | Can also write scripts and captions in the same chat |
+| Edits right away | You can ask for a plan first |
+| One model | Whatever your subscription gives you |
 
 ## A good first message
 
@@ -27,9 +27,9 @@ reading_time: 5 min
 You're connected to my Vyra project "studio vlog sept". Start by listing the assets and summarizing what's in the footage. Then propose a 45-second Reel structure with timestamps. Wait for my OK before editing.
 ```
 
-This does three things: forces the assistant to read the footage (it can see transcripts and scene analysis), gets a plan you can correct in text, and prevents a bad first cut.
+This makes it read the footage, gives you a plan to correct in text, and avoids a bad first cut.
 
-## Then execute in steps
+## Then go in steps
 
 ```
 OK. Build the rough cut exactly as planned. No captions or music yet.
@@ -44,39 +44,36 @@ Add the track I uploaded, duck it under my voice.
 Capture frames at 0:03, 0:15, and 0:40 so I can check the text placement.
 ```
 
-Asking for frame captures is the MCP equivalent of scrubbing the timeline. Use it before you trust a text summary of what changed.
+Frame captures are how you scrub the timeline from a chat. Use them before you trust a summary.
 
-## Prompts for the tasks people ask about most
+## Other prompts people ask for
 
-Reference matching:
+Reference:
 ```
 Look at the reference video attached to the project. Tell me its cut rhythm, caption style, and music behavior in three lines. Then apply those three things to my footage.
 ```
 
-Batch work (a user asked about captioning 50 videos):
+Batch (one user had 50 videos to caption):
 ```
 For each project in this folder, add phrase captions in the same style and export a 9:16 version. Tell me when each one is done.
 ```
 
-Search inside footage:
+Search:
 ```
 Find every moment where I say "underpainting" or show the canvas from above. List them with timestamps and a one-line description.
 ```
 
-## Common failure and the fix
+## When it says it did something and didn't
 
-The assistant says it did something and it did not. Ask: "Read the timeline back to me: every item with start and end times." If the timeline does not match its claim, say: "That is not what the timeline shows. Do X now." External models sometimes narrate an intent as if it were done; reading the timeline back exposes it.
+Ask "Read the timeline back to me, every item with start and end times." If that doesn't match what it claimed, say so and tell it what to do now.
 
 ## FAQ
 
 **Which client works best?**
-Any MCP-compatible client. Claude Desktop and Claude Code are the most tested. ChatGPT and Cursor also work.
+Any MCP client. Claude Desktop and Claude Code are the most tested. ChatGPT and Cursor work too.
 
 **Can I mix in-app and MCP?**
-Yes. The project is the same. Edit in one, refine in the other.
-
-**Do I need to know the tool names?**
-No. Describe the outcome. The assistant picks the tools.
+Yes. Same project either way.
 
 ## Related
 

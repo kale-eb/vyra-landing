@@ -1,9 +1,8 @@
 ---
 title: 'Skit video: how to shoot, edit, and prompt it'
 description: >-
-  A skit is a short scripted comedy scene, often with one creator playing two or
-  more characters via costume and framing changes, cut so each line lands as a
-  beat.
+  A skit is a short scripted comedy scene, often one person playing two
+  characters with a costume change, cut so every line lands.
 updated: '2026-09-24'
 category: formats
 subcategory: storytelling
@@ -18,42 +17,44 @@ difficulty: intermediate
 gear: 'phone, tripod, a change of shirt or hat per character'
 ---
 
-**A skit is a short scripted comedy scene, often with one creator playing two or more characters via costume and framing changes, cut so each line lands as a beat.**
+**A skit is a short scripted comedy scene, often one person playing two characters with a costume change, cut so every line lands.**
+
+Write it first. Keep lines under 8 words. Comedy dies in the pauses.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Comedy accounts, niche in-jokes, brand humor |
-| Hook style | Start on the line that sets the conflict |
+| Best for | Comedy accounts, in-jokes for a niche, brand humor |
+| Hook style | Start on the line that sets up the conflict |
 | Pacing | Cut on every line, no air between characters |
-| Caption style | Speech captions colored per character |
-| Music | None during dialogue, a sting at the punchline |
-| Shot list | One setup per character, same tripod position, different side of frame or different costume. Reaction shots for each character. |
-| Common mistakes | Lines too long. Characters hard to tell apart. Punchline followed by more talking. |
+| Caption style | Speech captions, one color per character |
+| Music | None during dialogue, a sting on the punchline |
+| Shot list | One setup per character on the same tripod, different side of frame or different costume. Reaction shots for each. |
+| Common mistakes | Long lines. Characters that look the same. Talking after the punchline. |
 
 ## Structure
 
 - 0-3s: the conflict line
 - 3-30s: back and forth, escalating
 - 30-40s: the punchline
-- End on the reaction of the other character
+- end on the other character's reaction
 
 ## How to shoot it
 
-- Script it. Every line under 8 words if possible.
+- Script it. Every line under 8 words if you can.
 - Lock the phone on a tripod. Move yourself, not the camera.
-- Character A on the left of frame, character B on the right.
-- Change one obvious thing per character: hat, glasses, jacket.
-- Record every reaction shot: listening faces get used a lot.
+- Character A on the left, character B on the right.
+- One obvious change per character. Hat, glasses, jacket.
+- Record every reaction shot. Listening faces get used a lot.
 
 ## How to edit it
 
-- Cut on each line, alternate sides.
-- Trim the air out of every exchange. Comedy dies in pauses.
-- Insert reaction shots on the strongest lines.
-- Captions colored per character, same color every time they speak.
-- Sound sting on the punchline, then cut immediately.
+- Cut on each line, alternating sides.
+- Trim the air out of every exchange.
+- Drop reaction shots on the strongest lines.
+- Captions in one color per character, every time.
+- Sting on the punchline, then cut.
 
 ## Prompt it in Vyra
 
@@ -63,21 +64,20 @@ gear: 'phone, tripod, a change of shirt or hat per character'
 
 ## Variations
 
-- Solo skit: one character, talking to an unseen person.
-- Two-person skit: real second actor.
-- Recurring characters: the same two people every episode.
-- Brand skit: characters are "the customer" and "the app".
+- Solo skit, one character talking to someone off screen.
+- Two real people.
+- Brand skit, "the customer" and "the app".
 
 ## FAQ
 
 **How do I keep characters distinct?**
-One prop and one side of the frame per character. Consistent captions colors help too.
+One prop and one side of the frame each. Same caption color every time helps.
 
 **How long should lines be?**
-Short. If a line runs over 3 seconds, split it or cut it.
+Short. Over 3 seconds, split it or cut it.
 
 **Can Vyra sort takes by costume?**
-It analyzes every clip visually, so you can describe the characters ("the takes with the cap") and it can find them.
+It analyzes every clip visually, so "the takes with the cap" works.
 
 ## Related
 

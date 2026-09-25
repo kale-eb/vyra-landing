@@ -1,6 +1,6 @@
 ---
 title: "Edit video by typing what you want"
-description: "In Vyra you describe the edit in plain language and an agent that has already transcribed every word and analyzed every scene of your footage carries it out on a real timeline."
+description: In Vyra you type the edit in plain words. An agent that has already transcribed every word and looked at every scene does it on a real timeline.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,27 +12,27 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**Editing video by typing means giving instructions in your own words and getting a cut on the timeline, not a template. In Vyra the agent works from a transcript and a per-scene visual analysis of your footage, so "open on the shot where I hold up the canvas" and "cut every pause over half a second" both work.**
+**You type what you want in your own words and get a cut on the timeline. The agent has the transcript and a description of every scene, so "open on the shot where I hold up the canvas" and "cut every pause over half a second" both work.**
 
 ## How it works
 
-1. Upload footage. Vyra transcribes it with Deepgram, generates thumbnails, and analyzes the visual content of every scene.
-2. Type what you are making: target length, platform, what to keep, what to cut, how captions and music should behave.
-3. The agent assembles the edit on the timeline, using the transcript to find lines and the visual analysis to find shots.
-4. Review, then iterate one change at a time: "tighter," "swap the intro clip," "move the title under my chin."
-5. Open the timeline for any manual adjustment, then export.
+1. Upload footage. Vyra transcribes it and looks at every scene.
+2. Type what you're making. Length, platform, what to keep, what to cut, captions, music.
+3. The agent builds the edit. Transcript for the lines, scene descriptions for the shots.
+4. Fix one thing at a time. "Tighter." "Swap the intro clip." "Move the title under my chin."
+5. Open the timeline for anything manual. Export.
 
 ## What you can control
 
 | Setting | Options |
 | --- | --- |
-| Selection | Best takes, specific lines by quoting them, specific shots by describing them |
-| Cuts | Pause thresholds, filler removal, retake handling, straight cuts or transitions |
-| Structure | Order of points, hook first, chronological, or a structure you name |
-| Text | Caption mode and style, titles, lower thirds, emphasis words |
-| Sound | Music choice, ducking levels, sound effects, original audio |
-| Look | Effects by category (Color, Stylize, Distort, Generate), reference style matching |
-| Templates | A project template such as Short Talking Head, Long Podcast, or Vlog, and a style such as Cinematic Film or Vyra Default |
+| Selection | Best takes, a line you quote, a shot you describe |
+| Cuts | Pause threshold, filler removal, retakes, straight cuts or transitions |
+| Structure | Your order, hook first, chronological, or whatever you describe |
+| Text | Caption style, titles, lower thirds, emphasis words |
+| Sound | Music, ducking, sound effects, original audio |
+| Look | Effects (Color, Stylize, Distort, Generate), reference style matching |
+| Templates | Short Talking Head, Long Podcast, or Vlog, plus a style like Cinematic Film or Vyra Default |
 
 ## Prompts to paste
 
@@ -50,23 +50,20 @@ List every cut you made with timestamps so I can check them.
 
 ## When to use something else
 
-- You want to generate footage you did not shoot. Vyra edits real footage only; a generative tool like Runway makes new clips.
-- You already have a finished timeline in a desktop NLE and only need a color grade. Finish it there.
-- You need frame-by-frame manual work on every cut. Vyra has a full timeline, but the point of typing is to hand off the bulk of it.
+- You want footage you didn't shoot. Vyra edits real footage only. Runway makes new clips.
+- You already have a finished timeline in a desktop editor and just need a grade. Finish it there.
+- You want to do every cut by hand. Vyra has a timeline, but the point of typing is handing off the bulk of it.
 
 ## FAQ
 
 **Do I need to know editing terms?**
-No. "Show the brushes while I talk about them" works as well as "J-cut." Use either.
+No. "Show the brushes while I talk about them" works as well as "J-cut."
 
-**How does it know which take is best?**
-It reads the transcript for restarts and stumbles and compares takes. You can override with "use the take around 2:10."
+**How does it pick the best take?**
+It reads the transcript for restarts and stumbles. You can override with "use the take around 2:10."
 
-**What if it says it made a change and I cannot see it?**
-Ask for the list of cuts with timestamps, or scrub the timeline. Verify, then correct with one instruction.
-
-**Can I type from Claude or ChatGPT instead of the built-in chat?**
-Yes. Over MCP the assistant gets the same editing tools and the same transcript and scene data.
+**What if it says it made a change and I can't see it?**
+Ask for the list of cuts with timestamps, or scrub the timeline.
 
 ## Related
 

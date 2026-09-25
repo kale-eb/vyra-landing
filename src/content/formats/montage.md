@@ -1,9 +1,8 @@
 ---
 title: 'Montage video: how to shoot, edit, and prompt it'
 description: >-
-  A montage is a sequence of short clips cut to music that compresses a period
-  of time, a process, or a mood into under a minute, with the rhythm of the cuts
-  carrying the feeling.
+  A montage is a run of short clips cut to music that packs a stretch of time,
+  a process, or a mood into under a minute.
 updated: '2026-09-24'
 category: formats
 subcategory: montage
@@ -19,44 +18,46 @@ gear: 'phone, 20-40 clips, a music track'
 example: https://www.instagram.com/reel/DZCKNJiupPa/
 ---
 
-**A montage is a sequence of short clips cut to music that compresses a period of time, a process, or a mood into under a minute, with the rhythm of the cuts carrying the feeling.**
+**A montage is a run of short clips cut to music that packs a stretch of time, a process, or a mood into under a minute.**
+
+My semester paintings video is one. Pick the song first if you can. The song's structure becomes the edit's structure.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Recaps, studio process, trips, "a month in 30 seconds", brand mood |
-| Hook style | The best two clips first, before the beat drops |
-| Pacing | 0.5-2 seconds per clip, speeds up with the music |
-| Caption style | Minimal, one title, maybe a closing line |
+| Best for | Recaps, studio process, trips, "a month in 30 seconds" |
+| Hook style | Your best two clips first, before the beat drops |
+| Pacing | 0.5-2 seconds per clip, faster as the music builds |
+| Caption style | One title, maybe a closing line |
 | Music | The whole edit is built on it |
-| Shot list | 20-40 clips of 3-8 seconds. Mix wide, medium, close. Movement in most clips. One or two slow moments. |
-| Common mistakes | Cuts that ignore the music. All clips the same distance. No variation in speed. |
+| Shot list | 20-40 clips of 3-8 seconds. Wide, medium, close. Movement in most. One or two slow moments. |
+| Common mistakes | Cuts that ignore the music. Every clip from the same distance. No change of speed. |
 
 ## Structure
 
 - 0-3s: two strongest clips, quiet part of the track
 - 3-20s: build, cuts on each beat
-- 20-25s: a slow held moment, one clip 3 seconds
+- 20-25s: one held clip, 3 seconds
 - 25-40s: peak, cuts on half-beats
-- 40-45s: the last clip on the final hit, then out
+- 40-45s: last clip on the final hit
 
 ## How to shoot it
 
-- Shoot short bursts, 5 seconds each, more angles than you think.
-- Every clip should have movement: yours or the camera's.
-- Get a detail, a medium, and a wide at every location.
-- Film transitions: a hand covering the lens, a whip pan.
-- Pick the song before shooting if you can.
+- Short bursts, 5 seconds each, more angles than you think you need.
+- Movement in every clip. Yours or the camera's.
+- A detail, a medium, and a wide at every spot.
+- Film transitions. A hand over the lens, a whip pan.
+- Pick the song before you shoot if you can.
 
 ## How to edit it
 
 - Mark the beats and the drop first.
-- Cut on beats. Vary between every beat and every other beat.
-- Put a held clip right before the drop.
-- Match movement direction across cuts when possible.
-- Speed-ramp one or two clips into a beat.
-- No captions except a title and an outro line.
+- Cut on beats. Switch between every beat and every other beat.
+- Held clip right before the drop.
+- Match movement direction across cuts when you can.
+- Speed ramp one or two clips into a beat.
+- One title, nothing else.
 
 ## Prompt it in Vyra
 
@@ -68,21 +69,20 @@ example: https://www.instagram.com/reel/DZCKNJiupPa/
 
 ## Variations
 
-- Process montage: one project start to finish.
-- Recap montage: an event or trip.
-- Mood montage: no story, just a feeling.
-- Speed-ramp montage: heavy time remapping on beats.
+- Process montage, one project start to finish.
+- Recap montage, an event or a trip.
+- Speed ramp montage, heavy time remapping on beats.
 
 ## FAQ
 
-**How do I choose the music?**
-Something with a clear beat and one drop. The structure of the track becomes the structure of the edit.
+**How do I pick the music?**
+Something with a clear beat and one drop.
 
-**How many clips do I need?**
-About one clip per beat you'll cut on. For 30 seconds at 120 bpm, 25-40 clips.
+**How many clips?**
+About one per beat you'll cut on. For 30 seconds at 120 bpm, 25-40 clips.
 
-**Can Vyra beat-sync automatically?**
-Yes. Attach the track and ask for cuts on the beat, and describe where you want it to speed up or hold.
+**Can Vyra beat-sync?**
+Yes. Attach the track, ask for cuts on the beat, and say where to speed up or hold.
 
 ## Related
 

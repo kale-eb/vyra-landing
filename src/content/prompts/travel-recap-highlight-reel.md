@@ -5,7 +5,7 @@ updated: '2026-09-24'
 category: prompts
 ---
 
-**A travel recap prompt gives Vyra the trip's shape (days or places in order), the target length, which moments are the peaks, and how much talking to keep. The agent has scene descriptions for every clip and knows when each was shot, so "in order, one peak per day" is enough structure to work from.**
+**Give it the trip in order, the length, one peak per day, and how much talking to keep. It knows where and when each clip was shot, so that's enough to work from.**
 
 Minimal:
 ```
@@ -19,31 +19,27 @@ Build a 45-second 9:16 travel recap from these clips. Chronological, three days.
 
 Full:
 ```
-Make a 60-second vertical travel recap from the three days of footage. Structure: open on the airplane window shot for 2 seconds with the title "3 days in SF" as small white text bottom left. Day 1: the train arriving, the office, the night walk; peak is the Bay Bridge at night, hold it 4 seconds. Day 2: the run along the water, the Ferry Building; peak is the pier skyline pan, hold 4 seconds. Day 3: the Waymo ride, the street dance; peak is the Waymo pulling up, hold 4 seconds. Between peaks, one cut every two beats on the uploaded track. Keep only two talking clips: "day four" at the start of day 1 and "we made it" as the final clip. Original ambience under the music at 30% on the night walk so the city is audible. Light warm grade across everything so the days match. No transitions, no speed ramps.
+Make a 60-second vertical travel recap from the three days of footage. Open on the airplane window shot for 2 seconds with the title "3 days in SF" as small white text bottom left. Day 1 is the train arriving, the office, the night walk. Peak is the Bay Bridge at night, hold it 4 seconds. Day 2 is the run along the water, the Ferry Building. Peak is the pier skyline pan, hold 4 seconds. Day 3 is the Waymo ride, the street dance. Peak is the Waymo pulling up, hold 4 seconds. Between peaks, one cut every two beats on the uploaded track. Keep only two talking clips, "day four" at the start of day 1 and "we made it" as the final clip. Original ambience under the music at 30% on the night walk so the city is audible. Light warm grade across everything so the days match. No transitions, no speed ramps.
 ```
 
 ## What each part does
 
-Day-by-day lists with a named peak per day are the structure; the peak holds give the reel a pulse. The title card is small and early so it does not compete with the footage. "Only two talking clips" keeps the voice present without turning it into a vlog. Ambience under music on one section is the difference between a stock-feeling reel and yours. "Light warm grade so the days match" solves the color mismatch every multi-day trip has.
+Day lists with one named peak each is the structure. The peak holds give it a pulse. "Only two talking clips" keeps your voice without turning it into a vlog. Ambience under the music on one section is what makes it feel like your trip. "Warm grade so the days match" fixes the color mismatch every multi-day trip has.
 
 ## Fixes
 
-- Peaks too short: "Hold each peak 5 seconds, cut something else to make room."
-- Days out of order: "Restore day order: airplane, office, run, Waymo."
-- Too much talking: "Cut every talking clip except 'we made it'."
-- Days look different: "Match the grade of day 2 to day 1. Warm it slightly."
-- Music overpowers: "Bring the track to 60% and keep ambience audible on the night walk."
+- Peaks too short. "Hold each peak 5 seconds."
+- Days out of order. "Airplane, office, run, Waymo."
+- Too much talking. "Cut every talking clip except 'we made it'."
+- Days look different. "Match day 2's grade to day 1."
 
 ## FAQ
 
-**Chronological or best-first?**
-Chronological for a recap; the trip is the story. Best-first if it is an ad for the place, not a memory.
+**Chronological or best first?**
+Chronological for a recap. The trip is the story.
 
-**How many talking clips should survive?**
-One or two. A recap with more than three talking clips is a vlog. Both are fine; decide which you are making.
-
-**Can Vyra find the peaks?**
-Ask it to list the ten most visually striking moments with timestamps, then pick one per day and put them in the prompt.
+**Can it find the peaks?**
+Ask it to list the ten most striking moments with timestamps, then pick one per day.
 
 ## Related
 
@@ -56,8 +52,6 @@ Ask it to list the ten most visually striking moments with timestamps, then pick
 
 1. One target per prompt. Length, platform, purpose.
 2. Quote the exact line when you mean a specific moment.
-3. Give thresholds ("pauses over half a second") instead of adjectives ("snappy").
-4. Say what NOT to do when the agent tends to over-decorate.
-5. One correction per follow-up message.
-6. Ask for a timestamped list of changes when you want to verify.
-7. Name what to copy from a reference. Attaching it is not an instruction.
+3. Give numbers, not adjectives. "Pauses over half a second," not "snappy."
+4. Say what not to add. Zooms, transitions, music, effects.
+5. One fix per follow-up message. Ask for a list of changes with timestamps if you want to check.

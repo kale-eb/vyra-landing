@@ -8,7 +8,7 @@ updated: '2026-09-24'
 category: prompts
 ---
 
-**A music prompt names the track or mood, the volume under speech and over b-roll as percentages, where the music starts and stops, and how it fades. Give the numbers, or the agent will guess them.**
+**Name the track, give two volume numbers (under speech, over b-roll), and say where it starts, stops, and fades.**
 
 ## Minimal
 
@@ -30,35 +30,24 @@ Use the track I uploaded called "morning.mp3". Start it on the first frame. Hold
 
 ## What each part does
 
-- "The track I uploaded called" pins one specific file instead of a library pick.
-- "Start it on the first frame" sets the entry point so the agent does not add a cold open.
-- "20% under every line" and "65% during b-roll" give two levels the agent can apply mechanically.
-- "Duck over half a second" controls the ramp so speech does not feel like it slams the music down.
-- "Cut the music completely during" marks the one moment that should be dry.
-- "Fade out over the last 2 seconds" defines the ending.
-- "Do not add any sound effects" keeps the agent from decorating.
+Naming the file stops a library pick. Two percentages give it levels it can apply every time. "Over half a second" sets the ducking speed. "Cut completely during" marks the one dry moment. "No sound effects" keeps it from decorating.
 
 ## Fixes
 
 | Symptom | Add to your next message |
 | --- | --- |
 | Music fights the voice | "Lower the music to 15% whenever I am speaking." |
-| Music feels like it is pumping up and down | "Ramp the ducking over one full second instead of half a second." |
-| Track starts mid-phrase | "Start the track from its beginning and trim the end, not the start." |
-| Music too loud on b-roll | "Cap the b-roll level at 50%." |
-| Wrong mood | "Swap to something slower, around 80 BPM, piano or acoustic, no drums." |
-| Music ends with a hard cut | "Fade the music out over the last 3 seconds." |
+| Pumping up and down | "Ramp the ducking over one full second." |
+| Starts mid-phrase | "Start the track from its beginning and trim the end." |
+| Wrong mood | "Something slower, around 80 BPM, piano, no drums." |
 
 ## FAQ
 
 **Can I use my own track?**
-Yes. Upload it to the project and name the file in the prompt. The agent will place it and duck it to your numbers.
+Yes. Upload it and name the file. Licensing is on you.
 
 **What percentages sound right?**
-For a talking video, 15% to 25% under speech and 50% to 70% over b-roll is a safe starting range. Adjust one number at a time after listening on phone speakers.
-
-**How do I sync the cuts to the music instead of just adding it?**
-That is a different prompt. See /prompts/beat-sync for cutting on beats.
+15 to 25% under speech, 50 to 70% over b-roll. Check on phone speakers.
 
 ## Related
 
@@ -71,8 +60,6 @@ That is a different prompt. See /prompts/beat-sync for cutting on beats.
 
 1. One target per prompt. Length, platform, purpose.
 2. Quote the exact line when you mean a specific moment.
-3. Give thresholds ("pauses over half a second") instead of adjectives ("snappy").
-4. Say what NOT to do when the agent tends to over-decorate.
-5. One correction per follow-up message.
-6. Ask for a timestamped list of changes when you want to verify.
-7. Name what to copy from a reference. Attaching it is not an instruction.
+3. Give numbers, not adjectives. "Pauses over half a second," not "snappy."
+4. Say what not to add. Zooms, transitions, music, effects.
+5. One fix per follow-up message. Ask for a list of changes with timestamps if you want to check.

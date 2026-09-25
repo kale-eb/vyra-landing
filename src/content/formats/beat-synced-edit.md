@@ -1,8 +1,8 @@
 ---
 title: 'Beat-synced edit: how to shoot, edit, and prompt it'
 description: >-
-  A beat-synced edit is a sequence where every cut, zoom, or flash lands exactly
-  on a beat of the music, so the visuals feel like they are playing the song.
+  A beat-synced edit is a sequence where every cut, zoom, or flash lands
+  exactly on a beat of the music.
 updated: '2026-09-24'
 category: formats
 subcategory: montage
@@ -17,44 +17,46 @@ gear: 'phone, 15-30 clips, a track with a clear beat'
 example: https://www.instagram.com/reel/DZCKNJiupPa/
 ---
 
-**A beat-synced edit is a sequence where every cut, zoom, or flash lands exactly on a beat of the music, so the visuals feel like they are playing the song.**
+**A beat-synced edit is a sequence where every cut, zoom, or flash lands exactly on a beat of the music.**
+
+Two frames off and you can see it. That's why doing this by hand takes forever.
 
 ## At a glance
 
 | | |
 | --- | --- |
 | Best for | Trend sounds, transitions, outfit changes, fast recaps |
-| Hook style | The first beat is the first cut; no intro |
+| Hook style | First beat is the first cut, no intro |
 | Pacing | Locked to the track, often every beat |
-| Caption style | None, or a single word per beat |
+| Caption style | None, or one word per beat |
 | Music | The reason the video exists |
-| Shot list | 15-30 clips with strong movement. Matching poses for transitions. Clips that can be reversed or speed-ramped. |
-| Common mistakes | Cuts a few frames off the beat. All cuts the same type. No release from the rhythm. |
+| Shot list | 15-30 clips with a clear action. Matching poses for transitions. Clips you can reverse or speed ramp. |
+| Common mistakes | Cuts a few frames off. Every cut the same type. No break from the rhythm. |
 
 ## Structure
 
 - 0-1s: first cut on the first beat
 - 1-15s: cuts on every beat, alternating shot types
 - 15-18s: a hold or slow-mo on a pause in the track
-- 18-28s: drop, cuts on half-beats, zooms and flashes
-- End on the final hit, hard cut to black
+- 18-28s: the drop, cuts on half-beats, zooms and flashes
+- end on the last hit, hard cut to black
 
 ## How to shoot it
 
-- Pick the track first and listen for the drop.
-- Shoot clips with an obvious action that can hit a beat: a turn, a step, a snap.
+- Pick the track first and find the drop.
+- Shoot actions that can hit a beat. A turn, a step, a snap.
 - For transitions, end one clip and start the next in the same pose.
-- Shoot at 60fps so slow-mo is clean.
-- Get more clips than beats.
+- 60fps so slow-mo is clean.
+- More clips than beats.
 
 ## How to edit it
 
-- Place the track, mark every beat.
-- Cut on beats. Use a zoom or a flash on the strongest beats instead of a cut.
+- Drop in the track, mark every beat.
+- Cut on beats. Use a zoom or flash instead of a cut on the strongest ones.
 - Slow-mo or hold on a pause in the music.
-- Speed-ramp into the drop.
-- Keep cuts frame-accurate. Two frames off is visible.
-- End with the last hit and a hard cut.
+- Speed ramp into the drop.
+- Frame-accurate. Two frames off shows.
+- Last hit, hard cut.
 
 ## Prompt it in Vyra
 
@@ -64,21 +66,20 @@ example: https://www.instagram.com/reel/DZCKNJiupPa/
 
 ## Variations
 
-- Transition edit: outfit or location changes on beats.
-- Speed-ramp edit: time remapping is the main effect.
-- Flash edit: white or black flashes on hits.
-- Lyric edit: one word on screen per beat.
+- Transition edit, outfit or location changes on beats.
+- Speed ramp edit, time remapping is the main effect.
+- Lyric edit, one word on screen per beat.
 
 ## FAQ
 
 **How exact does the timing need to be?**
-Frame-exact. The whole effect depends on it, which is why doing it by hand takes so long.
+Frame exact.
 
-**Can Vyra do this from a description?**
-Yes. Attach the track, say "cut on the beat", and describe where to zoom, hold, or speed up. It detects the beats.
+**Can Vyra do it from a description?**
+Yes. Attach the track, say "cut on the beat", and say where to zoom, hold, or speed up. It finds the beats.
 
 **Does it work with any genre?**
-Best with clear, steady beats: pop, hip-hop, house, phonk. Ambient tracks need phrase-based cuts instead.
+Best with clear steady beats. Pop, hip-hop, house, phonk. Ambient tracks need phrase-based cuts instead.
 
 ## Related
 

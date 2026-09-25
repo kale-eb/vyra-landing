@@ -1,9 +1,8 @@
 ---
 title: 'Commission reveal video: how to shoot, edit, and prompt it'
 description: >-
-  A commission reveal builds toward one moment, the finished piece shown in
-  full for the first time, by holding it back behind the brief, the process,
-  and the packing until the last few seconds.
+  A commission reveal holds the finished piece back behind the brief, the
+  process, and the packing, then shows it in full for the first time at the end.
 updated: '2026-09-24'
 category: formats
 subcategory: art-and-process
@@ -19,45 +18,47 @@ gear: 'phone, tripod, clean wall or easel, daylight for the final shot'
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**A commission reveal builds toward one moment, the finished piece shown in full for the first time, by holding it back behind the brief, the process, and the packing until the last few seconds.**
+**A commission reveal holds the finished piece back behind the brief, the process, and the packing, then shows it in full for the first time at the end.**
+
+My "longing" reveal is one. The trade is simple. Never show the whole piece before the last few seconds.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Selling commissions, showing range, giving a client a shareable moment |
+| Best for | Selling commissions, showing range, giving a client something to share |
 | Hook style | The brief in one line ("she asked for her grandmother's garden") |
-| Pacing | Slow build, 3-6 shots, then a single held reveal |
-| Caption style | The brief as text, then the title and size at the reveal |
-| Music | Quiet start, one swell timed to the reveal |
-| Shot list | Reference photo or message on screen. 3-4 process clips that never show the whole piece. A packing or framing shot. The reveal: piece on a clean wall, camera pulling back or tilting up. |
-| Common mistakes | Showing the whole piece in a process clip. Reveal shot too dark. Cutting away from the reveal too early. |
+| Pacing | Slow build, 3-6 shots, then one held reveal |
+| Caption style | The brief as text, then title and size at the reveal |
+| Music | Quiet, one swell on the reveal |
+| Shot list | The reference photo or message. 3-4 process clips that never show the whole piece. Packing or framing. The reveal on a clean wall, camera tilting up or pulling back. |
+| Common mistakes | Showing the whole piece in a process clip. Reveal shot too dark. Cutting away too early. |
 
 ## Structure
 
-- 0-3s: the brief, one line of text over a reference photo
-- 3-15s: process clips, all partial, no full view
+- 0-3s: the brief, text over the reference photo
+- 3-15s: process clips, all partial
 - 15-20s: framing, signing, or packing
-- 20-25s: the reveal, slow tilt or pull-back, no cuts
-- 25-35s: hold on the full piece, title, size, medium
-- 35-45s: optional: the client's reaction or message
+- 20-25s: the reveal, one slow move, no cuts
+- 25-35s: hold on the full piece with title, size, medium
+- 35-45s: the client's reaction, if you have it
 
 ## How to shoot it
 
-- Shoot the reveal last, in daylight, on a plain wall. It carries the video.
-- Use a slow tilt up from the bottom edge or a pull-back from a detail. One move, 6 to 8 seconds.
-- For process clips, frame tight so the composition never reads in full.
-- Get the signing. Viewers love the signing.
-- Screenshot the brief or reference with the client's permission and crop out names.
+- Shoot the reveal last, in daylight, on a plain wall.
+- One slow move, 6-8 seconds. Tilt up from the bottom edge or pull back from a detail.
+- Frame the process clips tight so the composition never reads.
+- Get the signing. People love the signing.
+- Screenshot the brief with the client's OK and crop out names.
 
 ## How to edit it
 
-- Music quiet for the first two thirds, one swell at the reveal.
-- Cut process clips on the beat, each 2 to 3 seconds.
-- No cut during the reveal move. Let it play.
-- Hold the full piece for at least 4 seconds after the move ends.
-- Title, dimensions, and medium as one caption block at the hold.
-- Captions off during the reveal itself.
+- Music quiet for the first two thirds, one swell on the reveal.
+- Process clips on the beat, 2-3 seconds each.
+- No cut during the reveal move.
+- Hold the full piece at least 4 seconds after the move ends.
+- Title, dimensions, and medium as one caption at the hold.
+- Captions off during the reveal.
 
 ## Prompt it in Vyra
 
@@ -69,21 +70,20 @@ example: 'https://www.instagram.com/sulansart'
 
 ## Variations
 
-- Reaction reveal: end with the client seeing it.
-- Two-piece reveal: a diptych, revealed one panel at a time.
-- Rewind reveal: finished piece first, then rewind to blank, then forward again.
-- Unboxing reveal: the client opens the package on their end.
+- Reaction reveal, end on the client seeing it.
+- Rewind reveal, finished piece first, rewind to blank, then forward.
+- Unboxing reveal, the client opens the package.
 
 ## FAQ
 
-**How long should the reveal hold be?**
-Four to six seconds. Long enough to read the whole piece and screenshot it.
+**How long should the hold be?**
+Four to six seconds. Long enough to read it and screenshot it.
 
 **Can I show the piece earlier?**
-A detail, yes. The full composition, no. That is the whole trade.
+A detail, yes. The full thing, no.
 
-**Can Vyra keep the piece hidden in process clips?**
-Yes. Ask it to crop or mask the process clips so the full canvas never appears before the reveal.
+**Can Vyra keep it hidden in process clips?**
+Yes. Ask it to crop or mask the process clips so the full canvas never shows before the reveal.
 
 ## Related
 

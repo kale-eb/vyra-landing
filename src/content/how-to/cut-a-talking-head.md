@@ -1,54 +1,44 @@
 ---
 title: How to cut a talking head video so it feels crisp
 description: >-
-  A crisp talking head cut removes every pause longer than 0.3 seconds, every
-  filler word, and every failed take, then hides the resulting jump cuts with
-  alternating punch-ins and b-roll while...
+  Cut every pause over 0.3 seconds, every filler, every bad take. Then hide the
+  jump cuts with punch-ins and b-roll, and leave a small breath before each
+  idea.
 updated: '2026-09-24'
 category: how-to
 level: intermediate
-reading_time: 6 min
+reading_time: 3
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**A crisp talking head cut is a speech edit first and a picture edit second. Remove pauses over about 0.3 seconds, filler words, false starts, and repeated takes so the delivery sounds like the best version of you. Then cover the jump cuts by alternating between the full shot and a 15 to 25 percent punch-in, or by dropping in b-roll on the cut. Leave a small breath before each new idea so the result does not sound like a machine gun.**
+**A crisp talking head is a speech edit first. Remove pauses over about 0.3 seconds, fillers, false starts, and repeated takes so it sounds like the best version of you. Then cover the jump cuts by switching between the full shot and a 15 to 25 percent punch-in, or dropping b-roll on the cut. Leave a small breath before each new idea so it doesn't sound like a machine.**
 
 ## Why it matters
 
-Viewers forgive imperfect lighting and framing. They do not forgive dead air. A talking head that is cut tight reads as confident and prepared even if the raw footage was rambling. The cut is the difference between a 40 percent and a 70 percent average watch time on the same script.
+People forgive bad lighting.
 
 ## The method
 
-1. **Pick the best take per sentence, not per video.** Long recordings contain three versions of most lines. Choose the clearest one for each sentence and discard the rest.
-2. **Remove silence and filler.** Cut pauses longer than 0.3 seconds, "um," "uh," "like," "so basically," and any sentence you restart. Keep one short breath (0.1 to 0.2 seconds) before a new point.
-3. **Choose how to hide each jump cut.** Options: punch-in to the same shot, cut to a second angle, insert b-roll, or place a caption emphasis on the cut. Rotate through them.
-4. **Punch in on the important word, not the cut.** A 15 to 25 percent scale change landing on the key word feels intentional. A punch-in at a random point feels like a mistake you are covering.
-5. **Cover longer removals with b-roll.** When you have cut more than 2 seconds from a passage, a 1.5 to 3 second insert bridges the gap and re-establishes the point visually.
-6. **Check the audio seams.** Every cut should land between words, never inside one. Add a 2 to 4 frame crossfade on the audio if a cut clicks.
+1. **Pick the best take per sentence.** Long recordings have three versions of most lines. Keep the clearest one.
+2. **Remove silence and filler.** Pauses over 0.3 seconds, "um," "like," "so basically," any restart. Keep a 0.1 to 0.2 second breath before a new point.
+3. **Hide each jump cut.** Punch in, switch angle, insert b-roll, or land a caption emphasis on the cut. Rotate.
+4. **Punch in on the important word.** Not on the cut. 15 to 25 percent.
+5. **Cover big removals with b-roll.** Over 2 seconds cut, add a 1.5 to 3 second insert.
+6. **Check the audio seams.** Cut between words, never inside one. A 2 to 4 frame crossfade if it clicks.
 
 ## Rules of thumb
 
 | Decision | Number |
 | --- | --- |
 | Pause to remove | over 0.3 s |
-| Breath to keep before new idea | 0.1 to 0.2 s |
-| Punch-in scale | 15 to 25 percent |
-| Max consecutive punch-ins | 2, then use b-roll or angle |
-| B-roll insert length | 1.5 to 3 s |
-| Audio crossfade on cuts | 2 to 4 frames |
-| Target words per minute after cut | 160 to 190 |
-
+| Breath to keep | 0.1 to 0.2 s |
+| Punch-in | 15 to 25 percent |
+| Punch-ins in a row | 2 max, then b-roll or angle |
+| B-roll insert | 1.5 to 3 s |
 ## Examples
 
-Before and after on one passage:
-
-Raw (11 s): "So, um, the thing about, like, pricing is, okay let me start over. The thing about pricing is that most people undercharge because they, uh, they're scared. They're scared of losing the client."
-
-Cut (6 s): "The thing about pricing is that most people undercharge because they're scared of losing the client."
-
-Cover plan: full shot on "The thing about pricing," punch-in on "undercharge," b-roll of an invoice on "scared of losing the client."
-
-Two-angle version: A-cam for the first sentence, B-cam for the second. No punch-ins needed.
+- Raw, 11 seconds. "So, um, the thing about, like, pricing is, okay let me start over. The thing about pricing is that most people undercharge because they, uh, they're scared. They're scared of losing the client."
+- Cut, 6 seconds. "The thing about pricing is that most people undercharge because they're scared of losing the client." Full shot on the first clause, punch-in on "undercharge," b-roll of an invoice on "losing the client."
 
 ## Do it in Vyra
 
@@ -58,22 +48,17 @@ Two-angle version: A-cam for the first sentence, B-cam for the second. No punch-
 
 ## Common mistakes
 
-- Cutting every pause to zero. The result sounds robotic and viewers feel rushed without knowing why.
-- Punch-ins on every cut. By the fourth one the viewer notices the pattern.
-- Cutting inside a word to save a syllable. It is always audible.
-- Keeping a flubbed take because the framing was better. Speech wins.
-- Mismatched audio levels between takes. Normalize before you cut.
+- Cutting every pause to zero. It sounds robotic.
+- A punch-in on every cut. People notice by the fourth.
+- Cutting inside a word. Always audible.
 
 ## FAQ
 
-**Jump cuts or punch-ins, which is better?**
-Neither on its own. Alternate them and add b-roll or a second angle. Variety is what hides the cut.
+**How much will I cut?**
+A 10 minute recording usually becomes 3 to 5 minutes. For short-form, 8 minutes becomes 45 to 60 seconds.
 
-**How much should I expect to cut?**
-A 10 minute raw recording usually becomes 3 to 5 minutes after removing pauses, filler, and retakes. For short-form, expect 8 minutes to become 45 to 60 seconds.
-
-**Can I cut a talking head without b-roll?**
-Yes. Use two camera angles or a punch-in plus caption emphasis. B-roll makes it easier, not mandatory.
+**Can I do it without b-roll?**
+Yes. Two angles, or punch-ins plus caption emphasis.
 
 ## Related
 

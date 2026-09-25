@@ -246,9 +246,9 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
         )}
 
         <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
-          <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Try it on your footage</h2>
+          <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Try it on your own footage</h2>
           <p className="mb-5 text-[15px] text-[var(--foreground-muted)]">
-            Upload raw footage, describe the edit, and get a first cut in minutes. Free to start.
+            Upload your clips, say what you want, get the edit back. Free to start.
           </p>
           <a
             href="https://app.usevyra.com/signup"

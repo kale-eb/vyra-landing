@@ -1,16 +1,13 @@
 ---
 title: 'Vyra vs Clipchamp (2026): which AI video editor should you use?'
-description: >-
-  Clipchamp is the free, simple editor built into Windows, fine for trims and
-  captions; Vyra is the editor where an AI does the cut for you, which is the
-  difference between doing a small job by hand...
+description: Clipchamp is the free, simple editor built into Windows, fine for trims and captions. Vyra is the editor where an AI does the cut for you from a sentence.
 updated: '2026-09-23'
 category: compare
 ---
 
-**Clipchamp is the free, simple editor built into Windows, fine for trims and captions; Vyra is the editor where an AI does the cut for you, which is the difference between doing a small job by hand and having a large job done from a sentence.**
+**Clipchamp is the free, simple editor built into Windows, fine for trims and captions. Vyra is the editor where an AI does the cut for you from a sentence.**
 
-Clipchamp ships with Windows and runs in a browser. It has auto-captions, an auto-compose feature that assembles clips to a template, a stock library, and text-to-speech. It is the right tool for a quick trim. It has no understanding of your footage and no external AI connection. Vyra transcribes and describes every scene, then lets its built-in agent, or your Claude or ChatGPT over MCP, edit from a description.
+Clipchamp ships with Windows and runs in a browser. It has auto captions, an auto-compose feature that fits clips to a template, stock media, and text-to-speech. Good for a quick trim. It does not understand your footage and has no external AI connection. Vyra transcribes and describes every scene, then its built-in agent, or your Claude or ChatGPT over MCP, edits from a description.
 
 ## At a glance
 
@@ -31,19 +28,19 @@ Clipchamp ships with Windows and runs in a browser. It has auto-captions, an aut
 
 ## Where Clipchamp is stronger
 
-- Already installed on Windows and free.
-- Simple enough for a first-time editor to trim and caption in minutes.
+- Already on Windows and free.
+- Simple enough to trim and caption in minutes the first time.
 - Screen and webcam recording built in.
 
 ## Where Vyra is stronger
 
 - The AI edits. Long footage becomes a finished short from one prompt.
-- Footage search by meaning, not by scrubbing.
+- Footage search by meaning instead of scrubbing.
 - Custom graphics, reference matching, beat sync, and MCP for your own assistant.
 
 ## Choose Vyra if
 
-- Your raw footage is longer than your final video by a lot.
+- Your raw footage is much longer than the final video.
 - You want captions, cuts, and graphics in one go.
 - You want to describe a look or point at a reference.
 
@@ -57,7 +54,7 @@ Clipchamp ships with Windows and runs in a browser. It has auto-captions, an aut
 
 Task: turn a 10-minute screen tutorial into a 60-second short.
 
-In Clipchamp: record or import, scrub for the key section, split and delete, auto-caption, export.
+In Clipchamp you record or import, scrub for the key section, split and delete, auto caption, export.
 
 In Vyra:
 ```
@@ -65,9 +62,6 @@ Make a 60-second 9:16 short from this screen tutorial. Keep only the part where 
 ```
 
 ## FAQ
-
-**Is Clipchamp free?**
-A free tier ships with Windows. Paid tiers add features. Check Microsoft's site for current terms.
 
 **Can Clipchamp use ChatGPT or Claude?**
 No. It has no MCP or external AI integration.

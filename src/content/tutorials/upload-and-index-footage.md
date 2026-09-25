@@ -6,43 +6,43 @@ category: tutorial
 video: TODO
 ---
 
-**Upload everything from the shoot into one project. Vyra transcribes all speech with timestamps, analyzes every scene visually, and generates thumbnails, so by the time you type your first prompt the agent already knows what is in each clip.**
+**Upload everything from the shoot into one project. Vyra transcribes the speech, looks at every scene, and makes thumbnails. By the time you type your first prompt it already knows what's in each clip.**
 
 ## Before you start
 
-- Keep the original files from your phone or camera. Do not pre-trim or re-encode.
-- Put one shoot or one video idea in one project. Mixing unrelated footage makes selection worse.
-- Have your reference video ready if you plan to match a style; it is attached separately from footage.
+- Keep the original files from your phone or camera. Don't pre-trim or re-encode.
+- One shoot or one video idea per project.
+- Have your reference video ready if you want to match a style. It goes in separately.
 - On a slow connection, upload the longest clips first.
 
 ## Steps
 
-1. **Create a project.** From the dashboard, choose New project and give it a name you will recognize later, such as "studio vlog sept 24".
-2. **Drag your clips into the footage library.** The library tab sits next to the agent chat. Drop all files at once; MP4, MOV, HEVC, H.264, and ProRes are accepted.
-3. **Wait for processing.** Each clip shows an upload status and then a processing status. Processing transcribes speech, describes scenes, builds thumbnails, and makes a 720p proxy for smooth editing (the original is used on export). Transcription and scene analysis run automatically after upload; a 35-minute file indexed in under 2 minutes in a side-by-side test.
-4. **Open a clip in the library.** Read the summary Vyra wrote and scrub the thumbnails. This is what the agent sees.
-5. **Ask for a map.** In the agent chat, ask it to summarize the footage before you edit anything. Correct anything it got wrong, such as who is who.
-6. **Attach a reference, if you have one.** Add it in the reference area, not the footage library, so the agent does not put it on the timeline.
+1. **Create a project** and name it something you'll recognize later, like "studio vlog sept 24".
+2. **Drag your clips into the footage library.** MP4, MOV, and common phone formats work. (TODO confirm HEVC and ProRes)
+3. **Wait for processing.** Each clip shows upload, then processing, then ready. Processing transcribes speech, describes scenes, builds thumbnails, and makes a 720p proxy for editing. The original is used on export. A 35-minute file indexed in under 2 minutes in a side-by-side test.
+4. **Open a clip in the library.** Read the summary and scrub the thumbnails. That's what the agent sees.
+5. **Ask for a map.** Have the agent summarize the footage before you edit. Fix anything wrong, like who's who.
+6. **Attach a reference, if you have one,** in the Reference tab, not the footage library.
 
 ## The prompt to use
 
 ```
-Summarize what is in my footage: how many clips, where they were shot, who is in them, which ones have me talking to camera, and the three strongest moments with timestamps. Do not edit anything yet.
+Summarize what is in my footage. How many clips, where they were shot, who is in them, which ones have me talking to camera, and the three strongest moments with timestamps. Do not edit anything yet.
 ```
 
 ## Check the result
 
-- Every clip shows a ready status and a thumbnail strip.
-- The summary names the right people, places, and topics. Fix names now so captions spell them correctly later.
-- Search the library by content, such as "canvas" or "night street", and confirm the right clips come back.
+- Every clip shows ready with a thumbnail strip.
+- The summary gets the people, places, and topics right. Fix names now so captions spell them right later.
+- Search the library by content, like "canvas" or "night street," and see the right clips come back.
 
 ## FAQ
 
 **Can I add more footage later?**
-Yes. New clips are processed the same way and become searchable as soon as they finish.
+Yes. New clips get processed the same way.
 
 **Does silent b-roll get analyzed?**
-Yes. Scene analysis runs on the picture. Transcription is skipped for clips with no speech.
+Yes. Scene analysis runs on the picture. Transcription is skipped when there's no speech.
 
 ## Related
 

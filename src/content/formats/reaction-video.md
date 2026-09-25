@@ -1,9 +1,8 @@
 ---
 title: 'Reaction video: how to shoot, edit, and prompt it'
 description: >-
-  A reaction video shows a creator watching a clip and responding to it in real
-  time, with the source and the reaction both visible so the viewer experiences
-  it alongside them.
+  A reaction video shows you watching a clip and responding to it, with the
+  clip and your face both on screen.
 updated: '2026-09-24'
 category: formats
 subcategory: talking-head
@@ -18,68 +17,69 @@ difficulty: beginner
 gear: 'phone or webcam, the clip you''re reacting to'
 ---
 
-**A reaction video shows a creator watching a clip and responding to it in real time, with the source and the reaction both visible so the viewer experiences it alongside them.**
+**A reaction video shows you watching a clip and responding to it, with the clip and your face both on screen.**
+
+Your face is the product. The clip is just the excuse.
 
 ## At a glance
 
 | | |
 | --- | --- |
 | Best for | Commentary channels, expert breakdowns, entertainment |
-| Hook style | Your biggest reaction shown first, then rewind to the start |
-| Pacing | Source plays, pause for reaction, resume |
-| Caption style | Captions on your speech only, not the source |
+| Hook style | Your biggest reaction first, then rewind to the start |
+| Pacing | Clip plays, pause, react, resume |
+| Caption style | Captions on your speech only |
 | Music | None |
-| Shot list | Continuous take of you watching. The source clip. Optional close-up for the big reaction. |
-| Common mistakes | Watching silently for 20 seconds. Source audio drowning your voice. Reacting to the whole thing instead of the best 3 moments. |
+| Shot list | One continuous take of you watching. The source clip. A close-up for the big moment. |
+| Common mistakes | Watching silently for 20 seconds. Source audio over your voice. Reacting to all of it instead of the best 3 moments. |
 
 ## Structure
 
-- 0-3s: the peak reaction, cold open
-- 3-8s: "okay let's go back", context on what you're watching
+- 0-3s: your peak reaction, cold open
+- 3-8s: "okay let's go back", what you're watching
 - 8-60s: 2-4 pause-and-react beats
-- 60-75s: your overall verdict
-- 75-80s: what to react to next
+- 60-75s: your verdict
+- 75-80s: what you'll react to next
 
 ## How to shoot it
 
-- Record your face and screen at the same time so the sync is exact.
-- Watch the source for the first time on camera if the format is genuine reaction.
+- Record your face and the screen at the same time so sync is exact.
+- If it's a first-time reaction, actually watch it for the first time on camera.
 - Pause the source when you want to talk. Don't talk over it.
-- Keep your face large. The reaction is the product.
-- Record 10 seconds of you after the clip ends for the verdict.
+- Keep your face big in frame.
+- Record 10 seconds after the clip ends for the verdict.
 
 ## How to edit it
 
-- Cut every stretch where you watch without saying anything.
-- Show your peak moment first as the hook, then restart.
-- Layout: source in the top 60%, you in the bottom 40%, or picture-in-picture.
-- Duck the source audio under your voice by 10-12 dB.
-- Caption your speech only, positioned in your section of the frame.
+- Cut every stretch where you watch and say nothing.
+- Put your peak moment first, then restart.
+- Source on the top 60%, you on the bottom 40%, or picture-in-picture.
+- Source audio 10-12 dB under your voice.
+- Caption your speech only, in your part of the frame.
 - Cut on your reactions, not on the source's cuts.
 
 ## Prompt it in Vyra
 
-> This is a 12-minute reaction recording. Cut it down to 60 seconds: keep the 3 biggest reactions and the moments right before them. Put the source clip on top and my face on the bottom. Open the video on my loudest laugh, then go back to the beginning.
+> This is a 12-minute reaction recording. Cut it to 60 seconds. Keep the 3 biggest reactions and the moments right before them. Source clip on top, my face on the bottom. Open on my loudest laugh, then go back to the beginning.
 
 > Remove every part where I'm just watching and not talking. Lower the source audio under my voice and caption only what I say.
 
 ## Variations
 
-- Expert reaction: pause to explain, more teaching than laughing.
-- First-time reaction: no edits on your face, honesty is the point.
-- Rapid-fire: 5 clips, 10 seconds of reaction each.
-- Rewatch reaction: react to your own old content.
+- Expert reaction, pause to explain, more teaching than laughing.
+- Rapid fire, 5 clips, 10 seconds of reaction each.
+- Rewatch, react to your own old videos.
 
 ## FAQ
 
-**Can I use the source clip?**
-Commentary and transformation help, but keep source portions short and add real commentary. Follow each platform's rules on reused content.
+**Can I use the clip?**
+Keep source portions short and add real commentary. Check each platform's rules on reused content.
 
-**How long should the source play before I talk?**
-No more than 5-8 seconds without you saying something. Silence is where viewers leave.
+**How long can the source play before I talk?**
+5-8 seconds max. Silence is where people leave.
 
-**Does the layout matter?**
-Yes. Your face should never be smaller than a third of the frame in vertical.
+**Does layout matter?**
+Yes. In vertical, your face should never be smaller than a third of the frame.
 
 ## Related
 

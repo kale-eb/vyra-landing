@@ -5,30 +5,30 @@ updated: 2026-09-24
 category: answers
 ---
 
-**Modern AI speech transcription is typically 95 to 98 percent word-accurate on clean, single-speaker audio recorded close to the mic, which means one or two wrong words per hundred. Accuracy typically drops to 85 to 92 percent with background noise, heavy accents, overlapping speakers, or a phone mic across the room. Names, brand terms, and technical jargon are the most common misses. (TODO: replace with Vyra's measured number from the 20-clip test.)**
+**Modern AI transcription is typically 95 to 98 percent word-accurate on clean, single-speaker audio recorded close to the mic. That's one or two wrong words per hundred. It typically drops to 85 to 92 percent with background noise, heavy accents, overlapping speakers, or a phone mic across the room. Names, brand terms, and jargon are the most common misses. (TODO: replace with Vyra's measured number from the 20-clip test.)**
 
 ## Why
 
-- **Audio quality is the biggest factor.** A lav mic 15 cm from the mouth beats a phone across a kitchen. Distance and echo cost more accuracy than any model difference.
-- **Vocabulary the model has not seen.** Product names, handles, and slang get replaced with the nearest common word. "Gesso" becomes "guess so."
-- **Overlap.** Two people talking at once produces merged or dropped words.
-- **Pace.** Very fast speech and mumbled endings lose word boundaries.
-- **Timestamps versus words.** Even when words are right, caption timing can drift if the model groups phrases loosely. Word-level timestamps fix this.
+- Audio quality is the biggest factor. A lav mic 15 cm from the mouth beats a phone across a kitchen.
+- Words the model hasn't seen get replaced with the nearest common word. "Gesso" becomes "guess so."
+- Two people talking at once produces merged or dropped words.
+- Very fast speech and mumbled endings lose word boundaries.
+- Even when the words are right, caption timing can drift if phrases are grouped loosely. Word-level timestamps fix this.
 
 ## What to do about it
 
-1. **Record closer.** Halving mic distance improves accuracy more than any setting.
-2. **Kill the noise before you shoot.** Fans, traffic, music playing in the room.
-3. **Tell the agent your vocabulary.** "My product is called Vyra, spelled V-Y-R-A. My handle is sulansart."
-4. **Proofread names only.** Skim for capitalized words and numbers. That is where 80 percent of errors sit.
-5. **Fix by pointing.** "At 0:12 the caption should say gesso" is faster than re-reading everything.
+1. **Record closer.** Halving mic distance helps more than any setting.
+2. **Kill the noise before you shoot.** Fans, traffic, music in the room.
+3. **Tell the agent your vocabulary.** "My product is called Vyra, spelled V-Y-R-A."
+4. **Proofread names and numbers only.** That's where most errors are.
+5. **Fix by pointing.** "At 0:12 the caption should say gesso."
 
 ## Do it in Vyra
 
-Vyra transcribes every word with word-level timestamps on upload. Captions are generated from that transcript.
+Vyra transcribes every word with word-level timestamps on upload. Captions come from that transcript.
 
 ```
-Caption the whole video in 3-5 word phrases, bold white, lower third. Spellings to use: Vyra, sulansart, gesso, underpainting. Flag any word you were unsure about with a list of timestamps.
+Caption the whole video in 3-5 word phrases, bold white, lower third. Spellings to use are Vyra, sulansart, gesso, underpainting. Flag any word you were unsure about with a list of timestamps.
 ```
 
 ```
@@ -37,14 +37,14 @@ At 0:12 the caption should say "gesso" not "guess so". At 0:41 it should say "Vy
 
 ## FAQ
 
-**Is 95 percent good enough for captions?**
-For most social video, yes, after a 2-minute proofread of names and numbers. For legal or medical content, have a human review every line.
+**Is 95 percent good enough?**
+For most social video, yes, after a 2-minute proofread of names and numbers. For legal or medical content, have a person review every line.
 
 **Do accents lower accuracy?**
-Somewhat. Clear audio matters more than accent. A well-recorded accented speaker transcribes better than a native speaker across a noisy room.
+Somewhat. Clear audio matters more. A well-recorded accented speaker transcribes better than a native speaker across a noisy room.
 
 **Can I edit the transcript directly?**
-Yes. Correct a caption in Vyra by telling the agent the timestamp and the right word, or edit the caption item on the timeline.
+Yes. Tell the agent the timestamp and the right word, or edit the caption on the timeline.
 
 ## Related
 

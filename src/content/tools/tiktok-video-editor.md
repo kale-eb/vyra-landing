@@ -1,6 +1,6 @@
 ---
 title: "TikTok video editor you drive by describing the edit"
-description: "Vyra edits real footage for TikTok from a plain-language brief: hook first, tight cuts, word-by-word captions, beat-synced music, and a 1080p export preset for the platform."
+description: Vyra edits real footage for TikTok from a plain description. Hook first, tight cuts, word-by-word captions, music on the beat, 1080p preset.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,14 +12,14 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**A TikTok editor has one job: make a hook land in the first two seconds and keep the cuts moving. Vyra does that from your footage and your description, not a template, and exports with a preset sized for TikTok and Reels.**
+**A TikTok editor has one job. Make the hook land in the first two seconds and keep the cuts moving. Vyra does that from your footage and your description, then exports with a preset sized for TikTok and Reels.**
 
 ## How it works
 
-1. Upload the footage and, if you have one, the sound.
-2. Describe the video: format, length, the hook line or shot, what to cut, caption style, music behavior.
-3. The agent builds it on the timeline, captions it, and places text inside the safe zone.
-4. Iterate one change at a time until it reads right without sound.
+1. Upload the footage and the sound, if you have one.
+2. Describe the video. Format, length, the hook line or shot, what to cut, caption style, music.
+3. The agent builds it, captions it, and keeps text inside the safe zone.
+4. Fix one thing at a time until it reads right with the sound off.
 5. Export with the Instagram/TikTok preset.
 
 ## What you can control
@@ -27,10 +27,10 @@ facts:
 | Setting | Options |
 | --- | --- |
 | Format | Talking head, UGC hook and demo, relatable, story time, montage, and more |
-| Hook | Quoted line or described shot in the first 1 to 2 seconds |
-| Pace | Pause thresholds, cut density, pattern interrupts you describe |
-| Captions | Word-by-word, highlight, or phrase; emphasis words enlarged |
-| Sound | Trending audio you upload, original speech, sound effects from Freesound |
+| Hook | A quoted line or a described shot in the first 1 to 2 seconds |
+| Pace | Pause threshold, cut density, pattern interrupts you describe |
+| Captions | Word-by-word, highlight, or phrase, with emphasis words bigger |
+| Sound | A sound you upload, original speech, sound effects from Freesound |
 | Look | Effects by category, or a reference video's style |
 
 ## Prompts to paste
@@ -49,23 +49,20 @@ Remove every zoom and transition you added. Straight cuts only.
 
 ## When to use something else
 
-- You want TikTok's own effects, trending templates, and in-app sounds library. CapCut is TikTok's editor and has that catalog built in.
-- You are editing entirely on your phone. Vyra is browser-based.
-- You need to post directly from the editor with scheduling. Vyra exports the file; scheduling lives elsewhere.
+- You want TikTok's own effects, trending templates, and sounds library. That's CapCut.
+- You're editing entirely on your phone. Vyra is browser-based.
+- You need to post and schedule from the editor. Vyra exports the file.
 
 ## FAQ
 
 **Does the export match TikTok's specs?**
-The Instagram/TikTok preset exports 1080p vertical MP4 at 20 Mbps, which uploads cleanly to both.
+The Instagram/TikTok preset gives you 1080p vertical MP4 at 20 Mbps.
 
 **Can it use a trending sound?**
-Upload the sound you have rights to use and ask for the cut to follow its beat. Vyra does not host a trending sounds library.
+Upload a sound you have rights to and ask for the cut to follow its beat. Vyra doesn't host a sounds library.
 
 **Will the captions clear the TikTok UI?**
-Ask for captions in the lower third above the bottom safe area. The agent keeps them out of the overlay.
-
-**Can I run this from Claude or ChatGPT?**
-Yes. Over MCP the assistant gets the same tools and the same export presets.
+Ask for the lower third above the bottom safe area.
 
 ## Related
 

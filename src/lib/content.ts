@@ -32,7 +32,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Compare",
     title: "Vyra vs other video editors",
     description:
-      "Honest head-to-head comparisons of Vyra with CapCut, Descript, VEED, Opus Clip, Adobe, DaVinci Resolve, and more.",
+      "Vyra next to CapCut, Descript, VEED, Opus Clip, Adobe, DaVinci Resolve and others. Same footage, same brief.",
     schema: "Article",
   },
   alternatives: {
@@ -40,7 +40,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Alternatives",
     title: "Alternatives to popular video editors",
     description:
-      "Ranked alternatives for creators who want to edit real footage by describing the edit.",
+      "What to use instead of the editor you have now, if you want to describe edits instead of making them.",
     schema: "Article",
   },
   for: {
@@ -48,7 +48,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "For",
     title: "Vyra for creators, teams, and workflows",
     description:
-      "How YouTubers, vloggers, podcasters, marketers, founders, and Claude or ChatGPT users edit real footage with Vyra.",
+      "How different kinds of creators use Vyra, with the prompts they run most.",
     schema: "WebPage",
   },
   features: {
@@ -56,7 +56,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Features",
     title: "Vyra features",
     description:
-      "Footage understanding, AI captions, beat sync, motion graphics, reference style matching, and rough cuts from a description.",
+      "What Vyra can do with your footage, one feature per page.",
     schema: "WebPage",
   },
   formats: {
@@ -64,7 +64,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Formats",
     title: "Video formats: how to shoot, edit, and prompt each one",
     description:
-      "Talking head, storytelling, UGC, montage, vlog, tutorial, and more. Structure, shot list, edit notes, and the prompts to make it in Vyra.",
+      "One page per video format. How to shoot it, how to cut it, and the prompt to make it in Vyra.",
     schema: "HowTo",
   },
   "how-to": {
@@ -72,7 +72,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "How-to",
     title: "How-to guides for short-form video",
     description:
-      "Hooks, pacing, captions, cutting a talking head, framing, vlogging, motion graphics, audio, and music. Practical and specific.",
+      "Hooks, pacing, captions, framing, audio, music. Short guides with real numbers.",
     schema: "HowTo",
   },
   prompts: {
@@ -80,7 +80,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Prompts",
     title: "Prompt library for AI video editing",
     description:
-      "Copy-paste prompts for rough cuts, captions, reference matching, b-roll, beat sync, and more, plus how to prompt Vyra from Claude or ChatGPT.",
+      "Prompts you can paste into Vyra, from a first rough cut to captions and music.",
     schema: "Article",
   },
   answers: {
@@ -88,7 +88,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Answers",
     title: "Straight answers about AI video editing",
     description:
-      "Why editing takes so long, how accurate AI transcription is, whether AI can understand raw footage, and other questions with numbers.",
+      "Short answers to the questions people ask about AI editing.",
     schema: "Article",
   },
   tutorials: {
@@ -96,7 +96,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Tutorials",
     title: "Vyra tutorials",
     description:
-      "Step by step: upload footage, get a rough cut, add captions, match a reference, connect Claude or ChatGPT, export for TikTok.",
+      "Step by step in Vyra, from upload to export.",
     schema: "HowTo",
   },
   tools: {
@@ -104,7 +104,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Tools",
     title: "Video editing tools, one task each",
     description:
-      "Add subtitles, sync to a beat, generate motion graphics, remove silence, reframe to vertical, make podcast clips. Each page is one job and the prompts to do it.",
+      "One job per page. Captions, beat sync, motion graphics, silence removal, reframing, clips.",
     schema: "WebPage",
   },
   templates: {
@@ -112,7 +112,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Templates",
     title: "Vyra templates and styles",
     description:
-      "Project templates that give the agent structure (talking head, podcast, vlog) and styles that set type and color defaults.",
+      "Templates give the agent a structure. Styles set the fonts and colors.",
     schema: "WebPage",
   },
   glossary: {
@@ -120,7 +120,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "Glossary",
     title: "Video editing glossary",
     description:
-      "Short definitions of editing terms, each with an example and how it applies in Vyra.",
+      "Editing terms in one sentence each, with how they show up in Vyra.",
     schema: "DefinedTerm",
   },
 };

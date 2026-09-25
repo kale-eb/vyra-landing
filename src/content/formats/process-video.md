@@ -1,9 +1,8 @@
 ---
 title: 'Process video: how to shoot, edit, and prompt it'
 description: >-
-  A process video shows how a piece gets made at a pace the viewer can follow,
-  mixing real-time detail shots with sped-up stretches and a short voiceover or
-  captions that explain the decisions.
+  A process video shows how a piece gets made at a pace you can follow, mixing
+  real-time close-ups with sped-up stretches and a short voiceover.
 updated: '2026-09-24'
 category: formats
 subcategory: art-and-process
@@ -19,44 +18,46 @@ gear: 'phone, tripod, a second phone or angle for details, lav mic if narrating'
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**A process video shows how a piece gets made at a pace the viewer can follow, mixing real-time detail shots with sped-up stretches and a short voiceover or captions that explain the decisions.**
+**A process video shows how a piece gets made at a pace you can follow, mixing real-time close-ups with sped-up stretches and a short voiceover.**
+
+My "forest" video with the preserved flowers is one. Open on the weirdest step.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Teaching by showing, building trust with collectors, explaining an unusual technique |
-| Hook style | The strangest step first ("attaching preserved flowers felt like gambling") |
-| Pacing | Alternates real time (2-4s) and 10x-30x, never one speed for long |
-| Caption style | 3-5 word phrases over voiceover, or short on-screen notes if silent |
-| Music | Low, under the voice; can drop out during a real-time detail |
-| Shot list | Locked wide of the whole surface. 5-8 handheld close-ups of hands and material. One shot of the finished piece. One shot of the material before it is used. |
-| Common mistakes | All sped up with no real-time moments. Explaining every step. Close-ups out of focus. |
+| Best for | Teaching by showing, building trust with collectors, an unusual technique |
+| Hook style | The strangest step first, "attaching preserved flowers felt like gambling" |
+| Pacing | Real time (2-4s) then 10x-30x, back and forth |
+| Caption style | 3-5 word phrases over the voice, or short notes if silent |
+| Music | Low under the voice, can drop out on a real-time detail |
+| Shot list | Locked wide of the surface. 5-8 handheld close-ups of hands and material. The finished piece. The material on its own. |
+| Common mistakes | All sped up, no real-time moments. Explaining every step. Blurry close-ups. |
 
 ## Structure
 
-- 0-3s: the weirdest or riskiest step, mid-action
-- 3-10s: what the piece is and what you are trying
-- 10-50s: three or four steps, each a fast stretch then a real-time detail
-- 50-70s: the moment it could have failed
-- 70-90s: finished piece, one line about the result
+- 0-3s: the riskiest step, mid-action
+- 3-10s: what the piece is and what you're trying
+- 10-50s: three or four steps, fast stretch then a real-time detail
+- 50-70s: the moment it could have gone wrong
+- 70-90s: the finished piece, one line
 
 ## How to shoot it
 
-- Two angles: one locked wide, one handheld for details. Swap the phone between them if you only have one.
-- Shoot each close-up for at least 8 seconds so there is room to cut.
-- Get the material on its own: the flowers, the pigment, the paper. Viewers want to see what it is.
-- Record narration after, in a quiet room, watching the rough cut. It will be shorter and clearer than talking while working.
-- Keep hands in frame and moving. Static hands read as paused video.
+- Two angles. Locked wide, handheld for details. Swap the phone if you only have one.
+- Each close-up at least 8 seconds so there's room to cut.
+- Film the material on its own. The flowers, the pigment, the paper.
+- Record narration after, watching the rough cut. It comes out shorter and clearer.
+- Keep hands moving in frame.
 
 ## How to edit it
 
 - Cut the voiceover first, then lay footage to it.
-- Real-time detail on every claim: if you say "the petals crumble," show a petal crumbling.
-- Speed the in-between work 10x to 30x, never above, so hands stay readable.
+- Real-time detail on every claim. Say "the petals crumble", show a petal crumbling.
+- 10x to 30x on the in-between work. Faster and hands stop reading.
 - Captions in short phrases, off during the reveal.
-- Music ducked under the voice, up slightly during sped-up stretches.
-- The finished piece needs a clean, still shot, not a frame from the timelapse.
+- Music under the voice, up a little on the sped-up parts.
+- The finished piece needs a clean still shot, not a frame from the timelapse.
 
 ## Prompt it in Vyra
 
@@ -68,21 +69,20 @@ example: 'https://www.instagram.com/sulansart'
 
 ## Variations
 
-- Material-first: the piece opens on the unusual material, not the canvas.
-- Failure process: the step that went wrong and how it was fixed.
-- Silent process: no voice, on-screen notes only, ambient sound up.
-- Two-session process: day one and day two, with a date card between.
+- Material first, open on the unusual material.
+- Failure process, the step that went wrong and the fix.
+- Silent process, on-screen notes only, ambient sound up.
 
 ## FAQ
 
 **Voiceover or captions only?**
-Voiceover if you can record it cleanly afterwards. Captions only if the sound of the process is part of the appeal.
+Voiceover if you can record it cleanly after. Captions only if the sound of the process is the appeal.
 
-**How many steps should I show?**
-Three or four. More than that and each one gets too little time to register.
+**How many steps?**
+Three or four.
 
-**Can Vyra find the detail shots for me?**
-Yes. It sees what is in each clip, so "cut to the shot where the brush touches the gold leaf" works without timestamps.
+**Can Vyra find the detail shots?**
+Yes. "Cut to the shot where the brush touches the gold leaf" works without timestamps.
 
 ## Related
 

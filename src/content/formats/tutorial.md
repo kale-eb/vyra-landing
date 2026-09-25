@@ -1,8 +1,8 @@
 ---
 title: 'Tutorial video: how to shoot, edit, and prompt it'
 description: >-
-  A tutorial video teaches one skill through numbered steps, showing each step
-  being done on screen with a label, so the viewer can pause and copy it.
+  A tutorial teaches one skill in numbered steps, each one shown on screen with
+  a label so the viewer can pause and copy it.
 updated: '2026-09-24'
 category: formats
 subcategory: educational
@@ -17,7 +17,9 @@ difficulty: intermediate
 gear: 'phone or screen recorder, the thing you''re teaching, a step list'
 ---
 
-**A tutorial video teaches one skill through numbered steps, showing each step being done on screen with a label, so the viewer can pause and copy it.**
+**A tutorial teaches one skill in numbered steps, each one shown on screen with a label so the viewer can pause and copy it.**
+
+Show the result first. Then don't skip any steps, even the ones "everyone knows".
 
 ## At a glance
 
@@ -25,62 +27,61 @@ gear: 'phone or screen recorder, the thing you''re teaching, a step list'
 | --- | --- |
 | Best for | Software, crafts, cooking, fitness, editing, any "how to" |
 | Hook style | The finished result plus "here's how in N steps" |
-| Pacing | 8-15 seconds per step, no step skipped |
+| Pacing | 8-15 seconds per step |
 | Caption style | Step labels plus phrase captions |
 | Music | Neutral, low |
-| Shot list | Result shot. One clip per step, hands or screen visible. Face intro and outro (optional). Close-ups of tricky parts. |
-| Common mistakes | Skipping a step "everyone knows". Talking about the step instead of showing it. No result at the start. |
+| Shot list | The result. One clip per step, hands or screen big in frame. Face intro and outro if you want. Close-ups of the fiddly parts. |
+| Common mistakes | Skipping a step. Talking about the step instead of showing it. No result at the start. |
 
 ## Structure
 
 - 0-3s: the finished result
-- 3-8s: what you'll need, on screen as a list
-- 8-70s: steps, numbered, each shown and labeled
+- 3-8s: what you need, as a list on screen
+- 8-70s: the steps, numbered and labeled
 - 70-80s: the result again, plus one common mistake
 - 80-90s: what to try next
 
 ## How to shoot it
 
-- Do the task once off camera and write the steps.
-- Film each step as its own clip, hands or screen large in frame.
+- Do the task once off camera and write the steps down.
+- Film each step as its own clip, hands or screen big in frame.
 - Say the step number and name at the start of each clip.
-- Get a close-up of anything small or fiddly.
+- Close-up on anything small.
 - Film the result from two angles.
 
 ## How to edit it
 
 - Result first, 3 seconds.
-- Numbered label for each step, top of frame.
-- Cut all hesitation inside a step; keep the action continuous.
-- Zoom into the close-up on the tricky step.
-- Speed up repetitive actions 2-3x with a label saying so.
+- Numbered label at the top of each step.
+- Cut the hesitation inside a step, keep the action continuous.
+- Zoom in on the tricky step.
+- Speed up repetitive parts 2-3x with a label saying so.
 - Captions on all speech.
 
 ## Prompt it in Vyra
 
 > Turn this into a 75-second tutorial on adding captions. Show the final captioned video for the first 3 seconds, then each step in order with a numbered label at the top ("1. Upload", "2. Ask for captions", and so on). Cut pauses inside each step, zoom into the screen where I click, and speed up the parts where I'm waiting for processing. Phrase captions on my voice.
 
-> Add a "what you need" list on screen at 3 seconds: a phone, the footage, and a Vyra account.
+> Add a "what you need" list on screen at 3 seconds. A phone, the footage, and a Vyra account.
 
 > Make a horizontal 5-minute version for YouTube that keeps every step at full length.
 
 ## Variations
 
-- Micro tutorial: one tip, 15 seconds.
-- Screen tutorial: software only, no face.
-- Hands tutorial: crafts, cooking, top-down.
-- Mistake-first tutorial: show the common error, then the fix.
+- Micro tutorial, one tip, 15 seconds.
+- Screen tutorial, no face.
+- Mistake first, show the common error, then the fix.
 
 ## FAQ
 
 **How many steps?**
-Three to seven for short-form. Break longer processes into a series.
+Three to seven for short-form. Longer processes become a series.
 
 **Should I show my face?**
-Intro and outro only. During the steps, the screen or hands need the frame.
+Intro and outro only. The steps need the frame.
 
-**Can Vyra build the step labels from what I say?**
-Yes. It transcribes your speech, so when you say "step two, open the settings", it can place a matching label there.
+**Can Vyra make the step labels from what I say?**
+Yes. When you say "step two, open the settings", it can put that label there.
 
 ## Related
 

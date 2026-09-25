@@ -1,6 +1,6 @@
 ---
 title: "Vyra for streamers: turn VODs into clips, highlight reels, and Shorts"
-description: "Vyra turns multi-hour stream VODs into captioned clips, highlight reels, and vertical Shorts by searching the transcript and the visuals for the moments worth posting, then reframing them for each platform."
+description: "Vyra turns multi-hour VODs into captioned clips, highlight reels, and vertical Shorts by searching the transcript and the visuals for the moments worth posting."
 updated: 2026-09-24
 category: for
 facts:
@@ -12,51 +12,51 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**Clipping a stream is a search problem. Vyra transcribes the whole VOD and analyzes what is on screen, so "find the moment chat lost it" or "every clutch in the last hour" returns timestamps you can cut from in the same message.**
+**Clipping a stream is a search problem. Vyra transcribes the whole VOD and analyzes what's on screen, so "find the moment chat lost it" or "every clutch in the last hour" gives you timestamps you can cut from in the same message.**
 
 ## What you make
 
-- Vertical Shorts with facecam over gameplay: [/formats/podcast-clip](/formats/podcast-clip)
-- Highlight reels: [/formats/montage](/formats/montage)
-- Reaction clips: [/formats/talking-head](/formats/talking-head)
-- Stream recap and announcement videos: [/formats/explainer](/formats/explainer)
+- [Vertical Shorts](/formats/podcast-clip) with facecam over gameplay
+- [Highlight reels](/formats/montage)
+- [Reaction clips](/formats/talking-head)
+- [Recap and announcement videos](/formats/explainer)
 
 ## Your three most-used prompts
 
-Find and clip:
+**Find and clip**
 ```
-Find the five loudest reactions in this VOD, where I shout or laugh for more than two seconds. For each, cut a 30-second 9:16 clip that starts 8 seconds before the reaction. Put my facecam in the top third and the gameplay below. Word-by-word captions for my speech.
-```
-
-Highlight reel:
-```
-Build a 6-minute highlight reel from the VOD: the best plays and the funniest chat moments, in the order they happened. Add a short title card with the game name at the start. Keep the original audio, no music.
+Find the five loudest reactions in this VOD, where I shout or laugh for more than two seconds. For each, cut a 30-second 9:16 clip starting 8 seconds before the reaction. Facecam in the top third, gameplay below. Word-by-word captions for my speech.
 ```
 
-Reframe:
+**Highlight reel**
 ```
-Take the clip from 1:42:10 to 1:42:55 and make a 9:16 version. Crop the gameplay to the center of the action and keep the facecam on top. Add captions in yellow, bold, with a black outline.
+Build a 6-minute highlight reel from the VOD. Best plays and funniest chat moments, in the order they happened. Short title card with the game name at the start. Original audio, no music.
+```
+
+**Reframe**
+```
+Take the clip from 1:42:10 to 1:42:55 and make a 9:16 version. Crop the gameplay to the center of the action and keep the facecam on top. Captions in yellow, bold, black outline.
 ```
 
 ## A typical workflow
 
-1. Upload the VOD. Vyra transcribes it and analyzes the visuals.
-2. Ask for candidate moments by description. Review the list of timestamps.
+1. Upload the VOD.
+2. Ask for candidate moments by description. Review the timestamps.
 3. Cut clips from the ones you want.
 4. Reframe to 9:16 with a layout for facecam and gameplay.
 5. Export the batch.
 
 ## What Vyra does that matters for you
 
-- Long-file search by transcript and by what is on screen.
+- Long-file search by transcript and by what's on screen.
 - Layouts for facecam plus gameplay, including picture-in-picture and stacked grids.
 - Batch clips from one VOD in one conversation.
 - Bring your own Claude or ChatGPT over MCP if your editor already works that way.
 
 ## What it does not do
 
-- It does not record or capture your stream. Bring the VOD.
-- It does not read your chat log. Describe the moment or give a timestamp.
+- It doesn't record your stream. Bring the VOD.
+- It doesn't read your chat log. Describe the moment or give a timestamp.
 
 ## Example
 
@@ -65,10 +65,10 @@ Example creator: TODO
 ## FAQ
 
 **How long can the VOD be?**
-Long files are supported, but work in sections if the browser gets heavy. Ask for clips by time range.
+Long files work, but go in sections if the browser gets heavy. Ask for clips by time range.
 
 **Can it keep my overlay and alerts?**
-Yes. It edits the recorded frame as-is. Crop them out if you do not want them.
+Yes. It edits the recorded frame as-is. Crop them out if you don't want them.
 
 **Can a separate editor run it for me?**
 Yes. Share the project and they describe the clips they want.

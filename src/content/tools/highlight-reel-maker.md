@@ -1,6 +1,6 @@
 ---
 title: "Highlight reel maker: the best 30 seconds from hours of footage"
-description: "Vyra scans every clip's visual analysis and transcript, picks the most interesting moments by the rules you give, and cuts them to music with a fast-slow-fast rhythm."
+description: Vyra reads every clip's scene description and transcript, picks the most interesting moments by the rules you give, and cuts them to music.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,23 +12,23 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**A highlight reel compresses a day or a season into the moments that carry it. Vyra picks those moments from its per-scene analysis of every clip, using selection rules you state in plain language, then cuts them to a track.**
+**A highlight reel squeezes a day or a season into the moments that carry it. Vyra picks those from its scene descriptions of every clip, using rules you give in plain words, then cuts them to a track.**
 
 ## How it works
 
-1. Upload all the clips. Vyra thumbnails and analyzes each one for what is happening on screen.
-2. State the rules: length, how many moments, what to favor (faces, movement, wide shots), what to avoid.
+1. Upload all the clips. Each one gets a description of what's happening.
+2. State the rules. Length, how many moments, what to favor (faces, movement, wide shots), what to skip.
 3. The agent shortlists moments, orders them, and cuts to the beat if you gave a track.
-4. Review the list of chosen moments with timestamps and swap any you disagree with.
-5. Add a title card if you want one, then export.
+4. Look at the list of chosen moments and swap any you disagree with.
+5. Add a title card if you want, then export.
 
 ## What you can control
 
 | Setting | Options |
 | --- | --- |
-| Length | Any target, commonly 20 to 60 seconds |
-| Moment count | Number of clips to include |
-| Selection rules | Favor faces, motion, wide shots, specific people, specific locations |
+| Length | Any target, usually 20 to 60 seconds |
+| Moment count | How many clips to include |
+| Selection rules | Favor faces, motion, wide shots, specific people, specific places |
 | Rhythm | Fast-slow-fast, steady, or beat-driven |
 | Sound | Music, original ambience, or both with ducking |
 | Ending | Land on a hit, hold a final shot, or a title card |
@@ -49,23 +49,20 @@ Show me the list of moments you picked with timestamps before you cut.
 
 ## When to use something else
 
-- You want a fully automatic reel with no input at all. Some apps produce that from a phone camera roll; the result is generic. Vyra expects at least a length and a rule.
-- The footage is one long static shot. There are no highlights to find; cut it as a timelapse instead.
+- You want a fully automatic reel with zero input. Some phone apps do that from your camera roll. The result is generic. Vyra wants at least a length and a rule.
+- One long static shot. There's nothing to pick. Make it a timelapse instead.
 - You need licensed music included. Bring your own track.
 
 ## FAQ
 
-**How does it know what is interesting?**
-Every clip is analyzed for visual content on upload. The agent compares moments by what they show, readable action, and variety, then applies your rules.
+**How does it know what's interesting?**
+Every clip is described on upload. The agent compares moments by what they show and how much variety they add, then applies your rules.
 
 **Can I change one moment?**
-Yes. "Swap the third clip for the one where the cake comes out" works.
+Yes. "Swap the third clip for the one where the cake comes out."
 
 **Can it use my voice from the clips?**
 Yes. Keep original audio on the moments with speech and duck the music under them.
-
-**Does this work over MCP?**
-Yes. Claude, ChatGPT, or Cursor can inspect the footage inventory and build the reel.
 
 ## Related
 

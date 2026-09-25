@@ -1,6 +1,6 @@
 ---
 title: "Add subtitles to a video automatically from the transcript"
-description: "Vyra transcribes your video on upload and turns the transcript into styled subtitles you can restyle, restrict to a time range, or fix line by line."
+description: Vyra transcribes your video on upload and turns the transcript into subtitles you can restyle, limit to a time range, or fix word by word.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,15 +12,15 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**Adding subtitles in Vyra means uploading a video, letting the transcript generate automatically, and applying a caption style. No retyping, no timing by hand, and every word stays editable on the timeline.**
+**Upload a video, let the transcript generate, pick a caption style. No retyping, no timing by hand. Every word stays editable on the timeline.**
 
 ## How it works
 
-1. Upload the video. Vyra transcribes it with Deepgram, thumbnails it, and analyzes what is on screen while it processes.
-2. Open the Captions panel in the left sidebar or type "add subtitles to the whole video" in the chat.
-3. Pick an AI caption template, or scroll to Manual Captions and set your own font, size, color, stroke, and shadow.
-4. Set a time range if you only want subtitles on part of the video, then generate.
-5. Scrub the timeline, fix any word that came through wrong, and export.
+1. Upload the video. Vyra transcribes it and looks at what's on screen while it processes.
+2. Open the Captions panel, or type "add subtitles to the whole video" in the chat.
+3. Pick an AI caption template, or use Manual Captions to set your own font, size, color, stroke, and shadow.
+4. Set a time range if you only want subtitles on part of it.
+5. Fix any wrong words and export.
 
 ## What you can control
 
@@ -28,11 +28,11 @@ facts:
 | --- | --- |
 | Caption mode | AI template with emphasis detection, or manual |
 | Render style | Default, highlight active word, word-by-word, slide-up, slide-left |
-| Words per caption | Max words and max characters per caption |
+| Words per caption | Max words and max characters |
 | Line breaks | Break on punctuation, split on conjunctions |
 | Type | Font family, weight, size, color, fill, decoration, stroke, shadow |
 | Range | Whole video or a start and end time |
-| Export | MP4 H.264 up to 4K or WebM VP8 up to 1080p |
+| Export | MP4 up to 4K or WebM up to 1080p |
 
 ## Prompts to paste
 
@@ -41,32 +41,29 @@ Add subtitles to the whole video. Phrases of 3 to 5 words, white bold text with 
 ```
 
 ```
-Subtitle only the section from 0:00 to 0:45. Keep the text off my face and clear of the bottom 15 percent of the frame so the TikTok UI does not cover it.
+Subtitle only 0:00 to 0:45. Keep the text off my face and clear of the bottom 15 percent so the TikTok UI doesn't cover it.
 ```
 
 ```
-The caption at 0:12 should say "gesso", not "jesso". Fix that one and leave everything else as it is.
+The caption at 0:12 should say "gesso", not "jesso". Fix that one and leave everything else.
 ```
 
 ## When to use something else
 
-- You need subtitles as a separate SRT file for YouTube's caption track rather than burned in. Export from a tool that writes SRT, or ask Vyra to produce the transcript text and format it yourself (TODO confirm SRT export).
-- The audio is mostly music with no speech. There is nothing to transcribe, so use text overlays instead of subtitles.
-- You need translated subtitles in another language. Translation is not documented in Vyra's help docs, so a dedicated translation tool is safer for that step (TODO confirm).
+- You need an SRT file for YouTube's caption track instead of burned-in subtitles (TODO confirm SRT export).
+- The audio is all music, no speech. Use text overlays instead.
+- You need subtitles in another language. Translation isn't in Vyra's docs yet (TODO confirm).
 
 ## FAQ
 
 **Do I have to type anything?**
-No. The transcript is generated on upload. You only edit words the transcription got wrong.
+No. You only fix words the transcription got wrong.
 
 **Can I change the style after generating?**
-Yes. Captions are timeline items. Select them and change the font, color, or position, or ask the chat to restyle them.
+Yes. Select the captions and change the font, color, or position, or ask the chat.
 
-**Will subtitles cover the TikTok or Reels interface?**
-Only if you place them there. Ask for them in the lower third above the bottom 15 percent, or set the position manually.
-
-**Does this work with an external AI like Claude?**
-Yes. Over MCP, Claude, ChatGPT, or Cursor can read the transcript and add captions with the same controls.
+**Will subtitles cover the TikTok UI?**
+Only if you put them there. Ask for the lower third above the bottom 15 percent.
 
 ## Related
 

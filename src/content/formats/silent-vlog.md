@@ -1,9 +1,8 @@
 ---
 title: 'Silent vlog: how to shoot, edit, and prompt it'
 description: >-
-  A silent vlog shows a day or an activity with no talking, using ambient sound,
-  calm music, and short on-screen text to narrate, so the viewer relaxes into it
-  rather than being told about it.
+  A silent vlog shows a day or an activity with no talking. Ambient sound,
+  quiet music, and short text on screen do the narrating.
 updated: '2026-09-24'
 category: formats
 subcategory: vlog
@@ -17,43 +16,45 @@ difficulty: beginner
 gear: 'phone, good ambient sound, on-screen text'
 ---
 
-**A silent vlog shows a day or an activity with no talking, using ambient sound, calm music, and short on-screen text to narrate, so the viewer relaxes into it rather than being told about it.**
+**A silent vlog shows a day or an activity with no talking. Ambient sound, quiet music, and short text on screen do the narrating.**
+
+Tripod everything. Stillness is the whole look.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Calm lifestyle channels, studying, cooking, studio work, slow living |
-| Hook style | A quiet, beautiful shot with one line of text |
-| Pacing | 3-6 seconds per shot, slow and even |
-| Caption style | Short lowercase text, one line, occasional |
-| Music | Soft, lo-fi, ambient, or nothing but room sound |
-| Shot list | Static shots on a tripod. Hands doing things. Windows, light, steam. One establishing wide. A closing still. |
-| Common mistakes | Cutting too fast. Text too long. Music too loud over ambient sound. |
+| Best for | Calm lifestyle channels, studying, cooking, studio work |
+| Hook style | A quiet shot with one line of text |
+| Pacing | 3-6 seconds per shot, even |
+| Caption style | Short lowercase text, one line, now and then |
+| Music | Soft lo-fi or ambient, or just room sound |
+| Shot list | Static shots on a tripod. Hands doing things. Windows, light, steam. One wide. A closing still. |
+| Common mistakes | Cutting too fast. Text too long. Music over the ambient sound. |
 
 ## Structure
 
-- 0-4s: a still, quiet shot with the day's premise as text
+- 0-4s: a still shot with the day's premise as text
 - 4-30s: morning, few cuts
 - 30-60s: the activity, hands and details
-- 60-80s: a pause, one shot with no text
+- 60-80s: one shot with no text
 - 80-90s: evening, closing text
 
 ## How to shoot it
 
-- Tripod everything. Stillness is the aesthetic.
-- Record ambient sound: kettle, rain, pen on paper.
-- Shoot in soft light, near windows.
+- Tripod for everything.
+- Record the ambient sound. Kettle, rain, pen on paper.
+- Soft light near windows.
 - Hold each shot 10-15 seconds so the edit has room.
-- Film small moments, not big events.
+- Small moments, not big events.
 
 ## How to edit it
 
-- Long cuts, 3-6 seconds, on the natural end of an action.
+- 3-6 second cuts at the natural end of an action.
 - Ambient sound first, music quiet under it.
-- Text in lowercase, one short line, appears for 3 seconds, gone.
+- Lowercase text, one short line, on for 3 seconds.
 - No captions, no zooms, no transitions.
-- A consistent soft grade.
+- One soft grade.
 - End on a still with the last line of text.
 
 ## Prompt it in Vyra
@@ -64,21 +65,20 @@ gear: 'phone, good ambient sound, on-screen text'
 
 ## Variations
 
-- Study-with-me: one long static shot with a timer.
-- Cooking silent vlog: recipe steps as text.
-- Studio silent vlog: process of one piece.
-- Rainy day vlog: weather as the theme, ambient-heavy.
+- Study with me, one long static shot with a timer.
+- Cooking silent vlog, recipe steps as text.
+- Rainy day, ambient sound up, weather as the theme.
 
 ## FAQ
 
-**Is the music necessary?**
-No. Many silent vlogs use only ambient sound. If you add music, keep it under the room tone.
+**Do I need music?**
+No. Lots of silent vlogs are ambient only. If you add music, keep it under the room tone.
 
 **How much text?**
-Six to ten short lines in a 90-second video. Fewer is better.
+Six to ten short lines in 90 seconds. Fewer is better.
 
-**Can Vyra keep the pacing slow?**
-Yes. Tell it the cut length you want and it holds shots instead of defaulting to fast cuts.
+**Can Vyra keep it slow?**
+Yes. Tell it the cut length and it holds shots instead of cutting fast.
 
 ## Related
 

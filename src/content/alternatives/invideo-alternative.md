@@ -1,25 +1,22 @@
 ---
 title: Best InVideo alternatives in 2026 (for creators who edit real footage)
-description: >-
-  If you left InVideo because you have your own footage, Vyra is the alternative
-  built for that; if you still want script-to-video from stock, Canva and Runway
-  cover the generation side, and...
+description: If you left InVideo because you have your own footage, Vyra is built for that. If you still want script-to-video from stock, Canva and Runway cover generation.
 updated: '2026-09-23'
 category: alternatives
 ---
 
-**If you left InVideo because you have your own footage, Vyra is the alternative built for that; if you still want script-to-video from stock, Canva and Runway cover the generation side, and Descript or CapCut cover simple manual editing.**
+**If you left InVideo because you have your own footage, Vyra is the alternative built for that. If you still want script-to-video from stock, Canva and Runway cover the generation side. Descript or CapCut cover simple manual editing.**
 
 ## Why people look for an InVideo alternative
 
-- Stock fatigue. Videos assembled from stock clips look like other videos assembled from stock clips.
-- Your own footage is second-class. The workflow starts from a script, not from what you filmed.
+- Stock fatigue. Videos built from stock clips look like other videos built from stock clips.
+- Your own footage comes second. The workflow starts from a script, not from what you filmed.
 - Limited manual control after generation.
-- AI voice is not your voice, and audiences notice.
+- The AI voice is not your voice, and people notice.
 
 ## The alternatives
 
-1. **Vyra.** For creators who filmed something and want it edited by AI. Strengths: transcribed, scene-indexed footage edited from a plain-language brief or a reference video; custom motion graphics; MCP for your own Claude or ChatGPT. Limitation: does not generate stock scenes or AI voices.
+1. **Vyra.** For creators who filmed something and want it edited by AI. Strengths: transcribed, scene-indexed footage edited from a plain brief or a reference video; custom motion graphics; MCP for your own Claude or ChatGPT. Limitation: does not generate stock scenes or AI voices.
 
 2. **Canva.** For text-and-image videos with brand consistency. Strengths: brand kits, templates, huge element library. Limitation: weak on long real footage.
 
@@ -46,7 +43,7 @@ category: alternatives
 
 1. Keep your InVideo scripts. They make good briefs.
 2. Film the talking head or b-roll yourself and upload to Vyra.
-3. Turn the script into an edit instruction:
+3. Turn the script into an edit instruction.
 
 ```
 Cut my talking head to 60 seconds following this script's three points in order. When I say "scrubbing the timeline" show the screen recording for 3 seconds. Phrase captions, bold white, lower third. Light music under my voice. End on the shot where I hold up the finished piece.

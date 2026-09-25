@@ -1,54 +1,48 @@
 ---
 title: How to grow on TikTok as a creator in 2026
 description: >-
-  Growth on TikTok comes from watch time on the first video a stranger sees,
-  so the fastest lever is posting one repeatable format daily with a hook in
-  the first second, and letting the For You page find your audience.
+  TikTok grows on watch time from strangers. Post one repeatable format daily
+  with a hook in the first second and no dead air after it.
 updated: '2026-09-24'
 category: how-to
 level: beginner
-reading_time: 6 min
+reading_time: 2
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**Growth on TikTok comes from watch time on the first video a stranger sees. The algorithm shows each post to a small batch, measures how long they watch and whether they finish, and widens the batch if the numbers hold. So the fastest lever is not follower count. It is posting one repeatable format often enough that a stranger's first exposure is a video with a hook in the first second and no dead air after it.**
+**TikTok shows each post to a small batch of strangers, measures how long they watch, and widens the batch if the numbers hold. So follower count matters less than you'd think. What matters is posting one repeatable format often enough that a stranger's first video from you has a hook in the first second and no dead air after.**
 
 ## Why it matters
 
-TikTok distributes to non-followers by default, which means a 200-follower account and a 200k-follower account start each post from almost the same place. That is the opportunity. It also means every post is judged on its own, so a great video after ten weak ones still gets its shot.
+A 200 follower account and a 200k account start each post from almost the same place.
 
 ## The method
 
-1. **Pick one format and post it daily for 30 days.** Talking head, process video, vlog, or storytelling. One format means one editing pattern, which means you can actually sustain daily.
-2. **Front-load the hook.** First spoken word under half a second, first cut within 1.5 seconds, a text hook on screen. Retention is decided before second two.
-3. **Cut every pause.** Dead air is the main reason people swipe mid-video. Remove pauses over 0.4 seconds, fillers, and restarts.
-4. **Keep it under 45 seconds until you have data.** Shorter videos finish more often. Completion rate is a signal.
-5. **Read three numbers, ignore the rest.** Average watch time, completion rate, and the retention curve. See the analytics guide.
-6. **Re-cut before you re-shoot.** If a video underperforms, change the first 3 seconds and repost a variant before making something new.
-7. **Answer comments with videos.** The reply-with-video feature turns one viewer's question into the next post's hook.
+1. **One format, daily, for 30 days.** Talking head, process, vlog, or story. One format means one editing pattern you can actually keep up.
+2. **Front-load the hook.** First word under half a second, first cut inside 1.5 seconds, text on screen.
+3. **Cut every pause.** Dead air is why people swipe mid-video. Pauses over 0.4 seconds, fillers, restarts.
+4. **Under 45 seconds until you have data.** Shorter finishes more often.
+5. **Read three numbers.** Average watch time, completion, the retention curve.
+6. **Re-cut before you re-shoot.** Change the first 3 seconds and repost before making something new.
+7. **Answer comments with videos.** One viewer's question becomes the next hook.
 
 ## Rules of thumb
 
-| Metric | Target for a growing account |
+| Metric | Target |
 | --- | --- |
 | Posts per week | 5 to 7 |
-| Video length | 15 to 45 s |
-| Hook (first spoken word) | under 0.5 s |
-| Average watch time | typically above 50% of length |
-| Completion rate | typically above 30% on short videos |
-| Formats running at once | 1, then 2 |
+| Length | 15 to 45 s |
+| First spoken word | under 0.5 s |
+| Average watch time | typically above 50% |
+| Completion | typically above 30% on short videos |
+| Formats at once | 1, then 2 |
 
 ## Examples
 
-An art account posting a 30-second speed paint every day for a month will out-grow the same account posting one polished 2-minute video per week, because the daily account gets 30 shots at the For You page.
-
-A talking head account that cuts every pause and opens on a claim ("your captions are killing your retention") will typically double average watch time over the same take left uncut.
-
-Sulan grew @sulansart to 65k followers on painting process and vlog content, posting formats she could repeat rather than one-offs.
+- A 30 second speed paint every day for a month beats one polished 2 minute video a week. The daily account gets 30 shots at the For You page.
+- I grew @sulansart to 65k on painting process and vlog content by posting formats I could repeat, not one-offs.
 
 ## Do it in Vyra
-
-Copy and adapt:
 
 ```
 Cut this into a 30-second TikTok. Open on the strongest claim I make, cut every pause over 0.4 seconds, all fillers and restarts. Add 3-5 word captions, white, lower third. No music.
@@ -64,22 +58,18 @@ This is a reply to a comment. Put the comment screenshot in the top third for th
 
 ## Common mistakes
 
-- Posting three formats in a week and learning nothing about any of them.
-- Leaving pauses in because "it feels more natural." Viewers do not wait.
-- Reading follower count instead of watch time.
-- Re-shooting a video that only needed a new first 3 seconds.
-- Stopping at day 12 of a 30-day run.
+- Three formats in a week and learning nothing about any of them.
+- Leaving pauses in because it feels natural. Viewers don't wait.
+- Watching follower count instead of watch time.
+- Stopping at day 12 of a 30 day run.
 
 ## FAQ
 
-**How long until I see growth?**
-Typically 3 to 6 weeks of daily posting one format before a video breaks out. Most accounts quit before then.
+**How long until it works?**
+Usually 3 to 6 weeks of daily posting before a video breaks out. Most people quit before then.
 
 **Do hashtags matter?**
-Barely. Three relevant ones is fine. The hook and retention do the work.
-
-**Should I post the same video on Reels and Shorts?**
-Yes, without the TikTok watermark. See the cross-posting guide.
+Barely. Three relevant ones is fine.
 
 ## Related
 

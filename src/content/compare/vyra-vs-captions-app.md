@@ -1,13 +1,13 @@
 ---
 title: "Vyra vs Captions app (2026): which AI video editor should you use?"
-description: "Captions is a mobile-first app that polishes talking-head shorts with AI captions, zooms, b-roll, and eye contact; Vyra is a browser editor where an AI cuts the whole video from raw footage by description and hands you a full timeline."
+description: "Captions is a phone app that polishes talking-head shorts with AI captions, zooms, and b-roll. Vyra is a browser editor where an AI cuts the whole video from raw footage."
 updated: '2026-09-24'
 category: compare
 ---
 
-**Captions is a mobile-first app that polishes talking-head shorts with AI captions, zooms, b-roll, and eye contact; Vyra is a browser editor where an AI cuts the whole video from raw footage by description and hands you a full timeline.**
+**Captions is a phone app that polishes talking-head shorts with AI captions, zooms, b-roll, and eye contact. Vyra is a browser editor where an AI cuts the whole video from raw footage and gives you a full timeline.**
 
-Captions (captions.ai) is the phone-in-hand tool. Record or import a short talking clip, tap AI Edit, and it adds captions, zooms, b-roll, sound effects, and can even fix your eye line. Vyra is the desk tool: upload everything you shot, describe the video, and the agent builds it, then you finish in a real timeline if you want.
+Captions (captions.ai) is the phone-in-hand tool. Record or import a short clip, tap AI Edit, and it adds captions, zooms, b-roll, sound effects, and can fix your eye line. Vyra is the desk tool. Upload everything you shot, describe the video, and the agent builds it. Then you finish in a timeline if you want.
 
 ## At a glance
 
@@ -30,19 +30,19 @@ Captions (captions.ai) is the phone-in-hand tool. Record or import a short talki
 ## Where Captions is stronger
 
 - Phone workflow. Shoot, edit, and post without a computer.
-- Eye contact correction and other face-aware tricks for talking heads.
-- Fast preset styles that match current short-form trends.
+- Eye contact correction and other face-aware fixes.
+- Preset styles that match current short-form trends.
 
 ## Where Vyra is stronger
 
-- Long, messy footage. It selects takes and builds structure, not only decorates a clip.
+- Long, messy footage. It picks takes and builds structure instead of decorating one clip.
 - Visual search across everything you uploaded.
-- Custom graphics and reference matching, and a timeline for real control.
-- Drive it from Claude, ChatGPT, or Cursor.
+- Custom graphics, reference matching, and a real timeline.
+- Works from Claude, ChatGPT, or Cursor.
 
 ## Choose Vyra if
 
-- Your video starts as a pile of clips, not a single take.
+- Your video starts as a pile of clips.
 - You want to describe the structure, captions, and music in one message.
 - You edit at a desk and want a timeline to fall back on.
 
@@ -56,7 +56,7 @@ Captions (captions.ai) is the phone-in-hand tool. Record or import a short talki
 
 Task: a 30-second talking-head short with captions and a b-roll insert.
 
-In Captions: import the take, tap AI Edit, choose a style, adjust, export.
+In Captions you import the take, tap AI Edit, choose a style, adjust, export.
 
 In Vyra:
 ```
@@ -66,13 +66,10 @@ Cut this take to the best 30 seconds for TikTok. Remove pauses and restarts. Wor
 ## FAQ
 
 **Can Vyra fix eye contact?**
-No. Captions has that feature. Vyra edits what the camera saw.
-
-**Does Captions handle long footage?**
-It is built for short clips. Long raw footage is better handled in an editor with take selection.
+No. Captions has that. Vyra edits what the camera saw.
 
 **Is there a Vyra mobile app?**
-Vyra runs in the browser. Editing from a phone browser works but is not the main path.
+Vyra runs in the browser. A phone browser works, but it is not the main path.
 
 **Which is cheaper?**
 Captions pricing is on its site. Vyra starts at $24/mo and is free to start.

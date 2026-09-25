@@ -1,9 +1,8 @@
 ---
 title: 'Cinematic b-roll video: how to shoot, edit, and prompt it'
 description: >-
-  A cinematic b-roll video is a slow, deliberate sequence of composed shots with
-  controlled movement, shallow depth, and a color grade, meant to create
-  atmosphere rather than deliver information.
+  A cinematic b-roll video is a slow run of composed shots with controlled
+  movement, shallow depth, and one grade, made for mood rather than information.
 updated: '2026-09-24'
 category: formats
 subcategory: cinematic
@@ -17,44 +16,46 @@ difficulty: advanced
 gear: 'phone with cinematic mode or a camera, gimbal or steady hands, ND filter'
 ---
 
-**A cinematic b-roll video is a slow, deliberate sequence of composed shots with controlled movement, shallow depth, and a color grade, meant to create atmosphere rather than deliver information.**
+**A cinematic b-roll video is a slow run of composed shots with controlled movement, shallow depth, and one grade, made for mood rather than information.**
+
+Slower than you think. Cut on music phrases, not on every beat.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Brand films, product mood pieces, travel, portfolio work |
-| Hook style | The single most beautiful shot, 2-3 seconds, no text |
-| Pacing | 2-4 seconds per shot, slow and consistent |
-| Caption style | None or one line of type at the end |
+| Best for | Brand films, product mood pieces, travel, portfolio |
+| Hook style | The single best shot, 2-3 seconds, no text |
+| Pacing | 2-4 seconds per shot, even |
+| Caption style | None, or one line of type at the end |
 | Music | Ambient, cinematic, or a slow track |
-| Shot list | Establishing wide. Slow push-ins. Details at f/1.8 or portrait mode. Silhouettes, reflections, light through things. A subject walking away. |
-| Common mistakes | Too fast. Shaky handheld. Over-graded. Random shots with no thread. |
+| Shot list | Establishing wide. Slow push-ins. Details in portrait mode. Silhouettes, reflections, light through things. Someone walking away. |
+| Common mistakes | Too fast. Shaky. Over-graded. Random shots with no thread. |
 
 ## Structure
 
 - 0-3s: hero shot, held
-- 3-20s: establish the place, wide to medium
+- 3-20s: the place, wide to medium
 - 20-40s: details and the subject
-- 40-55s: the widest or the most emotional shot
-- 55-60s: fade or cut to black, one line of type
+- 40-55s: the widest or most emotional shot
+- 55-60s: fade to black, one line of type
 
 ## How to shoot it
 
-- Shoot at 24fps, shutter at 1/48 or 1/50, use an ND filter outdoors.
-- Every shot has one slow move: push, slide, tilt, or a static with subject movement.
-- Shallow depth of field on details, deep focus on wides.
-- Shoot at golden hour or in soft shade.
-- Hold each shot 8-10 seconds so you have room to trim.
+- 24fps, shutter at 1/48 or 1/50, ND filter outside.
+- One slow move per shot. Push, slide, tilt, or a static with the subject moving.
+- Shallow depth on details, deep focus on wides.
+- Golden hour or soft shade.
+- Hold each shot 8-10 seconds so you can trim.
 
 ## How to edit it
 
-- Longer cuts than feel natural: 2-4 seconds.
-- Cut on the end of a movement or on a music phrase, not on every beat.
-- One consistent grade across all shots.
-- Letterbox only if the framing was shot for it.
-- Sound design: ambient layers, a swell before the last shot.
-- Type at the end only, small, one line.
+- 2-4 second cuts. Longer than feels natural.
+- Cut at the end of a move or on a music phrase.
+- One grade for everything.
+- Letterbox only if you framed for it.
+- Ambient sound layers, a swell before the last shot.
+- Type at the end only, small.
 
 ## Prompt it in Vyra
 
@@ -66,21 +67,20 @@ gear: 'phone with cinematic mode or a camera, gimbal or steady hands, ND filter'
 
 ## Variations
 
-- Product cinematic: the object is the subject, macro and light.
-- Travel cinematic: place-driven, one location per section.
-- Portrait cinematic: one person, no dialogue.
-- Hybrid: cinematic b-roll with a short voiceover.
+- Product cinematic, the object is the subject, macro and light.
+- Travel cinematic, one location per section.
+- Hybrid, cinematic b-roll with a short voiceover.
 
 ## FAQ
 
 **Can I do this on a phone?**
-Yes. Use cinematic or portrait video mode, lock exposure, and move slowly. Stabilization matters more than the camera.
+Yes. Cinematic or portrait video mode, lock exposure, move slowly. Steady matters more than the camera.
 
 **How do I keep the grade consistent?**
-Shoot in the same light and apply one grade to the whole timeline. Ask Vyra to grade all clips together rather than one at a time.
+Shoot in the same light and grade the whole timeline at once. Ask Vyra to grade all clips together.
 
-**Should there be any text?**
-Almost none. One line at the end if the piece needs a name.
+**Any text?**
+Almost none. One line at the end if it needs a name.
 
 ## Related
 

@@ -1,6 +1,6 @@
 ---
 title: "Title card maker: an opening or section title from a sentence"
-description: "Vyra builds title cards as native text or animated motion graphics from a description, placed at the timestamp you name, styled from your project or a reference video."
+description: Vyra builds title cards as plain text or animated motion graphics from a description, placed where you say, styled from your project or a reference video.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,15 +12,15 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**A title card is a full-frame or large-type moment that names the video, a chapter, or a turn. Vyra makes one from a sentence: choose native text for a clean static card you can drag, or a motion graphic for an animated one, and time it to the beat or the line you point at.**
+**A title card is a big-type moment that names the video, a chapter, or a turn. Vyra makes one from a sentence. Plain text for a clean static card, or a motion graphic for an animated one, timed to a beat or a line.**
 
 ## How it works
 
-1. Say the words, when the card appears, and how long it stays.
-2. Pick native text or an animated motion graphic, or let the agent choose based on your description.
-3. The agent composes it using the project style's title font and palette, or a look you describe or reference.
+1. Say the words, when it appears, and how long it stays.
+2. Pick plain text or a motion graphic, or let the agent decide from your description.
+3. The agent uses the project style's title font and palette, or a look you describe or reference.
 4. Check it on the canvas and adjust by prompt.
-5. Reuse it from the Presets panel, which includes built-in title card presets.
+5. Reuse it from the Presets panel, which has built-in title card presets too.
 
 ## What you can control
 
@@ -28,8 +28,8 @@ facts:
 | --- | --- |
 | Words | Title, subtitle, date, chapter number |
 | Timing | Start, duration, on a beat or on a spoken line |
-| Layout | Full frame, over footage with real foreground occlusion, or a small corner card |
-| Type | The style's title face by default, or a named font |
+| Layout | Full frame, over footage with you in front of the letters, or a small corner card |
+| Type | The style's title font by default, or one you name |
 | Animation | None, fade, slide, or word-by-word reveal |
 | Background | Transparent over footage, a solid color, or a stock image from Pexels |
 
@@ -49,23 +49,20 @@ Make a cute vintage title card: substantial cursive lettering, soft butter yello
 
 ## When to use something else
 
-- You need a title sequence with complex 3D or particle work. That is a motion design tool's job.
-- You want to hand-adjust every keyframe of the animation. Motion graphics in Vyra are edited by prompt.
-- The "title" is really a caption for spoken words. Use the caption generator so it stays synced to speech.
+- You need a title sequence with 3D or particles. That's a motion design tool.
+- You want to hand-adjust every keyframe. Motion graphics here are edited by prompt.
+- The "title" is really a caption for spoken words. Use the caption generator so it stays synced.
 
 ## FAQ
 
 **Can the title sit behind me?**
-Yes. Oversized type behind a person with real foreground occlusion is a supported treatment; ask for it and the agent uses masks.
+Yes. Big type behind a person is a supported treatment. The agent uses masks for it.
 
 **Can I match a title style from another video?**
-Yes. Attach the reference, point to the frame with Add to chat, and ask to match it.
+Yes. Attach the reference, point at the frame with Add to chat, and ask.
 
-**Is the title editable after it is placed?**
-Native text is directly editable on the canvas. Motion graphics are changed by asking.
-
-**Does this work from Claude or ChatGPT?**
-Yes. Text and motion graphics tools are available over MCP.
+**Is it editable after?**
+Plain text, yes, on the canvas. Motion graphics change by asking.
 
 ## Related
 

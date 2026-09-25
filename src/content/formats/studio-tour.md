@@ -1,9 +1,8 @@
 ---
 title: 'Studio tour video: how to shoot, edit, and prompt it'
 description: >-
-  A studio tour walks the viewer through the space where you work, one zone at
-  a time, with a line about why each thing is there, and it works because
-  people want to see the room behind the art.
+  A studio tour walks through the space where you work, one zone at a time,
+  with one line about why each thing is there.
 updated: '2026-09-24'
 category: formats
 subcategory: art-and-process
@@ -19,44 +18,46 @@ gear: 'phone, gimbal or steady hands, daylight, a tidy-ish room'
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**A studio tour walks the viewer through the space where you work, one zone at a time, with a line about why each thing is there, and it works because people want to see the room behind the art.**
+**A studio tour walks through the space where you work, one zone at a time, with one line about why each thing is there.**
+
+People want to see the room behind the art. Start with the one object they always ask about.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | New followers who want context, "day in the life" audiences, students choosing a setup |
-| Hook style | The one object people will ask about, shown first |
+| Best for | New followers, "day in the life" audiences, students picking a setup |
+| Hook style | The object people ask about, shown first |
 | Pacing | One zone every 6-10 seconds, walking shots between |
-| Caption style | Labels per zone, short phrases over the walk-and-talk |
+| Caption style | A label per zone, short phrases over the talking |
 | Music | Calm, steady, no drops |
-| Shot list | A slow walk-in from the door. One walking shot per zone. A close-up of the one object in each zone. Your desk from your seat. A pull-back at the end. |
-| Common mistakes | Panning too fast. Filming at night under one lamp. Narrating everything instead of one line per zone. |
+| Shot list | Slow walk in from the door. One walking shot per zone. One close-up per zone. Your desk from your chair. A pull-back at the end. |
+| Common mistakes | Panning too fast. Filming at night under one lamp. Narrating everything. |
 
 ## Structure
 
-- 0-3s: the object people always ask about, close
-- 3-8s: walk in from the door, "this is where everything gets made"
+- 0-3s: the object people ask about, close
+- 3-8s: walk in from the door
 - 8-60s: four to six zones, walk in, one line, one close-up
-- 60-75s: the desk from your chair, what is on it today
+- 60-75s: the desk from your chair, what's on it today
 - 75-90s: pull back to the whole room, one closing line
 
 ## How to shoot it
 
-- Shoot in daylight with the blinds open. Studios read as dim on phones.
-- Walk slowly. Half the speed that feels natural.
-- Hold each zone shot for 8 seconds, then shoot the close-up for 5.
-- Say your line for each zone once, on camera, then again as a clean voiceover after.
-- Leave the mess that is real (brushes in jars) and clear the mess that is not (trash, cables).
+- Daylight, blinds open. Studios look dim on phones.
+- Walk at half the speed that feels natural.
+- Hold each zone shot 8 seconds, then the close-up for 5.
+- Say your line for each zone on camera, then again as a clean voiceover after.
+- Leave the real mess (brushes in jars). Clear the other mess (trash, cables).
 
 ## How to edit it
 
-- Cut the zones in the order you would walk them, not by importance.
-- Each zone: walking shot, cut on the pause, close-up, cut back.
-- Trim any pan that swings more than 90 degrees.
-- Captions as labels ("paint wall", "drying rack") plus phrase captions over speech.
-- One music track, ducked under the voice, no drop.
-- Color match across zones if window light differs.
+- Zones in the order you'd walk them.
+- Walking shot, cut on the pause, close-up, back.
+- Trim any pan over 90 degrees.
+- Labels per zone ("paint wall", "drying rack") plus phrase captions on speech.
+- One track under the voice, no drop.
+- Match color across zones if the window light differs.
 
 ## Prompt it in Vyra
 
@@ -68,21 +69,20 @@ example: 'https://www.instagram.com/sulansart'
 
 ## Variations
 
-- Desk tour: one zone, every object explained.
-- Before and after tour: the studio when you moved in versus now.
-- Night studio: intentionally dim, lamps only, slower music.
-- Tour plus process: each zone ends with a 2-second clip of it in use.
+- Desk tour, one zone, every object explained.
+- Before and after tour, when you moved in vs now.
+- Tour plus process, each zone ends with 2 seconds of it in use.
 
 ## FAQ
 
 **Do I need a gimbal?**
-No. Walk slowly, keep elbows in, and let Vyra trim the shaky starts and stops.
+No. Walk slowly, elbows in, and let Vyra trim the shaky starts and stops.
 
 **How many zones?**
-Four to six. More than that and it becomes a list.
+Four to six.
 
 **Should I show the whole room first?**
-No. Start with the one object people always ask about, then earn the wide shot at the end.
+No. Start with the one object, end with the wide.
 
 ## Related
 

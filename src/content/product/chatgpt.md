@@ -1,38 +1,37 @@
 ---
 title: Edit videos with ChatGPT
-description: "Connect Vyra to ChatGPT over MCP and ChatGPT edits your real footage: it reads the transcript, cuts the timeline, adds captions, and exports from the chat."
+description: Connect Vyra to ChatGPT over MCP. ChatGPT reads your transcript, cuts the timeline, adds captions, and exports, all from the chat.
 updated: 2026-09-24
 category: product
 ---
 
-**You can edit videos with ChatGPT by connecting it to Vyra over MCP. ChatGPT gets the editing tools, reads your transcripts and scene descriptions, and builds the timeline while you watch it update in the browser. You use the ChatGPT subscription you already have, on your own footage, with no templates and no generated clips.**
+**ChatGPT can edit your videos once you connect it to Vyra over MCP. It gets the editing tools, reads your transcripts and scene descriptions, and builds the timeline while you watch it update in the browser. You use the ChatGPT plan you already pay for.**
 
-ChatGPT is a strong planner and a fast writer. It is not a video editor. Vyra is the editor it operates. The connector exposes the same toolset the built-in Vyra agent uses, so ChatGPT can do everything from a rough cut to a tracked reframe.
+ChatGPT is good at planning and writing. It can't open a video file. Vyra is the editor it drives.
 
 ## How it works
 
-1. Add the Vyra MCP server, `https://api.usevyra.com/mcp`. The ChatGPT desktop path uses the Codex-compatible MCP config: add the block below to the Codex MCP config and restart. The OAuth 2.1 flow opens on first use; sign in to Vyra and approve.
+1. Add the Vyra MCP server. The ChatGPT desktop path uses the Codex-compatible config. Add this and restart. Sign in to Vyra when the OAuth window opens.
 
    ```toml
    [mcp_servers.vyra]
    url = "https://api.usevyra.com/mcp"
    ```
 
-2. Open `https://app.usevyra.com`, sign in with the same account you authorized, and open a project. The tab auto-binds as the editor's dispatch target and shows a green indicator top-right. Keep at least one Vyra tab open.
-3. Upload footage to a Vyra project. Each clip is transcribed and visually described on upload.
-4. Describe the video: length, platform, keep, cut, captions, music.
-5. ChatGPT calls the editing tools and the timeline updates live.
-6. Ask for frames or a timeline read-back, then correct one line at a time.
+2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.
+3. Upload your footage. Each clip gets transcribed and described.
+4. Tell ChatGPT what to make. Length, platform, keep, cut, captions, music.
+5. Watch the timeline update. Ask for a read-back, then fix one thing at a time.
 
 ## What you can ask for
 
 | You say | ChatGPT does in Vyra |
 | --- | --- |
-| "What is in this project?" | Lists clips with scene summaries |
-| "Write a 60-second script from the best lines, then cut to it" | Uses the transcript to script, then assembles |
-| "Caption everything, word by word, white, above center" | Generates styled captions |
-| "Put the screen recording top right while I talk about the prompt" | Places a picture-in-picture with a mask |
-| "Cut to the beat of the attached track" | Detects beats and lands cuts on them |
+| "What's in this project?" | Lists clips with scene summaries |
+| "Write a 60-second script from the best lines, then cut to it" | Scripts from the transcript, then assembles |
+| "Caption everything word by word, white, above center" | Generates styled captions |
+| "Put the screen recording top right while I talk about the prompt" | Places a picture-in-picture |
+| "Cut to the beat of the attached track" | Lands cuts on the beats |
 | "Export a 9:16 and a 1:1 version" | Renders both |
 
 ## Prompts to paste
@@ -42,27 +41,27 @@ Connect to my Vyra project "product demo". Summarize the footage, then propose a
 ```
 
 ```
-Build the cut as planned. Remove pauses over half a second, filler words, and retakes. Add word-by-word captions, bold sans-serif, white, slightly above center. No music. Read the timeline back with start and end times.
+Build the cut as planned. Remove pauses over half a second, filler words, and retakes. Add word-by-word captions, bold, white, slightly above center. No music. Read the timeline back with start and end times.
 ```
 
 ```
-This project has ten clips of the same talking head. Keep only the best take of each point, in the order I filmed them, target 45 seconds. Then add 3-5 word captions and a low lo-fi track at 25%. Export 1080x1920.
+This project has ten takes of the same talking head. Keep the best take of each point, in the order I filmed them, target 45 seconds. Add 3-5 word captions and a lo-fi track at 25%. Export 1080x1920.
 ```
 
 ## Compared to the usual way
 
 | | Traditional editor | ChatGPT with a passthrough integration | ChatGPT with Vyra |
 | --- | --- | --- | --- |
-| ChatGPT's role | None | Forwards prompts to the vendor's AI | Plans and executes with real editing tools |
-| Sees the footage | No | No | Transcripts, scene descriptions, captured frames |
+| ChatGPT's role | None | Forwards your prompt to the vendor's AI | Plans and executes with real editing tools |
+| Sees the footage | No | No | Transcripts, scene descriptions, frames |
 | Where you work | The app | The app plus ChatGPT | ChatGPT, editor updates live |
-| Cost | App subscription | App plus ChatGPT | Vyra MCP plan plus the ChatGPT plan you already pay for |
+| Cost | App subscription | App plus ChatGPT | Vyra MCP plan plus the ChatGPT plan you already have |
 
 ## Limits
 
-- ChatGPT edits what you uploaded. Vyra does not generate footage.
-- Keep a Vyra project open in a browser tab so edits apply live. The tab binds on focus; the green indicator top-right confirms it.
-- ChatGPT sometimes reports a step as complete early. Ask it to read the timeline back before you trust a summary.
+- ChatGPT edits what you uploaded. Vyra doesn't generate footage.
+- Keep a Vyra project open in a browser tab so edits apply live.
+- ChatGPT sometimes says a step is done early. Ask it to read the timeline back.
 
 ## Pricing
 
@@ -78,15 +77,12 @@ Free to start. See /pricing for the full breakdown.
 ## FAQ
 
 **Can I use my existing ChatGPT account?**
-Yes. That is the point of the MCP plans. Your ChatGPT subscription does the thinking, Vyra does the editing.
+Yes. That's what the MCP plans are for.
 
 **Is this the same as CapCut's Codex integration?**
-No. That is a ChatGPT-only draft generator inside CapCut. Vyra exposes the full editing toolset to ChatGPT and also works with Claude and Cursor.
+No. That one only makes a draft inside CapCut. Vyra gives ChatGPT the full editing toolset, and it works with Claude and Cursor too.
 
-**Will ChatGPT understand what is in my clips?**
-It reads the transcript and the scene descriptions Vyra generated on upload, and it can request frames. It can find "the shot where I hold up the finished piece" without you scrubbing.
-
-**Can I switch between ChatGPT and the built-in agent?**
+**Can I switch between ChatGPT and Vyra's built-in agent?**
 Yes. Same project, same timeline.
 
 ## Related

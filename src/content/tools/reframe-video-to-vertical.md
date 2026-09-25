@@ -1,6 +1,6 @@
 ---
 title: "Reframe a 16:9 video to vertical 9:16 without losing the subject"
-description: "Vyra reframes horizontal footage for TikTok, Reels, and Shorts using masks that follow your description of what to keep, then exports at 1080p or higher."
+description: Vyra reframes horizontal footage for TikTok, Reels, and Shorts with masks that follow whatever you say to keep in frame.
 updated: 2026-09-24
 category: tools
 facts:
@@ -12,14 +12,14 @@ facts:
   - "Price: Free to start, plans from $24/mo"
 ---
 
-**Reframing to vertical means choosing which part of a wide frame survives the crop to 9:16. Vyra does this with masks: a rectangle mask is the crop, and you tell the agent what to keep centered, so the speaker stays in frame and a screen recording crops to the part you are pointing at.**
+**Reframing to vertical means picking which part of the wide frame survives the crop. In Vyra a rectangle mask is the crop. You say what to keep centered, and the speaker stays in frame while a screen recording crops to the part you're pointing at.**
 
 ## How it works
 
-1. Upload the horizontal video. Resize the canvas to 9:16, or ask the chat to.
-2. Describe what should stay in frame: the speaker, a product, the region of a screen recording.
-3. The agent applies masks per section so the crop follows the subject through the video.
-4. Add captions in the safe area and check the frame at a few timestamps.
+1. Upload the horizontal video. Set the canvas to 9:16, or ask the chat to.
+2. Say what should stay in frame. The speaker, a product, a region of the screen.
+3. The agent applies masks per section so the crop follows the subject.
+4. Add captions in the safe area and check a few frames.
 5. Export with the Instagram/TikTok or YouTube Shorts preset.
 
 ## What you can control
@@ -28,15 +28,15 @@ facts:
 | --- | --- |
 | Canvas | 9:16, 1:1, 4:5, or custom |
 | Subject | Speaker, product, screen region, or a mix by section |
-| Mask shape | Rectangle for a straight crop, other shapes with feathering for special cases |
-| Per-section framing | Different crop targets at different timestamps |
-| Captions | Placed inside the vertical safe zone |
+| Mask shape | Rectangle for a straight crop, other shapes with feathering |
+| Per-section framing | Different crop targets at different times |
+| Captions | Inside the vertical safe zone |
 | Export | 1080p social presets or up to 4K |
 
 ## Prompts to paste
 
 ```
-This is 16:9. Make a 9:16 version that keeps me centered the whole time. When the screen recording is showing, crop to the part of the screen I am pointing at instead of the whole thing.
+This is 16:9. Make a 9:16 version that keeps me centered the whole time. When the screen recording is showing, crop to the part of the screen I'm pointing at instead of the whole thing.
 ```
 
 ```
@@ -44,28 +44,25 @@ Make a 1:1 version for the grid where my face stays centered, plus a 9:16 versio
 ```
 
 ```
-Capture frames at 0:03, 0:15, and 0:40 so I can check nothing important is cropped out.
+Capture frames at 0:03, 0:15, and 0:40 so I can check nothing important got cropped out.
 ```
 
 ## When to use something else
 
-- You want automatic face tracking with no instructions at all. Some tools do a single auto-reframe pass; Vyra works from your description of what to keep and applies masks accordingly (TODO confirm auto-tracking scope).
-- The video has two people who both need to stay visible. Use a split layout instead of a crop.
-- You need the original horizontal version untouched. Reframe on a copy of the project.
+- You want automatic face tracking with zero instructions. Some tools do one auto pass. Vyra works from your description (TODO confirm auto-tracking scope).
+- Two people who both need to stay visible. Use a split layout instead of a crop.
+- You need the horizontal version untouched. Reframe on a copy of the project.
 
 ## FAQ
 
 **Is there a separate crop tool?**
-No. Masks handle cropping and reframing. A rectangle mask is a crop.
+No. Masks do the cropping. A rectangle mask is a crop.
 
 **Can the crop move during the video?**
-Yes. Describe what to follow in each section, or keyframe the mask position.
+Yes. Say what to follow in each section, or keyframe the mask.
 
-**What about text and graphics from the original?**
-Anything baked into the source footage will crop with it. Rebuild titles as native text in the vertical version.
-
-**Does this work from Claude or ChatGPT?**
-Yes. The mask and canvas tools are available over MCP.
+**What about text baked into the original?**
+It crops with the footage. Rebuild titles as text in the vertical version.
 
 ## Related
 

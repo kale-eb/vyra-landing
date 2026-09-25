@@ -1,16 +1,13 @@
 ---
 title: 'Vyra vs InVideo (2026): which AI video editor should you use?'
-description: >-
-  InVideo turns a text prompt into a stock-footage video with a voiceover; Vyra
-  turns your own footage into a finished video from a prompt, so pick InVideo
-  when you have no footage and Vyra when you do.
+description: InVideo turns a text prompt into a stock-footage video with a voiceover. Vyra turns your own footage into a finished video. Pick InVideo with no footage, Vyra with footage.
 updated: '2026-09-23'
 category: compare
 ---
 
-**InVideo turns a text prompt into a stock-footage video with a voiceover; Vyra turns your own footage into a finished video from a prompt, so pick InVideo when you have no footage and Vyra when you do.**
+**InVideo turns a text prompt into a stock-footage video with a voiceover. Vyra turns your own footage into a finished video from a prompt. Pick InVideo when you have no footage and Vyra when you do.**
 
-InVideo AI is a script-to-video generator. Type a topic, get a video assembled from stock clips, AI voice, and captions. It is fast for faceless explainers and ad drafts. Vyra assumes you filmed something. It transcribes and describes that footage, then an AI edits it from your description, adds captions and graphics, and can match a reference video's style.
+InVideo AI is a script-to-video generator. Type a topic and get a video built from stock clips, an AI voice, and captions. Fast for faceless explainers and ad drafts. Vyra assumes you filmed something. It transcribes and describes that footage, then edits it from your description, with captions and graphics, and can match a reference video.
 
 ## At a glance
 
@@ -31,15 +28,15 @@ InVideo AI is a script-to-video generator. Type a topic, get a video assembled f
 
 ## Where InVideo is stronger
 
-- Zero footage needed. Script in, video out.
+- No footage needed. Script in, video out.
 - Stock library and AI voices included.
 - Fast drafts for ads and explainers.
 
 ## Where Vyra is stronger
 
-- Real footage. Your face, your product, your studio, edited to your brief.
-- Speed on long recordings. In a direct comparison test, Vyra indexed a 35-minute file with scene descriptions in under 2 minutes.
-- Custom graphics, reference matching, and a full timeline for polish.
+- Real footage. Your face, your product, your studio.
+- Speed on long recordings. In a side-by-side test, Vyra indexed a 35-minute file with scene descriptions in under 2 minutes.
+- Custom graphics, reference matching, and a full timeline.
 
 ## Choose Vyra if
 
@@ -50,14 +47,14 @@ InVideo AI is a script-to-video generator. Type a topic, get a video assembled f
 ## Choose InVideo if
 
 - You have a script and no footage.
-- You are producing faceless content at volume.
-- Stock and AI voice are acceptable for your brand.
+- You make faceless content at volume.
+- Stock and an AI voice are fine for your brand.
 
 ## Try the same edit in both
 
 Task: a 60-second explainer on "why my vlog editing takes hours."
 
-In InVideo: type the topic, let it generate stock scenes and a voice, revise by text.
+In InVideo you type the topic, let it generate stock scenes and a voice, revise by text.
 
 In Vyra:
 ```
@@ -67,16 +64,13 @@ Cut my recorded talking head on "why vlog editing takes hours" to 60 seconds for
 ## FAQ
 
 **Can InVideo edit my own footage?**
-You can add your clips, but the product is designed around generating from stock and script.
+You can add your clips, but it is built around generating from stock and a script.
 
-**Can Vyra generate a video from a script with no footage?**
+**Can Vyra make a video from a script with no footage?**
 No. Vyra edits real footage and builds motion graphics. It does not generate stock scenes.
 
-**Which is faster?**
-InVideo when you have nothing filmed. Vyra when you do, because the first cut comes from one prompt.
-
 **Can I use both?**
-Yes. Generate b-roll in InVideo, export it, and import it into a Vyra project as an asset.
+Yes. Generate b-roll in InVideo, export it, and import it into a Vyra project.
 
 ## Related
 

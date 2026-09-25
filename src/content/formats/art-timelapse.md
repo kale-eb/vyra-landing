@@ -2,8 +2,7 @@
 title: 'Art timelapse video: how to shoot, edit, and prompt it'
 description: >-
   An art timelapse is a locked-off recording of a piece being made, played at
-  a steady high speed with no cuts, so the appeal is watching the whole thing
-  appear in real order without editing tricks.
+  one steady high speed with no cuts.
 updated: '2026-09-24'
 category: formats
 subcategory: art-and-process
@@ -19,43 +18,45 @@ gear: 'phone with timelapse mode or a normal recording, tripod or clamp, constan
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**An art timelapse is a locked-off recording of a piece being made, played at a steady high speed with no cuts, so the appeal is watching the whole thing appear in real order without editing tricks.**
+**An art timelapse is a locked-off recording of a piece being made, played at one steady high speed with no cuts.**
+
+Easier than a speed paint. No ramps, no cuts. If a stretch is boring, that's the format.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Satisfying watch-through, sketchbook pages, small pieces, daily posting |
+| Best for | Sketchbook pages, small pieces, daily posting |
 | Hook style | None needed beyond the first strokes appearing fast |
-| Pacing | One constant speed, 30x to 120x, no ramps |
+| Pacing | One speed, 30x to 120x |
 | Caption style | None, or one title |
-| Music | Ambient or lo-fi, no drop required |
-| Shot list | One locked angle, the whole session, plus a 3-second still of the finished piece. |
-| Common mistakes | Hand blocking the piece for long stretches. Autofocus hunting. Speeding a 4-hour session into 15 seconds so nothing reads. |
+| Music | Ambient or lo-fi, no drop needed |
+| Shot list | One locked angle for the whole session. A 3-second still of the finished piece. |
+| Common mistakes | Hand blocking the piece. Autofocus hunting. Speeding 4 hours into 15 seconds so nothing reads. |
 
 ## Structure
 
 - 0-2s: blank surface, first mark
-- 2-40s: steady speed, whole session in order
-- 40-45s: last strokes at the same speed
+- 2-40s: the whole session at one speed
+- 40-45s: last strokes, same speed
 - 45-50s: still of the finished piece
 
 ## How to shoot it
 
 - Clamp the phone above or beside the surface. Tape the clamp.
 - Lock focus and exposure before you start.
-- Keep your hand moving; when you pause to think, pull it out of frame.
-- Constant light for the whole session, or the timelapse will flicker.
-- If your phone has a timelapse mode, use it for sessions over 2 hours. Otherwise record normally and speed it up after.
+- When you pause to think, pull your hand out of frame.
+- Constant light or it'll flicker.
+- Use timelapse mode for sessions over 2 hours. Otherwise record normally and speed it up after.
 
 ## How to edit it
 
-- One speed for the whole session. Pick the speed that lands at 40 to 50 seconds.
-- Trim only the start (before the first mark) and the end (after the last).
-- Do not cut the middle. If a stretch is boring, that is the format.
-- One still of the finished piece, 3 to 5 seconds, clean light.
-- Optional single title in the first 2 seconds.
-- Music that loops without a drop.
+- One speed. Pick whatever lands at 40-50 seconds.
+- Trim only the start and the end.
+- Don't cut the middle.
+- One still of the finished piece, 3-5 seconds, clean light.
+- One title in the first 2 seconds if you want.
+- Music that loops.
 
 ## Prompt it in Vyra
 
@@ -67,20 +68,19 @@ example: 'https://www.instagram.com/sulansart'
 
 ## Variations
 
-- Sketchbook timelapse: one page, 15 seconds, posted daily.
-- Multi-day timelapse: each session sped up, a date card between.
-- Split timelapse: canvas on top, reference photo below, both in frame.
-- Loop timelapse: the finished piece dissolves back to blank for an infinite loop.
+- Sketchbook timelapse, one page, 15 seconds, daily.
+- Multi-day, each session sped up, a date card between.
+- Loop, the finished piece dissolves back to blank.
 
 ## FAQ
 
-**What speed should I use?**
-Whatever lands the session at about 40 seconds. A 1-hour session is roughly 90x. A 20-minute sketch is roughly 30x.
+**What speed?**
+Whatever lands the session at about 40 seconds. An hour is roughly 90x. A 20-minute sketch is roughly 30x.
 
-**Timelapse versus speed paint?**
-A timelapse is one steady speed with no cuts. A speed paint cuts, ramps, and slows down on the good parts. Timelapse is easier and more honest; speed paint is more watchable.
+**Timelapse or speed paint?**
+Timelapse is one steady speed, no cuts. Speed paint cuts, ramps, and slows on the good parts. Timelapse is easier. Speed paint is more watchable.
 
-**Can Vyra fix flicker from changing light?**
+**Can Vyra fix flicker?**
 It can match color across sections. Constant light while shooting is still the real fix.
 
 ## Related

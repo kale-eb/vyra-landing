@@ -1,13 +1,13 @@
 ---
 title: "Vyra vs Riverside (2026): which AI video editor should you use?"
-description: "Riverside is a remote recording studio with an AI editing agent bolted on for podcasts and interviews; Vyra is an editor built around an agent that has watched all your footage, for anything you shot anywhere."
+description: "Riverside is a remote recording studio with an AI editing agent for podcasts and interviews. Vyra is an editor built around an agent that has watched all your footage, whatever you shot."
 updated: '2026-09-24'
 category: compare
 ---
 
-**Riverside is a remote recording studio with an AI editing agent bolted on for podcasts and interviews; Vyra is an editor built around an agent that has watched all your footage, for anything you shot anywhere.**
+**Riverside is a remote recording studio with an AI editing agent added on, for podcasts and interviews. Vyra is an editor built around an agent that has watched all your footage, for anything you shot anywhere.**
 
-If your content starts as a remote conversation, Riverside's strength is the recording: separate high-quality tracks per guest, then an AI agent that takes chat commands like "make this a 60-second clip." If your content starts as a phone or camera full of clips, Vyra's strength is that the agent has transcribed and visually described every one of them before you type a word.
+If your content starts as a remote conversation, Riverside's strength is the recording. Separate high-quality tracks per guest, then an AI agent that takes chat commands like "make this a 60-second clip." If your content starts as a phone or camera full of clips, Vyra's strength is that the agent has transcribed and described every one of them before you type a word.
 
 ## At a glance
 
@@ -28,14 +28,14 @@ If your content starts as a remote conversation, Riverside's strength is the rec
 
 ## Where Riverside is stronger
 
-- Recording. Local high-quality audio and video per participant, so remote interviews look and sound like they were in one room.
+- Recording. Local high-quality audio and video per participant, so remote interviews look and sound like one room.
 - Podcast workflow from record to clips in one place.
 - Multitrack speaker switching for two-camera conversations.
 
 ## Where Vyra is stronger
 
-- Visual understanding. Ask for the shot with the canvas or the street at night and the agent finds it. Riverside's agent leans on the transcript.
-- Anything that is not a conversation: vlogs, montages, b-roll heavy pieces, product demos.
+- Visual understanding. Ask for the shot with the canvas or the street at night and the agent finds it. Riverside's agent works from the transcript.
+- Anything that is not a conversation. Vlogs, montages, b-roll heavy pieces, product demos.
 - Reference matching and custom motion graphics from a description.
 
 ## Choose Vyra if
@@ -54,7 +54,7 @@ If your content starts as a remote conversation, Riverside's strength is the rec
 
 Task: turn a 40-minute conversation into three 45-second vertical clips.
 
-In Riverside: record or upload, ask the agent for clips, adjust the text editor, export.
+In Riverside you record or upload, ask the agent for clips, adjust in the text editor, export.
 
 In Vyra:
 ```
@@ -66,14 +66,11 @@ Find the three strongest self-contained moments in this 40-minute conversation, 
 **Can Vyra record remote guests?**
 No. Record in Riverside, Zoom, or your camera, then upload to Vyra.
 
-**Does Riverside's AI see the video?**
-Its editing agent works mainly from the transcript and speaker tracks. Vyra adds a visual description of every scene.
-
 **Which one for a podcast that is also a YouTube show?**
-Record in Riverside. Edit the full episode and the clips in whichever agent you trust more on your footage; Vyra is stronger when the episode has b-roll or visual moments.
+Record in Riverside. Edit in whichever agent you trust more on your footage. Vyra is stronger when the episode has b-roll or visual moments.
 
 **Can I use Claude with both?**
-Riverside lists an MCP product, though its site does not detail what the assistant can do. Vyra's MCP gives the assistant the real editing tools.
+Riverside lists an MCP product, though its site does not say what the assistant can do. Vyra's MCP gives the assistant the real editing tools.
 
 ## Related
 

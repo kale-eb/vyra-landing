@@ -1,9 +1,8 @@
 ---
 title: 'Semester recap montage: how to shoot, edit, and prompt it'
 description: >-
-  A semester recap montage cuts every piece you made in a term to one track,
-  one piece per beat, so a whole season of work reads as a single 30-second
-  statement about how much you did and how you grew.
+  A semester recap montage cuts every piece you made in a term to one song,
+  one piece per beat, in the order you made them.
 updated: '2026-09-24'
 category: formats
 subcategory: art-and-process
@@ -19,45 +18,47 @@ gear: 'phone, every finished piece photographed or filmed the same way, one song
 example: 'https://www.instagram.com/sulansart'
 ---
 
-**A semester recap montage cuts every piece you made in a term to one track, one piece per beat, so a whole season of work reads as a single 30-second statement about how much you did and how you grew.**
+**A semester recap montage cuts every piece you made in a term to one song, one piece per beat, in the order you made them.**
+
+I made one of these because I'd never posted most of the paintings. Same wall, same light, one session, then one song that was stuck in my head.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | End of term, end of year, portfolio drops, "I never posted these" catch-ups |
-| Hook style | The count ("14 paintings, one semester") or the first and last piece side by side |
-| Pacing | One piece per beat in the verses, one per half-beat in the chorus, one held piece before the drop |
-| Caption style | A title and optional piece names |
+| Best for | End of term, end of year, "I never posted these" |
+| Hook style | The count ("14 paintings, one semester") or first piece next to last piece |
+| Pacing | One piece per beat in the verse, one per half-beat in the chorus, one hold before the drop |
+| Caption style | A title, optional piece names |
 | Music | The song that was stuck in your head all semester |
-| Shot list | Each piece filmed the same way: slow push-in or tilt, 5 seconds, same light. Two or three process clips. You holding the last piece. |
-| Common mistakes | Pieces shot in different light and framing. Cutting off-beat. Ending on a weak piece. |
+| Shot list | Each piece filmed the same way, 5 seconds, same light. Two or three process clips. You holding the last piece. |
+| Common mistakes | Pieces shot in different light. Off-beat cuts. Ending on a weak piece. |
 
 ## Structure
 
-- 0-3s: title with the count, or first piece next to last piece
-- 3-15s: pieces in chronological order, one per beat
-- 15-18s: held shot on the piece you are proudest of
-- 18-35s: the rest, faster, half-beats in the chorus
-- 35-40s: the last piece, you holding it or in the studio
+- 0-3s: title with the count, or first next to last
+- 3-15s: pieces in order, one per beat
+- 15-18s: hold on the one you're proudest of
+- 18-35s: the rest, faster in the chorus
+- 35-40s: the last piece, you holding it
 - 40-45s: closing title, optional
 
 ## How to shoot it
 
-- Photograph or film every piece the same way: same wall, same distance, same light, same 5-second move.
-- Shoot in daylight in one session if you can.
-- Get a process clip or two for texture, not more.
-- Shoot yourself holding the last piece or standing in front of the wall of all of them.
+- Film every piece the same way. Same wall, same distance, same light, same 5-second move.
+- Daylight, one session if you can.
+- One or two process clips for texture.
+- Film yourself holding the last piece or in front of the wall of all of them.
 - Do it before you hand anything in.
 
 ## How to edit it
 
-- Chronological order. Growth is the story.
+- Chronological. Growth is the story.
 - One piece per beat, half-beats in the chorus, one hold before the drop.
-- Same in-and-out point on every clip so the rhythm stays even.
+- Same in and out point on every clip.
 - Title with the count in the first 2 seconds.
 - No captions over the pieces.
-- End on the strongest piece, not the last one made, if they differ.
+- End on the strongest piece.
 
 ## Prompt it in Vyra
 
@@ -69,21 +70,20 @@ example: 'https://www.instagram.com/sulansart'
 
 ## Variations
 
-- Year recap: 12 months, a month card between groups.
-- Growth recap: first piece and last piece only, cross-dissolved.
-- Medium recap: only the oils, or only the sketches.
-- Class recap: everyone's work from one studio class.
+- Year recap, a month card between groups.
+- Growth recap, first piece and last piece only.
+- Medium recap, only the oils, or only the sketches.
 
 ## FAQ
 
 **What if the pieces were shot differently?**
-Vyra can match color and reframe, but reshoot on one wall in one session if you can. Consistency is most of the format.
+Vyra can match color and reframe, but reshoot on one wall in one session if you can.
 
-**How long should each piece be on screen?**
-One beat, roughly half a second at 120 bpm. Long enough to see it, short enough to keep the count feeling big.
+**How long is each piece on screen?**
+One beat, about half a second at 120 bpm.
 
 **Can Vyra put them in date order?**
-Yes. It reads recording dates from the files and can order clips chronologically without you renaming anything.
+Yes. It reads the recording dates.
 
 ## Related
 

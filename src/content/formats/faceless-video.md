@@ -1,8 +1,8 @@
 ---
 title: 'Faceless video: how to shoot, edit, and prompt it'
 description: >-
-  A faceless video delivers a story or explanation through voiceover, b-roll,
-  screen recordings, and text, with the creator never appearing on camera.
+  A faceless video tells a story or explains something with voiceover, b-roll,
+  screen recordings, and text, and you never appear on camera.
 updated: '2026-09-24'
 category: formats
 subcategory: educational
@@ -17,44 +17,46 @@ difficulty: beginner
 gear: 'a mic, stock or own b-roll, screen recordings'
 ---
 
-**A faceless video delivers a story or explanation through voiceover, b-roll, screen recordings, and text, with the creator never appearing on camera.**
+**A faceless video tells a story or explains something with voiceover, b-roll, screen recordings, and text, and you never appear on camera.**
+
+The script is the product. Every sentence should name something you can show.
 
 ## At a glance
 
 | | |
 | --- | --- |
-| Best for | Niche education, finance, history, tech, creators who don't want to be on camera |
-| Hook style | A bold statement in voiceover over the strongest visual |
+| Best for | Niche education, finance, history, tech, people who don't want to be on camera |
+| Hook style | The boldest line over the strongest visual |
 | Pacing | 3-5 seconds per clip, matched to the voiceover |
-| Caption style | Full phrase captions, key terms enlarged |
-| Music | Continuous bed, ducked under voice |
-| Shot list | B-roll for every noun in the script. Screen recordings. Stills with slow zoom. Text cards for numbers. |
-| Common mistakes | Stock footage that doesn't match the words. Monotone voiceover. Same zoom on every still. |
+| Caption style | Full phrase captions, key terms bigger |
+| Music | Continuous bed, ducked under the voice |
+| Shot list | B-roll for every noun in the script. Screen recordings. Stills with a slow zoom. Text cards for numbers. |
+| Common mistakes | Stock footage that doesn't match the words. Flat voiceover. Same zoom on every still. |
 
 ## Structure
 
 - 0-3s: the boldest line over the best visual
-- 3-10s: what this video will explain
+- 3-10s: what the video will explain
 - 10-70s: the body, visual changes on every new idea
 - 70-85s: the takeaway
 - 85-90s: the next video
 
 ## How to shoot it
 
-- Write the script first. Every sentence should name something you can show.
-- Record the voiceover in a quiet room, close to the mic, with energy.
-- Collect b-roll: your own footage first, screen recordings second, stock last.
-- Take screenshots at high resolution.
-- Make a list of every number in the script for text cards.
+- Script first.
+- Record the voiceover in a quiet room, close to the mic, with some energy.
+- B-roll from your own footage first, screen recordings second, stock last.
+- High-res screenshots.
+- List every number in the script for text cards.
 
 ## How to edit it
 
 - Cut the voiceover tight first.
-- Place a visual on every noun. No visual should outlast the sentence it belongs to.
-- Slow zoom on stills, alternate direction.
+- A visual on every noun. No visual outlasts its sentence.
+- Slow zoom on stills, switching direction.
 - Numbers as big text when spoken.
 - Captions on everything.
-- Music continuous, ducked 10 dB under voice.
+- Music 10 dB under the voice.
 
 ## Prompt it in Vyra
 
@@ -66,21 +68,20 @@ gear: 'a mic, stock or own b-roll, screen recordings'
 
 ## Variations
 
-- Screen-only faceless: software and web content.
-- Documentary faceless: archival stills and footage.
-- Listicle faceless: numbered items, one clip each.
-- Animated faceless: motion graphics carry it.
+- Screen only, software and web content.
+- Documentary style, archival stills and footage.
+- Listicle, numbered items, one clip each.
 
 ## FAQ
 
-**Is faceless content still worth making?**
-Yes for niche education. It scales because the voice and script are the product, and reuse is easy.
+**Is faceless still worth doing?**
+For niche education, yes. The voice and script are the product and it's easy to repeat.
 
 **Where does the b-roll come from?**
-Your own footage and screen recordings first. They perform better than stock and make the video harder to copy.
+Your own footage and screen recordings first. They do better than stock.
 
-**Can Vyra match clips to the script automatically?**
-Yes. It transcribes the voiceover and analyzes every clip, so it can put the clip of a laptop on the sentence about "editing at 2am".
+**Can Vyra match clips to the script?**
+Yes. It transcribes the voiceover and analyzes every clip, so it can put the laptop clip on the sentence about "editing at 2am".
 
 ## Related
 
