@@ -7,6 +7,16 @@ category: for
 
 **Teaching video is long and full of pauses, tangents, and "let me find that slide." Vyra transcribes the whole recording, lets you cut by describing what to keep, and captions every word. One 60-minute recording becomes a tight lesson plus a few clips for promotion.**
 
+## A real week with Vyra
+
+A 40-minute lesson recording on supply and demand, plus the slides as a screen recording. The aim was a 6-minute lesson for the course platform and a 45-second preview for the landing page.
+
+```
+Cut this to a 6-minute lesson. Remove the first 3 minutes of setup, every pause over 1 second, and the tangent about the exam date. Keep the three worked examples. When I say "next slide" show the slide with me small in the bottom right. Phrase captions on the whole thing. Title card at each chapter using the chapter names I say out loud.
+```
+
+It came back at 6:20 with four chapter cards, "Supply," "Demand," "Equilibrium," "Shocks." One slide cut in too early, fixed with "hold me on camera until I finish the sentence at 2:41." The preview was one more line, "a 45-second 9:16 preview using the definition of equilibrium and the first example, word-by-word captions." Both exported Wednesday, 16:9 for the course and 9:16 for the landing page.
+
 ## What you make
 
 - [Lessons and explainers](/formats/explainer)
@@ -70,7 +80,8 @@ Say "remove filler words but keep natural pauses up to half a second."
 
 ## Related
 
-- [/formats/explainer](/formats/explainer)
+- [/tools/title-card-maker](/tools/title-card-maker)
+- [/prompts/tutorial-captions-and-callouts](/prompts/tutorial-captions-and-callouts)
+- [/prompts/screen-recording-reframe](/prompts/screen-recording-reframe)
+- [/tools/picture-in-picture-video-maker](/tools/picture-in-picture-video-maker)
 - [/formats/tutorial](/formats/tutorial)
-- [/how-to/repurpose-long-form-to-shorts](/how-to/repurpose-long-form-to-shorts)
-- [/prompts/captions](/prompts/captions)

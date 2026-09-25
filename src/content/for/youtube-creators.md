@@ -7,6 +7,16 @@ category: for
 
 **Vyra edits your real footage from a plain description. It transcribes and analyzes everything you upload, so you can say "cut the best takes into a 10-minute video and pull three Shorts from it" and get a timeline you can still adjust by hand.**
 
+## A real week with Vyra
+
+One Saturday shoot, 38 minutes of talking head plus 20 b-roll clips. Goal was a 14-minute video and three Shorts from the same footage.
+
+```
+Cut this into a 14-minute video. Keep the best take of each point, remove pauses over half a second and restarts, keep my section order. Cut to the matching b-roll whenever I name a tool. Title card at each section. Once that's locked, pull three Shorts under 50 seconds each, 9:16, me centered, word-by-word captions, one-line title on top for 2 seconds.
+```
+
+The long cut came back at 14:20 with title cards using the section names from the transcript. Two b-roll picks were wrong, so "at 6:12 use the desk shot, not the street" fixed both. The three Shorts used the cleaned takes, so nothing needed re-cutting. Long video exported at 1440p Sunday, Shorts posted across the week.
+
 ## What you make
 
 - [Long-form talking head with cutaways](/formats/talking-head-b-roll)
@@ -69,7 +79,8 @@ No. The built-in chat works on its own. If you already pay for Claude, ChatGPT, 
 
 ## Related
 
-- [/formats/talking-head-b-roll](/formats/talking-head-b-roll)
-- [/formats/tutorial](/formats/tutorial)
+- [/tools/youtube-shorts-maker](/tools/youtube-shorts-maker)
 - [/how-to/repurpose-long-form-to-shorts](/how-to/repurpose-long-form-to-shorts)
 - [/prompts/rough-cut](/prompts/rough-cut)
+- [/tools/remove-silence-from-video](/tools/remove-silence-from-video)
+- [/formats/talking-head](/formats/talking-head)

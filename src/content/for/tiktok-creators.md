@@ -7,6 +7,16 @@ category: for
 
 **TikTok rewards volume and a strong first two seconds. Vyra gets you from raw clips to a captioned vertical cut in a few prompts, and lets you try five versions of the hook without rebuilding the edit.**
 
+## A real week with Vyra
+
+Seven raw phone clips from a Tuesday, about four minutes total, plus a sound she had rights to. Target was a 22-second post.
+
+```
+Make a 22-second 9:16 TikTok from these seven clips. Open on the clip where I say "okay I finally tried it". Cut to the sound, one clip per beat in the first 6 seconds, then hold the demo clip. Word-by-word captions, bold white with a yellow highlight on the active word, sitting above the bottom UI. No zooms.
+```
+
+First pass was 24 seconds and the hook clip had a pause before the line. "Trim the pause before the first word and lose 2 seconds from the demo" got it to 22. She asked for two more openers on the same edit, picked the text-hook version, and posted that night. The other two hooks went out Thursday and Saturday as their own posts.
+
 ## What you make
 
 - [Talking head](/formats/talking-head) with word-by-word captions
@@ -69,7 +79,8 @@ Yes. Set the style once, then say "same caption and cut style on the other three
 
 ## Related
 
-- [/formats/talking-head](/formats/talking-head)
-- [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)
-- [/how-to/write-a-hook](/how-to/write-a-hook)
+- [/tools/tiktok-video-editor](/tools/tiktok-video-editor)
+- [/tools/auto-caption-generator](/tools/auto-caption-generator)
 - [/prompts/captions](/prompts/captions)
+- [/how-to/write-a-hook](/how-to/write-a-hook)
+- [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)

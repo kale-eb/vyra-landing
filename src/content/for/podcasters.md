@@ -7,6 +7,16 @@ category: for
 
 **A one-hour episode has five good clips in it somewhere. Vyra transcribes the whole recording, so you can ask "find the five most quotable 45-second moments and make vertical clips with captions" instead of scrubbing for them.**
 
+## A real week with Vyra
+
+Two hosts, one 62-minute recording, two camera feeds. She uploaded both feeds Monday night and asked for four vertical clips.
+
+```
+Find the four strongest self-contained moments under 45 seconds. Cut each as 9:16, show whoever is talking, switch cameras on speaker change. Word-by-word captions in bold white. Add a small lower third with each speaker's name the first time they appear in every clip. List the timestamps you picked.
+```
+
+It came back with four clips between 41 and 45 seconds, names on screen, and the timestamp list. One clip started mid sentence. "Start clip 3 two seconds earlier" fixed it. Tuesday she ran the filler and pause pass on the full episode and got a change list back. Wednesday all four clips went out on Shorts and TikTok, and the episode went to YouTube at 1440p.
+
 ## What you make
 
 - [Vertical clips](/formats/podcast-clip) for Shorts, Reels, and TikTok
@@ -68,7 +78,8 @@ Yes. Describe the style once, then say "same style" for each clip.
 
 ## Related
 
+- [/tools/podcast-clip-maker](/tools/podcast-clip-maker)
+- [/prompts/podcast-clip-selection](/prompts/podcast-clip-selection)
+- [/prompts/podcast-clip-captions](/prompts/podcast-clip-captions)
 - [/formats/podcast-clip](/formats/podcast-clip)
-- [/formats/talking-head-b-roll](/formats/talking-head-b-roll)
-- [/how-to/repurpose-long-form-to-shorts](/how-to/repurpose-long-form-to-shorts)
-- [/prompts/talking-head-cleanup](/prompts/talking-head-cleanup)
+- [/templates/long-podcast](/templates/long-podcast)

@@ -44,7 +44,7 @@ export function childSitemaps(): Record<string, SitemapUrl[]> {
     prompts: sectionUrls("prompts"),
     answers: sectionUrls("answers"),
     tutorials: sectionUrls("tutorials"),
-    glossary: sectionUrls("glossary"),
+    glossary: [{ loc: "/glossary", lastmod: getEntries("glossary").reduce((m, e) => (e.updated > m ? e.updated : m), "2026-09-24") }],
     newsletter: [
       { loc: "/newsletter", lastmod: getNewsletterPosts()[0]?.date ?? STATIC_LASTMOD },
       ...getNewsletterPosts().map((p) => ({ loc: `/newsletter/${p.slug}`, lastmod: p.date })),

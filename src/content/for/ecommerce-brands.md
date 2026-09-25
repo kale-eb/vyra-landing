@@ -7,6 +7,16 @@ category: for
 
 **Ecommerce video is a catalog problem. Lots of SKUs, one style, no time to hand-cut each one. Vyra edits real footage of your real products from a written brief, keeps one caption and title style across every cut, and reframes each one for Reels, TikTok, and your product page.**
 
+## A real week with Vyra
+
+One product, a ceramic pour-over set. A 20-minute phone shoot on Monday. Close-up, the pour, the handle, the box, the set on a shelf. The goal was one 30-second product page demo and two 9-second cutdowns for ads.
+
+```
+Make a 30-second 9:16 demo. Open on the glaze close-up, then the pour, the handle grip, the shelf shot. No talking. 3-word captions naming each feature, white, lower third. Calm acoustic track at 40%. End on a 3-second card that says "20% off this week, code POUR20". Then cut two 9-second versions, one from the pour, one from the unboxing, same captions and end card.
+```
+
+The demo came back at 30 seconds with the offer card. One caption said "hand glazed" where it should have said "hand thrown," fixed by timestamp. The 1:1 version for the product page was one more line, "same demo at 1:1 with the set centered." All four files exported Tuesday and went to the store and the ad account.
+
 ## What you make
 
 - [Product demos](/formats/product-demo)
@@ -71,6 +81,7 @@ One project per SKU, or one project with folders. Lock the style on the first cu
 ## Related
 
 - [/formats/product-demo](/formats/product-demo)
+- [/prompts/product-demo-b-roll](/prompts/product-demo-b-roll)
+- [/tools/title-card-maker](/tools/title-card-maker)
+- [/tools/reframe-video-to-vertical](/tools/reframe-video-to-vertical)
 - [/formats/ugc-hook-and-demo](/formats/ugc-hook-and-demo)
-- [/how-to/write-a-hook](/how-to/write-a-hook)
-- [/prompts/export-for-platform](/prompts/export-for-platform)

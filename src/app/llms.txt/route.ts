@@ -29,7 +29,10 @@ export function GET() {
     const meta = SECTIONS[key];
     lines.push(`## ${meta.label}`);
     lines.push(`- [${meta.title}](${SITE_URL}/${key}): ${meta.description}`);
-    for (const e of entries) lines.push(`- [${e.title}](${SITE_URL}${e.url}): ${e.description}`);
+    for (const e of entries) {
+      const url = key === "glossary" ? `${SITE_URL}/glossary#${e.slug}` : `${SITE_URL}${e.url}`;
+      lines.push(`- [${e.title}](${url}): ${e.description}`);
+    }
     lines.push("");
   }
   lines.push("## Newsletter archive (Viral by Vyra, Sulan's letters)");
