@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/content";
 import { getNewsletterPosts } from "@/lib/newsletter";
 
-const TITLE = "Viral by Vyra";
-const DESCRIPTION = "Sulan's weekly letters on making content as an artist and founder. Posting for the first time, hooks, flow state, friends who don't support you, and growing slowly.";
+const TITLE = "Newsletter archive";
+const DESCRIPTION = "Every issue of Viral by Vyra, Sulan's weekly letters on making content as an artist and founder.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Vyra`,
@@ -20,7 +20,7 @@ export default function NewsletterIndex() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: TITLE,
+    name: "Viral by Vyra",
     description: DESCRIPTION,
     url: `${SITE_URL}/newsletter`,
     author: { "@type": "Person", name: "Sulan Zhang", url: `${SITE_URL}/author/sulan` },
@@ -29,9 +29,9 @@ export default function NewsletterIndex() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <DirectoryNav crumbs={[{ label: "Newsletter", href: "/newsletter" }]} />
+      <DirectoryNav crumbs={[{ label: "Newsletter archive", href: "/newsletter" }]} />
       <main className="mx-auto max-w-5xl px-6 pt-32 pb-24">
-        <p className="mb-3 text-[13px] font-medium tracking-wide text-[var(--foreground-subtle)] uppercase">Newsletter</p>
+        <p className="mb-3 text-[13px] font-medium tracking-wide text-[var(--foreground-subtle)] uppercase">Viral by Vyra</p>
         <h1 className="mb-3 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
           {TITLE}
         </h1>

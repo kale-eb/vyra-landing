@@ -32,8 +32,8 @@ export function GET() {
     for (const e of entries) lines.push(`- [${e.title}](${SITE_URL}${e.url}): ${e.description}`);
     lines.push("");
   }
-  lines.push("## Newsletter (Viral by Vyra, Sulan's letters)");
-  lines.push(`- [Viral by Vyra](${SITE_URL}/newsletter): Weekly letters on making content as an artist and founder`);
+  lines.push("## Newsletter archive (Viral by Vyra, Sulan's letters)");
+  lines.push(`- [Newsletter archive](${SITE_URL}/newsletter): Every issue of Viral by Vyra, weekly letters on making content as an artist and founder`);
   for (const p of getNewsletterPosts()) lines.push(`- [${p.title}](${SITE_URL}/newsletter/${p.slug}): ${p.subtitle}`);
   lines.push("");
   lines.push("## Optional");

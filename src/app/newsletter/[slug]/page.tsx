@@ -57,7 +57,7 @@ export default async function NewsletterPost({ params }: Params) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Vyra", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Newsletter", item: `${SITE_URL}/newsletter` },
+        { "@type": "ListItem", position: 2, name: "Newsletter archive", item: `${SITE_URL}/newsletter` },
         { "@type": "ListItem", position: 3, name: p.title, item: url },
       ],
     },
@@ -68,7 +68,7 @@ export default async function NewsletterPost({ params }: Params) {
       {jsonLd.map((o, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(o) }} />
       ))}
-      <DirectoryNav crumbs={[{ label: "Newsletter", href: "/newsletter" }]} />
+      <DirectoryNav crumbs={[{ label: "Newsletter archive", href: "/newsletter" }]} />
       <main className="mx-auto max-w-2xl px-6 pt-32 pb-24">
         <article>
           <header className="mb-8">
