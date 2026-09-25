@@ -24,7 +24,6 @@ const footerLinks = {
     { label: "Templates", href: "/templates" },
     { label: "Compare", href: "/compare" },
     { label: "Alternatives", href: "/alternatives" },
-    { label: "Best of", href: "/best" },
     { label: "For creators", href: "/for" },
     { label: "Video formats", href: "/formats" },
     { label: "How-to guides", href: "/how-to" },

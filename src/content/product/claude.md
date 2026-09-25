@@ -104,4 +104,3 @@ No. The MCP plans are for people bringing their own Claude subscription. The Vyr
 - /mcp
 - /docs/mcp
 - /prompts/how-to-prompt-vyra
-- /best/video-editors-that-work-with-claude-and-chatgpt

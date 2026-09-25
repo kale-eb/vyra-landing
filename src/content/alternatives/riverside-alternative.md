@@ -64,5 +64,4 @@ Descript's free tier for light use, Vizard for clipping. Vyra is free to start.
 
 - /compare/vyra-vs-riverside
 - /compare/descript-vs-riverside
-- /best/ai-video-editors-for-podcast-clips
 - /for/podcasters

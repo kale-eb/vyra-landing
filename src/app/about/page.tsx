@@ -4,9 +4,9 @@ import DirectoryNav from "@/components/directory/DirectoryNav";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/content";
 
-const TITLE = "About Vyra: two creators from Brown who got tired of the timeline";
+const TITLE = "About Vyra";
 const DESCRIPTION =
-  "Vyra was started by Sulan and Caleb, two creators at Brown University who wanted to tell their stories without spending hours in a timeline. They began building together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
+  "Vyra was started by Sulan and Caleb, two creators at Brown who were tired of spending whole nights editing. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Vyra`,
@@ -25,33 +25,33 @@ export const metadata: Metadata = {
 const TIMELINE = [
   {
     when: "Winter 2025",
-    what: "Two creators, one problem",
+    what: "We start building",
     detail:
-      "Sulan and Caleb were both posting from Brown's campus: painting process videos, vlogs, talking heads. They kept running into the same wall. A day of footage turned into a night in the timeline. They started building a way to describe an edit instead of dragging it together.",
+      "Sulan was posting painting videos and vlogs. Caleb was making his own videos at Brown too. We both had the same problem. Filming took an afternoon and editing took the whole night. We started building something where you describe the edit instead of doing it by hand.",
   },
   {
     when: "Early 2026",
-    what: "The first edits by chat",
+    what: "First edits by chat",
     detail:
-      "The first version could take raw footage, transcribe every word, look at every scene, and cut a first draft from a plain-language request. Friends on campus tried it on their own footage and told us what was wrong with it. A lot was wrong with it. We kept going.",
+      "The first version could take raw footage, transcribe it, look at every scene, and cut a first draft from a plain request. Friends on campus tried it on their own footage and told us what was wrong. A lot was wrong. We kept fixing it.",
   },
   {
     when: "May 2026",
     what: "Bring your own AI",
     detail:
-      "We shipped the MCP connector so anyone already paying for Claude, ChatGPT, or Cursor could drive Vyra from the assistant they already use. The agent gets the real editing tools and sees the footage, not a passthrough prompt box.",
+      "We shipped the MCP connector. If you already pay for Claude, ChatGPT, or Cursor, you can use that to drive Vyra. The agent gets the actual editing tools and can see your footage.",
   },
   {
     when: "Summer 2026",
     what: "San Francisco, full time",
     detail:
-      "We moved out to San Francisco to work on Vyra full time. Buffer's July roundup of AI video editors ranked Vyra first and called it the most consistent performer on the same footage and brief.",
+      "We moved out to San Francisco to work on Vyra full time. In July, Buffer tested 11 AI video editors on the same footage and put Vyra first.",
   },
   {
     when: "Fall 2026",
     what: "Y Combinator",
     detail:
-      "Vyra joined Y Combinator. Sulan took a leave from Brown to build it. We are still editing our own videos in it every week, which is how most of the guides on this site get written.",
+      "We joined Y Combinator. Sulan took a leave from Brown. We still edit our own videos in Vyra every week, and most of the guides on this site come out of that.",
   },
 ];
 
@@ -102,31 +102,30 @@ export default function AboutPage() {
           className="mb-6 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
           style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
         >
-          We wanted to tell our stories without losing our nights to a timeline.
+          We built Vyra because we were tired of editing at 3 a.m.
         </h1>
         <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{DESCRIPTION}</p>
 
         <section className="mt-12 space-y-5 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
           <p>
-            Vyra started as a conversation between two people who made videos and hated editing them. Sulan paints and
-            posts her process, vlogs, and the occasional unserious pigeon at{" "}
+            Sulan paints and posts about it at{" "}
             <a href="https://www.instagram.com/sulansart" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-blue)] underline underline-offset-2">
               @sulansart
             </a>
-            . Caleb was making his own content on the same campus. Both of us had the same experience: the filming was
-            the fun part, and the editing was where the story went to die. Not because we lacked ideas, but because a
-            two-minute video was costing us a full evening of scrubbing, cutting, captioning, and second-guessing.
+            . She wanted to share her art and tell her story, and she did not want to spend a lot of time editing. But she
+            was. It was usually 3 or 4 a.m. after a full day of classes, and the editing was the part that made her not
+            want to post at all.
           </p>
           <p>
-            The idea was simple to say and hard to build. What if you could hand your raw footage to something that had
-            watched all of it, listened to every word, and could just do what you asked? Not generate fake clips. Not a
-            template with your name on it. Your footage, your voice, cut the way you described it, with a real timeline
-            underneath when you wanted to take over.
+            Caleb was making his own videos on the same campus and had the same problem. Neither of us is a video editor.
+            We just needed videos. So we started building a tool where you upload your clips, say what you want, and get
+            the edit back. Something like "make a cute vlog out of this, add captions and some motion graphics." Three
+            prompts, not three hours.
           </p>
           <p>
-            We started collaborating in winter 2025 and kept at it through early 2026, testing every version on our own
-            videos and on friends who were kind enough to be honest. In summer 2026 we moved out to San Francisco to work
-            on it full time. That is where we are now.
+            We started working on it together in winter 2025 and kept going through early 2026, testing every version on
+            our own footage and on friends who were honest with us. In summer 2026 we moved to San Francisco to do it full
+            time.
           </p>
         </section>
 
@@ -144,43 +143,44 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-14 space-y-4 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
-          <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">What we believe</h2>
+          <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">A few things we hold to</h2>
           <ul className="list-disc space-y-2 pl-6 marker:text-[var(--foreground-subtle)]">
             <li>
-              <strong className="text-[var(--foreground)]">Real footage only.</strong> Vyra does not generate video. It
-              edits what you shot. Your face, your voice, your story.
+              <strong className="text-[var(--foreground)]">We do not generate video.</strong> Vyra edits the footage you
+              shot. If you did not film it, it is not in your video.
             </li>
             <li>
-              <strong className="text-[var(--foreground)]">Describe it, do not drag it.</strong> The fastest editor is
-              the one that already understands your footage and takes instructions in plain language.
+              <strong className="text-[var(--foreground)]">You describe the edit.</strong> The agent already has the
+              transcript and a description of every scene, so you can talk about your footage the way you would to a
+              person.
             </li>
             <li>
-              <strong className="text-[var(--foreground)]">Full control when you want it.</strong> The AI does the heavy
-              lifting. The timeline is always there for the last five percent.
+              <strong className="text-[var(--foreground)]">The timeline is still there.</strong> Most people never open
+              it. When you want to move one cut by a few frames, you can.
             </li>
             <li>
-              <strong className="text-[var(--foreground)]">Use the AI you already pay for.</strong> If you have Claude,
-              ChatGPT, or Cursor, they can drive Vyra directly.
+              <strong className="text-[var(--foreground)]">Use the AI you already pay for.</strong> Claude, ChatGPT, and
+              Cursor can drive Vyra directly. You do not need a second subscription.
             </li>
           </ul>
         </section>
 
         <section className="mt-14 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8">
-          <h2 className="mb-2 text-xl font-semibold tracking-tight text-[var(--foreground)]">The team</h2>
+          <h2 className="mb-2 text-xl font-semibold tracking-tight text-[var(--foreground)]">Who we are</h2>
           <p className="text-[15px] leading-relaxed text-[var(--foreground-muted)]">
             <Link href="/author/sulan" className="text-[var(--brand-blue)] underline underline-offset-2">
               Sulan Zhang
             </Link>
-            , co-founder. Artist and creator, on leave from Brown University.
+            , co-founder. Painter. On leave from Brown.
             <br />
-            Caleb, co-founder. {/* TODO: Caleb's last name, one-line bio, and link */}
+            Caleb, co-founder. {/* TODO: Caleb's last name, one line, and a link */}
           </p>
           <p className="mt-4 text-[13px] text-[var(--foreground-subtle)]">
-            Say hi on{" "}
+            Questions go to{" "}
             <a href="https://discord.com/invite/mFWxyvg4Nj" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-              Discord
+              our Discord
             </a>{" "}
-            or email sulanzhangart@gmail.com. {/* TODO: confirm public contact email */}
+            or sulanzhangart@gmail.com. {/* TODO: confirm public contact email */}
           </p>
         </section>
 
@@ -189,7 +189,7 @@ export default function AboutPage() {
             href="https://app.usevyra.com/signup"
             className="inline-block rounded-full bg-[var(--foreground)] px-6 py-3 text-[14px] font-semibold text-white"
           >
-            Try Vyra on your footage
+            Try it on your footage
           </a>
         </div>
       </main>

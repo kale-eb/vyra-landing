@@ -44,8 +44,6 @@ No. Those are professional tools with a learning curve measured in weeks. Start 
 For most social video, yes. You still make the creative calls (what to keep, what the hook is), but the mechanical work is done for you. Vyra also has a full timeline for when you want to learn it.
 
 ## Related
-
-- /best/video-editors-for-beginners
 - /how-to/cut-a-talking-head
 - /prompts/how-to-prompt-vyra
 - /answers/can-i-try-a-video-editor-before-buying

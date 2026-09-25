@@ -117,5 +117,4 @@ No. Describe the outcome. The assistant chooses the tools. The full catalog is e
 
 - /docs/mcp
 - /claude
-- /best/video-editors-that-work-with-claude-and-chatgpt
 - /pricing

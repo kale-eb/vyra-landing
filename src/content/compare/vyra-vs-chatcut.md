@@ -80,5 +80,4 @@ ChatCut pricing is on its site. Vyra starts at $24/mo and is free to start.
 
 - /compare/vyra-vs-daydream
 - /compare/vyra-vs-rendley
-- /best/video-editors-that-work-with-claude-and-chatgpt
 - /mcp

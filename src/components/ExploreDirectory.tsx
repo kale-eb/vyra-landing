@@ -6,7 +6,7 @@ import { SECTIONS, getEntries } from "@/lib/content";
 export default function ExploreDirectory() {
   const picks = [
     ...getEntries("product").map((e) => e),
-    ...getEntries("best").slice(0, 3),
+    ...getEntries("tools").slice(0, 3),
     ...getEntries("how-to").slice(0, 3),
   ];
   const hubs = Object.values(SECTIONS);

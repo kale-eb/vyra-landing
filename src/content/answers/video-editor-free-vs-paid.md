@@ -60,5 +60,4 @@ For manual editing, a one-time purchase like DaVinci Resolve Studio or Final Cut
 
 - /pricing
 - /answers/can-i-try-a-video-editor-before-buying
-- /best/ai-video-editors-on-a-budget
 - /answers/how-much-does-a-professional-video-editor-cost

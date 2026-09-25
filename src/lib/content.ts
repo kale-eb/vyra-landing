@@ -12,7 +12,6 @@ export type SectionKey =
   | "how-to"
   | "prompts"
   | "answers"
-  | "best"
   | "features"
   | "tutorials"
   | "glossary"
@@ -42,14 +41,6 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     title: "Alternatives to popular video editors",
     description:
       "Ranked alternatives for creators who want to edit real footage by describing the edit.",
-    schema: "Article",
-  },
-  best: {
-    key: "best",
-    label: "Best of",
-    title: "Best AI video editors, ranked by use case",
-    description:
-      "Ranked lists of AI video editors for YouTube, TikTok, vlogging, podcasts, captions, beat sync, and more. Same footage, same brief.",
     schema: "Article",
   },
   for: {

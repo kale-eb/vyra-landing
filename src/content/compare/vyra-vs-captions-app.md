@@ -82,4 +82,3 @@ Captions pricing is on its site. Vyra starts at $24/mo and is free to start.
 - /compare/vyra-vs-submagic
 - /compare/vyra-vs-capcut
 - /for/tiktok-creators
-- /best/ai-caption-generators-for-video

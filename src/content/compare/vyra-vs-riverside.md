@@ -78,6 +78,5 @@ Riverside lists an MCP product, though its site does not detail what the assista
 ## Related
 
 - /compare/vyra-vs-descript
-- /best/ai-video-editors-for-podcast-clips
 - /for/podcasters
 - /prompts/rough-cut

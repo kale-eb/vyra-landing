@@ -44,8 +44,6 @@ Yes. Vyra edits from a description. Descript edits from a transcript. Both avoid
 Any of CapCut, Vyra, Descript, or Veed captions a short video in under a minute. Pick based on styling control; Vyra lets you specify grouping, position, and emphasis in the prompt.
 
 ## Related
-
-- /best/easiest-video-editors-for-social-media
 - /for/tiktok-creators
 - /prompts/captions
 - /how-to/choose-captions

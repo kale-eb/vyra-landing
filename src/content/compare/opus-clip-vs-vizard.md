@@ -74,5 +74,4 @@ Vizard usually. Check both sites for current tiers.
 
 - /compare/vyra-vs-opus-clip
 - /alternatives/opus-clip-alternative
-- /best/ai-video-editors-for-podcast-clips
 - /for/podcasters

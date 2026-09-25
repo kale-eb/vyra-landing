@@ -77,6 +77,5 @@ Vyra starts at $24/mo and is free to start. Submagic pricing is on its site.
 ## Related
 
 - /compare/vyra-vs-capcut
-- /best/ai-caption-generators-for-video
 - /for/tiktok-creators
 - /prompts/rough-cut

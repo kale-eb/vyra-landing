@@ -54,8 +54,6 @@ For most creators, the captions built into their editor. Vyra, Descript, CapCut,
 For social video, an editor that handles cutting, captions, reframing, music, and graphics from one prompt removes most of the stack. Vyra is built that way; you still want a writing assistant and a scheduler.
 
 ## Related
-
-- /best/ai-tools-for-content-creators
 - /ai-video-editor
 - /for/youtube-creators
 - /answers/can-ai-replace-content-creators

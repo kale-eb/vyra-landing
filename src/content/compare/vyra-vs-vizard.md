@@ -77,6 +77,5 @@ In Vyra, yes, in the same project.
 ## Related
 
 - /compare/vyra-vs-opus-clip
-- /best/ai-video-editors-for-podcast-clips
 - /for/podcasters
 - /prompts/rough-cut
