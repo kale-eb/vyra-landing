@@ -17,6 +17,7 @@ const footerLinks = {
     { label: "Pricing", href: "/pricing" },
     { label: "Tutorials", href: "/tutorials" },
     { label: "Prompt library", href: "/prompts" },
+    { label: "Newsletter", href: "/newsletter" },
     { label: "Blog", href: "/blog" },
   ],
   directory: [

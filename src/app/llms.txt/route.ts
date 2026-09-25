@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { SECTIONS, SECTION_KEYS, SITE_URL, getEntries } from "@/lib/content";
+import { getNewsletterPosts } from "@/lib/newsletter";
 
 export const dynamic = "force-static";
 
@@ -31,6 +32,10 @@ export function GET() {
     for (const e of entries) lines.push(`- [${e.title}](${SITE_URL}${e.url}): ${e.description}`);
     lines.push("");
   }
+  lines.push("## Newsletter (Viral by Vyra, Sulan's letters)");
+  lines.push(`- [Viral by Vyra](${SITE_URL}/newsletter): Weekly letters on making content as an artist and founder`);
+  for (const p of getNewsletterPosts()) lines.push(`- [${p.title}](${SITE_URL}/newsletter/${p.slug}): ${p.subtitle}`);
+  lines.push("");
   lines.push("## Optional");
   lines.push(`- [Sitemap index](${SITE_URL}/sitemap.xml)`);
   lines.push(`- [Author: Sulan Zhang](${SITE_URL}/author/sulan)`);

@@ -1,6 +1,7 @@
 import { SITE_URL, SECTION_KEYS, getEntries, type SectionKey } from "@/lib/content";
 import { posts } from "@/app/blog/[slug]/data";
 import reviews from "@/content/reviews.json";
+import { getNewsletterPosts } from "@/lib/newsletter";
 
 export type SitemapUrl = { loc: string; lastmod: string; video?: { title: string; description: string; contentLoc: string; thumbnail: string; uploadDate: string } };
 
@@ -43,6 +44,10 @@ export function childSitemaps(): Record<string, SitemapUrl[]> {
     answers: sectionUrls("answers"),
     tutorials: sectionUrls("tutorials"),
     glossary: sectionUrls("glossary"),
+    newsletter: [
+      { loc: "/newsletter", lastmod: getNewsletterPosts()[0]?.date ?? STATIC_LASTMOD },
+      ...getNewsletterPosts().map((p) => ({ loc: `/newsletter/${p.slug}`, lastmod: p.date })),
+    ],
     blog: [
       { loc: "/blog", lastmod: "2026-05-26" },
       ...posts
