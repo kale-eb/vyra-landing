@@ -172,7 +172,7 @@ export const posts: Post[] = [
         paragraphs: [
           "Say you're paying $20/month for Claude Pro. That subscription already covers writing, research, coding, analysis, and whatever else you throw at it. With Vyra, that same subscription now also covers video editing.",
           "Compare that to paying $24/month for Descript Pro or $30/month for VEED Pro, on top of whatever you're already paying for your main AI tool. Those subscriptions only do video, and their AI only works inside their own editor.",
-          "Vyra starts at $9.99/month. Combined with an AI subscription you already have, you get a more capable editing setup for less money than most standalone AI video editors charge on their own.",
+          "Vyra's MCP Starter plan is $24/month. Combined with an AI subscription you already have, you get a more capable editing setup for about what a standalone AI video editor charges on its own, and the AI you pay for does more than video.",
         ],
       },
       {
@@ -181,8 +181,8 @@ export const posts: Post[] = [
         columns: [
           {
             label: "Vyra",
-            price: "$29.99",
-            breakdown: ["Claude Pro: $20", "Vyra: $9.99"],
+            price: "$44.00",
+            breakdown: ["Claude Pro: $20", "Vyra MCP Starter: $24"],
             note: "Your AI works across every task - writing, code, editing.",
             highlight: true,
           },
@@ -223,7 +223,7 @@ export const posts: Post[] = [
           },
           {
             q: "What does Vyra cost?",
-            a: "Plans start at $9.99/month. See the pricing page on usevyra.com for what's included at each tier.",
+            a: "Plans start at $24/month. See the pricing page on usevyra.com for what's included at each tier.",
           },
           {
             q: "Is there a learning curve?",
@@ -311,7 +311,7 @@ export const posts: Post[] = [
           ["Works with Cursor", "No", "Yes"],
           ["Understands video content", "No", "Yes (visual indexing + embeddings)"],
           ["Agent sees its own edits", "N/A", "Yes (visual feedback loop)"],
-          ["Pricing", "Free / $19.99 Pro", "$9.99 / $24.99 per month"],
+          ["Pricing", "Free / $19.99 Pro", "$24 / $65 per month (MCP), $54 / $129 (built-in AI)"],
           ["Best for", "Quick social media edits", "AI-powered editing of any footage"],
         ],
       },
@@ -484,7 +484,7 @@ export const posts: Post[] = [
             "Yes (visual indexing + embeddings)",
           ],
           ["Agent sees its own edits", "No", "Yes"],
-          ["Pricing", "Free / $24 Pro / $33 Business", "$9.99 / $24.99 per month"],
+          ["Pricing", "Free / $24 Pro / $33 Business", "$24 / $65 per month (MCP), $54 / $129 (built-in AI)"],
           ["Best for", "Podcast and interview editing", "AI-powered editing of any footage"],
         ],
       },
@@ -629,7 +629,7 @@ export const posts: Post[] = [
           [
             "Pricing",
             "Free / $18 Basic / $30 Pro / $59 Business",
-            "$9.99 / $24.99 per month",
+            "$24 / $65 per month (MCP), $54 / $129 (built-in AI)",
           ],
           [
             "Best for",
@@ -667,7 +667,7 @@ export const posts: Post[] = [
         paragraphs: [
           "Vyra is the right choice if you want AI to do the editing for you. If you have real footage and you want an AI agent to search through it, find the right moments, build edits, and create custom motion graphics, Vyra handles all of that.",
           "It's also the better choice if you care about editing quality. VEED's editing toolkit is constrained - basic text animations, no keyframing, and AI features locked to its own UI. Vyra has a full editing toolkit that any AI agent can drive.",
-          "And at $9.99/month for Vyra's base tier vs $18/month for VEED's cheapest paid plan, Vyra costs less while offering significantly more editing capability.",
+          "And at $24/month for Vyra's base tier vs $18/month for VEED's cheapest paid plan, Vyra costs less while offering significantly more editing capability.",
         ],
       },
       {

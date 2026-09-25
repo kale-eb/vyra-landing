@@ -4,13 +4,33 @@ import Link from "next/link";
 
 const footerLinks = {
   product: [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "AI video editor", href: "/ai-video-editor" },
+    { label: "Features", href: "/features" },
+    { label: "MCP server", href: "/mcp" },
+    { label: "Edit with Claude", href: "/claude" },
+    { label: "Edit with ChatGPT", href: "/chatgpt" },
   ],
   resources: [
-    { label: "Blog", href: "/blog" },
+    { label: "About us", href: "/about" },
+    { label: "Reviews", href: "/reviews" },
     { label: "Docs", href: "/docs" },
     { label: "Support", href: "/app-support" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Tutorials", href: "/tutorials" },
+    { label: "Prompt library", href: "/prompts" },
+    { label: "Newsletter archive", href: "/newsletter" },
+    { label: "Blog", href: "/blog" },
+  ],
+  directory: [
+    { label: "Tools", href: "/tools" },
+    { label: "Templates", href: "/templates" },
+    { label: "Compare", href: "/compare" },
+    { label: "Alternatives", href: "/alternatives" },
+    { label: "For creators", href: "/for" },
+    { label: "Video formats", href: "/formats" },
+    { label: "How-to guides", href: "/how-to" },
+    { label: "Answers", href: "/answers" },
+    { label: "Glossary", href: "/glossary" },
   ],
   account: [
     { label: "Log In", href: "https://app.usevyra.com/login" },
@@ -28,7 +48,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand column - takes up more space */}
-          <div className="lg:col-span-4">
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link
               href="/"
               className="mb-5 inline-block text-[22px] font-extrabold tracking-tight text-[var(--foreground)]"
@@ -128,6 +148,27 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               {footerLinks.resources.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[13px] text-[var(--foreground-subtle)] transition-colors duration-200 hover:text-[var(--foreground-muted)]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h4
+              className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            >
+              Directory
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {footerLinks.directory.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
