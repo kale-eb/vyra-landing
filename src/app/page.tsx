@@ -7,7 +7,6 @@ import Alternatives from "@/components/Alternatives";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
-import ExploreDirectory from "@/components/ExploreDirectory";
 import { HOME_FAQS } from "@/components/faq-data";
 import Footer from "@/components/Footer";
 
@@ -62,7 +61,6 @@ export default async function Home() {
         <MadeWithVyra userCount={userCount} />
         <Alternatives />
         <FAQ />
-        <ExploreDirectory />
         <FinalCTA />
       </main>
       <Footer />
