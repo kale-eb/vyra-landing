@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.usevyra.com/sitemap.xml",
+    sitemap: ["https://www.usevyra.com/sitemap.xml", "https://www.usevyra.com/sitemap-index.xml"],
   };
 }
