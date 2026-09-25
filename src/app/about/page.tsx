@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/content";
 
 const TITLE = "About Vyra";
 const DESCRIPTION =
-  "Vyra was started by Sulan and Caleb, two creators at Brown who were tired of spending whole nights editing. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
+  "Vyra was started by Sulan and Caleb, two students at Brown who made videos and hated how long editing took. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Vyra`,
@@ -27,19 +27,19 @@ const TIMELINE = [
     when: "Winter 2025",
     what: "We start building",
     detail:
-      "Sulan was posting painting videos and vlogs. Caleb was making his own videos at Brown too. We both had the same problem. Filming took an afternoon and editing took the whole night. We started building something where you describe the edit instead of doing it by hand.",
+      "Sulan was posting painting videos and vlogs. Caleb was making his own videos at Brown too. Filming took an afternoon and editing took the whole night, for both of us. We started building something where you describe the edit and it gets made.",
   },
   {
     when: "Early 2026",
     what: "First edits by chat",
     detail:
-      "The first version could take raw footage, transcribe it, look at every scene, and cut a first draft from a plain request. Friends on campus tried it on their own footage and told us what was wrong. A lot was wrong. We kept fixing it.",
+      "The first version could take raw footage, transcribe it, look at every scene, and cut a first draft from a plain request. Friends on campus tried it on their own footage and told us what was wrong with it. A lot was. We kept fixing it.",
   },
   {
     when: "May 2026",
     what: "Bring your own AI",
     detail:
-      "We shipped the MCP connector. If you already pay for Claude, ChatGPT, or Cursor, you can use that to drive Vyra. The agent gets the actual editing tools and can see your footage.",
+      "We shipped the MCP connector. If you already pay for Claude, ChatGPT, or Cursor, you can use that to drive Vyra. Your assistant gets the same editing tools our built-in one has, and it can see your footage.",
   },
   {
     when: "Summer 2026",
@@ -51,7 +51,7 @@ const TIMELINE = [
     when: "Fall 2026",
     what: "Y Combinator",
     detail:
-      "We joined Y Combinator. Sulan took a leave from Brown. We still edit our own videos in Vyra every week, and most of the guides on this site come out of that.",
+      "We joined Y Combinator and Sulan took a leave from Brown. We still edit our own videos in Vyra every week. Most of the guides on this site come out of that.",
   },
 ];
 
@@ -112,19 +112,18 @@ export default function AboutPage() {
             <a href="https://www.instagram.com/sulansart" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-blue)] underline underline-offset-2">
               @sulansart
             </a>
-            . She wanted to share her art and tell her story, and she did not want to spend a lot of time editing. But she
-            was. It was usually 3 or 4 a.m. after a full day of classes, and the editing was the part that made her not
-            want to post at all.
+            . She wanted to post her art and her videos and didn&apos;t want to spend much time editing. But she was. It was
+            usually 3 or 4 a.m. after a full day of classes, and editing was the part that made her not want to post.
           </p>
           <p>
             Caleb was making his own videos on the same campus and had the same problem. Neither of us is a video editor.
             We just needed videos. So we started building a tool where you upload your clips, say what you want, and get
-            the edit back. Something like "make a cute vlog out of this, add captions and some motion graphics." Three
-            prompts, not three hours.
+            the edit back. The first vlog Sulan made with it took three prompts. Something like &ldquo;make a cute vlog out
+            of this, add captions and some motion graphics.&rdquo;
           </p>
           <p>
-            We started working on it together in winter 2025 and kept going through early 2026, testing every version on
-            our own footage and on friends who were honest with us. In summer 2026 we moved to San Francisco to do it full
+            We started working on it together in winter 2025 and kept going through early 2026, testing each version on
+            our own footage and on friends who told us the truth. In summer 2026 we moved to San Francisco to do it full
             time.
           </p>
         </section>
@@ -146,21 +145,20 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">A few things we hold to</h2>
           <ul className="list-disc space-y-2 pl-6 marker:text-[var(--foreground-subtle)]">
             <li>
-              <strong className="text-[var(--foreground)]">We do not generate video.</strong> Vyra edits the footage you
-              shot. If you did not film it, it is not in your video.
+              <strong className="text-[var(--foreground)]">We don&apos;t generate video.</strong> Vyra edits the footage
+              you shot. Nothing in your video comes from anywhere else.
             </li>
             <li>
-              <strong className="text-[var(--foreground)]">You describe the edit.</strong> The agent already has the
-              transcript and a description of every scene, so you can talk about your footage the way you would to a
-              person.
+              <strong className="text-[var(--foreground)]">You describe the edit.</strong> The agent has the transcript
+              and a description of every scene, so you can talk about your footage the way you&apos;d talk to a person.
             </li>
             <li>
               <strong className="text-[var(--foreground)]">The timeline is still there.</strong> Most people never open
-              it. When you want to move one cut by a few frames, you can.
+              it. If you want to move one cut by a few frames, you can.
             </li>
             <li>
               <strong className="text-[var(--foreground)]">Use the AI you already pay for.</strong> Claude, ChatGPT, and
-              Cursor can drive Vyra directly. You do not need a second subscription.
+              Cursor can drive Vyra directly. You don&apos;t need a second subscription.
             </li>
           </ul>
         </section>
