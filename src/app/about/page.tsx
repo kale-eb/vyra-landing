@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/content";
 
 const TITLE = "About Vyra";
 const DESCRIPTION =
-  "Vyra was started by Sulan Zhang and Caleb Pong, two students at Brown who made videos and hated how long editing took. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
+  "Vyra was founded by Sulan and Caleb, two students at Brown who made videos and hated how long editing took. They started building it together in winter 2025 and moved to San Francisco in summer 2026 to work on it full time.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Vyra`,
@@ -27,7 +27,7 @@ const TIMELINE = [
     when: "Winter 2025",
     what: "We start building",
     detail:
-      "Sulan was posting painting videos and vlogs. Caleb was making his own videos at Brown too. Filming took an afternoon and editing took the whole night, for both of us. We started building something where you describe the edit and it gets made.",
+      "Sulan was posting painting videos and vlogs. Caleb had been editing video for seven years and was making his own videos at Brown too. Editing was eating both of our nights. We started building something where you describe the edit and it gets made.",
   },
   {
     when: "Early 2026",
@@ -112,18 +112,18 @@ export default function AboutPage() {
 
         <section className="mt-12 space-y-5 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
           <p>
-            Sulan paints and posts about it at{" "}
+            Sulan began with posting her paintings at{" "}
             <a href="https://www.instagram.com/sulansart" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-blue)] underline underline-offset-2">
               @sulansart
             </a>
-            . She wanted to post her art and her videos and didn&apos;t want to spend much time editing. But she was. It was
-            usually 3 or 4 a.m. after a full day of classes, and editing was the part that made her not want to post.
+            . She loved storytelling and building her community, but she kept getting bogged down in the editing process.
+            Scrubbing around timelines for hours at 3am after a full day of classes and work was not enjoyable!
           </p>
           <p>
-            Caleb was making his own videos on the same campus and had the same problem. Neither of us is a video editor.
-            We just needed videos. So we started building a tool where you upload your clips, say what you want, and get
-            the edit back. The first vlog Sulan made with it took three prompts. Something like &ldquo;make a cute vlog out
-            of this, add captions and some motion graphics.&rdquo;
+            Caleb was a video editor of seven years and he also was making his own videos on the same campus while he
+            faced the same problem: video editing is incredibly time consuming. So we started building a tool where you
+            upload your clips, say what you want, and get the edit back in minutes! The first vlog Sulan made with Vyra
+            took three prompts.
           </p>
           <p>
             We started working on it together in winter 2025 and kept going through early 2026, testing each version on

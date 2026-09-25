@@ -2,6 +2,14 @@
 
 Every page on usevyra.com should read like Sulan explaining something to a friend who also makes videos. Plain, specific, a little casual, no drama. This file is the standard for every rewrite and every new page. Writers (human or agent) read it first and run `node scripts/ai-lint.mjs` before handing anything in.
 
+## The reference sample (Sulan's own about-page copy, use this as the bar)
+
+"Sulan began with posting her paintings at @sulansart. She loved storytelling and building her community, but she kept getting bogged down in the editing process. Scrubbing around timelines for hours at 3am after a full day of classes and work was not enjoyable!
+
+Caleb was a video editor of seven years and he also was making his own videos on the same campus while he faced the same problem: video editing is incredibly time consuming. So we started building a tool where you upload your clips, say what you want, and get the edit back in minutes! The first vlog Sulan made with Vyra took three prompts."
+
+Notice what she does: plain past-tense narration, one concrete detail per sentence (3am, seven years, three prompts), an occasional exclamation point where a person would actually be exasperated or pleased, and no cleverness. Match that. Do not add rhythm, do not add payoff lines.
+
 ## How Sulan actually talks (verbatim, from calls and captions)
 
 - "I just wanted to post my art and like post my videos and tell my story. I didn't want to spend a lot of time editing. But I was spending so much time editing and it was always like 3 4 a.m. after a long day of school."
