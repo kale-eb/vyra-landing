@@ -14,6 +14,7 @@ const footerLinks = {
     { label: "About us", href: "/about" },
     { label: "Reviews", href: "/reviews" },
     { label: "Docs", href: "/docs" },
+    { label: "Support", href: "/app-support" },
     { label: "Pricing", href: "/pricing" },
     { label: "Tutorials", href: "/tutorials" },
     { label: "Prompt library", href: "/prompts" },
