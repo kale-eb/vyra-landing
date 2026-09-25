@@ -1,6 +1,6 @@
 ---
 title: "Prompt (video editing)"
-description: "In video editing, a prompt is a plain-language instruction to an editing agent that names the target, what to keep, what to cut, and how text and sound should behave."
+description: "In video editing, a prompt is a plain-language instruction to an editing agent that names the target, what to keep, what to cut, and how text and sound behave."
 updated: '2026-09-24'
 category: glossary
 term: prompt-video-editing

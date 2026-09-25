@@ -1,6 +1,6 @@
 ---
 title: "Tutorial caption and callout prompts: label the steps on screen"
-description: "A tutorial caption prompt sets the caption style, adds a numbered step label each time you start a new step, and puts callouts (arrows, circles, labels) on the thing you are pointing at."
+description: "A tutorial caption prompt sets the caption style, adds a numbered step label at each new step, and puts callouts on the thing you are pointing at."
 updated: '2026-09-24'
 category: prompts
 ---

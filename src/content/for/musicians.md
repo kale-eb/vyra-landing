@@ -61,7 +61,7 @@ Build a 45-second recap of the tour footage to the attached track. Start slow wi
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

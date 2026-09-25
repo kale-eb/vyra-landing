@@ -1,6 +1,6 @@
 ---
 title: "Travel recap highlight reel prompts"
-description: "A travel recap prompt gives Vyra the trip's shape (days or places in order), the length, which moments are the peaks, and how much talking to keep, so the reel reads as a trip and not a random slideshow."
+description: "A travel recap prompt gives Vyra the trip's shape in order, the length, which moments are the peaks, and how much talking to keep, so it reads as a trip."
 updated: '2026-09-24'
 category: prompts
 ---

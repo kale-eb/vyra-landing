@@ -1,9 +1,6 @@
 ---
 title: Filler word removal prompts
-description: >-
-  A filler removal prompt lists the words to cut, the exceptions, the pause
-  threshold, and how to close the gaps. Name the exceptions or the agent will
-  cut a "like" you meant.
+description: "A filler removal prompt lists the words to cut, the exceptions, the pause threshold, and how to close the gaps. Name the exceptions or a real \"like\" gets cut."
 updated: '2026-09-24'
 category: prompts
 ---

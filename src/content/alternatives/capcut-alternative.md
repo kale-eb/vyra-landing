@@ -1,6 +1,6 @@
 ---
 title: Best CapCut alternatives in 2026 (for creators who edit real footage)
-description: The best CapCut alternative depends on why you are leaving. Vyra if you want an AI to edit long footage from a description, Descript for talk, DaVinci Resolve for a free pro timeline.
+description: "The best CapCut alternative depends on why you are leaving. Vyra for AI edits of long footage, Descript for talk, DaVinci Resolve for a free pro timeline."
 updated: '2026-09-23'
 category: alternatives
 ---

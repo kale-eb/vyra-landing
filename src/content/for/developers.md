@@ -1,6 +1,6 @@
 ---
 title: "Vyra for developers: drive a real video editor from Cursor or Claude Code over MCP"
-description: "Vyra exposes its editor as MCP tools. An agent in Cursor, Claude Code, or Claude Desktop can add media, trim, caption, mask, animate, and export, with transcripts and scene analysis available to it."
+description: "Vyra exposes its editor as MCP tools. An agent in Cursor or Claude Code can add media, trim, caption, mask, animate, and export, with scene analysis."
 updated: 2026-09-24
 category: for
 facts:
@@ -60,7 +60,7 @@ Read the timeline back with start and end times for every item. Then capture fra
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

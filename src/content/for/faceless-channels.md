@@ -1,6 +1,6 @@
 ---
 title: "Vyra for faceless channels: narration, b-roll, and captions without showing your face"
-description: "Vyra builds faceless videos from your recorded narration and your own b-roll or screen recordings, placing footage where the script mentions it and captioning every line."
+description: "Vyra builds faceless videos from your narration and your own b-roll or screen recordings, placing footage where the script mentions it, captioned."
 updated: '2026-09-24'
 category: for
 ---
@@ -54,7 +54,7 @@ Same style as yesterday's video. Caption font, placement, cut rhythm, end card. 
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

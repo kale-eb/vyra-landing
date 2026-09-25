@@ -1,6 +1,6 @@
 ---
 title: "UGC hook and demo prompts: hook, problem, demo, result in 30 seconds"
-description: "A UGC hook and demo prompt gives Vyra the four beats in order, the exact hook line, the demo footage to use, and the length, so the ad reads as a person showing a thing, not a commercial."
+description: "A UGC hook and demo prompt gives Vyra the four beats in order, the exact hook line, the demo footage, and the length, so it reads as a person showing a thing."
 updated: '2026-09-24'
 category: prompts
 ---

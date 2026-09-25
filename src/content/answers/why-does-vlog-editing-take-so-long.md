@@ -1,6 +1,6 @@
 ---
 title: Why does vlog editing take so many hours?
-description: A 10-minute vlog typically takes 5 to 10 hours to edit because you watch every clip, make hundreds of small decisions, and switch between cutting, audio, captions, and music.
+description: "A 10-minute vlog typically takes 5 to 10 hours because you watch every clip, make hundreds of small decisions, and switch between cuts, audio, and captions."
 updated: 2026-09-24
 category: answers
 ---

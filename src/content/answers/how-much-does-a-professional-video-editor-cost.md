@@ -1,6 +1,6 @@
 ---
 title: How much does a professional video editor cost?
-description: "Freelance editors typically charge by the hour, by the finished minute, or per video, with wide ranges by experience and format. A short social clip is the cheapest job, a polished YouTube video the most expensive."
+description: "Freelance editors typically charge by the hour, the finished minute, or the video. A short social clip is the cheapest job, a polished YouTube video the most."
 updated: 2026-09-24
 category: answers
 ---

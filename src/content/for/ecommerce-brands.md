@@ -1,6 +1,6 @@
 ---
 title: "Vyra for ecommerce brands: product demos and UGC-style ads from real footage"
-description: "Vyra turns phone footage of your real products into captioned demos, unboxings, and hook-and-demo ads by describing each cut. One shoot day covers a month of posts."
+description: "Vyra turns phone footage of your real products into captioned demos, unboxings, and hook-and-demo ads from a description. One shoot day covers a month of posts."
 updated: '2026-09-24'
 category: for
 ---
@@ -55,7 +55,7 @@ Use the caption style, music level, and end card from the mug demo on the next f
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

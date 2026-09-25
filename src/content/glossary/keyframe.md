@@ -1,6 +1,6 @@
 ---
 title: "Keyframe"
-description: "A keyframe is a point on the timeline where a property such as position, scale, opacity, or volume is fixed, with the editor interpolating values between keyframes."
+description: "A keyframe is a point on the timeline where a property such as position, scale, opacity, or volume is fixed, and the editor fills in the values between."
 updated: '2026-09-24'
 category: glossary
 term: keyframe

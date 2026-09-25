@@ -1,9 +1,6 @@
 ---
 title: 'Music prompts: tracks, ducking, fades'
-description: >-
-  A music prompt names the track or mood, the volume under speech and over
-  b-roll as percentages, where it starts and stops, and how it fades. Say the
-  numbers or the agent guesses them.
+description: "A music prompt names the track or mood, the volume under speech and over b-roll as percentages, where it starts and stops, and how it fades."
 updated: '2026-09-24'
 category: prompts
 ---

@@ -52,7 +52,7 @@ Clipchamp ships with Windows and runs in a browser. It has auto captions, an aut
 
 ## Try the same edit in both
 
-Task: turn a 10-minute screen tutorial into a 60-second short.
+Same task for both. Turn a 10-minute screen tutorial into a 60-second short.
 
 In Clipchamp you record or import, scrub for the key section, split and delete, auto caption, export.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Vyra for marketers: edit real footage by describing the edit'
-description: "Vyra turns founder interviews, product footage, and event recordings into captioned social cuts and demos by describing each deliverable. One shoot, many outputs."
+description: "Vyra turns founder interviews, product footage, and event recordings into captioned social cuts and demos by describing each one. One shoot, many outputs."
 updated: '2026-09-24'
 category: for
 ---
@@ -54,7 +54,7 @@ Find the moment the customer explains the result they got. Cut a 20-second clip 
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

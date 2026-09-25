@@ -52,7 +52,7 @@ Canva's video editor works like its design editor. Pick a template, drop in asse
 
 ## Try the same edit in both
 
-Task: a 30-second product Reel from 4 minutes of phone footage.
+Same task for both. A 30-second product Reel from 4 minutes of phone footage.
 
 In Canva you trim clips by hand, drop them into a Reel template, add text boxes, pick a track, export.
 

@@ -60,7 +60,7 @@ Take the clip from 1:42:10 to 1:42:55 and make a 9:16 version. Crop the gameplay
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

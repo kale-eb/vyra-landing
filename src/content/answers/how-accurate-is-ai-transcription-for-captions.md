@@ -1,6 +1,6 @@
 ---
 title: How accurate is AI speech transcription for captions?
-description: Modern AI transcription is typically 95 to 98 percent word-accurate on clean single-speaker audio and drops to 85 to 92 percent with noise, accents, or crosstalk.
+description: "Modern AI transcription is typically 95 to 98 percent accurate on clean single-speaker audio and 85 to 92 percent with noise, accents, or crosstalk."
 updated: 2026-09-24
 category: answers
 ---

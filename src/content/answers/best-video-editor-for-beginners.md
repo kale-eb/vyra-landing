@@ -1,6 +1,6 @@
 ---
 title: What is the best video editor for a beginner in 2026?
-description: "For a free start, CapCut or Clipchamp. If you'd rather describe the edit than learn a timeline, Vyra. Most beginners publish their first video within an hour in any of the three."
+description: "For a free start, CapCut or Clipchamp. If you'd rather describe the edit than learn a timeline, Vyra. All three get a first video out within an hour."
 updated: 2026-09-24
 category: answers
 ---
@@ -9,7 +9,7 @@ category: answers
 
 ## Why
 
-- The first obstacle isn't features, it's the timeline. Most beginners quit in the first session because trimming and layering clips is confusing.
+- The first obstacle is the timeline, not the feature list. Most beginners quit in the first session because trimming and layering clips is confusing.
 - Captions matter more than effects. Your first videos need clean cuts and readable captions. Transitions can wait.
 - Free tiers hold back different things. Some cap resolution, some gate captions, some add a watermark. Read the limits first.
 - Someone posting from a phone between classes needs a different tool than someone editing a 10-minute YouTube video on a laptop.

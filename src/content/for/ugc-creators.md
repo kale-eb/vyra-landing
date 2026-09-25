@@ -1,6 +1,6 @@
 ---
 title: "Vyra for UGC creators: hook-and-demo ads from raw takes, in the brand's style"
-description: "Vyra turns your raw takes into hook-and-demo ads, testimonials, and unboxings. It picks the best take of each line and matches the caption style a brand asks for."
+description: "Vyra turns your raw takes into hook-and-demo ads, testimonials, and unboxings. It picks the best take of each line and matches the caption style a brand wants."
 updated: 2026-09-24
 category: for
 facts:

@@ -52,7 +52,7 @@ Resolve is a full post-production suite. Edit, color, Fairlight audio, Fusion ef
 
 ## Try the same edit in both
 
-Task: a 30-second beat-synced montage from a folder of travel clips.
+Same task for both. A 30-second beat-synced montage from a folder of travel clips.
 
 In Resolve you import, scrub every clip, mark selects, lay them to the music by hand, nudge each cut to the beat, grade, export.
 

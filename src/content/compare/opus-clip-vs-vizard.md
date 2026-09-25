@@ -1,6 +1,6 @@
 ---
 title: "Opus Clip vs Vizard (2026): which clipping tool should you use?"
-description: "Opus Clip and Vizard both turn long talks into scored vertical clips. Opus Clip has the bigger brand, virality scoring, and an MCP server. Vizard is a close, often cheaper equivalent."
+description: "Opus Clip and Vizard both turn long talks into scored vertical clips. Opus Clip has the bigger brand and an MCP server. Vizard is a close, often cheaper option."
 updated: '2026-09-24'
 category: compare
 ---

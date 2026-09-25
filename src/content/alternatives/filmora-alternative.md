@@ -1,6 +1,6 @@
 ---
 title: Best Filmora alternatives in 2026 (for creators who edit real footage)
-description: "Vyra if you want an AI to build the edit from a description in the browser. DaVinci Resolve for a free pro desktop editor. CapCut for templates and mobile. Descript for transcript editing."
+description: "Vyra if you want an AI to build the edit in the browser. DaVinci Resolve for a free pro desktop editor. CapCut for templates and mobile."
 updated: '2026-09-24'
 category: alternatives
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Vyra vs Riverside (2026): which AI video editor should you use?"
-description: "Riverside is a remote recording studio with an AI editing agent for podcasts and interviews. Vyra is an editor built around an agent that has watched all your footage, whatever you shot."
+description: "Riverside is a remote recording studio with an AI editing agent for podcasts. Vyra is an editor built around an agent that has watched all your footage."
 updated: '2026-09-24'
 category: compare
 ---
@@ -52,7 +52,7 @@ If your content starts as a remote conversation, Riverside's strength is the rec
 
 ## Try the same edit in both
 
-Task: turn a 40-minute conversation into three 45-second vertical clips.
+Same task for both. Turn a 40-minute conversation into three 45-second vertical clips.
 
 In Riverside you record or upload, ask the agent for clips, adjust in the text editor, export.
 

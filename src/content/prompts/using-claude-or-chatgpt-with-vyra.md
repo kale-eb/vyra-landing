@@ -1,9 +1,6 @@
 ---
 title: 'Prompting Vyra from Claude, ChatGPT, or Cursor (MCP)'
-description: >-
-  When you drive Vyra through MCP, your assistant plans the edit and calls
-  Vyra's tools. The prompt style is the same as in-app, plus you can ask the
-  assistant to inspect footage, propose a plan,...
+description: "Through MCP your assistant plans the edit and calls Vyra's tools. Prompt the same way as in-app, and ask it to inspect footage and propose a plan first."
 updated: '2026-09-24'
 category: prompts
 level: intermediate

@@ -1,6 +1,6 @@
 ---
 title: What is the easiest video editor for social media content?
-description: "CapCut is easiest for template clips on a phone. Vyra is easiest when you have raw footage and want to type what you want instead of editing. Both get a first post out in under 30 minutes."
+description: "CapCut is easiest for template clips on a phone. Vyra is easiest when you have raw footage and want to type what you want. Both post in under 30 minutes."
 updated: 2026-09-24
 category: answers
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Vyra vs Captions app (2026): which AI video editor should you use?"
-description: "Captions is a phone app that polishes talking-head shorts with AI captions, zooms, and b-roll. Vyra is a browser editor where an AI cuts the whole video from raw footage."
+description: "Captions is a phone app that polishes talking-head shorts with AI captions and zooms. Vyra is a browser editor where an AI cuts the whole video from raw clips."
 updated: '2026-09-24'
 category: compare
 ---
@@ -54,7 +54,7 @@ Captions (captions.ai) is the phone-in-hand tool. Record or import a short clip,
 
 ## Try the same edit in both
 
-Task: a 30-second talking-head short with captions and a b-roll insert.
+Same task for both. A 30-second talking-head short with captions and a b-roll insert.
 
 In Captions you import the take, tap AI Edit, choose a style, adjust, export.
 

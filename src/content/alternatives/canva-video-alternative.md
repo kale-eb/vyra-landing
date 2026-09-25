@@ -1,6 +1,6 @@
 ---
 title: Best Canva video editor alternatives in 2026 (for creators who edit real footage)
-description: If Canva's video editor stopped being enough, Vyra is the alternative for editing real footage with AI. CapCut and Clipchamp are the simple manual options. Kapwing adds team tools.
+description: "If Canva's video editor stopped being enough, Vyra edits real footage with AI. CapCut and Clipchamp are the simple manual options."
 updated: '2026-09-23'
 category: alternatives
 ---

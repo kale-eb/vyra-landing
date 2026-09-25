@@ -81,7 +81,7 @@ The whole thing rests on shooting the before and after from the exact same spot.
 **Does the process have to be on beat?**
 No, but it holds people longer. Vyra can beat-sync that section.
 
-**What if I forgot to film the before?**
+**I forgot to film the before. Can I still make this?**
 Use a photo or the earliest shot you have, and label it honestly.
 
 ## Related

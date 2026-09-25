@@ -62,7 +62,7 @@ No. "Show the brushes while I talk about them" works as well as "J-cut."
 **How does it pick the best take?**
 It reads the transcript for restarts and stumbles. You can override with "use the take around 2:10."
 
-**What if it says it made a change and I can't see it?**
+**It says it made a change but I can't see it. Now what?**
 Ask for the list of cuts with timestamps, or scrub the timeline.
 
 ## Related

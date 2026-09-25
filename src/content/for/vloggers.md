@@ -1,6 +1,6 @@
 ---
 title: 'Vyra for vloggers: edit real footage by describing the edit'
-description: "Vyra cuts a day of vlog footage into a finished video from a plain brief. It has already transcribed your talking and looked at every clip, so you skip the hours of scrubbing."
+description: "Vyra cuts a day of vlog footage into a finished video from a plain brief. It has transcribed your talking and looked at every clip, so you skip the scrubbing."
 updated: '2026-09-24'
 category: for
 ---

@@ -55,7 +55,7 @@ Client notes on cut 2. Move the logo to top right, shorten the intro by 3 second
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

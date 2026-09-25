@@ -1,9 +1,6 @@
 ---
 title: 'Reframe prompts: 16:9 to 9:16 without losing the subject'
-description: >-
-  A reframe prompt names the target aspect ratio, what to keep in frame in
-  each kind of shot, how to handle screen recordings, and whether to crop or
-  pad. Vyra reframes with masks, so say what to track.
+description: "A reframe prompt names the target aspect ratio, what to keep in frame in each kind of shot, how to handle screen recordings, and whether to crop or pad."
 updated: '2026-09-24'
 category: prompts
 ---

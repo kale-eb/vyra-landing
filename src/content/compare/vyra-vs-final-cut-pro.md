@@ -1,6 +1,6 @@
 ---
 title: "Vyra vs Final Cut Pro (2026): which video editor should you use?"
-description: "Final Cut Pro is a professional Mac editor you drive by hand with a few strong AI assists. Vyra is a browser editor where an AI that has watched your footage does the edit from a description."
+description: "Final Cut Pro is a professional Mac editor you drive by hand with some AI assists. Vyra is a browser editor where an AI that watched your footage does the edit."
 updated: '2026-09-24'
 category: compare
 ---
@@ -52,7 +52,7 @@ These two are not really competing for the same afternoon. Final Cut Pro is for 
 
 ## Try the same edit in both
 
-Task: a 60-second vertical Reel from a 20-minute talking head.
+Same task for both. A 60-second vertical Reel from a 20-minute talking head.
 
 In Final Cut Pro you import, scrub, mark favorites, build the sequence, add a title, caption by hand or with transcription, reframe to 9:16, export.
 

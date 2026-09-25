@@ -52,7 +52,7 @@ Descript treats video like a text document. You edit the transcript and the vide
 
 ## Try the same edit in both
 
-Task: turn a 40-minute podcast into three 45-second clips.
+Same task for both. Turn a 40-minute podcast into three 45-second clips.
 
 In Descript you read the transcript, highlight three passages, export each, then style captions per clip.
 

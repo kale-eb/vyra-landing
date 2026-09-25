@@ -52,7 +52,7 @@ CapCut is a normal editor with AI features added on. Auto captions, background r
 
 ## Try the same edit in both
 
-Task: turn a 6-minute talking head into a 45-second Reel.
+Same task for both. Turn a 6-minute talking head into a 45-second Reel.
 
 In CapCut you scrub the timeline, split at every pause, delete the gaps, run auto captions, pick a caption style, add a sound.
 

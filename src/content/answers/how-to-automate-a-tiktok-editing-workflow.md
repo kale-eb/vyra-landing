@@ -1,6 +1,6 @@
 ---
 title: How do I automate my TikTok editing workflow?
-description: "Batch-film, upload raw clips to an AI editor that indexes them, use one saved prompt per format, and export 9:16 in one pass. Daily posters typically go from 2 hours per video to 20 to 30 minutes."
+description: "Batch-film, upload to an AI editor that indexes your clips, use one saved prompt per format, and export 9:16 in one pass. Typically 2 hours down to 30 minutes."
 updated: 2026-09-24
 category: answers
 ---

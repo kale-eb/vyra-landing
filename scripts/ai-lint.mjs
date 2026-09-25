@@ -11,7 +11,8 @@ const root=process.argv[2]||"src/content"; const rules={
  "'That is' / 'That's the'": /\bThat (is|’s|'s) (the|what|where|how) [^.\n]{2,50}\.$/gm,
 };
 const per={}; const totals={}; let files=0;
-const dirs = fs.readdirSync(root).some(f=>f.endsWith(".md")) ? [["",root]] : fs.readdirSync(root).filter(s=>fs.statSync(path.join(root,s)).isDirectory()).map(s=>[s,path.join(root,s)]);
+const subs = fs.readdirSync(root).filter(s=>fs.statSync(path.join(root,s)).isDirectory());
+const dirs = subs.length ? subs.map(s=>[s,path.join(root,s)]) : [["",root]];
 for(const [s,dir] of dirs){
  for(const f of fs.readdirSync(dir)){ if(!f.endsWith(".md"))continue; const t=fs.readFileSync(path.join(dir,f),"utf8").replace(/^---[\s\S]*?---/,"").replace(/```[\s\S]*?```/g,"").replace(/^\|.*$/gm,""); files++;
   for(const [k,re] of Object.entries(rules)){ const n=(t.match(re)||[]).length; if(n){ totals[k]=(totals[k]||0)+n; per[(s?s+"/":"")+f]=(per[(s?s+"/":"")+f]||0)+n; } } } }

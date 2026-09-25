@@ -1,6 +1,6 @@
 ---
 title: "Explainer motion graphics prompts: animate the list, the number, the diagram"
-description: "An explainer motion graphics prompt names each graphic moment (a list, a number, a diagram), the words that trigger it, how it builds, and when it clears, so the graphics follow what you say."
+description: "An explainer motion graphics prompt names each graphic moment, the words that trigger it, how it builds, and when it clears, so graphics follow what you say."
 updated: '2026-09-24'
 category: prompts
 ---

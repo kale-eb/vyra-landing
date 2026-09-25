@@ -41,7 +41,7 @@ Usually, if there's strumming or a steady rhythm. Solo vocal or sparse piano wor
 **Can I sync to a specific instrument?**
 Describe it. "Cut on the snare hits" or "cut on the bass drops."
 
-**What if the tempo changes?**
+**Does it handle tempo changes mid-song?**
 Say so. "The tempo doubles at 1:10."
 
 ## Related

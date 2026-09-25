@@ -75,7 +75,7 @@ My "editors, are we cooked?" video is one. It's shot on a phone in my room and t
 
 ## FAQ
 
-**Why does it need to look unpolished?**
+**Does it really have to look unpolished?**
 Because polished looks like an ad and people skip ads. Good audio matters more than good lighting.
 
 **How many hooks should I test?**

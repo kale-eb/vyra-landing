@@ -1,6 +1,6 @@
 ---
 title: "Editing agent"
-description: "An editing agent is an AI that operates an editor's tools directly, reading the footage and executing cuts, captions, and graphics from instructions instead of only suggesting them."
+description: "An editing agent is an AI that operates an editor's tools directly, reading the footage and making cuts, captions, and graphics from instructions."
 updated: '2026-09-24'
 category: glossary
 term: editing-agent

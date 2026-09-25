@@ -1,9 +1,6 @@
 ---
 title: MCP (Model Context Protocol)
-description: >-
-  MCP (Model Context Protocol) is an open standard that lets AI assistants
-  connect to external tools and data; Vyra uses it so Claude, ChatGPT, and
-  Cursor can control the editor.
+description: "MCP (Model Context Protocol) is an open standard that lets AI assistants connect to tools. Vyra uses it so Claude, ChatGPT, and Cursor can control the editor."
 updated: '2026-09-24'
 category: glossary
 term: MCP (Model Context Protocol)

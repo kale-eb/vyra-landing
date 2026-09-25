@@ -1,6 +1,6 @@
 ---
 title: 'Vyra for YouTube creators: edit real footage by describing the edit'
-description: "Vyra turns hours of raw footage into a finished long-form video or a batch of Shorts by describing the edit. It reads transcripts and scenes so you can point at moments by name."
+description: "Vyra turns hours of raw footage into a finished long-form video or a batch of Shorts by describing the edit. It reads transcripts and scenes, so name moments."
 updated: '2026-09-24'
 category: for
 ---
@@ -54,7 +54,7 @@ Add a title card at the start of each main section using the section names from 
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

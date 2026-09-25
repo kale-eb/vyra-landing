@@ -1,6 +1,6 @@
 ---
 title: Best DaVinci Resolve alternatives in 2026 (for creators who edit real footage)
-description: "Vyra if the problem is time and you want an AI to build the edit from a description. Premiere Pro or Final Cut for a different pro NLE. Descript for transcript editing. CapCut for simple and social."
+description: "Vyra if the problem is time and you want an AI to build the edit. Premiere or Final Cut for another pro NLE. Descript for transcript editing."
 updated: '2026-09-24'
 category: alternatives
 ---

@@ -1,6 +1,6 @@
 ---
 title: "CapCut vs Descript (2026): which should you use?"
-description: "CapCut is faster for template social clips on any device. Descript is better for talk-heavy videos you edit by editing the transcript. Neither cuts real footage from a description."
+description: "CapCut is faster for template social clips on any device. Descript is better for talk-heavy videos you edit by transcript. Neither cuts from a description."
 updated: '2026-09-24'
 category: compare
 ---

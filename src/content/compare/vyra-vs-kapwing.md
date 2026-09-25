@@ -52,7 +52,7 @@ Kapwing has a solid timeline and a long list of AI tools. Subtitles, silence rem
 
 ## Try the same edit in both
 
-Task: a 60-second talking-head cut with captions and silences removed.
+Same task for both. A 60-second talking-head cut with captions and silences removed.
 
 In Kapwing you upload, run Remove Silences, run Subtitles, trim by hand to 60 seconds, style captions, export.
 

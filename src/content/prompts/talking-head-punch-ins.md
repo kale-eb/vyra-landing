@@ -1,6 +1,6 @@
 ---
 title: "Talking head punch-in prompts: hide the cuts, keep the energy"
-description: "A punch-in prompt tells Vyra how much to zoom, where the cuts are allowed to land, and when to use a jump cut instead, so a single-camera talking head feels like two angles."
+description: "A punch-in prompt tells Vyra how much to zoom, where the cuts may land, and when to use a jump cut instead, so one camera feels like two angles."
 updated: '2026-09-24'
 category: prompts
 ---

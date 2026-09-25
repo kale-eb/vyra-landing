@@ -52,7 +52,7 @@ Filmora sits between phone apps and Premiere. A real desktop timeline, packs of 
 
 ## Try the same edit in both
 
-Task: a 60-second vlog recap from 12 minutes of clips.
+Same task for both. A 60-second vlog recap from 12 minutes of clips.
 
 In Filmora you import, scrub, mark selects, trim each, arrange, add transitions, auto beat sync, titles, export.
 

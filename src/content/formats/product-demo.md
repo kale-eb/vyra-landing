@@ -21,7 +21,7 @@ gear: 'phone or screen recorder, the product, a script'
 
 **A product demo shows a product doing one real task from start to finish, with the screen large in frame and a voiceover saying what is happening.**
 
-One task. Not a tour of every menu.
+One task, and none of the other menus.
 
 ## At a glance
 

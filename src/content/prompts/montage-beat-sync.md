@@ -1,6 +1,6 @@
 ---
 title: "Montage beat sync prompts: one clip per beat, velocity that changes"
-description: "A montage beat sync prompt names the track, the cut rate per section (verse, chorus), which clips to favor, and where the velocity should change, so the montage has shape instead of a metronome."
+description: "A montage beat sync prompt names the track, the cut rate per section, which clips to favor, and where the speed should change, so the montage has shape."
 updated: '2026-09-24'
 category: prompts
 ---

@@ -53,14 +53,14 @@ Apply the same caption style, title card style, and lower third as my last proje
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 
 **I've never edited video. Is this harder than a template app?**
 It's easier for talking videos. You describe what you want in sentences. There's no timeline to learn until you want it.
 
-**What if it cuts something I wanted?**
+**It cut something I wanted to keep. Can I get it back?**
 Give it the timestamp and say "put that back." Or drag it back yourself.
 
 **Can I use my ChatGPT or Claude subscription instead of the built-in AI?**

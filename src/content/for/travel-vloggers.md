@@ -1,6 +1,6 @@
 ---
 title: 'Vyra for travel vloggers: edit real footage by describing the edit'
-description: "Vyra turns a trip's worth of phone and camera clips into a travel vlog or a beat-synced recap from a plain brief. It finds locations and moments by looking at every clip."
+description: "Vyra turns a trip's worth of phone and camera clips into a travel vlog or a beat-synced recap from a plain brief. It finds moments by looking at every clip."
 updated: '2026-09-24'
 category: for
 ---

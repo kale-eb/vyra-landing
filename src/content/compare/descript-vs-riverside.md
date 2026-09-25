@@ -1,6 +1,6 @@
 ---
 title: "Descript vs Riverside (2026): which should you use for podcasts?"
-description: "Riverside is better if you record remote guests and want recording, editing, and clips in one place. Descript is better if you already have recordings and want to edit them like a document."
+description: "Riverside is better if you record remote guests and want recording, editing, and clips in one place. Descript is better for editing recordings you already have."
 updated: '2026-09-24'
 category: compare
 ---

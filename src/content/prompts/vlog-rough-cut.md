@@ -1,6 +1,6 @@
 ---
 title: "Vlog rough cut prompts"
-description: "A vlog rough cut prompt gives Vyra the day's shape (locations in order), the target length, which talking clips must survive, and how much b-roll to keep between them."
+description: "A vlog rough cut prompt gives Vyra the day's shape (locations in order), the target length, which talking clips must survive, and how much b-roll to keep."
 updated: '2026-09-24'
 category: prompts
 ---

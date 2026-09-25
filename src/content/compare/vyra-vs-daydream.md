@@ -1,6 +1,6 @@
 ---
 title: "Vyra vs Daydream (2026): which AI video editor for Claude should you use?"
-description: "Daydream is a timeline editor built to be driven from Claude Code and Codex. Vyra has the same agent control plus a built-in AI, per-scene visual analysis, and reference matching."
+description: "Daydream is a timeline editor driven from Claude Code and Codex. Vyra has the same agent control plus a built-in AI, per-scene analysis, and reference matching."
 updated: '2026-09-24'
 category: compare
 ---
@@ -58,7 +58,7 @@ From Claude Code in either product:
 List the assets in this project and summarize the footage. Propose a 45-second Reel structure with timestamps and wait for my OK. Then build it: straight cuts, phrase captions in white, music ducked under speech, and capture frames at 0:03, 0:15, and 0:40 so I can check text placement.
 ```
 
-Both handle the plan-then-build loop. Vyra's summary includes per-scene visual descriptions. That is where they start to differ.
+Both handle the plan-then-build loop. The difference is that Vyra's summary includes a visual description of every scene.
 
 ## FAQ
 

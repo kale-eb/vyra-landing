@@ -1,6 +1,6 @@
 ---
 title: How do I switch video editors without losing my work?
-description: "Export finished videos as MP4, keep raw footage in dated folders, write down your recurring style choices, and rebuild them in the new tool as saved prompts or a reference video. It typically takes one afternoon."
+description: "Export finished videos as MP4, keep raw footage in dated folders, and rebuild your style choices in the new tool as saved prompts. Typically one afternoon."
 updated: 2026-09-24
 category: answers
 ---

@@ -1,6 +1,6 @@
 ---
 title: Does scene detection work on poorly lit footage?
-description: Scene detection works on low-light footage as long as there is visible contrast. It degrades when the image is near-black, very noisy, or lit by a single flickering source.
+description: "Scene detection works on low-light footage as long as there is visible contrast. It degrades when the image is near-black, very noisy, or flickering."
 updated: 2026-09-24
 category: answers
 ---

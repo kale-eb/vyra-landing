@@ -1,6 +1,6 @@
 ---
 title: Does an automated video maker actually save editing time?
-description: "Yes, typically 60 to 80 percent on the mechanical work (reviewing footage, trimming, captioning), if the tool works from your real footage. Template makers save less."
+description: "Yes, typically 60 to 80 percent on reviewing, trimming, and captioning, if the tool works from your real footage. Template makers save less."
 updated: 2026-09-24
 category: answers
 ---

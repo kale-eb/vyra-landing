@@ -1,9 +1,6 @@
 ---
 title: How to prompt an AI video editor (Vyra prompting 101)
-description: >-
-  A good Vyra prompt states the target (length, platform, purpose), what to keep
-  and cut, how captions and music should behave, and whether to follow a
-  reference. Descriptive beats technical.
+description: "A good Vyra prompt states the target (length, platform, purpose), what to keep and cut, how captions and music should behave, and whether to follow a reference."
 updated: '2026-09-24'
 category: prompts
 level: beginner

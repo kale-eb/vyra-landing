@@ -76,7 +76,7 @@ I made one of these because I'd never posted most of the paintings. Same wall, s
 
 ## FAQ
 
-**What if the pieces were shot differently?**
+**The pieces were shot in different light and framing. Does that matter?**
 Vyra can match color and reframe, but reshoot on one wall in one session if you can.
 
 **How long is each piece on screen?**

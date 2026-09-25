@@ -55,7 +55,7 @@ Find the three clearest 30-second explanations in this lesson, where I state a c
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

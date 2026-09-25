@@ -1,6 +1,6 @@
 ---
 title: "Vyra vs InShot (2026): which video editor should you use?"
-description: "InShot is a simple phone editor for trims, stickers, and music. Vyra is a browser editor where an AI builds the edit from a description, which matters once you have more than one clip."
+description: "InShot is a simple phone editor for trims, stickers, and music. Vyra is a browser editor where an AI builds the edit from a description, past one clip."
 updated: '2026-09-24'
 category: compare
 ---
@@ -53,7 +53,7 @@ InShot is the app a lot of people start with. Cut a clip, add a song, drop a sti
 
 ## Try the same edit in both
 
-Task: a 40-second vlog from 15 clips with music and captions.
+Same task for both. A 40-second vlog from 15 clips with music and captions.
 
 In InShot you import 15 clips, trim each by hand, order them, add music, add captions, adjust, export.
 

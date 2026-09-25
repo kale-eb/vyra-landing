@@ -1,6 +1,6 @@
 ---
 title: "Vyra for coaches and course creators: lessons, clips, and promos from long recordings"
-description: "Vyra turns hour-long lessons, calls, and webinars into clean lessons, captioned clips, and promos. It reads the transcript so you can ask for the moment you mean."
+description: "Vyra turns hour-long lessons, calls, and webinars into clean lessons, captioned clips, and promos. It reads the transcript so you can ask for a moment."
 updated: 2026-09-24
 category: for
 facts:
@@ -61,7 +61,7 @@ Build a 60-second promo from the lesson footage and the student call recordings.
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

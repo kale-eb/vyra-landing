@@ -1,9 +1,6 @@
 ---
 title: Hook
-description: >-
-  A hook is the first one to three seconds of a video, designed to stop a viewer
-  from scrolling by promising a payoff, posing a question, or showing something
-  surprising.
+description: "A hook is the first one to three seconds of a video, made to stop a viewer from scrolling by promising a payoff, asking a question, or showing a surprise."
 updated: '2026-09-24'
 category: glossary
 term: hook

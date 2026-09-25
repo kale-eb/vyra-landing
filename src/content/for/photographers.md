@@ -61,7 +61,7 @@ Cut a 45-second recap of the wedding day. Getting ready, ceremony, portraits, re
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

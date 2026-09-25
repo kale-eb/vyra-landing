@@ -1,6 +1,6 @@
 ---
 title: "Vyra vs Vizard (2026): which AI video editor should you use?"
-description: "Vizard finds highlights in a long recording and hands you ready clips. Vyra can do the same clipping and also build the whole video you describe from any footage."
+description: "Vizard finds highlights in a long recording and hands you ready clips. Vyra can do the same clipping and also build the whole video you describe."
 updated: '2026-09-24'
 category: compare
 ---
@@ -51,7 +51,7 @@ Vizard is narrow on purpose. Upload a long talk, podcast, or webinar. It scores 
 
 ## Try the same edit in both
 
-Task: five vertical clips from a 50-minute podcast.
+Same task for both. Five vertical clips from a 50-minute podcast.
 
 In Vizard you upload, wait for scored clips, pick five, tweak captions, export.
 

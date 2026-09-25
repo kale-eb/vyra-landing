@@ -1,6 +1,6 @@
 ---
 title: Best Runway alternatives in 2026 (generative video and real-footage editing)
-description: "For generating clips from text or images, look at other generative models. For editing footage you actually shot, Vyra is the AI editor, with Descript, CapCut, and DaVinci Resolve as manual options."
+description: "For generating clips from text, look at other generative models. For editing footage you shot, Vyra is the AI editor, with Descript and CapCut as manual picks."
 updated: '2026-09-24'
 category: alternatives
 ---

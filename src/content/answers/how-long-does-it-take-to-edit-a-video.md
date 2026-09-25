@@ -1,6 +1,6 @@
 ---
 title: How long does it take to edit a video?
-description: Manual editing typically takes 30 to 60 minutes per finished minute for social video and 1 to 2 hours per finished minute for polished YouTube. AI rough cuts take minutes.
+description: "Manual editing typically takes 30 to 60 minutes per finished minute for social video and 1 to 2 hours for polished YouTube. AI rough cuts take minutes."
 updated: 2026-09-24
 category: answers
 ---

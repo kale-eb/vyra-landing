@@ -1,6 +1,6 @@
 ---
 title: "Faceless video assembly prompts: narration, b-roll, captions, no face"
-description: "A faceless video prompt gives Vyra the narration as the spine, a rule for which footage covers which sentence, a caption style, and a shot-length floor so the video never sits on one image too long."
+description: "A faceless video prompt gives Vyra the narration as the spine, a rule for which footage covers which sentence, a caption style, and a shot-length floor."
 updated: '2026-09-24'
 category: prompts
 ---

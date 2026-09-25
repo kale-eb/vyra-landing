@@ -54,7 +54,7 @@ Describe the attached reference video's cut rhythm, caption style, and music beh
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 
@@ -64,7 +64,7 @@ It works with any ChatGPT surface that supports MCP connections. Check your plan
 **Can I still use Vyra's built-in AI?**
 Yes. The built-in chat doesn't need ChatGPT at all.
 
-**What if ChatGPT says it made a change it didn't make?**
+**ChatGPT says it made a change but I can't see it. Now what?**
 Ask it to read the timeline back with timestamps and compare. Then tell it exactly what to do.
 
 ## Related

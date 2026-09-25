@@ -1,6 +1,6 @@
 ---
 title: "Podcast clip prompts: find the 45 seconds worth posting"
-description: "A podcast clip prompt tells Vyra what makes a moment worth posting (a claim, a disagreement, a story with a payoff), the clip length, and which speaker to favor on camera."
+description: "A podcast clip prompt tells Vyra what makes a moment worth posting (a claim, a disagreement, a story), the clip length, and which speaker to favor on camera."
 updated: '2026-09-24'
 category: prompts
 ---

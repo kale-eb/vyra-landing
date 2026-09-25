@@ -54,7 +54,7 @@ Find every moment where I mention the brush set. At each one, cut to the close-u
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

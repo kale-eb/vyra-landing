@@ -1,6 +1,6 @@
 ---
 title: 'Vyra for TikTok creators: edit real footage by describing the edit'
-description: "Go from raw clips to a captioned, music-ducked 9:16 video by describing the hook, the cuts, and the caption style in one message. Fix it with one-line corrections."
+description: "Go from raw clips to a captioned, music-ducked 9:16 video by describing the hook, the cuts, and the caption style in one message. Fix it in one line."
 updated: '2026-09-24'
 category: for
 ---

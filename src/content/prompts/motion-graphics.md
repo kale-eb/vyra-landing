@@ -1,9 +1,6 @@
 ---
 title: 'Motion graphics prompts: animated text, lists, lower thirds'
-description: >-
-  A motion graphics prompt names the trigger, what appears, where it sits, the
-  font and colors, how it enters, how long it stays, and how it leaves. Each
-  missing detail becomes a guess.
+description: "A motion graphics prompt names the trigger, what appears, where it sits, the font and colors, how it enters, how long it stays, and how it leaves."
 updated: '2026-09-24'
 category: prompts
 ---

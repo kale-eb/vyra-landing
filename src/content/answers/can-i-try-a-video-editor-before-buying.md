@@ -45,7 +45,7 @@ Export at 1080x1920. If anything I asked for isn't available on the free start, 
 ## FAQ
 
 **Does Vyra need a credit card to start?**
-Vyra is free to start. TODO: confirm whether a card is required at signup and any free-tier limits before publishing.
+Vyra is free to start. TODO, confirm whether a card is required at signup and any free-tier limits before publishing.
 
 **Do I need Claude or ChatGPT to try Vyra?**
 No. The built-in AI works on its own. MCP plans are for people who already pay for one and want to drive Vyra from there.

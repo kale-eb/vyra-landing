@@ -52,7 +52,7 @@ This is two halves of a workflow more than a head-to-head. Runway makes shots th
 
 ## Try the same edit in both
 
-Task: a 45-second product story with one impossible shot.
+Same task for both. A 45-second product story with one impossible shot.
 
 In Runway you generate the impossible shot (the product floating through clouds), then cut it together in another editor.
 

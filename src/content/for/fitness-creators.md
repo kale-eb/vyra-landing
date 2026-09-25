@@ -1,6 +1,6 @@
 ---
 title: "Vyra for fitness creators: workout breakdowns, form tips, and transformation videos"
-description: "Vyra turns gym and home-workout footage into form breakdowns, follow-along routines, and transformation reels, with exercise labels and captions added from a sentence."
+description: "Vyra turns gym and home-workout footage into form breakdowns, follow-along routines, and transformation reels, with exercise labels and captions."
 updated: 2026-09-24
 category: for
 facts:
@@ -61,7 +61,7 @@ Make a 20-second reel. Before photo for 3 seconds, after photo for 3 seconds, th
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

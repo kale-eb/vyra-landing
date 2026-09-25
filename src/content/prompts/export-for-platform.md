@@ -1,9 +1,6 @@
 ---
 title: 'Export prompts: TikTok, Reels, Shorts, grid'
-description: >-
-  An export prompt names each platform, its aspect ratio and resolution, what
-  must stay in frame when the crop changes, and the quality setting. One
-  message can produce every version.
+description: "An export prompt names each platform, its aspect ratio and resolution, what must stay in frame when the crop changes, and the quality setting."
 updated: '2026-09-24'
 category: prompts
 ---

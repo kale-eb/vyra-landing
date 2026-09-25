@@ -1,6 +1,6 @@
 ---
 title: "Vyra for real estate agents: listing tours and market updates from your phone footage"
-description: "Vyra turns walkthrough footage and talking-to-camera clips into listing tours, neighborhood reels, and market updates, with captions, labels, and music from one prompt."
+description: "Vyra turns walkthrough footage and talking-to-camera clips into listing tours, neighborhood reels, and market updates, with captions and music from one prompt."
 updated: 2026-09-24
 category: for
 facts:
@@ -61,7 +61,7 @@ Clean up this talking-head market update to 60 seconds. Remove pauses and restar
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

@@ -52,7 +52,7 @@ Opus Clip is simple. Upload a long video, get back a batch of scored short clips
 
 ## Try the same edit in both
 
-Task: get three shorts from a 30-minute interview.
+Same task for both. Get three shorts from a 30-minute interview.
 
 In Opus Clip you upload, wait for scored clips, pick three, choose a caption template.
 

@@ -1,9 +1,6 @@
 ---
 title: Highlight reel prompts
-description: >-
-  A highlight reel prompt sets the length, how many moments to pick, the
-  selection rule (movement, faces, reveals), the energy curve, and the track.
-  The agent has already watched every clip; you tell it what counts.
+description: "A highlight reel prompt sets the length, how many moments to pick, the selection rule, the energy curve, and the track. You tell the agent what counts."
 updated: '2026-09-24'
 category: prompts
 ---

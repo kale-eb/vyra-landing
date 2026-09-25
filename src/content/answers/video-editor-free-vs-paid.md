@@ -1,6 +1,6 @@
 ---
 title: "Free vs paid video editors: when is it worth paying?"
-description: "Free editors cover cuts and basic captions. Pay when you hit resolution caps, watermarks, processing limits, or when your time per video is worth more than the subscription. For most creators that's two or three videos a week."
+description: "Free editors cover cuts and basic captions. Pay when you hit resolution caps, watermarks, or limits, or when your time per video is worth more than the plan."
 updated: 2026-09-24
 category: answers
 ---

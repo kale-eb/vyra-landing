@@ -2,10 +2,7 @@
 title: >-
   Reference style prompts: copy pacing, captions, and music from a video you
   like
-description: >-
-  A reference prompt names which properties to copy from the attached video:
-  pacing, captions, music energy, color, text placement. Attaching a reference
-  is not enough on its own.
+description: "A reference prompt names which properties to copy from the attached video, like pacing, captions, music energy, color, and text placement."
 updated: '2026-09-24'
 category: prompts
 ---

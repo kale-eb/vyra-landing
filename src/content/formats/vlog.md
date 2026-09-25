@@ -76,7 +76,7 @@ This is the format that made me build Vyra. Hours of footage, 90 seconds of vide
 
 ## FAQ
 
-**Why does vlog editing take so long?**
+**Vlog editing takes me hours. Is that normal?**
 You're scrubbing an hour of footage for 90 seconds. Vyra transcribes and analyzes everything on upload, so you can ask for "the part where I talk about the deadline" instead.
 
 **Do I have to talk to camera?**

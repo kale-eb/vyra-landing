@@ -51,7 +51,7 @@ Submagic got popular for one thing. Drop in a finished short, get animated capti
 
 ## Try the same edit in both
 
-Task: a 30-second captioned short from a 6-minute recording.
+Same task for both. A 30-second captioned short from a 6-minute recording.
 
 In Submagic you cut the 30 seconds somewhere else first, upload, pick a caption template, export.
 

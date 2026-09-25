@@ -65,7 +65,7 @@ Minutes. Most people go from upload to export in under 5 minutes on short footag
 **Will it reorder my points?**
 Only if you ask.
 
-**What if it says it removed something and didn't?**
+**It says it removed something but the cut is still there. Now what?**
 Ask for the list of cuts with timestamps, then say exactly what to remove.
 
 ## Related

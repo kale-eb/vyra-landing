@@ -1,6 +1,6 @@
 ---
 title: "Vyra for wedding videographers: same-day teasers and highlight films from a full day of footage"
-description: "Vyra turns a full wedding day of footage into same-day teasers, highlight films, and social cuts. It finds the moments you describe, syncs to the couple's song, and keeps vows and speeches intact."
+description: "Vyra turns a wedding day of footage into same-day teasers, highlight films, and social cuts. It finds the moments you describe and syncs to the couple's song."
 updated: 2026-09-24
 category: for
 facts:
@@ -60,7 +60,7 @@ Sync the two ceremony angles by transcript and cut between them on the speaker. 
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

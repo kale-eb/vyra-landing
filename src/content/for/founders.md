@@ -1,6 +1,6 @@
 ---
 title: 'Vyra for founders: edit real footage by describing the edit'
-description: "Record a phone video about what you're building and get a captioned, tightened, vertical cut back by describing the edit. Build-in-public content without the evening of editing."
+description: "Record a phone video about what you're building and get a captioned, tightened, vertical cut back by describing the edit. No evening of editing."
 updated: '2026-09-24'
 category: for
 ---
@@ -53,7 +53,7 @@ Make a 45-second demo. Start on me saying the one-line pitch, then the screen re
 
 ## Example
 
-Example creator: TODO
+Example creator (TODO)
 
 ## FAQ
 

@@ -1,6 +1,6 @@
 ---
 title: What AI tools do content creators actually use in 2026?
-description: "A typical creator stack in 2026 is two to four AI tools. An editor that works on real footage (Vyra, Descript, CapCut), a writing assistant for hooks (Claude or ChatGPT), a scheduler, and maybe a repurposing tool."
+description: "A typical 2026 creator stack is two to four tools. An editor for real footage, a writing assistant for hooks, a scheduler, and maybe a repurposing tool."
 updated: 2026-09-24
 category: answers
 ---

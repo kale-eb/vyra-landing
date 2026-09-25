@@ -1,6 +1,6 @@
 ---
 title: "Screen recording reframe prompts: 16:9 to 9:16 without losing the point"
-description: "A screen recording reframe prompt tells Vyra what region of the screen matters at each moment, how to place the face inset, and when to crop tight versus show the whole screen."
+description: "A screen recording reframe prompt tells Vyra what region of the screen matters at each moment, where the face inset goes, and when to crop tight."
 updated: '2026-09-24'
 category: prompts
 ---
