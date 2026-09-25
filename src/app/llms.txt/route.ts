@@ -37,7 +37,8 @@ export function GET() {
   for (const p of getNewsletterPosts()) lines.push(`- [${p.title}](${SITE_URL}/newsletter/${p.slug}): ${p.subtitle}`);
   lines.push("");
   lines.push("## Optional");
-  lines.push(`- [Sitemap index](${SITE_URL}/sitemap.xml)`);
+  lines.push(`- [Sitemap](${SITE_URL}/sitemap.xml)`);
+  lines.push(`- [Sitemap index](${SITE_URL}/sitemap-index.xml)`);
   lines.push(`- [Author: Sulan Zhang](${SITE_URL}/author/sulan)`);
   lines.push("");
   // MCP server setup for AI clients (kept verbatim from the original hand-off file).
