@@ -1,6 +1,7 @@
 "use client";
 
 import Reveal from "./Reveal";
+import IosWaitlistButton from "./IosWaitlistButton";
 import { trackLead } from "./MetaPixel";
 
 export default function FinalCTA() {
@@ -37,7 +38,7 @@ export default function FinalCTA() {
           Go from footage to finished in minutes.
         </Reveal>
 
-        <Reveal y={20} duration={0.6} delay={0.3}>
+        <Reveal y={20} duration={0.6} delay={0.3} className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href="https://app.usevyra.com/signup"
             onClick={() => trackLead()}
@@ -45,6 +46,7 @@ export default function FinalCTA() {
           >
             Get started for free
           </a>
+          <IosWaitlistButton />
         </Reveal>
       </div>
     </section>

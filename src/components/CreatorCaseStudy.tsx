@@ -68,7 +68,7 @@ function ReelCard({ reel }: { reel: typeof reels[number] }) {
 
   return (
     <article className="w-[190px] shrink-0 snap-center rounded-2xl bg-white p-1.5 shadow-[0_6px_20px_rgba(35,65,105,0.07)] sm:w-auto">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#dce7f5]">
+      <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#e6e6ea]">
         <video
           ref={video}
           src={`/videos/case-study/${reel.image}.mp4`}
@@ -112,7 +112,7 @@ export default function CreatorCaseStudy() {
 
   return (
     <section id="creator-case-study" aria-labelledby="creator-case-study-title" className="px-4 py-10 sm:px-6 md:py-14">
-      <div className="mx-auto max-w-4xl rounded-3xl border border-[#d4e2f4] bg-[#edf4ff] px-4 py-8 sm:px-8">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-[#e2e3e7] bg-[#f4f4f6] px-4 py-8 sm:px-8">
         <Reveal className="mx-auto max-w-xl text-center">
           <h2 id="creator-case-study-title" className="text-3xl font-bold tracking-tight sm:text-4xl">Growing Vyra with Vyra.</h2>
           <p className="mt-3 text-sm leading-relaxed text-[var(--foreground-muted)]">
@@ -132,7 +132,7 @@ export default function CreatorCaseStudy() {
         <p role="status" className="text-center text-xs text-[var(--foreground-muted)]">{copyStatus}</p>
         <div className="mt-5 text-center">
           <a href="https://app.usevyra.com/signup" onClick={() => trackLead("Creator Case Study CTA")}
-            className="inline-flex rounded-full bg-[#315b91] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#254875] focus-visible:outline-2 focus-visible:outline-offset-4">
+            className="inline-flex rounded-full bg-[#292b31] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#41444d] focus-visible:outline-2 focus-visible:outline-offset-4">
             Try it with your footage ↗
           </a>
         </div>
