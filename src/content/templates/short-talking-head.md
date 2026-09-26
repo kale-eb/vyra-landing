@@ -11,6 +11,8 @@ facts:
   - "Music: Off by default"
   - "Pairs with style: Vyra Default or Cinematic Film"
   - "Price: Included on every plan"
+reels:
+  - DY_kJF4uI9-
 ---
 
 **A template is structural guidance for the agent. Short Talking Head tells it you're one person making one point. Cut every pause and restart, caption the speech, end without a fade.**

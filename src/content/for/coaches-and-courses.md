@@ -10,6 +10,8 @@ facts:
   - "Time saved: A 60-minute recording to a cleaned lesson plus five captioned clips in one sitting"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DY4pVwtu3KD
 ---
 
 **Coaching content is long recordings that need to become short and findable. Vyra transcribes every word, so you can ask for "the part where I explain the pricing objection" and get a captioned clip without scrubbing an hour of video.**

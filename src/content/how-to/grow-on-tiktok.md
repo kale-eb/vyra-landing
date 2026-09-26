@@ -8,6 +8,11 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - Da_tDQwtc-M
+  - DZwM74ytJxF
+newsletter:
+  - the-truth-about-growing-on-social-media
 ---
 
 **TikTok shows each post to a small batch of strangers, measures how long they watch, and widens the batch if the numbers hold. So follower count matters less than you'd think. What matters is posting one repeatable format often enough that a stranger's first video from you has a hook in the first second and no dead air after.**

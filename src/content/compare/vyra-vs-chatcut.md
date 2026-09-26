@@ -3,6 +3,8 @@ title: "Vyra vs ChatCut (2026): which chat-based video editor should you use?"
 description: "ChatCut and Vyra both edit real footage by chat, including from Claude Code or ChatGPT. Vyra adds scene analysis, a built-in AI, and reference matching."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **ChatCut and Vyra both let you edit real footage by chatting, including from Claude Code or the ChatGPT app. Vyra adds per-scene visual analysis, a built-in AI option, reference matching, and a full browser timeline. ChatCut is the lighter, more developer-flavored one.**

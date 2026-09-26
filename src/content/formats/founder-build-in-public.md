@@ -18,6 +18,10 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, screen recorder, your real numbers'
 example: https://www.instagram.com/reel/DdcjJBPva-m/
+reels:
+  - DdcjJBPva-m
+  - DaR9p9_N6SO
+  - DdInaC0NGql
 ---
 
 **A build in public video is a founder sharing one update, decision, or number from the company, mixing face, screen, and the real metrics.**

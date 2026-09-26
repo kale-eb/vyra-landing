@@ -3,6 +3,9 @@ title: 'Vyra for Claude users: edit real footage by describing the edit'
 description: "Vyra connects to Claude through MCP, so the Claude subscription you already pay for can see your footage, cut it, caption it, and build motion graphics."
 updated: '2026-09-24'
 category: for
+reels:
+  - DZumPohtfW8
+  - DaAb0QFNvk0
 ---
 
 **If you already pay for Claude, you're most of the way there. Connect it to Vyra through MCP, upload footage, and edit by talking to Claude the way you already do.**

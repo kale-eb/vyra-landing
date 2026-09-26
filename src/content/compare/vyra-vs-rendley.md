@@ -3,6 +3,8 @@ title: "Vyra vs Rendley (2026): which video editing MCP should you use?"
 description: "Rendley is a hosted MCP server and editing engine for automating edits from Claude and ChatGPT, aimed at builders. Vyra is a creator editor with MCP access."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Rendley is a hosted MCP server and editing engine for automating video edits from Claude and ChatGPT, aimed at builders. Vyra is a creator editor that exposes its full tool set over MCP and also has its own agent chat and a browser timeline.**

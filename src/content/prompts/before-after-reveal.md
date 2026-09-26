@@ -3,6 +3,9 @@ title: "Before and after reveal prompts: hold the before, earn the after"
 description: "A before and after prompt tells Vyra which clip is the before, which is the after, how long to hold each, and whether to use a split, a cut, or a wipe."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DL3dH-7sK9U
+  - DZh-0ccu_cv
 ---
 
 **Say which clip is the before, which is the after, how long each holds, what goes between, and how to cut to the reveal. The reveal is the payoff. The prompt's job is to make it wait.**

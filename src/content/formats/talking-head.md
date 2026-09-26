@@ -16,6 +16,12 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, window light, a quiet room'
 example: https://www.instagram.com/reel/DY_kJF4uI9-/
+reels:
+  - DY_kJF4uI9-
+  - DM6RiJPJtYf
+  - DY75P9PtMhO
+newsletter:
+  - why-you-should-post-content
 ---
 
 **A talking head is one person talking to camera, cut tight, usually with captions and no b-roll.**

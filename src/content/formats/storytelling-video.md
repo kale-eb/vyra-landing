@@ -16,6 +16,10 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, some footage or photos from the story'
 example: https://www.instagram.com/reel/DdInaC0NGql/
+reels:
+  - DdInaC0NGql
+  - DS9JDZ-DE0l
+  - DYTeVwLs5uT
 ---
 
 **A storytelling video is a short story with a setup, a turn, and an ending, told in voiceover or to camera and covered with footage from the story.**

@@ -15,6 +15,9 @@ typical_length: '30-90s short, 8-15 min long'
 aspect: '9:16 or 16:9'
 difficulty: beginner
 gear: 'a mic, stock or own b-roll, screen recordings'
+reels:
+  - DVzOIAIjjSs
+  - DMi8HxxMAIQ
 ---
 
 **A faceless video tells a story or explains something with voiceover, b-roll, screen recordings, and text, and you never appear on camera.**

@@ -16,6 +16,9 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone with timelapse mode or a normal recording, tripod or clamp, constant light'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DMbcID7MFoa
+  - DMi8HxxMAIQ
 ---
 
 **An art timelapse is a locked-off recording of a piece being made, played at one steady high speed with no cuts.**

@@ -8,6 +8,8 @@ category: how-to
 level: intermediate
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DZwM74ytJxF
 ---
 
 **A short from a long video works when it's a complete thought. Find a 20 to 60 second piece that opens on a claim or question and closes on a payoff, reframe 16:9 to 9:16 with the face on the upper third, add captions, and fix any missing context with a short text hook. One 20 minute video usually gives 3 to 6 usable shorts.**

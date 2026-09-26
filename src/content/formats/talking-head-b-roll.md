@@ -16,6 +16,9 @@ aspect: '9:16 or 16:9'
 difficulty: intermediate
 gear: 'phone, tripod, 10-20 minutes of supporting footage'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DZumPohtfW8
+  - DU1PhRrCZnu
 ---
 
 **A talking head with b-roll is you talking to camera while clips of what you describe cover the parts where you mention them.**

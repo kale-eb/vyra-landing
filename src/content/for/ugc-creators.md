@@ -10,6 +10,10 @@ facts:
   - "Time saved: One shoot to five ad variants with different hooks in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - Da_tDQwtc-M
+  - DajEylHSiz8
+  - DaAb0QFNvk0
 ---
 
 **UGC work is volume, variants, and brand specs. Vyra picks the cleanest take of each line, builds the hook-demo-close structure from a sentence, and copies the caption style a brand sends you as a reference.**

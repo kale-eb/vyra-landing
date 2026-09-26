@@ -1,9 +1,11 @@
+import { reelEmbedUrl, resolveReels } from "@/lib/reels";
 import { SITE_URL, SECTION_KEYS, getEntries, type SectionKey } from "@/lib/content";
 import { posts } from "@/app/blog/[slug]/data";
 import reviews from "@/content/reviews.json";
 import { getNewsletterPosts } from "@/lib/newsletter";
 
-export type SitemapUrl = { loc: string; lastmod: string; video?: { title: string; description: string; contentLoc: string; thumbnail: string; uploadDate: string } };
+export type SitemapVideo = { title: string; description: string; contentLoc?: string; playerLoc?: string; thumbnail: string; uploadDate: string };
+export type SitemapUrl = { loc: string; lastmod: string; video?: SitemapVideo; videos?: SitemapVideo[] };
 
 const STATIC_LASTMOD = "2026-09-24";
 
@@ -59,18 +61,23 @@ export function childSitemaps(): Record<string, SitemapUrl[]> {
   const video: SitemapUrl[] = SECTION_KEYS.concat()
     .flatMap((s) => getEntries(s))
     .concat(getEntries("product"))
-    .filter((e) => e.video)
-    .map((e) => ({
-      loc: e.url,
-      lastmod: e.updated,
-      video: {
-        title: e.title,
-        description: e.description,
-        contentLoc: e.video!,
-        thumbnail: `${SITE_URL}/og-image.png`,
-        uploadDate: e.updated,
-      },
-    }));
+    .filter((e) => e.video || e.reels.length)
+    .map((e) => {
+      const videos: SitemapVideo[] = [];
+      if (e.video) {
+        videos.push({ title: e.title, description: e.description, contentLoc: e.video, thumbnail: `${SITE_URL}/og-image.png`, uploadDate: e.updated });
+      }
+      for (const r of resolveReels(e.reels)) {
+        videos.push({
+          title: r.title,
+          description: `${r.title}. Instagram reel by Sulan Zhang (@sulansart), example on ${e.title}.`,
+          playerLoc: reelEmbedUrl(r.id),
+          thumbnail: `${SITE_URL}/og-image.png`,
+          uploadDate: r.date,
+        });
+      }
+      return { loc: e.url, lastmod: e.updated, videos };
+    });
   if (video.length) out.video = video;
   return out;
 }
@@ -80,13 +87,17 @@ function esc(s: string) {
 }
 
 export function renderUrlset(urls: SitemapUrl[]): string {
-  const hasVideo = urls.some((u) => u.video);
+  const hasVideo = urls.some((u) => u.video || u.videos?.length);
   const ns = `xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${hasVideo ? ' xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"' : ""}`;
   const body = urls
     .map((u) => {
-      const v = u.video
-        ? `\n    <video:video>\n      <video:thumbnail_loc>${esc(u.video.thumbnail)}</video:thumbnail_loc>\n      <video:title>${esc(u.video.title)}</video:title>\n      <video:description>${esc(u.video.description)}</video:description>\n      <video:content_loc>${esc(u.video.contentLoc)}</video:content_loc>\n      <video:publication_date>${u.video.uploadDate}</video:publication_date>\n      <video:family_friendly>yes</video:family_friendly>\n    </video:video>`
-        : "";
+      const list = [...(u.video ? [u.video] : []), ...(u.videos ?? [])];
+      const v = list
+        .map(
+          (vid) =>
+            `\n    <video:video>\n      <video:thumbnail_loc>${esc(vid.thumbnail)}</video:thumbnail_loc>\n      <video:title>${esc(vid.title)}</video:title>\n      <video:description>${esc(vid.description)}</video:description>\n      ${vid.contentLoc ? `<video:content_loc>${esc(vid.contentLoc)}</video:content_loc>` : `<video:player_loc>${esc(vid.playerLoc!)}</video:player_loc>`}\n      <video:publication_date>${vid.uploadDate}</video:publication_date>\n      <video:family_friendly>yes</video:family_friendly>\n    </video:video>`,
+        )
+        .join("");
       return `  <url>\n    <loc>${esc(SITE_URL + u.loc)}</loc>\n    <lastmod>${u.lastmod}</lastmod>${v}\n  </url>`;
     })
     .join("\n");

@@ -5,6 +5,9 @@ updated: '2026-09-24'
 category: prompts
 level: beginner
 reading_time: 6 min
+reels:
+  - DY4pVwtu3KD
+  - DajEylHSiz8
 ---
 
 **Tell it five things. What you're making, how long and for where, what to keep, what to cut, and how text and sound should behave. You don't need editor words. Plain and specific works better.**

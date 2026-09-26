@@ -8,6 +8,9 @@ category: how-to
 level: intermediate
 reading_time: 3
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DXh8TpouYGm
+  - DY4pVwtu3KD
 ---
 
 **Motion graphics are animated text, shapes, and media over your footage. In short-form they work as a small set used on purpose. A big animated word for one or two key phrases, a lower third when someone needs a name, a callout when the viewer should look at one spot, and a build-and-clear layout when a few images should gather and then go. The footage stays the subject.**

@@ -16,6 +16,8 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, window light'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DY4pVwtu3KD
 ---
 
 **A listicle talking head is you giving a numbered list to camera, with a counter and a title card for each item.**

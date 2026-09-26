@@ -9,6 +9,8 @@ export type NewsletterPost = {
   issue: number;
   thumbnail: string;
   cover?: string;
+  /** A few sentences in Sulan's own words, for cards on other pages. */
+  excerpt?: string;
   original: string;
   html: string;
   words: number;

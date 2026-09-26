@@ -8,6 +8,9 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DY75P9PtMhO
+  - DM6RiJPJtYf
 ---
 
 **Good talking head framing is a medium close-up. Lens at eye level, eyes on the upper third of the frame, both shoulders fully inside the edges, a hand's width of space above your head. Sit at least an arm's length from the wall and face the light. Get this right in the room and the edit is half done.**

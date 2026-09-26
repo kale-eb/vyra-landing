@@ -10,6 +10,9 @@ facts:
   - "Time: Under a minute per graphic (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DXh8TpouYGm
+  - DY4pVwtu3KD
 ---
 
 **Describe the graphic and Vyra builds it. Under the hood they're code-based React and Remotion compositions, so a prompt can make a lower third, a list that reveals as you speak, or an animated chart. Another sentence changes it.**

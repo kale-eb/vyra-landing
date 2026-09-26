@@ -10,6 +10,9 @@ facts:
   - "Time saved: A changelog to a captioned demo video from one agent run"
   - "Works with: Cursor, Claude Code, Claude Desktop, ChatGPT, any MCP client"
   - "Price: Free to start, MCP Starter $24/mo"
+reels:
+  - DY4pVwtu3KD
+  - DZumPohtfW8
 ---
 
 **Vyra is a video editor with an MCP surface. The agent you already run in Cursor or Claude Code gets the real tools. Add and search media, trim, split, captions, masks, motion graphics, keyframes, effects, export. It can also read the transcript and per-scene analysis of every asset.**

@@ -3,6 +3,8 @@ title: "Automated video maker vs manual editing: which should you use?"
 description: "Automate the first cut, captions, and music. Edit by hand for the last 5 percent. Go fully manual only for cinematic or client work where every frame matters."
 updated: 2026-09-24
 category: answers
+reels:
+  - DaAb0QFNvk0
 ---
 
 **Use both, in that order. Automate the first cut, captions, reframing, and music. Those steps are mechanical and take most of the time. Edit by hand for the last 5 percent, the one cut that lands a joke or the caption that needs a different word. Go fully manual only for cinematic or client work where every frame is deliberate and the budget covers the hours.**

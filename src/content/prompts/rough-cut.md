@@ -5,6 +5,9 @@ description: >-
   prefer, and what to strip out. Everything else can wait for a second pass.
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DZwM74ytJxF
+  - DaAb0QFNvk0
 ---
 
 **Tell Vyra how long, for where, which takes to keep, and what to cut. Leave captions and music for the next pass.**

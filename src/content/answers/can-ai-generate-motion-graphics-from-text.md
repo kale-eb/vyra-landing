@@ -3,6 +3,9 @@ title: Can AI generate motion graphics from a text description?
 description: Yes. Describe a lower third, animated list, or callout in plain words and an AI editor builds it timed to your speech, in seconds. You can edit it after.
 updated: 2026-09-24
 category: answers
+reels:
+  - DXh8TpouYGm
+  - DY4pVwtu3KD
 ---
 
 **Yes. Describe the graphic in plain words, like "animate the three tool names on screen as I say them, stacked left, bold, on a dark bar," and an AI editor builds it timed to your speech. The result is editable. Text, colors, timing, and position can all be changed after. It won't invent a brand identity for you, so the more specific you are, the closer the first result.**

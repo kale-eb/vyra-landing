@@ -3,6 +3,8 @@ title: 'Motion graphics prompts: animated text, lists, lower thirds'
 description: "A motion graphics prompt names the trigger, what appears, where it sits, the font and colors, how it enters, how long it stays, and how it leaves."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DXh8TpouYGm
 ---
 
 **Say what appears, when, where, in what font, how it comes in, how long it stays, and how it leaves. Anything you skip, the agent guesses.**

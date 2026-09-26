@@ -3,6 +3,9 @@ title: "AI captions: word-by-word or phrases, one video or fifty"
 description: Vyra captions from its own transcript. Word-by-word or 3-5 word phrases, styled however you describe, and the same style across a batch.
 updated: 2026-09-24
 category: feature
+reels:
+  - DdcjJBPva-m
+  - Da_tDQwtc-M
 ---
 
 **Vyra already has every word of your video timestamped. So captions are just a description. Word-by-word for TikTok, 3-5 word phrases if you want them readable, bigger on the words that matter, off during b-roll. Over MCP you can run the same style across fifty videos in one go.**

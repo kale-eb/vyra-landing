@@ -8,6 +8,12 @@ category: how-to
 level: intermediate
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DSizEV_DP-i
+  - DUenly-Ds7f
+  - DWqUFtejsxS
+newsletter:
+  - how-to-never-run-out-of-ideas
 ---
 
 **A series is one premise, a numbered episode, the same opening every time, and a reason to watch the next one. Someone who likes episode 7 goes looking for 1 through 6. It also removes the hardest part of posting, which is deciding what to make.**

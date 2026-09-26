@@ -3,6 +3,9 @@ title: 'Vyra for small YouTube channels: edit real footage by describing the edi
 description: "Vyra lets a one-person channel edit like it has an editor. Describe the cut, the captions, and the Shorts you want, and it builds them from your footage."
 updated: '2026-09-24'
 category: for
+reels:
+  - DZwM74ytJxF
+  - DS9JDZ-DE0l
 ---
 
 **If you shoot, edit, and publish alone, editing is the bottleneck. Vyra does the first 80 percent of the edit from a plain brief, and you finish the last 20 in the timeline.**

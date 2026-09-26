@@ -3,6 +3,8 @@ title: 'Vyra vs CapCut (2026): which AI video editor should you use?'
 description: CapCut is faster for 15-second template clips on your phone. Vyra is better when you have a pile of real footage and want it cut from a description.
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **CapCut is faster for 15-second template clips on your phone. Vyra is better when you have a pile of real footage and want it cut from a description.**

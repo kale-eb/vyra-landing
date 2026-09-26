@@ -15,6 +15,9 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, 15-30 clips, a track with a clear beat'
 example: https://www.instagram.com/reel/DZCKNJiupPa/
+reels:
+  - DZCKNJiupPa
+  - DS9JDZ-DE0l
 ---
 
 **A beat-synced edit is a sequence where every cut, zoom, or flash lands exactly on a beat of the music.**

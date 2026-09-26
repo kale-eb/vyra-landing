@@ -3,6 +3,8 @@ title: 'Vyra vs Runway (2026): which AI video editor should you use?'
 description: Runway generates video from text and images. Vyra edits the footage you already shot. The choice is generate versus edit, and many people use both.
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Runway generates video from text and images and is the tool for synthetic shots and effects. Vyra edits the footage you already shot. The choice is generate versus edit, and many creators use both.**

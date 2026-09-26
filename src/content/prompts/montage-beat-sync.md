@@ -3,6 +3,9 @@ title: "Montage beat sync prompts: one clip per beat, velocity that changes"
 description: "A montage beat sync prompt names the track, the cut rate per section, which clips to favor, and where the speed should change, so the montage has shape."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DZCKNJiupPa
+  - DNjX9oFO9xl
 ---
 
 **Name the track, the cut rate per section, which clips go where, and where the speed changes. One clip per beat for 30 seconds is a metronome. Fast, slow, fast is a montage.**

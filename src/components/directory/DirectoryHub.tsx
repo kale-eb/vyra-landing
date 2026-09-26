@@ -81,6 +81,11 @@ export default function DirectoryHub({ section, entries }: { section: SectionKey
                     {e.title}
                   </h3>
                   <p className="text-[13px] leading-relaxed text-[var(--foreground-muted)]">{e.description}</p>
+                  {e.reels.length > 0 && (
+                    <p className="mt-3 text-[11px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">
+                      ▶ {e.reels.length} real {e.reels.length === 1 ? "example" : "examples"}
+                    </p>
+                  )}
                 </Link>
               ))}
             </div>

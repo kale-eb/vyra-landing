@@ -2,6 +2,10 @@ import Link from "next/link";
 import Markdown from "./Markdown";
 import DirectoryNav from "./DirectoryNav";
 import Footer from "@/components/Footer";
+import ReelStrip from "./ReelStrip";
+import NewsletterCards from "./NewsletterCards";
+import { reelEmbedUrl, reelUrl, resolveReels } from "@/lib/reels";
+import { getNewsletterPosts } from "@/lib/newsletter";
 import {
   SITE_URL,
   SECTIONS,
@@ -103,6 +107,25 @@ function buildJsonLd(entry: Entry) {
     });
   }
 
+  for (const r of resolveReels(entry.reels)) {
+    graph.push({
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: r.title,
+      description: `${r.title}. A real Instagram reel by Sulan Zhang (@sulansart), used as an example on "${entry.title}".`,
+      thumbnailUrl: `${SITE_URL}/og-image.png`,
+      uploadDate: r.date,
+      embedUrl: reelEmbedUrl(r.id),
+      url: reelUrl(r.id),
+      author: AUTHOR,
+      interactionStatistic: {
+        "@type": "InteractionCounter",
+        interactionType: "https://schema.org/WatchAction",
+        userInteractionCount: viewsToNumber(r.views),
+      },
+    });
+  }
+
   if (entry.video) {
     graph.push({
       "@context": "https://schema.org",
@@ -116,6 +139,13 @@ function buildJsonLd(entry: Entry) {
   }
 
   return graph;
+}
+
+function viewsToNumber(v: string): number {
+  const m = v.match(/^([\d.]+)([KM]?)$/i);
+  if (!m) return 0;
+  const n = parseFloat(m[1]);
+  return Math.round(m[2].toUpperCase() === "M" ? n * 1e6 : m[2].toUpperCase() === "K" ? n * 1e3 : n);
 }
 
 /** The header already shows the description; drop a leading bold paragraph that repeats it. */
@@ -153,6 +183,10 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
     .filter((r): r is NonNullable<typeof r> => !!r)
     .slice(0, 6);
   const jsonLd = buildJsonLd(entry);
+  const reels = resolveReels(entry.reels).slice(0, 3);
+  const newsletterPosts = entry.newsletter.length
+    ? getNewsletterPosts().filter((p) => entry.newsletter.includes(p.slug)).slice(0, 2)
+    : [];
   const crumbs = sectionMeta ? [{ label: sectionMeta.label, href: `/${sectionMeta.key}` }] : [];
 
   return (
@@ -218,7 +252,11 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             />
           )}
 
+          <ReelStrip reels={reels} />
+
           <Markdown source={stripLeadingSummary(entry.body, entry.description)} />
+
+          <NewsletterCards posts={newsletterPosts} />
         </article>
 
         {related.length > 0 && (

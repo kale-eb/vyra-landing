@@ -3,6 +3,9 @@ title: An AI editor that understands what is in your footage
 description: On upload, Vyra transcribes every word and writes a description of every scene. So you can ask for a moment by what happens in it.
 updated: 2026-09-24
 category: feature
+reels:
+  - DY_kJF4uI9-
+  - DZwM74ytJxF
 ---
 
 **Vyra reads your footage before you type anything. On upload it transcribes every word with timestamps and writes a description of every scene. That's why you can ask for "the shot where I pull the canvas out of the box" and get it without scrubbing.**

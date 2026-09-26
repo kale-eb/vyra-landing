@@ -3,6 +3,8 @@ title: "Vyra vs InShot (2026): which video editor should you use?"
 description: "InShot is a simple phone editor for trims, stickers, and music. Vyra is a browser editor where an AI builds the edit from a description, past one clip."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **InShot is a simple phone editor for trims, stickers, and music. Vyra is a browser editor where an AI that has watched your footage builds the edit from a description, which matters once you have more than one clip.**

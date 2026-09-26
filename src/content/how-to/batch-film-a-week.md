@@ -9,6 +9,11 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DSn8qeejBLW
+  - DN_mcUYDKJv
+newsletter:
+  - creating-vs-consuming
 ---
 
 **Batch filming is shooting five to seven videos in one two or three hour block. Same setup, same outfit, then the edits run across the week. The slow part of a video is the setup and the deciding, and batching pays that once.**

@@ -17,6 +17,9 @@ typical_length: 30-90s
 aspect: '9:16 or 16:9'
 difficulty: intermediate
 gear: 'phone or screen recorder, the product, a script'
+reels:
+  - DZumPohtfW8
+  - DajEylHSiz8
 ---
 
 **A product demo shows a product doing one real task from start to finish, with the screen large in frame and a voiceover saying what is happening.**

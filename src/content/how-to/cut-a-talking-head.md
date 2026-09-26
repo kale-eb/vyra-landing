@@ -9,6 +9,9 @@ category: how-to
 level: intermediate
 reading_time: 3
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DM6RiJPJtYf
+  - DY_kJF4uI9-
 ---
 
 **A crisp talking head is a speech edit first. Remove pauses over about 0.3 seconds, fillers, false starts, and repeated takes so it sounds like the best version of you. Then cover the jump cuts by switching between the full shot and a 15 to 25 percent punch-in, or dropping b-roll on the cut. Leave a small breath before each new idea so it doesn't sound like a machine.**
