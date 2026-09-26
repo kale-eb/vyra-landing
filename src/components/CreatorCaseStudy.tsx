@@ -126,8 +126,11 @@ export default function CreatorCaseStudy() {
         </div>
 
         <Reveal y={20} className="mx-auto mt-3 flex max-w-[650px] items-start gap-3 rounded-xl border border-black/[0.08] bg-white px-4 py-3">
-          <p className="flex-1 text-sm leading-relaxed">{prompt}</p>
-          <button type="button" onClick={copyPrompt} className="shrink-0 rounded-lg border border-black/10 px-2 py-1 text-xs hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2">Copy</button>
+          <div className="min-w-0 flex-1">
+            <p className="mb-1 text-xs font-medium text-[var(--foreground-muted)]">Example prompt</p>
+            <p className="text-sm leading-relaxed">&ldquo;{prompt}&rdquo;</p>
+          </div>
+          <button type="button" onClick={copyPrompt} aria-label="Copy example prompt" className="shrink-0 rounded-lg border border-black/10 px-2 py-1 text-xs hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2">Copy</button>
         </Reveal>
         <p role="status" className="text-center text-xs text-[var(--foreground-muted)]">{copyStatus}</p>
         <div className="mt-5 text-center">
