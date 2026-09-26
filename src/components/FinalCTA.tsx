@@ -44,7 +44,7 @@ export default function FinalCTA() {
             onClick={() => trackLead()}
             className="inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
           >
-            Get started for free
+            Get started on web
           </a>
           <IosWaitlistButton />
         </Reveal>

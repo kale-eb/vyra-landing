@@ -204,7 +204,7 @@ export default function Hero() {
             onClick={() => trackLead()}
             className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
-            Get started for free
+            Get started on web
           </a>
           <IosWaitlistButton />
         </div>
