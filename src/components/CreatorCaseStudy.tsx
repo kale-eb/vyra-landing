@@ -1,97 +1,135 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
-import { trackLead } from "./MetaPixel";
 
-// Public reel-grid counts observed on @sulansart on September 25, 2026.
-// Keep each count paired with its original post, not a different video.
+// Public, rounded reel-grid counts observed on @sulansart, September 25, 2026.
 const reels = [
-  { id: "DZwM74ytJxF", views: "2.9M", image: "vlog", title: "Hours of footage, one demo", position: "md:mt-14 md:-rotate-3" },
-  { id: "Da_tDQwtc-M", views: "8.7M", image: "editors", title: "Editors, are we cooked?", position: "md:-mt-3" },
-  { id: "DajEylHSiz8", views: "2.1M", image: "reaction", title: "The edit-while-you-sleep demo", position: "md:mt-14 md:rotate-3" },
+  { id: "DZwM74ytJxF", views: "2.9M", image: "vlog", title: "Editors, are we cooked?" },
+  { id: "Da_tDQwtc-M", views: "8.7M", image: "editors", title: "Editors, are we cooked? pt. 2" },
+  { id: "DajEylHSiz8", views: "2.1M", image: "reaction", title: "I fell asleep while AI edited" },
 ];
-const prompt = "Vyra, edit 10 different UGC videos using my footage. Mix my reaction clips with the product demos. Give each version a different opening. Keep each under 20 seconds.";
+const prompt = "Vyra, edit 10 different UGC videos using my footage. Mix my reaction clips with the demos and try a different hook for each.";
 
-export default function CreatorCaseStudy() {
-  const [copied, setCopied] = useState(false);
-  const [copyError, setCopyError] = useState(false);
+function ReelCard({ reel, active, onActivate }: {
+  reel: typeof reels[number];
+  active: boolean;
+  onActivate: () => void;
+}) {
+  const video = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [error, setError] = useState(false);
 
-  async function copyPrompt() {
+  useEffect(() => {
+    if (!active && video.current) {
+      video.current.pause();
+      video.current.muted = true;
+    }
+  }, [active]);
+
+  useEffect(() => {
+    const el = video.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) el.pause();
+    }, { threshold: 0.15 });
+    observer.observe(el);
+    const onHidden = () => { if (document.hidden) el.pause(); };
+    document.addEventListener("visibilitychange", onHidden);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", onHidden);
+    };
+  }, []);
+
+  async function togglePlay() {
+    const el = video.current;
+    if (!el) return;
+    if (!el.paused) { el.pause(); return; }
+    onActivate();
+    setError(false);
     try {
-      await navigator.clipboard.writeText(prompt);
-      setCopied(true);
-      setCopyError(false);
+      await el.play();
     } catch {
-      setCopyError(true);
+      setError(true);
     }
   }
 
   return (
-    <section id="creator-case-study" aria-labelledby="creator-case-study-title" className="overflow-hidden px-6 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#deded7] bg-[#f0f1eb] px-5 py-12 sm:px-10 md:py-16">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="mb-5 text-xs font-medium uppercase tracking-[0.18em] text-[#626954]">Sulan’s creator case study</p>
-          <h2 id="creator-case-study-title" className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-            We use Vyra<br /><span className="serif-italic font-normal">to grow Vyra.</span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-[var(--foreground-muted)]">
-            Sulan mixed reaction clips with product demos, then used Vyra to edit different versions. These are three of the posts she shared.
+    <article className="w-[190px] shrink-0 snap-center rounded-2xl bg-white p-1.5 shadow-[0_6px_20px_rgba(38,43,26,0.07)] sm:w-auto">
+      <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#deded7]">
+        <video
+          ref={video}
+          src={`/videos/case-study/${reel.image}.mp4`}
+          poster={`/images/case-study/${reel.image}.jpg`}
+          preload="none" playsInline muted={muted} loop
+          aria-label={reel.title}
+          className="h-full w-full object-cover"
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onVolumeChange={() => setMuted(video.current?.muted ?? true)}
+          onError={() => setError(true)}
+        />
+        <button type="button" onClick={togglePlay}
+          aria-label={`${playing ? "Pause" : "Play"} ${reel.title}`}
+          className="absolute inset-0 rounded-xl focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-white">
+          <span className="absolute left-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/55 text-xs text-white" aria-hidden="true">{playing ? "Ⅱ" : "▶"}</span>
+        </button>
+        <button type="button"
+          onClick={() => { if (video.current) video.current.muted = !video.current.muted; }}
+          aria-label={`${muted ? "Unmute" : "Mute"} ${reel.title}`}
+          aria-pressed={!muted}
+          className="absolute right-2 top-2 rounded-full bg-black/65 px-3 py-2 text-[11px] font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2">
+          {muted ? "Unmute" : "Mute"}
+        </button>
+        {error && <p role="status" className="absolute inset-x-2 bottom-2 rounded-lg bg-black/80 p-2 text-xs text-white">Couldn’t play. Open the post below to watch.</p>}
+      </div>
+      <div className="px-2 pb-2 pt-3">
+        <p className="text-xs text-[var(--foreground-muted)]"><span className="font-display mr-1 text-2xl font-bold text-[var(--foreground)]">{reel.views}</span> views</p>
+        <a href={`https://www.instagram.com/sulansart/reel/${reel.id}/`} target="_blank" rel="noopener noreferrer"
+          className="mt-1 block text-[11px] leading-relaxed underline decoration-black/20 underline-offset-2 hover:decoration-black focus-visible:outline-2 focus-visible:outline-offset-2">
+          {reel.title} ↗
+        </a>
+      </div>
+    </article>
+  );
+}
+
+export default function CreatorCaseStudy() {
+  const [active, setActive] = useState<string | null>(null);
+  const [copyStatus, setCopyStatus] = useState("");
+
+  async function copyPrompt() {
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setCopyStatus("Copied!");
+    } catch {
+      setCopyStatus("Select the text to copy.");
+    }
+  }
+
+  return (
+    <section id="creator-case-study" aria-labelledby="creator-case-study-title" className="px-4 py-10 sm:px-6 md:py-14">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-[#deded7] bg-[#f0f1eb] px-4 py-8 sm:px-8">
+        <Reveal className="mx-auto max-w-xl text-center">
+          <h2 id="creator-case-study-title" className="text-3xl font-bold tracking-tight sm:text-4xl">We use Vyra to grow Vyra.</h2>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--foreground-muted)]">
+            I filmed a few reactions, mixed them with demos, and had Vyra edit different versions. When one worked, I kept trying new hooks. These hit a few million views :)
           </p>
-          <a href="https://www.instagram.com/sulansart/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-sm font-medium underline decoration-black/25 underline-offset-4 hover:decoration-black focus-visible:outline-2 focus-visible:outline-offset-4">
-            @sulansart · Vyra co-founder ↗
-          </a>
+          <a href="https://www.instagram.com/sulansart/" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs underline decoration-black/25 underline-offset-4">Sulan · @sulansart ↗</a>
         </Reveal>
 
-        <div className="mx-auto mt-12 grid max-w-[860px] grid-cols-1 items-start gap-8 sm:grid-cols-3 sm:gap-4 md:mt-16 md:gap-7">
-          {reels.map((reel, i) => (
-            <Reveal key={reel.id} delay={i * 0.1} y={28} className={reel.position}>
-              <a
-                href={`https://www.instagram.com/sulansart/reel/${reel.id}/`}
-                target="_blank" rel="noopener noreferrer"
-                aria-label={`Watch ${reel.title} on Instagram, ${reel.views} views`}
-                className="group mx-auto block max-w-[280px] rounded-[1.4rem] bg-white p-2 shadow-[0_12px_35px_rgba(38,43,26,0.10)] transition-transform motion-safe:hover:-translate-y-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--brand-blue)]"
-              >
-                <div className="relative aspect-[9/14] overflow-hidden rounded-[1rem] bg-[#deded7]">
-                  <Image src={`/images/case-study/${reel.image}.jpg`} alt={`Cover of Sulan’s ${reel.title} reel`} fill sizes="(max-width: 639px) 280px, (max-width: 1023px) 30vw, 270px" className="object-cover" />
-                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-                  <span aria-hidden="true" className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-black/20 text-sm text-white backdrop-blur-sm">▶</span>
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <span className="font-display text-5xl font-bold tracking-tight">{reel.views}</span>
-                    <span className="mt-1 block text-xs font-medium tracking-wide text-white/90">Instagram views</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-2 px-2 pb-2 pt-3 text-xs font-medium">
-                  <span>{reel.title}</span><span aria-hidden="true">↗</span>
-                </div>
-              </a>
-            </Reveal>
-          ))}
+        <div className="mx-auto mt-6 flex max-w-[650px] snap-x snap-mandatory gap-3 overflow-x-auto pb-3 sm:grid sm:grid-cols-3 sm:overflow-visible">
+          {reels.map((reel) => <ReelCard key={reel.id} reel={reel} active={active === reel.id} onActivate={() => setActive(reel.id)} />)}
         </div>
 
-        <p className="mt-8 text-center text-[11px] leading-relaxed text-[#6b705f] md:mt-10">
-          Public Instagram view counts checked September 25, 2026. Rounded by Instagram.
-        </p>
-
-        <Reveal y={36} className="relative mx-auto mt-10 max-w-2xl rounded-2xl border border-black/[0.08] bg-white p-5 shadow-[0_8px_30px_rgba(38,43,26,0.05)] sm:p-7">
-          <div className="mb-4 flex items-center justify-between gap-3 text-xs">
-            <span className="font-medium text-[var(--foreground-muted)]">Try this prompt</span>
-            <button type="button" onClick={copyPrompt} className="rounded-full border border-black/10 px-3 py-1.5 transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2">
-              {copied ? "Copied ✓" : "Copy prompt"}
-            </button>
-          </div>
-          <p className="text-xl leading-snug tracking-tight sm:text-2xl">Vyra, edit 10 different UGC videos using my footage.</p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--foreground-muted)]">Mix my reaction clips with the product demos. Give each version a different opening. Keep each under 20 seconds.</p>
-          <p role="status" className="mt-2 text-xs text-[var(--foreground-muted)]">{copyError ? "Select the prompt text to copy it." : copied ? "Prompt copied to your clipboard." : ""}</p>
+        <Reveal y={20} className="mx-auto mt-3 flex max-w-[650px] items-start gap-3 rounded-xl border border-black/[0.08] bg-white px-4 py-3">
+          <p className="flex-1 text-sm leading-relaxed">{prompt}</p>
+          <button type="button" onClick={copyPrompt} className="shrink-0 rounded-lg border border-black/10 px-2 py-1 text-xs hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2">Copy</button>
         </Reveal>
-
-        <div className="mx-auto mt-7 max-w-lg text-center">
-          <p className="text-sm leading-relaxed text-[var(--foreground-muted)]">Start with a few reactions and demo clips. Try different pairings, review the edits, and post the ones you like.</p>
-          <a href="https://app.usevyra.com/signup" onClick={() => trackLead("Creator Case Study CTA")} className="mt-5 inline-flex rounded-full bg-[#252d21] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#3c4835] focus-visible:outline-2 focus-visible:outline-offset-4">
-            Try it with your footage ↗
-          </a>
-        </div>
+        <p role="status" className="text-center text-xs text-[var(--foreground-muted)]">{copyStatus}</p>
+        <p className="mt-3 text-center text-[10px] text-[#6b705f]">Instagram views · September 25, 2026</p>
       </div>
     </section>
   );
