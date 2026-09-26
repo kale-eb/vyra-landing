@@ -56,8 +56,8 @@ export default async function Home() {
         <Steps />
         <Features />
         <HowItWorks />
-        <CreatorCaseStudy />
         <MadeWithVyra userCount={userCount} />
+        <CreatorCaseStudy />
         <Alternatives />
         <Pricing />
         <FAQ />
