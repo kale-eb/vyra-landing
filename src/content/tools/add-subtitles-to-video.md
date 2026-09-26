@@ -10,6 +10,8 @@ facts:
   - "Time: A few minutes after upload for a 10-minute clip (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DdcjJBPva-m
 ---
 
 **Upload a video, let the transcript generate, pick a caption style. No retyping, no timing by hand. Every word stays editable on the timeline.**

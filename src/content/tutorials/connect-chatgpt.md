@@ -4,6 +4,8 @@ description: Add Vyra's MCP server to ChatGPT as a connector so ChatGPT can insp
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DajEylHSiz8
 ---
 
 **Add Vyra's MCP server, authorize it, and ChatGPT can list your projects, read the footage, build a cut, add captions and music, and export. Same prompts as Vyra's own chat, plus you can ask for a plan first.**

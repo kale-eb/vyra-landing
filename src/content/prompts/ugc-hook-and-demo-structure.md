@@ -3,6 +3,9 @@ title: "UGC hook and demo prompts: hook, problem, demo, result in 30 seconds"
 description: "A UGC hook and demo prompt gives Vyra the four beats in order, the exact hook line, the demo footage, and the length, so it reads as a person showing a thing."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - Da_tDQwtc-M
+  - DajEylHSiz8
 ---
 
 **Give it four beats in order (hook, problem, demo, result), the exact hook line, which footage is the demo, and the length. Then ban the things that make it look produced.**

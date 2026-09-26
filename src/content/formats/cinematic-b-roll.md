@@ -14,6 +14,9 @@ typical_length: 15-60s
 aspect: '9:16 or 16:9 (often 2.39:1 letterboxed)'
 difficulty: advanced
 gear: 'phone with cinematic mode or a camera, gimbal or steady hands, ND filter'
+reels:
+  - DXh77nmuY9l
+  - DNjX9oFO9xl
 ---
 
 **A cinematic b-roll video is a slow run of composed shots with controlled movement, shallow depth, and one grade, made for mood rather than information.**

@@ -8,6 +8,8 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DM6RiJPJtYf
 ---
 
 **You need one big soft light on your face and nothing fighting it. The easiest version is a window 45 degrees to one side, a white wall or a matching lamp on the other side for fill, every other light in the room off, and your phone's exposure locked on your face. This costs nothing and looks better than a ring light straight on.**

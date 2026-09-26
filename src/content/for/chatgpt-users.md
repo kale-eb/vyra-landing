@@ -3,6 +3,8 @@ title: 'Vyra for ChatGPT users: edit real footage by describing the edit'
 description: "Vyra connects ChatGPT to a real video editor through MCP, so the ChatGPT account you already have can search your footage, cut it, and caption it."
 updated: '2026-09-24'
 category: for
+reels:
+  - DajEylHSiz8
 ---
 
 **ChatGPT can plan a video but can't cut one. Connect it to Vyra through MCP and it gets your footage and the editing tools. "Find the best take and build the edit" becomes something it can actually do.**

@@ -10,6 +10,8 @@ facts:
   - "Time: Minutes per Short after processing (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DajEylHSiz8
 ---
 
 **A Short is a vertical clip under 60 seconds that opens fast and reads without sound. Vyra makes the cut from your description, reframes to 9:16 if needed, captions it, and exports with a preset made for Shorts.**

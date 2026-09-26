@@ -8,6 +8,11 @@ category: how-to
 level: intermediate
 reading_time: 3
 example: https://www.instagram.com/reel/DdInaC0NGql/
+reels:
+  - DdInaC0NGql
+  - DS9JDZ-DE0l
+newsletter:
+  - your-audience-is-your-younger-self
 ---
 
 **A story video has four parts in order. Setup, who and where and what's at stake, in one line. Tension, a specific problem. Turn, the moment something changed. Payoff, what happened and what it meant. An open loop planted early and closed late holds people through the middle, and a callback to the first line makes the ending feel done. The whole thing fits in 45 to 90 seconds.**

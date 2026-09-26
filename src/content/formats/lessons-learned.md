@@ -17,6 +17,12 @@ aspect: '9:16 or 1:1'
 difficulty: beginner
 gear: 'phone, a specific outcome to talk about'
 example: https://www.instagram.com/reel/DdInaC0NGql/
+reels:
+  - DM6RiJPJtYf
+  - DNB1l9IMvD0
+  - DU1PhRrCZnu
+newsletter:
+  - as-a-creator-your-friends-might-not-support-you
 ---
 
 **A lessons learned video ties one real outcome, like a number or a failure, to two or three specific takeaways, with the outcome shown on screen.**

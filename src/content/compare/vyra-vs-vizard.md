@@ -3,6 +3,8 @@ title: "Vyra vs Vizard (2026): which AI video editor should you use?"
 description: "Vizard finds highlights in a long recording and hands you ready clips. Vyra can do the same clipping and also build the whole video you describe."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Vizard is a long-to-short clipping tool that finds highlights in a recording and hands you ready clips. Vyra can do the same clipping and also build the whole video you describe from any footage.**

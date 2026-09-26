@@ -16,6 +16,9 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, a full day, voiceover recorded after'
 example: https://www.instagram.com/reel/DdcjJBPva-m/
+reels:
+  - DdcjJBPva-m
+  - DY0EvCKtDTK
 ---
 
 **A day in the life story is a chronological vlog cut to under 90 seconds with a voiceover that gives the day a point.**

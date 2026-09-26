@@ -16,9 +16,15 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, every finished piece photographed or filmed the same way, one song'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DZCKNJiupPa
+  - DSn8qeejBLW
+  - DNjX9oFO9xl
 ---
 
 **A semester recap montage cuts every piece you made in a term to one song, one piece per beat, in the order you made them.**
+
+![Everything I painted as a student at Brown in 2025, held up in the snow. 219K views.](/newsletter/my-content-journey-as-an-artist-student-0-15k/02-Screenshot_2026-03-05_at_5.48.30_PM.png)
 
 I made one of these because I'd never posted most of the paintings. Same wall, same light, one session, then one song that was stuck in my head.
 

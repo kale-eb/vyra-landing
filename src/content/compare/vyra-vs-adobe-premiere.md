@@ -3,6 +3,8 @@ title: 'Vyra vs Adobe Premiere Pro (2026): which AI video editor should you use?
 description: "Premiere Pro is the professional editor with the deepest manual tools. Vyra is the faster way from raw footage to a finished social edit, from a description."
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Premiere Pro is the professional editor with the deepest manual tools. Vyra is the faster way from raw footage to a finished social edit, because an AI does most of the work from a description and you polish on a timeline.**

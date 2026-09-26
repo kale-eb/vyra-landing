@@ -16,6 +16,12 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, tripod, clean wall or easel, daylight for the final shot'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DL3dH-7sK9U
+  - DZh-0ccu_cv
+  - DOCXOumDuw7
+newsletter:
+  - my-content-journey-as-an-artist-student-0-15k
 ---
 
 **A commission reveal holds the finished piece back behind the brief, the process, and the packing, then shows it in full for the first time at the end.**

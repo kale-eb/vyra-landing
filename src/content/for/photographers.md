@@ -10,6 +10,8 @@ facts:
   - "Time saved: A shoot's behind-the-scenes clips and 40 finals to a 30-second reel in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DR5jT0Kjg9y
 ---
 
 **You already have the hard part, strong images. Vyra sequences your finals and behind-the-scenes clips to music, adds the text you want, and keeps the changes on the beat. A reel takes one conversation instead of an evening.**

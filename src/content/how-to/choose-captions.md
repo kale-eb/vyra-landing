@@ -8,6 +8,9 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DdcjJBPva-m
+  - DY_kJF4uI9-
 ---
 
 **Most people watch muted, so captions are the main text on the video. My default is 3 to 5 word phrases, bold sans-serif, about 5 percent of frame height, sitting lower-middle above the platform buttons. Word-by-word is for fast delivery. A couple of big emphasis words per video do more than animating everything.**

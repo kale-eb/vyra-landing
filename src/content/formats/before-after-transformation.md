@@ -15,9 +15,19 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, tripod, same framing twice'
 example: https://www.instagram.com/reel/DZh-0ccu_cv/
+reels:
+  - DL3dH-7sK9U
+  - DPanh5ajDtM
+  - DZh-0ccu_cv
+newsletter:
+  - my-content-journey-as-an-artist-student-0-15k
 ---
 
 **A before and after video shows the starting state, speeds through the process, and holds on the result.**
+
+![Sulan holding a blank canvas in the art store, the first clip of a two-clip reveal that reached 622K views](/newsletter/my-content-journey-as-an-artist-student-0-15k/01-Screenshot_2026-03-05_at_5.48.34_PM.png)
+
+My top video is a painting reveal at 622K views. It's literally two clips. I start holding a blank canvas, then cut to holding the finished piece. Steal the format. Think about the before and the after of the story you want to tell, and film both moments.
 
 The whole thing rests on shooting the before and after from the exact same spot. Tape the tripod position.
 

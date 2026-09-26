@@ -15,6 +15,8 @@ typical_length: '30-60s short, 5-12 min long'
 aspect: '9:16 or 16:9'
 difficulty: beginner
 gear: 'phone, tripod, clean table, the box'
+reels:
+  - DU1PhRrCZnu
 ---
 
 **An unboxing shows a product being opened for the first time, with your real first reaction and a close-up of each thing that comes out of the box.**

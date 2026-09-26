@@ -16,6 +16,9 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, gimbal or steady hands, daylight, a tidy-ish room'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DXh77nmuY9l
+  - DOxekeWDvXC
 ---
 
 **A studio tour walks through the space where you work, one zone at a time, with one line about why each thing is there.**

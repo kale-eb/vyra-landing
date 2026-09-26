@@ -8,6 +8,10 @@ category: how-to
 level: intermediate
 reading_time: 3
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DS9JDZ-DE0l
+newsletter:
+  - my-content-journey-as-an-artist-student-0-15k
 ---
 
 **Four numbers explain almost every result. Hook rate says whether the first 3 seconds worked. The retention curve says where people left. Average watch time says whether the platform will keep pushing it. Shares versus saves says what kind of value the video had. Read them in that order and you know what to change next time.**

@@ -3,6 +3,9 @@ title: 'Vyra for vloggers: edit real footage by describing the edit'
 description: "Vyra cuts a day of vlog footage into a finished video from a plain brief. It has transcribed your talking and looked at every clip, so you skip the scrubbing."
 updated: '2026-09-24'
 category: for
+reels:
+  - DZwM74ytJxF
+  - DdcjJBPva-m
 ---
 
 **Vlog editing takes hours because you have to watch everything you shot to decide what to keep. Vyra watches it for you. Every clip is transcribed and scene-analyzed on upload, so you describe the day you want to show and it assembles it from your real footage.**

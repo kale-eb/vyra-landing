@@ -10,6 +10,9 @@ facts:
   - "Time: Upload and processing first, then a first cut in minutes (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - Da_tDQwtc-M
+  - DajEylHSiz8
 ---
 
 **You type what you want in your own words and get a cut on the timeline. The agent has the transcript and a description of every scene, so "open on the shot where I hold up the canvas" and "cut every pause over half a second" both work.**

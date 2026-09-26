@@ -3,6 +3,9 @@ title: Edit videos from Cursor
 description: Add Vyra as an MCP server in Cursor and its agent can cut, caption, and export your footage from the IDE, one video or a batch.
 updated: 2026-09-24
 category: product
+reels:
+  - DY4pVwtu3KD
+  - DZumPohtfW8
 ---
 
 **Cursor's agent can edit video once you add Vyra as an MCP server. It gets the editing tools, reads your transcripts and scene descriptions, and builds timelines while the editor updates in a browser tab. Good for batch captioning, scripted cutdowns, and demo videos made from the same repo you ship from.**

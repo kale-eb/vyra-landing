@@ -10,6 +10,9 @@ facts:
   - "Time: Minutes per Reel after processing (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DL3dH-7sK9U
+  - DZwM74ytJxF
 ---
 
 **Camera roll to posted Reel without an evening in a timeline. Vyra does the cut, captions, and music from a description of what you want, then exports a vertical file and a square one for the grid if you ask.**

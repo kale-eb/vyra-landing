@@ -4,6 +4,11 @@ description: Connect Vyra to Claude Desktop, Claude Code, or claude.ai over MCP.
 updated: 2026-09-24
 category: product
 example: https://www.instagram.com/reel/DZumPohtfW8/
+reels:
+  - DZumPohtfW8
+  - DaAb0QFNvk0
+newsletter:
+  - vyra-is-live
 ---
 
 **Claude can edit your videos once you connect it to Vyra over MCP. It reads your transcripts and scene descriptions, builds the timeline, adds captions and graphics, and exports, from the Claude chat you already use. Works in Claude Desktop, Claude Code, and claude.ai.**

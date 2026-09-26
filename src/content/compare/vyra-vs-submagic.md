@@ -3,6 +3,8 @@ title: "Vyra vs Submagic (2026): which AI video editor should you use?"
 description: "Submagic adds captions and polish to short clips you have already cut. Vyra cuts the clip from your raw footage and then captions it."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Submagic adds captions and polish to short clips you have already cut. Vyra cuts the clip from your raw footage and then captions it, so it wins when the work starts before the clip exists.**
