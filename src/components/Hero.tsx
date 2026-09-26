@@ -9,6 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Image from "next/image";
+import IosWaitlistButton from "./IosWaitlistButton";
 import EditorMockup, { type ClientKey } from "./EditorMockup";
 
 const CLIENTS: { key: ClientKey; label: string; logo: string | null }[] = [
@@ -189,7 +190,7 @@ export default function Hero() {
 
         {/* CTA */}
         <div
-          className="rise flex flex-col items-center gap-4"
+          className="rise flex flex-col items-center justify-center gap-3 sm:flex-row"
           style={
             {
               "--rise-y": "20px",
@@ -203,8 +204,9 @@ export default function Hero() {
             onClick={() => trackLead()}
             className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
-            Get started for free
+            Get started on web
           </a>
+          <IosWaitlistButton />
         </div>
       </div>
 
