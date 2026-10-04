@@ -15,6 +15,10 @@ typical_length: '45-90s short, 5-15 min long'
 aspect: '9:16 short, 16:9 long'
 difficulty: intermediate
 gear: 'phone or screen recorder, the thing you''re teaching, a step list'
+reels:
+  - DTVfE_wjoyf
+  - DY4pVwtu3KD
+  - DHzwlG0M1uA
 ---
 
 **A tutorial teaches one skill in numbered steps, each one shown on screen with a label so the viewer can pause and copy it.**

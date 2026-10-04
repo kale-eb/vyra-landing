@@ -3,6 +3,9 @@ title: "Storytelling video prompts: setup, tension, turn, payoff"
 description: "A storytelling prompt gives Vyra the four beats of the story with the line that starts each one, so the agent cuts for narrative shape instead of chronology."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DdInaC0NGql
+  - DS9JDZ-DE0l
 ---
 
 **Give it the four beats (setup, tension, turn, payoff) and the line that starts each one. Editors default to chronological. A story often needs the ending first. You have to say so.**

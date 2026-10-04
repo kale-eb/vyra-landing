@@ -10,9 +10,18 @@ facts:
   - "Time saved: A six-hour painting session to a 30-second speed paint in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DL3dH-7sK9U
+  - DVzOIAIjjSs
+  - DSizEV_DP-i
+newsletter:
+  - an-artist-s-brain-never-shuts-off
+  - reaching-flow-state
 ---
 
 **Artists film everything and post almost none of it, because the edit is the part that never happens. Vyra takes hours of overhead footage, keeps the moments where the piece visibly changes, speeds up the rest, and lands the reveal on the beat.**
+
+![The art portfolio that got me into Brown, one of my most watched reels at 113K views](/newsletter/my-content-journey-as-an-artist-student-0-15k/03-Screenshot_2026-03-05_at_5.49.12_PM.png)
 
 ## What you make
 

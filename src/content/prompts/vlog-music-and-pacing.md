@@ -3,6 +3,8 @@ title: "Vlog music and pacing prompts"
 description: "A vlog music prompt names the track, how loud it sits under your voice, where it should swell, and whether the b-roll cuts should land on its beats."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DZwM74ytJxF
 ---
 
 **Name the track, give it two volumes (talking, b-roll), say where it should swell, and whether the b-roll should cut on the beat.**

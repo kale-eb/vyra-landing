@@ -3,6 +3,9 @@ title: Can AI actually understand what is in my raw footage?
 description: Yes. A modern AI editor transcribes every word with timestamps and describes every scene, so it can find moments by what was said or what's on screen.
 updated: 2026-09-24
 category: answers
+reels:
+  - DY_kJF4uI9-
+  - DZwM74ytJxF
 ---
 
 **Yes, with one caveat about what "understand" means. A modern AI editor transcribes every spoken word with timestamps and writes a description of every scene. Who's in frame, what they're doing, what's visible, when the shot changes. That's enough to find "the part where I hold up the canvas" without scrubbing. It isn't taste. The AI knows what's in the clip. You still decide what the video is about.**

@@ -17,6 +17,9 @@ aspect: '9:16 or 16:9'
 difficulty: intermediate
 gear: 'phone or voiceover mic, simple graphics or diagrams'
 example: https://www.instagram.com/reel/DY_kJF4uI9-/
+reels:
+  - DY_kJF4uI9-
+  - DY4pVwtu3KD
 ---
 
 **An explainer breaks down one idea or "why" question with a spoken argument and simple graphics on screen.**

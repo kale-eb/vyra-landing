@@ -15,6 +15,10 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, one location'
 example: https://www.instagram.com/reel/DZZDVg9OkNp/
+reels:
+  - DZZDVg9OkNp
+  - DT66jXZjDyh
+  - DN9wNloDAcC
 ---
 
 **A relatable video is one small, specific, shared moment in a single scene, with text on screen naming the situation from the first frame.**

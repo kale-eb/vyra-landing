@@ -3,6 +3,8 @@ title: "Vyra vs Riverside (2026): which AI video editor should you use?"
 description: "Riverside is a remote recording studio with an AI editing agent for podcasts. Vyra is an editor built around an agent that has watched all your footage."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Riverside is a remote recording studio with an AI editing agent added on, for podcasts and interviews. Vyra is an editor built around an agent that has watched all your footage, for anything you shot anywhere.**

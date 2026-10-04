@@ -3,6 +3,8 @@ title: 'Vyra vs Canva (2026): which AI video editor should you use?'
 description: Canva is a design tool with a video editor attached, good for template graphics with light motion. Vyra is a video editor where an AI cuts your real footage.
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Canva is a design tool with a video editor attached, good for template graphics with light motion. Vyra is a video editor where an AI cuts your real footage, which matters once you have more than a minute of raw video.**

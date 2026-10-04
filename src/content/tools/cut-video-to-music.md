@@ -10,6 +10,8 @@ facts:
   - "Time: Minutes after processing (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DZCKNJiupPa
 ---
 
 **Every cut sits on a beat, a bar, or a hit in the track, so the picture feels like it belongs to the sound. Vyra reads the rhythm and places the cuts. You describe the feel.**

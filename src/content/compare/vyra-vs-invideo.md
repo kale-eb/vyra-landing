@@ -3,6 +3,8 @@ title: 'Vyra vs InVideo (2026): which AI video editor should you use?'
 description: "InVideo turns a text prompt into a stock-footage video with a voiceover. Vyra turns your own footage into a finished video. No footage, InVideo. Footage, Vyra."
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **InVideo turns a text prompt into a stock-footage video with a voiceover. Vyra turns your own footage into a finished video from a prompt. Pick InVideo when you have no footage and Vyra when you do.**

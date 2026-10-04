@@ -16,9 +16,15 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, tripod for the canvas, a lamp, snacks, a window for the dawn shot'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DSizEV_DP-i
+  - DWqUFtejsxS
+  - DUenly-Ds7f
 ---
 
 **An all-nighter painting vlog packs one overnight session into a short that follows the clock, from setup to the finished piece at dawn.**
+
+![5:48am, the finished triptych on the studio wall, from an all-nighter reel that reached 113K views](/newsletter/my-content-journey-as-an-artist-student-0-15k/04-Screenshot_2026-03-05_at_5.48.24_PM.png)
 
 The timestamps tell the story. The 3am check-in where you look wrecked is the clip people watch for. Don't cut it.
 

@@ -3,6 +3,9 @@ title: "Vyra for ecommerce brands: product demos and UGC-style ads from real foo
 description: "Vyra turns phone footage of your real products into captioned demos, unboxings, and hook-and-demo ads from a description. One shoot day covers a month of posts."
 updated: '2026-09-24'
 category: for
+reels:
+  - DYniZw2N5oE
+  - DYrKICFOQ7o
 ---
 
 **Ecommerce video is a catalog problem. Lots of SKUs, one style, no time to hand-cut each one. Vyra edits real footage of your real products from a written brief, keeps one caption and title style across every cut, and reframes each one for Reels, TikTok, and your product page.**

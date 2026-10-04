@@ -16,6 +16,9 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone on a tripod or overhead mount, steady light, 1-4 hours of footage'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DMi8HxxMAIQ
+  - DMBi4AeshlT
 ---
 
 **A speed paint is a whole painting session sped up to 20 to 60 seconds, so you watch a blank surface turn into the finished piece.**

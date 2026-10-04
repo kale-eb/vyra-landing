@@ -4,6 +4,8 @@ description: Turn indexed footage into a first draft by giving the agent a targe
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DZwM74ytJxF
 ---
 
 **Give it the length, the platform, what to keep, and what to cut. Leave captions and music for the second pass. Then fix one thing at a time.**

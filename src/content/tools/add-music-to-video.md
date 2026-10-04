@@ -10,6 +10,8 @@ facts:
   - "Time: Seconds to place and mix (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DNjX9oFO9xl
 ---
 
 **Adding music is easy. Mixing it so your voice stays clear is the part that eats time. Vyra places the track, ducks it under speech with keyframed volume, fades it in and out, and adds sound effects from Freesound if you want them.**

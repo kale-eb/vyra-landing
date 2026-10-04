@@ -3,6 +3,9 @@ title: "Vyra for faceless channels: narration, b-roll, and captions without show
 description: "Vyra builds faceless videos from your narration and your own b-roll or screen recordings, placing footage where the script mentions it, captioned."
 updated: '2026-09-24'
 category: for
+reels:
+  - DVzOIAIjjSs
+  - DMi8HxxMAIQ
 ---
 
 **A faceless channel comes down to two things. How fast you can cover a script with the right footage, and whether the captions carry it when the sound is off. Vyra reads your narration, knows what's in every clip you uploaded, and cuts the two together from a written brief. You supply the b-roll or screen recordings. It does the placement.**

@@ -3,6 +3,8 @@ title: 'Vyra vs Adobe Firefly (2026): which AI video editor should you use?'
 description: "Firefly Quick Cut makes one AI first draft inside Adobe's editor. Vyra keeps taking instructions after the draft, with footage search and reference matching."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Firefly Quick Cut makes one AI first draft inside Adobe's editor. Vyra keeps taking instructions after the first draft, with footage search, reference matching, custom graphics, and your own AI over MCP.**

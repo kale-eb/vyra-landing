@@ -10,6 +10,8 @@ facts:
   - "Time: Under a minute (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DY75P9PtMhO
 ---
 
 **A title card is a big-type moment that names the video, a chapter, or a turn. Vyra makes one from a sentence. Plain text for a clean static card, or a motion graphic for an animated one, timed to a beat or a line.**

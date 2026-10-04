@@ -16,6 +16,10 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, the product, natural light'
 example: https://www.instagram.com/reel/Da_tDQwtc-M/
+reels:
+  - Da_tDQwtc-M
+  - DajEylHSiz8
+  - DaAb0QFNvk0
 ---
 
 **A UGC hook and demo is a creator-style ad. A problem or claim in the first 3 seconds, then the product doing the thing on camera, under 40 seconds.**

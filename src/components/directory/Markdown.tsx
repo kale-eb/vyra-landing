@@ -71,7 +71,7 @@ const components: Components = {
   hr: () => <hr className="my-10 border-[var(--surface-border)]" />,
   img: ({ src, alt }) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={String(src ?? "")} alt={String(alt ?? "")} title={String(alt ?? "")} className="my-6 rounded-xl border border-[var(--surface-border)]" loading="lazy" />
+    <img src={String(src ?? "")} alt={String(alt ?? "")} title={String(alt ?? "")} className="my-6 max-h-[560px] w-auto rounded-xl border border-[var(--surface-border)]" loading="lazy" />
   ),
 };
 

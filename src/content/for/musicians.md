@@ -10,6 +10,8 @@ facts:
   - "Time saved: A full show's phone footage to a 30-second beat-synced teaser in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DZCKNJiupPa
 ---
 
 **Music clips only work if the cuts hit the beat. Vyra reads the BPM and onsets of your track, cuts your real footage to it, and lets you fix the moments that matter by saying which bar they should land on.**

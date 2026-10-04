@@ -4,6 +4,9 @@ description: Vyra finds the beats in a track you upload and lands cuts on them. 
 updated: 2026-09-24
 category: feature
 example: https://www.instagram.com/reel/DZCKNJiupPa/
+reels:
+  - DZCKNJiupPa
+  - DNjX9oFO9xl
 ---
 
 **Upload your clips and a track. Vyra finds the beats, you say how dense the cuts should be and which clips go where, and it lands every cut on the grid. One clip per beat in the chorus, every two beats in the verse, hold the last shot. Good for montages, travel recaps, product reels, anything where the music sets the rhythm.**

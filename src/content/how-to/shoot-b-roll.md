@@ -8,6 +8,9 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DXh77nmuY9l
+  - DRt0LcujgDN
 ---
 
 **B-roll is what you cut to while the voice keeps going. The b-roll I actually use follows a three-shot rule for every subject, wide, medium, detail, has one simple move per clip, runs 8 to 15 seconds so there's room to trim, and is shot in the same light as the main footage. Random pretty shots with nothing to do with the story stay on the card.**

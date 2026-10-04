@@ -3,6 +3,9 @@ title: "Day in the life cut prompts: time stamps, transitions between blocks, on
 description: "A day in the life prompt gives Vyra the blocks of the day in order, a time label for each, the sentence that ties them, and a pacing rule per block."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DdcjJBPva-m
+  - DY0EvCKtDTK
 ---
 
 **Give it the blocks of the day in order, a time label for each, the one sentence the day is about, and a pace per block. The throughline is the difference between a day in the life and a vlog.**

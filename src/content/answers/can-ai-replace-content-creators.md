@@ -3,6 +3,10 @@ title: Can generative AI replace content creators?
 description: "No. Generative AI can make footage, but audiences follow people. What AI is replacing is the editing hours, not the creator."
 updated: 2026-09-24
 category: answers
+reels:
+  - DY_kJF4uI9-
+newsletter:
+  - to-be-a-creator-in-an-ai-world
 ---
 
 **No. Generative AI can make video from text, but it can't make the thing people actually follow, which is a real person with a real life and footage that happened. What AI is replacing is the hours between filming and posting. A creator who used to spend six hours editing a vlog now spends one. The creator stays. The timeline shrinks.**

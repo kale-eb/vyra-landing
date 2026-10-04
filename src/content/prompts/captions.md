@@ -5,6 +5,8 @@ description: >-
   position, and whether any words get emphasis.
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DdcjJBPva-m
 ---
 
 **Say how the words group (one at a time or 3 to 5 word phrases), how they look, where they sit, and which words get bigger.**

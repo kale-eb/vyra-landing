@@ -8,6 +8,9 @@ category: how-to
 level: intermediate
 reading_time: 3
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DL3dH-7sK9U
+  - DPanh5ajDtM
 ---
 
 **Pacing is how often the viewer gets something new. A cut, a move, a caption, a sound, an idea. Short-form that holds isn't fast the whole way. It goes fast, then slow where the real point lands, then fast to the end. A visual change every 2 to 4 seconds keeps the eye busy without rushing the content.**

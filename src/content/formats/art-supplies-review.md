@@ -16,6 +16,9 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, overhead mount, the product, your usual product, test paper'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DU1PhRrCZnu
+  - DRt0LcujgDN
 ---
 
 **An art supplies review tests one product on camera, shows the result next to what you usually use, and gives a verdict in under a minute.**

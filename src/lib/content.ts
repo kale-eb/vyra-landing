@@ -194,6 +194,10 @@ export type Entry = {
   category?: string;
   video?: string;
   example?: string;
+  /** Instagram reel ids from src/content/reels.json, shown as embeds. */
+  reels: string[];
+  /** Newsletter slugs pulled into the page as cards. */
+  newsletter: string[];
   facts: string[];
   data: Record<string, unknown>;
   body: string;
@@ -245,6 +249,8 @@ function readDir(section: SectionKey | "product"): Entry[] {
         category: data.category ? String(data.category) : undefined,
         video,
         example: typeof data.example === "string" ? data.example : undefined,
+        reels: Array.isArray(data.reels) ? data.reels.map(String) : [],
+        newsletter: Array.isArray(data.newsletter) ? data.newsletter.map(String) : [],
         facts: Array.isArray(data.facts) ? data.facts.map(String) : deriveFacts(data),
         data,
         body: content.trim(),

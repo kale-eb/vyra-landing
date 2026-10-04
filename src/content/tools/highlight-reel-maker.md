@@ -10,6 +10,8 @@ facts:
   - "Time: Minutes after the clips are processed (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DS9JDZ-DE0l
 ---
 
 **A highlight reel squeezes a day or a season into the moments that carry it. Vyra picks those from its scene descriptions of every clip, using rules you give in plain words, then cuts them to a track.**

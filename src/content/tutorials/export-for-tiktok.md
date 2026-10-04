@@ -4,6 +4,8 @@ description: "Export a 9:16 MP4 at 1080x1920 with captions clear of TikTok's bot
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - Da_tDQwtc-M
 ---
 
 **TikTok wants a vertical 9:16 MP4 at 1080x1920 with nothing important in the bottom 15 percent of the frame. Confirm the canvas is 9:16, check the captions, export with the quality slider up. The same file works for Reels and Shorts.**
