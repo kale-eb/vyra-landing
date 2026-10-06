@@ -9,7 +9,8 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Image from "next/image";
-import IosWaitlistButton from "./IosWaitlistButton";
+import IosAppButton from "./IosAppButton";
+import LiveCount from "./LiveCount";
 import EditorMockup, { type ClientKey } from "./EditorMockup";
 
 const CLIENTS: { key: ClientKey; label: string; logo: string | null }[] = [
@@ -18,6 +19,11 @@ const CLIENTS: { key: ClientKey; label: string; logo: string | null }[] = [
   { key: "chatgpt", label: "ChatGPT", logo: "/logos/openai.svg" },
   { key: "mcp", label: "Any MCP Client", logo: "/logos/mcp.svg" },
 ];
+
+// Biggest creators on Vyra, shown beside the user count. Creators trust what
+// their peers use, so names + reach carry more than the raw number alone.
+// Renders nothing until filled in.
+const TOP_CREATORS: { name: string; handle: string; followers: string }[] = [];
 
 const TYPED_HEADLINE = "Finished video out.";
 
@@ -56,7 +62,7 @@ function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export default function Hero() {
+export default function Hero({ userCount = null }: { userCount?: number | null }) {
   const sectionRef = useRef<HTMLElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const { displayed, settled } = useHeadlineTypewriter();
@@ -206,8 +212,37 @@ export default function Hero() {
           >
             Get started on web
           </a>
-          <IosWaitlistButton />
+          <IosAppButton />
         </div>
+
+        {/* Social proof, right under the CTAs */}
+        <p
+          className="rise mt-5 text-[14px] text-[var(--foreground-muted)]"
+          style={
+            {
+              "--rise-y": "12px",
+              "--rise-dur": "0.6s",
+              "--rise-delay": "0.8s",
+            } as React.CSSProperties
+          }
+        >
+          Loved by{" "}
+          <span className="font-bold text-[var(--foreground)]">
+            <LiveCount initial={userCount} /> creators
+          </span>
+          {TOP_CREATORS.length > 0 && (
+            <>
+              {" "}including{" "}
+              {TOP_CREATORS.map((c, i) => (
+                <span key={c.handle}>
+                  {i > 0 && (i === TOP_CREATORS.length - 1 ? ", and " : ", ")}
+                  <span className="font-semibold text-[var(--foreground)]">{c.name}</span>{" "}
+                  <span className="text-[var(--foreground-subtle)]">({c.followers})</span>
+                </span>
+              ))}
+            </>
+          )}
+        </p>
       </div>
 
       {/* Hero visual - the Vyra editor, pinned while scroll plays the story */}

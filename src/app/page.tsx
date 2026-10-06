@@ -52,7 +52,7 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <main>
-        <Hero />
+        <Hero userCount={userCount} />
         <Steps />
         <Features />
         <HowItWorks />

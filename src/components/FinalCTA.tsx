@@ -1,7 +1,7 @@
 "use client";
 
 import Reveal from "./Reveal";
-import IosWaitlistButton from "./IosWaitlistButton";
+import IosAppButton from "./IosAppButton";
 import { trackLead } from "./MetaPixel";
 
 export default function FinalCTA() {
@@ -46,7 +46,7 @@ export default function FinalCTA() {
           >
             Get started on web
           </a>
-          <IosWaitlistButton />
+          <IosAppButton />
         </Reveal>
       </div>
     </section>
