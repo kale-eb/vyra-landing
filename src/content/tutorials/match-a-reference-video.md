@@ -4,6 +4,8 @@ description: Attach a reference video, ask the agent to describe its pacing, cap
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DY75P9PtMhO
 ---
 
 **Attaching a reference isn't an instruction. Attach it, ask the agent to describe it in a few lines, fix the description if needed, then say exactly what to copy. Your footage stays your footage.**

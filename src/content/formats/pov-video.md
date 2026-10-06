@@ -14,6 +14,9 @@ typical_length: 8-30s
 aspect: '9:16'
 difficulty: beginner
 gear: 'phone, a scenario'
+reels:
+  - DRvH1BVjmWf
+  - DaAb0QFNvk0
 ---
 
 **A POV video puts the camera where the viewer would be, so you talk to the lens like it's them, with a "POV:" caption setting the scene.**

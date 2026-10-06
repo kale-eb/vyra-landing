@@ -10,6 +10,9 @@ facts:
   - "Time: A few minutes after the track and clips are processed (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DZCKNJiupPa
+  - DNjX9oFO9xl
 ---
 
 **A beat sync editor puts cuts on the beats of a song instead of on a stopwatch. Vyra reads the track's BPM, beat positions, and onsets, then lays out your clips so each cut lands on a hit.**

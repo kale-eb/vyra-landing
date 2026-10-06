@@ -3,6 +3,9 @@ title: Why use conversational editing instead of a traditional editor?
 description: Conversational editing removes the two slowest parts of a manual edit, reviewing footage and trimming, which typically take 60 to 80 percent of the time.
 updated: 2026-09-24
 category: answers
+reels:
+  - Da_tDQwtc-M
+  - DajEylHSiz8
 ---
 
 **Conversational editing means you describe the edit and an AI that has already watched your footage builds it. It removes the two slowest parts of a manual edit, reviewing footage and mechanical trimming, which typically take 60 to 80 percent of the time. A traditional editor is still better when you need frame-level control over every cut. The right setup is both. An AI for the first draft, a timeline for the last 10 percent.**

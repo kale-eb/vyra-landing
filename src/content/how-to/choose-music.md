@@ -9,6 +9,9 @@ category: how-to
 level: beginner
 reading_time: 3
 example: https://www.instagram.com/reel/DZCKNJiupPa/
+reels:
+  - DZCKNJiupPa
+  - DNjX9oFO9xl
 ---
 
 **Music sets the energy before the first word. I pick tempo by format. 90 to 110 BPM for vlogs and calm process videos, 120 to 140 for montages, slow or ambient for cinematic pieces, and little or none under a talking head. Under speech the track sits 6 to 10 dB down. When the music leads, cuts land on the beat.**

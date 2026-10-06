@@ -8,9 +8,17 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DS9JDZ-DE0l
+  - DNB1l9IMvD0
+newsletter:
+  - minimum-viable-post-mvp
+  - the-truth-about-growing-on-social-media
 ---
 
 **The people who post daily for a year aren't more disciplined. They removed the decisions. One format they can repeat. One filming block a week. One editing pattern that runs the same way every time. A schedule set once. When each post is a prompt and a publish instead of a project, daily gets easy.**
+
+![What people say when they don't post, and what it usually means. The real barrier is fear of judgment, not logistics.](/newsletter/why-you-should-post-content/01-Screenshot_2026-03-16_at_12.07.05_AM.png)
 
 ## Why it matters
 

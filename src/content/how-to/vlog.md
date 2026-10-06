@@ -9,6 +9,10 @@ category: how-to
 level: beginner
 reading_time: 3
 example: https://www.instagram.com/reel/DZwM74ytJxF/
+reels:
+  - DZwM74ytJxF
+  - DY0EvCKtDTK
+  - DdcjJBPva-m
 ---
 
 **Vlogging properly means shooting for the edit. Instead of one long take, I grab short pieces. A line to camera when something happens, a wide of where I am, a close detail of what I'm doing, and a moving shot to the next place. Audio close to my mouth. Film 3 to 5 times more than I need, then cut it down to one throughline. A good 60 second vlog comes from 15 to 25 minutes of footage.**

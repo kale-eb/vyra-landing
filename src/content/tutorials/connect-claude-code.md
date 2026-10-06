@@ -4,6 +4,8 @@ description: Register Vyra's MCP server in Claude Code so you can edit video fro
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DY4pVwtu3KD
 ---
 
 **Register Vyra's MCP server once and every Claude Code session can open a project, read the footage, build edits, and export. This is the setup for batch work, the same prompt across ten projects in one run.**

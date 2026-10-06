@@ -4,6 +4,8 @@ description: Upload raw clips to a Vyra project and let it transcribe every word
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DZwM74ytJxF
 ---
 
 **Upload everything from the shoot into one project. Vyra transcribes the speech, looks at every scene, and makes thumbnails. By the time you type your first prompt it already knows what's in each clip.**

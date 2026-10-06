@@ -3,6 +3,11 @@ title: Video editing MCP server for Claude, ChatGPT, and Cursor
 description: Vyra's MCP server lets Claude, ChatGPT, or Cursor drive a real video editor. The agent gets the editing tools and can see your footage.
 updated: 2026-09-24
 category: product
+reels:
+  - DZumPohtfW8
+  - DY4pVwtu3KD
+newsletter:
+  - vyra-is-live
 ---
 
 **Vyra's MCP server connects the AI you already pay for to a full video editor. Claude, ChatGPT, or Cursor gets the actual editing tools, reads your transcripts and scene descriptions, and edits the timeline live in your browser. You describe the video in the chat you already use.**

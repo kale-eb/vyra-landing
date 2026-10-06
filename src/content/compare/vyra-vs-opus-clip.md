@@ -3,6 +3,8 @@ title: 'Vyra vs Opus Clip (2026): which AI video editor should you use?'
 description: Opus Clip auto-picks short clips from long talking videos. Vyra does that too, and you can tell it which moments, which style, and which graphics you want.
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Opus Clip auto-picks short clips from long talking videos. Vyra does that too, and you can tell it exactly which moments, which style, and which graphics you want.**

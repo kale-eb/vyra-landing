@@ -3,6 +3,8 @@ title: Highlight reel prompts
 description: "A highlight reel prompt sets the length, how many moments to pick, the selection rule, the energy curve, and the track. You tell the agent what counts."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DS9JDZ-DE0l
 ---
 
 **Say how long, how many moments, what counts as a highlight, and how the energy should move. Vyra has already watched every clip. You tell it what to pick.**

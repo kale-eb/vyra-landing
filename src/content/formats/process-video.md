@@ -16,6 +16,10 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, tripod, a second phone or angle for details, lav mic if narrating'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DVzOIAIjjSs
+  - DMBi4AeshlT
+  - DMJ99Ums9oj
 ---
 
 **A process video shows how a piece gets made at a pace you can follow, mixing real-time close-ups with sped-up stretches and a short voiceover.**

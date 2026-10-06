@@ -10,6 +10,8 @@ facts:
   - "Time: Under a minute (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DY75P9PtMhO
 ---
 
 **A lower third is the small label near the bottom of the frame that says who's talking or what this is. Vyra makes one from a sentence, as plain text you can drag or as a motion graphic that slides in, and saves it as a preset for next time.**

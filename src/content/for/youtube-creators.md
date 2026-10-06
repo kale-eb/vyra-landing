@@ -3,6 +3,8 @@ title: 'Vyra for YouTube creators: edit real footage by describing the edit'
 description: "Vyra turns hours of raw footage into a finished long-form video or a batch of Shorts by describing the edit. It reads transcripts and scenes, so name moments."
 updated: '2026-09-24'
 category: for
+reels:
+  - DZwM74ytJxF
 ---
 
 **Vyra edits your real footage from a plain description. It transcribes and analyzes everything you upload, so you can say "cut the best takes into a 10-minute video and pull three Shorts from it" and get a timeline you can still adjust by hand.**

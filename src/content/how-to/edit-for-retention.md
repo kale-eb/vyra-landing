@@ -9,6 +9,11 @@ category: how-to
 level: intermediate
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DSizEV_DP-i
+  - DZh-0ccu_cv
+newsletter:
+  - the-truth-about-growing-on-social-media
 ---
 
 **People leave in three places. The first 3 seconds, the slow middle, and the moment they sense the ending. So I win the opening with a hook and an early cut, put a re-hook every 8 to 12 seconds, deliver part of the payoff before the midpoint, and end on the last useful frame. No outro, no fade, no "thanks for watching."**

@@ -4,6 +4,8 @@ description: Add Vyra's MCP server to Claude Desktop so Claude can read your foo
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DZumPohtfW8
 ---
 
 **Add the Vyra server to Claude Desktop, authorize it, open a project, and Claude can list assets, propose a cut, build the timeline, and capture frames to check its own work.**

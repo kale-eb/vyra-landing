@@ -3,6 +3,8 @@ title: 'Vyra for travel vloggers: edit real footage by describing the edit'
 description: "Vyra turns a trip's worth of phone and camera clips into a travel vlog or a beat-synced recap from a plain brief. It finds moments by looking at every clip."
 updated: '2026-09-24'
 category: for
+reels:
+  - DZwM74ytJxF
 ---
 
 **A travel vlog is mostly a sorting problem. Hundreds of clips, a handful worth keeping. Vyra looks at every clip on upload, so you can say "build a 4-minute video of day two, open on the market, end on the sunset" and it picks the shots and cuts them.**

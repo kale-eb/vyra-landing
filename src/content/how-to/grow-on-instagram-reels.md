@@ -8,6 +8,13 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DL3dH-7sK9U
+  - DK9TNsLsdzM
+  - DPanh5ajDtM
+newsletter:
+  - my-content-journey-as-an-artist-student-0-15k
+  - the-truth-about-growing-on-social-media
 ---
 
 **Reels grow on shares and saves more than likes. Instagram pushes a Reel past your followers when people send it to a friend or save it. So relatable, useful, or beautiful beats purely entertaining, and the caption should tell people who to send it to.**

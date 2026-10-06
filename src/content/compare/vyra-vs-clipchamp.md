@@ -3,6 +3,8 @@ title: 'Vyra vs Clipchamp (2026): which AI video editor should you use?'
 description: Clipchamp is the free, simple editor built into Windows, fine for trims and captions. Vyra is the editor where an AI does the cut for you from a sentence.
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Clipchamp is the free, simple editor built into Windows, fine for trims and captions. Vyra is the editor where an AI does the cut for you from a sentence.**

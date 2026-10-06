@@ -16,6 +16,10 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, overhead mount or a friend, a flat surface, window light'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DSlX5qKjKW6
+  - DLimiDPOISJ
+  - DNrJt2xp_uy
 ---
 
 **A sketchbook flip-through turns pages on camera at a steady rhythm, holding a beat longer on the best spreads.**

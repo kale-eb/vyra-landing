@@ -5,6 +5,8 @@ description: >-
   delivery natural.
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DM6RiJPJtYf
 ---
 
 **Cut the ums, the long pauses, and the restarts. Keep the small pauses so it still sounds like you.**

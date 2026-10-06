@@ -22,6 +22,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.usevyra.com"),
+  verification: { google: "d4RYrl9eNXy1sRsvk1AqjqKIneHWBfawBFZsHF6f2TQ" },
   title: "Vyra: AI Video Editor That Edits Your Real Footage by Chat",
   description:
     "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",

@@ -9,6 +9,12 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DNB1l9IMvD0
+  - DJc8E-4umEK
+newsletter:
+  - your-audience-is-your-younger-self
+  - my-content-journey-as-an-artist-student-0-15k
 ---
 
 **A niche is where three things overlap. What you can make every week without burning out, what a specific group of people wants to watch, and what you can say that they can't get from someone else. You don't find it by thinking. You post ten videos, look at which ones strangers watched to the end, and make more of that.**

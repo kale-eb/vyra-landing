@@ -3,6 +3,9 @@ title: 'Vyra for marketers: edit real footage by describing the edit'
 description: "Vyra turns founder interviews, product footage, and event recordings into captioned social cuts and demos by describing each one. One shoot, many outputs."
 updated: '2026-09-24'
 category: for
+reels:
+  - Da_tDQwtc-M
+  - DY_kJF4uI9-
 ---
 
 **Marketing video is a volume problem with a consistency requirement. Vyra edits your real footage from a written brief, keeps one caption and title style across every cut, and turns one shoot into a dozen platform-specific deliverables.**

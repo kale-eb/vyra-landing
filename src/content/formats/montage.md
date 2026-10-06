@@ -16,6 +16,10 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, 20-40 clips, a music track'
 example: https://www.instagram.com/reel/DZCKNJiupPa/
+reels:
+  - DS9JDZ-DE0l
+  - DNjX9oFO9xl
+  - DZCKNJiupPa
 ---
 
 **A montage is a run of short clips cut to music that packs a stretch of time, a process, or a mood into under a minute.**

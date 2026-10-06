@@ -8,6 +8,12 @@ category: how-to
 level: beginner
 reading_time: 2
 example: https://www.instagram.com/reel/Da_tDQwtc-M/
+reels:
+  - Da_tDQwtc-M
+  - DL3dH-7sK9U
+  - DK9TNsLsdzM
+newsletter:
+  - the-truth-about-growing-on-social-media
 ---
 
 **A hook is the first 1.5 seconds of a video. Mine work when three things happen at once. Something moves in the frame, I say one specific line, and a few words on screen say it a second way for people watching muted. Weak hooks describe the video. Good ones make a claim or start in the middle of the action.**

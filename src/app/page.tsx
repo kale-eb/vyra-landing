@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Steps from "@/components/Steps";
 import HowItWorks from "@/components/HowItWorks";
 import MadeWithVyra from "@/components/MadeWithVyra";
+import CreatorCaseStudy from "@/components/CreatorCaseStudy";
 import Alternatives from "@/components/Alternatives";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
@@ -51,11 +52,12 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <main>
-        <Hero />
+        <Hero userCount={userCount} />
         <Steps />
         <Features />
         <HowItWorks />
         <MadeWithVyra userCount={userCount} />
+        <CreatorCaseStudy />
         <Alternatives />
         <Pricing />
         <FAQ />

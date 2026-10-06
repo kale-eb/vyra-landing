@@ -15,6 +15,8 @@ typical_length: 20-60s
 aspect: '9:16'
 difficulty: intermediate
 gear: 'phone, tripod, a change of shirt or hat per character'
+reels:
+  - DUxPd_4DgSe
 ---
 
 **A skit is a short scripted comedy scene, often one person playing two characters with a costume change, cut so every line lands.**

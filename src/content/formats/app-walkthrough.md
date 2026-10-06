@@ -17,6 +17,9 @@ aspect: '9:16'
 difficulty: intermediate
 gear: 'screen recorder, phone or webcam for face, script'
 example: https://www.instagram.com/reel/DZumPohtfW8/
+reels:
+  - DZumPohtfW8
+  - DY4pVwtu3KD
 ---
 
 **An app walkthrough is a screen recording of a real task in an app, with your face in a corner or split frame talking through each step.**

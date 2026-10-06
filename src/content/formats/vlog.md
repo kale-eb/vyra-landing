@@ -16,6 +16,10 @@ aspect: '9:16 short, 16:9 long'
 difficulty: intermediate
 gear: 'phone or camera, a small mic, a day'
 example: https://www.instagram.com/reel/DZwM74ytJxF/
+reels:
+  - DZwM74ytJxF
+  - DY0EvCKtDTK
+  - DOWOHE-jNUc
 ---
 
 **A vlog is a first-person video diary. Talking to camera, b-roll of what is happening, and music, cut so the day has a beginning, a point, and an end.**

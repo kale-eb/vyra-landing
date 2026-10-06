@@ -3,6 +3,8 @@ title: "Explainer motion graphics prompts: animate the list, the number, the dia
 description: "An explainer motion graphics prompt names each graphic moment, the words that trigger it, how it builds, and when it clears, so graphics follow what you say."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DY4pVwtu3KD
 ---
 
 **Name each graphic, the words that trigger it, how it builds, and when it clears. "Add motion graphics" gets you decoration. "When I list the three costs, stack them on the left as I say each one" gets you an explainer.**

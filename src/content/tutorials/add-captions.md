@@ -4,6 +4,8 @@ description: Caption a whole video from the transcript in one prompt by setting 
 updated: 2026-09-24
 category: tutorial
 video: TODO
+reels:
+  - DdcjJBPva-m
 ---
 
 **Captions come from the transcript Vyra made on upload, so it's one prompt. Pick word-by-word or phrases, set the look and position, name any words that get bigger. Fix wrong words by timestamp.**

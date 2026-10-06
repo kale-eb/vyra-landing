@@ -3,6 +3,9 @@ title: "Vyra for educators and course creators: lessons, explainers, and clips f
 description: "Vyra turns hour-long lecture recordings into clean lessons and short clips. Cut by describing what to keep, and caption every line for accessibility."
 updated: '2026-09-24'
 category: for
+reels:
+  - DY4pVwtu3KD
+  - DTVfE_wjoyf
 ---
 
 **Teaching video is long and full of pauses, tangents, and "let me find that slide." Vyra transcribes the whole recording, lets you cut by describing what to keep, and captions every word. One 60-minute recording becomes a tight lesson plus a few clips for promotion.**

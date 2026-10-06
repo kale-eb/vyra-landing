@@ -3,6 +3,13 @@ title: 'Vyra for founders: edit real footage by describing the edit'
 description: "Record a phone video about what you're building and get a captioned, tightened, vertical cut back by describing the edit. No evening of editing."
 updated: '2026-09-24'
 category: for
+reels:
+  - DdcjJBPva-m
+  - DaR9p9_N6SO
+  - DdInaC0NGql
+newsletter:
+  - you-need-people-who-get-it
+  - vyra-is-live
 ---
 
 **You have ten minutes to record and none to edit. Vyra takes a raw phone video, removes the pauses and restarts, adds captions and a screen recording where you point at the product, and exports it vertical. All from a few sentences.**

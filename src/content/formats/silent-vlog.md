@@ -14,6 +14,9 @@ typical_length: '30-90s short, 10-25 min long'
 aspect: '9:16 or 16:9'
 difficulty: beginner
 gear: 'phone, good ambient sound, on-screen text'
+reels:
+  - DUChu7GDFBh
+  - DHDFe_2s7dZ
 ---
 
 **A silent vlog shows a day or an activity with no talking. Ambient sound, quiet music, and short text on screen do the narrating.**

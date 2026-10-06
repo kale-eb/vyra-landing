@@ -3,6 +3,8 @@ title: 'Beat sync prompts: cut to the music'
 description: "A beat sync prompt names the track, sets how many beats each clip gets in each section, says where to start and end, and rules out effects."
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DZCKNJiupPa
 ---
 
 **Name the track, say how many beats each clip gets in each section, where to start and end, and what not to add. Vyra finds the beats. You set the rhythm.**

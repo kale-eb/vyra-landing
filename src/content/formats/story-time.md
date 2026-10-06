@@ -16,6 +16,9 @@ aspect: '9:16'
 difficulty: beginner
 gear: 'phone, a spot to sit'
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DYTeVwLs5uT
+  - DdInaC0NGql
 ---
 
 **A story time is you telling a personal story to camera, usually while doing something with your hands, with cuts and punch-ins instead of b-roll.**

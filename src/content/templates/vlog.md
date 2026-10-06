@@ -11,6 +11,8 @@ facts:
   - "Music: On by default, ducked under speech"
   - "Pairs with style: Vyra Default or Cinematic Film"
   - "Price: Included on every plan"
+reels:
+  - DZwM74ytJxF
 ---
 
 **Vlog is for footage shot across a day. The agent uses location and time changes as the structure, cuts b-roll to the music, keeps the talking clips that move the story, and turns the track down whenever you speak.**

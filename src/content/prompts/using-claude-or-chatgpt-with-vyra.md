@@ -5,6 +5,9 @@ updated: '2026-09-24'
 category: prompts
 level: intermediate
 reading_time: 5 min
+reels:
+  - DZumPohtfW8
+  - DaAb0QFNvk0
 ---
 
 **Over MCP your assistant runs the editor. Same five-part prompt as in the app, plus you can ask it to look first and show you a plan before it cuts anything.**

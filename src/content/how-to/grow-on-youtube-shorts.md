@@ -9,6 +9,8 @@ category: how-to
 level: beginner
 reading_time: 2
 example: 'https://www.instagram.com/sulansart'
+reels:
+  - DajEylHSiz8
 ---
 
 **YouTube shows you one number that decides everything, viewed versus swiped away. So the job is a first frame that stops the swipe and a video that pays off before 30 seconds. The difference from TikTok is what comes after. A Short can send people to a long video and a subscribe button, which is where YouTube growth actually compounds.**

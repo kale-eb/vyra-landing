@@ -3,6 +3,8 @@ title: 'Vyra vs VEED (2026): which AI video editor should you use?'
 description: "VEED is a simple browser editor for subtitles and trims, with AI avatars on the side. Vyra is a browser editor where an AI edits your real footage."
 updated: '2026-09-23'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **VEED is a simple browser editor for subtitles and trims, with AI avatars and generated clips on the side. Vyra is a browser editor where an AI edits your real footage from a description.**

@@ -5,6 +5,8 @@ description: >-
   before returning to the speaker.
 updated: '2026-09-24'
 category: prompts
+reels:
+  - DXh77nmuY9l
 ---
 
 **Say what to show, which line triggers it, and how long it stays. Vyra already knows what's in every clip, so name the thing, not the filename.**

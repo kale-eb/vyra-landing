@@ -3,6 +3,8 @@ title: "Vyra vs Captions app (2026): which AI video editor should you use?"
 description: "Captions is a phone app that polishes talking-head shorts with AI captions and zooms. Vyra is a browser editor where an AI cuts the whole video from raw clips."
 updated: '2026-09-24'
 category: compare
+reels:
+  - Da_tDQwtc-M
 ---
 
 **Captions is a phone app that polishes talking-head shorts with AI captions, zooms, b-roll, and eye contact. Vyra is a browser editor where an AI cuts the whole video from raw footage and gives you a full timeline.**

@@ -10,6 +10,8 @@ facts:
   - "Time: Minutes for a 10-minute recording once processed (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
   - "Price: Free to start, plans from $24/mo"
+reels:
+  - DM6RiJPJtYf
 ---
 
 **Cut the dead air, the ums, and the false starts so the recording sounds like the version you meant to say. Vyra does it from the transcript with a pause threshold you pick, and keeps the small breaths.**
