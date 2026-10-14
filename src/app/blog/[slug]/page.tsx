@@ -1,27 +1,31 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { posts, getPost, type Section, type FeatureIcon } from "./data";
+import DirectoryNav from "@/components/directory/DirectoryNav";
+import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/content";
+import { KIND_LABEL, formatDate, getBlogPost, getBlogPosts, getListedPosts, type BlogPost } from "@/lib/blog";
+import type { Section, FeatureIcon } from "./data";
 
-const SITE_URL = "https://www.usevyra.com";
+type Params = { params: Promise<{ slug: string }> };
 
-export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+// Posts published after a deploy render on first visit, then refresh like the rest.
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  return (await getBlogPosts()).map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getBlogPost(slug);
   if (!post) return {};
 
-  const url = `${SITE_URL}/blog/${post.slug}`;
+  const url = `${SITE_URL}${post.url}`;
+  const image = post.cover ?? "/og-image.png";
 
   return {
-    title: post.title,
+    title: post.source === "editor" ? `${post.title} | Vyra` : post.title,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -30,54 +34,47 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       siteName: "Vyra",
-      publishedTime: post.publishedAt,
-      authors: ["Vyra"],
-      images: [
-        {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
+      publishedTime: post.date,
+      authors: [post.author ?? "Vyra"],
+      images: [{ url: image, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["/og-image.png"],
+      images: [image],
     },
   };
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: Params) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getBlogPost(slug);
   if (!post) notFound();
 
-  const url = `${SITE_URL}/blog/${post.slug}`;
-  const others = posts.filter((p) => p.slug !== post.slug);
-  const faqSection = post.sections.find((s) => s.kind === "faq");
+  const url = `${SITE_URL}${post.url}`;
+  const more = (await getListedPosts()).filter((p) => p.slug !== post.slug).slice(0, 3);
+  const faqSection =
+    post.source === "structured" ? post.post.sections.find((s) => s.kind === "faq") : undefined;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
-    author: { "@type": "Organization", name: "Vyra", url: SITE_URL },
+    datePublished: post.date,
+    dateModified: post.date,
+    author: post.author
+      ? { "@type": "Person", name: post.author }
+      : { "@type": "Organization", name: "Vyra", url: SITE_URL },
     publisher: {
       "@type": "Organization",
       name: "Vyra",
       logo: { "@type": "ImageObject", url: `${SITE_URL}/vyra-logo.png` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    image: `${SITE_URL}/og-image.png`,
+    isPartOf: { "@type": "Blog", name: "Vyra Blog", url: `${SITE_URL}/blog` },
+    image: post.cover ?? `${SITE_URL}/og-image.png`,
   };
 
   const faqSchema =
@@ -106,63 +103,25 @@ export default async function BlogPostPage({
         />
       )}
 
-      <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
-        <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-4 px-6">
-          <Link
-            href="/"
-            className="text-[22px] font-extrabold tracking-tight text-[var(--foreground)]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-          >
-            Vyra
-          </Link>
-          <span className="text-[var(--foreground-subtle)]">/</span>
-          <Link
-            href="/blog"
-            className="text-[13px] font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
-          >
-            Blog
-          </Link>
-        </div>
-      </nav>
+      <DirectoryNav crumbs={[{ label: "Blog", href: "/blog" }]} />
 
-      <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
-        <article>
-          <header className="mb-10">
-            <p className="mb-3 text-[13px] font-medium tracking-wide text-[var(--foreground-subtle)] uppercase">
-              {post.kicker}
-            </p>
-            <h1
-              className="mb-6 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-            >
-              {post.title}
-            </h1>
-            <div className="space-y-4 text-[16px] leading-relaxed text-[var(--foreground-muted)]">
-              {post.intro.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-          </header>
+      <main className={`mx-auto px-6 pt-32 pb-24 ${post.source === "editor" ? "max-w-2xl" : "max-w-3xl"}`}>
+        {post.source === "editor" ? <EditorArticle post={post} /> : <StructuredArticle post={post} />}
 
-          <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
-            {post.sections.map((section, i) => (
-              <SectionRenderer key={i} section={section} />
-            ))}
-          </div>
-        </article>
-
-        {/* See also */}
         <aside className="mt-16 border-t border-[var(--surface-border)] pt-10">
           <h2 className="mb-4 text-[13px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">
-            See also
+            More from the blog
           </h2>
           <div className="space-y-3">
-            {others.map((o) => (
+            {more.map((o) => (
               <Link
                 key={o.slug}
-                href={`/blog/${o.slug}`}
+                href={o.url}
                 className="group block rounded-xl border border-[var(--surface-border)] bg-white p-5 transition-all duration-200 hover:border-[var(--surface-border-hover)] hover:shadow-md hover:shadow-black/[0.03]"
               >
+                <p className="mb-1 text-[12px] text-[var(--foreground-muted)]">
+                  {KIND_LABEL[o.kind]} · {formatDate(o.date)}
+                </p>
                 <h3 className="mb-1 text-[15px] font-semibold text-[var(--foreground)] group-hover:text-[var(--brand-blue)]">
                   {o.title}
                 </h3>
@@ -194,7 +153,73 @@ export default async function BlogPostPage({
           </Link>
         </div>
       </main>
+      <Footer />
     </>
+  );
+}
+
+function EditorArticle({ post }: { post: Extract<BlogPost, { source: "editor" }> }) {
+  return (
+    <article>
+      <header className="mb-8">
+        <p className="mb-3 text-[13px] text-[var(--foreground-muted)]">
+          <span className="font-semibold tracking-wide text-[var(--brand-blue)] uppercase">
+            {KIND_LABEL[post.kind]}
+          </span>
+          <span className="mx-1.5 text-[var(--foreground-subtle)]">·</span>
+          <time dateTime={post.date}>{formatDate(post.date)}</time>
+        </p>
+        <h1
+          className="mb-4 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
+          style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+        >
+          {post.title}
+        </h1>
+        <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{post.description}</p>
+        {post.author && (
+          <p className="mt-4 text-[13px] text-[var(--foreground-muted)]">By {post.author}</p>
+        )}
+      </header>
+      {post.cover && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={post.cover}
+          alt=""
+          className="mb-10 w-full rounded-2xl border border-[var(--surface-border)]"
+        />
+      )}
+      {/* Sanitized by the API when the post was saved (v2/backend/services/blogHtml.js). */}
+      <div className="blog-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+    </article>
+  );
+}
+
+function StructuredArticle({ post: { post } }: { post: Extract<BlogPost, { source: "structured" }> }) {
+  return (
+    <article>
+      <header className="mb-10">
+        <p className="mb-3 text-[13px] font-medium tracking-wide text-[var(--foreground-subtle)] uppercase">
+          {post.kicker}
+        </p>
+        <h1
+          className="mb-6 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
+          style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+        >
+          {post.title}
+        </h1>
+        <div className="space-y-4 text-[16px] leading-relaxed text-[var(--foreground-muted)]">
+          {post.intro.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </header>
+
+      <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
+        {post.sections.map((section, i) => (
+          <SectionRenderer key={i} section={section} />
+        ))}
+      </div>
+    </article>
   );
 }
 

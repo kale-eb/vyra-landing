@@ -2,12 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { SECTIONS, SECTION_KEYS, SITE_URL, getEntries } from "@/lib/content";
 import { getNewsletterPosts } from "@/lib/newsletter";
+import { getListedPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
 /* llms.txt: a plain-text map of the site for AI agents and crawlers.
    One line per page: "- [title](url): description". */
-export function GET() {
+export async function GET() {
   const lines: string[] = [];
   lines.push("# Vyra");
   lines.push("");
@@ -39,6 +40,13 @@ export function GET() {
   lines.push(`- [Newsletter archive](${SITE_URL}/newsletter): Every issue of Viral by Vyra, weekly letters on making content as an artist and founder`);
   for (const p of getNewsletterPosts()) lines.push(`- [${p.title}](${SITE_URL}/newsletter/${p.slug}): ${p.subtitle}`);
   lines.push("");
+  const blog = await getListedPosts();
+  if (blog.length) {
+    lines.push("## Blog");
+    lines.push(`- [Blog](${SITE_URL}/blog): Product updates and writing from the team building Vyra`);
+    for (const p of blog) lines.push(`- [${p.title}](${SITE_URL}${p.url}): ${p.description}`);
+    lines.push("");
+  }
   lines.push("## Optional");
   lines.push(`- [Sitemap](${SITE_URL}/sitemap.xml)`);
   lines.push(`- [Sitemap index](${SITE_URL}/sitemap-index.xml)`);

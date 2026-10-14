@@ -10,6 +10,7 @@ const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Docs", href: "/docs" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -71,7 +72,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="rounded-full px-4 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)]"
+                  className="whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)] lg:px-4"
                 >
                   {link.label}
                 </a>
@@ -79,7 +80,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-full px-4 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)]"
+                  className="whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-medium text-[var(--foreground-muted)] transition-all duration-200 hover:bg-black/[0.03] hover:text-[var(--foreground)] lg:px-4"
                 >
                   {link.label}
                 </Link>

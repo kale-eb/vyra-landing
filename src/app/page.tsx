@@ -11,15 +11,16 @@ import Pricing from "@/components/Pricing";
 import FinalCTA from "@/components/FinalCTA";
 import { HOME_FAQS } from "@/components/faq-data";
 import Footer from "@/components/Footer";
+import { SUPABASE_PUBLISHABLE_KEY, SUPABASE_URL } from "@/lib/supabase";
 
 async function fetchUserCount(): Promise<number | null> {
   try {
     const res = await fetch(
-      "https://uskviqibopshckqsmyvk.supabase.co/rest/v1/rpc/public_user_count",
+      `${SUPABASE_URL}/rest/v1/rpc/public_user_count`,
       {
         method: "POST",
         headers: {
-          apikey: "sb_publishable_aAeaDWrJlNNTiJbdh6nGKA_yUVUT_6P",
+          apikey: SUPABASE_PUBLISHABLE_KEY,
           "Content-Type": "application/json",
         },
         body: "{}",
