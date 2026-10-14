@@ -1,6 +1,6 @@
 import { reelEmbedUrl, resolveReels } from "@/lib/reels";
 import { SITE_URL, SECTION_KEYS, getEntries, type SectionKey } from "@/lib/content";
-import { posts } from "@/app/blog/[slug]/data";
+import { getBlogPosts } from "@/lib/blog";
 import reviews from "@/content/reviews.json";
 import { getNewsletterPosts } from "@/lib/newsletter";
 
@@ -34,7 +34,8 @@ function sectionUrls(section: SectionKey): SitemapUrl[] {
 }
 
 /** Child sitemap names and their URL lists. Only non-empty children are listed in the index. */
-export function childSitemaps(): Record<string, SitemapUrl[]> {
+export async function childSitemaps(): Promise<Record<string, SitemapUrl[]>> {
+  const blogPosts = await getBlogPosts();
   const product = getEntries("product").map((e) => ({ loc: e.url, lastmod: e.updated }));
   const out: Record<string, SitemapUrl[]> = {
     core: [...CORE_STATIC, ...product, ...sectionUrls("features"), ...sectionUrls("templates")],
@@ -51,11 +52,10 @@ export function childSitemaps(): Record<string, SitemapUrl[]> {
       { loc: "/newsletter", lastmod: getNewsletterPosts()[0]?.date ?? STATIC_LASTMOD },
       ...getNewsletterPosts().map((p) => ({ loc: `/newsletter/${p.slug}`, lastmod: p.date })),
     ],
+    // Hidden posts are only off the /blog page; their URLs stay indexed.
     blog: [
-      { loc: "/blog", lastmod: "2026-05-26" },
-      ...posts
-        .filter((p) => !p.slug.startsWith("vyra-vs-"))
-        .map((p) => ({ loc: `/blog/${p.slug}`, lastmod: new Date(p.publishedAt).toISOString().slice(0, 10) })),
+      { loc: "/blog", lastmod: blogPosts.reduce((m, p) => (p.updated > m ? p.updated : m), STATIC_LASTMOD) },
+      ...blogPosts.map((p) => ({ loc: p.url, lastmod: p.updated })),
     ],
   };
   const video: SitemapUrl[] = SECTION_KEYS.concat()
@@ -104,8 +104,8 @@ export function renderUrlset(urls: SitemapUrl[]): string {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset ${ns}>\n${body}\n</urlset>\n`;
 }
 
-export function renderIndex(): string {
-  const children = childSitemaps();
+export async function renderIndex(): Promise<string> {
+  const children = await childSitemaps();
   const body = Object.entries(children)
     .filter(([, urls]) => urls.length > 0)
     .map(([name, urls]) => {

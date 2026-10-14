@@ -65,6 +65,8 @@ export type Post = {
   title: string;
   description: string;
   publishedAt: string;
+  /** Off the /blog page and "More from the blog". The URL still works and stays in the sitemap. */
+  hidden?: boolean;
   intro: string[];
   sections: Section[];
 };
@@ -77,6 +79,7 @@ export const posts: Post[] = [
     description:
       "Already paying for Claude, ChatGPT, or Cursor? Connect that AI subscription to Vyra through MCP and your agent can search, edit, and build video.",
     publishedAt: "2026-05-26",
+    hidden: true,
     intro: [
       "You're already paying for an AI tool. Maybe it's Claude, maybe it's ChatGPT, maybe it's Cursor. You use it every day for writing, coding, research, whatever. It's good at what it does.",
       "But right now, none of those tools can edit video. You can ask Claude to write a script, but you can't ask it to cut your footage. You can ask ChatGPT to brainstorm a video concept, but you can't ask it to find the best take and build the edit.",

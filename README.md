@@ -1,5 +1,12 @@
 # Vyra landing page!!!
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Blog posts
+
+Posts on [/blog](https://www.usevyra.com/blog) are written and published in **Admin → Blog** in the Vyra web app (`app.usevyra.com/admin?tab=blog`); see `v2/docs/admin/blog.md` in the app repository. This site reads published posts from Supabase with the publishable key and refreshes `/blog` and each post within a minute, so publishing needs no deploy. The sitemaps and `llms.txt` refresh on the same schedule.
+
+- **Show on the blog** off (`hidden`) takes a published post off /blog and out of "More from the blog". Its URL still works and stays in the sitemap, so search traffic keeps landing.
+- The older SEO guide lives in code in `src/app/blog/[slug]/data.ts` and uses the same `hidden` field. The editor refuses its URL.
+- To build or run this site against the staging database, set `VYRA_SUPABASE_URL` and `VYRA_SUPABASE_PUBLISHABLE_KEY`.
 
 ## Getting Started
 
