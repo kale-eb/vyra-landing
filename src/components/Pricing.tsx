@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Reveal from "./Reveal";
+import FaventeRecruit from "./FaventeRecruit";
 import { trackLead } from "./MetaPixel";
 import { PLANS } from "@/content/pricing";
 
@@ -75,6 +76,8 @@ export default function Pricing() {
             Plan details and FAQ
           </Link>
         </p>
+
+        <FaventeRecruit />
       </div>
     </section>
   );

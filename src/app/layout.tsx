@@ -183,6 +183,30 @@ export default function RootLayout({
             }),
           }}
         />
+        {/*
+          Favente creator-recruitment embed. In the root layout's <head> so it
+          loads on every page; the recruit button only renders where the
+          #favente-recruit container exists (the home pricing section, via
+          FaventeRecruit). data-email is empty because this marketing site has
+          no signed-in session. Design tokens were measured from the rendered
+          home page: white pricing-style card surface, #111111 text, solid
+          #6490D0 pill CTAs, soft card shadows, Inter body type.
+        */}
+        <script
+          async
+          src="https://api.favente.so/embed/vyra/init.js"
+          data-mode="inline"
+          data-container-id="favente-recruit"
+          data-email=""
+          data-accent="#6490D0"
+          data-bg="#ffffff"
+          data-ink="#111111"
+          data-style="soft"
+          data-btn="solid"
+          data-radius="pill"
+          data-shadow="soft"
+          data-font="inherit"
+        />
       </head>
       <body className={`${inter.variable} ${instrumentSerif.variable} antialiased`}>
         {children}
