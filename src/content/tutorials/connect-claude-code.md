@@ -1,7 +1,7 @@
 ---
 title: How to connect Claude Code to Vyra
 description: Register Vyra's MCP server in Claude Code so you can edit video from the terminal, batch across projects, and script repeatable edits.
-updated: 2026-09-24
+updated: 2026-10-24
 category: tutorial
 video: TODO
 reels:
@@ -22,10 +22,12 @@ reels:
 1. **Add the server.**
 
    ```
-   claude mcp add vyra https://api.usevyra.com/mcp
+   claude mcp add --transport http Vyra https://api.usevyra.com/mcp
    ```
 
-2. **Authorize.** Run any `claude` command. It opens the OAuth URL in your browser. Sign in to Vyra, approve, come back.
+   Keep `--transport http`. Without it, Claude Code treats the URL as a command to run. Add `--scope user` to register Vyra for every project, not just the current one.
+
+2. **Authorize.** Run `claude mcp login Vyra`, or type `/mcp` in a session, pick Vyra, and choose Authenticate. It opens the OAuth URL in your browser. Sign in to Vyra, approve, come back.
 3. **Confirm the tools.** Ask Claude Code to list connected MCP servers. Vyra should show its editing tools through `tools/list`.
 4. **Open a project in the browser.** Go to `https://app.usevyra.com`, sign in with the same account, open a project. The tab binds itself and a green indicator shows top-right. Keep at least one Vyra tab open.
 5. **Name the project in the session**, or ask for the list.

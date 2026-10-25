@@ -1,7 +1,7 @@
 ---
 title: Edit videos with ChatGPT
 description: Connect Vyra to ChatGPT over MCP. ChatGPT reads your transcript, cuts the timeline, adds captions, and exports, all from the chat.
-updated: 2026-09-24
+updated: 2026-10-24
 category: product
 reels:
   - DajEylHSiz8
@@ -14,11 +14,11 @@ ChatGPT is good at planning and writing. It can't open a video file. Vyra is the
 
 ## How it works
 
-1. Add the Vyra MCP server. The ChatGPT desktop path uses the Codex-compatible config. Add this and restart. Sign in to Vyra when the OAuth window opens.
+1. Add the Vyra MCP server. On the web, go to `https://chatgpt.com/plugins`, click the plus button, then "Add custom MCP server". Name it `Vyra`, enter `https://api.usevyra.com/mcp` under Connection, set authentication to OAuth, and select "Create as a plugin". Install it and sign in to Vyra when the OAuth window opens. For Codex, including in the ChatGPT desktop app, run these instead.
 
-   ```toml
-   [mcp_servers.vyra]
-   url = "https://api.usevyra.com/mcp"
+   ```
+   codex mcp add vyra --url https://api.usevyra.com/mcp
+   codex mcp login vyra
    ```
 
 2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.

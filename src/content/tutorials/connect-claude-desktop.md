@@ -1,7 +1,7 @@
 ---
 title: How to connect Claude Desktop to Vyra
 description: Add Vyra's MCP server to Claude Desktop so Claude can read your footage, plan an edit, and drive the timeline from a normal chat.
-updated: 2026-09-24
+updated: 2026-10-24
 category: tutorial
 video: TODO
 reels:
@@ -13,28 +13,17 @@ reels:
 ## Before you start
 
 - A Vyra account on an MCP plan (MCP Starter or MCP Pro).
-- Claude Desktop installed, on a plan that supports connectors.
+- Claude Desktop installed, or claude.ai open in a browser. Free plans allow one custom connector. On Team or Enterprise, an Owner adds Vyra in Organization settings > Connectors first, then you click Connect on it in Customize > Connectors.
 - At least one Vyra project with footage uploaded.
 - The Vyra MCP server URL is `https://api.usevyra.com/mcp`. Details at /docs/mcp.
 
 ## Steps
 
-1. **Open the config file.** macOS is `~/Library/Application Support/Claude/claude_desktop_config.json`. Windows is `%APPDATA%\Claude\claude_desktop_config.json`.
-2. **Add the Vyra server and restart Claude Desktop.**
-
-   ```json
-   {
-     "mcpServers": {
-       "vyra": {
-         "url": "https://api.usevyra.com/mcp"
-       }
-     }
-   }
-   ```
-
-3. **Authorize.** The first time a session needs Vyra, Claude Desktop opens an OAuth URL in your browser. Sign in to Vyra and approve.
+1. **Open Connectors.** In Claude Desktop or on claude.ai, go to Customize > Connectors.
+2. **Add the Vyra server.** Click "+ Add", then "Add custom connector". Name it `Vyra`, enter `https://api.usevyra.com/mcp`, and click Continue.
+3. **Authorize.** Review the detected sign-in and click Continue. Under Authentication, choose "Sign in now" and click Add. Sign in to Vyra in your browser and approve.
 4. **Open a project in the browser.** Go to `https://app.usevyra.com`, sign in with the same account, open a project. The tab binds itself and a green indicator shows top-right. Keep at least one Vyra tab open.
-5. **Start a chat and name the project**, or ask Claude to list them.
+5. **Start a chat and name the project**, or ask Claude to list them. If Vyra isn't on, click + in the chat input, then Connectors, and toggle Vyra on.
 6. **Ask for a plan before an edit.** A footage summary and a structure with timestamps. Approve or correct it.
 7. **Edit in steps.** Rough cut, captions, music. One message each.
 8. **Verify with frames.** Ask Claude to capture frames at a few timestamps.

@@ -1,7 +1,7 @@
 ---
 title: Video editing MCP server for Claude, ChatGPT, and Cursor
 description: Vyra's MCP server lets Claude, ChatGPT, or Cursor drive a real video editor. The agent gets the editing tools and can see your footage.
-updated: 2026-09-24
+updated: 2026-10-24
 category: product
 reels:
   - DZumPohtfW8
@@ -24,29 +24,36 @@ MCP is the Model Context Protocol, an open standard that lets AI assistants call
 
 ## Setup by client
 
-Claude Code. Run this, then any `claude` command opens the sign-in window.
+Claude Code. Run these. The second command opens the sign-in window.
 
 ```
-claude mcp add vyra https://api.usevyra.com/mcp
+claude mcp add --transport http Vyra https://api.usevyra.com/mcp
+claude mcp login Vyra
 ```
 
-Claude Desktop. Add this to `claude_desktop_config.json` (macOS `~/Library/Application Support/Claude/`, Windows `%APPDATA%\Claude\`) and restart.
+Claude Desktop and claude.ai. Go to Customize > Connectors, click "+ Add", then "Add custom connector". Name it `Vyra`, enter the URL, and click Continue. Review the detected sign-in, click Continue, choose "Sign in now" under Authentication, and click Add. On Team and Enterprise plans an Owner adds it in Organization settings > Connectors first, then members click Connect. Free plans allow one custom connector.
+
+OpenAI Codex. Run these. The second command opens the sign-in window.
+
+```
+codex mcp add vyra --url https://api.usevyra.com/mcp
+codex mcp login vyra
+```
+
+In the ChatGPT desktop app, use Settings > MCP servers > Add server instead. Name it `vyra`, choose Streamable HTTP, enter the URL, and save. Then click Restart and Authenticate.
+
+ChatGPT on the web. Go to `https://chatgpt.com/plugins`, click the plus button, then "Add custom MCP server". Name it `Vyra`, enter the URL under Connection, set authentication to OAuth, accept the warning, and select "Create as a plugin". Install it and sign in.
+
+Cursor. Add this to `.cursor/mcp.json` (or `~/.cursor/mcp.json` for every project), then turn Vyra on in Customize and sign in when asked.
 
 ```json
 {
   "mcpServers": {
-    "vyra": {
+    "Vyra": {
       "url": "https://api.usevyra.com/mcp"
     }
   }
 }
-```
-
-OpenAI Codex and the ChatGPT desktop path. Add this to the Codex MCP config and restart.
-
-```toml
-[mcp_servers.vyra]
-url = "https://api.usevyra.com/mcp"
 ```
 
 Any other client with Streamable HTTP and OAuth 2.1 PKCE works with the same URL. Metadata is at `https://api.usevyra.com/.well-known/oauth-authorization-server`.
