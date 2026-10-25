@@ -1,7 +1,7 @@
 ---
 title: Edit videos with Claude
 description: Connect Vyra to Claude Desktop, Claude Code, or claude.ai over MCP. Claude sees your clips, cuts the timeline, and exports.
-updated: 2026-09-24
+updated: 2026-10-24
 category: product
 example: https://www.instagram.com/reel/DZumPohtfW8/
 reels:
@@ -17,20 +17,11 @@ Claude on its own can't open a video file. Vyra gives it an editor to work in. W
 
 ## How it works
 
-1. Add the Vyra MCP server. In Claude Code, run the command below. The next `claude` command opens a sign-in window for Vyra. In Claude Desktop, add the JSON to `claude_desktop_config.json` (macOS `~/Library/Application Support/Claude/`, Windows `%APPDATA%\Claude\`) and restart. On claude.ai, add it in connector settings.
+1. Add the Vyra MCP server. In Claude Code, run the commands below. The second one opens a sign-in window for Vyra. In Claude Desktop or on claude.ai, go to Customize > Connectors, click "+ Add", then "Add custom connector". Name it `Vyra`, enter `https://api.usevyra.com/mcp`, and click Continue. Review the detected sign-in, click Continue, choose "Sign in now", and click Add.
 
    ```
-   claude mcp add vyra https://api.usevyra.com/mcp
-   ```
-
-   ```json
-   {
-     "mcpServers": {
-       "vyra": {
-         "url": "https://api.usevyra.com/mcp"
-       }
-     }
-   }
+   claude mcp add --transport http Vyra https://api.usevyra.com/mcp
+   claude mcp login Vyra
    ```
 
 2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.

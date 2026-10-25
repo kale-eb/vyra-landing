@@ -245,7 +245,7 @@ export default function McpDocsPage() {
                 Try removing and re-adding the MCP server in your client. If using Claude
                 Code, run{" "}
                 <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[13px]">
-                  claude mcp remove vyra
+                  claude mcp remove Vyra
                 </code>{" "}
                 then add it again.
               </div>

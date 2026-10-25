@@ -1,7 +1,7 @@
 ---
 title: Edit videos from Cursor
 description: Add Vyra as an MCP server in Cursor and its agent can cut, caption, and export your footage from the IDE, one video or a batch.
-updated: 2026-09-24
+updated: 2026-10-24
 category: product
 reels:
   - DY4pVwtu3KD
@@ -14,7 +14,18 @@ Cursor is where developers already run agents. Vyra makes video one more thing t
 
 ## How it works
 
-1. Add the Vyra MCP server in Cursor's MCP settings. The URL is `https://api.usevyra.com/mcp`. It uses Streamable HTTP with OAuth 2.1 and PKCE, and metadata is at `https://api.usevyra.com/.well-known/oauth-authorization-server`. On first use a sign-in window opens. The exact Cursor menu path is (TODO confirm).
+1. Add the Vyra MCP server to `.cursor/mcp.json` in your project, or `~/.cursor/mcp.json` for every project. The URL is `https://api.usevyra.com/mcp`. It uses Streamable HTTP with OAuth 2.1 and PKCE, and metadata is at `https://api.usevyra.com/.well-known/oauth-authorization-server`. Then open Customize in Cursor's sidebar, make sure Vyra is turned on, and sign in when asked.
+
+   ```json
+   {
+     "mcpServers": {
+       "Vyra": {
+         "url": "https://api.usevyra.com/mcp"
+       }
+     }
+   }
+   ```
+
 2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.
 3. Upload your footage. Clips get transcribed and described.
 4. In the Cursor agent, describe the edit or write a task that loops over projects.
@@ -81,7 +92,7 @@ Whatever model Cursor is running. Vyra provides the tools and the footage contex
 The server is built for interactive agents. Batch tasks inside a Cursor session work today. A headless pipeline is a different setup, ask us in Discord.
 
 **Is Cursor different from Claude Code here?**
-Same server, same tools. Claude Code registers it with `claude mcp add vyra https://api.usevyra.com/mcp`.
+Same server, same tools. Claude Code registers it with `claude mcp add --transport http Vyra https://api.usevyra.com/mcp`.
 
 ## Related
 

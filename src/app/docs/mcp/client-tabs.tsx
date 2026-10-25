@@ -12,18 +12,25 @@ const CLIENTS = [
       <>
         <p>Works on both <strong className="text-[var(--foreground)]">claude.ai</strong> and the <strong className="text-[var(--foreground)]">Claude Desktop</strong> app:</p>
         <ol className="mt-3 list-decimal space-y-2 pl-5">
-          <li>Click your profile icon &rarr; <strong className="text-[var(--foreground)]">Settings</strong> &rarr; <strong className="text-[var(--foreground)]">Connectors</strong></li>
-          <li>Click <strong className="text-[var(--foreground)]">Add custom integration</strong></li>
+          <li>Go to <strong className="text-[var(--foreground)]">Customize</strong> &rarr; <strong className="text-[var(--foreground)]">Connectors</strong></li>
+          <li>Click <strong className="text-[var(--foreground)]">+ Add</strong>, then <strong className="text-[var(--foreground)]">Add custom connector</strong></li>
           <li>
             Enter the name <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">Vyra</code> and
-            the URL <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">{SERVER_URL}</code>
+            the URL <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">{SERVER_URL}</code>, then click <strong className="text-[var(--foreground)]">Continue</strong>
           </li>
-          <li>Click <strong className="text-[var(--foreground)]">Add</strong> and you&apos;ll be redirected to authorize</li>
+          <li>Review the detected sign-in and click <strong className="text-[var(--foreground)]">Continue</strong></li>
+          <li>
+            Under <strong className="text-[var(--foreground)]">Authentication</strong>, choose <strong className="text-[var(--foreground)]">Sign in now</strong>,
+            then click <strong className="text-[var(--foreground)]">Add</strong> and you&apos;ll be redirected to authorize
+          </li>
         </ol>
         <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">
           To use in a conversation, click the <strong className="text-[var(--foreground-muted)]">+</strong> button
           in the chat input, then <strong className="text-[var(--foreground-muted)]">Connectors</strong>, and toggle Vyra on.
-          Requires Pro or Max plan.
+          On a Team or Enterprise plan, an Owner adds Vyra in{" "}
+          <strong className="text-[var(--foreground-muted)]">Organization settings &rarr; Connectors</strong> first, then you
+          click <strong className="text-[var(--foreground-muted)]">Connect</strong> on it in Customize &rarr; Connectors.
+          Free plans allow one custom connector.
         </p>
       </>
     ),
@@ -34,18 +41,25 @@ const CLIENTS = [
     content: (
       <>
         <ol className="list-decimal space-y-2 pl-5">
-          <li>Click your profile icon &rarr; <strong className="text-[var(--foreground)]">Settings</strong> &rarr; <strong className="text-[var(--foreground)]">Apps &amp; Connectors</strong></li>
-          <li>Go to <strong className="text-[var(--foreground)]">Advanced settings</strong> and enable <strong className="text-[var(--foreground)]">Developer Mode</strong></li>
-          <li>Back in Connectors, click <strong className="text-[var(--foreground)]">Create</strong></li>
+          <li>
+            Go to <strong className="text-[var(--foreground)]">Plugins</strong> (<code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">chatgpt.com/plugins</code>),
+            click the <strong className="text-[var(--foreground)]">+</strong> button, then <strong className="text-[var(--foreground)]">Add custom MCP server</strong>
+          </li>
           <li>
             Enter <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">Vyra</code> as
             the name and <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">{SERVER_URL}</code> as
-            the MCP server URL
+            the <strong className="text-[var(--foreground)]">Server URL</strong> under Connection
           </li>
-          <li>Check &ldquo;I trust this application&rdquo; and click <strong className="text-[var(--foreground)]">Create</strong></li>
+          <li>Set authentication to <strong className="text-[var(--foreground)]">OAuth</strong></li>
+          <li>
+            Select &ldquo;I understand and want to continue&rdquo; and click{" "}
+            <strong className="text-[var(--foreground)]">Create as a plugin</strong>
+          </li>
+          <li>Install the Vyra plugin and sign in to authorize it when prompted</li>
         </ol>
         <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">
-          Requires Plus, Pro, Team, or Enterprise plan.
+          To use in a conversation, type <strong className="text-[var(--foreground-muted)]">@</strong> in the prompt box and
+          select Vyra. In a workspace, your admin&apos;s permissions decide whether you can add custom MCP servers.
         </p>
       </>
     ),
@@ -56,14 +70,16 @@ const CLIENTS = [
     content: (
       <>
         <p><strong className="text-[var(--foreground)]">1. Add the server:</strong></p>
-        <Pre>{`claude mcp add-json vyra '{"type":"http","url":"${SERVER_URL}"}' --scope user`}</Pre>
+        <Pre>{`claude mcp add --transport http Vyra ${SERVER_URL}`}</Pre>
         <p className="mt-4"><strong className="text-[var(--foreground)]">2. Authenticate:</strong></p>
-        <p>
-          Run <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">/mcp</code> in
-          Claude Code to connect. Your browser will open to sign in and authorize Vyra.
+        <Pre>claude mcp login Vyra</Pre>
+        <p className="mt-2">
+          Your browser will open to sign in and authorize Vyra. You can also run{" "}
+          <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">/mcp</code> in
+          Claude Code, select Vyra, then <strong className="text-[var(--foreground)]">Authenticate</strong>.
         </p>
         <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">
-          Use <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">--scope user</code> for
+          This adds Vyra for the current project. Add <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">--scope user</code> for
           all projects, <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">--scope project</code> to
           share with your team via <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">.mcp.json</code>.
         </p>
@@ -83,17 +99,16 @@ const CLIENTS = [
         </p>
         <Pre>{`{
   "mcpServers": {
-    "vyra": {
-      "type": "streamable-http",
+    "Vyra": {
       "url": "${SERVER_URL}"
     }
   }
 }`}</Pre>
         <p className="mt-4"><strong className="text-[var(--foreground)]">2. Authenticate:</strong></p>
         <p>
-          Go to <strong className="text-[var(--foreground)]">Cursor Settings &rarr; Tools &amp; MCP</strong>.
-          Click the Vyra server to trigger authentication - your browser will open to sign in
-          and authorize. A green status indicator means you&apos;re connected.
+          Open <strong className="text-[var(--foreground)]">Customize</strong> in Cursor&apos;s sidebar and make sure the
+          Vyra server is turned on. When Cursor asks you to sign in, your browser will open to sign in
+          and authorize.
         </p>
       </>
     ),
@@ -103,12 +118,6 @@ const CLIENTS = [
     label: "Codex",
     content: (
       <>
-        <div className="mb-3 rounded-md border border-amber-500/40 bg-amber-50 px-3 py-2 text-[12px] text-amber-900 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-100">
-          <strong className="text-amber-950 dark:text-amber-50">Codex CLI only for now.</strong> The Codex desktop app has
-          a known OAuth bug that prevents it from completing the Vyra auth flow - use the CLI
-          (<code className="rounded bg-amber-100 px-1 py-0.5 text-[11px] text-amber-900 dark:bg-amber-900/40 dark:text-amber-100">codex</code> in your terminal)
-          until that ships.
-        </div>
         <p><strong className="text-[var(--foreground)]">1. Add the server:</strong></p>
         <Pre>{`codex mcp add vyra --url ${SERVER_URL}`}</Pre>
         <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">
@@ -119,6 +128,14 @@ const CLIENTS = [
         <Pre>codex mcp login vyra</Pre>
         <p className="mt-2">
           Your browser will open to sign in and authorize Vyra.
+        </p>
+        <p className="mt-3 text-[13px] text-[var(--foreground-subtle)]">
+          In the <strong className="text-[var(--foreground-muted)]">ChatGPT desktop app</strong>, go to{" "}
+          <strong className="text-[var(--foreground-muted)]">Settings &rarr; MCP servers &rarr; Add server</strong>. Enter the
+          name <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-[12px]">vyra</code>, choose{" "}
+          <strong className="text-[var(--foreground-muted)]">Streamable HTTP</strong>, enter the URL, and save. Click{" "}
+          <strong className="text-[var(--foreground-muted)]">Restart</strong>, then <strong className="text-[var(--foreground-muted)]">Authenticate</strong> on
+          the vyra row. The desktop app, CLI, and IDE extension share this setup.
         </p>
       </>
     ),

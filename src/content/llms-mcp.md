@@ -17,42 +17,69 @@ The exact command differs by client. Here are the common ones:
 ### Claude Code (CLI)
 
 ```
-claude mcp add vyra https://api.usevyra.com/mcp
+claude mcp add --transport http Vyra https://api.usevyra.com/mcp
+claude mcp login Vyra
 ```
 
-Then run any `claude` command — it will open the OAuth authorization URL in the user's browser.
+`claude mcp login Vyra` opens the OAuth authorization URL in the user's browser. Inside a Claude Code session, `/mcp` → Vyra → Authenticate does the same. Keep `--transport http`: without it, Claude Code treats the URL as a stdio command. The server is added for the current project by default; add `--scope user` to make it available in every project.
 
-### Claude Desktop
+### Claude Desktop and claude.ai
 
-Edit the Claude Desktop config file:
+Remote servers are added as a custom connector in the user's Claude account, not in `claude_desktop_config.json`. The same connector works in Claude Desktop and claude.ai.
 
-- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+1. Go to Customize → Connectors.
+2. Click "+ Add", then "Add custom connector".
+3. Enter the name `Vyra` and the URL `https://api.usevyra.com/mcp`, then click "Continue".
+4. Review the detected sign-in and click "Continue".
+5. Under Authentication, choose "Sign in now", then click "Add". The user signs into Vyra and approves the connection.
 
-Add:
+To use it in a conversation: click "+" in the chat input → Connectors → toggle Vyra on.
 
-```json
-{
-  "mcpServers": {
-    "vyra": {
-      "url": "https://api.usevyra.com/mcp"
-    }
-  }
-}
+On Team and Enterprise plans, an Owner adds the connector first in Organization settings → Connectors; members then find it in Customize → Connectors and click "Connect". Free plans allow one custom connector.
+
+### OpenAI Codex (CLI, IDE extension, ChatGPT desktop app)
+
+```
+codex mcp add vyra --url https://api.usevyra.com/mcp
+codex mcp login vyra
 ```
 
-Restart Claude Desktop. It will prompt for OAuth authorization the first time it starts a session that needs Vyra.
-
-### OpenAI Codex (and other Codex-compatible clients)
-
-Edit the Codex MCP config:
+`codex mcp login vyra` opens the OAuth flow in the user's browser. Or add it to `~/.codex/config.toml` by hand:
 
 ```toml
 [mcp_servers.vyra]
 url = "https://api.usevyra.com/mcp"
 ```
 
-Restart Codex; the OAuth flow opens on first use.
+In the ChatGPT desktop app: Settings → MCP servers → Add server. Enter the name `vyra`, choose Streamable HTTP, enter the URL, and save. Click Restart, then Authenticate on the vyra row. The desktop app, Codex CLI, and IDE extension share this configuration.
+
+### ChatGPT (web)
+
+ChatGPT on the web adds remote MCP servers as plugins; it doesn't read the Codex config.
+
+1. Go to Plugins (`https://chatgpt.com/plugins`), click the plus button, then "Add custom MCP server".
+2. Enter the name `Vyra` and, under Connection, the Server URL `https://api.usevyra.com/mcp`.
+3. Set authentication to OAuth.
+4. Select "I understand and want to continue", then "Create as a plugin".
+5. Install the plugin and sign in to Vyra when prompted.
+
+To use it in a conversation, type `@` in the prompt box and select Vyra. Workspace permissions apply to adding custom MCP servers.
+
+### Cursor
+
+Add the server to `.cursor/mcp.json` in the project (or `~/.cursor/mcp.json` for every project):
+
+```json
+{
+  "mcpServers": {
+    "Vyra": {
+      "url": "https://api.usevyra.com/mcp"
+    }
+  }
+}
+```
+
+Open Customize in Cursor's sidebar, make sure Vyra is turned on, and complete the OAuth sign-in in the browser when Cursor asks.
 
 ### Generic MCP client
 
