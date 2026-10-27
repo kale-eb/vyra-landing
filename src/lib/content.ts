@@ -133,9 +133,10 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     schema: "Article",
     intro: "Short answers to the questions people ask about AI video editing. Numbers where we have them, and what we do not know yet.",
     groups: [
-      { label: "Picking an editor", slugs: ["best-video-editor-for-beginners", "easiest-video-editor-for-social-media", "can-i-try-an-ai-video-editor-free", "can-i-try-a-video-editor-before-buying", "how-to-switch-video-editors", "video-editor-free-vs-paid", "how-much-does-a-professional-video-editor-cost", "what-ai-tools-do-content-creators-use"] },
+      { label: "Picking an editor", slugs: ["best-ai-video-editor", "best-video-editor-for-beginners", "easiest-video-editor-for-social-media", "can-i-try-an-ai-video-editor-free", "can-i-try-a-video-editor-before-buying", "how-to-switch-video-editors", "video-editor-free-vs-paid", "how-much-does-a-professional-video-editor-cost", "what-ai-tools-do-content-creators-use"] },
       { label: "How AI editing works", slugs: ["can-ai-understand-raw-footage", "how-accurate-is-ai-transcription-for-captions", "what-video-formats-does-ai-editing-support", "can-ai-generate-motion-graphics-from-text", "does-beat-sync-work-for-every-genre", "does-scene-detection-work-in-low-light", "conversational-editing-vs-traditional-editing", "does-an-automated-video-maker-save-time", "automated-video-maker-vs-manual-editing", "can-ai-replace-content-creators"] },
       { label: "Time and workflow", slugs: ["why-does-vlog-editing-take-so-long", "how-long-does-it-take-to-edit-a-video", "how-to-automate-a-tiktok-editing-workflow"] },
+      { label: "Editing with AI assistants", slugs: ["can-claude-edit-videos", "what-is-an-agentic-video-editor"] },
     ],
   },
   tutorials: {
