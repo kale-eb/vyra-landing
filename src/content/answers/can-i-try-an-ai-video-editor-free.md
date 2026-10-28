@@ -45,15 +45,10 @@ Export at 1080x1920, high quality.
 | Vyra AI Starter | $54 | Built-in AI, no other subscription |
 | Vyra AI Pro | $129 | Built-in AI, higher limits, 4K export |
 
-(TODO verify per-plan limits and free-tier details.)
-
 ## FAQ
 
 **Do I need Claude or ChatGPT to use Vyra?**
 No. Vyra AI plans include the agent. MCP plans are cheaper if you already pay for an assistant.
-
-**Is there a watermark on the free plan?**
-(TODO verify.)
 
 **Can I cancel anytime?**
 Yes. Plans are monthly.

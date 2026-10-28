@@ -52,9 +52,7 @@ The caption at 0:12 should say "gesso", not "jesso". Fix that one and leave ever
 
 ## When to use something else
 
-- You need an SRT file for YouTube's caption track instead of burned-in subtitles (TODO confirm SRT export).
 - The audio is all music, no speech. Use text overlays instead.
-- You need subtitles in another language. Translation isn't in Vyra's docs yet (TODO confirm).
 
 ## FAQ
 
