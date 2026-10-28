@@ -61,7 +61,7 @@ export const PRICING_FAQ = [
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. You can upload footage and try an edit before picking a plan. Cancel anytime.",
+    a: "Yes. The web app has a 3-day free trial, so you can upload footage and try an edit before you pay. On iPhone, new accounts get 100 free credits, and free exports are 720p with a watermark. Cancel anytime.",
   },
   {
     q: "What are processing credits?",

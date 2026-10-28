@@ -54,7 +54,7 @@ Make a 30-second 9:16 Reel from this footage in the style of a fast trend edit: 
 ## FAQ
 
 **Is there a free CapCut alternative with no watermark?**
-Vyra is free to start. DaVinci Resolve's base version is free. Check each tool's current export terms.
+Vyra has a 3-day free trial. DaVinci Resolve's base version is free. Check each tool's current export terms.
 
 **Which alternative works with Claude or ChatGPT?**
 Vyra, through MCP. Descript has a limited MCP that passes prompts to its own AI.

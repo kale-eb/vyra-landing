@@ -53,7 +53,7 @@ Yes — Vyra connects to ChatGPT and Cursor over the same protocol. See [Vyra fo
 No. Generators like Runway and Sora create synthetic footage from a prompt. Claude + Vyra edits the real footage you shot.
 
 **What does it cost to try?**
-Vyra is free to start. MCP plans start at $24/month; see [pricing](/pricing).
+Vyra has a 3-day free trial. MCP plans start at $24/month; see [pricing](/pricing).
 
 ## Related
 - [Vyra for Claude users](/for/claude-users)

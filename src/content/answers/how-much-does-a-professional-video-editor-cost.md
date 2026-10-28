@@ -75,7 +75,7 @@ Build a 60-second Reel from this raw footage. Best takes, no pauses, phrase capt
 Export a 1080x1920 draft and give me a list of cuts with timestamps to send with it.
 ```
 
-Vyra is free to start, and plans begin at $24 a month. See [Is Vyra free?](/answers/is-vyra-free)
+Vyra has a 3-day free trial, and plans begin at $24 a month. See [Is Vyra free?](/answers/is-vyra-free)
 
 ## FAQ
 

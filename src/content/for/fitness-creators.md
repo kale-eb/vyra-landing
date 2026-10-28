@@ -9,7 +9,7 @@ facts:
   - "Typical output: 20-45 second form tips, 60-second routines, transformation reels, weekly vlogs"
   - "Time saved: A 30-minute session to a 45-second labeled routine in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **Fitness content needs labels, counts, and clean cuts between sets. Vyra can tell which clip is which exercise, puts the name and rep scheme on screen from one sentence, and cuts the rest of your session to a track.**

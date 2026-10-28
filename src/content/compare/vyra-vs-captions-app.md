@@ -74,7 +74,7 @@ No. Captions has that. Vyra edits what the camera saw.
 Vyra runs in the browser. A phone browser works, but it is not the main path.
 
 **Which is cheaper?**
-Captions pricing is on its site. Vyra starts at $24/mo and is free to start.
+Captions pricing is on its site. Vyra has a 3-day free trial, then starts at $24/mo.
 
 ## Related
 

@@ -9,7 +9,7 @@ facts:
   - "Typical output: 15-30 second portfolio reels, 45-second shoot recaps, client delivery teasers"
   - "Time saved: A shoot's behind-the-scenes clips and 40 finals to a 30-second reel in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DR5jT0Kjg9y
 ---

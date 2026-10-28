@@ -13,7 +13,7 @@ export async function GET() {
   lines.push("# Vyra");
   lines.push("");
   lines.push(
-    "> Vyra is an AI video editor that edits your real footage from a plain-language description. It transcribes every word and analyzes every scene on upload, then cuts, captions, syncs to music, builds motion graphics, and matches a reference video's style. Use the built-in AI chat, or drive it from Claude, ChatGPT, or Cursor over MCP. Free to start; MCP plans from $24/mo, built-in AI plans from $54/mo."
+    "> Vyra is an AI video editor that edits your real footage from a plain-language description. It transcribes every word and analyzes every scene on upload, then cuts, captions, syncs to music, builds motion graphics, and matches a reference video's style. Use the built-in AI chat, or drive it from Claude, ChatGPT, or Cursor over MCP. 3-day free trial on the web, and a free tier with 100 credits in the iPhone app; MCP plans from $24/mo, built-in AI plans from $54/mo."
   );
   lines.push("");
   lines.push("## Core");

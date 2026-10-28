@@ -9,7 +9,7 @@ facts:
   - "Output: MP4 up to 4K, or WebM up to 1080p, subtitles burned in"
   - "Time: A few minutes after upload for a 10-minute clip (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DdcjJBPva-m
 ---

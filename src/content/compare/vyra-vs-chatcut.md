@@ -73,7 +73,7 @@ Yes. ChatCut supports Claude Code directly. Vyra connects to Claude Code, Claude
 Either can be scripted through an assistant. Vyra also connects to Cursor and gives the agent the full tool set.
 
 **Which is cheaper?**
-ChatCut pricing is on its site. Vyra starts at $24/mo and is free to start.
+ChatCut pricing is on its site. Vyra has a 3-day free trial, then starts at $24/mo.
 
 ## Related
 

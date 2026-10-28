@@ -9,7 +9,7 @@ facts:
   - "Output: MP4 up to 4K, or WebM up to 1080p"
   - "Time: Minutes for a 10-minute recording once processed (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DM6RiJPJtYf
 ---
@@ -83,7 +83,7 @@ Ask for the list of cuts with timestamps. Takes ten seconds to compare.
 Upload it and type "remove every um and uh and close the gaps." Vyra finds each one in the transcript, cuts it, and lists the cuts with timestamps.
 
 **Is there a free filler word remover?**
-Vyra is free to start, so you can clean one recording before paying. Plans start at $24 a month.
+Vyra has a 3-day free trial on the web, so you can clean a recording before paying. Plans start at $24 a month.
 
 **Can it remove one specific repeated line?**
 Yes. Quote it. "Remove the repeated 'so basically' at 2:14."

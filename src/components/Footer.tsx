@@ -5,6 +5,10 @@ import Link from "next/link";
 const footerLinks = {
   product: [
     { label: "AI video editor", href: "/ai-video-editor" },
+    { label: "Video editor", href: "/video-editor" },
+    { label: "iPhone app", href: "/ai-video-editor-app" },
+    { label: "Online editor", href: "/ai-video-editor-online" },
+    { label: "Free AI video editor", href: "/free-ai-video-editor" },
     { label: "Features", href: "/features" },
     { label: "MCP server", href: "/mcp" },
     { label: "Edit with Claude", href: "/claude" },

@@ -32,6 +32,6 @@ export const HOME_FAQS = [
   {
     question: "Can I try Vyra before paying?",
     answer:
-      "Yes. Getting started is free, so you can see if Vyra fits your workflow before committing. Cancel anytime.",
+      "Yes. The web app has a 3-day free trial. On iPhone, new accounts get 100 free credits, with free exports at 720p and a watermark. Cancel anytime.",
   },
 ];

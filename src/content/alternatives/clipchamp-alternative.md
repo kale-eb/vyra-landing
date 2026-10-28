@@ -18,7 +18,7 @@ reels:
 
 ## The alternatives
 
-1. **Vyra.** For creators who want the edit done. Strengths: transcribed and scene-indexed footage, full edit from a description or from Claude, ChatGPT, and Cursor over MCP, captions, motion graphics, reference matching, full timeline in the browser. Limitation: no screen recorder; free to start rather than free forever.
+1. **Vyra.** For creators who want the edit done. Strengths: transcribed and scene-indexed footage, full edit from a description or from Claude, ChatGPT, and Cursor over MCP, captions, motion graphics, reference matching, full timeline in the browser. Limitation: no screen recorder; a 3-day trial on the web rather than a free-forever plan.
 
 2. **CapCut.** For a bigger free manual editor. Strengths: templates, captions, effects, mobile and desktop. Limitation: template-bound, weak on long files.
 
@@ -57,7 +57,7 @@ Make a 45-second 9:16 video from these clips for Reels. Open on the reveal shot,
 CapCut and iMovie for manual editing. Vyra is easy in a different way. One description instead of a timeline.
 
 **Which is free?**
-CapCut, iMovie, and Resolve have free tiers. Vyra is free to start.
+CapCut, iMovie, and Resolve have free tiers. Vyra has a 3-day free trial.
 
 **Which alternative works with Claude or ChatGPT?**
 Vyra, with the assistant holding the editing tools over MCP.

@@ -9,7 +9,7 @@ facts:
   - "Output: MP4 up to 4K, or WebM up to 1080p, whole video or a time range"
   - "Time: Seconds to trim, then export time depends on your device"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **Cut off what you don't need from the start, the end, or the middle. In Vyra you can ask ("start when I say hello, end after the wave"), drag on the timeline, or set start and end handles at export.**

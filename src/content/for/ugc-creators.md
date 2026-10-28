@@ -9,7 +9,7 @@ facts:
   - "Typical output: 15-45 second hook-and-demo ads, 3-5 variants per brief, testimonials, unboxings"
   - "Time saved: One shoot to five ad variants with different hooks in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - Da_tDQwtc-M
   - DajEylHSiz8
