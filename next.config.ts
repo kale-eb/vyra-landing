@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { promptOverrideRedirects } from "./src/lib/pseo/overrides";
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -14,6 +15,8 @@ const nextConfig: NextConfig = {
       { source: "/blog/vyra-vs-capcut", destination: "/compare/vyra-vs-capcut", permanent: true },
       { source: "/blog/vyra-vs-descript", destination: "/compare/vyra-vs-descript", permanent: true },
       { source: "/blog/vyra-vs-veed", destination: "/compare/vyra-vs-veed", permanent: true },
+      // Format × task prompt pairs that already have a hand-written page.
+      ...promptOverrideRedirects(),
     ];
   },
 };

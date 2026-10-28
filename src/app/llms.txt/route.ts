@@ -25,7 +25,7 @@ export async function GET() {
   for (const e of getEntries("product")) lines.push(`- [${e.title}](${SITE_URL}${e.url}): ${e.description}`);
   lines.push("");
   for (const key of SECTION_KEYS) {
-    const entries = getEntries(key);
+    const entries = getEntries(key).filter((e) => !e.data.hideFromHub);
     if (!entries.length) continue;
     const meta = SECTIONS[key];
     lines.push(`## ${meta.label}`);

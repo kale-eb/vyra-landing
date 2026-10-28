@@ -12,8 +12,17 @@ function groupEntries(section: SectionKey, entries: Entry[]): { label: string; i
       .map((g) => ({ label: g.label, items: g.slugs.map((s) => bySlug.get(s)).filter((e): e is Entry => !!e) }))
       .filter((g) => g.items.length > 0);
     out.forEach((g) => g.items.forEach((e) => used.add(e.slug)));
-    const rest = entries.filter((e) => !used.has(e.slug));
-    if (rest.length) out.push({ label: "More", items: rest });
+    const rest = new Map<string, Entry[]>();
+    for (const e of entries) {
+      if (used.has(e.slug)) continue;
+      const label = typeof e.data.hubGroup === "string" ? e.data.hubGroup : "More";
+      if (!rest.has(label)) rest.set(label, []);
+      rest.get(label)!.push(e);
+    }
+    const more = rest.get("More");
+    rest.delete("More");
+    for (const [label, items] of rest) out.push({ label, items });
+    if (more) out.push({ label: "More", items: more });
     return out;
   }
   const groups = new Map<string, Entry[]>();
