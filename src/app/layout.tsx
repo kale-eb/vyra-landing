@@ -175,11 +175,6 @@ export default function RootLayout({
                   description: "20,000 processing credits, 500 GB storage, 1,000 exports/month, 4K",
                 },
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                ratingCount: "150",
-              },
             }),
           }}
         />
