@@ -10,6 +10,7 @@ import {
   SITE_URL,
   SECTIONS,
   extractFaq,
+  extractRanked,
   extractRelated,
   extractSteps,
   resolveUrl,
@@ -93,6 +94,18 @@ function buildJsonLd(entry: Entry) {
     graph.push({ ...base, "@type": "WebPage" });
   } else {
     graph.push({ ...base, "@type": "Article" });
+  }
+
+  const ranked = entry.section === "best" ? extractRanked(entry.body) : [];
+  if (ranked.length >= 2) {
+    graph.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: entry.title,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: ranked.length,
+      itemListElement: ranked.map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+    });
   }
 
   if (faqs.length) {

@@ -12,6 +12,7 @@ export type SectionKey =
   | "how-to"
   | "prompts"
   | "answers"
+  | "best"
   | "features"
   | "tutorials"
   | "glossary"
@@ -58,6 +59,15 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
       { label: "Leaving an AI editor", slugs: ["descript-alternative", "opus-clip-alternative", "invideo-alternative", "submagic-alternative", "riverside-alternative", "runway-alternative"] },
       { label: "Leaving a pro timeline", slugs: ["premiere-pro-alternative", "davinci-resolve-alternative"] },
     ],
+  },
+  best: {
+    key: "best",
+    label: "Best of",
+    title: "Best video editors, ranked by what you actually need",
+    description:
+      "Ranked lists for one job each, like beat sync, agentic editing, and MCP servers. We make Vyra, and each list says why it ranks where it does.",
+    schema: "Article",
+    intro: "One job per list. We make Vyra, so every list says why it ranks where it does and when another tool is the better pick. Each one says what we checked and when.",
   },
   for: {
     key: "for",
@@ -309,6 +319,17 @@ export function extractFaq(body: string): Faq[] {
   }
   flush();
   return faqs;
+}
+
+/** Bold names from the numbered list under "## The list", for ItemList schema. */
+export function extractRanked(body: string): string[] {
+  const m = body.match(/^## The list[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m);
+  if (!m) return [];
+  const out: string[] = [];
+  const re = /^\d+\.\s+\*\*(.+?)\.?\*\*/gm;
+  let r: RegExpExecArray | null;
+  while ((r = re.exec(m[1]))) out.push(r[1].replace(/\.$/, "").trim());
+  return out;
 }
 
 /** First ordered list in the body, for HowTo schema steps. */
