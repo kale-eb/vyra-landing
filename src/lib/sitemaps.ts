@@ -41,6 +41,7 @@ export async function childSitemaps(): Promise<Record<string, SitemapUrl[]>> {
     core: [...CORE_STATIC, ...product, ...sectionUrls("features"), ...sectionUrls("templates")],
     tools: sectionUrls("tools"),
     compare: [...sectionUrls("compare"), ...sectionUrls("alternatives")],
+    best: sectionUrls("best"),
     for: sectionUrls("for"),
     formats: sectionUrls("formats"),
     "how-to": sectionUrls("how-to"),
