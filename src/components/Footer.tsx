@@ -9,6 +9,8 @@ const footerLinks = {
     { label: "MCP server", href: "/mcp" },
     { label: "Edit with Claude", href: "/claude" },
     { label: "Edit with ChatGPT", href: "/chatgpt" },
+    { label: "Edit with Cursor", href: "/cursor" },
+    { label: "Use your AI subscription", href: "/blog/use-your-ai-subscription" },
   ],
   resources: [
     { label: "About us", href: "/about" },
@@ -33,11 +35,20 @@ const footerLinks = {
     { label: "Answers", href: "/answers" },
     { label: "Glossary", href: "/glossary" },
   ],
+  ideas: [
+    { label: "All video ideas", href: "/ideas" },
+    { label: "Hook ideas", href: "/ideas/hook-ideas" },
+    { label: "YouTube video ideas", href: "/ideas/youtube-video-ideas" },
+    { label: "Skit ideas", href: "/ideas/skit-ideas" },
+    { label: "TikTok ideas", href: "/ideas/tiktok-video-ideas" },
+    { label: "Transition ideas", href: "/ideas/transition-ideas" },
+    { label: "Faceless channel ideas", href: "/ideas/faceless-youtube-channel-ideas" },
+    { label: "Vlog ideas", href: "/ideas/vlog-ideas" },
+    { label: "Reel ideas", href: "/ideas/reel-ideas" },
+  ],
   account: [
     { label: "Log In", href: "https://app.usevyra.com/login" },
     { label: "Sign Up", href: "https://app.usevyra.com/signup" },
-  ],
-  legal: [
     { label: "Terms of Service", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
   ],
@@ -187,6 +198,27 @@ export default function Footer() {
               className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
             >
+              Video ideas
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {footerLinks.ideas.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[13px] text-[var(--foreground-subtle)] transition-colors duration-200 hover:text-[var(--foreground-muted)]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h4
+              className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
+            >
               Account
             </h4>
             <ul className="flex flex-col gap-3">
@@ -203,26 +235,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2">
-            <h4
-              className="mb-4 text-[13px] font-bold uppercase tracking-wider text-[var(--foreground)]"
-              style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
-            >
-              Legal
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[13px] text-[var(--foreground-subtle)] transition-colors duration-200 hover:text-[var(--foreground-muted)]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom bar */}

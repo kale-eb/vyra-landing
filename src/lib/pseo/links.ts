@@ -40,6 +40,11 @@ export function childLinks(entry: Entry): LinkGroup[] {
     }
   }
 
+  if (entry.section === "formats") {
+    const ideas = getEntries("ideas").filter((e) => e.body.includes(`](/formats/${entry.slug})`));
+    if (ideas.length) groups.push({ heading: "Video ideas in this format", links: ideas.map(toLink) });
+  }
+
   if (entry.section === "compare" && entry.slug.startsWith("vyra-vs-")) {
     const pairs = pairsFor(getEntries("compare"), entry.slug.replace(/^vyra-vs-/, ""));
     if (pairs.length) groups.push({ heading: "Compared head to head with other editors", links: pairs.map(toLink) });
