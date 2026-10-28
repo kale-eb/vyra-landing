@@ -1,29 +1,34 @@
 ---
 title: "Video editing over MCP: how it works and which servers exist (2026)"
-description: "MCP (Model Context Protocol) lets Claude, ChatGPT, and Cursor control a video editor directly. What a video editing MCP server does, which ones exist, and how to pick."
-updated: 2026-10-27
+description: "MCP (Model Context Protocol) lets Claude, ChatGPT, and Cursor control a video editor directly. What a video editing MCP server does, which ones exist as of October 2026, and how to pick."
+updated: 2026-10-28
 category: answers
 ---
 
-**MCP (Model Context Protocol) is the open standard that lets AI assistants call external tools — and a video editing MCP server exposes real editing operations (cut, trim, caption, place, keyframe, export) so the assistant you already use can edit footage for you. Instead of learning a new app's built-in AI, you connect your editor to Claude, ChatGPT, or Cursor once, and then edit by chatting where you already work.**
+**MCP (Model Context Protocol) is the open standard that lets AI assistants use other apps. A video editing MCP server gives the assistant real editing tools, like cut, trim, caption, add music, and export, so the Claude or ChatGPT you already use can edit your footage. You connect it once and then edit by chatting.**
 
 ## What a video editing MCP server actually does
 
-When you ask Claude to "cut the dead air and caption this," the model doesn't touch pixels. It calls tools the server exposes — list the project's assets, read the transcript, split a clip at a timestamp, add a caption track, start an export — and the editor executes them on a real timeline. Three things decide whether that works well:
+When you ask Claude to "cut the dead air and caption this," the model doesn't touch the video itself. It calls tools the server gives it. It lists your clips, reads the transcript, splits a clip at a timestamp, adds a caption track, and starts an export. The editor does each step on a real timeline. Three things decide whether that works well.
 
-1. **Footage understanding.** The server must give the model something to reason over: transcripts, scene analysis, beat maps. A server that only exposes "trim(file, start, end)" makes the model edit blind.
-2. **Granular, reversible operations.** Real timeline edits the model can revise ("tighten the middle by 10 seconds") rather than one-shot renders.
-3. **A human escape hatch.** The result should open in a normal editor so you can fix the last 5 percent by hand.
+1. **The AI can see your footage.** The server has to give the model transcripts and descriptions of what is on screen. A server that only offers "trim this file from 0:04 to 0:09" makes the model edit blind.
+2. **Edits you can revise.** Real timeline edits the model can change later ("make the middle 10 seconds shorter"), instead of one render you have to redo.
+3. **A way to take over.** The result should open in a normal editor so you can fix the last 5 percent by hand.
 
-## Which video editing MCP servers exist (2026)
+## Which video editing MCP servers exist (October 2026)
 
-| Server | What it is | Scope |
-| --- | --- | --- |
-| **Vyra** (`io.github.kale-eb/vyra`) | Hosted remote server for the Vyra editor: footage search, timeline cuts, captions, effects, music sync, motion graphics, export — on a full web editor | General editing of your real footage; listed in the official MCP registry; works with Claude, Claude Code, ChatGPT, and Cursor |
-| **Opus Clip (via its Claude setup)** | Claude-driven clipping of long recordings into shorts | Clipping only, not general editing |
-| **Open-source projects** (e.g. `video-editing-mcp`, `mcp-video` on GitHub) | Local servers wrapping FFmpeg-style operations | Developer-oriented; no footage analysis or hosted timeline |
+| Server | Hosted or local | What it is good at | Limits |
+| --- | --- | --- | --- |
+| **Vyra** (`io.github.kale-eb/vyra`) | Hosted | Turning raw clips into a finished video. Transcripts and scene descriptions, cuts, captions, music sync, motion graphics, export | Edits footage uploaded to Vyra |
+| **Descript** | Hosted, in Claude's connector directory | Podcasts and talking videos. Transcribe, trim, remove filler words, captions, publish | Directory version leaves out generative tools; Claude Code uses a custom setup |
+| **DaVinci Resolve Studio 21.1** | Local, built into Resolve | People who already edit in Resolve. Highlight edits, cleanup, media organizing, batch render | Studio (paid) only |
+| **OpusClip** | Hosted (`mcp.opus.pro/mcp`) | One long video into shorts. Clip, caption, reframe, schedule | Clipping only |
+| **Kapwing** | Hosted, beta | Teams in Kapwing. Upload, subtitles, dubbing, export | Closed beta, email Kapwing for access |
+| **Open-source FFmpeg servers** | Local | Developers. Trim, merge, convert, compress files | No timeline, and the AI can't see the footage |
 
-The honest state of the category: it's young. Most "AI video editing" products still keep their AI inside their own app; only a handful expose a real MCP surface. If you want the assistant you already pay for to do the editing, check that the server is in the [official MCP registry](https://registry.modelcontextprotocol.io) and that it exposes footage understanding, not just file operations.
+There are also community DaVinci Resolve servers on GitHub that use Resolve's scripting API. For our ranked take on which to use and when, see [best MCP servers for video editing](/best/mcp-servers-for-video-editing).
+
+If you are picking one, check that it is in the [official MCP registry](https://registry.modelcontextprotocol.io) or your assistant's connector directory, and that it lets the AI see what is in the footage.
 
 ## Set it up
 
@@ -41,15 +46,16 @@ List the tools you have for my Vyra project, then summarize the footage and prop
 ## FAQ
 
 **Do I need to run anything locally?**
-Not for Vyra — it's a hosted (remote) MCP server; you authorize it like any connector. Local open-source servers require installing and running them yourself.
+Not for Vyra, Descript, OpusClip, or Kapwing. They are hosted, and you sign in like any connector. DaVinci Resolve's server runs inside Resolve on your computer, and the open-source servers need installing.
 
 **Does MCP cost extra?**
-The protocol is free and open. Vyra's MCP plans start at $24/month; your Claude/ChatGPT subscription is the one you already have.
+The protocol is free and open. Vyra's MCP plans start at $24 a month, and you keep using the Claude or ChatGPT subscription you already have. Other servers follow their own app's pricing.
 
 **Is MCP only for developers?**
-No. It started in developer tools, but connectors in Claude and ChatGPT are now a normal end-user feature — a few clicks, no terminal.
+No. It started in developer tools, but connectors in Claude and ChatGPT are now a normal feature. It takes a few clicks and no terminal.
 
 ## Related
+- [Best MCP servers for video editing, ranked](/best/mcp-servers-for-video-editing)
 - [Can Claude edit videos?](/answers/can-claude-edit-videos)
 - [Can ChatGPT edit videos?](/answers/can-chatgpt-edit-videos)
 - [What is an agentic video editor?](/answers/what-is-an-agentic-video-editor)
