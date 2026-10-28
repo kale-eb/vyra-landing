@@ -6,6 +6,7 @@ import ReelStrip from "./ReelStrip";
 import NewsletterCards from "./NewsletterCards";
 import { reelEmbedUrl, reelUrl, resolveReels } from "@/lib/reels";
 import { getNewsletterPosts } from "@/lib/newsletter";
+import { childLinks } from "@/lib/pseo/links";
 import {
   SITE_URL,
   SECTIONS,
@@ -42,6 +43,7 @@ function buildJsonLd(entry: Entry) {
   const crumbs = [
     { name: "Vyra", item: SITE_URL },
     ...(sectionMeta ? [{ name: sectionMeta.label, item: `${SITE_URL}/${sectionMeta.key}` }] : []),
+    ...(entry.crumbs ?? []).map((c) => ({ name: c.label, item: `${SITE_URL}${c.href}` })),
     { name: entry.title, item: url },
   ];
   const breadcrumb = {
@@ -200,7 +202,8 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
   const newsletterPosts = entry.newsletter.length
     ? getNewsletterPosts().filter((p) => entry.newsletter.includes(p.slug)).slice(0, 2)
     : [];
-  const crumbs = sectionMeta ? [{ label: sectionMeta.label, href: `/${sectionMeta.key}` }] : [];
+  const crumbs = [...(sectionMeta ? [{ label: sectionMeta.label, href: `/${sectionMeta.key}` }] : []), ...(entry.crumbs ?? [])];
+  const children = childLinks(entry);
 
   return (
     <>
@@ -271,6 +274,27 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
 
           <NewsletterCards posts={newsletterPosts} />
         </article>
+
+        {children.map((g) => (
+          <aside key={g.heading} className="mt-16 border-t border-[var(--surface-border)] pt-10">
+            <h2 className="mb-4 text-[13px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">
+              {g.heading}
+            </h2>
+            <ul className="flex flex-wrap gap-2">
+              {g.links.map((l) => (
+                <li key={l.url}>
+                  <Link
+                    href={l.url}
+                    title={l.description}
+                    className="inline-block rounded-full border border-[var(--surface-border)] bg-white px-4 py-2 text-[13px] font-medium text-[var(--foreground)] transition-colors hover:border-[var(--surface-border-hover)] hover:text-[var(--brand-blue)]"
+                  >
+                    {l.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        ))}
 
         {related.length > 0 && (
           <aside className="mt-16 border-t border-[var(--surface-border)] pt-10">
