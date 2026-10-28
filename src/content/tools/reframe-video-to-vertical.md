@@ -49,7 +49,6 @@ Capture frames at 0:03, 0:15, and 0:40 so I can check nothing important got crop
 
 ## When to use something else
 
-- You want automatic face tracking with zero instructions. Some tools do one auto pass. Vyra works from your description (TODO confirm auto-tracking scope).
 - Two people who both need to stay visible. Use a split layout instead of a crop.
 - You need the horizontal version untouched. Reframe on a copy of the project.
 

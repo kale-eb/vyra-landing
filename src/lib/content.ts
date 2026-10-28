@@ -240,6 +240,19 @@ function deriveFacts(d: Record<string, unknown>): string[] {
   return out;
 }
 
+/** Drafts carry "(TODO confirm)" notes for Sulan. Keep them out of the rendered page:
+    strip the notes, drop TODO sentences and placeholder lines, then drop headings left empty. */
+function stripTodo(body: string): string {
+  return body
+    .replace(/[ \t]*\(TODO[^)]*\)/gi, "")
+    .replace(/[ \t]*\bTODO\b[,:]?[^.\n]*\.?/g, "")
+    .split("\n")
+    .filter((line) => !/^\s*(Example creator)?\s*\.?\s*$/.test(line) || line.trim() === "")
+    .join("\n")
+    .replace(/^(#{2,3} [^\n]+)\n+(?=#{2,3} |$(?![\s\S]))/gm, "")
+    .replace(/\n{3,}/g, "\n\n");
+}
+
 function readDir(section: SectionKey | "product"): Entry[] {
   const dir = path.join(CONTENT_DIR, section);
   if (!fs.existsSync(dir)) return [];
@@ -267,9 +280,9 @@ function readDir(section: SectionKey | "product"): Entry[] {
         example: typeof data.example === "string" ? data.example : undefined,
         reels: Array.isArray(data.reels) ? data.reels.map(String) : [],
         newsletter: Array.isArray(data.newsletter) ? data.newsletter.map(String) : [],
-        facts: Array.isArray(data.facts) ? data.facts.map(String) : deriveFacts(data),
+        facts: Array.isArray(data.facts) ? data.facts.map(String).filter((f) => !/todo/i.test(f)) : deriveFacts(data),
         data,
-        body: content.trim(),
+        body: stripTodo(content).trim(),
       } satisfies Entry;
     })
     .sort((a, b) => a.title.localeCompare(b.title));

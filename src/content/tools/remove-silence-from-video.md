@@ -35,6 +35,22 @@ reels:
 | Cut treatment | Jump cut, punch-in on the second clip, or cover with b-roll |
 | Range | Whole recording or a section |
 
+## Filler words it can remove
+
+Vyra works from the transcript, so it can cut any word you name. These are the ones people ask for most.
+
+| Filler | Usually cut | Exception to name in your prompt |
+| --- | --- | --- |
+| um, uh, er, erm | Every time | A timestamp where the pause is on purpose |
+| like | Only as filler | Keep it when it means "similar to" or "enjoy" |
+| you know, I mean | Every time | Keep it when it starts a real sentence |
+| sort of, kind of | Only as filler | Keep it when it's the actual answer |
+| so, basically, actually | At the start of a sentence | Keep it when it carries the meaning |
+| Repeated words ("the the") | Every time | None |
+| Restarted sentences | Keep the last full take | Ask for the first take instead |
+
+Name the exceptions in your prompt. If you don't, a "like" you meant can get cut.
+
 ## Prompts to paste
 
 ```
@@ -62,6 +78,12 @@ Not if you pick a sensible threshold and ask it to keep natural pauses. Half a s
 
 **How do I check what it removed?**
 Ask for the list of cuts with timestamps. Takes ten seconds to compare.
+
+**How do I remove ums from a video?**
+Upload it and type "remove every um and uh and close the gaps." Vyra finds each one in the transcript, cuts it, and lists the cuts with timestamps.
+
+**Is there a free filler word remover?**
+Vyra is free to start, so you can clean one recording before paying. Plans start at $24 a month.
 
 **Can it remove one specific repeated line?**
 Yes. Quote it. "Remove the repeated 'so basically' at 2:14."

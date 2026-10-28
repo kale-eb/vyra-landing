@@ -1,7 +1,7 @@
 ---
-title: "Title card maker: an opening or section title from a sentence"
-description: Vyra builds title cards as plain text or animated motion graphics from a description, placed where you say, styled from your project or a reference video.
-updated: 2026-09-24
+title: "Title card maker and generator: animated video titles from a sentence"
+description: "Make a title card for a video, an episode, or a chapter by describing it. Vyra builds plain or animated titles, timed to a beat or a line, styled like your project."
+updated: 2026-10-28
 category: tools
 facts:
   - "Best for: Video openers, chapter breaks, recaps, before-and-after reveals, event titles"
@@ -55,7 +55,26 @@ Make a cute vintage title card: substantial cursive lettering, soft butter yello
 - You want to hand-adjust every keyframe. Motion graphics here are edited by prompt.
 - The "title" is really a caption for spoken words. Use the caption generator so it stays synced.
 
+## Title card ideas by video type
+
+| Video | Title card | Prompt idea |
+| --- | --- | --- |
+| YouTube episode | Series name, episode number, and title | "Episode 12, the studio move, centered, held for 2 seconds after the cold open" |
+| Vlog | Place and date over the first wide shot | "Lisbon, day 3, small serif in the bottom left, fade in and out" |
+| Tutorial | Step number at each chapter | "A card for each step, Step 1 to Step 5, same style, half a second each" |
+| Short film or skit | Title on black, then a cut to the scene | "Title on black for 3 seconds, white type, no animation, then hard cut" |
+| Art process | Piece name and medium at the reveal | "When the finished painting appears, add its name and 'gouache on paper' underneath" |
+
 ## FAQ
+
+**What is a title card?**
+A title card is a full-screen or large piece of text that names a video, an episode, or a chapter. It sits apart from captions, which follow speech.
+
+**How do I make a title card for a video?**
+Upload the video to Vyra and describe the card. The words, when it appears, how long it stays, and the look. The agent places it on the timeline and you adjust by prompt.
+
+**Can I make an animated title?**
+Yes. Ask for a fade, a slide, or a word-by-word reveal, or describe the motion you want and it's built as a motion graphic.
 
 **Can the title sit behind me?**
 Yes. Big type behind a person is a supported treatment. The agent uses masks for it.

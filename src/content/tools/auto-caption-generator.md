@@ -51,9 +51,7 @@ Copy the caption look from the reference video: blocky all caps, soft glow, hard
 
 ## When to use something else
 
-- You want captions as a separate file for a platform's caption track (TODO confirm SRT export).
 - Several people talking over each other. Any transcript tool struggles with that. Clean the audio first.
-- Captions in a different language than the audio (TODO confirm).
 
 ## FAQ
 
