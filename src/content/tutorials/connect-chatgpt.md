@@ -1,7 +1,7 @@
 ---
 title: How to connect ChatGPT to Vyra
 description: Add Vyra's MCP server to ChatGPT as a connector so ChatGPT can inspect your footage, propose a cut, and drive the Vyra timeline from a chat.
-updated: 2026-10-24
+updated: 2026-10-29
 category: tutorial
 video: TODO
 reels:
@@ -22,7 +22,7 @@ reels:
 1. **Open Plugins.** Go to `https://chatgpt.com/plugins`, click the plus button, then "Add custom MCP server".
 2. **Add the Vyra server.** Name it `Vyra`. Under Connection, enter the Server URL `https://api.usevyra.com/mcp`. Set authentication to OAuth, select "I understand and want to continue", then "Create as a plugin".
 3. **Authorize.** Install the Vyra plugin. When the OAuth 2.1 flow opens in your browser, sign in to Vyra and approve.
-4. **Open a project in the browser.** Go to `https://app.usevyra.com`, sign in with the same account, open a project. The tab binds itself and a green indicator shows top-right. Keep at least one Vyra tab open.
+4. **Pick a project.** Ask the agent to list your projects or create a new one. No browser tab needs to stay open. The agent edits on Vyra's servers, and you can open the project in the web or iPhone app any time.
 5. **Start a chat and make sure the Vyra tools are on.** Type `@` in the prompt box and select Vyra.
 6. **Ask for a plan before an edit.** Have it summarize the footage and propose a structure.
 7. **Edit in steps.** Rough cut, captions, music, export. One message each.
