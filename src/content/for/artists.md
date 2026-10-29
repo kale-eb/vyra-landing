@@ -9,7 +9,7 @@ facts:
   - "Typical output: 15-30 second speed paints, 45-90 second process videos, reveals, weekly studio vlogs"
   - "Time saved: A six-hour painting session to a 30-second speed paint in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DL3dH-7sK9U
   - DVzOIAIjjSs

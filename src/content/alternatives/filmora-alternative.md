@@ -57,7 +57,7 @@ Cut this montage to the beat of the attached track: one clip per beat in the cho
 DaVinci Resolve and Premiere Pro. Vyra uses tracked masks for reframing and can attach graphics by description, but tracking is not its focus.
 
 **Which is free?**
-DaVinci Resolve's free version is the most complete. Vyra is free to start.
+DaVinci Resolve's free version is the most complete. Vyra has a 3-day free trial.
 
 **Which alternative can Claude or ChatGPT drive?**
 Vyra over MCP with full editing tools. Resolve 21.1 added MCP assistant control for Claude and ChatGPT Codex.

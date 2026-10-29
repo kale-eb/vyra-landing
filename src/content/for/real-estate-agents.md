@@ -9,7 +9,7 @@ facts:
   - "Typical output: 30-60 second listing tours, 15-second teasers, weekly market updates"
   - "Time saved: A 12-minute walkthrough to a 45-second captioned tour in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **A listing video is a walkthrough cut to a rhythm, with the price, beds, and neighborhood on screen. Vyra edits your real walkthrough footage, so the home in the video is the home you're selling, and every label is one sentence away.**

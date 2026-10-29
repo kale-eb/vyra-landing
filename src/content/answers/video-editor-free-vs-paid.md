@@ -5,7 +5,7 @@ updated: 2026-09-24
 category: answers
 ---
 
-**Free video editors cover cutting, trimming, and basic captions well enough to publish. Paying makes sense when you hit a hard limit (export resolution, watermark, processing minutes) or a soft one (your time). For most creators the soft limit shows up at two or three videos a week. If a subscription saves an hour per video, it pays for itself in the first week. Nearly every serious editor, including Vyra, is free to start, so test first.**
+**Free video editors cover cutting, trimming, and basic captions well enough to publish. Paying makes sense when you hit a hard limit (export resolution, watermark, processing minutes) or a soft one (your time). For most creators the soft limit shows up at two or three videos a week. If a subscription saves an hour per video, it pays for itself in the first week. Nearly every serious editor, including Vyra, has a free trial or a free tier, so test first.**
 
 ## Why
 
@@ -29,7 +29,7 @@ Free tiers change often. Check each tool's current limits.
 
 ## What to do about it
 
-1. **Start free everywhere.** Vyra, CapCut, Clipchamp, Descript, and Veed all have free starts.
+1. **Start free everywhere.** Vyra, CapCut, Clipchamp, Descript, and Veed all let you start free, with a trial or a free tier.
 2. **Track the hours.** Note how long each video takes for two weeks.
 3. **Pay when the math flips.** If a plan saves more time than it costs at your hourly value, upgrade.
 4. **Pay for the AI, not the effects.** The paid features that matter remove review and trimming.
@@ -38,7 +38,7 @@ Free tiers change often. Check each tool's current limits.
 ## Do it in Vyra
 
 ```
-Use my raw footage to build a 45-second Reel with phrase captions and no music. I'm testing on the free tier, so keep it simple and tell me if anything I asked for needs a paid plan.
+Use my raw footage to build a 45-second Reel with phrase captions and no music. I'm testing on the free trial, so keep it simple and tell me if anything I asked for needs a paid plan.
 ```
 
 ```

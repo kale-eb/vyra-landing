@@ -323,7 +323,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
         <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Try it on your own footage</h2>
           <p className="mb-5 text-[15px] text-[var(--foreground-muted)]">
-            Upload your clips, say what you want, get the edit back. Free to start.
+            Upload your clips, say what you want, get the edit back. 3-day free trial.
           </p>
           <a
             href="https://app.usevyra.com/signup"

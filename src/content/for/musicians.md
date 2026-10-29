@@ -9,7 +9,7 @@ facts:
   - "Typical output: 15-45 second beat-synced teasers, lyric clips, tour recaps, 60-second performance cuts"
   - "Time saved: A full show's phone footage to a 30-second beat-synced teaser in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DZCKNJiupPa
 ---

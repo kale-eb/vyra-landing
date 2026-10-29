@@ -23,7 +23,7 @@ export default function Pricing() {
             Simple <span className="serif-italic font-normal">pricing</span>
           </h2>
           <p className="mx-auto max-w-lg text-[16px] leading-relaxed text-[var(--foreground-muted)] md:text-[17px]">
-            Free to start. Bring the AI you already pay for, or use ours.
+            3-day free trial. Bring the AI you already pay for, or use ours.
           </p>
         </Reveal>
 

@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: Params) {
                 Try Vyra
               </h3>
               <p className="text-[13px] leading-relaxed text-[var(--foreground-muted)]">
-                The AI-first video editor any agent can drive. Free to start.
+                The AI-first video editor any agent can drive. 3-day free trial.
               </p>
             </Link>
           </div>

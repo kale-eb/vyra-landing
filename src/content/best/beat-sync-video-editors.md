@@ -34,7 +34,7 @@ We make Vyra, so weigh our spot with that in mind. Here is why it is first. Ever
 
 | Tool | Automatic beat sync | Picks clips for you | Where it runs | Free to use |
 | --- | --- | --- | --- | --- |
-| Vyra | Yes, from a prompt | Yes, by what is in each clip | Web, iOS, or Claude and ChatGPT over MCP | Free to start |
+| Vyra | Yes, from a prompt | Yes, by what is in each clip | Web, iOS, or Claude and ChatGPT over MCP | 3-day free trial, then from $24/mo |
 | CapCut | Yes, Auto Cut | Partly, via templates | Phone and desktop, not web | Yes |
 | Canva | Pro only (free gets markers) | No | Web, desktop, phone | Yes, with markers |
 | Filmora | Yes, Auto Beat Sync | No | Desktop | Trial with watermark |

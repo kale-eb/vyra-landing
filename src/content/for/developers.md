@@ -9,7 +9,7 @@ facts:
   - "Typical output: Product demos, release notes videos, batch captioned clips, automated cutdowns"
   - "Time saved: A changelog to a captioned demo video from one agent run"
   - "Works with: Cursor, Claude Code, Claude Desktop, ChatGPT, any MCP client"
-  - "Price: Free to start, MCP Starter $24/mo"
+  - "Price: 3-day free trial, then MCP Starter $24/mo"
 reels:
   - DY4pVwtu3KD
   - DZumPohtfW8

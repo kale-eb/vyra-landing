@@ -73,7 +73,7 @@ It runs in a browser. It is built for a desk, not a thumb.
 No. You find the clips yourself.
 
 **Which is cheaper?**
-InShot has a free tier and paid plans on its site. Vyra starts at $24/mo and is free to start.
+InShot has a free tier and paid plans on its site. Vyra has a 3-day free trial, then starts at $24/mo.
 
 ## Related
 

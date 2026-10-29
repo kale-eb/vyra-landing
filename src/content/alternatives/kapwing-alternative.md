@@ -60,7 +60,7 @@ VEED. It has the widest set of one-click tools in the browser.
 Vyra, with the agent holding the editing tools. Kapwing's MCP covers uploads, subtitles, dubbing, and exports. Descript's hosted MCP runs edits inside its own editor.
 
 **Which is free?**
-Clipchamp's free tier is the most generous. Vyra is free to start.
+Clipchamp's free tier is the most generous. Vyra has a 3-day free trial.
 
 ## Related
 

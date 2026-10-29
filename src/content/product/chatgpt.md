@@ -75,7 +75,7 @@ This project has ten takes of the same talking head. Keep the best take of each 
 | Vyra AI Starter | $54/mo | Built-in AI, no external subscription needed | Up to 1440p |
 | Vyra AI Pro | $129/mo | Built-in AI | Up to 4K |
 
-Free to start. See /pricing for the full breakdown.
+3-day free trial, then plans from $24/mo. See /pricing for the full breakdown.
 
 ## FAQ
 

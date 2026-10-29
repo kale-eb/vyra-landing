@@ -55,7 +55,7 @@ There's no Android date yet. Follow [@sulansart](https://www.instagram.com/sulan
 Yes. Sign in with the same account and your projects are there.
 
 **Is Vyra free on iPhone?**
-Vyra is free to start on every device. Paid plans start at $24 a month. See [Is Vyra free?](/answers/is-vyra-free)
+Yes, to start. New accounts in the iPhone app get 100 free credits. Free exports are 720p with a watermark. The Plus and Pro plans are sold in the App Store. See [Is Vyra free?](/answers/is-vyra-free)
 
 **Does Vyra work on Windows?**
 Yes. Open app.usevyra.com in Chrome, Edge, or another current browser.

@@ -63,7 +63,7 @@ We ran the same 35-minute file through Vyra and CapCut. Vyra indexed it in under
 ## Limits
 
 - Vyra edits footage you already have. It does not generate video.
-- It runs in the browser. There is no mobile app yet.
+- It runs in the browser and on iPhone. There's no Android app yet.
 - The agent gets you most of the way. Frame-accurate polish is faster on the timeline.
 
 ## Pricing
@@ -75,7 +75,7 @@ We ran the same 35-minute file through Vyra and CapCut. Vyra indexed it in under
 | Vyra AI Starter | $54/mo | Built-in AI, no external subscription needed | Up to 1440p |
 | Vyra AI Pro | $129/mo | Built-in AI | Up to 4K |
 
-Free to start. See /pricing for the full breakdown.
+3-day free trial, then plans from $24/mo. See /pricing for the full breakdown.
 
 ## FAQ
 
@@ -94,3 +94,7 @@ Yes. The MCP plans connect your assistant to the editor, and it gets the actual 
 - /prompts/how-to-prompt-vyra
 - /features/footage-understanding
 - /compare/vyra-vs-descript
+- /ai-video-editor-app
+- /ai-video-editor-online
+- /free-ai-video-editor
+- /video-editor

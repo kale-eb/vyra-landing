@@ -61,7 +61,7 @@ Premiere Pro and Final Cut Pro. Vyra applies a described grade but is not a grad
 Resolve 21.1 added MCP assistant control for Claude, Claude Code, and ChatGPT Codex, covering media organization, settings, rendering, and highlight edits from long-form. Vyra's MCP gives the assistant the full editing tool set.
 
 **Which is free?**
-Resolve's free version is hard to beat. Vyra is free to start.
+Resolve's free version is hard to beat. Vyra has a 3-day free trial.
 
 ## Related
 

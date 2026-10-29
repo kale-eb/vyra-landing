@@ -9,7 +9,7 @@ facts:
   - "Output: Burned-in captions in MP4 up to 4K, or WebM up to 1080p"
   - "Time: Under a minute once the transcript exists (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DdcjJBPva-m
 ---
