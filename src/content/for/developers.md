@@ -78,6 +78,7 @@ Plan credits cover processing and agent work. See [/pricing](/pricing).
 
 ## Related
 
+- [Which video editors integrate with LLMs](/answers/video-editors-that-integrate-with-llms)
 - [/mcp](/mcp)
 - [/cursor](/cursor)
 - [/claude](/claude)

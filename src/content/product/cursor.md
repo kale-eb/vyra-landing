@@ -96,6 +96,8 @@ Same server, same tools. Claude Code registers it with `claude mcp add --transpo
 
 ## Related
 
+- /answers/video-editors-that-integrate-with-llms
+- /for/developers
 - /mcp
 - /docs/mcp
 - /claude

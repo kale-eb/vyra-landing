@@ -94,6 +94,8 @@ No. MCP plans are for people bringing their own Claude. Vyra AI plans include a 
 
 ## Related
 
+- /answers/video-editors-that-integrate-with-llms
+- /for/developers
 - /mcp
 - /docs/mcp
 - /prompts/how-to-prompt-vyra
