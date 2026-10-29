@@ -284,21 +284,12 @@ function McpSteps() {
         </p>
       </Step>
 
-      <Step number={6} title="Connect this tab to the agent">
+      <Step number={6} title="No tab to connect">
         <p>
-          The editor and the agent live in different places - the editor is this browser tab,
-          the agent runs wherever you set up MCP (Claude Code in your terminal, claude.ai,
-          etc.). To let the agent drive THIS tab, click the{" "}
-          <strong className="text-[var(--foreground)]">Connect MCP</strong> button in the top
-          bar.
-        </p>
-        <div className="mt-3 max-w-[400px]">
-          <DocImage src="/docs/connect-mcp.png" alt="Connect MCP button in the editor's top bar, showing the connection popover with a Connect this tab button" />
-        </div>
-        <p className="mt-3">
-          A green dot means you&apos;re bound. If you open a second tab and connect it, the
-          agent shifts to driving that one (it offers a &quot;Take over&quot; option). Only
-          one tab is bound at a time.
+          Vyra&apos;s MCP server is headless. The agent runs wherever you set up MCP (Claude Code in
+          your terminal, claude.ai, the Claude app on your phone, etc.) and edits this project on
+          our servers. You don&apos;t need to keep this tab open, and you can close your laptop
+          while it works. Come back to the editor any time to review or make hand edits.
         </p>
       </Step>
 

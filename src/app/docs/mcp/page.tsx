@@ -101,30 +101,26 @@ export default function McpDocsPage() {
               After Connecting
             </h2>
             <div className="space-y-4">
-              <Step number={1} title="Open a project">
+              <Step number={1} title="Pick a project">
                 <p>
-                  Open any project in the Vyra editor at{" "}
+                  Ask the agent to list your projects or create a new one. Vyra&apos;s MCP server is headless, so
+                  nothing needs to be open on your side. Each agent gets its own editing container on our servers,
+                  and it keeps working with your laptop closed or your phone off.
+                </p>
+              </Step>
+              <Step number={2} title="Start editing">
+                <p>
+                  Ask the agent to edit your video. It has access to 50+ tools covering the full editing workflow,
+                  plus voiceover, image, sound effect, and music generation. It can work on several projects at once.
+                </p>
+              </Step>
+              <Step number={3} title="Review in the app">
+                <p>
+                  Every project the agent builds opens in the Vyra editor at{" "}
                   <a href="https://app.usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
                     app.usevyra.com
-                  </a>
-                  . The agent needs the editor open in your browser to execute timeline tools.
-                </p>
-              </Step>
-              <Step number={2} title="Connect this tab">
-                <p>
-                  Click the <strong className="text-[var(--foreground)]">Connect MCP</strong> button in the editor&apos;s top
-                  bar to bind this specific browser tab to your agent. Editing-tool calls from the agent only land in the
-                  tab you&apos;ve connected - if you have multiple tabs open, this is how you pick which one the agent drives.
-                  A green status dot means you&apos;re bound.
-                </p>
-                <div className="mt-3 max-w-[400px] overflow-hidden rounded-xl border border-[var(--surface-border)] shadow-sm">
-                  <img src="/docs/connect-mcp.png" alt="Connect MCP button in the editor top bar, with the popover showing a Connect this tab button" className="w-full" />
-                </div>
-              </Step>
-              <Step number={3} title="Start editing">
-                <p>
-                  Ask the agent to edit your video. It has access to 50+ tools covering the full
-                  editing workflow. Changes appear in the editor in real time.
+                  </a>{" "}
+                  and in the iPhone app, so you can check it or make hand edits any time.
                 </p>
               </Step>
             </div>
@@ -175,9 +171,9 @@ export default function McpDocsPage() {
               Requirements
             </h2>
             <ul className="list-disc space-y-2 pl-6">
-              <li>A Vyra account (free or paid)</li>
-              <li>A project open in the Vyra editor for timeline editing tools</li>
-              <li>An MCP-compatible client (Claude Code, Claude Desktop, claude.ai, Codex, etc.)</li>
+              <li>A Vyra account</li>
+              <li>An MCP-compatible client (Claude Code, Claude Desktop, claude.ai, the Claude mobile app, ChatGPT, Codex, Cursor, etc.)</li>
+              <li>Nothing open in your browser. The server is headless.</li>
             </ul>
           </section>
 
@@ -211,29 +207,17 @@ export default function McpDocsPage() {
           <div className="space-y-2 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
             <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-[14px] font-semibold text-[var(--foreground)] [&::-webkit-details-marker]:hidden">
-                &quot;No browser connected&quot;
+                The agent asks you to open a browser tab
                 <ChevronDown />
               </summary>
               <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
-                The agent can&apos;t reach your editor. Make sure you have a project open
-                at{" "}
-                <a href="https://app.usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
-                  app.usevyra.com
-                </a>{" "}
-                AND that you&apos;ve clicked <strong className="text-[var(--foreground)]">Connect MCP</strong> in the
-                top bar of that tab. Editor tools require an explicit tab binding - opening the project alone
-                isn&apos;t enough.
-              </div>
-            </details>
-            <details className="group rounded-xl border border-[var(--surface-border)] bg-white">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3.5 text-[14px] font-semibold text-[var(--foreground)] [&::-webkit-details-marker]:hidden">
-                Multiple tabs / projects open
-                <ChevronDown />
-              </summary>
-              <div className="border-t border-[var(--surface-border)] px-5 py-4 text-[13px] leading-relaxed text-[var(--foreground-muted)]">
-                Only one tab can be bound to the agent at a time. If you click <strong className="text-[var(--foreground)]">Connect MCP</strong> in a
-                second tab, it offers a &quot;Take over&quot; option that disconnects the first. The agent&apos;s
-                tool calls always land in the most-recently-bound tab.
+                Your client is still using the old tool list from before the headless server. Refresh the tools
+                list, reconnect the Vyra MCP connector, start a new session, and reload your AI app. Still stuck?
+                Email{" "}
+                <a href="mailto:caleb@usevyra.com" className="text-[var(--brand-blue)] underline underline-offset-2">
+                  caleb@usevyra.com
+                </a>
+                .
               </div>
             </details>
             <details className="group rounded-xl border border-[var(--surface-border)] bg-white">

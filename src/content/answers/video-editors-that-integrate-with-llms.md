@@ -13,7 +13,7 @@ reels:
   - DaAb0QFNvk0
 ---
 
-**Five video editors connect to an outside LLM like Claude or ChatGPT through MCP, the Model Context Protocol. They are Vyra, Descript, DaVinci Resolve Studio 21.1, OpusClip, and Kapwing (in beta). The question that separates them is what your AI is allowed to do once it's connected. In Vyra, your AI gets the editing tools themselves, reads a transcript and a description of every scene, and edits a real timeline you can open. Some other integrations hand your request to the editor's own assistant instead.**
+**Five video editors connect to an outside LLM like Claude or ChatGPT through MCP, the Model Context Protocol. They are Vyra, Descript, DaVinci Resolve Studio 21.1, OpusClip, and Kapwing (in beta). The question that separates them is what your AI is allowed to do once it's connected. In Vyra, your AI gets the editing tools themselves, reads a transcript and a description of every scene, and edits a real timeline on Vyra's servers, with no browser tab open. Some other integrations hand your request to the editor's own assistant instead.**
 
 We make Vyra, so weigh our pick accordingly. Every fact about another editor below comes from its own docs, checked in October 2026.
 
@@ -21,7 +21,7 @@ We make Vyra, so weigh our pick accordingly. Every fact about another editor bel
 
 | Editor | How it connects | Works with | Your AI sees the footage | Your AI edits the timeline | Best for |
 | --- | --- | --- | --- | --- | --- |
-| Vyra | Hosted MCP server, `https://api.usevyra.com/mcp`, OAuth sign-in | Claude Desktop, claude.ai, Claude Code, ChatGPT, Codex, Cursor | Yes, transcript and scene descriptions of every clip | Yes, 50+ editing tools on a real timeline | Turning a folder of raw clips into a finished video |
+| Vyra | Hosted, headless MCP server, `https://api.usevyra.com/mcp`, OAuth sign-in | Claude Desktop, claude.ai, the Claude mobile app, Claude Code, ChatGPT, Codex, Cursor | Yes, transcript and scene descriptions of every clip | Yes, 50+ editing tools on a real timeline | Turning a folder of raw clips into a finished video |
 | Descript | Hosted MCP server, in Claude's connector directory | Claude, Claude Code through a custom setup | Yes, transcript | Transcribe, trim, remove filler words, add captions, publish | Podcasts and talking videos |
 | DaVinci Resolve Studio 21.1 | Built-in MCP server (File, Setup AI Assistants) | Claude, Claude Code, ChatGPT Codex | Through Resolve | Yes, full Resolve | People who already edit in Resolve |
 | OpusClip | Hosted MCP server, `mcp.opus.pro/mcp`, OAuth | Claude, Claude Code | Yes, for picking clips | Exports clips | Cutting one long video into shorts |
@@ -42,6 +42,7 @@ Tool-level matters for three reasons.
 - You use the model you already pay for and like, Claude or GPT, for the editing decisions.
 - The model can work across many projects in one conversation, for example captioning 20 clips in the same style.
 - Developers can script it from Claude Code or Cursor like any other tool.
+- With a headless server like Vyra's, the edit keeps running on the vendor's servers after you close your laptop.
 
 ## What Vyra's integration covers
 
@@ -52,7 +53,8 @@ Everything below is available to your model once Vyra is connected. The full lis
 | See and search | Browse project assets, read the timeline, search footage by what's on screen, what's said, location, or date, capture a frame at any timestamp, search Pexels and Freesound stock |
 | Edit | Add video, audio, and images with trim control, add text, shapes, and styled captions, change position, scale, opacity, volume, and speed, move, split, slip, clone, and delete items, set keyframes |
 | Effects | Apply color and stylize effects, create and animate masks, remove backgrounds, build motion graphics |
-| Project | Read the project's template and style, add assets from your library, manage markers and tracks |
+| Generate | Voiceovers, images, sound effects, and music |
+| Project | Create projects, work on several at once, read the project's template and style, add assets from your library, manage markers and tracks |
 
 ## Set it up
 
@@ -72,6 +74,9 @@ Vyra works in ChatGPT on the web, the ChatGPT desktop app, and Codex. Resolve St
 
 **Can I use my own LLM subscription instead of paying for the editor's AI?**
 With Vyra, yes. The MCP plans start at $24 a month and use the Claude, ChatGPT, or Cursor subscription you already have.
+
+**Does the editor have to be open?**
+Not for Vyra. Its MCP server has been headless since October 2026, so it works with your laptop closed and from the Claude app on your phone.
 
 **Do I need to code?**
 No. Hosted servers like Vyra's are added as a connector and you sign in. Claude Code and Cursor are there if you want to script it.

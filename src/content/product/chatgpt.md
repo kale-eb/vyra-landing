@@ -1,14 +1,14 @@
 ---
 title: Edit videos with ChatGPT
 description: Connect Vyra to ChatGPT over MCP. ChatGPT reads your transcript, cuts the timeline, adds captions, and exports, all from the chat.
-updated: 2026-10-24
+updated: 2026-10-29
 category: product
 reels:
   - DajEylHSiz8
   - DY_kJF4uI9-
 ---
 
-**ChatGPT can edit your videos once you connect it to Vyra over MCP. It gets the editing tools, reads your transcripts and scene descriptions, and builds the timeline while you watch it update in the browser. You use the ChatGPT plan you already pay for.**
+**ChatGPT can edit your videos once you connect it to Vyra over MCP. It gets the editing tools, reads your transcripts and scene descriptions, and builds the timeline on Vyra's servers, with no browser tab to keep open. You use the ChatGPT plan you already pay for.**
 
 ChatGPT is good at planning and writing. It can't open a video file. Vyra is the editor it drives.
 
@@ -21,7 +21,7 @@ ChatGPT is good at planning and writing. It can't open a video file. Vyra is the
    codex mcp login vyra
    ```
 
-2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.
+2. Ask the agent to open a project or create one. Nothing has to stay open on your side. The agent edits on Vyra's servers, and the project shows up in the web and iPhone apps whenever you want to look.
 3. Upload your footage. Each clip gets transcribed and described.
 4. Tell ChatGPT what to make. Length, platform, keep, cut, captions, music.
 5. Watch the timeline update. Ask for a read-back, then fix one thing at a time.
@@ -57,13 +57,12 @@ This project has ten takes of the same talking head. Keep the best take of each 
 | --- | --- | --- | --- |
 | ChatGPT's role | None | Forwards your prompt to the vendor's AI | Plans and executes with real editing tools |
 | Sees the footage | No | No | Transcripts, scene descriptions, frames |
-| Where you work | The app | The app plus ChatGPT | ChatGPT, editor updates live |
+| Where you work | The app | The app plus ChatGPT | ChatGPT, nothing else open |
 | Cost | App subscription | App plus ChatGPT | Vyra MCP plan plus the ChatGPT plan you already have |
 
 ## Limits
 
 - ChatGPT edits what you uploaded. Vyra doesn't generate footage.
-- Keep a Vyra project open in a browser tab so edits apply live.
 - ChatGPT sometimes says a step is done early. Ask it to read the timeline back.
 
 ## Pricing

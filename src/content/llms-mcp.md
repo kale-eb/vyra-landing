@@ -2,7 +2,7 @@
 
 > AI-controllable video editor via the Model Context Protocol (MCP). Your AI client opens projects, reads timelines, edits clips, applies effects, exports renders — using the same tools a human editor would.
 
-Vyra runs in the user's browser; the AI client (Claude Code, Claude Desktop, Codex, or any MCP-compatible client) drives it remotely over MCP. The user must keep at least one Vyra tab open in their browser for editing tools to work — tabs auto-bind on focus.
+The AI client (Claude Code, Claude Desktop, claude.ai, the Claude mobile app, ChatGPT, Codex, Cursor, or any MCP-compatible client) drives Vyra over MCP. Since October 2026 the server is headless: each agent gets its own editing container on Vyra's servers, so no browser tab needs to be open and the user's computer can be off. Agents can create projects, access the user's library, work on several projects at once, and generate voiceovers, images, sound effects, and music. Every project stays editable in the Vyra web and iPhone apps.
 
 ## MCP Server
 
@@ -93,9 +93,11 @@ Any client that implements the Streamable HTTP transport and OAuth 2.1 + PKCE ca
 
 Once the client is authorized:
 
-1. Open `https://app.usevyra.com` in the user's browser and sign in with the same account they authorized.
-2. Open any project. The tab auto-binds as the editor's dispatch target — no button click required. A green indicator in the top-right confirms.
-3. Ask the AI to do anything an editor would — "trim the dead air", "add captions in TikTok style", "color grade like a moody film", "export this in 1080p". The AI uses Vyra's MCP tools to make the changes; the user sees them in real time.
+1. Ask the AI to list the user's projects or create a new one. No browser tab is required.
+2. Ask the AI to do anything an editor would — "trim the dead air", "add captions in TikTok style", "color grade like a moody film", "export this in 1080p". The AI uses Vyra's MCP tools to make the changes on Vyra's servers.
+3. The user can open the project in the Vyra web or iPhone app at any time to review or edit by hand.
+
+If an agent still asks for a browser tab, it has the old tool list: refresh the tools, reconnect the Vyra connector, start a new session, and reload the AI app.
 
 ## Available tools (summary)
 

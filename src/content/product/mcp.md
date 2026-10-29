@@ -10,9 +10,19 @@ newsletter:
   - vyra-is-live
 ---
 
-**Vyra's MCP server connects the AI you already pay for to a full video editor. Claude, ChatGPT, or Cursor gets the actual editing tools, reads your transcripts and scene descriptions, and edits the timeline live in your browser. You describe the video in the chat you already use.**
+**Vyra's MCP server connects the AI you already pay for to a full video editor. Claude, ChatGPT, or Cursor gets the actual editing tools, reads your transcripts and scene descriptions, and edits the timeline on Vyra's servers, so no browser tab has to stay open. You describe the video in the chat you already use.**
 
-MCP is the Model Context Protocol, an open standard that lets AI assistants call outside tools. We shipped our connector in May 2026. Other editors have added MCP since. The difference is what the agent is allowed to do once it's connected.
+MCP is the Model Context Protocol, an open standard that lets AI assistants call outside tools. We shipped our connector in May 2026 and rebuilt it as a headless server in October 2026. Other editors have added MCP since. The difference is what the agent is allowed to do once it's connected.
+
+## What the headless server means
+
+Each agent gets its own editing container on Vyra's servers. Nothing runs in your browser.
+
+- **No tab to keep open.** The agent creates projects, reads your library, edits, and exports on its own. Your laptop can be closed.
+- **Edit from your phone.** Upload footage straight into the Claude app, ask for the video, and put the phone away while it works.
+- **Several projects at once.** Run one agent across many projects, or several agents in parallel.
+- **Generated media.** The agent can add voiceovers, images, sound effects, and music. Video footage still comes from you or Pexels stock.
+- **Still a real project.** Everything the agent builds opens in the Vyra web and iPhone apps for hand edits.
 
 ## Which AI clients and models work
 
@@ -31,7 +41,7 @@ Vyra doesn't pick the model. Whatever model your client runs, Claude, GPT, or th
 ## How it works
 
 1. Connect your client to `https://api.usevyra.com/mcp`. It uses Streamable HTTP and OAuth 2.1 with PKCE. A sign-in window opens, you approve, and the client saves the connection. Exact commands are below.
-2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.
+2. Ask the agent to open a project or create one. Nothing has to stay open on your side. The agent edits on Vyra's servers, and the project shows up in the web and iPhone apps whenever you want to look.
 3. Ask the agent to look before it cuts. "Summarize the footage and propose a 45-second structure with timestamps."
 4. Approve the plan, then go step by step. Rough cut, captions, music, graphics, export.
 5. Check with frames. "Capture frames at 0:03, 0:15, and 0:40."
@@ -81,7 +91,8 @@ The agent gets 50+ tools. You don't need their names. Describe the result and it
 | See and search | Browse project assets and references, read the timeline (tracks, items, timing), search footage by what's on screen, what's said, location, or date, capture the canvas at any timestamp, search Pexels and Freesound stock |
 | Edit and build | Add video, audio, and images with trim control, add text overlays, shapes, and styled captions, change position, scale, opacity, volume, and speed, move, split, slip, clone, and delete items, set keyframes |
 | Effects and compositing | Apply and configure color, stylize, and distort effects, create and animate rectangle, ellipse, and pen masks, remove backgrounds with AI, build motion graphics |
-| Project and assets | Read the project's template and style, add assets from your library or stock, manage markers, consolidate tracks |
+| Generate | Voiceovers, images, sound effects, and music for the project |
+| Project and assets | Create projects, read the project's template and style, add assets from your library or stock, manage markers, consolidate tracks |
 | Export | Render MP4 or WebM at the size and aspect ratio you ask for |
 
 ## What you can ask for
@@ -116,7 +127,7 @@ For each project in this folder, add 3-5 word phrase captions in the same style,
 | --- | --- | --- | --- |
 | What the agent can do | Nothing, you drive | Sends your prompt to the vendor's own AI | View and search assets, edit the timeline, add media, text, captions, motion graphics, masks, effects, keyframes, export MP4 or WebM, use templates and reference videos |
 | What the agent can see | Nothing | Usually nothing | Transcripts, scene descriptions, timeline state, rendered frames |
-| Where you work | Their app | Their app plus your chat | Your chat, with the editor updating live |
+| Where you work | Their app | Their app plus your chat | Your chat, on desktop or phone, with nothing else open |
 | Model | Theirs | Theirs | Yours |
 
 ## Claude Code and Cursor examples
@@ -140,7 +151,7 @@ More in the [developer guide](/for/developers) and on the [Cursor page](/cursor)
 ## Requirements
 
 - A Vyra account.
-- A project open in the Vyra editor at app.usevyra.com, with **Connect MCP** clicked in that tab, for timeline editing tools.
+- Nothing open on your side. Since October 2026 the server is headless, so the agent works with your laptop closed or from the Claude app on your phone.
 - An MCP client from the table above.
 
 ## Managing sessions
@@ -149,7 +160,6 @@ See active MCP sessions and revoke access in Settings > External Agent in the Vy
 
 ## Limits
 
-- The agent needs a Vyra project open in a browser tab to apply changes live.
 - External models sometimes say a step is done when it isn't. Ask for a timeline read-back.
 - Vyra doesn't generate footage. The agent edits what you uploaded.
 
@@ -157,8 +167,7 @@ See active MCP sessions and revoke access in Settings > External Agent in the Vy
 
 | Problem | Fix |
 | --- | --- |
-| "No browser connected" | Open a project at app.usevyra.com and click Connect MCP in the top bar of that tab. Opening the project alone isn't enough. |
-| Edits land in the wrong tab | Only one tab is bound at a time. Clicking Connect MCP in a second tab offers "Take over", which disconnects the first. |
+| The agent asks you to open a browser tab | It's running the old tool list. Refresh the tools, reconnect the Vyra connector, start a new session, and reload your AI app. |
 | Sign-in fails | Remove and re-add the server in your client. In Claude Code, run `claude mcp remove Vyra`, then add it again. |
 | Tools don't show up | Reconnect the session. The tool list loads when the connection starts. |
 | The agent says it's done but it isn't | Ask it to read the timeline back or capture frames at the timestamps you care about. |
@@ -183,7 +192,13 @@ Claude Desktop and Claude Code the most. claude.ai, ChatGPT, Codex, and Cursor a
 Any model your MCP client runs. Vyra provides the editing tools and the footage context, and your model makes the decisions.
 
 **Can it edit many videos at once?**
-Yes. Ask for the same treatment across several projects in one conversation, or script it from Claude Code.
+Yes. Ask for the same treatment across several projects in one conversation, run several agent sessions in parallel, or script it from Claude Code.
+
+**Do I need to keep Vyra open in a browser?**
+No. Since October 2026 the server is headless. The agent edits on Vyra's servers, so it keeps going with your laptop closed or your phone off.
+
+**Can I use it from my phone?**
+Yes. Add Vyra as a connector in your Claude account and it works in the Claude mobile app. Upload footage in the chat and ask for the video.
 
 **How is this different from Descript's or Opus Clip's MCP?**
 Those forward your prompt to the vendor's own assistant. Vyra exposes the editing tools themselves, so your model does the edit and can look at the footage while it works.

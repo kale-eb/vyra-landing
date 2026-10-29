@@ -1,14 +1,14 @@
 ---
 title: Edit videos from Cursor
 description: Add Vyra as an MCP server in Cursor and its agent can cut, caption, and export your footage from the IDE, one video or a batch.
-updated: 2026-10-24
+updated: 2026-10-29
 category: product
 reels:
   - DY4pVwtu3KD
   - DZumPohtfW8
 ---
 
-**Cursor's agent can edit video once you add Vyra as an MCP server. It gets the editing tools, reads your transcripts and scene descriptions, and builds timelines while the editor updates in a browser tab. Good for batch captioning, scripted cutdowns, and demo videos made from the same repo you ship from.**
+**Cursor's agent can edit video once you add Vyra as an MCP server. It gets the editing tools, reads your transcripts and scene descriptions, and builds timelines on Vyra's servers, with no editor tab to keep open. Good for batch captioning, scripted cutdowns, and demo videos made from the same repo you ship from.**
 
 Cursor is where developers already run agents. Vyra makes video one more thing those agents can do, with real footage and a real timeline.
 
@@ -26,7 +26,7 @@ Cursor is where developers already run agents. Vyra makes video one more thing t
    }
    ```
 
-2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.
+2. Ask the agent to open a project or create one. Nothing has to stay open on your side. The agent edits on Vyra's servers, and the project shows up in the web and iPhone apps whenever you want to look.
 3. Upload your footage. Clips get transcribed and described.
 4. In the Cursor agent, describe the edit or write a task that loops over projects.
 5. The agent uses the editing tools. Add, trim, split, captions, masks, motion graphics, effects, export, plus templates, styles, and presets.
@@ -68,7 +68,6 @@ This is a 12-minute screen recording with voiceover. Find every moment I say "fo
 
 ## Limits
 
-- A Vyra project must be open in a browser tab for live changes.
 - Vyra edits uploaded footage. It doesn't generate video.
 - Agents can claim a step is done early. Ask for a timeline read-back in the task.
 
@@ -89,7 +88,7 @@ This is a 12-minute screen recording with voiceover. Find every moment I say "fo
 Whatever model Cursor is running. Vyra provides the tools and the footage context.
 
 **Can I run this in CI?**
-The server is built for interactive agents. Batch tasks inside a Cursor session work today. A headless pipeline is a different setup, ask us in Discord.
+The server has been headless since October 2026, so an agent can create projects, edit, and export with no browser open, including agents running in the cloud. It signs in with OAuth, so the client completes that sign-in once.
 
 **Is Cursor different from Claude Code here?**
 Same server, same tools. Claude Code registers it with `claude mcp add --transport http Vyra https://api.usevyra.com/mcp`.
