@@ -59,6 +59,7 @@ export async function childSitemaps(): Promise<Record<string, SitemapUrl[]>> {
     formats: sectionUrls("formats"),
     "how-to": sectionUrls("how-to"),
     prompts: sectionUrls("prompts"),
+    ideas: sectionUrls("ideas"),
     answers: sectionUrls("answers"),
     tutorials: sectionUrls("tutorials"),
     glossary: [{ loc: "/glossary", lastmod: getEntries("glossary").reduce((m, e) => (e.updated > m ? e.updated : m), "2026-09-24") }],

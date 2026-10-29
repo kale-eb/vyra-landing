@@ -12,6 +12,7 @@ export type SectionKey =
   | "formats"
   | "how-to"
   | "prompts"
+  | "ideas"
   | "answers"
   | "best"
   | "features"
@@ -69,6 +70,20 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
       "Ranked lists for one job each, like beat sync, agentic editing, and MCP servers. We make Vyra, and each list says why it ranks where it does.",
     schema: "Article",
     intro: "One job per list. We make Vyra, so every list says why it ranks where it does and when another tool is the better pick. Each one says what we checked and when.",
+  },
+  ideas: {
+    key: "ideas",
+    label: "Ideas",
+    title: "Video ideas you can film this week, each with an edit prompt",
+    description:
+      "Lists of video ideas for YouTube, TikTok, Reels, Shorts, vlogs, skits, and more. Every idea links to its format and comes with a prompt that edits it in Vyra.",
+    schema: "Article",
+    intro: "Ideas for what to film next, grouped by where you post and what you make. Every idea says why it works, links to the format, and has a prompt you can paste into Vyra once you have the footage.",
+    groups: [
+      { label: "By platform", slugs: ["youtube-video-ideas", "youtube-shorts-ideas", "tiktok-video-ideas", "reel-ideas"] },
+      { label: "By format", slugs: ["vlog-ideas", "skit-ideas", "music-video-ideas", "faceless-youtube-channel-ideas", "artist-content-ideas"] },
+      { label: "Parts of a video", slugs: ["hook-ideas", "transition-ideas", "b-roll-ideas", "youtube-intro-ideas"] },
+    ],
   },
   for: {
     key: "for",
@@ -359,6 +374,11 @@ export function extractRanked(body: string): string[] {
   let r: RegExpExecArray | null;
   while ((r = re.exec(m[1]))) out.push(r[1].replace(/\.$/, "").trim());
   return out;
+}
+
+/** Idea titles from "### 1. Title" headings, for ItemList schema on /ideas pages. */
+export function extractIdeas(body: string): string[] {
+  return [...body.matchAll(/^### \d+\.\s+(.+)$/gm)].map((m) => m[1].replace(/\*\*/g, "").trim());
 }
 
 /** First ordered list in the body, for HowTo schema steps. */

@@ -12,6 +12,7 @@ import {
   SECTIONS,
   extractFaq,
   extractRanked,
+  extractIdeas,
   extractRelated,
   extractSteps,
   resolveUrl,
@@ -107,6 +108,18 @@ function buildJsonLd(entry: Entry) {
       itemListOrder: "https://schema.org/ItemListOrderDescending",
       numberOfItems: ranked.length,
       itemListElement: ranked.map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+    });
+  }
+
+  const ideas = entry.section === "ideas" ? extractIdeas(entry.body) : [];
+  if (ideas.length >= 2) {
+    graph.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: entry.title,
+      itemListOrder: "https://schema.org/ItemListUnordered",
+      numberOfItems: ideas.length,
+      itemListElement: ideas.map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
     });
   }
 
