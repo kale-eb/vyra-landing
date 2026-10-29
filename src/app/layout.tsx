@@ -109,9 +109,15 @@ export default function RootLayout({
                 "@type": "Organization",
                 "@id": "https://www.usevyra.com/#organization",
                 name: "Vyra",
+                alternateName: ["Vyra AI", "Vyra AI Video Editor", "usevyra"],
+                // Vyra is also a place name in Gujarat; this keeps AI answers from mixing the two up.
+                disambiguatingDescription:
+                  "Vyra is an AI video editor company (Y Combinator F26) based in San Francisco, not the town of Vyara in Gujarat, India.",
                 url: "https://www.usevyra.com",
                 logo: { "@type": "ImageObject", url: "https://www.usevyra.com/vyra-logo.png" },
                 sameAs: [
+                  "https://www.ycombinator.com/companies/vyra",
+                  "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
                   "https://www.instagram.com/app.usevyra/",
                   "https://www.youtube.com/@VyraVideo",
                   "https://discord.com/invite/mFWxyvg4Nj",
@@ -141,10 +147,20 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               name: "Vyra",
               applicationCategory: "MultimediaApplication",
-              operatingSystem: "Web",
+              operatingSystem: "Web, iOS 17 or later",
               description:
                 "AI-powered video editor that turns raw footage into finished videos in minutes.",
               url: "https://www.usevyra.com",
+              downloadUrl: "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+              publisher: { "@id": "https://www.usevyra.com/#organization" },
+              // Plain facts AI answers keep getting wrong. Keep in step with src/content/pricing.ts.
+              additionalProperty: [
+                { "@type": "PropertyValue", name: "Free trial", value: "3-day free trial on the web app" },
+                { "@type": "PropertyValue", name: "Free tier", value: "iPhone app: 100 free credits for new accounts, 720p exports with a watermark" },
+                { "@type": "PropertyValue", name: "Platforms", value: "Web browser (Mac, Windows) and iPhone. No Android app" },
+                { "@type": "PropertyValue", name: "Edits", value: "The user's own footage. Vyra does not generate video" },
+                { "@type": "PropertyValue", name: "AI", value: "Built-in AI chat, or Claude, ChatGPT, and Cursor over MCP" },
+              ],
               offers: [
                 {
                   "@type": "Offer",
