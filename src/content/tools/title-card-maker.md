@@ -1,7 +1,12 @@
 ---
 title: "Title card maker and generator: animated video titles from a sentence"
 description: "Make a title card for a video, an episode, or a chapter by describing it. Vyra builds plain or animated titles, timed to a beat or a line, styled like your project."
-updated: 2026-10-28
+updated: 2026-10-29
+layout: landing
+landing:
+  headline: "Title card maker: animated titles from one sentence"
+  demo: motion-graphics
+  demo_caption: 'Made in Vyra from one prompt. This one is a "now playing" card, and title cards are built the same way.'
 category: tools
 facts:
   - "Best for: Video openers, chapter breaks, recaps, before-and-after reveals, event titles"
