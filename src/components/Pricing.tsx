@@ -6,7 +6,8 @@ import FaventeRecruit from "./FaventeRecruit";
 import { trackLead } from "./MetaPixel";
 import { PLANS } from "@/content/pricing";
 
-export default function Pricing() {
+/** recruit: show the Favente creator card, which only belongs on the homepage. */
+export default function Pricing({ recruit = true }: { recruit?: boolean }) {
   const groups = [
     { key: "mcp", label: "Bring your own AI", note: "For people who already pay for Claude, ChatGPT, or Cursor." },
     { key: "vyra-ai", label: "Vyra AI", note: "Everything in one app. No other subscription needed." },
@@ -77,7 +78,7 @@ export default function Pricing() {
           </Link>
         </p>
 
-        <FaventeRecruit />
+        {recruit && <FaventeRecruit />}
       </div>
     </section>
   );

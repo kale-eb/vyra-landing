@@ -64,7 +64,14 @@ function FAQItem({
   );
 }
 
-export default function FAQ() {
+/** Defaults to the homepage questions; landing pages pass their own. */
+export default function FAQ({
+  items = faqs,
+  title = "Frequently asked questions",
+}: {
+  items?: { question: string; answer: string }[];
+  title?: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -81,13 +88,13 @@ export default function FAQ() {
               className="text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
             >
-              Frequently asked questions
+              {title}
             </h2>
           </Reveal>
 
           {/* Right column - accordion */}
           <div className="flex flex-col gap-4 lg:col-span-8">
-            {faqs.map((faq, i) => (
+            {items.map((faq, i) => (
               <Reveal key={i} y={20} duration={0.5} delay={i * 0.06}>
                 <FAQItem
                   question={faq.question}
