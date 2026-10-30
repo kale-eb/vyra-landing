@@ -5,14 +5,13 @@ updated: 2026-10-28
 category: best
 facts:
   - "Servers on the list: 6"
-  - "Vyra's spot: #1 (we make it, so read the reasons)"
   - "What we checked: each server's own docs and help pages, October 2026"
   - "Works with: Claude, Claude Code, ChatGPT, Codex, and Cursor, depending on the server"
 ---
 
 **The best MCP server for video editing depends on what your footage looks like. Vyra is best for a folder of raw clips you want turned into a finished video. Descript is best for podcasts and talking videos. DaVinci Resolve Studio 21.1 has an MCP server built in if you already edit there. OpusClip is best for cutting one long video into shorts.**
 
-MCP (Model Context Protocol) is how Claude, ChatGPT, or Cursor control another app. A video editing MCP server lets the AI you already pay for do the edit. We shipped Vyra's MCP connector this year and I announced it in my newsletter, so this is a category I watch closely. We are first on our own list, and below is exactly why, plus when to use something else.
+MCP (Model Context Protocol) is how Claude, ChatGPT, or Cursor control another app. A video editing MCP server lets the AI you already pay for do the edit. We shipped Vyra's MCP connector this year and I announced it in my newsletter, so this is a category I watch closely. Below is why Vyra is first, plus when to use something else.
 
 The thing that matters most is whether the server can see your footage. A server that can only call "trim from 0:04 to 0:09" makes the AI edit blind. The good ones hand the AI a transcript and a description of what is on screen.
 
