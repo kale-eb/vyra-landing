@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mb-12 text-[15px] text-[var(--foreground-subtle)]">
-          Effective Date: June 22, 2026
+          Effective Date: November 2, 2026
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
@@ -280,7 +280,34 @@ export default function PrivacyPage() {
           {/* 7 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              7. Data Sharing
+              7. Connected Instagram Accounts
+            </h2>
+            <p className="mb-3">
+              If you connect an Instagram professional account, we store its
+              Instagram user ID, username, account type and profile picture, plus
+              an access token that we keep encrypted. We use it only to do what you
+              ask:
+            </p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Publish a video you finished in Vyra as a Reel on your account, when you tap Post or ask the Vyra assistant to post it</li>
+              <li>When you choose &quot;Create a template from your Instagram&quot;, read your own newest Reels to make an editing template in your style. Those Reels are saved to your references like any other reference</li>
+              <li>Keep a record of the posts we publish for you (the Instagram post ID and link)</li>
+            </ul>
+            <p className="mt-3">
+              We never read other people&apos;s accounts, and we don&apos;t post
+              anything you didn&apos;t ask for. You can disconnect at any time in
+              Account &rarr; Instagram, which deletes the access token. You can also
+              remove Vyra in Instagram under Settings &rarr; Apps and websites; when
+              Instagram tells us, we delete the connection and our records of your
+              posts. To ask us to delete anything else, contact us at the address
+              below.
+            </p>
+          </section>
+
+          {/* 8 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              8. Data Sharing
             </h2>
             <p className="mb-3">
               We do not sell your personal information or your content. We share
@@ -313,10 +340,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 8 */}
+          {/* 9 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              8. Data Security
+              9. Data Security
             </h2>
             <p>
               We implement strong, layered security measures, including encryption
@@ -328,10 +355,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 9 */}
+          {/* 10 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              9. International Data Transfers
+              10. International Data Transfers
             </h2>
             <p>
               Vyra is operated from the United States, and our infrastructure and
@@ -344,10 +371,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 10 */}
+          {/* 11 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              10. Cookies &amp; Local Storage
+              11. Cookies &amp; Local Storage
             </h2>
             <p>
               We use cookies and browser storage to maintain your login session
@@ -356,10 +383,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 11 */}
+          {/* 12 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              11. Data Retention
+              12. Data Retention
             </h2>
             <p>
               We retain your content and account data while your account is
@@ -371,10 +398,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 12 */}
+          {/* 13 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              12. Your Rights
+              13. Your Rights
             </h2>
             <p className="mb-2">
               Depending on where you live, you may have the right to:
@@ -406,10 +433,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 13 */}
+          {/* 14 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              13. Children&apos;s Privacy
+              14. Children&apos;s Privacy
             </h2>
             <p>
               Vyra is not intended for users under 13 (or the minimum age of
@@ -419,10 +446,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 14 */}
+          {/* 15 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              14. Changes to This Policy
+              15. Changes to This Policy
             </h2>
             <p>
               We may update this policy at any time, and will update the effective
@@ -435,10 +462,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 15 */}
+          {/* 16 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              15. Contact Us
+              16. Contact Us
             </h2>
             <p>Questions about this Privacy Policy? Contact us at:</p>
             <p className="mt-2">
