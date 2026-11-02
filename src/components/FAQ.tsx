@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal";
 
 import { HOME_FAQS as faqs } from "./faq-data";
@@ -45,21 +44,19 @@ function FAQItem({
           </svg>
         </span>
       </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.21, 0.68, 0.35, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="px-6 pb-6 text-[14px] leading-[1.7] text-[var(--foreground-muted)] sm:px-7">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Answers stay in the server-rendered HTML so crawlers can read them;
+          the grid-rows transition only collapses them visually. */}
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-[250ms] ease-[cubic-bezier(0.21,0.68,0.35,1)] ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="px-6 pb-6 text-[14px] leading-[1.7] text-[var(--foreground-muted)] sm:px-7">
+            {answer}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

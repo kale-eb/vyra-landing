@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         destination: "https://www.usevyra.com/:path*",
         permanent: true,
       },
+      // The production *.vercel.app alias gets crawled as a duplicate site.
+      // Preview URLs (vyra-landing-git-*) have different hosts and stay reachable.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "vyra-landing-eta.vercel.app" }],
+        destination: "https://www.usevyra.com/:path*",
+        permanent: true,
+      },
       // Comparison posts moved out of the blog into /compare. Old URLs keep working.
       { source: "/blog/vyra-vs-capcut", destination: "/compare/vyra-vs-capcut", permanent: true },
       { source: "/blog/vyra-vs-descript", destination: "/compare/vyra-vs-descript", permanent: true },
