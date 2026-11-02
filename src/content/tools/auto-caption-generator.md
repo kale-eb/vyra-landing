@@ -70,3 +70,4 @@ Word-by-word or highlight for fast talking heads. Plain phrases for calmer expla
 - /features/ai-captions
 - /prompts/captions
 - /tutorials/add-captions
+- /tools/batch-caption-videos
