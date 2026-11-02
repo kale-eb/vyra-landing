@@ -25,7 +25,7 @@ facts:
 | Vyra AI Starter | $54 | Built-in AI, no other subscription | Up to 1440p |
 | Vyra AI Pro | $129 | Built-in AI, more credits and storage | Up to 4K |
 
-Every paid plan includes 1,000 exports a month. Starter plans have 6,000 processing credits and 100 GB of storage. Pro plans have 20,000 credits and 500 GB. Full details are on the [pricing page](/pricing).
+Every paid plan includes 1,000 exports a month. Monthly credits: MCP Starter 1,850, MCP Pro 7,300, Vyra AI Starter 6,000 and Vyra AI Pro 15,800, from one balance that covers the web and the iPhone app. Starter plans have 100 GB of storage and Pro plans 500 GB. Full details are on the [pricing page](/pricing).
 
 ## Which plan to pick
 
