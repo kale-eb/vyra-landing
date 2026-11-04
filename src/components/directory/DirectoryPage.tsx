@@ -35,7 +35,7 @@ const PUBLISHER = {
   logo: { "@type": "ImageObject", url: `${SITE_URL}/vyra-logo.png` },
 };
 
-function buildJsonLd(entry: Entry) {
+export function buildJsonLd(entry: Entry) {
   const url = `${SITE_URL}${entry.url}`;
   const faqs = extractFaq(entry.body);
   const sectionMeta = entry.section === "product" ? null : SECTIONS[entry.section as SectionKey];
