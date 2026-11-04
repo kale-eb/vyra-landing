@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mb-12 text-[15px] text-[var(--foreground-subtle)]">
-          Effective Date: November 2, 2026
+          Effective Date: November 4, 2026
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
@@ -79,8 +79,11 @@ export default function PrivacyPage() {
                 <span className="font-medium text-[var(--foreground)]">
                   We never sell it. We never use it for advertising.
                 </span>{" "}
-                We do not sell, rent, or trade your content or personal data, and
-                we never use your content to serve you ads.
+                We do not sell, rent, or trade your content, and we do not sell your
+                personal data for money. We never use your content to serve you
+                ads, and your videos, images, audio, and projects never go to our
+                advertising partners. Section 8 explains the limited app data they
+                do receive.
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
@@ -154,12 +157,24 @@ export default function PrivacyPage() {
             </ul>
 
             <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
+              Device &amp; Advertising Data (iPhone app)
+            </h3>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Device and app details, such as device model, operating system, app version, and IP address</li>
+              <li>
+                Device identifiers: Apple&apos;s identifier for vendors (IDFV) and, only if you allow tracking, the advertising identifier (IDFA)
+              </li>
+              <li>Whether you installed and opened the app after seeing an ad, signed up, finished your first export, or purchased a subscription</li>
+            </ul>
+
+            <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
               Payment Information
             </h3>
             <ul className="list-disc space-y-1 pl-6">
               <li>
-                Subscription and billing data is processed by Stripe. We do not
-                store your payment card details.
+                Subscription and billing data is processed by Stripe on the web and
+                by Apple on iPhone, where RevenueCat manages subscription status. We
+                do not store your payment card details.
               </li>
             </ul>
           </section>
@@ -180,6 +195,10 @@ export default function PrivacyPage() {
                 and making our features work better)
               </li>
               <li>Send important service updates</li>
+              <li>
+                Measure whether our ads work and reach more people who may want
+                Vyra (see section 8)
+              </li>
             </ul>
           </section>
 
@@ -235,7 +254,8 @@ export default function PrivacyPage() {
                 <span className="font-medium text-[var(--foreground)]">
                   Payments:
                 </span>{" "}
-                Stripe for subscription billing
+                Stripe for subscription billing on the web; Apple and RevenueCat
+                for subscriptions on iPhone
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
@@ -307,16 +327,82 @@ export default function PrivacyPage() {
           {/* 8 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              8. Data Sharing
+              8. Advertising &amp; Attribution
             </h2>
             <p className="mb-3">
-              We do not sell your personal information or your content. We share
-              data only in these limited cases:
+              We advertise Vyra, and on our iPhone app we use these partners to see
+              which ads bring people to Vyra and to reach more people who may want
+              it. Our website and web app do not use advertising pixels.
+            </p>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Meta:
+                </span>{" "}
+                ads on Facebook and Instagram, through its SDK in our app and
+                purchase events we send through RevenueCat (
+                <a href="https://www.facebook.com/privacy/policy/" className="text-[var(--brand-blue)] underline decoration-[var(--brand-blue)]/30 underline-offset-2 transition-colors hover:text-[var(--brand-blue-hover)]">Meta&apos;s privacy policy</a>)
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  AppsFlyer:
+                </span>{" "}
+                measures installs and in-app events across ad networks (
+                <a href="https://www.appsflyer.com/legal/services-privacy-policy/" className="text-[var(--brand-blue)] underline decoration-[var(--brand-blue)]/30 underline-offset-2 transition-colors hover:text-[var(--brand-blue-hover)]">AppsFlyer&apos;s privacy policy</a>)
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  RevenueCat:
+                </span>{" "}
+                passes subscription events to these partners (
+                <a href="https://www.revenuecat.com/privacy/" className="text-[var(--brand-blue)] underline decoration-[var(--brand-blue)]/30 underline-offset-2 transition-colors hover:text-[var(--brand-blue-hover)]">RevenueCat&apos;s privacy policy</a>)
+              </li>
+              <li>
+                <span className="font-medium text-[var(--foreground)]">
+                  Apple:
+                </span>{" "}
+                its ad measurement (SKAdNetwork, AdAttributionKit, and Apple Ads
+                attribution), which reports results without using your IDFA
+              </li>
+            </ul>
+            <p className="mb-3">
+              These partners may receive the device and advertising data listed in
+              section 3, your partner-specific anonymous ID, and an account
+              identifier. They use it under their own policies as well as for us.
+              They never receive your videos, images, audio, projects, or chat
+              messages, and data from a connected Instagram account is never used
+              for advertising. We will update this list before adding another
+              advertising partner.
+            </p>
+            <p className="mb-3">
+              <span className="font-medium text-[var(--foreground)]">
+                Your choice:
+              </span>{" "}
+              Vyra asks before it tracks you on iPhone. If you decline, or later turn
+              it off in Settings &rarr; Privacy &amp; Security &rarr; Tracking, these
+              partners do not receive your IDFA. They can still receive the other
+              data above, which we use to measure results. To ask us about this
+              sharing, contact us at the address below.
+            </p>
+          </section>
+
+          {/* 9 */}
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              9. Data Sharing
+            </h2>
+            <p className="mb-3">
+              We do not sell your content, and we do not sell your personal
+              information for money. We share data only in these limited cases:
             </p>
             <ul className="list-disc space-y-1 pl-6">
               <li>
                 With the service providers (sub-processors) listed above, solely
                 to operate Vyra
+              </li>
+              <li>
+                With the advertising and measurement partners in section 8, as
+                described there
               </li>
               <li>
                 With legal authorities when required by law, or to protect the
@@ -340,10 +426,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 9 */}
+          {/* 10 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              9. Data Security
+              10. Data Security
             </h2>
             <p>
               We implement strong, layered security measures, including encryption
@@ -355,10 +441,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 10 */}
+          {/* 11 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              10. International Data Transfers
+              11. International Data Transfers
             </h2>
             <p>
               Vyra is operated from the United States, and our infrastructure and
@@ -371,10 +457,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 11 */}
+          {/* 12 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              11. Cookies &amp; Local Storage
+              12. Cookies &amp; Local Storage
             </h2>
             <p>
               We use cookies and browser storage to maintain your login session
@@ -383,10 +469,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 12 */}
+          {/* 13 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              12. Data Retention
+              13. Data Retention
             </h2>
             <p>
               We retain your content and account data while your account is
@@ -398,10 +484,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 13 */}
+          {/* 14 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              13. Your Rights
+              14. Your Rights
             </h2>
             <p className="mb-2">
               Depending on where you live, you may have the right to:
@@ -420,8 +506,10 @@ export default function PrivacyPage() {
               If you are a California resident, you have rights under the CCPA/CPRA
               - including the right to know, delete, and opt out of the
               &quot;sale&quot; or &quot;sharing&quot; of personal information.
-              Vyra does not sell or share your personal information as those terms
-              are defined under California law. To exercise any of these rights,
+              We do not sell personal information for money, but the advertising
+              activity in section 8 may count as &quot;sharing,&quot; or in some
+              cases a &quot;sale,&quot; under California and similar state laws. To
+              exercise any of these rights, including opting out of that activity,
               contact us at{" "}
               <a
                 href="mailto:caleb@usevyra.com"
@@ -433,10 +521,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 14 */}
+          {/* 15 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              14. Children&apos;s Privacy
+              15. Children&apos;s Privacy
             </h2>
             <p>
               Vyra is not intended for users under 13 (or the minimum age of
@@ -446,10 +534,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 15 */}
+          {/* 16 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              15. Changes to This Policy
+              16. Changes to This Policy
             </h2>
             <p>
               We may update this policy at any time, and will update the effective
@@ -462,10 +550,10 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          {/* 16 */}
+          {/* 17 */}
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
-              16. Contact Us
+              17. Contact Us
             </h2>
             <p>Questions about this Privacy Policy? Contact us at:</p>
             <p className="mt-2">
