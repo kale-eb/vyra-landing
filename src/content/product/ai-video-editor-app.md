@@ -88,4 +88,5 @@ No. Describe what you want in your own words. The timeline is there when you wan
 - /ai-video-editor
 - /answers/is-vyra-free
 - /answers/is-vyra-on-android
+- /how-to/speed-up-a-video-on-iphone
 - /app-support
