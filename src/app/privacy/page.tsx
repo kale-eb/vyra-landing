@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mb-12 text-[15px] text-[var(--foreground-subtle)]">
-          Effective Date: November 4, 2026
+          Effective Date: November 8, 2026
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
@@ -172,9 +172,10 @@ export default function PrivacyPage() {
             </h3>
             <ul className="list-disc space-y-1 pl-6">
               <li>
-                Subscription and billing data is processed by Stripe on the web and
-                by Apple on iPhone, where RevenueCat manages subscription status. We
-                do not store your payment card details.
+                Subscription and billing data is processed by Stripe on the web, by
+                Apple on iPhone, and by Google Play on Android. RevenueCat manages
+                subscription status in the iPhone and Android apps. We do not store
+                your payment card details.
               </li>
             </ul>
           </section>
@@ -255,7 +256,8 @@ export default function PrivacyPage() {
                   Payments:
                 </span>{" "}
                 Stripe for subscription billing on the web; Apple and RevenueCat
-                for subscriptions on iPhone
+                for subscriptions on iPhone; Google Play and RevenueCat for
+                subscriptions on Android
               </li>
               <li>
                 <span className="font-medium text-[var(--foreground)]">
@@ -480,7 +482,14 @@ export default function PrivacyPage() {
               When you delete your account, we remove your personal data and
               content from our active systems within 30 days, except where we are
               required to retain limited records to comply with legal, tax, or
-              accounting obligations. Backups are purged on a rolling basis.
+              accounting obligations. Backups are purged on a rolling basis.{" "}
+              <Link
+                href="/delete-account"
+                className="text-[var(--brand-blue)] underline decoration-[var(--brand-blue)]/30 underline-offset-2 transition-colors hover:text-[var(--brand-blue-hover)]"
+              >
+                How to delete your account
+              </Link>
+              .
             </p>
           </section>
 
