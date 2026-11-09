@@ -19,3 +19,7 @@ Drafted 2026-09-23 from Searchable data, the Fastlane and lans.app sitemaps, and
 | REVIEW.md | How to review the branch |
 
 Read 00, then 09, then 06, then dip into the sections.
+
+## Daily operating guide
+
+Read [the daily SEO and GEO playbook](18-daily-geo-playbook.md) before each run. [The November 9 ledger](daily/2026-11-09.md) records the evidence, publishing decisions and release status for the first daily batch.

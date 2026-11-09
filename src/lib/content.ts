@@ -126,6 +126,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     schema: "HowTo",
     intro: "Short guides with real numbers, written from our own footage. Plan, film, edit, then grow. Each one ends with the prompt that does the same job in Vyra.",
     groups: [
+      { label: "Edit on iPhone", slugs: ["add-transitions-to-videos-on-iphone", "add-captions-to-videos-on-iphone", "match-a-reference-video-on-iphone", "trim-video-on-iphone", "split-video-on-iphone", "combine-videos-on-iphone", "add-music-to-video-on-iphone", "adjust-video-volume-on-iphone", "add-voiceover-to-video-on-iphone", "add-text-to-video-on-iphone", "make-vertical-video-on-iphone", "export-video-to-photos-on-iphone", "record-video-in-vyra-on-iphone", "edit-vlog-on-iphone", "edit-art-process-video-on-iphone", "edit-reels-on-iphone", "make-before-after-video-on-iphone"] },
       { label: "Plan", slugs: ["write-a-hook", "structure-a-storytelling-video", "find-your-niche", "build-a-series", "batch-film-a-week"] },
       { label: "Film", slugs: ["frame-yourself", "light-a-talking-head", "record-clean-audio", "shoot-b-roll", "vlog"] },
       { label: "Edit", slugs: ["pace-a-short-form-video", "choose-captions", "cut-a-talking-head", "make-motion-graphics", "choose-music", "edit-for-retention", "repurpose-long-form-to-shorts"] },
@@ -159,6 +160,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     schema: "Article",
     intro: "Short answers to the questions people ask about AI video editing. Numbers where we have them, and what we do not know yet.",
     groups: [
+      { label: "Editing on iPhone", slugs: ["can-ai-edit-camera-roll-videos", "can-vyra-edit-in-background-on-iphone", "iphone-video-editor-free-vs-paid"] },
       { label: "Picking an editor", slugs: ["best-ai-video-editor", "best-video-editor-for-beginners", "easiest-video-editor-for-social-media", "can-i-try-an-ai-video-editor-free", "can-i-try-a-video-editor-before-buying", "how-to-switch-video-editors", "video-editor-free-vs-paid", "how-much-does-a-professional-video-editor-cost", "what-ai-tools-do-content-creators-use"] },
       { label: "How AI editing works", slugs: ["can-ai-understand-raw-footage", "how-accurate-is-ai-transcription-for-captions", "what-video-formats-does-ai-editing-support", "can-ai-generate-motion-graphics-from-text", "does-beat-sync-work-for-every-genre", "does-scene-detection-work-in-low-light", "conversational-editing-vs-traditional-editing", "does-an-automated-video-maker-save-time", "automated-video-maker-vs-manual-editing", "can-ai-replace-content-creators"] },
       { label: "Time and workflow", slugs: ["why-does-vlog-editing-take-so-long", "how-long-does-it-take-to-edit-a-video", "how-to-automate-a-tiktok-editing-workflow"] },
@@ -333,7 +335,7 @@ export type Faq = { q: string; a: string };
 
 /** Pull Q/A pairs out of a "## FAQ" section. Questions are bold lines or ### headings. */
 export function extractFaq(body: string): Faq[] {
-  const m = body.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |\Z)/m);
+  const m = body.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m);
   if (!m) return [];
   const block = m[1];
   const lines = block.split("\n");

@@ -85,6 +85,7 @@ Yes. See [/formats/semester-recap-montage](/formats/semester-recap-montage).
 
 ## Related
 
+- /how-to/edit-art-process-video-on-iphone
 - [/formats/speed-paint](/formats/speed-paint)
 - [/formats/process-video](/formats/process-video)
 - [/formats/commission-reveal](/formats/commission-reveal)

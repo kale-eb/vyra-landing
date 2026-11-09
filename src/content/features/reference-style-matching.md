@@ -1,7 +1,7 @@
 ---
 title: "Reference style matching: make your footage look like a video you love"
 description: Attach a reference video and tell Vyra what to copy. Pacing, captions, music behavior, color. It applies that to your own footage.
-updated: 2026-09-24
+updated: 2026-11-08
 category: feature
 reels:
   - DY75P9PtMhO
@@ -70,6 +70,8 @@ Yes. "Copy the caption style only. Keep my pacing and music."
 
 ## Related
 
+- /answers/can-ai-edit-camera-roll-videos
+- /how-to/match-a-reference-video-on-iphone
 - /prompts/reference-style
 - /prompts/troubleshooting
 - /features/ai-captions
