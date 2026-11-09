@@ -4,6 +4,7 @@ import Steps from "@/components/Steps";
 import HowItWorks from "@/components/HowItWorks";
 import MadeWithVyra from "@/components/MadeWithVyra";
 import CreatorCaseStudy from "@/components/CreatorCaseStudy";
+import Testimonials from "@/components/Testimonials";
 import Alternatives from "@/components/Alternatives";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
@@ -59,6 +60,7 @@ export default async function Home() {
         <HowItWorks />
         <MadeWithVyra userCount={userCount} />
         <CreatorCaseStudy />
+        <Testimonials />
         <Alternatives />
         <Pricing />
         <FAQ />

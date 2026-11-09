@@ -33,23 +33,6 @@ const PREVIEW_VIDEO = "/videos/color-wheel.mp4";
 
 const MSG = "Cut my clips to the beat and make a color wheel edit";
 
-/* Progress messages streamed while Vyra "works", keyed to scroll progress */
-const AI_MESSAGES = [
-  { at: 0.2, text: "On it. Watching your 9 clips now." },
-  { at: 0.28, text: "Scenes detected, speech transcribed." },
-  { at: 0.36, text: "Found the best moments in your studio footage." },
-  { at: 0.44, text: "Beat map ready. Cutting on the drops." },
-  { at: 0.54, text: "12 cuts placed on V1." },
-  { at: 0.62, text: "Layering the spinning color wheel graphic." },
-  { at: 0.72, text: "Placing captions on two overlay tracks." },
-];
-
-/* Story beats, as fractions of scroll progress */
-const T_TYPE_START = 0.02;
-const T_TYPE_END = 0.14;
-const T_SEND = 0.15;
-const T_REPLY = 0.84;
-
 function clamp01(v: number) {
   return Math.min(1, Math.max(0, v));
 }
@@ -61,7 +44,6 @@ interface Clip {
   label?: string;
   badge?: boolean;
   thumb?: string;
-  appearAt: number;
 }
 
 interface Track {
@@ -79,43 +61,43 @@ const TRACKS: Track[] = [
     name: "O3",
     count: 8,
     clips: [
-      { left: 33, width: 7, color: PURPLE, label: "text", badge: true, appearAt: 0.7 },
-      { left: 49, width: 7, color: PURPLE, label: "text", badge: true, appearAt: 0.74 },
-      { left: 65, width: 7, color: PURPLE, label: "text", badge: true, appearAt: 0.78 },
-      { left: 81, width: 7, color: PURPLE, label: "text", badge: true, appearAt: 0.82 },
+      { left: 33, width: 7, color: PURPLE, label: "text", badge: true },
+      { left: 49, width: 7, color: PURPLE, label: "text", badge: true },
+      { left: 65, width: 7, color: PURPLE, label: "text", badge: true },
+      { left: 81, width: 7, color: PURPLE, label: "text", badge: true },
     ],
   },
   {
     name: "O2",
     count: 9,
     clips: [
-      { left: 0, width: 31, color: PURPLE, label: "text", appearAt: 0.64 },
-      { left: 41, width: 7, color: PURPLE, badge: true, appearAt: 0.68 },
-      { left: 57, width: 7, color: PURPLE, badge: true, appearAt: 0.72 },
-      { left: 73, width: 7, color: PURPLE, badge: true, appearAt: 0.76 },
-      { left: 89, width: 7, color: PURPLE, badge: true, appearAt: 0.8 },
+      { left: 0, width: 31, color: PURPLE, label: "text" },
+      { left: 41, width: 7, color: PURPLE, badge: true },
+      { left: 57, width: 7, color: PURPLE, badge: true },
+      { left: 73, width: 7, color: PURPLE, badge: true },
+      { left: 89, width: 7, color: PURPLE, badge: true },
     ],
   },
   {
     name: "O1",
     count: 1,
     clips: [
-      { left: 0, width: 100, color: CYAN, label: "motionGraphic", appearAt: 0.6 },
+      { left: 0, width: 100, color: CYAN, label: "motionGraphic" },
     ],
   },
   {
     name: "V1",
     count: 9,
     clips: [
-      { left: 0, width: 31, color: LAVENDER, label: "video", thumb: "/images/colorwheel/cw-1.jpg", appearAt: 0.22 },
-      { left: 33, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-2.jpg", appearAt: 0.28 },
-      { left: 41, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-3.jpg", appearAt: 0.33 },
-      { left: 49, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-4.jpg", appearAt: 0.38 },
-      { left: 57, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-2.jpg", appearAt: 0.42 },
-      { left: 65, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-3.jpg", appearAt: 0.46 },
-      { left: 73, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-4.jpg", appearAt: 0.5 },
-      { left: 81, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-1.jpg", appearAt: 0.54 },
-      { left: 89, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-2.jpg", appearAt: 0.58 },
+      { left: 0, width: 31, color: LAVENDER, label: "video", thumb: "/images/colorwheel/cw-1.jpg" },
+      { left: 33, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-2.jpg" },
+      { left: 41, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-3.jpg" },
+      { left: 49, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-4.jpg" },
+      { left: 57, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-2.jpg" },
+      { left: 65, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-3.jpg" },
+      { left: 73, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-4.jpg" },
+      { left: 81, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-1.jpg" },
+      { left: 89, width: 7, color: LAVENDER, thumb: "/images/colorwheel/cw-2.jpg" },
     ],
   },
 ];
@@ -149,22 +131,10 @@ function RevertIcon() {
   );
 }
 
-/* The shared conversation: bubble -> streamed progress -> reply */
-function ChatStream({
-  sent,
-  replied,
-  thinking,
-  visibleMessages,
-}: {
-  sent: boolean;
-  replied: boolean;
-  thinking: boolean;
-  visibleMessages: { at: number; text: string }[];
-}) {
+/* Show the finished conversation from the first render. */
+function ChatStream() {
   return (
-    /* justify-end + overflow-hidden makes this a stream: the panel height is
-       fixed, so new messages push older ones out the top instead of growing
-       the card and reflowing the pinned hero mid-scroll. */
+    // Keep the completed conversation inside the fixed-height chat panel.
     <div
       className="flex min-h-0 flex-1 flex-col justify-end gap-1.5 overflow-hidden px-2.5 py-2.5 md:gap-2 md:px-3 md:py-3"
       style={{
@@ -174,49 +144,26 @@ function ChatStream({
     >
       <div
         className="shrink-0 rounded-xl bg-white/[0.07] px-2.5 py-1.5 transition-all duration-300 md:px-3 md:py-2"
-        style={{ opacity: sent ? 1 : 0, transform: sent ? "translateY(0)" : "translateY(6px)" }}
       >
         <p className="text-[11px] leading-relaxed text-white/90 md:text-[13px]">{MSG}</p>
       </div>
 
-      {visibleMessages.map((m) => (
-        <p
-          key={m.at}
-          className="shrink-0 text-[10.5px] leading-snug text-white/55 transition-all duration-300 md:text-[12px]"
-        >
-          {m.text}
-        </p>
-      ))}
-
-      {thinking && (
-        <div className="flex shrink-0 items-center gap-1.5 pl-0.5">
-          <span className="h-1 w-1 animate-pulse rounded-full bg-white/50" />
-          <span className="h-1 w-1 animate-pulse rounded-full bg-white/50 [animation-delay:150ms]" />
-          <span className="h-1 w-1 animate-pulse rounded-full bg-white/50 [animation-delay:300ms]" />
-        </div>
-      )}
-
-      {replied && (
-        <>
-          <p className="shrink-0 text-[10.5px] leading-snug text-white/75 transition-opacity duration-300 md:text-[12px]">
-            Done. 12 cuts synced to the beat, color wheel spinning on top,
-            captions placed.
-          </p>
-          <span className="flex shrink-0 items-center gap-1 text-[10px] text-white/25">
-            <RevertIcon />
-            Revert
-          </span>
-        </>
-      )}
+      <p className="shrink-0 text-[10.5px] leading-snug text-white/75 md:text-[12px]">
+        Done. 12 cuts synced to the beat, color wheel spinning on top,
+        captions placed.
+      </p>
+      <span className="flex shrink-0 items-center gap-1 text-[10px] text-white/25">
+        <RevertIcon />
+        Revert
+      </span>
     </div>
   );
 }
 
-function SendButton({ active }: { active: boolean }) {
+function SendButton() {
   return (
     <span
       className="ml-auto flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-200 md:h-6 md:w-6"
-      style={{ transform: active ? "scale(1.1)" : "scale(1)" }}
     >
       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 2L11 13" />
@@ -233,37 +180,16 @@ export default function EditorMockup({
   progress: number;
   client: ClientKey;
 }) {
-  const typedCount = Math.floor(clamp01((p - T_TYPE_START) / (T_TYPE_END - T_TYPE_START)) * MSG.length);
-  const typed = MSG.slice(0, typedCount);
-  const sent = p >= T_SEND;
-  const replied = p >= T_REPLY;
-  const thinking = sent && !replied;
-  const visibleMessages = sent ? AI_MESSAGES.filter((m) => p >= m.at) : [];
-
-  // Latest video clip that has landed drives the preview while assembling
-  const landedThumbs = TRACKS[3].clips.filter((c) => c.thumb && p >= c.appearAt);
-  const activeThumb = landedThumbs.length
-    ? landedThumbs[landedThumbs.length - 1].thumb
-    : null;
-
-  const playheadX = 4 + clamp01((p - 0.22) / 0.68) * 74;
+  // Scrolling only moves the playhead; the edit stays fully populated.
+  const playheadX = 4 + clamp01(p) * 74;
   const external = client !== "vyra" ? CLIENT_META[client] : null;
 
   const typingRow = (
     <>
-      {/* One clipped line: letting the typed prompt wrap would resize the
-          input row on every keystroke frame. */}
-      {!sent && typed ? (
-        <span className="min-w-0 flex-1 truncate whitespace-nowrap text-[11px] text-white/85 md:text-[12px]">
-          {typed}
-          <span className="ml-px inline-block h-[11px] w-px animate-pulse bg-white/70 align-middle" />
-        </span>
-      ) : (
-        <span className="min-w-0 flex-1 truncate text-[11px] text-white/25 md:text-[12px]">
-          {external ? external.input : "Ask anything..."}
-        </span>
-      )}
-      <SendButton active={!sent && typedCount > 0} />
+      <span className="min-w-0 flex-1 truncate text-[11px] text-white/25 md:text-[12px]">
+        {external ? external.input : "Ask anything..."}
+      </span>
+      <SendButton />
     </>
   );
 
@@ -271,25 +197,11 @@ export default function EditorMockup({
     /* Width-driven on phones (the column is narrow and the body is short),
        height-driven from md up where there's room to spare. */
     <div className="relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-md bg-black ring-1 ring-white/[0.08] md:h-full md:w-auto">
-      {activeThumb && (
-        <img
-          src={activeThumb}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300"
-          style={{ opacity: replied ? 0 : 1 }}
-        />
-      )}
       <LazyVideo
         src={PREVIEW_VIDEO}
         poster="/images/posters/color-wheel.jpg"
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
-        style={{ opacity: replied ? 1 : 0 }}
       />
-      {!activeThumb && !replied && (
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/20">
-          Preview
-        </span>
-      )}
     </div>
   );
 
@@ -358,7 +270,7 @@ export default function EditorMockup({
                 <RevertIcon />
               </span>
             </div>
-            <ChatStream sent={sent} replied={replied} thinking={thinking} visibleMessages={visibleMessages} />
+            <ChatStream />
             {/* Input */}
             <div className="flex shrink-0 flex-col gap-1 px-2.5 pb-2.5 md:gap-1.5 md:px-3 md:pb-3">
               <span className="flex items-center gap-1 text-[9px] text-white/40 md:text-[10px]">
@@ -422,7 +334,7 @@ export default function EditorMockup({
                 Connected to Vyra via MCP
               </span>
             </div>
-            <ChatStream sent={sent} replied={replied} thinking={thinking} visibleMessages={visibleMessages} />
+            <ChatStream />
             {/* Input */}
             <div className="shrink-0 px-2.5 pb-2.5 md:px-3 md:pb-3">
               <div className="flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.04] px-2 py-1.5 md:gap-2 md:rounded-xl md:px-3 md:py-2">
@@ -436,9 +348,7 @@ export default function EditorMockup({
       {/* ---- Timeline ---- */}
       <div className="border-t border-white/[0.06] bg-[#0f0f0f]">
         {/* Toolbar */}
-        {/* Fixed height + clipped: the "is editing" label appears partway
-            through the story, and on a 320px screen it used to wrap onto a
-            second line and grow the whole pinned card mid-scroll. */}
+        {/* Keep the toolbar on one line on narrow screens. */}
         <div className="flex h-7 shrink-0 items-center gap-3 overflow-hidden px-3 text-[10px] text-white/35">
           <span className="hidden sm:block">Delete</span>
           <span className="hidden sm:block">Split</span>
@@ -451,12 +361,6 @@ export default function EditorMockup({
           </svg>
           <span className="text-white/70">00:00</span>
           <span>| 00:15</span>
-          {thinking && (
-            <span className="ml-auto flex shrink-0 items-center gap-1.5 whitespace-nowrap text-[9px] text-[#5fd4ea]">
-              <span className="h-1 w-1 shrink-0 animate-pulse rounded-full bg-[#5fd4ea]" />
-              {external ? `${external.name} is editing` : "Vyra is editing"}
-            </span>
-          )}
         </div>
         {/* Ruler */}
         <div className="ml-[88px] flex justify-between border-b border-t border-white/[0.05] px-1 py-0.5 sm:ml-[104px]">
@@ -484,7 +388,6 @@ export default function EditorMockup({
               {/* Clip lane */}
               <div className="relative h-full flex-1 overflow-hidden">
                 {track.clips.map((clip, ci) => {
-                  const landed = p >= clip.appearAt;
                   return (
                     <div
                       key={ci}
@@ -492,8 +395,6 @@ export default function EditorMockup({
                         left: `${clip.left}%`,
                         width: `${clip.width}%`,
                         backgroundColor: clip.color,
-                        opacity: landed ? 1 : 0,
-                        transform: landed ? "translateY(0) scaleX(1)" : "translateY(6px) scaleX(0.9)",
                         transformOrigin: "left center",
                       }}
                       className="absolute top-0 flex h-full items-center overflow-hidden rounded-[4px] px-1.5 transition-all duration-500"
@@ -523,7 +424,7 @@ export default function EditorMockup({
           <div className="pointer-events-none absolute inset-y-0 left-[88px] right-0 sm:left-[104px]">
             <div
               className="absolute bottom-1 top-0 w-px bg-white/80 transition-opacity duration-300"
-              style={{ left: `${playheadX}%`, opacity: p > 0.22 ? 1 : 0 }}
+              style={{ left: `${playheadX}%` }}
             >
               <span className="absolute -left-[3px] -top-px h-[5px] w-[7px] rounded-b-sm bg-white" />
             </div>
