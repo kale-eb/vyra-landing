@@ -7,6 +7,7 @@ import {
   useScroll,
   useTransform,
   useMotionValueEvent,
+  useReducedMotion,
 } from "framer-motion";
 import Image from "next/image";
 import IosAppButton from "./IosAppButton";
@@ -66,6 +67,7 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
   const sectionRef = useRef<HTMLElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const { displayed, settled } = useHeadlineTypewriter();
+  const reducedMotion = useReducedMotion();
 
   // Scroll-linked zoom on the sky background
   const { scrollYProgress } = useScroll({
@@ -74,15 +76,17 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
   });
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
-  // Scroll-driven editor story: the mockup pins while progress 0->1 plays
-  // the chat -> thinking -> timeline assembly -> reply sequence.
+  // The finished edit is visible immediately. Scroll adds a small lift and
+  // moves the playhead without hiding the preview, conversation, or clips.
   const { scrollYProgress: storyScroll } = useScroll({
     target: storyRef,
-    offset: ["start 0.55", "end 0.95"],
+    offset: ["start 0.55", "end start"],
   });
+  const editorY = useTransform(storyScroll, [0, 1], [0, -12]);
+  const editorScale = useTransform(storyScroll, [0, 1], [1, 1.015]);
   // Quantize before it hits React state. The raw motion value fires on every
   // scroll frame; re-rendering the whole mockup that often drops frames on
-  // phones. The story beats sit on ~0.02 boundaries, so 1/200 loses nothing.
+  // phones. Small progress steps keep the playhead movement smooth.
   const [storyProgress, setStoryProgress] = useState(0);
   useMotionValueEvent(storyScroll, "change", (v) => {
     const q = Math.round(v * 200) / 200;
@@ -245,29 +249,19 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
         </p>
       </div>
 
-      {/* Hero visual - the Vyra editor, pinned while scroll plays the story */}
+      {/* Hero visual, populated on the first render */}
       <div
         ref={storyRef}
-        className="relative z-10 mx-auto mt-8 h-[115vh] w-full max-w-5xl px-0 sm:px-4 md:mt-12 md:h-[145vh]"
+        className="relative z-10 mx-auto mt-8 w-full max-w-5xl px-0 sm:px-4 md:mt-12"
       >
-        {/* Clears the 72px navbar so the pinned mockup never tucks under it.
-            translateZ keeps the pinned card on its own compositor layer, so
-            mobile Safari repaints it cleanly instead of flashing mid-scroll. */}
-        <div
-          className="sticky top-[84px] md:top-20"
-          style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
+        <motion.div
+          style={{
+            y: reducedMotion ? 0 : editorY,
+            scale: reducedMotion ? 1 : editorScale,
+            backfaceVisibility: "hidden",
+          }}
         >
-          <div
-            className="rise relative"
-            style={
-              {
-                "--rise-y": "60px",
-                "--rise-scale": "0.96",
-                "--rise-dur": "1s",
-                "--rise-delay": "0.9s",
-              } as React.CSSProperties
-            }
-          >
+          <div className="relative">
             {/* Subtle glow */}
             <div className="pointer-events-none absolute inset-0">
               <div
@@ -276,18 +270,11 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
               />
             </div>
 
-            <EditorMockup progress={storyProgress} client={client} />
+            <EditorMockup progress={reducedMotion ? 0 : storyProgress} client={client} />
 
             {/* Client switcher - swaps the editor preview above */}
             <div
-              className="rise mt-4 flex flex-wrap items-center justify-center gap-1.5 px-4 text-[12px] md:mt-5 md:gap-2 md:text-[13px]"
-              style={
-                {
-                  "--rise-y": "12px",
-                  "--rise-dur": "0.6s",
-                  "--rise-delay": "1.15s",
-                } as React.CSSProperties
-              }
+              className="mt-4 flex flex-wrap items-center justify-center gap-1.5 px-4 text-[12px] md:mt-5 md:gap-2 md:text-[13px]"
             >
               <span className="mr-0.5 w-full text-center text-[var(--foreground-subtle)] sm:w-auto sm:text-left md:mr-1">
                 Edit with
@@ -311,7 +298,7 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="h-8 md:h-10" />
 
