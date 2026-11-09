@@ -66,6 +66,7 @@ Word-by-word or highlight for fast talking heads. Plain phrases for calmer expla
 
 ## Related
 
+- /how-to/add-captions-to-videos-on-iphone
 - /tools/add-subtitles-to-video
 - /features/ai-captions
 - /prompts/captions

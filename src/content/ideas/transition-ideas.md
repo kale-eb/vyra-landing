@@ -20,6 +20,8 @@ The transition that did best for me was a plain hard cut. A blank canvas, then t
 
 ## How to use this list
 
+Editing on your phone? See [how to add transitions in the Vyra iPhone app](/how-to/add-transitions-to-videos-on-iphone) for the timeline steps. This list helps you plan and film the shots on either side of the cut.
+
 1. Pick the transition before you film. Most of them need both shots planned.
 2. End shot one and start shot two in the same part of the frame, moving at the same speed.
 3. Film each side two or three times so you can pick the pair that lines up.
@@ -282,6 +284,7 @@ Edit transitions like mask wipes, zoom punches, and speed ramps work on any foot
 
 ## Related
 
+- /how-to/make-before-after-video-on-iphone
 - /tools/cut-video-to-music
 - /formats/beat-synced-edit
 - /how-to/pace-a-short-form-video

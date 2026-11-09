@@ -70,6 +70,7 @@ No. A silent vlog with captions and music works, especially for travel and proce
 
 ## Related
 
+- /how-to/edit-vlog-on-iphone
 - /how-to/shoot-b-roll
 - /how-to/record-clean-audio
 - /how-to/structure-a-storytelling-video

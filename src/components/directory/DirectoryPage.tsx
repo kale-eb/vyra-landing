@@ -2,8 +2,10 @@ import Link from "next/link";
 import Markdown from "./Markdown";
 import DirectoryNav from "./DirectoryNav";
 import Footer from "@/components/Footer";
+import IosAppButton from "@/components/IosAppButton";
 import ReelStrip from "./ReelStrip";
 import NewsletterCards from "./NewsletterCards";
+import MobileFaq from "./MobileFaq";
 import { reelEmbedUrl, reelUrl, resolveReels } from "@/lib/reels";
 import { getNewsletterPosts } from "@/lib/newsletter";
 import { childLinks } from "@/lib/pseo/links";
@@ -205,6 +207,10 @@ function Meta({ entry }: { entry: Entry }) {
 }
 
 export default function DirectoryPage({ entry }: { entry: Entry }) {
+  const isIphonePage = entry.data.platform === "iphone";
+  const articleBody = stripLeadingSummary(entry.body, entry.description);
+  const faqBlock = isIphonePage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
+  const mobileFaqs = faqBlock ? extractFaq(entry.body) : [];
   const sectionMeta = entry.section === "product" ? null : SECTIONS[entry.section as SectionKey];
   const related = extractRelated(entry.body, entry.url)
     .map(resolveUrl)
@@ -235,6 +241,11 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
               {entry.title}
             </h1>
             <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{entry.description}</p>
+            {isIphonePage && (
+              <div className="mt-5">
+                <IosAppButton sourcePage={entry.url} placement="header" />
+              </div>
+            )}
             <p className="mt-4 text-[13px] text-[var(--foreground-subtle)]">
               By{" "}
               <Link href="/author/sulan" className="underline underline-offset-2 hover:text-[var(--foreground)]">
@@ -283,7 +294,13 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
 
           <ReelStrip reels={reels} />
 
-          <Markdown source={stripLeadingSummary(entry.body, entry.description)} />
+          {faqBlock && mobileFaqs.length ? (
+            <>
+              <Markdown source={articleBody.slice(0, faqBlock.index)} />
+              <MobileFaq items={mobileFaqs} sourcePage={entry.url} />
+              <Markdown source={articleBody.slice((faqBlock.index ?? 0) + faqBlock[0].length)} />
+            </>
+          ) : <Markdown source={articleBody} />}
 
           <NewsletterCards posts={newsletterPosts} />
         </article>
@@ -334,16 +351,26 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
         )}
 
         <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
-          <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Try it on your own footage</h2>
+          <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">
+            {isIphonePage ? "Edit your footage on iPhone" : "Try it on your own footage"}
+          </h2>
           <p className="mb-5 text-[15px] text-[var(--foreground-muted)]">
-            Upload your clips, say what you want, get the edit back. 3-day free trial.
+            {isIphonePage
+              ? "New mobile accounts get 100 free credits. Free exports are 720p with a watermark."
+              : "Upload your clips, say what you want, get the edit back. 3-day free trial."}
           </p>
-          <a
-            href="https://app.usevyra.com/signup"
-            className="inline-block rounded-full bg-[var(--foreground)] px-6 py-3 text-[14px] font-semibold text-white"
-          >
-            Start editing with Vyra
-          </a>
+          {isIphonePage ? (
+            <>
+              <IosAppButton sourcePage={entry.url} placement="footer" />
+              <p className="mt-4 text-[13px] text-[var(--foreground-muted)]">
+                Editing on a computer? <Link href="/ai-video-editor-online" className="underline underline-offset-2">Try the web editor</Link> with a 3-day free trial.
+              </p>
+            </>
+          ) : (
+            <a href="https://app.usevyra.com/signup" className="inline-block rounded-full bg-[var(--foreground)] px-6 py-3 text-[14px] font-semibold text-white">
+              Start editing with Vyra
+            </a>
+          )}
         </div>
       </main>
       <Footer />
