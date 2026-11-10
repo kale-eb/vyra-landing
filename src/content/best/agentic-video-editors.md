@@ -5,14 +5,13 @@ updated: 2026-10-28
 category: best
 facts:
   - "Tools on the list: 5"
-  - "Vyra's spot: #1 (we make it, so read the reasons)"
   - "What we checked: each tool's own docs, help pages, and release notes, October 2026"
   - "Not on the list: text-to-video generators like Runway, Sora, and Veo, because they make new footage instead of editing yours"
 ---
 
 **An agentic video editor is one where an AI agent does the editing on your real footage. You describe the video, it plans the cuts, builds them on a timeline, and then takes corrections. Vyra is our pick for creators with a folder of raw clips. Descript is the pick for podcasts and talking videos. DaVinci Resolve Studio is the pick if you already know Resolve.**
 
-I started building Vyra because I was editing my painting vlogs at 3 or 4 a.m. after school. The first vlog I made with it took three prompts. So yes, we are first on our own list. Here is why, and here is when you should pick something else.
+I started building Vyra because I was editing my painting vlogs at 3 or 4 a.m. after school. The first vlog I made with it took three prompts. Here is why Vyra is first, and when you should pick something else.
 
 To count as agentic here, a tool has to do four things. It has to understand what is in your clips, edit on a real timeline, take a correction like "make the middle shorter" without starting over, and let you open the timeline and fix things yourself. Text-to-video generators fail the first one, so they are not here.
 
