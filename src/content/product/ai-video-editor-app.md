@@ -122,4 +122,5 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 - /ai-video-editor
 - /answers/is-vyra-free
 - /answers/is-vyra-on-android
+- /how-to/speed-up-a-video-on-iphone
 - /app-support
