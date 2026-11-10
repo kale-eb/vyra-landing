@@ -1,7 +1,7 @@
 ---
 title: "How to save your edited video to Photos on iPhone"
 description: "Export a finished Vyra edit to your iPhone photo library, check the saved file and keep export quality separate from canvas shape."
-updated: '2026-11-09'
+updated: '2026-11-10'
 category: how-to
 platform: iphone
 level: beginner
@@ -34,7 +34,7 @@ If you are posting a vertical video, check that the exported framing matches the
 
 ## If saving does not finish
 
-Keep the project available and note whether the failure happened during export or while saving to Photos. Check the app's photo-library permission and available phone storage. If you need help, send support the error message and the stage that failed. Do not delete your source clips as a first troubleshooting step.
+Keep the project available and note whether the failure happened during export or while saving to Photos. Check any photo-library permission request and available phone storage. Use the [iPhone export troubleshooting guide](/answers/why-cant-i-export-video-on-iphone) for the next checks. If the file saved but has [missing sound](/answers/why-does-my-exported-video-have-no-sound) or looks [unexpectedly blurry](/answers/why-does-my-exported-video-look-blurry), compare it with the project preview. Keep your source clips while you ask for help.
 
 ## FAQ
 

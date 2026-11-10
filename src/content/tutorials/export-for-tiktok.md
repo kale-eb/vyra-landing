@@ -1,54 +1,58 @@
 ---
-title: How to export for TikTok in Vyra
-description: "Export a 9:16 MP4 at 1080x1920 with captions clear of TikTok's bottom UI, choose a bitrate, and get a second version for Reels or Shorts from the same cut."
-updated: 2026-09-24
+title: How to export a Vyra edit for TikTok
+description: "Review your vertical edit, choose the available export options and check the saved video with sound before uploading it to TikTok."
+updated: '2026-11-10'
 category: tutorial
-video: TODO
 reels:
   - Da_tDQwtc-M
 ---
 
-**TikTok wants a vertical 9:16 MP4 at 1080x1920 with nothing important in the bottom 15 percent of the frame. Confirm the canvas is 9:16, check the captions, export with the quality slider up. The same file works for Reels and Shorts.**
+**For a TikTok edit, review the vertical framing, make sure the captions are readable and export using the options available for your plan. Open the saved video with sound before uploading it. Confirm the beginning, ending and any sections you recently changed.**
 
-## Before you start
-
-- The edit is done and captioned.
-- The canvas is 9:16. If you cut from 16:9, reframe first.
-- Exports go up to 1440p on Starter and 4K on Pro. 1080x1920 is enough for TikTok.
+Keep important text away from the areas where the destination app puts its controls. Check the destination's preview, since controls and layouts can change.
 
 ## Steps
 
-1. **Confirm the canvas.** Ask the agent, or look at the preview shape. If it's not 9:16, ask for a vertical version that keeps you centered.
-2. **Check the safe zone.** Capture a frame at a captioned moment. Captions should sit above the bottom 15 percent and clear of the right-side buttons.
-3. **Check the first frame.** TikTok uses it as the cover unless you pick one. Make sure it's a real shot, not black.
-4. **Open export.** Pick the Instagram / TikTok preset (1080p, 20 Mbps, MP4) or set it yourself.
-5. **Set the bitrate.** Slide toward higher quality. TikTok re-encodes, so start from a good file.
-6. **Export and download.** Keep the tab open until it finishes. Export runs in your browser.
-7. **Other versions.** The same file works for Reels and Shorts. A 1:1 crop for the feed is a separate export.
+1. **Review the frame.** For a vertical video, make sure the subject is visible and any crop leaves the important details in view.
+2. **Read the captions.** Check every line at normal phone size. Look for text hidden by the destination's controls.
+3. **Listen through the edit.** Check speech, music and the ending separately.
+4. **Choose available export options.** Canvas proportions and output quality are separate. Use the choices shown for your current app and plan.
+5. **Let the export finish.** Then save or download the finished result using the available action.
+6. **Check the actual file.** Open the latest export with sound and compare important sections with the preview.
+7. **Upload and review.** Check the video in TikTok's posting preview before you publish it.
 
-## The prompt to use
+Free iPhone exports are 720p with a watermark. Check paid mobile options in the App Store and web options on [pricing](/pricing). Do not assume the same export choices apply to both platforms.
+
+## A review prompt
 
 ```
-Confirm this project is 9:16. Capture frames at 0:02, 0:15, and the last second so I can check caption placement and the cover frame. Then export as MP4 at 1080x1920, high quality, for TikTok.
+Check that this edit is vertical and my subject stays in frame. Review caption placement at the opening, the middle and the final shot. Keep the edit unchanged until I confirm what needs adjusting.
 ```
 
-## Check the result
+## If export fails
 
-- MP4, 1080x1920, a reasonable size for a minute of video.
-- The first second is a real shot.
-- Open it in TikTok's composer on your phone and confirm the captions aren't hidden.
+Keep the project and original footage. Check whether a source clip is unavailable, whether export shows an error or whether the finished file simply has not been saved. Note the stage and approximate time when you contact [support](/app-support). Repeatedly exporting without checking the result can make it harder to identify the latest file.
+
+On iPhone, use the [export failure answer](/answers/why-cant-i-export-video-on-iphone). If the result has [missing sound](/answers/why-does-my-exported-video-have-no-sound) or [unexpected softness](/answers/why-does-my-exported-video-look-blurry), compare that exact section with the project preview.
 
 ## FAQ
 
-**Should I export at 4K for TikTok?**
-No. TikTok compresses to 1080p. Export 1080x1920 at a high bitrate instead.
+**Should I always choose the highest resolution?**
+Check the source footage, framing and available options first. A larger output cannot restore detail missing from the original recording.
 
-**Can I export without captions?**
-Yes. Ask the agent to hide the caption track and export again.
+**Can I share the same edit to Reels or Shorts?**
+You can use a finished file for another destination, but check its framing, captions and posting preview separately. One platform's controls may cover a different part of the video.
+
+**Do I have to keep Vyra in front during AI editing?**
+The current workflow supports background AI editing. Check the export's own progress and save step separately; a finished edit does not mean the file is already saved.
+
+**How do I investigate a silent export?**
+Compare the original, preview and exported file with playback volume turned up. The [audio troubleshooting answer](/answers/why-does-my-exported-video-have-no-sound) helps narrow down where sound disappears.
 
 ## Related
 
-- /prompts/export-for-platform
-- /answers/what-video-formats-does-ai-editing-support
-- /how-to/repurpose-long-form-to-shorts
-- /for/tiktok-creators
+- /how-to/export-video-to-photos-on-iphone
+- /answers/why-cant-i-export-video-on-iphone
+- /answers/why-does-my-exported-video-have-no-sound
+- /answers/why-does-my-exported-video-look-blurry
+- /how-to/make-vertical-video-on-iphone

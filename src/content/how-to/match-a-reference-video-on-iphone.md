@@ -1,7 +1,7 @@
 ---
 title: How to edit your iPhone videos using a reference Reel or TikTok
 description: "Share an Instagram Reel or TikTok to Vyra on iPhone, add your own footage and ask for the pacing or caption style you want to match."
-updated: '2026-11-08'
+updated: '2026-11-10'
 category: how-to
 platform: iphone
 level: beginner
@@ -30,6 +30,8 @@ Pick one thing you like about the reference before you start. "Use short caption
 6. **Review the draft.** Watch it with your own footage and ask for one change at a time. Use the timeline for an exact trim, then export to Photos or share from your iPhone.
 
 The share menu belongs to Instagram or TikTok, so its layout can change. The workflow above follows [Caleb's mobile release post](/blog/vyra-mobile), which describes sharing from both apps into Vyra.
+
+If the reference does not reach the project or will not open, check the [reference troubleshooting guide](/answers/why-wont-my-reference-video-open) before changing your edit.
 
 ## Tell Vyra which part of the style you mean
 

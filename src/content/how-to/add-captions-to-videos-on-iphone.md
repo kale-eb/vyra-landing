@@ -1,7 +1,7 @@
 ---
 title: How to add captions to videos on iPhone
 description: "Generate captions from your footage in the Vyra iPhone app, check the words, style the track and save the captioned video to Photos."
-updated: '2026-11-08'
+updated: '2026-11-10'
 category: how-to
 platform: iphone
 level: beginner
@@ -66,7 +66,7 @@ Keep the caption style consistent across the whole video. Move the captions a li
 | One caption has a different style | Apply the intended style to the whole caption track |
 | Captions appear during a quiet section | Check the timing against the spoken audio |
 
-If the recording is hard to hear, caption accuracy can suffer too. Listen before exporting. A generated transcript still needs a review.
+If the recording is hard to hear, caption accuracy can suffer too. Listen before exporting. A generated transcript still needs a review. If the words are correct but appear at the wrong moment, compare the preview and saved file using the [caption timing guide](/answers/why-are-my-captions-out-of-sync).
 
 ## Free and paid exports
 
