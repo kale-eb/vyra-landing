@@ -94,6 +94,10 @@ Use the reference video I attached for pacing and caption style. Keep my clips i
 - Free exports are 720p and carry a watermark.
 - Vyra edits footage you filmed. It isn't a generator that makes clips from a prompt.
 
+## Help if a step does not finish
+
+Keep your project and original clips while you check the problem. Start with [upload progress](/answers/why-is-my-video-upload-stuck) or [export and saving on iPhone](/answers/why-cant-i-export-video-on-iphone). For a finished file, compare [sound](/answers/why-does-my-exported-video-have-no-sound), [caption timing](/answers/why-are-my-captions-out-of-sync) and [image quality](/answers/why-does-my-exported-video-look-blurry) separately. [Vyra support](/app-support) can help if the problem remains.
+
 ## FAQ
 
 **Is the Vyra app free?**

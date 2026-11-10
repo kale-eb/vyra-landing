@@ -1,7 +1,7 @@
 ---
 title: "Can Vyra edit a video in the background on iPhone?"
 description: "Vyra runs AI editing on its servers, so you can leave the app after sending the footage and prompt. Check upload and export progress separately."
-updated: '2026-11-09'
+updated: '2026-11-10'
 category: answers
 platform: iphone
 facts:
@@ -26,7 +26,7 @@ That distinction matters when you want to put the phone away. If a clip has not 
 | Export | The finished video is being prepared |
 | Save | The exported file has been saved to Photos or shared |
 
-The current App Store notes also describe uploads continuing when the app is closed and resuming after interruption. That does not mean a missing connection or an interrupted transfer can be ignored indefinitely. Check the app's progress if a project is taking longer than expected.
+The current App Store notes also describe uploads continuing when the app is closed and resuming after interruption. That does not mean a missing connection or an interrupted transfer can be ignored indefinitely. Check the app's progress if a project is taking longer than expected. If you cannot tell which step stopped, use the [upload troubleshooting guide](/answers/why-is-my-video-upload-stuck).
 
 ## Before you put the phone away
 

@@ -1,52 +1,63 @@
 ---
-title: What video formats does AI editing support?
-description: "AI video editors typically accept MP4, MOV, H.264, HEVC/H.265, and ProRes from phones and cameras, and export MP4 in 9:16, 1:1, or 16:9 at up to 4K."
-updated: 2026-09-24
+title: What video formats can I use in Vyra?
+description: "Check that your original video opens, add a representative clip to Vyra and verify playback before importing the whole shoot. Review export options in your app."
+updated: '2026-11-10'
 category: answers
 ---
 
-**AI video editors typically accept what phones and cameras produce. MP4 and MOV containers with H.264, HEVC/H.265, or ProRes video, and AAC or PCM audio. They export MP4 (H.264) because every platform takes it. Vyra accepts MP4, MOV, and common phone and camera formats, plus images and audio (TODO confirm HEVC and ProRes), makes 720p proxies for smooth editing, and exports MP4 (H.264) at 480p, 720p, 1080p, original resolution, or upscaled to 1440p and 4K, or WebM (VP8) up to 1080p.**
+**Use your original footage and check one representative clip in Vyra before adding a whole shoot. A file ending in MP4 or MOV does not describe every detail of how it was recorded. Confirm that the clip plays with the expected picture and sound, then review the export options available in your app.**
 
-## Why
+The file you add, the shape of your edit and the quality of the saved result are separate choices. Changing one does not automatically fix the others.
 
-- Phones shoot HEVC by default. Any editor aimed at creators has to accept it.
-- Mirrorless cameras produce MP4 (H.264 or H.265). Pro workflows use ProRes in MOV.
-- TikTok, Instagram, YouTube, and LinkedIn all accept H.264 MP4 and transcode on their side. Exporting anything else adds risk for no gain.
-- Aspect ratio matters more than codec. 9:16 for TikTok, Reels, and Shorts. 1:1 for feed. 16:9 for YouTube.
-- Screen recordings and some phone modes record at variable frame rate, which can drift audio. Good editors normalize it on import.
+## Check these separately
 
-## What to do about it
+| Choice | What it tells you |
+| --- | --- |
+| Input file | The original video you are trying to add |
+| Playback | Whether the picture and sound are available in the project |
+| Canvas shape | Whether the edit is vertical, square or wide |
+| Export options | The output choices available for the current app and plan |
+| Saved file | The finished result you can actually open and share |
 
-1. **Shoot in the phone's default.** HEVC is fine.
-2. **Keep the original.** Re-encoding before upload only loses quality.
-3. **Decide the delivery ratio before editing.** Ask for 9:16 up front.
-4. **Export one master, then variants.** 9:16 for TikTok and Reels, 16:9 for YouTube if the footage supports it.
-5. **Check the bitrate slider.** Higher for a master, lower for a quick draft.
+## Before importing a large shoot
 
-## Do it in Vyra
+1. Keep an untouched copy of the original footage.
+2. Open a representative original video on your device and check the picture and audio.
+3. Add that clip to the intended Vyra project and check its progress.
+4. Play it in the project before adding the remaining footage.
+5. If it is rejected or never becomes available, keep the visible message and ask [support](/app-support) about that file. Include the recording device, file extension and approximate clip length.
 
-```
-This footage is 16:9 from a mirrorless camera. Make a 9:16 version that keeps me centered, and a 1:1 version for the feed. Export both as MP4 at high quality.
-```
+Do not convert or replace your only original as a first troubleshooting step. If support recommends trying another copy, preserve the original so you can compare them.
 
-```
-Export the final cut for TikTok at 1080x1920, 30 fps, high quality. Then a 4K 16:9 version for YouTube if the source resolution supports it.
-```
+## Export for the destination
+
+Choose the frame shape to suit the video. A vertical edit and a wide edit may need different framing even when they use the same footage. Check the available export choices rather than assuming an option exists in every plan or platform.
+
+Free iPhone exports are 720p with a watermark. New mobile accounts currently receive 100 free credits. Paid mobile plans are offered in the App Store. Web has a separate three-day trial. See the [mobile plan answer](/answers/iphone-video-editor-free-vs-paid) for that distinction.
+
+Open the saved result before posting. If it looks softer than expected, compare the original, the framing and the [exported file](/answers/why-does-my-exported-video-look-blurry).
 
 ## FAQ
 
-**Does Vyra accept 4K phone footage?**
-Yes. Upload the original. Export up to 1440p on AI Starter and 4K on AI Pro.
+**Does the MP4 or MOV extension guarantee the clip will work?**
+The extension alone is not enough to diagnose an individual file. Test a representative original and report any visible error if it does not open correctly.
 
-**What about screen recordings?**
-MP4 or MOV screen recordings work. If the audio drifts, it's usually variable frame rate.
+**Should I convert every clip before uploading?**
+Start with an original and keep it unchanged. If a particular file has a problem, ask support before converting the whole shoot.
 
-**Can I export a ProRes master?**
-Vyra exports MP4 (H.264, 5 to 50 Mbps) or WebM (VP8, up to 1080p), not ProRes. For a ProRes deliverable, export the High Quality preset or a custom 50 Mbps MP4 and transcode in a desktop tool.
+**Can I use screen recordings?**
+Test a representative recording in the project, including its sound. If playback differs from the original, report that difference rather than assuming the cause.
+
+**Is vertical video the same thing as high resolution?**
+No. Vertical describes the proportions of the frame. Resolution describes the output's pixel dimensions. Check the framing and export options separately.
+
+**Where do I check paid export options?**
+Use the plan and export choices shown in the app you are using. Mobile subscriptions and web plans are separate; do not assume one platform's settings apply to the other.
 
 ## Related
 
+- /tutorials/upload-and-index-footage
+- /answers/why-is-my-video-upload-stuck
 - /tutorials/export-for-tiktok
-- /how-to/repurpose-long-form-to-shorts
-- /prompts/export-for-platform
-- /glossary/aspect-ratio
+- /answers/why-does-my-exported-video-look-blurry
+- /answers/iphone-video-editor-free-vs-paid

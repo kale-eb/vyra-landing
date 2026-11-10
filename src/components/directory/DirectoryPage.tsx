@@ -208,8 +208,9 @@ function Meta({ entry }: { entry: Entry }) {
 
 export default function DirectoryPage({ entry }: { entry: Entry }) {
   const isIphonePage = entry.data.platform === "iphone";
+  const isSupportPage = entry.data.support === true;
   const articleBody = stripLeadingSummary(entry.body, entry.description);
-  const faqBlock = isIphonePage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
+  const faqBlock = isIphonePage || isSupportPage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
   const mobileFaqs = faqBlock ? extractFaq(entry.body) : [];
   const sectionMeta = entry.section === "product" ? null : SECTIONS[entry.section as SectionKey];
   const related = extractRelated(entry.body, entry.url)
@@ -229,7 +230,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
       {jsonLd.map((obj, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }} />
       ))}
-      <DirectoryNav crumbs={crumbs} />
+      <DirectoryNav crumbs={crumbs} support={isSupportPage} />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <article>
           <header className="mb-10">
@@ -241,7 +242,13 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
               {entry.title}
             </h1>
             <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{entry.description}</p>
-            {isIphonePage && (
+            {isSupportPage ? (
+              <p className="mt-5 text-[14px]">
+                <Link href="/app-support" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+                  Get help with this problem
+                </Link>
+              </p>
+            ) : isIphonePage && (
               <div className="mt-5">
                 <IosAppButton sourcePage={entry.url} placement="header" />
               </div>
@@ -292,7 +299,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             />
           )}
 
-          <ReelStrip reels={reels} />
+          {!isSupportPage && <ReelStrip reels={reels} />}
 
           {faqBlock && mobileFaqs.length ? (
             <>
@@ -302,6 +309,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             </>
           ) : <Markdown source={articleBody} />}
 
+          {isSupportPage && <ReelStrip reels={reels} heading="Finished edits made in Vyra" />}
           <NewsletterCards posts={newsletterPosts} />
         </article>
 
@@ -350,7 +358,18 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
           </aside>
         )}
 
-        <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
+        {isSupportPage ? (
+          <aside className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Still need help?</h2>
+            <p className="mb-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+              Keep your project and original footage. Tell us what you were trying to do, the step that stopped,
+              your app version and any message shown. Crop personal details from screenshots.
+            </p>
+            <Link href="/app-support" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+              Contact Vyra support
+            </Link>
+          </aside>
+        ) : <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">
             {isIphonePage ? "Edit your footage on iPhone" : "Try it on your own footage"}
           </h2>
@@ -371,7 +390,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
               Start editing with Vyra
             </a>
           )}
-        </div>
+        </div>}
       </main>
       <Footer />
     </>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export type Crumb = { label: string; href: string };
 
-export default function DirectoryNav({ crumbs }: { crumbs: Crumb[] }) {
+export default function DirectoryNav({ crumbs, support = false }: { crumbs: Crumb[]; support?: boolean }) {
   return (
     <nav className="fixed top-0 right-0 left-0 z-50 border-b border-[var(--surface-border)] bg-white/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-3 overflow-x-auto px-6 whitespace-nowrap">
@@ -26,10 +26,10 @@ export default function DirectoryNav({ crumbs }: { crumbs: Crumb[] }) {
         ))}
         <span className="ml-auto hidden sm:block">
           <a
-            href="https://app.usevyra.com/signup"
+            href={support ? "/app-support" : "https://app.usevyra.com/signup"}
             className="rounded-full bg-[var(--foreground)] px-4 py-2 text-[13px] font-semibold text-white"
           >
-            Try Vyra free
+            {support ? "Get help" : "Try Vyra free"}
           </a>
         </span>
       </div>
