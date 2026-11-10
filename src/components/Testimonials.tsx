@@ -1,10 +1,10 @@
-import Link from "next/link";
+import IosAppButton from "./IosAppButton";
 import Reveal from "./Reveal";
 import reviews from "@/content/reviews.json";
 
 /* Testimonial wall on the homepage. Reads src/content/reviews.json, the same
-   file /reviews uses, so a quote only ever lives in one place. Every entry is
-   a real, public quote with a link to where it was said. */
+   file /reviews uses, so a quote only ever lives in one place. Each entry
+   carries the original review text and attribution. */
 
 type Review = {
   name: string;
@@ -44,8 +44,8 @@ const DOTS = [
 
 function Card({ r, i }: { r: Review; i: number }) {
   const body = (
-    <article className="overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-white shadow-[0_6px_20px_rgba(35,65,105,0.06)] transition-colors duration-200 hover:border-[var(--surface-border-hover)]">
-      <div className={`flex items-center bg-gradient-to-r px-4 py-2.5 ${BARS[i % BARS.length]}`}>
+    <article className="overflow-hidden rounded-2xl border border-black/15 bg-white shadow-[0_8px_24px_rgba(35,45,65,0.08)] transition-colors duration-200 hover:border-black/25">
+      <div className={`flex min-h-9 items-center border-b border-black/[0.06] bg-gradient-to-r px-4 py-2.5 ${BARS[i % BARS.length]}`}>
         <span className="flex gap-1.5" aria-hidden>
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -110,18 +110,26 @@ export default function Testimonials() {
           </p>
         </Reveal>
         {/* Natural card heights pack into columns without stretching short quotes. */}
-        <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
-          {sorted.map((r, i) => (
-            <Card key={`${r.name}-${r.date}`} r={r} i={i} />
-          ))}
-        </div>
-        <div className="mt-6 flex flex-col items-center justify-between gap-3 rounded-2xl border border-[var(--surface-border)] bg-white px-6 py-5 text-center sm:flex-row sm:text-left">
-          <p className="text-[15px] text-[var(--foreground-muted)]">
-            <span className="font-bold text-[var(--foreground)]">5.0 on the App Store</span>
-          </p>
-          <Link href="/reviews" className="text-[15px] font-semibold text-[var(--foreground)] underline underline-offset-4">
-            Read every review
-          </Link>
+        <div className="group relative isolate">
+          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+            {sorted.map((r, i) => (
+              <Card key={`${r.name}-${r.date}`} r={r} i={i} />
+            ))}
+            <aside className="relative z-20 mb-5 break-inside-avoid rounded-2xl border border-[var(--brand-blue)]/15 bg-[#f2f3f8] p-6">
+              <h3 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
+                Try Vyra on iPhone
+              </h3>
+              <p className="mt-2 mb-5 text-[15px] leading-[1.6] text-[var(--foreground-muted)]">
+                Edit clips straight from your camera roll.
+              </p>
+              <IosAppButton />
+            </aside>
+          </div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 hidden h-56 transition-opacity group-focus-within:opacity-0 lg:block"
+            style={{ background: "linear-gradient(to bottom, transparent, color-mix(in srgb, var(--background) 65%, transparent) 60%, var(--background))" }}
+          />
         </div>
       </div>
     </section>
