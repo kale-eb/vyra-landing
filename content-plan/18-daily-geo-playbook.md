@@ -109,6 +109,8 @@ Review the full diff. Commit only task-owned files, push, create a ready PR and 
 
 ## End each run with a ledger
 
+When reporting net results, include the whole measured cohort and the site-level overview. A few winning or declining pages cannot establish the portfolio result. Label page-level sums separately from deduplicated site totals, and keep launch exposure and reporting windows visible. A missing page-by-query capability is a diagnosis limit, not permission to substitute global queries and claim cannibalization.
+
 Record the date and timezone, sources queried and unavailable, comparison windows, observations versus hypotheses, candidate decisions, changed FAQs, URLs created and updated, checks, PR and merge SHA, deployment evidence, IndexNow outcome and next review dates.
 
 The user-facing brief should say what mattered, why we chose the work and what actually shipped. Include holds and meaningful uncertainties. Avoid a list of every tool call.
