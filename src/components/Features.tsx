@@ -26,6 +26,15 @@ function AutoVideo({ src, contain }: { src: string; contain?: boolean }) {
   );
 }
 
+/** The motion graphic demo, shared with the feature landing pages. */
+export function MotionGraphicsMedia() {
+  return (
+    <div className="aspect-video">
+      <AutoVideo src="/videos/shake-mg.mp4" />
+    </div>
+  );
+}
+
 /* Deterministic bar heights so SSR and client render identically */
 function barH(i: number, min: number, max: number) {
   return min + (((i * 37 + 11) % 53) / 53) * (max - min);
@@ -176,7 +185,7 @@ function MusicSyncVideo() {
   );
 }
 
-function MusicSyncMedia() {
+export function MusicSyncMedia() {
   return (
     <div className="flex h-[400px] flex-col gap-3 bg-[var(--surface)] p-5">
       <div className="min-h-0 flex-1 overflow-hidden rounded-xl">
@@ -240,7 +249,7 @@ const CAPTION_LINES = [
   { t: "0:04", text: "oh my god" },
 ];
 
-function CaptionsMedia() {
+export function CaptionsMedia() {
   return (
     <div className="flex h-[400px] items-center justify-center gap-3 bg-[var(--surface)] p-4 md:gap-4 md:p-5">
       {/* Percentage width on phones; the intrinsic 9:16 width plus a fixed
@@ -314,11 +323,7 @@ const FEATURES: {
     description:
       "Animated titles, lower thirds, and counters, generated as code and rendered live on your timeline.",
     tryPrompt: "Make me an animated title card",
-    media: (
-      <div className="aspect-video">
-        <AutoVideo src="/videos/shake-mg.mp4" />
-      </div>
-    ),
+    media: <MotionGraphicsMedia />,
   },
   {
     id: "footage-understanding",

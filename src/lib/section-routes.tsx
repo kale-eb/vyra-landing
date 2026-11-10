@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import DirectoryPage from "@/components/directory/DirectoryPage";
+import FeatureLanding from "@/components/directory/FeatureLanding";
 import DirectoryHub from "@/components/directory/DirectoryHub";
 import { SECTIONS, SITE_URL, getEntries, getEntry, type Entry, type SectionKey } from "@/lib/content";
 
@@ -43,7 +44,7 @@ export function createSlugPage(section: SectionKey) {
     const { slug } = await params;
     const e = getEntry(section, slug);
     if (!e) notFound();
-    return <DirectoryPage entry={e} />;
+    return e.data.layout === "landing" ? <FeatureLanding entry={e} /> : <DirectoryPage entry={e} />;
   }
   return { generateStaticParams, generateMetadata, Page };
 }

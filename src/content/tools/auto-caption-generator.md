@@ -1,7 +1,12 @@
 ---
 title: "Auto caption generator with animated styles and word-by-word emphasis"
 description: Vyra reads your transcript, marks the phrases that matter, and renders captions in animated or manual styles you control down to the stroke.
-updated: 2026-09-24
+updated: 2026-10-29
+layout: landing
+landing:
+  headline: "Auto caption generator that knows which words matter"
+  demo: captions
+  demo_caption: 'A real export from Vyra. Every caption is timed to the speech.'
 category: tools
 facts:
   - "Best for: Short-form talking head, UGC, and tutorial clips for TikTok, Reels, and Shorts"

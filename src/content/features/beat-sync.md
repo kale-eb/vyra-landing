@@ -1,7 +1,12 @@
 ---
 title: "Beat sync: cut any footage to any track automatically"
 description: Vyra finds the beats in a track you upload and lands cuts on them. You say which beats, which clips, and where it speeds up or slows down.
-updated: 2026-09-24
+updated: 2026-10-29
+layout: landing
+landing:
+  headline: "Beat sync: cut any footage to any track"
+  demo: beat-sync
+  demo_caption: 'A real Vyra edit. Turn the sound on to hear the cuts land on the beat.'
 category: feature
 example: https://www.instagram.com/reel/DZCKNJiupPa/
 reels:
