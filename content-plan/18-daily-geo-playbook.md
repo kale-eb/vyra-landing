@@ -65,6 +65,12 @@ An example of the intended tone
 - Reuse real media only where it illustrates the topic. Do not call a desktop edit an iPhone screen recording.
 - Keep metadata and JSON-LD consistent with the visible text. Schema describes the page; it does not prove that the claim is true.
 
+## Support factual claims with evidence
+
+Use a primary source beside a material capability, limitation or comparison claim. A readable Sources section can help readers check the page, but links to other Vyra guides alone do not independently establish the same claim. Verify the original release note, official documentation or recorded product test. State what each source supports and when it was checked. Separate supplied footage, finished-edit examples and actual screen recordings. Never label an unperformed workflow as tested.
+
+Google's helpful-content guidance asks for clear sourcing and original value. Its AI-features guidance preserves the normal SEO requirements and does not promise inclusion. Treat citations as evidence for readers, not a guaranteed visibility treatment. Keep a record when a claim still needs a source instead of adding an unrelated citation.
+
 ## FAQs are a writing and measurement habit
 
 Choose questions from real support patterns, observed search questions or a concrete unresolved decision in the workflow. Label hypotheses in the research ledger. Give each answer enough context to stand alone, including platform and restrictions where relevant.
