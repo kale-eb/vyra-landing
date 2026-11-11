@@ -42,7 +42,7 @@ export default function FinalCTA() {
           <a
             href="https://app.usevyra.com/signup"
             onClick={() => trackLead()}
-            className="inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
+            className="max-sm:hidden inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
           >
             Get started on web
           </a>
