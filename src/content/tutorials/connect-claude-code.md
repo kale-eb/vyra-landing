@@ -61,3 +61,4 @@ Yes. Any MCP client that supports Streamable HTTP with OAuth 2.1 and PKCE connec
 - /claude
 - /tutorials/connect-claude-desktop
 - /prompts/using-claude-or-chatgpt-with-vyra
+- /how-to/automate-video-editing-with-claude-code

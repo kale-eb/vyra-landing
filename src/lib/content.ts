@@ -129,7 +129,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
       { label: "Edit on iPhone", slugs: ["add-transitions-to-videos-on-iphone", "add-captions-to-videos-on-iphone", "match-a-reference-video-on-iphone", "trim-video-on-iphone", "split-video-on-iphone", "combine-videos-on-iphone", "add-music-to-video-on-iphone", "adjust-video-volume-on-iphone", "add-voiceover-to-video-on-iphone", "add-text-to-video-on-iphone", "make-vertical-video-on-iphone", "export-video-to-photos-on-iphone", "record-video-in-vyra-on-iphone", "edit-vlog-on-iphone", "edit-art-process-video-on-iphone", "edit-reels-on-iphone", "make-before-after-video-on-iphone"] },
       { label: "Plan", slugs: ["write-a-hook", "structure-a-storytelling-video", "find-your-niche", "build-a-series", "batch-film-a-week"] },
       { label: "Film", slugs: ["frame-yourself", "light-a-talking-head", "record-clean-audio", "shoot-b-roll", "vlog"] },
-      { label: "Edit", slugs: ["pace-a-short-form-video", "choose-captions", "cut-a-talking-head", "make-motion-graphics", "choose-music", "edit-for-retention", "repurpose-long-form-to-shorts"] },
+      { label: "Edit", slugs: ["pace-a-short-form-video", "choose-captions", "cut-a-talking-head", "make-motion-graphics", "choose-music", "edit-for-retention", "repurpose-long-form-to-shorts", "automate-video-editing-with-claude-code"] },
       { label: "Grow", slugs: ["grow-on-tiktok", "grow-on-instagram-reels", "grow-on-youtube-shorts", "post-consistently", "read-your-analytics", "cross-post-without-watermark"] },
     ],
   },
@@ -186,7 +186,7 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     schema: "WebPage",
     intro: "One job per page. Pick the thing you need done, paste the prompt, and Vyra does it on your footage.",
     groups: [
-      { label: "Captions and text", slugs: ["add-subtitles-to-video", "auto-caption-generator", "lower-third-generator", "title-card-maker"] },
+      { label: "Captions and text", slugs: ["add-subtitles-to-video", "auto-caption-generator", "batch-caption-videos", "lower-third-generator", "title-card-maker"] },
       { label: "Cut", slugs: ["edit-video-by-typing", "remove-silence-from-video", "video-trimmer", "highlight-reel-maker", "podcast-clip-maker"] },
       { label: "Music", slugs: ["beat-sync-video-editor", "cut-video-to-music", "add-music-to-video"] },
       { label: "Graphics and layout", slugs: ["ai-motion-graphics-generator", "picture-in-picture-video-maker"] },

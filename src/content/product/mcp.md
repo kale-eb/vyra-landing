@@ -214,3 +214,4 @@ No. Describe the result. The full catalog is available through the standard MCP 
 - /for/developers
 - /docs/mcp
 - /best/mcp-servers-for-video-editing
+- /how-to/automate-video-editing-with-claude-code
