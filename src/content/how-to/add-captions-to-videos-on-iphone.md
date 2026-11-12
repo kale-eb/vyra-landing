@@ -1,7 +1,7 @@
 ---
 title: How to add captions to videos on iPhone
 description: "Generate captions from your footage in the Vyra iPhone app, check the words, style the track and save the captioned video to Photos."
-updated: '2026-11-10'
+updated: '2026-11-12'
 category: how-to
 platform: iphone
 level: beginner
@@ -28,6 +28,10 @@ For a first edit, use a clip with one speaker and clear audio. Get the transcrip
 4. **Set the style.** Choose a readable size and position. The current iPhone app lets you move or style one caption, then apply the change to the whole track.
 5. **Check the whole frame.** Keep captions away from your face, the object you are showing and the area where TikTok or Reels puts its buttons.
 6. **Export and check.** Save the video to Photos or share it from your iPhone. Watch it muted once to check readability, then with sound to check timing.
+
+## Captions for watching or for sharing
+
+If you only need help following speech while watching, iPhone's Live Captions can display a transcription. To put captions in the video you share, caption the footage in an editor and export it. The [Live Captions and saved-video explanation](/answers/are-iphone-live-captions-saved-in-my-video) helps you choose the right workflow.
 
 ## A simple caption style to start with
 
@@ -91,9 +95,18 @@ Yes. Export the finished video to your photo library, or share it from your iPho
 **Does Vyra have an Android caption app?**
 There is no Android app yet. These steps are for the native iPhone app.
 
+**Are Live Captions the same as captions saved in my video?**
+No. Live Captions displays speech while you listen on your iPhone. Captions rendered into your exported video stay in that copy's picture when you share it.
+
+**Can I caption a clip already saved in Photos?**
+Yes. Add that clip to your Vyra project and ask for captions. You do not have to record a new video inside the app.
+
+**Do I need Claude or ChatGPT to caption videos in the iPhone app?**
+No. Vyra's native iPhone app has built-in chat. External AI integrations are a separate option.
+
 ## Sources
 
-The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. Checked November 8, 2026.
+The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. [Apple's Live Captions guide](https://support.apple.com/en-ae/guide/iphone/iphe0990f7bb/27/ios/27) describes the transcription displayed during listening. Checked November 12, 2026.
 
 ## Related
 
