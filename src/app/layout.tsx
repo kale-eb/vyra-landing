@@ -55,7 +55,9 @@ export const metadata: Metadata = {
       "Turn raw footage into finished videos in minutes. An AI editor that works with your footage, understands your content, and gives you full control.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/vyra-share-preview.jpg",
+        secureUrl: "https://www.usevyra.com/vyra-share-preview.jpg",
+        type: "image/jpeg",
         width: 1200,
         height: 630,
         alt: "Vyra - AI Video Editor",
@@ -67,7 +69,7 @@ export const metadata: Metadata = {
     title: "Vyra - AI Video Editor",
     description:
       "Turn raw footage into finished videos in minutes. AI-powered editing with full control.",
-    images: ["/og-image.png"],
+    images: ["/vyra-share-preview.jpg"],
   },
   alternates: { canonical: "https://www.usevyra.com" },
   robots: {

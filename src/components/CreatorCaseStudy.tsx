@@ -18,9 +18,14 @@ function ReelCard({ reel }: { reel: typeof reels[number] }) {
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState(false);
 
+  // Keep demo media out of the initial HTML so link previews use og:image.
+  // Attach it in the browser; playback remains controlled by visibility below.
+  const mediaSrc = `/videos/case-study/${reel.image}.mp4`;
+
   useEffect(() => {
     const el = video.current;
     if (!el) return;
+    el.src = mediaSrc;
     let visible = false;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncPlayback = () => {
@@ -46,7 +51,7 @@ function ReelCard({ reel }: { reel: typeof reels[number] }) {
       reducedMotion.removeEventListener("change", syncPlayback);
       el.pause();
     };
-  }, []);
+  }, [mediaSrc]);
 
   async function togglePlay() {
     const el = video.current;
@@ -71,7 +76,6 @@ function ReelCard({ reel }: { reel: typeof reels[number] }) {
       <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-[#e6e6ea]">
         <video
           ref={video}
-          src={`/videos/case-study/${reel.image}.mp4`}
           poster={`/images/case-study/${reel.image}.jpg`}
           preload="none" playsInline muted loop
           aria-label={reel.title}
