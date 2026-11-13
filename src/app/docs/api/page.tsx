@@ -17,6 +17,8 @@ const BANDS = [
   { maxSeconds: 900, low: 165, high: 325 },
   { maxSeconds: 1800, low: 225, high: 450 },
 ] as const;
+/** Where the API answers. The examples call it $VYRA_API. */
+const API_BASE = "https://vyra-public-api-dd677jigfq-uc.a.run.app";
 const SHARE = { portion: 0.25, full: 0.75 } as const;
 type Effort = "low" | "high";
 type Scope = keyof typeof SHARE;
@@ -103,9 +105,16 @@ export default function ApiDocsPage() {
             <p className="mb-4">
               The API is open to accounts we have approved. To ask for access, email{" "}
               <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A> from the address of your Vyra
-              account. When your account is approved we give you the API&apos;s base address, which
-              the examples here call <C>$VYRA_API</C>.
+              account.
             </p>
+            <p className="mb-2">Every call goes to one base address over HTTPS, under <C>/v1</C>:</p>
+            <Code>{API_BASE}</Code>
+            <p className="mt-3 mb-4">
+              The examples here call it <C>$VYRA_API</C> and your key <C>$VYRA_KEY</C>:
+            </p>
+            <Code>{`export VYRA_API=${API_BASE}
+export VYRA_KEY=vyra_live_...`}</Code>
+            <p className="mt-4 mb-2">To get a key:</p>
             <ol className="mb-4 list-decimal space-y-2 pl-6">
               <li>
                 Sign in to the Vyra web app and open{" "}
