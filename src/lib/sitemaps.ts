@@ -19,6 +19,7 @@ const CORE_STATIC: SitemapUrl[] = [
   { loc: "/docs/guide", lastmod: "2026-05-26" },
   { loc: "/docs/first-project", lastmod: "2026-05-26" },
   { loc: "/docs/mcp", lastmod: "2026-10-24" },
+  { loc: "/docs/api", lastmod: "2026-11-12" },
   { loc: "/app-support", lastmod: STATIC_LASTMOD },
   { loc: "/delete-account", lastmod: STATIC_LASTMOD },
   { loc: "/author/sulan", lastmod: STATIC_LASTMOD },
