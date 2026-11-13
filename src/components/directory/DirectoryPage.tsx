@@ -209,8 +209,9 @@ function Meta({ entry }: { entry: Entry }) {
 export default function DirectoryPage({ entry }: { entry: Entry }) {
   const isIphonePage = entry.data.platform === "iphone";
   const isSupportPage = entry.data.support === true;
+  const isApiPage = entry.data.api === true;
   const articleBody = stripLeadingSummary(entry.body, entry.description);
-  const faqBlock = isIphonePage || isSupportPage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
+  const faqBlock = isIphonePage || isSupportPage || isApiPage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
   const mobileFaqs = faqBlock ? extractFaq(entry.body) : [];
   const sectionMeta = entry.section === "product" ? null : SECTIONS[entry.section as SectionKey];
   const related = extractRelated(entry.body, entry.url)
@@ -230,7 +231,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
       {jsonLd.map((obj, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }} />
       ))}
-      <DirectoryNav crumbs={crumbs} support={isSupportPage} />
+      <DirectoryNav crumbs={crumbs} support={isSupportPage} cta={isApiPage ? { href: "/docs/api", label: "Read API docs" } : undefined} />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <article>
           <header className="mb-10">
@@ -242,7 +243,13 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
               {entry.title}
             </h1>
             <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{entry.description}</p>
-            {isSupportPage ? (
+            {isApiPage ? (
+              <p className="mt-5 text-[14px]">
+                <Link href="/docs/api#get-a-key" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+                  Check API access and setup
+                </Link>
+              </p>
+            ) : isSupportPage ? (
               <p className="mt-5 text-[14px]">
                 <Link href="/app-support" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
                   Get help with this problem
@@ -358,7 +365,17 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
           </aside>
         )}
 
-        {isSupportPage ? (
+        {isApiPage ? (
+          <aside className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Build with the Vyra API</h2>
+            <p className="mb-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+              API access requires approval. Check the current setup, limits and API pricing before submitting footage.
+            </p>
+            <Link href="/docs/api" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+              Read the API docs
+            </Link>
+          </aside>
+        ) : isSupportPage ? (
           <aside className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8">
             <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Still need help?</h2>
             <p className="mb-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
