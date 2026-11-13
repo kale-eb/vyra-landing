@@ -1,7 +1,7 @@
 ---
 title: "Vyra for developers: drive a real video editor from Cursor or Claude Code over MCP"
 description: "Vyra exposes its editor as MCP tools. An agent in Cursor or Claude Code can add media, trim, caption, mask, animate, and export, with scene analysis."
-updated: 2026-10-29
+updated: '2026-11-13'
 category: for
 facts:
   - "Best for: Developers building video pipelines, agent workflows, or internal tooling"
@@ -43,6 +43,8 @@ Read the timeline back with start and end times for every item. Then capture fra
 
 ## A typical workflow
 
+For an application that submits editing jobs directly, see the [Vyra API answer](/answers/does-vyra-have-a-video-editing-api) and [public API docs](/docs/api). API access requires approval, with its own documented limits and charges. The steps below describe the MCP workflow for an assistant directing the editing tools.
+
 1. Connect your MCP client to Vyra. See [/mcp](/mcp).
 2. Have the agent list assets and read transcripts and scene summaries.
 3. Ask for a plan, then run it in steps. Rough cut, captions, graphics, export.
@@ -76,6 +78,8 @@ Say so in the prompt, or lock tracks in the editor.
 Plan credits cover processing and agent work. See [/pricing](/pricing).
 
 ## Related
+
+- /answers/does-vyra-have-a-video-editing-api
 
 - [Which video editors integrate with LLMs](/answers/video-editors-that-integrate-with-llms)
 - [/mcp](/mcp)

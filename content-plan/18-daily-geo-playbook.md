@@ -28,6 +28,8 @@ Browser work must use both a separate Chrome window and a separate macOS desktop
 
 If Searchable or chat text is unavailable, say exactly which observations are missing. An error, empty export or zero sessions is not evidence of zero demand. Do useful work with the sources that are available and carry the limitation into the daily report.
 
+Screen automated opportunity suggestions for product fit before acting. Suggestions about manufacturing, unrelated name collisions or capabilities we do not offer can reflect a mistaken entity. Do not turn them into Vyra claims or new pages. Preserve Sulan's analytics preferences even when a tool recommends another service. A model's query fanout shows how that answer searched, rather than how often people ask the question.
+
 ## Decide what deserves a page
 
 Every candidate gets a brief with its reader, job, evidence, existing overlapping URL, verified capability, original contribution, intended next action and uncertainty.

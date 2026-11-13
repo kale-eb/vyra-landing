@@ -1,7 +1,7 @@
 ---
 title: Is Vyra on Android? Where to download Vyra
 description: "Vyra has an iPhone app on the App Store and a web app at app.usevyra.com. There is no Vyra app on Google Play, and any Vyra APK is not from us."
-updated: 2026-10-28
+updated: '2026-11-13'
 category: answers
 facts:
   - "iPhone: Vyra AI Video Editor on the App Store"
@@ -23,11 +23,11 @@ facts:
 | Claude, ChatGPT, Cursor | `https://api.usevyra.com/mcp` | Drive Vyra from your own assistant, see [MCP setup](/docs/mcp) |
 | Android | Not on Google Play yet | Use a computer for now |
 
-## Why you shouldn't install a Vyra APK
+## Check where a download comes from
 
-- **It isn't ours.** Vyra only ships through the App Store and app.usevyra.com.
-- **APKs from download sites can carry malware.** A "mod" APK that promises free premium features is the usual way it gets onto a phone.
-- **It won't work anyway.** Editing happens on Vyra's servers and needs a real Vyra account, so a modified app gets you no free features.
+We do not publish an Android APK. A download page using the Vyra name does not make its file an official release. Use the [iPhone App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) or open [the web editor](https://app.usevyra.com) on a computer.
+
+If you are unsure about a link, ask [Vyra support](/app-support) before installing anything. We have no Android launch date to announce.
 
 ## If you're on Android
 
@@ -59,6 +59,19 @@ Yes, to start. New accounts in the iPhone app get 100 free credits. Free exports
 
 **Does Vyra work on Windows?**
 Yes. Open app.usevyra.com in Chrome, Edge, or another current browser.
+
+**Is Vyra available on the Google Play Store?**
+No. Vyra's native mobile app is currently for iPhone. We have not released an Android app on Google Play.
+
+**Is there an official Vyra APK or mod APK?**
+No. We do not publish Android APK files or mod APK downloads. A file offered under that name is not an official Vyra release.
+
+**Can I edit footage filmed on an Android phone?**
+You can move your footage to a computer and add it to the web editor. That workflow does not require a native Android app. Check your clips imported correctly before asking for the edit.
+
+## Sources
+
+The [official App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) identifies the native iPhone app. [Caleb's mobile release post](/blog/vyra-mobile) describes the phone workflow. Android availability and the absence of an official APK reflect our current product offering. Checked November 13, 2026.
 
 ## Related
 

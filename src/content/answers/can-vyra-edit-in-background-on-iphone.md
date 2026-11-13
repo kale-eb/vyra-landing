@@ -1,7 +1,7 @@
 ---
-title: "Can Vyra edit a video in the background on iPhone?"
+title: "Can an iPhone video editor keep editing in the background?"
 description: "Vyra runs AI editing on its servers, so you can leave the app after sending the footage and prompt. Check upload and export progress separately."
-updated: '2026-11-10'
+updated: '2026-11-13'
 category: answers
 platform: iphone
 facts:
@@ -11,7 +11,9 @@ reels:
   - DZwM74ytJxF
 ---
 
-**Yes. Vyra runs the AI edit on its servers, so you can leave the iPhone app after sending your footage and prompt. Caleb's mobile release post describes background editing and notifications when the agent needs input or finishes. Uploading the footage, running the edit and saving the export are separate stages.**
+**Yes, an iPhone editor can keep an AI edit running away from the phone. Vyra runs the AI edit on its servers, so you can leave the iPhone app after sending your footage and prompt. Uploading the footage, running the edit and saving the export are separate stages.**
+
+[Caleb's mobile release post](/blog/vyra-mobile) describes this background workflow and notifications when the agent needs input or finishes. The phone does not have to keep the editing screen visible for that agent work to continue.
 
 That distinction matters when you want to put the phone away. If a clip has not finished reaching the project, the editor may still be waiting for the footage it needs. Check the upload state before assuming the edit is ready to run.
 
@@ -50,7 +52,7 @@ This describes background editing. It is not a promise of automatic social posti
 
 ## Sources
 
-The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 9, 2026.
+The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 13, 2026.
 
 ## Related
 
