@@ -1,7 +1,7 @@
 ---
-title: AI video editor app for iPhone that edits your own footage
+title: "AI video editor for your own footage on iPhone"
 description: "Vyra is an AI video editor app for iPhone. Describe the edit in chat, get a draft from your clips, then fine-tune it on a real timeline. Free to download."
-updated: 2026-11-09
+updated: '2026-11-14'
 category: product
 platform: iphone
 facts:

@@ -1,7 +1,7 @@
 ---
-title: "Reference style matching: make your footage look like a video you love"
+title: "Match a reference video's style to your footage"
 description: Attach a reference video and tell Vyra what to copy. Pacing, captions, music behavior, color. It applies that to your own footage.
-updated: 2026-11-08
+updated: '2026-11-14'
 category: feature
 reels:
   - DY75P9PtMhO

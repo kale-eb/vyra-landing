@@ -1,7 +1,7 @@
 ---
 title: "Best MCP servers for video editing in 2026, ranked"
-description: "Vyra is the MCP server for editing a folder of raw footage from Claude, ChatGPT, or Cursor. Descript is best for talking videos. DaVinci Resolve Studio 21.1 has one built in. OpusClip is for clipping."
-updated: 2026-10-28
+description: "Compare video editing MCP servers by workflow, supported AI clients and editing tools. See how Vyra edits your footage with Claude or ChatGPT."
+updated: '2026-11-14'
 category: best
 facts:
   - "Servers on the list: 6"

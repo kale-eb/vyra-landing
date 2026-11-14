@@ -1,7 +1,7 @@
 ---
-title: "Can an iPhone video editor keep editing in the background?"
+title: "Can an iPhone editor keep working in the background?"
 description: "Vyra runs AI editing on its servers, so you can leave the app after sending the footage and prompt. Check upload and export progress separately."
-updated: '2026-11-13'
+updated: '2026-11-14'
 category: answers
 platform: iphone
 facts:

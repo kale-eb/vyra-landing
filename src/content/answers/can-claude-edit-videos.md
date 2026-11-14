@@ -1,7 +1,7 @@
 ---
-title: "Can Claude edit videos? Yes, through MCP — here's how (2026)"
-description: "Claude can't cut video inside the Claude app. Connect it to Vyra over MCP and it edits your real footage: cuts, captions, beat sync, and motion graphics on a real timeline."
-updated: 2026-10-27
+title: "Can Claude edit videos? Connect it to an editor"
+description: "Connect Claude to Vyra over MCP to edit your own footage. Make cuts, add captions and music, then review the timeline and export your video."
+updated: '2026-11-14'
 category: answers
 ---
 
