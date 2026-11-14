@@ -59,6 +59,7 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/change-music-without-changing-video-cuts-on-iphone
 - /how-to/adjust-video-volume-on-iphone
 - /how-to/add-voiceover-to-video-on-iphone
 - /ai-video-editor-app
