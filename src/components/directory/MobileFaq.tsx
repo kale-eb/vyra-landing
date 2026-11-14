@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { track } from "@vercel/analytics";
-import posthog from "posthog-js";
+import { marketingAnalytics } from "@/lib/marketing-analytics";
 import Markdown from "./Markdown";
 
 export default function MobileFaq({ items, sourcePage }: { items: { q: string; a: string }[]; sourcePage: string }) {
@@ -21,7 +21,7 @@ export default function MobileFaq({ items, sourcePage }: { items: { q: string; a
               opened.current.add(item.q);
               const properties = { source_page: sourcePage, question: item.q };
               track("FAQ opened", properties);
-              if (process.env.NEXT_PUBLIC_POSTHOG_KEY) posthog.capture("faq_opened", properties);
+              void marketingAnalytics.capture("faq_opened", properties);
             }}
           >
             <summary className="cursor-pointer text-[15px] font-semibold leading-relaxed text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-4">
