@@ -110,6 +110,7 @@ The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyr
 
 ## Related
 
+- /how-to/remove-pauses-from-video-on-iphone
 - /ai-video-editor-app
 - /how-to/choose-captions
 - /how-to/add-transitions-to-videos-on-iphone

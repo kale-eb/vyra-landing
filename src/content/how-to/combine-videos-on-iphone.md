@@ -60,6 +60,7 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/choose-best-video-takes-on-iphone
 - /ai-video-editor-app
 - /how-to/add-transitions-to-videos-on-iphone
 - /how-to/adjust-video-volume-on-iphone

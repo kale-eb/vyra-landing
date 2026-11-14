@@ -57,6 +57,7 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/edit-travel-recap-on-iphone
 - /how-to/combine-videos-on-iphone
 - /how-to/add-music-to-video-on-iphone
 - /how-to/match-a-reference-video-on-iphone

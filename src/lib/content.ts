@@ -122,11 +122,13 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "How-to",
     title: "How-to guides for short-form video",
     description:
-      "Hooks, pacing, captions, framing, audio, music. Short guides with real numbers.",
+      "Practical guides to editing on iPhone, plus filming, captions, framing, audio and music.",
     schema: "HowTo",
-    intro: "Short guides with real numbers, written from our own footage. Plan, film, edit, then grow. Each one ends with the prompt that does the same job in Vyra.",
+    intro: "Start with the editing job you want to finish. These guides cover iPhone workflows, filming and short-form editing, with example prompts to try on your footage.",
     groups: [
       { label: "Edit on iPhone", slugs: ["add-transitions-to-videos-on-iphone", "add-captions-to-videos-on-iphone", "match-a-reference-video-on-iphone", "trim-video-on-iphone", "split-video-on-iphone", "combine-videos-on-iphone", "add-music-to-video-on-iphone", "adjust-video-volume-on-iphone", "add-voiceover-to-video-on-iphone", "add-text-to-video-on-iphone", "make-vertical-video-on-iphone", "export-video-to-photos-on-iphone", "record-video-in-vyra-on-iphone", "edit-vlog-on-iphone", "edit-art-process-video-on-iphone", "edit-reels-on-iphone", "make-before-after-video-on-iphone"] },
+      { label: "Refine an iPhone edit", slugs: ["remove-pauses-from-video-on-iphone", "choose-best-video-takes-on-iphone", "make-looping-video-on-iphone", "mix-photos-and-videos-on-iphone", "add-step-labels-to-video-on-iphone", "make-video-trailer-on-iphone", "keep-natural-sound-in-video-on-iphone", "edit-voiceover-led-video-on-iphone"] },
+      { label: "Make something on iPhone", slugs: ["edit-screen-recording-demo-on-iphone", "make-recipe-video-on-iphone", "edit-two-person-interview-on-iphone", "make-silent-tutorial-on-iphone", "edit-workout-demo-on-iphone", "make-event-highlight-video-on-iphone", "edit-travel-recap-on-iphone", "edit-product-demo-on-iphone", "make-room-tour-video-on-iphone", "make-podcast-teaser-on-iphone", "edit-unboxing-video-on-iphone", "make-portfolio-video-on-iphone"] },
       { label: "Plan", slugs: ["write-a-hook", "structure-a-storytelling-video", "find-your-niche", "build-a-series", "batch-film-a-week"] },
       { label: "Film", slugs: ["frame-yourself", "light-a-talking-head", "record-clean-audio", "shoot-b-roll", "vlog"] },
       { label: "Edit", slugs: ["pace-a-short-form-video", "choose-captions", "cut-a-talking-head", "make-motion-graphics", "choose-music", "edit-for-retention", "repurpose-long-form-to-shorts"] },
