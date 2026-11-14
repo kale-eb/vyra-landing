@@ -1,69 +1,31 @@
-"use client";
-
-import { useState } from "react";
 import Reveal from "./Reveal";
 
 import { HOME_FAQS as faqs } from "./faq-data";
 
-function FAQItem({
-  question,
-  answer,
-  isOpen,
-  onToggle,
-}: {
-  question: string;
-  answer: string;
-  isOpen: boolean;
-  onToggle: () => void;
-}) {
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--surface-border)] bg-white transition-colors duration-200 hover:border-[var(--surface-border-hover)]">
-      <button
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left sm:px-7"
-      >
+    <details name="home-faq" className="group rounded-2xl border border-[var(--surface-border)] bg-white transition-colors duration-200 hover:border-[var(--surface-border-hover)]">
+      <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-4 rounded-2xl px-6 py-5 text-left focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-7 [&::-webkit-details-marker]:hidden">
         <h3
           className="text-[16px] font-bold text-[var(--foreground)]"
           style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}
         >
           {question}
         </h3>
-        <span
-          className={`flex h-6 w-6 shrink-0 items-center justify-center text-[var(--foreground-subtle)] transition-transform duration-200 ${
-            isOpen ? "rotate-45" : ""
-          }`}
-        >
+        <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center text-[var(--foreground-subtle)] transition-transform duration-200 group-open:rotate-45">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M7 1v12M1 7h12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
+            <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </span>
-      </button>
-      {/* Answers stay in the server-rendered HTML so crawlers can read them;
-          the grid-rows transition only collapses them visually. */}
-      <div
-        className={`grid transition-[grid-template-rows,opacity] duration-[250ms] ease-[cubic-bezier(0.21,0.68,0.35,1)] ${
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <p className="px-6 pb-6 text-[14px] leading-[1.7] text-[var(--foreground-muted)] sm:px-7">
-            {answer}
-          </p>
-        </div>
-      </div>
-    </div>
+      </summary>
+      <p className="px-6 pb-6 text-[14px] leading-[1.7] text-[var(--foreground-muted)] sm:px-7">
+        {answer}
+      </p>
+    </details>
   );
 }
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
     <section className="relative py-20 px-6 md:py-28">
       <div className="relative mx-auto max-w-5xl">
@@ -89,8 +51,6 @@ export default function FAQ() {
                 <FAQItem
                   question={faq.question}
                   answer={faq.answer}
-                  isOpen={openIndex === i}
-                  onToggle={() => setOpenIndex(openIndex === i ? null : i)}
                 />
               </Reveal>
             ))}
