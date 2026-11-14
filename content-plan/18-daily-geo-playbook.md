@@ -36,7 +36,7 @@ Every candidate gets a brief with its reader, job, evidence, existing overlappin
 
 Prefer a new page when the person needs a different answer or workflow. Prefer an update when the question belongs naturally inside an existing page. Related language does not always mean a different intent.
 
-Publish the 20–30 daily pages requested when the useful briefs and verification support them. Larger families need genuine differences in inputs, workflow or output. Never manufacture search volume, customer demand or a test result to fill the quota. A supported shortfall is better than pages that compete with each other and teach the same thing.
+Publish the 20–30 daily pages requested when the useful briefs and verification support them. Sulan reaffirmed the volume target on November 13 to increase the surface area for testing. A distinct, useful workflow supported by verified capabilities can be an experimental brief even without historical query traffic. Label that demand as a hypothesis in the ledger, publish the baseline and measure the cohort separately. Larger families need genuine differences in inputs, workflow or output. Never manufacture search volume, customer demand or a test result to fill the quota. A supported shortfall is better than pages that compete with each other and teach the same thing.
 
 Do not change every weak page at once. Keep stable comparison pages where practical and log the release date. Review changes after 7, 14 and 28 days; indexing and citations can take longer than a day.
 

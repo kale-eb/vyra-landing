@@ -94,6 +94,33 @@ Use the reference video I attached for pacing and caption style. Keep my clips i
 - Free exports are 720p and carry a watermark.
 - Vyra edits footage you filmed. It isn't a generator that makes clips from a prompt.
 
+## More things to make on your phone
+
+Pick the job that matches your footage. Each guide includes an editing sequence, a brief you can paste into Vyra and checks before you export.
+
+| Your footage or task | Guide |
+| --- | --- |
+| Remove pauses from a video on iphone | [How to remove pauses from a video on iPhone](/how-to/remove-pauses-from-video-on-iphone) |
+| Choose the best video takes on iphone | [How to choose the best video takes on iPhone](/how-to/choose-best-video-takes-on-iphone) |
+| Edit a screen-recording demo on iphone | [How to edit a screen-recording demo on iPhone](/how-to/edit-screen-recording-demo-on-iphone) |
+| Edit a recipe video on iphone | [How to edit a recipe video on iPhone](/how-to/make-recipe-video-on-iphone) |
+| Edit a two-person interview on iphone | [How to edit a two-person interview on iPhone](/how-to/edit-two-person-interview-on-iphone) |
+| Edit a video that loops on iphone | [How to edit a video that loops on iPhone](/how-to/make-looping-video-on-iphone) |
+| Combine photos and video clips on iphone | [How to combine photos and video clips on iPhone](/how-to/mix-photos-and-videos-on-iphone) |
+| Make a tutorial video without talking on iphone | [How to make a tutorial video without talking on iPhone](/how-to/make-silent-tutorial-on-iphone) |
+| Add step labels to a tutorial video on iphone | [How to add step labels to a tutorial video on iPhone](/how-to/add-step-labels-to-video-on-iphone) |
+| Edit a workout demonstration on iphone | [How to edit a workout demonstration on iPhone](/how-to/edit-workout-demo-on-iphone) |
+| Edit an event highlight video on iphone | [How to edit an event highlight video on iPhone](/how-to/make-event-highlight-video-on-iphone) |
+| Edit a travel recap on iphone | [How to edit a travel recap on iPhone](/how-to/edit-travel-recap-on-iphone) |
+| Edit a product demonstration on iphone | [How to edit a product demonstration on iPhone](/how-to/edit-product-demo-on-iphone) |
+| Make a trailer from a longer video on iphone | [How to make a trailer from a longer video on iPhone](/how-to/make-video-trailer-on-iphone) |
+| Edit a room tour video on iphone | [How to edit a room tour video on iPhone](/how-to/make-room-tour-video-on-iphone) |
+| Keep natural sound in a video edit on iphone | [How to keep natural sound in a video edit on iPhone](/how-to/keep-natural-sound-in-video-on-iphone) |
+| Edit a voiceover-led video on iphone | [How to edit a voiceover-led video on iPhone](/how-to/edit-voiceover-led-video-on-iphone) |
+| Edit a podcast teaser on iphone | [How to edit a podcast teaser on iPhone](/how-to/make-podcast-teaser-on-iphone) |
+| Edit an unboxing video on iphone | [How to edit an unboxing video on iPhone](/how-to/edit-unboxing-video-on-iphone) |
+| Make a portfolio video on iphone | [How to make a portfolio video on iPhone](/how-to/make-portfolio-video-on-iphone) |
+
 ## Help if a step does not finish
 
 Keep your project and original clips while you check the problem. Start with [upload progress](/answers/why-is-my-video-upload-stuck) or [export and saving on iPhone](/answers/why-cant-i-export-video-on-iphone). For a finished file, compare [sound](/answers/why-does-my-exported-video-have-no-sound), [caption timing](/answers/why-are-my-captions-out-of-sync) and [image quality](/answers/why-does-my-exported-video-look-blurry) separately. [Vyra support](/app-support) can help if the problem remains.

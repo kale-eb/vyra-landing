@@ -56,6 +56,7 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/make-portfolio-video-on-iphone
 - /how-to/make-before-after-video-on-iphone
 - /how-to/add-voiceover-to-video-on-iphone
 - /for/artists
