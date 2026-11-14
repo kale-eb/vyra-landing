@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { watchVideoPlayback } from "@/lib/video-visibility";
 
 /**
  * An autoplaying loop that doesn't download until it's nearly on screen.
@@ -38,6 +39,11 @@ export default function LazyVideo({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const video = ref.current;
+    if (video) return watchVideoPlayback(video);
+  }, [ref]);
+
+  useEffect(() => {
     const el = ref.current;
     if (!el || visible) return;
 
@@ -67,18 +73,12 @@ export default function LazyVideo({
       src={visible ? src : undefined}
       poster={poster}
       muted={muted}
-      autoPlay
       loop
       playsInline
       preload={visible ? "auto" : "none"}
       className={className}
       style={style}
-      onCanPlay={(e) => {
-        // autoplay doesn't always re-trigger when src is attached after mount
-        const v = e.currentTarget;
-        if (v.paused) v.play().catch(() => {});
-        onCanPlay?.();
-      }}
+      onCanPlay={onCanPlay}
     />
   );
 }

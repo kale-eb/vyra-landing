@@ -2,7 +2,7 @@
 
 import { trackLead } from "./MetaPixel";
 import { track } from "@vercel/analytics";
-import posthog from "posthog-js";
+import { marketingAnalytics } from "@/lib/marketing-analytics";
 
 export const APP_STORE_URL =
   "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012";
@@ -18,7 +18,7 @@ export default function IosAppButton({ sourcePage, placement }: { sourcePage?: s
         if (sourcePage) {
           const properties = { source_page: sourcePage, placement: placement ?? "footer" };
           track("App Store click", properties);
-          if (process.env.NEXT_PUBLIC_POSTHOG_KEY) posthog.capture("app_store_clicked", properties);
+          void marketingAnalytics.capture("app_store_clicked", properties);
         }
       }}
       className="inline-flex items-center justify-center gap-2 rounded-full border border-black/15 bg-white/80 px-6 py-3 text-[15px] font-medium text-[var(--foreground)] transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4"
