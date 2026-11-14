@@ -145,6 +145,25 @@ Yes. The app has built-in AI chat. Add footage from Photos and describe the edit
 **Can I use a Reel or TikTok as a style reference?**
 Yes. Share it to Vyra, add your own footage and say what to follow, such as pacing or caption placement. Vyra uses your clips for the edit.
 
+## More ways to finish your iPhone edit
+
+- [undo video edits on iPhone](/how-to/undo-video-edits-on-iphone)
+- [remove gaps between clips on iPhone](/how-to/remove-gaps-between-clips-on-iphone)
+- [apply an effect to several clips on iPhone](/how-to/apply-effect-to-multiple-clips-on-iphone)
+- [correct names in video captions on iPhone](/how-to/correct-caption-names-on-iphone)
+- [give every caption the same style on iPhone](/how-to/style-all-captions-on-iphone)
+- [caption a video with two speakers on iPhone](/how-to/caption-two-speakers-on-iphone)
+- [caption speech over background music on iPhone](/how-to/caption-video-with-background-music-on-iphone)
+- [prepare iCloud videos for editing on iPhone](/how-to/prepare-icloud-videos-for-editing-on-iphone)
+- [change a video after exporting it on iPhone](/how-to/revise-video-after-export-on-iphone)
+- [replace one clip in a video on iPhone](/how-to/replace-clip-in-video-on-iphone)
+- [make vertical and landscape video versions on iPhone](/how-to/make-vertical-and-landscape-video-versions-on-iphone)
+- [shorten a video without speeding up speech on iPhone](/how-to/shorten-video-without-speeding-up-speech-on-iphone)
+- [add end credits to a video on iPhone](/how-to/add-end-credits-to-video-on-iphone)
+- [add song lyrics as text on iPhone](/how-to/add-song-lyrics-to-video-on-iphone)
+- [change music while keeping video cuts on iPhone](/how-to/change-music-without-changing-video-cuts-on-iphone)
+- [highlight a detail with stickers on iPhone](/how-to/highlight-detail-with-stickers-on-iphone)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone

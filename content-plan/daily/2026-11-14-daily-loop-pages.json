@@ -1,0 +1,383 @@
+[
+  {
+    "slug": "undo-video-edits-on-iphone",
+    "url": "/how-to/undo-video-edits-on-iphone",
+    "title": "How to undo video edits on iPhone",
+    "words": 511,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "undo video edits on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Recovery of project state, rather than trimming or revising a flattened export.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DajEylHSiz8"
+  },
+  {
+    "slug": "remove-gaps-between-clips-on-iphone",
+    "url": "/how-to/remove-gaps-between-clips-on-iphone",
+    "title": "How to remove gaps between clips on iPhone",
+    "words": 507,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "remove gaps between clips on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Empty timeline space, distinct from the existing guide to silence recorded inside footage.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZwM74ytJxF"
+  },
+  {
+    "slug": "apply-effect-to-multiple-clips-on-iphone",
+    "url": "/how-to/apply-effect-to-multiple-clips-on-iphone",
+    "title": "How to apply an effect to several clips on iPhone",
+    "words": 509,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "apply an effect to several clips on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Shared effect scope across several clips, rather than a general effects or montage overview.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY4pVwtu3KD"
+  },
+  {
+    "slug": "correct-caption-names-on-iphone",
+    "url": "/how-to/correct-caption-names-on-iphone",
+    "title": "How to correct names in video captions on iPhone",
+    "words": 511,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "correct names in video captions on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Proper-name correction and repeated occurrence review, rather than initial caption generation.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DdcjJBPva-m"
+  },
+  {
+    "slug": "style-all-captions-on-iphone",
+    "url": "/how-to/style-all-captions-on-iphone",
+    "title": "How to give every caption the same style on iPhone",
+    "words": 502,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "give every caption the same style on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Track-wide consistency and long-line checks, rather than spelling correction or first caption setup.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DdcjJBPva-m"
+  },
+  {
+    "slug": "caption-two-speakers-on-iphone",
+    "url": "/how-to/caption-two-speakers-on-iphone",
+    "title": "How to caption a video with two speakers on iPhone",
+    "words": 493,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "caption a video with two speakers on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Speaker-turn transcription review, rather than selecting interview answers or arranging camera angles.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY_kJF4uI9-"
+  },
+  {
+    "slug": "caption-video-with-background-music-on-iphone",
+    "url": "/how-to/caption-video-with-background-music-on-iphone",
+    "title": "How to caption speech over background music on iPhone",
+    "words": 525,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "caption speech over background music on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Music interference during transcription, distinct from adding a music track or styling captions.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY_kJF4uI9-"
+  },
+  {
+    "slug": "prepare-icloud-videos-for-editing-on-iphone",
+    "url": "/how-to/prepare-icloud-videos-for-editing-on-iphone",
+    "title": "How to prepare iCloud videos for editing on iPhone",
+    "words": 588,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "prepare iCloud videos for editing on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Source readiness before import, rather than repeating the existing upload-stuck recovery page.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile",
+      "https://support.apple.com/en-us/105061"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZwM74ytJxF"
+  },
+  {
+    "slug": "revise-video-after-export-on-iphone",
+    "url": "/how-to/revise-video-after-export-on-iphone",
+    "title": "How to change a video after exporting it on iPhone",
+    "words": 514,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "change a video after exporting it on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Revision and file-version verification after delivery, distinct from first export or Undo.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DajEylHSiz8"
+  },
+  {
+    "slug": "replace-clip-in-video-on-iphone",
+    "url": "/how-to/replace-clip-in-video-on-iphone",
+    "title": "How to replace one clip in a video on iPhone",
+    "words": 514,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "replace one clip in a video on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "One-shot substitution and dependent labels/audio, rather than initial clip assembly.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZifpznNyEg"
+  },
+  {
+    "slug": "make-vertical-and-landscape-video-versions-on-iphone",
+    "url": "/how-to/make-vertical-and-landscape-video-versions-on-iphone",
+    "title": "How to make vertical and landscape video versions on iPhone",
+    "words": 513,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "make vertical and landscape video versions on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Two deliverables with layout-specific review, rather than the existing single vertical-format guide.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DajEylHSiz8"
+  },
+  {
+    "slug": "shorten-video-without-speeding-up-speech-on-iphone",
+    "url": "/how-to/shorten-video-without-speeding-up-speech-on-iphone",
+    "title": "How to shorten a video without speeding up speech on iPhone",
+    "words": 496,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "shorten a video without speeding up speech on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Runtime reduction through meaning-preserving selection, distinct from the pending playback-speed guide and internal-pause guide.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY_kJF4uI9-"
+  },
+  {
+    "slug": "add-end-credits-to-video-on-iphone",
+    "url": "/how-to/add-end-credits-to-video-on-iphone",
+    "title": "How to add end credits to a video on iPhone",
+    "words": 514,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "add end credits to a video on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Contributor attribution and reading-time review, distinct from instructional step labels.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DSn8qeejBLW"
+  },
+  {
+    "slug": "add-song-lyrics-to-video-on-iphone",
+    "url": "/how-to/add-song-lyrics-to-video-on-iphone",
+    "title": "How to add song lyrics as text on iPhone",
+    "words": 521,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "add song lyrics as text on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Song-aligned supplied text, distinct from transcribing spoken dialogue.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DVzOIAIjjSs"
+  },
+  {
+    "slug": "change-music-without-changing-video-cuts-on-iphone",
+    "url": "/how-to/change-music-without-changing-video-cuts-on-iphone",
+    "title": "How to change music while keeping video cuts on iPhone",
+    "words": 536,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "change music while keeping video cuts on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Soundtrack substitution with a fixed picture edit, rather than initial music selection or beat-syncing.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZCKNJiupPa"
+  },
+  {
+    "slug": "highlight-detail-with-stickers-on-iphone",
+    "url": "/how-to/highlight-detail-with-stickers-on-iphone",
+    "title": "How to highlight a detail with stickers on iPhone",
+    "words": 505,
+    "platform": "iphone",
+    "reader": "Creator editing supplied material in the native iPhone app",
+    "job": "highlight a detail with stickers on iPhone",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Visual attention on a specific detail, rather than numbered tutorial steps or general text placement.",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY4pVwtu3KD"
+  },
+  {
+    "slug": "review-ai-video-edit-with-claude",
+    "url": "/how-to/review-ai-video-edit-with-claude",
+    "title": "How to review an AI video edit with Claude",
+    "words": 488,
+    "platform": "mcp",
+    "reader": "Creator reviewing and editing their own footage through Claude",
+    "job": "review an AI video edit with Claude",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Quality review before delivery, distinct from connector setup and batch production.",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZumPohtfW8"
+  },
+  {
+    "slug": "find-b-roll-in-your-footage-with-claude",
+    "url": "/how-to/find-b-roll-in-your-footage-with-claude",
+    "title": "How to find B-roll in your footage with Claude",
+    "words": 487,
+    "platform": "mcp",
+    "reader": "Creator reviewing and editing their own footage through Claude",
+    "job": "find B-roll in your footage with Claude",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Retrieving a specific supporting shot, rather than inventorying a whole shoot or making a complete rough cut.",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZumPohtfW8"
+  },
+  {
+    "slug": "make-two-video-openings-with-claude",
+    "url": "/how-to/make-two-video-openings-with-claude",
+    "title": "How to make two video openings with Claude",
+    "words": 499,
+    "platform": "mcp",
+    "reader": "Creator reviewing and editing their own footage through Claude",
+    "job": "make two video openings with Claude",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Two controlled creative alternatives, not the pending 50-video captions or generic automation pages.",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DaAb0QFNvk0"
+  },
+  {
+    "slug": "make-shot-list-from-footage-with-claude",
+    "url": "/how-to/make-shot-list-from-footage-with-claude",
+    "title": "How to make a shot list from existing footage with Claude",
+    "words": 496,
+    "platform": "mcp",
+    "reader": "Creator reviewing and editing their own footage through Claude",
+    "job": "make a shot list from existing footage with Claude",
+    "demandEvidence": "Bounded editorial experiment inferred from documented capabilities and adjacent editing jobs. No measured demand or customer-question claim.",
+    "overlapReview": "Pre-edit coverage inventory with a missing-shot list, distinct from searching one B-roll insert.",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "sourceChecked": "2026-11-14",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZumPohtfW8"
+  }
+]

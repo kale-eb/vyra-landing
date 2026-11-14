@@ -110,6 +110,8 @@ The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyr
 
 ## Related
 
+- /how-to/style-all-captions-on-iphone
+- /how-to/correct-caption-names-on-iphone
 - /how-to/remove-pauses-from-video-on-iphone
 - /ai-video-editor-app
 - /how-to/choose-captions

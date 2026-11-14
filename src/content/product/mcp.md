@@ -206,6 +206,13 @@ Those forward your prompt to the vendor's own assistant. Vyra exposes the editin
 **Do I need to learn the tool names?**
 No. Describe the result. The full catalog is available through the standard MCP `tools/list` method, and there's a `searchHelpDocs` tool for Vyra's help library.
 
+## Plan and review your own footage
+
+- [review an AI video edit with Claude](/how-to/review-ai-video-edit-with-claude)
+- [find B-roll in your footage with Claude](/how-to/find-b-roll-in-your-footage-with-claude)
+- [make two video openings with Claude](/how-to/make-two-video-openings-with-claude)
+- [make a shot list from existing footage with Claude](/how-to/make-shot-list-from-footage-with-claude)
+
 ## Related
 
 - /answers/video-editors-that-integrate-with-llms
