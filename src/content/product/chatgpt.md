@@ -1,7 +1,7 @@
 ---
-title: Edit videos with ChatGPT
+title: "Edit your own video footage with ChatGPT over MCP"
 description: Connect Vyra to ChatGPT over MCP. ChatGPT reads your transcript, cuts the timeline, adds captions, and exports, all from the chat.
-updated: 2026-10-29
+updated: '2026-11-14'
 category: product
 reels:
   - DajEylHSiz8

@@ -4,9 +4,9 @@ import DirectoryNav from "@/components/directory/DirectoryNav";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/content";
 
-const TITLE = "Vyra pricing: MCP plans from $24/mo, built-in AI plans from $54/mo";
+const TITLE = "AI video editing pricing for web and MCP plans";
 const DESCRIPTION =
-  "Vyra costs $24/mo (MCP Starter) or $65/mo (MCP Pro) with your own Claude, ChatGPT, or Cursor subscription, and $54/mo (AI Starter) or $129/mo (AI Pro) with the built-in AI. 3-day free trial on the web.";
+  "Compare Vyra monthly web plans. Bring your own AI from $24/month or use built-in AI from $54/month. The web app has a 3-day free trial.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Vyra`,
@@ -31,6 +31,7 @@ export default function PricingPage() {
       "@context": "https://schema.org",
       "@type": "Product",
       name: "Vyra",
+      image: `${SITE_URL}/vyra-share-preview.jpg`,
       description: DESCRIPTION,
       brand: { "@type": "Brand", name: "Vyra" },
       offers: PLANS.map((p) => ({
@@ -71,7 +72,7 @@ export default function PricingPage() {
           Pricing
         </h1>
         <p className="mb-12 max-w-2xl text-[17px] leading-relaxed text-[var(--foreground-muted)]">
-          Bring the AI you already pay for, or use ours. 3-day free trial, cancel anytime.
+          Prices are in USD, billed monthly. Bring the AI you already pay for, or use ours. The web app has a 3-day free trial, cancel anytime.
         </p>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

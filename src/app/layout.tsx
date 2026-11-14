@@ -148,6 +148,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name: "Vyra",
+              image: "https://www.usevyra.com/vyra-share-preview.jpg",
               applicationCategory: "MultimediaApplication",
               operatingSystem: "Web, iOS 17 or later",
               description:
