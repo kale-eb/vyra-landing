@@ -2,7 +2,7 @@
 
 // Favente creator-recruitment embed target.
 //
-// Favente's script (loaded site-wide in the <head> of app/layout.tsx) renders
+// Favente's script (scheduled site-wide after load by app/layout.tsx) renders
 // the recruit button INTO the #favente-recruit container below. We own the
 // card around it (styled like the pricing group cards) and its copy; the button
 // itself, its destination, referral attribution, and tracking all come from

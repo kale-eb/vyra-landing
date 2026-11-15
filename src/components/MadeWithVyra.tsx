@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import LazyVideo from "./LazyVideo";
 import LiveCount from "./LiveCount";
+import { watchVisibleInterval } from "@/lib/visible-interval";
 
 const STORAGE_BASE =
   "https://pub-afda0198369e4e9d96b647ae8d8f963e.r2.dev/landing";
@@ -26,7 +27,7 @@ export default function MadeWithVyra({
   const [active, setActive] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
   const total = examples.length;
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const pausedRef = useRef(false);
 
   useEffect(() => {
@@ -44,14 +45,14 @@ export default function MadeWithVyra({
     setActive((prev) => (prev - 1 + total) % total);
   }, [total]);
 
-  // Auto-advance every 4s unless paused
+  // Decorative work stops offscreen, in a background tab, or for reduced motion.
+  // Hover pause and manual navigation retain their existing behavior.
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    return watchVisibleInterval(section, () => {
       if (!pausedRef.current) next();
     }, 4000);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
   }, [next]);
 
   // Compute position relative to active: -2, -1, 0, +1, +2
@@ -64,7 +65,7 @@ export default function MadeWithVyra({
   }
 
   return (
-    <section className="relative py-20 px-6 md:py-28">
+    <section ref={sectionRef} className="relative py-20 px-6 md:py-28">
       <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
         <Reveal

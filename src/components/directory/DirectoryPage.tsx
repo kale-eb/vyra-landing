@@ -311,7 +311,10 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
           {faqBlock && mobileFaqs.length ? (
             <>
               <Markdown source={articleBody.slice(0, faqBlock.index)} />
-              <MobileFaq items={mobileFaqs} sourcePage={entry.url} />
+              <MobileFaq
+                items={mobileFaqs.map(({ q, a }) => ({ q, answer: <Markdown source={a} /> }))}
+                sourcePage={entry.url}
+              />
               <Markdown source={articleBody.slice((faqBlock.index ?? 0) + faqBlock[0].length)} />
             </>
           ) : <Markdown source={articleBody} />}

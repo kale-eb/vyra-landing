@@ -6,7 +6,6 @@ import {
   motion,
   useScroll,
   useTransform,
-  useMotionValueEvent,
   useReducedMotion,
 } from "framer-motion";
 import Image from "next/image";
@@ -84,14 +83,11 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
   });
   const editorY = useTransform(storyScroll, [0, 1], [0, -12]);
   const editorScale = useTransform(storyScroll, [0, 1], [1, 1.015]);
-  // Quantize before it hits React state. The raw motion value fires on every
-  // scroll frame; re-rendering the whole mockup that often drops frames on
-  // phones. Small progress steps keep the playhead movement smooth.
-  const [storyProgress, setStoryProgress] = useState(0);
-  useMotionValueEvent(storyScroll, "change", (v) => {
-    const q = Math.round(v * 200) / 200;
-    setStoryProgress((prev) => (prev === q ? prev : q));
-  });
+  // Motion values update just the playhead style, without reconciling the
+  // headline, buttons, videos and populated timeline on every scroll frame.
+  const playheadLeft = useTransform(storyScroll, (v) =>
+    `${4 + Math.min(1, Math.max(0, v)) * 74}%`
+  );
 
   const [client, setClient] = useState<ClientKey>("vyra");
 
@@ -270,7 +266,7 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
               />
             </div>
 
-            <EditorMockup progress={reducedMotion ? 0 : storyProgress} client={client} />
+            <EditorMockup playheadLeft={reducedMotion ? "4%" : playheadLeft} client={client} />
 
             {/* Client switcher - swaps the editor preview above */}
             <div

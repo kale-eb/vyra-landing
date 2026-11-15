@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {transpileModule,ModuleKind,ScriptTarget} from 'typescript';
+const {outputText}=transpileModule(readFileSync('src/lib/visible-interval.ts','utf8'),{compilerOptions:{module:ModuleKind.ESNext,target:ScriptTarget.ES2022}});
+const {watchVisibleInterval}=await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
+const docEvents=new Map(),motionEvents=new Map(),timers=new Map();
+let enter,disconnected=false,serial=0,ticks=0;
+globalThis.document={hidden:false,addEventListener:(n,f)=>docEvents.set(n,f),removeEventListener:n=>docEvents.delete(n)};
+const preference={matches:false,addEventListener:(n,f)=>motionEvents.set(n,f),removeEventListener:n=>motionEvents.delete(n)};
+globalThis.window={matchMedia:()=>preference};
+globalThis.IntersectionObserver=class{constructor(fn){enter=fn;}observe(){}disconnect(){disconnected=true;}};
+const realSet=globalThis.setInterval,realClear=globalThis.clearInterval;
+globalThis.setInterval=(fn,delay)=>{assert.equal(delay,4000);timers.set(++serial,fn);return serial;};
+globalThis.clearInterval=id=>timers.delete(id);
+try {
+ const stop=watchVisibleInterval({},()=>ticks++,4000);
+ assert.equal(timers.size,0,'no offscreen timer');
+ enter([{isIntersecting:true}]);assert.equal(timers.size,1);
+ enter([{isIntersecting:true}]);assert.equal(timers.size,1,'no duplicate timers');
+ [...timers.values()][0]();assert.equal(ticks,1);
+ document.hidden=true;docEvents.get('visibilitychange')();assert.equal(timers.size,0);
+ document.hidden=false;docEvents.get('visibilitychange')();assert.equal(timers.size,1);
+ preference.matches=true;motionEvents.get('change')();assert.equal(timers.size,0);
+ preference.matches=false;motionEvents.get('change')();assert.equal(timers.size,1);
+ enter([{isIntersecting:false}]);assert.equal(timers.size,0);
+ enter([{isIntersecting:true}]);stop();assert.ok(disconnected);assert.equal(timers.size,0);assert.equal(docEvents.size,0);assert.equal(motionEvents.size,0);
+ enter([{isIntersecting:true}]);assert.equal(timers.size,0,'late callbacks cannot restart an unmounted carousel');
+ delete globalThis.IntersectionObserver;
+ const fallback=watchVisibleInterval({},()=>ticks++,4000);assert.equal(timers.size,1,'old browsers retain visible-tab behavior');fallback();assert.equal(timers.size,0);
+} finally {globalThis.setInterval=realSet;globalThis.clearInterval=realClear;delete globalThis.document;delete globalThis.window;delete globalThis.IntersectionObserver;}
+console.log('Carousel lifecycle passed: viewport, hidden tab, reduced motion, singleton timer, cleanup and fallback.');
