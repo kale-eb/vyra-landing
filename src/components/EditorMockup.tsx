@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { memo } from "react";
 import { motion, type MotionValue } from "framer-motion";
 import LazyVideo from "./LazyVideo";
 
@@ -170,7 +171,7 @@ function SendButton() {
   );
 }
 
-export default function EditorMockup({
+function EditorMockup({
   playheadLeft,
   client,
 }: {
@@ -433,3 +434,6 @@ export default function EditorMockup({
     </div>
   );
 }
+
+// Headline typing must not rebuild the populated timeline or video preview.
+export default memo(EditorMockup);
