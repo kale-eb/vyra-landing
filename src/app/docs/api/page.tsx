@@ -178,8 +178,8 @@ export VYRA_KEY=vyra_live_...`}</Code>
   "id": "vid_8fK2mQ...",
   "status": "completed",
   "videos": [
-    { "id": "vid_8fK2mQ..._1", "revision": 0, "length_seconds": 29.6, "width": 1080, "height": 1920,
-      "exports": [ { "resolution": "original", "status": "completed", "url": "https://..." } ] }
+    { "id": "vid_8fK2mQ..._1", "revision": 1, "length_seconds": 29.6,
+      "exports": [ { "resolution": "original", "status": "completed", "url": "https://...", "url_expires_at": "..." } ] }
   ],
   "notes": {
     "summary": "A 30-second vertical ad that opens on the pour and ends on the logo.",
@@ -388,7 +388,8 @@ export VYRA_KEY=vyra_live_...`}</Code>
               <C>video.completed</C>, <C>video.failed</C>, <C>video.revised</C>,{" "}
               <C>video.revision_failed</C>, <C>video.exported</C>, <C>video.export_failed</C>. Answer
               with a 2xx. Anything else is tried again, further apart each time, for about a day. The
-              address must be on the public internet.
+              address must be on the public internet. The two revision events also carry{" "}
+              <C>revision_id</C>.
             </p>
             <p className="mb-2">
               <strong className="text-[var(--foreground)]">Check that it came from us.</strong> Each
@@ -429,12 +430,29 @@ function fromVyra(rawBody, header, secret) {
   -H "Authorization: Bearer $VYRA_KEY" -H "Content-Type: application/json" \\
   -d '{ "prompt": "Shorten the quote to one line and make the captions bigger." }'`}</Code>
             <p className="mt-3 mb-4">
-              The video stays <C>completed</C> and downloadable while the change is made;{" "}
+              The answer is the video with <C>revision_id</C>, this revision&apos;s own id. The video
+              stays <C>completed</C> and downloadable while the change is made;{" "}
               <C>change</C> shows how it stands. When it is done the cut&apos;s <C>revision</C> goes
               up, it has a new file, and <C>last_change.price.total</C> is what the revision cost.
               With several variations, name the cut by its own id (<C>vid_8fK2mQ..._2</C>). A failed
               revision leaves the video as it was and costs nothing. A cut takes up to 10 changes,
-              one at a time.
+              one at a time: a second one sent meanwhile answers <C>409 VIDEO_BUSY</C>.
+            </p>
+            <p className="mb-2">
+              The video lists every revision it has had under <C>revisions</C>, oldest first, so you
+              find a result by the id its revision was given, whatever was revised after it:
+            </p>
+            <Code>{`"revisions": [
+  { "id": "rev_4HqT...", "video_id": "vid_8fK2mQ..._1", "status": "completed", "revision": 2,
+    "price": { "currency": "USD", "total": 0.7 },
+    "exports": [ { "resolution": "original", "status": "completed", "url": "https://...", "url_expires_at": "..." } ],
+    "created_at": "2026-11-15T19:02:11Z", "completed_at": "2026-11-15T19:09:40Z" },
+  { "id": "rev_9ZtB...", "video_id": "vid_8fK2mQ..._1", "status": "editing", "created_at": "2026-11-15T19:10:02Z" }
+]`}</Code>
+            <p className="mt-3 mb-4">
+              A finished revision keeps its own file, which stays downloadable after a later revision
+              replaces the cut&apos;s. A failed one carries <C>error</C>. Each revision builds on the
+              cut as the one before left it. Revisions made before November 15, 2026 are not listed.
             </p>
             <p className="mb-2">
               <strong className="text-[var(--foreground)]">Another resolution of the same cut.</strong>{" "}
@@ -484,7 +502,7 @@ function fromVyra(rawBody, header, secret) {
               rows={[
                 ["Videos being made at once, per account", "25. Ask us if you need more."],
                 ["Videos being made at once, per key", "5 by default. Set it when you create the key or change it later in Settings → Developer. Your keys' limits together cannot pass your account's."],
-                ["Calls a minute, per key", "300"],
+                ["Calls a minute, per key", "3,000"],
                 ["Request body", "1 MB"],
                 ["Footage", "200 entries, 5 hours of video"],
                 ["References", "5"],
@@ -497,7 +515,7 @@ function fromVyra(rawBody, header, secret) {
             <p className="mt-4">
               A create past a videos-at-once limit answers <C>429 TOO_MANY_RUNNING</C>, and the
               message says whether it was the key&apos;s limit or the account&apos;s. Wait for one to
-              finish and send it again. A call past 300 a minute answers <C>429 RATE_LIMITED</C> with{" "}
+              finish and send it again. A call past 3,000 a minute answers <C>429 RATE_LIMITED</C> with{" "}
               <C>Retry-After</C>.
             </p>
           </section>
@@ -516,9 +534,14 @@ function fromVyra(rawBody, header, secret) {
               Without it, every accepted create is a new video, even if the connection dropped before
               you saw the answer.
             </p>
-            <p>
+            <p className="mb-4">
               To try again after a video failed, use a new key: the old one keeps answering with the
               failed video.
+            </p>
+            <p>
+              A revision takes the header the same way. The same key sent again for the same video
+              within a day answers with the first revision&apos;s <C>revision_id</C>, whether it is
+              under way, finished or failed, and nothing more is started or charged.
             </p>
           </section>
 
