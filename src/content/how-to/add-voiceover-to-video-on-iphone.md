@@ -59,6 +59,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/match-voiceover-length-to-footage-on-iphone
+
 - /how-to/edit-voiceover-led-video-on-iphone
 - /how-to/add-music-to-video-on-iphone
 - /how-to/add-captions-to-videos-on-iphone

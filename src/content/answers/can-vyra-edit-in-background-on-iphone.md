@@ -1,7 +1,7 @@
 ---
 title: "Can an iPhone editor keep working in the background?"
 description: "Vyra runs AI editing on its servers, so you can leave the app after sending the footage and prompt. Check upload and export progress separately."
-updated: '2026-11-14'
+updated: '2026-11-15'
 category: answers
 platform: iphone
 facts:
@@ -50,9 +50,12 @@ No. Review the project and complete the export and save steps. Check for the act
 **Can I use this to post automatically to Instagram?**
 This describes background editing. It is not a promise of automatic social posting.
 
+**Can I close the app while my clips are uploading?**
+The current App Store release notes say uploads keep going when the app is closed and resume after interruptions. They still need a working connection. Check the upload state if the edit is waiting for a clip.
+
 ## Sources
 
-The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 13, 2026.
+The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 15, 2026. The current version history specifically documents background uploads and resumption after interruption.
 
 ## Related
 
