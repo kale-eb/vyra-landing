@@ -66,6 +66,8 @@ The [Vyra MCP docs](https://www.usevyra.com/docs/mcp) support the inspection and
 
 ## Related
 
+- /how-to/mark-video-review-notes-with-claude
+
 - /how-to/make-two-video-openings-with-claude
 - /how-to/make-shot-list-from-footage-with-claude
 - /mcp

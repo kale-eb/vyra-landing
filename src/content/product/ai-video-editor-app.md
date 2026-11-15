@@ -164,6 +164,25 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 - [change music while keeping video cuts on iPhone](/how-to/change-music-without-changing-video-cuts-on-iphone)
 - [highlight a detail with stickers on iPhone](/how-to/highlight-detail-with-stickers-on-iphone)
 
+## Detailed iPhone editing tasks
+
+- [keep video captions clear of your subject on iPhone](/how-to/keep-captions-clear-of-subject-on-iphone)
+- [shorten video caption lines on iPhone](/how-to/shorten-caption-lines-on-iphone)
+- [caption fast speech on iPhone](/how-to/caption-fast-speech-on-iphone)
+- [add an on-screen correction to a video on iPhone](/how-to/correct-spoken-mistake-with-text-on-iphone)
+- [turn a reference Reel into an editing brief on iPhone](/how-to/turn-reference-into-editing-brief-on-iphone)
+- [adapt a reference Reel when you have fewer clips](/how-to/adapt-reference-with-fewer-clips-on-iphone)
+- [keep your original audio while matching a reference Reel](/how-to/keep-original-audio-when-matching-reference-on-iphone)
+- [combine two reference styles in an iPhone edit](/how-to/combine-two-reference-styles-on-iphone)
+- [cut on action in a video on iPhone](/how-to/cut-on-action-video-on-iphone)
+- [make a match cut on iPhone](/how-to/make-match-cut-on-iphone)
+- [fix continuity problems in an iPhone video edit](/how-to/edit-continuity-errors-on-iphone)
+- [edit repeated actions into a clear video on iPhone](/how-to/edit-repeated-actions-on-iphone)
+- [add chapter cards to a video on iPhone](/how-to/add-chapter-cards-to-video-on-iphone)
+- [fit a voiceover to your footage on iPhone](/how-to/match-voiceover-length-to-footage-on-iphone)
+- [edit a customer testimonial video on iPhone](/how-to/edit-customer-testimonial-video-on-iphone)
+- [edit a multi-day video diary on iPhone](/how-to/edit-multi-day-video-diary-on-iphone)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone

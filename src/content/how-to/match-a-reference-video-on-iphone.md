@@ -101,6 +101,8 @@ No. You can use Vyra's built-in chat in the iPhone app. Connecting an external A
 
 ## Related
 
+- /how-to/adapt-reference-with-fewer-clips-on-iphone
+
 - /ai-video-editor-app
 - /features/reference-style-matching
 - /prompts/reference-style

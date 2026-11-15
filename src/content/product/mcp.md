@@ -213,6 +213,13 @@ No. Describe the result. The full catalog is available through the standard MCP 
 - [make two video openings with Claude](/how-to/make-two-video-openings-with-claude)
 - [make a shot list from existing footage with Claude](/how-to/make-shot-list-from-footage-with-claude)
 
+## Inspect specific parts of your project
+
+- [add timed video review notes with Claude](/how-to/mark-video-review-notes-with-claude)
+- [find a spoken quote in your footage with Claude](/how-to/find-a-quote-in-footage-with-claude)
+- [check video text readability with Claude](/how-to/check-video-text-readability-with-claude)
+- [find overlapping audio in a video with Claude](/how-to/audit-overlapping-audio-with-claude)
+
 ## Related
 
 - /answers/video-editors-that-integrate-with-llms

@@ -14,7 +14,7 @@ Sulan authorized the daily 8 a.m. Pacific research, content and release loop, in
 
 Use a task-owned branch from current remote main. Preserve unrelated work and inspect open PRs before recreating anything. Existing unpublished material is a candidate, not automatically approved factual evidence.
 
-Browser work must use both a separate Chrome window and a separate macOS desktop from Sulan's current workspace. If the tools cannot reliably establish both, use connectors and local tools. Record the missing source rather than touching her browser.
+Browser work must use both a separate Chrome window and a separate macOS desktop from Sulan's current workspace. If the tools cannot reliably establish both, use connectors and local tools. Record the missing source rather than touching her browser. On November 15, Sulan explicitly allowed isolated headless browser testing with a fresh temporary profile, no visible window and no access to her Chrome session or desktop. That exception permits local/live validation; block synthetic analytics ingestion and outbound signups during such tests. The separate-window and separate-desktop requirement still applies to visible browser work.
 
 ## The daily research habit
 

@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "keep-captions-clear-of-subject-on-iphone",
+    "url": "/how-to/keep-captions-clear-of-subject-on-iphone",
+    "title": "How to keep video captions clear of your subject on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To keep captions clear of your subject in Vyra on iPhone, find where the important action happens, place the words outside that area and review every shot after applying a shared caption style.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Composition and occlusion review, rather than initial caption generation or choosing a shared font.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Watch once with the sound off and follow the demonstration using the words. Then watch the action without reading. Both should remain understandable. Leave room for the destination app\u2019s buttons and description, whose positions can vary between views.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY4pVwtu3KD",
+    "words": 504
+  },
+  {
+    "slug": "shorten-caption-lines-on-iphone",
+    "url": "/how-to/shorten-caption-lines-on-iphone",
+    "title": "How to shorten video caption lines on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To shorten caption lines in Vyra on iPhone, keep the spoken wording, review long words and adjust the text layout so each phrase fits without covering the video.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Line layout and long-word readability, distinct from spelling correction and track-wide visual consistency.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Do not solve a layout problem by quietly deleting an important qualifier. A sentence such as \u201cworks with some phones\u201d changes meaning if the small word disappears. Review long lines alongside the recording, especially where a caption crosses a cut.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DdcjJBPva-m",
+    "words": 486
+  },
+  {
+    "slug": "caption-fast-speech-on-iphone",
+    "url": "/how-to/caption-fast-speech-on-iphone",
+    "title": "How to caption fast speech on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To caption fast speech in Vyra on iPhone, settle the spoken cut first, generate the captions and review the fastest phrases against the audio before exporting.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Rapid-speech verification and reading time, rather than general transcription accuracy or music interference.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "If viewers would need to pause every sentence, the spoken edit may need more room. Keep an explanatory pause or use a clearer take when you have one. Increasing caption density will not make an overcrowded explanation easier to understand.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DajEylHSiz8",
+    "words": 483
+  },
+  {
+    "slug": "correct-spoken-mistake-with-text-on-iphone",
+    "url": "/how-to/correct-spoken-mistake-with-text-on-iphone",
+    "title": "How to add an on-screen correction to a video on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To correct a spoken mistake with text in Vyra on iPhone, add a clearly labeled correction at the relevant moment and keep the captions faithful to what the recording actually says.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Correcting the information in a spoken take, not correcting a caption transcription mistake.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Read the correction without the sound, then listen without looking at it. If those versions suggest opposite instructions, make the correction more explicit or replace the take. For consequential instructions, a new clear recording can be easier to follow than a dense overlay.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZumPohtfW8",
+    "words": 502
+  },
+  {
+    "slug": "turn-reference-into-editing-brief-on-iphone",
+    "url": "/how-to/turn-reference-into-editing-brief-on-iphone",
+    "title": "How to turn a reference Reel into an editing brief on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To turn a reference Reel into an editing brief in Vyra on iPhone, share the reference to the app, describe the choices you want to borrow and map them to footage you actually have before requesting the edit.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "A written pre-edit decision document, distinct from the existing end-to-end reference import/edit guide. Review future query overlap.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Keep the brief short enough to compare with the draft. \u201cStart with my finished piece and use small captions above my hands\u201d is easier to check than a long list of adjectives. If the analysis describes something you cannot see in the reference, correct it before proceeding.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY75P9PtMhO",
+    "words": 508
+  },
+  {
+    "slug": "adapt-reference-with-fewer-clips-on-iphone",
+    "url": "/how-to/adapt-reference-with-fewer-clips-on-iphone",
+    "title": "How to adapt a reference Reel when you have fewer clips",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To adapt a reference Reel in Vyra on iPhone when you have fewer clips, keep its main story beats, use longer holds where your footage needs them and leave out shots you cannot support.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Coverage-constrained adaptation with an explicit missing-shot decision, distinct from reference sharing setup.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Count meaningful changes rather than cuts. A new stage in a painting deserves a new shot; another view of the same unchanged brush stroke may not. The adaptation should explain your material even to someone who has never seen the reference.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DXh8TpouYGm",
+    "words": 491
+  },
+  {
+    "slug": "keep-original-audio-when-matching-reference-on-iphone",
+    "url": "/how-to/keep-original-audio-when-matching-reference-on-iphone",
+    "title": "How to keep your original audio while matching a reference Reel",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To keep your original audio while matching a reference in Vyra on iPhone, limit the reference request to visual choices and explicitly preserve your speech, source sounds and music decisions.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Explicit audio preservation during a visual reference edit, not the general native music guide.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Listen for clipped words, unexpected silence and a change in music level. A visually correct draft can still change what the viewer hears. If the requested pacing conflicts with a complete sentence, keep the sentence or choose a different place for the visual cut.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZwM74ytJxF",
+    "words": 483
+  },
+  {
+    "slug": "combine-two-reference-styles-on-iphone",
+    "url": "/how-to/combine-two-reference-styles-on-iphone",
+    "title": "How to combine two reference styles in an iPhone edit",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To combine two reference styles in Vyra on iPhone, assign each reference one clear role and tell the app which rule wins when the examples conflict.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Resolving conflicting reference instructions rather than adding another single-reference setup page.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Keep a note of which example governs each decision. If a draft goes wrong, point to the specific rule instead of asking it to become \u201cmore like both.\u201d Start with one reference if two are making the brief harder to understand.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY75P9PtMhO",
+    "words": 507
+  },
+  {
+    "slug": "cut-on-action-video-on-iphone",
+    "url": "/how-to/cut-on-action-video-on-iphone",
+    "title": "How to cut on action in a video on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To cut on action in Vyra on iPhone, join two views of the same movement while the action is still happening, then check that the movement continues rather than restarting.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Movement continuity across two takes, rather than a general split, transition or silence-removal guide.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Look at the object as well as the hand. Its position, direction and state should still make sense. If the brush has already changed color between takes, a cut on action will not repair the underlying continuity difference.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY4pVwtu3KD",
+    "words": 493
+  },
+  {
+    "slug": "make-match-cut-on-iphone",
+    "url": "/how-to/make-match-cut-on-iphone",
+    "title": "How to make a match cut on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To make a match cut in Vyra on iPhone, choose two shots with a similar shape or movement, line up their useful frames and review a direct cut between them.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Choosing and aligning a visual correspondence, beyond the existing glossary definition or general transition ideas.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "A match cut should work at ordinary playback speed. If someone needs an explanation to see the connection, simplify it or choose a clearer pair. Keep the surrounding shot long enough for the first shape to register.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY75P9PtMhO",
+    "words": 504
+  },
+  {
+    "slug": "edit-continuity-errors-on-iphone",
+    "url": "/how-to/edit-continuity-errors-on-iphone",
+    "title": "How to fix continuity problems in an iPhone video edit",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To fix a continuity problem in Vyra on iPhone, identify what changes unexpectedly across a cut and choose compatible shots, a clearer order or an honest visible break.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Resolving contradictory states across a cut rather than selecting a preferred take or simply joining clips.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "An edit can explain a time jump without pretending the camera filmed it continuously. A wider shot may help establish a new moment, but it should come from the same real sequence you intend to show. Review spoken claims alongside the new order.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DY4pVwtu3KD",
+    "words": 498
+  },
+  {
+    "slug": "edit-repeated-actions-on-iphone",
+    "url": "/how-to/edit-repeated-actions-on-iphone",
+    "title": "How to edit repeated actions into a clear video on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To edit repeated actions in Vyra on iPhone, show one complete example of the action, shorten later repetitions and keep the moments where the process changes.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Demonstration completeness versus redundant cycles, distinct from removing silence or choosing between alternate takes.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Look for progress in the image rather than aiming for a cut every second. If the video teaches a technique, leave enough time to see the movement. If it only summarizes a finished project, fewer repeated cycles may be enough.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DajEylHSiz8",
+    "words": 482
+  },
+  {
+    "slug": "add-chapter-cards-to-video-on-iphone",
+    "url": "/how-to/add-chapter-cards-to-video-on-iphone",
+    "title": "How to add chapter cards to a video on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To add chapter cards in Vyra on iPhone, divide the video at meaningful topic changes and place a short text heading at each section boundary.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Section-level navigation for a longer explanation, rather than a numbered label on each demonstrated action.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Use the same wording in the heading and the explanation when possible. If a card says \u201cFinal checks\u201d and the next minute is still preparation, move it. Chapter cards are part of the exported image; they are separate from a platform\u2019s clickable chapter features.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DTVfE_wjoyf",
+    "words": 488
+  },
+  {
+    "slug": "match-voiceover-length-to-footage-on-iphone",
+    "url": "/how-to/match-voiceover-length-to-footage-on-iphone",
+    "title": "How to fit a voiceover to your footage on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To fit a voiceover to footage in Vyra on iPhone, compare the narration with the shots it needs, shorten unsupported lines and give important explanations enough picture time.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Duration and coverage reconciliation for an existing narration, distinct from recording setup or a general voiceover-led edit.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "If you rewrite a line, record it with a similar tone and distance from the microphone. Review the join by listening as well as watching. A supplied voiceover can guide the edit, but it should not force a shot to claim something it does not show.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DU1PhRrCZnu",
+    "words": 503
+  },
+  {
+    "slug": "edit-customer-testimonial-video-on-iphone",
+    "url": "/how-to/edit-customer-testimonial-video-on-iphone",
+    "title": "How to edit a customer testimonial video on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To edit a customer testimonial in Vyra on iPhone, keep the speaker\u2019s meaning, remove distractions and check captions against the original recording before sharing the approved version.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Customer-quote integrity and approval workflow, rather than the existing two-speaker interview guide.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Compare the first and last sentence with the full answer. A clip can quote individual words correctly and still leave a misleading impression. Use only real approved statements, and keep editorial claims separate from what the speaker actually says.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DdcjJBPva-m",
+    "words": 484
+  },
+  {
+    "slug": "edit-multi-day-video-diary-on-iphone",
+    "url": "/how-to/edit-multi-day-video-diary-on-iphone",
+    "title": "How to edit a multi-day video diary on iPhone",
+    "platform": "iphone",
+    "reader": "Creator editing supplied material on iPhone",
+    "job": "To edit a multi-day video diary in Vyra on iPhone, group the footage by actual day, choose the change each day shows and use clear time labels when chronology matters.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Verified chronology across several days, distinct from the existing single-vlog or travel-highlight overview.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012",
+      "https://www.usevyra.com/blog/vyra-mobile"
+    ],
+    "originalContribution": "Give the ending enough time to show the change the earlier clips set up. If you open with the finished result, label or structure the return to the beginning clearly. A preview of the ending should not change the factual order of the process.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DajEylHSiz8",
+    "words": 507
+  },
+  {
+    "slug": "mark-video-review-notes-with-claude",
+    "url": "/how-to/mark-video-review-notes-with-claude",
+    "title": "How to add timed video review notes with Claude",
+    "platform": "mcp",
+    "reader": "Creator reviewing an existing project through Claude",
+    "job": "To add timed review notes with Claude and Vyra, inspect the project, identify each issue at its timeline time and add clear markers before requesting edits.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "A persistent timed review-note pass, rather than the existing broad final-edit review checklist.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "originalContribution": "Open a sample of markers in the editable project and check that each points to the right moment. If the timeline changes later, review the note locations again. A useful note explains what someone should inspect rather than simply saying \u201cfix this.\u201d",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZumPohtfW8",
+    "words": 478
+  },
+  {
+    "slug": "find-a-quote-in-footage-with-claude",
+    "url": "/how-to/find-a-quote-in-footage-with-claude",
+    "title": "How to find a spoken quote in your footage with Claude",
+    "platform": "mcp",
+    "reader": "Creator reviewing an existing project through Claude",
+    "job": "To find a quote in footage with Claude and Vyra, search the available transcript, return the source and time range, then verify the actual recording before using the excerpt.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Spoken-quote retrieval and context verification, distinct from visual B-roll search or complete shot inventory.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "originalContribution": "Check the start and end of the excerpt as carefully as the memorable sentence. A nearby qualification can change its meaning. If the transcript and the sound disagree, use the recording to verify the words instead of treating search output as a finished quotation.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DU1PhRrCZnu",
+    "words": 468
+  },
+  {
+    "slug": "check-video-text-readability-with-claude",
+    "url": "/how-to/check-video-text-readability-with-claude",
+    "title": "How to check video text readability with Claude",
+    "platform": "mcp",
+    "reader": "Creator reviewing an existing project through Claude",
+    "job": "To check video text with Claude and Vyra, inspect the timeline, capture frames at the text\u2019s actual display times and review size, contrast and obstruction before changing it.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Text-specific frame and timing review, rather than another general edit-review page.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "originalContribution": "Use the intended output shape when reviewing frames. A desktop screenshot alone does not reproduce a phone\u2019s viewing size or a social app\u2019s overlay controls. Confirm the final text in the exported file and destination preview instead of treating an AI assessment as an accessibility certification.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZumPohtfW8",
+    "words": 468
+  },
+  {
+    "slug": "audit-overlapping-audio-with-claude",
+    "url": "/how-to/audit-overlapping-audio-with-claude",
+    "title": "How to find overlapping audio in a video with Claude",
+    "platform": "mcp",
+    "reader": "Creator reviewing an existing project through Claude",
+    "job": "To find overlapping audio with Claude and Vyra, inspect the timeline\u2019s audio items and their time ranges, then listen to the flagged moments before muting or removing anything.",
+    "demandEvidence": "Bounded hypothesis from related tracked questions, documented operations and editorial jobs. No page-specific measured demand or executed test claimed.",
+    "overlapReview": "Non-destructive simultaneous-audio audit, distinct from native music setup or a silent-export troubleshooting answer.",
+    "sourceChecked": "2026-11-15",
+    "sources": [
+      "https://www.usevyra.com/docs/mcp",
+      "https://www.usevyra.com/blog/vyra-mcp-v2"
+    ],
+    "originalContribution": "Inspect a little before and after a flagged region. Muting one item may leave a sudden hole where it was the only sound. A clean timeline is useful only if the video still sounds right, so finish with an ordinary listening pass.",
+    "faqCount": 3,
+    "steps": 5,
+    "reel": "DZwM74ytJxF",
+    "words": 486
+  }
+]

@@ -47,4 +47,4 @@ Raw temporary traces are /private/tmp/vyra-taps-production-slow.json, /private/t
 
 ## Release
 
-Pending ready PR, passing remote checks and production verification. Searchable's unexplained 301 ms and its audit issue count are not treated as corrected by these laboratory results. Reassess mobile field p75 over comparable completed windows after deployment.
+Release record verified November 15. [PR #59](https://github.com/kale-eb/vyra-landing/pull/59) merged as d17d706468372832efaaebcd981710719f9b3c01 after passing checks. Production deployment Ey8DWT3cjssBtbAMH9eRiLf19TNL succeeded. The live 10x CPU retest returned Claude 136 ms, ChatGPT 88 ms and music sound 120 ms, with all nine tested clicks below 200 ms and no page errors. These remain single-run laboratory observations, not improved field p75. The final PR body contains the complete production record. Searchable's unexplained 301 ms and its audit issue count are not treated as corrected by these laboratory results. Reassess mobile field p75 over comparable completed windows after deployment.

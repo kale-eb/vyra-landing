@@ -97,6 +97,8 @@ The [Vyra App Store release notes](https://apps.apple.com/us/app/vyra-ai-video-e
 
 ## Related
 
+- /how-to/make-match-cut-on-iphone
+
 - /ai-video-editor-app
 - /ideas/transition-ideas
 - /how-to/add-captions-to-videos-on-iphone
