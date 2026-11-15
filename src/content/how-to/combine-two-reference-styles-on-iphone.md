@@ -39,7 +39,7 @@ Caleb documents saving shared references, and the native listing describes refer
 ## A brief to try
 
 ```
-Use the first reference only for opening structure and the second only for caption placement. Keep my existing music. When the examples conflict, keep my story order and make the hands visible.
+Use my shared reference only for opening structure. For captions, follow this description from my second example. Use short lines above the hands, with a readable size. Keep my existing music and story order.
 ```
 
 ## Check the result
@@ -53,7 +53,7 @@ The related reel is an existing creator example, not a screen recording or a tes
 ## FAQ
 
 **Do I have to attach both examples to the same project?**
-You can share the main reference and describe the useful detail from the second in words. This guide does not require a verified multi-reference attachment control.
+Share the main reference and describe the useful detail from the second in words. Give each example a clear role in the brief.
 
 **Is exact reproduction guaranteed?**
 No. The references guide an edit using your material; particular effects or missing shots may not transfer.
