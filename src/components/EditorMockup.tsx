@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion, type MotionValue } from "framer-motion";
 import LazyVideo from "./LazyVideo";
 
 export type ClientKey = "vyra" | "claude" | "chatgpt" | "mcp";
@@ -32,10 +33,6 @@ const CLIENT_META: Record<
 const PREVIEW_VIDEO = "/videos/color-wheel.mp4";
 
 const MSG = "Cut my clips to the beat and make a color wheel edit";
-
-function clamp01(v: number) {
-  return Math.min(1, Math.max(0, v));
-}
 
 interface Clip {
   left: number; // percent
@@ -174,14 +171,13 @@ function SendButton() {
 }
 
 export default function EditorMockup({
-  progress: p,
+  playheadLeft,
   client,
 }: {
-  progress: number;
+  playheadLeft: string | MotionValue<string>;
   client: ClientKey;
 }) {
   // Scrolling only moves the playhead; the edit stays fully populated.
-  const playheadX = 4 + clamp01(p) * 74;
   const external = client !== "vyra" ? CLIENT_META[client] : null;
 
   const typingRow = (
@@ -400,10 +396,12 @@ export default function EditorMockup({
                       className="absolute top-0 flex h-full items-center overflow-hidden rounded-[4px] px-1.5 transition-all duration-500"
                     >
                       {clip.thumb && (
-                        <img
+                        <Image
                           src={clip.thumb}
                           alt=""
-                          className="absolute inset-0 h-full w-full object-cover opacity-80"
+                          fill
+                          sizes={clip.width > 20 ? "(max-width: 768px) 120px, 250px" : "(max-width: 768px) 32px, 80px"}
+                          className="object-cover opacity-80"
                         />
                       )}
                       {clip.label && (
@@ -422,12 +420,13 @@ export default function EditorMockup({
           ))}
           {/* Playhead overlay */}
           <div className="pointer-events-none absolute inset-y-0 left-[88px] right-0 sm:left-[104px]">
-            <div
-              className="absolute bottom-1 top-0 w-px bg-white/80 transition-opacity duration-300"
-              style={{ left: `${playheadX}%` }}
+            <motion.div
+              className="absolute bottom-1 top-0 w-full"
+              style={{ x: playheadLeft }}
             >
+              <span className="absolute inset-y-0 left-0 w-px bg-white/80" />
               <span className="absolute -left-[3px] -top-px h-[5px] w-[7px] rounded-b-sm bg-white" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

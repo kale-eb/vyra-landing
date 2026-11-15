@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
@@ -199,15 +200,16 @@ export default function RootLayout({
         />
         {/*
           Favente creator-recruitment embed. In the root layout's <head> so it
-          loads on every page; the recruit button only renders where the
+          loads after page load and browser idle on every page; the button renders where the
           #favente-recruit container exists (the home pricing section, via
           FaventeRecruit). data-email is empty because this marketing site has
           no signed-in session. Design tokens were measured from the rendered
           home page: white pricing-style card surface, #111111 text, solid
           #6490D0 pill CTAs, soft card shadows, Inter body type.
         */}
-        <script
-          async
+        <Script
+          id="favente-recruit-loader"
+          strategy="lazyOnload"
           src="https://api.favente.so/embed/vyra/init.js"
           data-mode="inline"
           data-container-id="favente-recruit"

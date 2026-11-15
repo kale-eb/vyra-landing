@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { track } from "@vercel/analytics";
 import { marketingAnalytics } from "@/lib/marketing-analytics";
-import Markdown from "./Markdown";
 
-export default function MobileFaq({ items, sourcePage }: { items: { q: string; a: string }[]; sourcePage: string }) {
+export default function MobileFaq({ items, sourcePage }: { items: { q: string; answer: ReactNode }[]; sourcePage: string }) {
   const opened = useRef(new Set<string>());
 
   return (
@@ -27,7 +26,7 @@ export default function MobileFaq({ items, sourcePage }: { items: { q: string; a
             <summary className="cursor-pointer text-[15px] font-semibold leading-relaxed text-[var(--foreground)] focus-visible:outline-2 focus-visible:outline-offset-4">
               {item.q}
             </summary>
-            <Markdown source={item.a} />
+            {item.answer}
           </details>
         ))}
       </div>
