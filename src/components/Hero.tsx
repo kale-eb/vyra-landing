@@ -62,7 +62,13 @@ function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export default function Hero({ userCount = null }: { userCount?: number | null }) {
+export default function Hero({
+  userCount = null,
+  showIosDownload = true,
+}: {
+  userCount?: number | null;
+  showIosDownload?: boolean;
+}) {
   const sectionRef = useRef<HTMLElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
   const { displayed, settled } = useHeadlineTypewriter();
@@ -208,11 +214,11 @@ export default function Hero({ userCount = null }: { userCount?: number | null }
           <a
             href="https://app.usevyra.com/signup"
             onClick={() => trackLead()}
-            className="max-sm:hidden inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)] px-7 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/20"
           >
             Get started on web
           </a>
-          <IosAppButton />
+          {showIosDownload && <IosAppButton />}
         </div>
 
         {/* Social proof, right under the CTAs */}
