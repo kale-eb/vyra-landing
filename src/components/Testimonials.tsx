@@ -88,7 +88,7 @@ function Card({ r, i }: { r: Review; i: number }) {
   );
 }
 
-export default function Testimonials() {
+export default function Testimonials({ showIosDownload = true }: { showIosDownload?: boolean }) {
   const items = reviews as Review[];
   if (!items.length) return null;
   // Creator quotes first, press last, so the wall reads as people before publications.
@@ -115,6 +115,7 @@ export default function Testimonials() {
             {sorted.map((r, i) => (
               <Card key={`${r.name}-${r.date}`} r={r} i={i} />
             ))}
+            {showIosDownload && (
             <aside className="relative z-20 mb-5 break-inside-avoid rounded-2xl border border-[var(--brand-blue)]/15 bg-[#f2f3f8] p-6">
               <h3 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
                 Try Vyra on iPhone
@@ -124,6 +125,7 @@ export default function Testimonials() {
               </p>
               <IosAppButton />
             </aside>
+            )}
           </div>
           <div
             aria-hidden="true"

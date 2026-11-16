@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 import IosAppButton from "./IosAppButton";
 import { trackLead } from "./MetaPixel";
 
-export default function FinalCTA() {
+export default function FinalCTA({ showIosDownload = true }: { showIosDownload?: boolean }) {
   return (
     <section className="relative overflow-hidden py-24 px-6 md:py-36">
       {/* Background gradient wash */}
@@ -42,11 +42,11 @@ export default function FinalCTA() {
           <a
             href="https://app.usevyra.com/signup"
             onClick={() => trackLead()}
-            className="max-sm:hidden inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25"
+            className={`${showIosDownload ? "max-sm:hidden " : ""}inline-flex items-center rounded-full bg-[var(--brand-blue)] px-8 py-4 text-[16px] font-semibold text-white shadow-md shadow-[var(--brand-blue)]/15 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-blue)]/25`}
           >
             Get started on web
           </a>
-          <IosAppButton />
+          {showIosDownload && <IosAppButton />}
         </Reveal>
       </div>
     </section>

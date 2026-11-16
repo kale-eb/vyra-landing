@@ -37,9 +37,9 @@ async function fetchUserCount(): Promise<number | null> {
 }
 
 export default async function LandingPage({
-  showHeroIosDownload = true,
+  showIosDownload = true,
 }: {
-  showHeroIosDownload?: boolean;
+  showIosDownload?: boolean;
 }) {
   const userCount = await fetchUserCount();
 
@@ -58,17 +58,17 @@ export default async function LandingPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <main>
-        <Hero userCount={userCount} showIosDownload={showHeroIosDownload} />
+        <Hero userCount={userCount} showIosDownload={showIosDownload} />
         <Steps />
         <Features />
         <HowItWorks />
         <MadeWithVyra userCount={userCount} />
         <CreatorCaseStudy />
-        <Testimonials />
+        <Testimonials showIosDownload={showIosDownload} />
         <Alternatives />
         <Pricing />
         <FAQ />
-        <FinalCTA />
+        <FinalCTA showIosDownload={showIosDownload} />
       </main>
       <Footer />
     </>
