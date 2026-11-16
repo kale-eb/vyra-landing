@@ -3,6 +3,7 @@ import Markdown from "./Markdown";
 import DirectoryNav from "./DirectoryNav";
 import Footer from "@/components/Footer";
 import IosAppButton from "@/components/IosAppButton";
+import WebSignupButton from "@/components/WebSignupButton";
 import ReelStrip from "./ReelStrip";
 import NewsletterCards from "./NewsletterCards";
 import MobileFaq from "./MobileFaq";
@@ -178,17 +179,12 @@ function viewsToNumber(v: string): number {
   return Math.round(m[2].toUpperCase() === "M" ? n * 1e6 : m[2].toUpperCase() === "K" ? n * 1e3 : n);
 }
 
-/** The header already shows the description; drop a leading bold paragraph that repeats it. */
-function stripLeadingSummary(body: string, description: string): string {
-  const m = body.match(/^\*\*([\s\S]+?)\*\*\s*\n/);
-  if (!m) return body;
-  const norm = (s: string) => s.replace(/\s+/g, " ").replace(/[.…]+$/, "").trim().toLowerCase();
-  const lead = norm(m[1]);
-  const desc = norm(description.replace(/\.\.\.$/, ""));
-  if (lead === desc || lead.startsWith(desc) || desc.startsWith(lead)) {
-    return body.slice(m[0].length).trimStart();
-  }
-  return body;
+/** Show the complete opening answer before any optional media or supporting facts. */
+function openingAnswer(body: string, description: string) {
+  const match = body.match(/^\*\*([\s\S]+?)\*\*\s*(?:\n|$)/);
+  return match
+    ? { intro: match[1], body: body.slice(match[0].length).trimStart() }
+    : { intro: description, body };
 }
 
 function Meta({ entry }: { entry: Entry }) {
@@ -210,7 +206,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
   const isIphonePage = entry.data.platform === "iphone";
   const isSupportPage = entry.data.support === true;
   const isApiPage = entry.data.api === true;
-  const articleBody = stripLeadingSummary(entry.body, entry.description);
+  const { intro, body: articleBody } = openingAnswer(entry.body, entry.description);
   const faqBlock = isIphonePage || isSupportPage || isApiPage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
   const mobileFaqs = faqBlock ? extractFaq(entry.body) : [];
   const sectionMeta = entry.section === "product" ? null : SECTIONS[entry.section as SectionKey];
@@ -231,7 +227,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
       {jsonLd.map((obj, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }} />
       ))}
-      <DirectoryNav crumbs={crumbs} support={isSupportPage} cta={isApiPage ? { href: "/docs/api", label: "Read API docs" } : undefined} />
+      <DirectoryNav crumbs={crumbs} sourcePage={entry.url} iphone={isIphonePage} support={isSupportPage} cta={isApiPage ? { href: "/docs/api", label: "Read API docs" } : undefined} />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <article>
           <header className="mb-10">
@@ -242,7 +238,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             >
               {entry.title}
             </h1>
-            <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{entry.description}</p>
+            <div data-opening-answer><Markdown source={intro} /></div>
             {isApiPage ? (
               <p className="mt-5 text-[14px]">
                 <Link href="/docs/api#get-a-key" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
@@ -255,9 +251,12 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
                   Get help with this problem
                 </Link>
               </p>
-            ) : isIphonePage && (
+            ) : (
               <div className="mt-5">
-                <IosAppButton sourcePage={entry.url} placement="header" />
+                {isIphonePage ? <IosAppButton sourcePage={entry.url} placement="header" /> : <WebSignupButton sourcePage={entry.url} placement="header" />}
+                <p className="mt-2 text-[13px] text-[var(--foreground-muted)]">
+                  {isIphonePage ? "100 free credits for new accounts. Free exports are 720p with a watermark." : "Three-day web trial, then a paid plan. Bring your own footage."}
+                </p>
               </div>
             )}
             <p className="mt-4 text-[13px] text-[var(--foreground-subtle)]">
@@ -306,8 +305,6 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             />
           )}
 
-          {!isSupportPage && <ReelStrip reels={reels} />}
-
           {faqBlock && mobileFaqs.length ? (
             <>
               <Markdown source={articleBody.slice(0, faqBlock.index)} />
@@ -319,7 +316,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             </>
           ) : <Markdown source={articleBody} />}
 
-          {isSupportPage && <ReelStrip reels={reels} heading="Finished edits made in Vyra" />}
+          <ReelStrip reels={reels} heading="Finished edits made in Vyra" />
           <NewsletterCards posts={newsletterPosts} />
         </article>
 
@@ -406,9 +403,7 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
               </p>
             </>
           ) : (
-            <a href="https://app.usevyra.com/signup" className="inline-block rounded-full bg-[var(--foreground)] px-6 py-3 text-[14px] font-semibold text-white">
-              Start editing with Vyra
-            </a>
+            <WebSignupButton sourcePage={entry.url} placement="footer">Start editing with Vyra</WebSignupButton>
           )}
         </div>}
       </main>

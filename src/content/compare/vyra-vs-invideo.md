@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs InVideo (2026): which AI video editor should you use?'
 description: "InVideo turns a text prompt into a stock-footage video with a voiceover. Vyra turns your own footage into a finished video. No footage, InVideo. Footage, Vyra."
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ InVideo AI is a script-to-video generator. Type a topic and get a video built fr
 | Reference style matching | No | Yes |
 | Manual timeline | Limited | Yes, full editor |
 | Export cap | 4K on paid plans | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser | Browser |
+| Platform | Browser | Web and iPhone app |
 | Best for | Faceless stock videos from a script | Editing real footage from a brief |
 
 ## Where InVideo is stronger
@@ -37,7 +37,7 @@ InVideo AI is a script-to-video generator. Type a topic and get a video built fr
 ## Where Vyra is stronger
 
 - Real footage. Your face, your product, your studio.
-- Speed on long recordings. In a side-by-side test, Vyra indexed a 35-minute file with scene descriptions in under 2 minutes.
+- Searching your recording. Use the transcript and visual descriptions to find material for the edit you requested.
 - Custom graphics, reference matching, and a full timeline.
 
 ## Choose Vyra if
@@ -73,6 +73,10 @@ No. Vyra edits real footage and builds motion graphics. It does not generate sto
 
 **Can I use both?**
 Yes. Generate b-roll in InVideo, export it, and import it into a Vyra project.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

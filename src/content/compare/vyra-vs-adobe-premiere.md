@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Adobe Premiere Pro (2026): which AI video editor should you use?'
 description: "Premiere Pro is the professional editor with the deepest manual tools. Vyra is the faster way from raw footage to a finished social edit, from a description."
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ These are different kinds of tools. Premiere is what broadcast editors, agencies
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, industry standard | Yes, full editor |
 | Export cap | 8K and beyond | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Desktop app | Browser |
+| Platform | Desktop app | Web and iPhone app |
 | Best for | Professional and long-form production | Fast social edits from real footage |
 
 ## Where Premiere Pro is stronger
@@ -73,6 +73,10 @@ Yes. Export from Vyra and import the file like any other clip.
 
 **Is Vyra's timeline as capable as Premiere's?**
 No. It covers trims, transitions, effects, masks, keyframes, and captions, which is enough to polish an AI-built edit.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs DaVinci Resolve (2026): which AI video editor should you use?'
 description: DaVinci Resolve is the best free professional editor and the standard for color. Vyra is better if you would rather describe the edit than learn Resolve.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ Resolve is a full post-production suite. Edit, color, Fairlight audio, Fusion ef
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, professional | Yes, full editor |
 | Export cap | 4K free, higher in Studio | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Desktop app | Browser |
+| Platform | Desktop app | Web and iPhone app |
 | Best for | Color grading, pro long-form | Fast social edits from a description |
 
 ## Where Resolve is stronger
@@ -73,6 +73,10 @@ Yes. Export from Vyra and bring the file into Resolve for grading.
 
 **Which is easier for a beginner?**
 Vyra. Most people export a first video within minutes. Resolve takes weeks to learn.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

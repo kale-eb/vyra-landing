@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Kapwing (2026): which AI video editor should you use?'
 description: Kapwing is a browser editor with many one-click AI tools and good team features. In Vyra the AI does the whole edit from one description.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ Kapwing has a solid timeline and a long list of AI tools. Subtitles, silence rem
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
 | Export cap | 720p free, 4K on paid | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser | Browser |
+| Platform | Browser | Web and iPhone app |
 | Best for | Teams applying AI tools to clips | AI-edited long footage from a brief |
 
 ## Where Kapwing is stronger
@@ -73,6 +73,10 @@ Ask the agent for captions in another language and it will try. Check the result
 
 **Which is better for a marketing team?**
 Kapwing for shared workspaces. Vyra when the bottleneck is editing time on raw footage.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

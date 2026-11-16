@@ -1,14 +1,14 @@
 ---
 title: Motion graphics from a text prompt
 description: Describe a lower third, an animated list, a callout, or a title and Vyra builds it as a motion graphic timed to your speech.
-updated: 2026-09-24
+updated: '2026-11-15'
 category: feature
 reels:
   - DXh8TpouYGm
   - DY4pVwtu3KD
 ---
 
-**Say "animate the three tool names on screen one at a time as I say them, stacked on the left, white on a dark bar" and Vyra builds that graphic, timed to your transcript. Lower thirds, big type, callouts, lists that build up and clear. No template library, no After Effects.**
+**Say "animate the three tool names on screen one at a time as I say them, stacked on the left, white on a dark bar" and Vyra builds that graphic, timed to your transcript. Lower thirds, big type, callouts, lists that build up and clear. You describe the layout and timing in the prompt.**
 
 A template gives you someone else's graphic. A prompt gives you yours, in your fonts, timed to what you actually said.
 

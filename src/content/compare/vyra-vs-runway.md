@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Runway (2026): which AI video editor should you use?'
 description: Runway generates video from text and images. Vyra edits the footage you already shot. The choice is generate versus edit, and many people use both.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ This is two halves of a workflow more than a head-to-head. Runway makes shots th
 | Reference style matching | Style transfer on generation | Yes, on the edit (pacing, text, music, grade) |
 | Manual timeline | Basic | Yes, full editor |
 | Export cap | Varies by plan; ProRes on the top tier | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser | Browser |
+| Platform | Browser | Web and iPhone app |
 | Best for | Generating shots and effects | Editing real footage into finished videos |
 
 ## Where Runway is stronger
@@ -73,6 +73,10 @@ Its editor is light. It is not built for long-form footage search and assembly.
 
 **Do they work together?**
 Yes. Generate in Runway, edit in Vyra. Import the Runway clip like any other file.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 
