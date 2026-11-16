@@ -59,6 +59,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/slip-a-clip-on-iphone
+
 - /ai-video-editor-app
 - /how-to/split-video-on-iphone
 - /how-to/export-video-to-photos-on-iphone
