@@ -1,7 +1,7 @@
 ---
 title: Can AI actually understand what is in my raw footage?
 description: Yes. A modern AI editor transcribes every word with timestamps and describes every scene, so it can find moments by what was said or what's on screen.
-updated: 2026-09-24
+updated: '2026-11-15'
 category: answers
 reels:
   - DY_kJF4uI9-
@@ -48,7 +48,7 @@ Find every clip where the painting is visible on the easel and list them with a 
 Yes. Scene analysis runs on the picture. Silent b-roll gets described and is searchable.
 
 **How long does the analysis take?**
-It runs automatically after upload. A 35-minute file indexed in under 2 minutes in a side-by-side test.
+Analysis runs after upload. Wait for the material to be ready, then verify useful moments against the actual source. Processing time depends on the footage.
 
 **Can I see what the AI thinks is in a clip?**
 Yes. Ask for the description of any clip, or open it in the footage library.

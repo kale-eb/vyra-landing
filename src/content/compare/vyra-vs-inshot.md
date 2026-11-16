@@ -1,13 +1,13 @@
 ---
 title: "Vyra vs InShot (2026): which video editor should you use?"
-description: "InShot is a simple phone editor for trims, stickers, and music. Vyra is a browser editor where an AI builds the edit from a description, past one clip."
-updated: '2026-09-24'
+description: "InShot is a simple phone editor for trims, stickers, and music. Vyra runs on web and iPhone, where an AI builds the edit from a description, past one clip."
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
 ---
 
-**InShot is a simple phone editor for trims, stickers, and music. Vyra is a browser editor where an AI that has watched your footage builds the edit from a description, which matters once you have more than one clip.**
+**InShot is a simple phone editor for trims, stickers, and music. Vyra runs on web and iPhone, where an AI that has watched your footage builds the edit from a description, which matters once you have more than one clip.**
 
 InShot is the app a lot of people start with. Cut a clip, add a song, drop a sticker, post. It is manual, quick, and on your phone. Vyra is for when the edit is bigger than a trim. Twenty clips and a story, or captions, b-roll, and graphics you do not want to do by hand.
 
@@ -24,7 +24,7 @@ InShot is the app a lot of people start with. Cut a clip, add a song, drop a sti
 | Motion graphics | Stickers and text animations | Custom, built from a prompt |
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, simple | Yes, full editor |
-| Platform | Mobile | Browser |
+| Platform | Mobile | Web and iPhone app |
 | Export cap | Depends on plan; see site | 1440p (AI Starter), 4K (AI Pro) |
 | Best for | Quick manual edits on a phone | AI-edited real footage from a brief |
 
@@ -73,7 +73,11 @@ It runs in a browser. It is built for a desk, not a thumb.
 No. You find the clips yourself.
 
 **Which is cheaper?**
-InShot has a free tier and paid plans on its site. Vyra has a 3-day free trial, then starts at $24/mo.
+Check InShot’s current app for its free and paid limits. Vyra has separate iPhone free credits and App Store Plus/Pro plans. Web has a three-day trial followed by a paid plan.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

@@ -1,32 +1,27 @@
 ---
 title: Does an automated video maker actually save editing time?
-description: "Yes, typically 60 to 80 percent on reviewing, trimming, and captioning, if the tool works from your real footage. Template makers save less."
-updated: 2026-09-24
+description: "An automated editor can help with reviewing, trimming and captions. Compare the total time, including upload, review and corrections, on your own footage."
+updated: '2026-11-15'
 category: answers
 reels:
   - DaAb0QFNvk0
   - DZwM74ytJxF
 ---
 
-**Yes. An automated video maker typically saves 60 to 80 percent of editing time on the mechanical steps. Reviewing footage, finding usable takes, trimming pauses, captioning. The savings are biggest when the tool works from your real footage and understands it, and smallest with template makers, where you still fill the template and fix what doesn't fit.**
+**An automated editor can save time by finding moments, making a draft and adding captions from your footage. The result depends on the recording, the brief and how much correction the draft needs. Compare the complete workflow on the same footage before deciding whether it saves you time.**
 
-## Why
+## Where to measure the work
 
-- Most editing time isn't creative. For a typical short video, 60 to 80 percent of the hours go to watching footage, choosing takes, and trimming. Those automate well.
-- The creative 20 percent stays with you. What the hook is, which story to tell. A draft just makes those decisions faster.
-- Templates shift work rather than remove it. If your footage doesn't match the slots, you're back to editing.
-- A tool that takes one correction per message keeps the savings. A tool that needs a restart per change loses them.
+| Step | What to record |
+| --- | --- |
+| Upload and preparation | Time until your clips are ready to edit |
+| Finding moments | Time spent locating the takes you want |
+| First draft | Time from your brief to a draft you can review |
+| Captions | Time spent generating, checking and correcting words |
+| Music | Time spent choosing a track and checking speech levels |
+| Review and export | Time spent correcting the edit and checking the final file |
 
-## Where the time goes
-
-| Step | Manual | Automated from real footage |
-| --- | --- | --- |
-| Watching and logging footage | 30 to 60 min per hour of footage | Seconds (indexed on upload) |
-| Choosing takes | 15 to 30 min | Minutes, with a draft to react to |
-| Trimming pauses and fillers | 15 to 45 min | Under a minute |
-| Captions | 10 to 30 min | Under a minute |
-| Music and ducking | 10 to 20 min | One prompt |
-| Creative review and corrections | 15 to 30 min | 15 to 30 min (unchanged) |
+Keep the target length and quality requirements the same. A draft that arrives quickly can still need substantial review. Save your brief and note the changes you had to request so the comparison is useful next time.
 
 ## What to do about it
 
@@ -49,13 +44,17 @@ List every cut you made with timestamps so I can compare it to what I'd have don
 ## FAQ
 
 **Does it save time on long footage?**
-That's where the savings are biggest. Indexing a 35-minute file took about 2 minutes in Vyra. Reviewing it by hand takes 35 minutes before the first cut.
+Transcript and visual search can help you find useful moments in long footage. Measure the time spent uploading, waiting, reviewing and correcting the draft when comparing your own workflow.
 
 **Is faster worse?**
-The first draft is rougher than a careful manual edit. The time saved goes into correcting it. For social video the result is often better because you iterate three times instead of once.
+Judge the finished export. Check the retained meaning, cuts, captions and audio. Include corrections in your timing rather than stopping the clock at the first draft.
 
 **Do template video makers count as automated?**
-Partly. They automate structure, not selection.
+Templates can give you a starting structure. Check how much selection, trimming and adjustment you still need for your own clips.
+
+## Sources
+
+[Vyra’s MCP documentation](/docs/mcp) describes the editing tools available to connected agents. [The mobile release post](/blog/vyra-mobile) describes editing on iPhone. Checked November 15, 2026. The timing table is a checklist for your own comparison, with no measured speed claim.
 
 ## Related
 

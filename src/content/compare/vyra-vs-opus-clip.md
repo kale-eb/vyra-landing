@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Opus Clip (2026): which AI video editor should you use?'
 description: Opus Clip auto-picks short clips from long talking videos. Vyra does that too, and you can tell it which moments, which style, and which graphics you want.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ Opus Clip is simple. Upload a long video, get back a batch of scored short clips
 | Reference style matching | No | Yes |
 | Manual timeline | Limited editor | Yes, full editor |
 | Export cap | 1080p free, 4K on Business | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser | Browser |
+| Platform | Browser | Web and iPhone app |
 | Best for | Batch clipping podcasts and webinars | Directed long-to-short, any footage |
 
 ## Where Opus Clip is stronger
@@ -73,6 +73,10 @@ No. It can list candidate moments with a reason for each. You decide.
 
 **Can Vyra reframe 16:9 to 9:16 like Opus?**
 Yes. Ask it to keep the speaker centered, or crop to one part of the screen during a screen recording.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

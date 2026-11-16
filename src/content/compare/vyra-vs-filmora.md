@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Filmora (2026): which AI video editor should you use?'
 description: Filmora is a friendly desktop editor with a big effects library and AI helpers. In Vyra the AI does the editing, which is faster on long footage.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ Filmora sits between phone apps and Premiere. A real desktop timeline, packs of 
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
 | Export cap | 4K | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Desktop app, mobile | Browser |
+| Platform | Desktop app, mobile | Web and iPhone app |
 | Best for | Hobbyists who like editing with effect packs | Creators who want the edit done from a brief |
 
 ## Where Filmora is stronger
@@ -72,7 +72,11 @@ It has AI features that help. It is not built around an agent that plans and doe
 Not directly. Export a rendered clip from Filmora and import it as an asset.
 
 **Is Vyra offline?**
-No. It runs in the browser and processes footage in the cloud.
+Vyra uses cloud processing on web and in its native iPhone app. Keep an internet connection for upload, AI editing and export.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
 
 ## Related
 

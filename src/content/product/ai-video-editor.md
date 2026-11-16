@@ -1,7 +1,7 @@
 ---
 title: AI video editor that edits your real footage by describing the edit
 description: Vyra is an AI video editor. You upload your footage, say what you want in plain words, and it makes the cut. Nothing is generated.
-updated: 2026-09-24
+updated: '2026-11-15'
 category: product
 example: https://www.instagram.com/reel/Da_tDQwtc-M/
 reels:
@@ -56,9 +56,9 @@ Add a calm lo-fi track at about 25% while I speak and 70% during b-roll. Fade ou
 | Knows your footage | No | No | Transcript and scene descriptions of every clip |
 | Uses your real clips | Yes | Often stock or generated | Yes, only your footage |
 | Fine control | Full | Limited | Full timeline when you want it |
-| Time to first cut | Hours | Minutes, but generic | Minutes, from your own footage |
+| Review work | Check the cuts you make | Check the template fits your shots | Review the draft and adjust the timeline |
 
-We ran the same 35-minute file through Vyra and CapCut. Vyra indexed it in under 2 minutes. CapCut timed out after 4. In July 2026 Buffer tested 11 AI video editors on the same footage and put Vyra first.
+Use a short sample of your own footage to compare the first draft, the corrections you need and the final export. Processing time depends on the material and the work requested.
 
 ## Limits
 
