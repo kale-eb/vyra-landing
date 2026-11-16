@@ -67,6 +67,8 @@ The [Vyra App Store listing and version history](https://apps.apple.com/us/app/v
 
 ## Related
 
+- /how-to/speed-up-a-video-on-iphone
+
 - /how-to/remove-pauses-from-video-on-iphone
 - /how-to/choose-best-video-takes-on-iphone
 - /ai-video-editor-app

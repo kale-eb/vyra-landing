@@ -183,6 +183,9 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 - [edit a customer testimonial video on iPhone](/how-to/edit-customer-testimonial-video-on-iphone)
 - [edit a multi-day video diary on iPhone](/how-to/edit-multi-day-video-diary-on-iphone)
 
+- [Speed up a video on iPhone](/how-to/speed-up-a-video-on-iphone)
+- [Slip a clip without changing its length](/how-to/slip-a-clip-on-iphone)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone

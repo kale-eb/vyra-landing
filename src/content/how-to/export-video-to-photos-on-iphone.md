@@ -1,7 +1,7 @@
 ---
 title: "How to save your edited video to Photos on iPhone"
 description: "Export a finished Vyra edit to your iPhone photo library, check the saved file and keep export quality separate from canvas shape."
-updated: '2026-11-10'
+updated: '2026-11-16'
 category: how-to
 platform: iphone
 level: beginner
@@ -38,6 +38,9 @@ Keep the project available and note whether the failure happened during export o
 
 ## FAQ
 
+**Where do I choose the export size on iPhone?**
+Choose the size in Vyra’s Export menu. The available sizes depend on your plan. Changing export size changes the saved file’s resolution. To change between vertical and landscape framing, change the canvas in the project and review the framing first.
+
 **Are free exports watermarked?**
 Yes. Free mobile exports are 720p with a watermark. New accounts currently receive 100 free credits.
 
@@ -52,7 +55,7 @@ Yes. The iPhone app supports sharing the finished video. Check the destination b
 
 ## Sources
 
-The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 9, 2026.
+The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. The App Store version history also documents choosing the export size in the Export menu. Checked November 16, 2026.
 
 ## Related
 
