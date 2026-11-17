@@ -82,7 +82,7 @@ Yes. Any current browser on Windows or Mac.
 Not much. Analysis and rendering run on Vyra's servers, and you edit lightweight proxies.
 
 **Can I edit on my phone too?**
-On iPhone, yes, with the [Vyra app](/ai-video-editor-app). Android isn't supported yet.
+Yes. Get Vyra for [iPhone](/ai-video-editor-app) or find the official Android app on [Google Play](/answers/is-vyra-on-android).
 
 ## Related
 

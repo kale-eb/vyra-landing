@@ -26,7 +26,7 @@ Adobe added Quick Cut to the Firefly video editor in February 2026. You upload f
 | Generative fills and extends | Yes, Firefly generative video | No, edits real footage only |
 | Manual timeline | Yes, Firefly video editor | Yes, full editor |
 | Export cap | Paid plans up to 2K at launch | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser, Adobe account | Web and iPhone app |
+| Platform | Browser, Adobe account | Web, iPhone and Android |
 | Best for | Adobe users who want an AI first draft | Creators who want to keep directing by chat |
 
 ## Where Firefly is stronger
@@ -78,7 +78,7 @@ Yes. Generate b-roll in Firefly, upload it to Vyra with your real footage, and c
 
 ## Use Vyra on iPhone or web
 
-Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

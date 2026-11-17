@@ -44,7 +44,7 @@ assert.ok(compare.includes("native"));
 assert.ok(!compare.includes("CapCut timed out after 4"));
 for (const slug of ["capcut-vs-veed", "capcut-vs-descript", "canva-vs-filmora"]) {
   const html = readFileSync(`.next/server/app/compare/${slug}.html`, "utf8");
-  assert.ok(html.includes("Web and iPhone app"), `${slug}: generated third column inherits corrected platform`);
+  assert.ok(html.includes("Web, iPhone and Android"), `${slug}: generated third column inherits corrected platform`);
   if (slug.startsWith("capcut")) assert.ok(!/Neither CapCut nor [^.]*lets you edit by typing/.test(html), `${slug}: no obsolete chat claim`);
 }
 console.log(`Conversion layout and factual inheritance checks passed on ${checked} rendered entries.`);

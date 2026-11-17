@@ -25,7 +25,7 @@ CapCut's [official EditPilot page](https://www.capcut.com/tools/edit-pilot) desc
 | Motion graphics | Desktop editing tools and templates | Prompt-built graphics on web and MCP |
 | Manual timeline | Yes | Yes, on web and iPhone |
 | Export cap | Check the device, feature and current plan | Web plan limits differ from free iPhone 720p watermarked exports |
-| Platform | Mobile, desktop and web; EditPilot is on PC | Web and iPhone app; no Android app |
+| Platform | Mobile, desktop and web; EditPilot is on PC | Web, iPhone and Android |
 | Best for | Desktop cleanup, templates and timeline editing | Your own footage edited from a description |
 
 ## Editing on iPhone
@@ -71,7 +71,7 @@ Make a 45-second vertical edit from this talking clip. Keep the complete explana
 ## FAQ
 
 **Does Vyra have an iPhone app?**
-Yes. Vyra is available for iPhone as well as web. New mobile accounts get 100 free credits, and free mobile exports are 720p with a watermark. There is no Android app.
+Yes. Vyra is available for iPhone as well as web. New iPhone accounts get 100 free credits, and free iPhone exports are 720p with a watermark. Vyra is also available on [Google Play](/answers/is-vyra-on-android).
 
 **Can CapCut edit from a written instruction?**
 Yes. CapCut documents EditPilot for supported tasks in its PC editor and a separate CapCut × Codex workflow. Check the current availability for your device and account.

@@ -25,7 +25,7 @@ Clipchamp ships with Windows and runs in a browser. It has auto captions, an aut
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
 | Export cap | 1080p free, 4K Premium | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Windows app, browser | Web and iPhone app |
+| Platform | Windows app, browser | Web, iPhone and Android |
 | Best for | Free basic edits on Windows | AI-edited real footage from a brief |
 
 ## Where Clipchamp is stronger
@@ -76,7 +76,7 @@ Clipchamp for a one-minute trim. Vyra when the footage is long or the look needs
 
 ## Use Vyra on iPhone or web
 
-Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

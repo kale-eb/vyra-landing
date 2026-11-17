@@ -75,7 +75,7 @@ Keep the order of my clips. Make the transition into the finished painting happe
 
 Vyra is free to download. New mobile accounts currently get 100 free credits. Free exports are 720p with a watermark. Plus and Pro subscriptions are available in the App Store. Check the plan shown in the app before subscribing.
 
-AI edits need an internet connection. Vyra edits footage you supply and does not generate video footage. There is no Android app yet.
+AI edits need an internet connection. Vyra edits footage you supply and does not generate video footage. These instructions are for the iPhone app.
 
 ## FAQ
 
@@ -96,6 +96,8 @@ Yes. Describe the scene change in Vyra's chat. Review the draft and use the time
 The [Vyra App Store release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) document the transition choices and tapping between clips. Checked November 8, 2026.
 
 ## Related
+
+- /how-to/make-a-j-cut-on-iphone
 
 - /how-to/make-match-cut-on-iphone
 
