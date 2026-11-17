@@ -93,7 +93,7 @@ Yes. Ask for the spelling correction and say to leave the spoken audio unchanged
 Yes. Export the finished video to your photo library, or share it from your iPhone.
 
 **Does Vyra have an Android caption app?**
-There is no Android app yet. These steps are for the native iPhone app.
+These steps are for the native iPhone app. Vyra for Android is available on [Google Play](/answers/is-vyra-on-android).
 
 **Are Live Captions the same as captions saved in my video?**
 No. Live Captions displays speech while you listen on your iPhone. Captions rendered into your exported video stay in that copy's picture when you share it.

@@ -25,7 +25,7 @@ These are different kinds of tools. Premiere is what broadcast editors, agencies
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, industry standard | Yes, full editor |
 | Export cap | 8K and beyond | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Desktop app | Web and iPhone app |
+| Platform | Desktop app | Web, iPhone and Android |
 | Best for | Professional and long-form production | Fast social edits from real footage |
 
 ## Where Premiere Pro is stronger
@@ -76,7 +76,7 @@ No. It covers trims, transitions, effects, masks, keyframes, and captions, which
 
 ## Use Vyra on iPhone or web
 
-Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

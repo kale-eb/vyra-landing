@@ -88,7 +88,7 @@ Google's historical FAQ rich-result eligibility is restricted, and HowTo rich re
 Verify these again when product information changes.
 
 - Vyra edits footage people supply. It does not generate video footage. Other generated media capabilities must be described separately.
-- The confirmed native mobile product is the iPhone app. Google Play review materials do not establish a public Android launch.
+- Vyra is available on iPhone and Android. On November 17 the official Google Play listing for com.usevyra.android showed Vyra Inc. and offered installation in the US. Verify availability for other regions as needed. Use the official store URL and verify Android workflows and plan terms separately from iPhone.
 - At the time of this draft, new mobile accounts receive 100 free credits and free exports are 720p with a watermark. Paid mobile plans are Plus and Pro through the App Store.
 - Web has a 3-day trial and no ongoing free tier. Do not use web plan prices to describe an iPhone subscription.
 - The MCP is headless. Do not bring back the old foreground-tab or Connect MCP requirements. Local agents can still require the user's computer for local orchestration and uploads.

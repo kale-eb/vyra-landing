@@ -25,7 +25,7 @@ Both have web editing. Vyra also has a native iPhone app. The difference is what
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, browser | Yes, full editor |
 | Export cap | 720p free, 1080p to 4K paid | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser | Web and iPhone app |
+| Platform | Browser | Web, iPhone and Android |
 | Best for | Quick subtitle and trim jobs, AI avatars | AI-edited real footage |
 
 ## Where VEED is stronger
@@ -76,7 +76,7 @@ Both auto-caption well. In Vyra you can set grouping, emphasis words, and placem
 
 ## Use Vyra on iPhone or web
 
-Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

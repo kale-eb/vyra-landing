@@ -1,6 +1,6 @@
 ---
 title: AI video editor that edits your real footage by describing the edit
-description: Vyra is an AI video editor. You upload your footage, say what you want in plain words, and it makes the cut. Nothing is generated.
+description: Vyra is an AI video editor. Upload your footage and describe the cut. Use Vyra on the web, iPhone or Android.
 updated: '2026-11-15'
 category: product
 example: https://www.instagram.com/reel/Da_tDQwtc-M/
@@ -63,7 +63,7 @@ Use a short sample of your own footage to compare the first draft, the correctio
 ## Limits
 
 - Vyra edits footage you already have. It does not generate video.
-- It runs in the browser and on iPhone. There's no Android app yet.
+- Use Vyra in the browser, in the [iPhone app](/ai-video-editor-app) or on [Android](/answers/is-vyra-on-android).
 - The agent gets you most of the way. Frame-accurate polish is faster on the timeline.
 
 ## Pricing

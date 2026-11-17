@@ -25,7 +25,7 @@ Filmora sits between phone apps and Premiere. A real desktop timeline, packs of 
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
 | Export cap | 4K | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Desktop app, mobile | Web and iPhone app |
+| Platform | Desktop app, mobile | Web, iPhone and Android |
 | Best for | Hobbyists who like editing with effect packs | Creators who want the edit done from a brief |
 
 ## Where Filmora is stronger
@@ -76,7 +76,7 @@ Vyra uses cloud processing on web and in its native iPhone app. Keep an internet
 
 ## Use Vyra on iPhone or web
 
-Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

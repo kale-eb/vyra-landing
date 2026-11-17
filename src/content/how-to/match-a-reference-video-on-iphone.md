@@ -79,7 +79,7 @@ The reels above are examples of edits made in Vyra, not recordings of the iPhone
 
 ## Free and paid exports
 
-New mobile accounts currently get 100 free credits. Free exports are 720p with a watermark. Plus and Pro plans are available in the App Store. AI analysis and editing need an internet connection. There is no Android app yet.
+New mobile accounts currently get 100 free credits. Free exports are 720p with a watermark. Plus and Pro plans are available in the App Store. AI analysis and editing need an internet connection. These instructions are for the iPhone app.
 
 ## FAQ
 

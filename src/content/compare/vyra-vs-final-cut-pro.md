@@ -25,7 +25,7 @@ These two are not really competing for the same afternoon. Final Cut Pro is for 
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, professional | Yes, full editor |
 | Export cap | Effectively unlimited | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Mac only, one-time purchase (see site) | Web and iPhone app |
+| Platform | Mac only, one-time purchase (see site) | Web, iPhone and Android |
 | Best for | Hands-on pro editing on a Mac | AI-edited real footage from a brief |
 
 ## Where Final Cut Pro is stronger
@@ -76,7 +76,7 @@ Yes. Trims, transitions, effects, masks, keyframes, captions, and multi-track au
 
 ## Use Vyra on iPhone or web
 
-Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New mobile accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. There is no Android app. Platform information checked November 15, 2026.
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

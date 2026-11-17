@@ -9,7 +9,7 @@ facts:
   - "Free tier: 100 credits for new accounts, 720p exports with a watermark"
   - "Paid: Plus and Pro plans in the App Store"
   - "Also on: The web at app.usevyra.com, and Claude or ChatGPT over MCP"
-  - "Android: Not yet"
+  - "Android: Google Play"
 reels:
   - Da_tDQwtc-M
   - DZwM74ytJxF
@@ -89,7 +89,7 @@ Use the reference video I attached for pacing and caption style. Keep my clips i
 
 ## Limits
 
-- iPhone only for now. There's no Android app, and Vyra doesn't publish APK files. See [Is Vyra on Android?](/answers/is-vyra-on-android)
+- This guide covers iPhone. For Android, use the official listing on [Google Play](/answers/is-vyra-on-android).
 - AI features need an internet connection. Analysis runs on Vyra's servers.
 - Free exports are 720p and carry a watermark.
 - Vyra edits footage you filmed. It isn't a generator that makes clips from a prompt.
@@ -134,7 +134,7 @@ It's free to download. New accounts currently get 100 free credits, and free exp
 Any iPhone that runs iOS 17 or later.
 
 **Is there an Android version?**
-Not yet. On Android, use [app.usevyra.com](https://app.usevyra.com) from a computer.
+Yes. Find the official Android listing on [Google Play](/answers/is-vyra-on-android).
 
 **Do I need to know how to edit?**
 No. Describe what you want in your own words. The timeline is there when you want to adjust something by hand.
@@ -185,6 +185,9 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 
 - [Speed up a video on iPhone](/how-to/speed-up-a-video-on-iphone)
 - [Slip a clip without changing its length](/how-to/slip-a-clip-on-iphone)
+
+- [Extract audio from a video on iPhone](/how-to/extract-audio-from-video-on-iphone)
+- [Start the next shot’s sound early with a J-cut](/how-to/make-a-j-cut-on-iphone)
 
 ## Related
 
