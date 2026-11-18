@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { PostHogInit } from "./posthog";
 import MetaPixel from "@/components/MetaPixel";
+import UtmCarry from "@/components/UtmCarry";
 import "./globals.css";
 
 const inter = Inter({
@@ -228,6 +229,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <PostHogInit />
+        <UtmCarry />
         <Suspense fallback={null}>
           <MetaPixel />
         </Suspense>

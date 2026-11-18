@@ -9,7 +9,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import Image from "next/image";
-import IosAppButton from "./IosAppButton";
+import MobileAppButton from "./MobileAppButton";
 import LiveCount from "./LiveCount";
 import EditorMockup, { type ClientKey } from "./EditorMockup";
 
@@ -64,10 +64,10 @@ function wait(ms: number) {
 
 export default function Hero({
   userCount = null,
-  showIosDownload = true,
+  showMobileDownload = true,
 }: {
   userCount?: number | null;
-  showIosDownload?: boolean;
+  showMobileDownload?: boolean;
 }) {
   const sectionRef = useRef<HTMLElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
@@ -143,7 +143,7 @@ export default function Hero({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center pt-10 text-center md:pt-14">
+      <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-center pt-10 text-center md:pt-14">
         {/* Headline */}
         <h1
           className="rise mb-5"
@@ -202,7 +202,7 @@ export default function Hero({
 
         {/* CTA */}
         <div
-          className="rise flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="rise relative z-30 flex flex-col items-center justify-center gap-3 sm:flex-row"
           style={
             {
               "--rise-y": "20px",
@@ -218,7 +218,7 @@ export default function Hero({
           >
             Get started on web
           </a>
-          {showIosDownload && <IosAppButton />}
+          {showMobileDownload && <MobileAppButton placement="header" />}
         </div>
 
         {/* Social proof, right under the CTAs */}
