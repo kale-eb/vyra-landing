@@ -1,7 +1,7 @@
 ---
 title: An AI editor that understands what is in your footage
 description: On upload, Vyra transcribes every word and writes a description of every scene. So you can ask for a moment by what happens in it.
-updated: 2026-09-24
+updated: '2026-11-15'
 category: feature
 reels:
   - DY_kJF4uI9-
@@ -52,7 +52,7 @@ Cut this 6-minute talking head to 45 seconds. Use the cleanest take of each poin
 | Knows what was said | Only if you transcribe | Sometimes | Yes, every word timestamped |
 | Knows what's on screen | No | No | Yes, every scene described |
 | Finding a moment | Scrub and watch | Scrub and watch | Ask |
-| Long files | You watch all of it | Often capped | 35 minutes indexed in under 2 minutes in our test |
+| Long files | You watch all of it | Often capped | Search the uploaded transcript and visual descriptions |
 
 ## Limits
 

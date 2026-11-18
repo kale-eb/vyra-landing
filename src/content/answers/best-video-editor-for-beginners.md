@@ -8,7 +8,7 @@ reels:
   - DY75P9PtMhO
 ---
 
-**Two honest answers. If you want to pay nothing and learn a timeline, start with CapCut (phone and desktop) or Clipchamp (desktop, no watermark on free). If you'd rather describe the edit in plain language and skip the timeline, start with Vyra. It's free to start and cuts a first draft from your raw footage in minutes. Most beginners publish their first video within an hour with any of the three.**
+**Two honest answers. If you want to pay nothing and learn a timeline, start with CapCut (phone and desktop) or Clipchamp (desktop, no watermark on free). If you'd rather describe the edit in plain language and skip the timeline, start with Vyra. It has a 3-day free trial and cuts a first draft from your raw footage in minutes. Most beginners publish their first video within an hour with any of the three.**
 
 ## Why
 

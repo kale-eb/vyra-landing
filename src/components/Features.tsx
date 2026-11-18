@@ -39,7 +39,7 @@ function AnalysisMedia() {
         <AutoVideo src="/videos/footage-understanding.mp4" />
         {/* Scanning sweep */}
         <motion.div
-          animate={{ left: ["0%", "99%"] }}
+          whileInView={{ left: ["0%", "99%"] }}
           transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }}
           className="absolute inset-y-0 w-[2px] bg-gradient-to-b from-transparent via-[var(--brand-blue)]/70 to-transparent"
         />
@@ -70,7 +70,7 @@ function AnalysisMedia() {
         >
           {/* Gentle drift sells the box as live tracking on the talking head */}
           <motion.div
-            animate={{
+            whileInView={{
               opacity: [1, 0.55, 1],
               x: [0, 4, -3, 2, 0],
               y: [0, 3, -2, 4, 0],
@@ -88,7 +88,7 @@ function AnalysisMedia() {
             {Array.from({ length: 7 }, (_, i) => (
               <motion.span
                 key={i}
-                animate={{ scaleY: [0.4, 1, 0.55, 0.9, 0.4] }}
+                whileInView={{ scaleY: [0.4, 1, 0.55, 0.9, 0.4] }}
                 transition={{ duration: 1.6 + (i % 3) * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.12 }}
                 className="w-[2px] origin-bottom rounded-full bg-white/70"
                 style={{ height: `${barH(i, 5, 12)}px` }}
@@ -202,7 +202,7 @@ function MusicSyncMedia() {
             return beat ? (
               <motion.span
                 key={i}
-                animate={{ scaleY: [1, 0.7, 1] }}
+                whileInView={{ scaleY: [1, 0.7, 1] }}
                 transition={{
                   duration: 1.6,
                   repeat: Infinity,
@@ -223,7 +223,7 @@ function MusicSyncMedia() {
         </div>
         {/* Playhead sweeping in time */}
         <motion.div
-          animate={{ left: ["2%", "98%"] }}
+          whileInView={{ left: ["2%", "98%"] }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-1 top-1 w-[2px] rounded-full bg-white shadow-[0_0_6px_rgba(255,255,255,0.8)]"
         />

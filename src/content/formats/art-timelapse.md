@@ -91,4 +91,4 @@ It can match color across sections. Constant light while shooting is still the r
 - [Speed paint](/formats/speed-paint)
 - [Sketchbook flip-through](/formats/sketchbook-flip-through)
 - [Silent vlog](/formats/silent-vlog)
-- [Timelapse](/glossary/timelapse)
+- [Timelapse](/glossary#timelapse)

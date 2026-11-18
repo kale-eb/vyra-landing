@@ -9,7 +9,7 @@ facts:
   - "Typical output: 60-second same-day teasers, 3-5 minute highlight films, 15-second social clips"
   - "Time saved: A full day of footage to a 60-second teaser before the reception ends"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **A wedding edit is finding forty perfect seconds inside eight hours. Vyra transcribes the vows and speeches, looks at every clip, and cuts the moments you name to the couple's song. The same-day teaser becomes a conversation instead of a night at the desk.**

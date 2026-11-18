@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Clipchamp (2026): which AI video editor should you use?'
 description: Clipchamp is the free, simple editor built into Windows, fine for trims and captions. Vyra is the editor where an AI does the cut for you from a sentence.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ Clipchamp ships with Windows and runs in a browser. It has auto captions, an aut
 | Reference style matching | No | Yes |
 | Manual timeline | Yes | Yes, full editor |
 | Export cap | 1080p free, 4K Premium | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Windows app, browser | Browser |
+| Platform | Windows app, browser | Web, iPhone and Android |
 | Best for | Free basic edits on Windows | AI-edited real footage from a brief |
 
 ## Where Clipchamp is stronger
@@ -73,6 +73,10 @@ No. Record with Clipchamp or any recorder, then upload the file to Vyra.
 
 **Which should a beginner start with?**
 Clipchamp for a one-minute trim. Vyra when the footage is long or the look needs to be specific.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

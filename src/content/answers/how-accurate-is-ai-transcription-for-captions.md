@@ -1,54 +1,63 @@
 ---
 title: How accurate is AI speech transcription for captions?
-description: "Modern AI transcription is typically 95 to 98 percent accurate on clean single-speaker audio and 85 to 92 percent with noise, accents, or crosstalk."
-updated: 2026-09-24
+description: "AI captions need a full review against the spoken audio. Check every line, especially names, numbers, overlapping speech and quiet sections."
+updated: '2026-11-10'
 category: answers
 ---
 
-**Modern AI transcription is typically 95 to 98 percent word-accurate on clean, single-speaker audio recorded close to the mic. That's one or two wrong words per hundred. It typically drops to 85 to 92 percent with background noise, heavy accents, overlapping speakers, or a phone mic across the room. Names, brand terms, and jargon are the most common misses. (TODO: replace with Vyra's measured number from the 20-clip test.)**
+**AI caption accuracy depends on the recording and the words being spoken. Review the complete captioned video against its audio before posting. Names, numbers, quiet speech and overlapping speakers deserve particular attention. A correctly spelled caption also needs to appear at the right moment.**
 
-## Why
+There is no useful shortcut in checking only the opening. A wrong product name halfway through the video matters even when the first few captions are right.
 
-- Audio quality is the biggest factor. A lav mic 15 cm from the mouth beats a phone across a kitchen.
-- Words the model hasn't seen get replaced with the nearest common word. "Gesso" becomes "guess so."
-- Two people talking at once produces merged or dropped words.
-- Very fast speech and mumbled endings lose word boundaries.
-- Even when the words are right, caption timing can drift if phrases are grouped loosely. Word-level timestamps fix this.
+## Check the words and timing separately
 
-## What to do about it
+| Check | What to look for |
+| --- | --- |
+| Exact wording | Missing words, substitutions or repeated phrases |
+| Names and numbers | Spelling, dates, prices and quantities |
+| Speaker changes | Text that combines two people talking |
+| Quiet sections | Captions where nobody is speaking |
+| Timing | A phrase that appears before or after its speech |
 
-1. **Record closer.** Halving mic distance helps more than any setting.
-2. **Kill the noise before you shoot.** Fans, traffic, music in the room.
-3. **Tell the agent your vocabulary.** "My product is called Vyra, spelled V-Y-R-A."
-4. **Proofread names and numbers only.** That's where most errors are.
-5. **Fix by pointing.** "At 0:12 the caption should say gesso."
+## Review the whole video
 
-## Do it in Vyra
+1. Play the captioned edit with sound and read each phrase as it appears.
+2. Pause at an error and note its approximate time and the correct wording.
+3. Ask for that specific correction, leaving the audio and other edits unchanged.
+4. Play the corrected section again, then continue through the rest of the video.
+5. Open the exported file and check the final captions, including the ending.
 
-Vyra transcribes every word with word-level timestamps on upload. Captions come from that transcript.
+If the words are correct but arrive late, use the [caption timing guide](/answers/why-are-my-captions-out-of-sync). For a new recording, [clean audio guidance](/how-to/record-clean-audio) can help you make the speech easier to hear.
+
+## A specific correction
 
 ```
-Caption the whole video in 3-5 word phrases, bold white, lower third. Spellings to use are Vyra, sulansart, gesso, underpainting. Flag any word you were unsure about with a list of timestamps.
+At 0:12 the caption should say "gesso". At 0:41 the name is "Vyra". Correct those words and leave the spoken audio, clip order and caption style unchanged. Let me review those sections.
 ```
 
-```
-At 0:12 the caption should say "gesso" not "guess so". At 0:41 it should say "Vyra". Fix those and show me frames at both timestamps.
-```
+Give the intended spelling of specialist terms before generating captions where possible. Still check the final text, since providing vocabulary does not guarantee every occurrence is correct.
 
 ## FAQ
 
-**Is 95 percent good enough?**
-For most social video, yes, after a 2-minute proofread of names and numbers. For legal or medical content, have a person review every line.
+**Can I post AI captions without proofreading?**
+Review the whole video first. A generated caption track is a draft, and errors can appear anywhere in it.
 
-**Do accents lower accuracy?**
-Somewhat. Clear audio matters more. A well-recorded accented speaker transcribes better than a native speaker across a noisy room.
+**Does clear audio guarantee correct captions?**
+No. Clear speech makes the recording easier to review, but names and other words can still need correction. Check the complete text against the audio.
 
-**Can I edit the transcript directly?**
-Yes. Tell the agent the timestamp and the right word, or edit the caption on the timeline.
+**Can I correct the words without changing my voice?**
+Yes. Specify the caption wording and ask to leave the spoken audio unchanged. Check the result in the preview and exported file.
+
+**Why are the words right but the captions still feel wrong?**
+Check their timing, phrase length and position separately. Correct text can still appear too late or be difficult to read.
+
+**Should I check only names and numbers?**
+Check every line. Pay extra attention to names and numbers because a small error can change their meaning.
 
 ## Related
 
 - /features/ai-captions
+- /how-to/add-captions-to-videos-on-iphone
+- /answers/why-are-my-captions-out-of-sync
 - /how-to/record-clean-audio
-- /how-to/choose-captions
 - /prompts/captions

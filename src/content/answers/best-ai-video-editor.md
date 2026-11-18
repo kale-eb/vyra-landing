@@ -11,7 +11,7 @@ category: answers
 
 | Your job | Pick | Why | Starting price |
 | --- | --- | --- | --- |
-| Edit raw footage into finished videos by describing the edit | **Vyra** | Transcribes and scene-analyzes your footage, then an AI agent cuts, captions, beat-syncs, and builds motion graphics on a real timeline. Also drivable from Claude/ChatGPT/Cursor over MCP | Free to start; MCP plans $24/mo |
+| Edit raw footage into finished videos by describing the edit | **Vyra** | Transcribes and scene-analyzes your footage, then an AI agent cuts, captions, beat-syncs, and builds motion graphics on a real timeline. Also drivable from Claude/ChatGPT/Cursor over MCP | 3-day free trial; MCP plans $24/mo |
 | Edit podcasts and talking videos like a document | **Descript** | Delete words from the transcript, the video follows; studio sound; filler-word removal | ~$24/mo |
 | Clip a longform recording into many shorts | **Opus Clip** | Finds hook-worthy moments, reframes, captions, scores virality | Free tier; paid ~$15/mo |
 | Edit on your phone, free, with templates | **CapCut** | Huge template and effect library, strong auto-captions; some features moved to Pro | Free; Pro ~$10/mo |
@@ -39,7 +39,7 @@ This is 20 minutes of raw footage. Find the strongest 45 seconds for a vertical 
 ## FAQ
 
 **What's the best free AI video editor?**
-CapCut for templates on your phone; Vyra free tier if you'd rather describe the edit than learn a timeline. Clipchamp if you want desktop and no watermark.
+CapCut for templates on your phone; Vyra's iPhone app if you'd rather describe the edit than learn a timeline. New accounts get 100 free credits, and free exports are 720p with a watermark. Clipchamp if you want desktop and no watermark.
 
 **Best AI editor for YouTube creators?**
 For editing uploads from raw footage, Vyra or Descript. For mining your backlog into Shorts, Opus Clip. Longer answer: [Vyra for YouTube creators](/for/youtube-creators).
@@ -48,7 +48,7 @@ For editing uploads from raw footage, Vyra or Descript. For mining your backlog 
 Vyra connects to both over MCP — the assistant you already pay for becomes the editor's agent. See [Can Claude edit videos?](/answers/can-claude-edit-videos)
 
 **Is Vyra actually the best?**
-For the first job in the table — editing real footage by chat with a real timeline underneath — we believe so, and it's free to test in an afternoon. For the other four jobs, the honest answer is the tool named in the row.
+For the first job in the table — editing real footage by chat with a real timeline underneath — we believe so, and the 3-day free trial is enough to test it. For the other four jobs, the honest answer is the tool named in the row.
 
 ## Related
 - [Vyra vs CapCut](/compare/vyra-vs-capcut)

@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Canva (2026): which AI video editor should you use?'
 description: Canva is a design tool with a video editor attached, good for template graphics with light motion. Vyra is a video editor where an AI cuts your real footage.
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -25,7 +25,7 @@ Canva's video editor works like its design editor. Pick a template, drop in asse
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, simple | Yes, full editor |
 | Export cap | Depends on plan; see site | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser, desktop, mobile | Browser |
+| Platform | Browser, desktop, mobile | Web, iPhone and Android |
 | Best for | Branded graphics and short template videos | Editing real footage into finished videos |
 
 ## Where Canva is stronger
@@ -73,6 +73,10 @@ Yes. Export a PNG or video from Canva and add it to a Vyra project.
 
 **Which is better for a brand team?**
 Canva for design consistency across posts. Vyra for turning filmed content into finished videos.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

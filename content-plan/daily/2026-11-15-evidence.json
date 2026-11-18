@@ -1,0 +1,156 @@
+{
+  "gsc7": {
+    "report": "overview",
+    "siteUrl": "sc-domain:usevyra.com",
+    "window": {
+      "from": "2026-11-06",
+      "to": "2026-11-12"
+    },
+    "metrics": {
+      "clicks": 2692,
+      "impressions": 19929,
+      "ctr": 0.13507953233980632,
+      "position": 6.771438607055045
+    },
+    "comparison": {
+      "previousWindow": {
+        "from": "2026-10-30",
+        "to": "2026-11-05"
+      },
+      "previous": {
+        "clicks": 2620,
+        "impressions": 20286,
+        "ctr": 0.12915311051957015,
+        "position": 7.115301192940945
+      },
+      "delta": {
+        "clicks": 72,
+        "impressions": -357,
+        "ctr": 0.005926421820236172,
+        "position": -0.34386258588589946
+      },
+      "deltaPct": {
+        "clicks": 2.7480916030534353,
+        "impressions": -1.7598343685300208,
+        "ctr": 4.588679123866831,
+        "position": -4.8327200291541255
+      }
+    }
+  },
+  "gsc28": {
+    "report": "overview",
+    "siteUrl": "sc-domain:usevyra.com",
+    "window": {
+      "from": "2026-10-16",
+      "to": "2026-11-12"
+    },
+    "metrics": {
+      "clicks": 17175,
+      "impressions": 76718,
+      "ctr": 0.2238718423316562,
+      "position": 5.807150864203968
+    },
+    "comparison": {
+      "previousWindow": {
+        "from": "2026-09-18",
+        "to": "2026-10-15"
+      },
+      "previous": {
+        "clicks": 15062,
+        "impressions": 49219,
+        "ctr": 0.30602003291411856,
+        "position": 4.059103191856803
+      },
+      "delta": {
+        "clicks": 2113,
+        "impressions": 27499,
+        "ctr": -0.08214819058246237,
+        "position": 1.7480476723471652
+      },
+      "deltaPct": {
+        "clicks": 14.028681450006639,
+        "impressions": 55.87070033929986,
+        "ctr": -26.8440565149264,
+        "position": 43.06487393210458
+      }
+    }
+  },
+  "fanout": {
+    "totalPrompts": 71,
+    "totalQueries": 636,
+    "avgQueriesPerResponse": 1.3
+  },
+  "webGoogle": [
+    {
+      "type": "text",
+      "text": "Previous period:\nDate|$pageview\n2026-11-01|45\n2026-11-02|28\n2026-11-03|47\n2026-11-04|45\n2026-11-05|64\n2026-11-06|40\n2026-11-07|42\n\nCurrent period:\nDate|$pageview\n2026-11-08|23\n2026-11-09|33\n2026-11-10|49\n2026-11-11|38\n2026-11-12|34\n2026-11-13|31\n2026-11-14|38"
+    }
+  ],
+  "engagement": [
+    {
+      "type": "text",
+      "text": "Previous period:\nDate|app_store_clicked|faq_opened\n2026-11-01|0|0\n2026-11-02|0|0\n2026-11-03|0|0\n2026-11-04|0|0\n2026-11-05|0|0\n2026-11-06|0|0\n2026-11-07|0|0\n\nCurrent period:\nDate|app_store_clicked|faq_opened\n2026-11-08|0|0\n2026-11-09|1|0\n2026-11-10|27|0\n2026-11-11|28|1\n2026-11-12|20|0\n2026-11-13|13|0\n2026-11-14|11|1"
+    }
+  ],
+  "nativeActions": [
+    {
+      "type": "text",
+      "text": "Date|slip breakdown for the value `slip`|speed breakdown for the value `speed`|trim breakdown for the value `trim`|undo breakdown for the value `undo`|transform breakdown for the value `transform`|delete breakdown for the value `delete`|move breakdown for the value `move`|textStyle breakdown for the value `textStyle`|split breakdown for the value `split`|createTrack breakdown for the value `createTrack`|setTrackFlag breakdown for the value `setTrackFlag`|addMedia breakdown for the value `addMedia`|reorderClip breakdown for the value `reorderClip`|effectParams breakdown for the value `effectParams`|changeTrack breakdown for the value `changeTrack`|transition breakdown for the value `transition`|filter breakdown for the value `filter`|text breakdown for the value `text`|keyframe breakdown for the value `keyframe`|redo breakdown for the value `redo`|Other (i.e. all remaining values) breakdown for the value `Other (i.e. all remaining values)`\n2026-11-08|0|0|97|72|58|94|25|46|15|10|75|25|1|28|1|4|0|26|0|4|112\n2026-11-09|186|0|56|78|104|92|5|0|55|4|16|17|19|10|0|10|0|9|19|5|32\n2026-11-10|711|29|204|78|108|50|27|14|28|6|29|18|15|32|3|36|5|32|11|1|91\n2026-11-11|1188|931|272|346|168|187|314|50|74|137|46|82|52|20|122|25|49|7|29|28|204\n2026-11-12|4104|408|276|278|371|127|115|151|54|39|19|46|47|50|46|28|47|19|11|44|197\n2026-11-13|997|0|109|22|62|23|17|21|20|22|10|4|1|14|1|27|19|2|0|0|25\n2026-11-14|0|197|223|168|137|141|60|128|16|6|23|24|72|33|2|6|11|23|45|25|233"
+    }
+  ],
+  "chatCoverage": [
+    {
+      "type": "text",
+      "text": "event|records|with_input\n$ai_trace|1692|0\n$ai_generation|17233|0"
+    }
+  ],
+  "unbranded": {
+    "summary": {
+      "visibilityScore": 3.2,
+      "scoreChange": 0.2,
+      "scoreChangePeriod": "7d",
+      "totalResponses": 1467,
+      "totalMentions": 12640,
+      "totalCitations": 3830,
+      "totalSources": 22181,
+      "responseMentionRate": 4
+    },
+    "comparison": {
+      "mode": "previous_period",
+      "dateRange": {
+        "from": "2026-11-01T00:00:00.000Z",
+        "to": "2026-11-07T23:59:59.999Z"
+      },
+      "previous": {
+        "visibilityScore": 4.5,
+        "totalResponses": 1407,
+        "totalMentions": 12212,
+        "totalCitations": 3606,
+        "totalSources": 21111,
+        "responseMentionRate": 4.1,
+        "reportsAnalyzed": 7
+      },
+      "delta": {
+        "visibilityScore": -1.3,
+        "totalResponses": 60,
+        "totalMentions": 428,
+        "totalCitations": 224,
+        "totalSources": 1070,
+        "responseMentionRate": -0.1,
+        "reportsAnalyzed": 0
+      }
+    },
+    "dateRange": {
+      "from": "2026-11-08T00:00:00.000Z",
+      "to": "2026-11-14T23:59:59.999Z"
+    },
+    "appliedFilters": {
+      "unbranded": true
+    }
+  },
+  "gscPageExportCoverage": {
+    "currentRows": 250,
+    "previousRows": 250,
+    "note": "Connector caps rows. Missing URLs are unknown, not zero. Page sums are not deduplicated site totals."
+  }
+}

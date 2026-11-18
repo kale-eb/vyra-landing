@@ -70,7 +70,7 @@ Both, with the emphasis on the engine and MCP for developers. Vyra emphasizes th
 Yes, through MCP from Claude Code or Cursor. It does not currently advertise a public SDK.
 
 **Which is cheaper?**
-Rendley pricing is on its site. Vyra starts at $24/mo and is free to start.
+Rendley pricing is on its site. Vyra has a 3-day free trial, then starts at $24/mo.
 
 ## Related
 

@@ -9,7 +9,7 @@ facts:
   - "Output: MP4 up to 4K, or WebM up to 1080p"
   - "Time: Seconds to place a layout (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **Picture-in-picture puts one video inside another. Split screen puts two side by side. Vyra does both with layout presets, so "show the screen recording top right at a third of the frame while I talk about it" becomes a timed layout on the timeline.**

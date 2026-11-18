@@ -1,15 +1,15 @@
 ---
 title: "Vyra vs Captions app (2026): which AI video editor should you use?"
-description: "Captions is a phone app that polishes talking-head shorts with AI captions and zooms. Vyra is a browser editor where an AI cuts the whole video from raw clips."
-updated: '2026-09-24'
+description: "Captions is a phone app that polishes talking-head shorts with AI captions and zooms. Vyra runs on web and iPhone, where an AI cuts the whole video from raw clips."
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
 ---
 
-**Captions is a phone app that polishes talking-head shorts with AI captions, zooms, b-roll, and eye contact. Vyra is a browser editor where an AI cuts the whole video from raw footage and gives you a full timeline.**
+**Captions is a phone app that polishes talking-head shorts with AI captions, zooms, b-roll, and eye contact. Vyra runs on web and iPhone, where an AI cuts the whole video from raw footage and gives you a full timeline.**
 
-Captions (captions.ai) is the phone-in-hand tool. Record or import a short clip, tap AI Edit, and it adds captions, zooms, b-roll, sound effects, and can fix your eye line. Vyra is the desk tool. Upload everything you shot, describe the video, and the agent builds it. Then you finish in a timeline if you want.
+Captions (captions.ai) is the phone-in-hand tool. Record or import a short clip, tap AI Edit, and it adds captions, zooms, b-roll, sound effects, and can fix your eye line. Vyra has a native iPhone app and a web editor. Upload everything you shot, describe the video, and the agent builds it. Then you finish in a timeline if you want.
 
 ## At a glance
 
@@ -25,7 +25,7 @@ Captions (captions.ai) is the phone-in-hand tool. Record or import a short clip,
 | Reference style matching | No | Yes |
 | Eye contact correction | Yes | No |
 | Manual timeline | Light | Yes, full editor |
-| Platform | Mobile first, plus web | Browser |
+| Platform | Mobile first, plus web | Web, iPhone and Android |
 | Export cap | Depends on plan; see site | 1440p (AI Starter), 4K (AI Pro) |
 | Best for | Polishing talking-head shorts on a phone | AI-edited real footage from a brief |
 
@@ -71,10 +71,14 @@ Cut this take to the best 30 seconds for TikTok. Remove pauses and restarts. Wor
 No. Captions has that. Vyra edits what the camera saw.
 
 **Is there a Vyra mobile app?**
-Vyra runs in the browser. A phone browser works, but it is not the main path.
+Yes. Vyra has a native iPhone app as well as web. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Vyra is also available on [Google Play](/answers/is-vyra-on-android).
 
 **Which is cheaper?**
-Captions pricing is on its site. Vyra starts at $24/mo and is free to start.
+Check Captions pricing on its site. Vyra’s web plans have a three-day trial. Vyra’s iPhone app has separate free credits and Plus/Pro plans through the App Store.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

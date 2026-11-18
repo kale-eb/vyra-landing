@@ -22,6 +22,14 @@ function TerminalIcon({ className }: { className?: string }) {
   );
 }
 
+function CodeIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+    </svg>
+  );
+}
+
 function RocketIcon({ className }: { className?: string }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -54,6 +62,13 @@ const guides = [
       "Connect Claude, Codex, or any MCP-compatible agent to control Vyra remotely.",
     href: "/docs/mcp",
     icon: TerminalIcon,
+  },
+  {
+    title: "Vyra API",
+    description:
+      "Send footage and a prompt, get a finished video back. Calls, limits, webhooks and prices.",
+    href: "/docs/api",
+    icon: CodeIcon,
   },
 ];
 

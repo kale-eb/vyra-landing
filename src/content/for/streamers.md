@@ -9,7 +9,7 @@ facts:
   - "Typical output: 30-60 second clips, 5-10 minute highlight reels, 9:16 Shorts with facecam on top"
   - "Time saved: A 4-hour VOD to ten captioned clips in one conversation"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **Clipping a stream is a search problem. Vyra transcribes the whole VOD and analyzes what's on screen, so "find the moment chat lost it" or "every clutch in the last hour" gives you timestamps you can cut from in the same message.**

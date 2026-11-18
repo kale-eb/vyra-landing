@@ -18,6 +18,11 @@ type Review = {
   rating?: number;
   date: string;
   format?: string;
+  title?: string;
+  source?: string;
+  followers?: string;
+  disclosure?: string;
+  markup?: boolean;
 };
 
 const DESCRIPTION = "What creators say after editing real footage with Vyra: quotes from vloggers, podcasters, founders, and artists, with names and links.";
@@ -32,7 +37,11 @@ export const metadata: Metadata = {
 export default function ReviewsPage() {
   const items = reviews as Review[];
   if (!items.length) notFound();
-  const rated = items.filter((r) => typeof r.rating === "number");
+  // Google doesn't allow review markup for reviews collected from other sites (App Store, press),
+  // so only reviews given to us directly go into the structured data.
+  // Opt in per review with "markup": true, for independent reviews left with us directly.
+  const firstParty = items.filter((r) => r.markup === true);
+  const rated = firstParty.filter((r) => typeof r.rating === "number");
   const avg = rated.length ? rated.reduce((s, r) => s + (r.rating ?? 0), 0) / rated.length : null;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -42,7 +51,7 @@ export default function ReviewsPage() {
     ...(avg
       ? { aggregateRating: { "@type": "AggregateRating", ratingValue: avg.toFixed(1), ratingCount: rated.length, bestRating: 5 } }
       : {}),
-    review: items.map((r) => ({
+    review: firstParty.map((r) => ({
       "@type": "Review",
       author: { "@type": "Person", name: r.name, ...(r.url ? { url: r.url } : {}) },
       reviewBody: r.quote,
@@ -52,7 +61,7 @@ export default function ReviewsPage() {
   };
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {firstParty.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />}
       <DirectoryNav crumbs={[{ label: "Reviews", href: "/reviews" }]} />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <p className="mb-3 text-[13px] font-medium tracking-wide text-[var(--foreground-subtle)] uppercase">Reviews</p>
@@ -66,6 +75,7 @@ export default function ReviewsPage() {
         <div className="space-y-4">
           {items.map((r, i) => (
             <blockquote key={i} className="rounded-2xl border border-[var(--surface-border)] bg-white p-6">
+              {r.title && <p className="mb-1 text-[16px] font-semibold text-[var(--foreground)]">{r.title}</p>}
               <p className="text-[16px] leading-relaxed text-[var(--foreground)]">&ldquo;{r.quote}&rdquo;</p>
               <footer className="mt-4 text-[13px] text-[var(--foreground-muted)]">
                 {r.url ? (
@@ -76,7 +86,9 @@ export default function ReviewsPage() {
                   <span className="font-semibold text-[var(--foreground)]">{r.name}</span>
                 )}
                 {r.handle ? ` (${r.handle})` : ""} · {r.role}
-                {r.format ? ` · ${r.format}` : ""} · {r.date}
+                {r.followers ? ` · ${r.followers}` : ""}
+                {r.format ? ` · ${r.format}` : ""}
+                {r.disclosure && <span className="mt-1 block italic">{r.disclosure}</span>}
               </footer>
             </blockquote>
           ))}

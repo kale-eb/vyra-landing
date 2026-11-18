@@ -9,7 +9,7 @@ facts:
   - "Output: An animated overlay on the timeline, exported in MP4 up to 4K or WebM up to 1080p"
   - "Time: Under a minute per graphic (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DXh8TpouYGm
   - DY4pVwtu3KD

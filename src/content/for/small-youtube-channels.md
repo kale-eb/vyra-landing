@@ -47,7 +47,7 @@ Apply the same caption style, title card style, and lower third as my last proje
 - It does the tedious pass. Filler, pauses, retakes, with rules you set.
 - One style, every video. Describe your caption and title look once.
 - Shorts come from the same project, so you publish more without a second edit.
-- Free to start, and the built-in AI needs no extra subscription.
+- A 3-day free trial, and the built-in AI needs no extra subscription.
 
 ## What it does not do
 

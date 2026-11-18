@@ -1,7 +1,7 @@
 ---
 title: "Vyra for developers: drive a real video editor from Cursor or Claude Code over MCP"
 description: "Vyra exposes its editor as MCP tools. An agent in Cursor or Claude Code can add media, trim, caption, mask, animate, and export, with scene analysis."
-updated: 2026-09-24
+updated: '2026-11-13'
 category: for
 facts:
   - "Best for: Developers building video pipelines, agent workflows, or internal tooling"
@@ -9,7 +9,7 @@ facts:
   - "Typical output: Product demos, release notes videos, batch captioned clips, automated cutdowns"
   - "Time saved: A changelog to a captioned demo video from one agent run"
   - "Works with: Cursor, Claude Code, Claude Desktop, ChatGPT, any MCP client"
-  - "Price: Free to start, MCP Starter $24/mo"
+  - "Price: 3-day free trial, then MCP Starter $24/mo"
 reels:
   - DY4pVwtu3KD
   - DZumPohtfW8
@@ -43,6 +43,8 @@ Read the timeline back with start and end times for every item. Then capture fra
 
 ## A typical workflow
 
+For an application that submits editing jobs directly, see the [Vyra API answer](/answers/does-vyra-have-a-video-editing-api) and [public API docs](/docs/api). API access requires approval, with its own documented limits and charges. The steps below describe the MCP workflow for an assistant directing the editing tools.
+
 1. Connect your MCP client to Vyra. See [/mcp](/mcp).
 2. Have the agent list assets and read transcripts and scene summaries.
 3. Ask for a plan, then run it in steps. Rough cut, captions, graphics, export.
@@ -54,12 +56,11 @@ Read the timeline back with start and end times for every item. Then capture fra
 - Tool-level access. The agent moves things on the timeline itself, it doesn't pass prompts to someone else's AI.
 - Transcript and scene analysis exposed as data the agent can search.
 - Motion graphics are code (React and Remotion), so the agent can write and edit them from a description.
-- Export runs in the browser with presets, or custom resolution, format, and bitrate.
+- Export with presets, or custom resolution, format, and bitrate. It runs on Vyra's servers, so nothing has to stay open.
 
 ## What it does not do
 
-- It isn't a headless render API. Exports run in a browser session.
-- It doesn't generate footage. It edits uploaded media and Pexels stock.
+- It doesn't generate video footage. It edits uploaded media and Pexels stock. It can generate voiceovers, images, sound effects, and music.
 
 ## Example
 
@@ -78,6 +79,9 @@ Plan credits cover processing and agent work. See [/pricing](/pricing).
 
 ## Related
 
+- /answers/does-vyra-have-a-video-editing-api
+
+- [Which video editors integrate with LLMs](/answers/video-editors-that-integrate-with-llms)
 - [/mcp](/mcp)
 - [/cursor](/cursor)
 - [/claude](/claude)

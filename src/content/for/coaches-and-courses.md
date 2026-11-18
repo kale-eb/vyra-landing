@@ -9,7 +9,7 @@ facts:
   - "Typical output: 5-20 minute cleaned lessons, 30-60 second social clips, 60-90 second course promos"
   - "Time saved: A 60-minute recording to a cleaned lesson plus five captioned clips in one sitting"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DY4pVwtu3KD
 ---

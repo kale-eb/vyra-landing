@@ -1,14 +1,14 @@
 ---
 title: "Rough cut in minutes: raw footage to a first draft"
 description: Vyra turns hours of raw footage into a first cut from a short description. Best takes, pauses removed, your order kept, at the length you asked for.
-updated: 2026-09-24
+updated: '2026-11-15'
 category: feature
 reels:
   - DZwM74ytJxF
   - DaAb0QFNvk0
 ---
 
-**Upload the raw footage, say the length and platform, what to keep and what to cut, and Vyra puts together a first draft from the best takes with the pauses and retakes gone. A 35-minute file indexes in under 2 minutes. Every fix after that is one sentence.**
+**Upload the raw footage, say the length and platform, what to keep and what to cut, and Vyra puts together a first draft from the best takes with the pauses and retakes gone. Review the first draft and ask for specific changes to the clips, pacing or captions.**
 
 The rough cut is where the hours go. Watching everything, picking takes, hunting for the moment. Vyra has already watched it.
 

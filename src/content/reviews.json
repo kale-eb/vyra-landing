@@ -1,10 +1,108 @@
 [
   {
-    "name": "Buffer (Shivani Shah)",
+    "name": "Joshua",
+    "handle": "@jooqi on TikTok",
+    "role": "Creator",
+    "followers": "300K+ followers across platforms",
+    "quote": "I’ve never seen something work so well. This is mad revolutionary… I love this product so much.",
+    "date": "2026-10-07",
+    "source": "creator",
+    "url": "https://www.tiktok.com/@jooqi",
+    "avatar": "/images/testimonials/joshua.jpg"
+  },
+  {
+    "name": "Lauren",
+    "avatar": "/images/testimonials/lauren.jpg",
+    "role": "Nail artist, Efron Nails",
+    "followers": "29K followers",
+    "url": "https://www.instagram.com/efronnails/",
+    "quote": "This may have edited my video better than I do 😂 And it took no time or effort.",
+    "date": "2026-10-11",
+    "source": "creator"
+  },
+  {
+    "name": "Joshua Zloof",
+    "avatar": "/images/testimonials/joshua-zloof.jpg",
+    "role": "YC W17 founder",
+    "url": "https://www.instagram.com/joshuazloof/",
+    "quote": "It’s amazing!!!!! Like literally life changing. Great job I’ve already called 10 friends to tell them about it 😂",
+    "date": "2026-10-27",
+    "source": "founder"
+  },
+  {
+    "name": "Aly",
+    "role": "Founder, Veeza AI (YC F26)",
+    "followers": "15K+ followers",
+    "quote": "No joke. Every video I edited with Vyra has gotten me over 10,000 views… It's the best editor i’ve ever used",
+    "date": "2026-10-25",
+    "source": "founder",
+    "url": "https://x.com/alymoursy",
+    "avatar": "/images/testimonials/aly.jpg"
+  },
+  {
+    "name": "Lachlan",
+    "role": "Founder, PunchPass",
+    "handle": "Founder, PunchPass",
+    "quote": "Honestly, it’s really good. I’ve been loving the tool. I use it all the time… When I want a certain clip, it usually pulls the right clip that I need.",
+    "date": "2026-09-24",
+    "source": "founder"
+  },
+  {
+    "name": "Mel",
+    "avatar": "/images/testimonials/mel.jpg",
+    "role": "The Local Story",
+    "handle": "The Local Story",
+    "quote": "I was so excited when Vyra came about. I was like, this is amazing. It connects to my Claude.",
+    "date": "2026-09-22",
+    "source": "creator"
+  },
+  {
+    "name": "Lea",
+    "handle": "@theluckywonder",
+    "role": "Uses Vyra for interview content at work",
+    "url": "https://www.instagram.com/theluckywonder/",
+    "avatar": "/images/testimonials/lea.jpg",
+    "quote": "The app is great! I can’t wait for it to fully take off! It is such a much deserve app! ✨ … I use it all the time it has been a big help!",
+    "date": "2026-10-25",
+    "source": "instagram"
+  },
+  {
+    "name": "Claire",
+    "url": "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012?see-all=reviews&platform=iphone",
+    "role": "Lans",
+    "title": "SO MUCH BETTER than CapCut & Edits✨!!",
+    "quote": "i’ve been posting content on instagram & tiktok for the last 5 years, and vyra is a game changer!! no more manually fixing the caption, putting title, cutting blank spaces.",
+    "date": "2026-10-06",
+    "source": "app-store",
+    "handle": "@sigmagirlgrind",
+    "avatar": "/images/testimonials/claire.jpg"
+  },
+  {
+    "name": "orellecano",
+    "url": "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012?see-all=reviews&platform=iphone",
+    "role": "App Store review",
+    "title": "speeds up content creation",
+    "quote": "amazing!! the style reference video things woks so good. love it",
+    "date": "2026-10-06",
+    "source": "app-store"
+  },
+  {
+    "name": "koolbears",
+    "url": "https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012?see-all=reviews&platform=iphone",
+    "role": "App Store review",
+    "title": "genuinely so good",
+    "quote": "Don’t understand how its even possible to have videos edited like this but i cant go back to doing anything manually anymore 😭",
+    "date": "2026-10-20",
+    "source": "app-store"
+  },
+  {
+    "name": "Tamilore Oladipo",
+    "avatar": "/images/testimonials/tamilore.jpg",
+    "handle": "Senior Content Creator, Buffer",
     "url": "https://buffer.com/resources/ai-video-tools/",
-    "role": "Independent roundup, The 11 Best AI Video Editors in 2026, Tried and Tested",
+    "role": "Independent review, Buffer",
     "quote": "Unlike many other AI video editors, Vyra wasn't retro-fitted with AI features. It was built that way: the editor is effectively a chat window, rather than a toolbar of different AI features.",
     "date": "2026-07-22",
-    "format": "Ranked first of 11, called the most consistent performer"
+    "source": "press"
   }
 ]

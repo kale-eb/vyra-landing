@@ -1,7 +1,7 @@
 ---
-title: "Can ChatGPT edit videos? Yes, through a connector — here's how (2026)"
-description: "ChatGPT can't cut video on its own. Add Vyra as a connector (MCP) and it edits your real footage: cuts, captions, music sync, and motion graphics on a real timeline."
-updated: 2026-10-27
+title: "Can ChatGPT edit videos? Connect it to an editor"
+description: "Connect ChatGPT to Vyra over MCP to edit your own footage. Make cuts, add captions and music, then review the timeline and export your video."
+updated: '2026-11-14'
 category: answers
 ---
 
@@ -46,7 +46,7 @@ Yes — same protocol, same editor. See [Can Claude edit videos?](/answers/can-c
 Those assistants live inside their own apps. The connector approach means the AI you already use (and that already knows your preferences) is the one editing — you don't learn a second assistant.
 
 **What does it cost?**
-Vyra is free to start; connector (MCP) plans start at $24/month on top of the ChatGPT subscription you already have. See [pricing](/pricing).
+Vyra has a 3-day free trial; connector (MCP) plans start at $24/month on top of the ChatGPT subscription you already have. See [pricing](/pricing).
 
 ## Related
 - [How to connect ChatGPT to Vyra](/tutorials/connect-chatgpt)

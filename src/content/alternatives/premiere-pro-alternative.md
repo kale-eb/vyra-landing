@@ -57,7 +57,7 @@ Turn this 10-minute talking head into a 60-second 9:16 short. Keep the clearest 
 For short-form and most social content, yes. For broadcast delivery, multicam, or advanced color, keep Premiere or use Resolve.
 
 **Which alternative is free?**
-DaVinci Resolve's base version. Vyra is free to start.
+DaVinci Resolve's base version. Vyra has a 3-day free trial.
 
 **Can I finish a Vyra edit in Premiere?**
 Yes. Export and import the file.

@@ -1,7 +1,7 @@
 ---
 title: 'Vyra vs Adobe Firefly (2026): which AI video editor should you use?'
 description: "Firefly Quick Cut makes one AI first draft inside Adobe's editor. Vyra keeps taking instructions after the draft, with footage search and reference matching."
-updated: '2026-09-24'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -26,7 +26,7 @@ Adobe added Quick Cut to the Firefly video editor in February 2026. You upload f
 | Generative fills and extends | Yes, Firefly generative video | No, edits real footage only |
 | Manual timeline | Yes, Firefly video editor | Yes, full editor |
 | Export cap | Paid plans up to 2K at launch | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Browser, Adobe account | Browser |
+| Platform | Browser, Adobe account | Web, iPhone and Android |
 | Best for | Adobe users who want an AI first draft | Creators who want to keep directing by chat |
 
 ## Where Firefly is stronger
@@ -75,6 +75,10 @@ No. It edits the footage you upload. If you need generated clips, make them else
 
 **Can I use both?**
 Yes. Generate b-roll in Firefly, upload it to Vyra with your real footage, and cut by conversation.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { generatedEntries } from "@/lib/pseo";
 
 export const SITE_URL = "https://www.usevyra.com";
 
@@ -11,7 +12,9 @@ export type SectionKey =
   | "formats"
   | "how-to"
   | "prompts"
+  | "ideas"
   | "answers"
+  | "best"
   | "features"
   | "tutorials"
   | "glossary"
@@ -59,6 +62,29 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
       { label: "Leaving a pro timeline", slugs: ["premiere-pro-alternative", "davinci-resolve-alternative"] },
     ],
   },
+  best: {
+    key: "best",
+    label: "Best of",
+    title: "Best video editors, ranked by what you actually need",
+    description:
+      "Ranked lists for one job each, like beat sync, agentic editing, and MCP servers. We make Vyra, and each list says why it ranks where it does.",
+    schema: "Article",
+    intro: "One job per list. We make Vyra, so every list says why it ranks where it does and when another tool is the better pick. Each one says what we checked and when.",
+  },
+  ideas: {
+    key: "ideas",
+    label: "Ideas",
+    title: "Video ideas you can film this week, each with an edit prompt",
+    description:
+      "Lists of video ideas for YouTube, TikTok, Reels, Shorts, vlogs, skits, and more. Every idea links to its format and comes with a prompt that edits it in Vyra.",
+    schema: "Article",
+    intro: "Ideas for what to film next, grouped by where you post and what you make. Every idea says why it works, links to the format, and has a prompt you can paste into Vyra once you have the footage.",
+    groups: [
+      { label: "By platform", slugs: ["youtube-video-ideas", "youtube-shorts-ideas", "tiktok-video-ideas", "reel-ideas"] },
+      { label: "By format", slugs: ["vlog-ideas", "skit-ideas", "music-video-ideas", "faceless-youtube-channel-ideas", "artist-content-ideas"] },
+      { label: "Parts of a video", slugs: ["hook-ideas", "transition-ideas", "b-roll-ideas", "youtube-intro-ideas"] },
+    ],
+  },
   for: {
     key: "for",
     label: "For",
@@ -96,10 +122,17 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     label: "How-to",
     title: "How-to guides for short-form video",
     description:
-      "Hooks, pacing, captions, framing, audio, music. Short guides with real numbers.",
+      "Practical guides to editing on iPhone, plus filming, captions, framing, audio and music.",
     schema: "HowTo",
-    intro: "Short guides with real numbers, written from our own footage. Plan, film, edit, then grow. Each one ends with the prompt that does the same job in Vyra.",
+    intro: "Start with the editing job you want to finish. These guides cover iPhone workflows, filming and short-form editing, with example prompts to try on your footage.",
     groups: [
+      { label: "Edit on iPhone", slugs: ["add-transitions-to-videos-on-iphone", "add-captions-to-videos-on-iphone", "match-a-reference-video-on-iphone", "trim-video-on-iphone", "split-video-on-iphone", "combine-videos-on-iphone", "add-music-to-video-on-iphone", "adjust-video-volume-on-iphone", "add-voiceover-to-video-on-iphone", "add-text-to-video-on-iphone", "make-vertical-video-on-iphone", "export-video-to-photos-on-iphone", "record-video-in-vyra-on-iphone", "edit-vlog-on-iphone", "edit-art-process-video-on-iphone", "edit-reels-on-iphone", "make-before-after-video-on-iphone"] },
+      { label: "References, captions and precise cuts", slugs: ["keep-captions-clear-of-subject-on-iphone", "shorten-caption-lines-on-iphone", "caption-fast-speech-on-iphone", "correct-spoken-mistake-with-text-on-iphone", "turn-reference-into-editing-brief-on-iphone", "adapt-reference-with-fewer-clips-on-iphone", "keep-original-audio-when-matching-reference-on-iphone", "combine-two-reference-styles-on-iphone", "cut-on-action-video-on-iphone", "make-match-cut-on-iphone", "edit-continuity-errors-on-iphone", "edit-repeated-actions-on-iphone", "add-chapter-cards-to-video-on-iphone", "match-voiceover-length-to-footage-on-iphone", "edit-customer-testimonial-video-on-iphone", "edit-multi-day-video-diary-on-iphone"] },
+      { label: "Inspect a project with Claude", slugs: ["mark-video-review-notes-with-claude", "find-a-quote-in-footage-with-claude", "check-video-text-readability-with-claude", "audit-overlapping-audio-with-claude"] },
+      { label: "Finish and revise on iPhone", slugs: ["undo-video-edits-on-iphone", "remove-gaps-between-clips-on-iphone", "apply-effect-to-multiple-clips-on-iphone", "correct-caption-names-on-iphone", "style-all-captions-on-iphone", "caption-two-speakers-on-iphone", "caption-video-with-background-music-on-iphone", "prepare-icloud-videos-for-editing-on-iphone", "revise-video-after-export-on-iphone", "replace-clip-in-video-on-iphone", "make-vertical-and-landscape-video-versions-on-iphone", "shorten-video-without-speeding-up-speech-on-iphone", "add-end-credits-to-video-on-iphone", "add-song-lyrics-to-video-on-iphone", "change-music-without-changing-video-cuts-on-iphone", "highlight-detail-with-stickers-on-iphone"] },
+      { label: "Plan and review with Claude", slugs: ["review-ai-video-edit-with-claude", "find-b-roll-in-your-footage-with-claude", "make-two-video-openings-with-claude", "make-shot-list-from-footage-with-claude"] },
+      { label: "Refine an iPhone edit", slugs: ["remove-pauses-from-video-on-iphone", "choose-best-video-takes-on-iphone", "make-looping-video-on-iphone", "mix-photos-and-videos-on-iphone", "add-step-labels-to-video-on-iphone", "make-video-trailer-on-iphone", "keep-natural-sound-in-video-on-iphone", "edit-voiceover-led-video-on-iphone"] },
+      { label: "Make something on iPhone", slugs: ["edit-screen-recording-demo-on-iphone", "make-recipe-video-on-iphone", "edit-two-person-interview-on-iphone", "make-silent-tutorial-on-iphone", "edit-workout-demo-on-iphone", "make-event-highlight-video-on-iphone", "edit-travel-recap-on-iphone", "edit-product-demo-on-iphone", "make-room-tour-video-on-iphone", "make-podcast-teaser-on-iphone", "edit-unboxing-video-on-iphone", "make-portfolio-video-on-iphone"] },
       { label: "Plan", slugs: ["write-a-hook", "structure-a-storytelling-video", "find-your-niche", "build-a-series", "batch-film-a-week"] },
       { label: "Film", slugs: ["frame-yourself", "light-a-talking-head", "record-clean-audio", "shoot-b-roll", "vlog"] },
       { label: "Edit", slugs: ["pace-a-short-form-video", "choose-captions", "cut-a-talking-head", "make-motion-graphics", "choose-music", "edit-for-retention", "repurpose-long-form-to-shorts"] },
@@ -133,9 +166,11 @@ export const SECTIONS: Record<SectionKey, SectionMeta> = {
     schema: "Article",
     intro: "Short answers to the questions people ask about AI video editing. Numbers where we have them, and what we do not know yet.",
     groups: [
+      { label: "Troubleshooting", slugs: ["why-is-my-video-upload-stuck", "why-cant-i-export-video-on-iphone", "why-does-my-exported-video-have-no-sound", "why-are-my-captions-out-of-sync", "why-wont-my-reference-video-open", "why-does-my-exported-video-look-blurry"] },
+      { label: "Editing on iPhone", slugs: ["can-ai-edit-camera-roll-videos", "can-vyra-edit-in-background-on-iphone", "iphone-video-editor-free-vs-paid", "are-iphone-live-captions-saved-in-my-video"] },
       { label: "Picking an editor", slugs: ["best-ai-video-editor", "best-video-editor-for-beginners", "easiest-video-editor-for-social-media", "can-i-try-an-ai-video-editor-free", "can-i-try-a-video-editor-before-buying", "how-to-switch-video-editors", "video-editor-free-vs-paid", "how-much-does-a-professional-video-editor-cost", "what-ai-tools-do-content-creators-use"] },
       { label: "How AI editing works", slugs: ["can-ai-understand-raw-footage", "how-accurate-is-ai-transcription-for-captions", "what-video-formats-does-ai-editing-support", "can-ai-generate-motion-graphics-from-text", "does-beat-sync-work-for-every-genre", "does-scene-detection-work-in-low-light", "conversational-editing-vs-traditional-editing", "does-an-automated-video-maker-save-time", "automated-video-maker-vs-manual-editing", "can-ai-replace-content-creators"] },
-      { label: "Time and workflow", slugs: ["why-does-vlog-editing-take-so-long", "how-long-does-it-take-to-edit-a-video", "how-to-automate-a-tiktok-editing-workflow"] },
+      { label: "Time and workflow", slugs: ["why-does-vlog-editing-take-so-long", "how-long-does-it-take-to-edit-a-video", "how-to-automate-a-tiktok-editing-workflow", "does-vyra-have-a-video-editing-api"] },
       { label: "Editing with AI assistants", slugs: ["can-claude-edit-videos", "can-chatgpt-edit-videos", "what-is-an-agentic-video-editor", "video-editing-mcp", "edit-videos-by-describing"] },
     ],
   },
@@ -202,6 +237,10 @@ export type Entry = {
   facts: string[];
   data: Record<string, unknown>;
   body: string;
+  /** Programmatic family that built this page (src/lib/pseo). Unset on hand-written pages. */
+  generated?: string;
+  /** Breadcrumbs between the section hub and this page, for nested pages. */
+  crumbs?: { label: string; href: string }[];
 };
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
@@ -223,6 +262,19 @@ function deriveFacts(d: Record<string, unknown>): string[] {
   add("Level", d.level);
   if (d.reading_time) add("Read time", `${d.reading_time} min`);
   return out;
+}
+
+/** Drafts carry "(TODO confirm)" notes for Sulan. Keep them out of the rendered page:
+    strip the notes, drop TODO sentences and placeholder lines, then drop headings left empty. */
+function stripTodo(body: string): string {
+  return body
+    .replace(/[ \t]*\(TODO[^)]*\)/gi, "")
+    .replace(/[ \t]*\bTODO\b[,:]?[^.\n]*\.?/g, "")
+    .split("\n")
+    .filter((line) => !/^\s*(Example creator)?\s*\.?\s*$/.test(line) || line.trim() === "")
+    .join("\n")
+    .replace(/^(#{2,3} [^\n]+)\n+(?=#{2,3} |$(?![\s\S]))/gm, "")
+    .replace(/\n{3,}/g, "\n\n");
 }
 
 function readDir(section: SectionKey | "product"): Entry[] {
@@ -252,18 +304,29 @@ function readDir(section: SectionKey | "product"): Entry[] {
         example: typeof data.example === "string" ? data.example : undefined,
         reels: Array.isArray(data.reels) ? data.reels.map(String) : [],
         newsletter: Array.isArray(data.newsletter) ? data.newsletter.map(String) : [],
-        facts: Array.isArray(data.facts) ? data.facts.map(String) : deriveFacts(data),
+        facts: Array.isArray(data.facts) ? data.facts.map(String).filter((f) => !/todo/i.test(f)) : deriveFacts(data),
         data,
-        body: content.trim(),
+        body: stripTodo(content).trim(),
       } satisfies Entry;
     })
     .sort((a, b) => a.title.localeCompare(b.title));
 }
 
+const writtenCache = new Map<string, Entry[]>();
 const cache = new Map<string, Entry[]>();
 
+/** Hand-written markdown entries only. The programmatic families read these as their dataset. */
+export function getWrittenEntries(section: SectionKey | "product"): Entry[] {
+  if (!writtenCache.has(section)) writtenCache.set(section, readDir(section));
+  return writtenCache.get(section)!;
+}
+
+/** Hand-written entries plus any generated by src/lib/pseo for this section. */
 export function getEntries(section: SectionKey | "product"): Entry[] {
-  if (!cache.has(section)) cache.set(section, readDir(section));
+  if (!cache.has(section)) {
+    const written = getWrittenEntries(section);
+    cache.set(section, section === "product" ? written : [...written, ...generatedEntries(section, getWrittenEntries)]);
+  }
   return cache.get(section)!;
 }
 
@@ -279,7 +342,7 @@ export type Faq = { q: string; a: string };
 
 /** Pull Q/A pairs out of a "## FAQ" section. Questions are bold lines or ### headings. */
 export function extractFaq(body: string): Faq[] {
-  const m = body.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |\Z)/m);
+  const m = body.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m);
   if (!m) return [];
   const block = m[1];
   const lines = block.split("\n");
@@ -309,6 +372,22 @@ export function extractFaq(body: string): Faq[] {
   }
   flush();
   return faqs;
+}
+
+/** Bold names from the numbered list under "## The list", for ItemList schema. */
+export function extractRanked(body: string): string[] {
+  const m = body.match(/^## The list[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m);
+  if (!m) return [];
+  const out: string[] = [];
+  const re = /^\d+\.\s+\*\*(.+?)\.?\*\*/gm;
+  let r: RegExpExecArray | null;
+  while ((r = re.exec(m[1]))) out.push(r[1].replace(/\.$/, "").trim());
+  return out;
+}
+
+/** Idea titles from "### 1. Title" headings, for ItemList schema on /ideas pages. */
+export function extractIdeas(body: string): string[] {
+  return [...body.matchAll(/^### \d+\.\s+(.+)$/gm)].map((m) => m[1].replace(/\*\*/g, "").trim());
 }
 
 /** First ordered list in the body, for HowTo schema steps. */
@@ -367,6 +446,10 @@ export function resolveUrl(url: string): { url: string; title: string; descripti
     if (section === "blog") return { url, title: `Blog: ${slug.replace(/-/g, " ")}` };
     const e = SECTIONS[section as SectionKey] ? getEntry(section as SectionKey, slug) : undefined;
     if (e && section === "glossary") return { url: `/glossary#${e.slug}`, title: e.title, description: e.description };
+    if (e) return { url: e.url, title: e.title, description: e.description };
+  }
+  if (parts.length === 3 && SECTIONS[parts[0] as SectionKey]) {
+    const e = getEntry(parts[0] as SectionKey, `${parts[1]}/${parts[2]}`);
     if (e) return { url: e.url, title: e.title, description: e.description };
   }
   return null;

@@ -3,6 +3,7 @@ import { SITE_URL, SECTION_KEYS, getEntries, type SectionKey } from "@/lib/conte
 import { getBlogPosts } from "@/lib/blog";
 import reviews from "@/content/reviews.json";
 import { getNewsletterPosts } from "@/lib/newsletter";
+import { FAMILIES } from "@/lib/pseo";
 
 export type SitemapVideo = { title: string; description: string; contentLoc?: string; playerLoc?: string; thumbnail: string; uploadDate: string };
 export type SitemapUrl = { loc: string; lastmod: string; video?: SitemapVideo; videos?: SitemapVideo[] };
@@ -18,19 +19,33 @@ const CORE_STATIC: SitemapUrl[] = [
   { loc: "/docs/guide", lastmod: "2026-05-26" },
   { loc: "/docs/first-project", lastmod: "2026-05-26" },
   { loc: "/docs/mcp", lastmod: "2026-10-24" },
+  { loc: "/docs/api", lastmod: "2026-11-12" },
   { loc: "/app-support", lastmod: STATIC_LASTMOD },
+  { loc: "/delete-account", lastmod: STATIC_LASTMOD },
   { loc: "/author/sulan", lastmod: STATIC_LASTMOD },
   { loc: "/privacy", lastmod: "2026-02-03" },
   { loc: "/terms", lastmod: "2026-02-03" },
 ];
 
+/** Hub plus hand-written pages. Generated pages go in their family's sitemap (see familyUrls). */
 function sectionUrls(section: SectionKey): SitemapUrl[] {
-  const entries = getEntries(section);
+  const entries = getEntries(section).filter((e) => !e.generated);
   const latest = entries.reduce((m, e) => (e.updated > m ? e.updated : m), "2026-09-24");
   return [
     { loc: `/${section}`, lastmod: latest },
     ...entries.map((e) => ({ loc: e.url, lastmod: e.updated })),
   ];
+}
+
+/** One child sitemap per programmatic family, so Search Console shows index coverage per template. */
+function familyUrls(): Record<string, SitemapUrl[]> {
+  const out: Record<string, SitemapUrl[]> = {};
+  for (const f of FAMILIES) {
+    out[f.sitemap] = getEntries(f.section)
+      .filter((e) => e.generated === f.key)
+      .map((e) => ({ loc: e.url, lastmod: e.updated }));
+  }
+  return out;
 }
 
 /** Child sitemap names and their URL lists. Only non-empty children are listed in the index. */
@@ -41,10 +56,12 @@ export async function childSitemaps(): Promise<Record<string, SitemapUrl[]>> {
     core: [...CORE_STATIC, ...product, ...sectionUrls("features"), ...sectionUrls("templates")],
     tools: sectionUrls("tools"),
     compare: [...sectionUrls("compare"), ...sectionUrls("alternatives")],
+    best: sectionUrls("best"),
     for: sectionUrls("for"),
     formats: sectionUrls("formats"),
     "how-to": sectionUrls("how-to"),
     prompts: sectionUrls("prompts"),
+    ideas: sectionUrls("ideas"),
     answers: sectionUrls("answers"),
     tutorials: sectionUrls("tutorials"),
     glossary: [{ loc: "/glossary", lastmod: getEntries("glossary").reduce((m, e) => (e.updated > m ? e.updated : m), "2026-09-24") }],
@@ -57,11 +74,13 @@ export async function childSitemaps(): Promise<Record<string, SitemapUrl[]>> {
       { loc: "/blog", lastmod: blogPosts.reduce((m, p) => (p.updated > m ? p.updated : m), STATIC_LASTMOD) },
       ...blogPosts.map((p) => ({ loc: p.url, lastmod: p.updated })),
     ],
+    ...familyUrls(),
   };
+  // Generated pages reuse reels from their source page; list each reel only on the page it belongs to.
   const video: SitemapUrl[] = SECTION_KEYS.concat()
     .flatMap((s) => getEntries(s))
     .concat(getEntries("product"))
-    .filter((e) => e.video || e.reels.length)
+    .filter((e) => !e.generated && (e.video || e.reels.length))
     .map((e) => {
       const videos: SitemapVideo[] = [];
       if (e.video) {

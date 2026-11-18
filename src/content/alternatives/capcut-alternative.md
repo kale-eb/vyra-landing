@@ -1,7 +1,7 @@
 ---
 title: Best CapCut alternatives in 2026 (for creators who edit real footage)
 description: "The best CapCut alternative depends on why you are leaving. Vyra for AI edits of long footage, Descript for talk, DaVinci Resolve for a free pro timeline."
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: alternatives
 reels:
   - DZwM74ytJxF
@@ -11,14 +11,14 @@ reels:
 
 ## Why people look for a CapCut alternative
 
-- Long footage. CapCut is built for short clips. In one direct test a 35-minute file timed out after 4 minutes.
-- Templates get repetitive. Every third Reel looks like the same CapCut template.
-- No external AI. You cannot connect Claude, ChatGPT, or any agent to CapCut.
+- A different starting point. Some creators prefer asking for a draft from their clips before making timeline adjustments.
+- Template fit. A template may not match the footage or structure you want.
+- External AI workflows. Compare Vyra’s documented MCP setup with CapCut’s current CapCut × Codex offering.
 - Watermarks, storage, and effect limits on the free tier.
 
 ## The alternatives
 
-1. **Vyra.** For creators with real footage who want an AI to cut it. Strengths: describe the edit in plain language and the agent builds it from transcribed, scene-indexed footage; custom motion graphics and reference matching instead of templates. Limitation: no template library, so you have to say what you want.
+1. **Vyra.** For creators with real footage who want an AI to cut it. Strengths: describe the edit in plain language and the agent builds it from transcribed, scene-indexed footage; custom motion graphics and reference matching instead of templates. Vyra also has an iPhone app with templates and saved references.
 
 2. **Descript.** For podcasters and talking-head creators. Strengths: edit video by editing the transcript; strong audio cleanup. Limitation: no idea what is on screen.
 
@@ -54,13 +54,17 @@ Make a 30-second 9:16 Reel from this footage in the style of a fast trend edit: 
 ## FAQ
 
 **Is there a free CapCut alternative with no watermark?**
-Vyra is free to start. DaVinci Resolve's base version is free. Check each tool's current export terms.
+Vyra has a 3-day free trial. DaVinci Resolve's base version is free. Check each tool's current export terms.
 
 **Which alternative works with Claude or ChatGPT?**
 Vyra, through MCP. Descript has a limited MCP that passes prompts to its own AI.
 
 **Can any of these do CapCut-style templates?**
-Filmora and Kapwing have template libraries. Vyra builds from your description or a reference video instead.
+Filmora and Kapwing have template libraries. Vyra’s current iPhone listing also describes templates and saved references, alongside editing from your description.
+
+## Current workflow sources
+
+[CapCut documents EditPilot for PC](https://www.capcut.com/tools/edit-pilot) and [CapCut × Codex](https://www.capcut.com/tools/capcut-x-codex). The [Vyra iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) documents native editing, templates and references. Check the [current comparison](/compare/vyra-vs-capcut) for platform and free-access differences. Checked November 15, 2026.
 
 ## Related
 

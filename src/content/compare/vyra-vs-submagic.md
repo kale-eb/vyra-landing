@@ -71,7 +71,7 @@ Vyra does word-by-word and phrase captions with emphasis words and entrance anim
 Yes. Upload a finished clip and ask for captions. It is more than you need if that is all you do.
 
 **Which is cheaper?**
-Vyra starts at $24/mo and is free to start. Submagic pricing is on its site.
+Vyra has a 3-day free trial, then starts at $24/mo. Submagic pricing is on its site.
 
 ## Related
 

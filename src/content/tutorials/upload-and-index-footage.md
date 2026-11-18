@@ -1,54 +1,62 @@
 ---
-title: How to upload and index footage in Vyra
-description: Upload raw clips to a Vyra project and let it transcribe every word, analyze every scene, and generate thumbnails so the agent can search and cut your footage.
-updated: 2026-09-24
+title: How to upload and prepare footage in Vyra
+description: "Add original footage to a Vyra project, check that each clip is available and ask for a summary before starting the edit."
+updated: '2026-11-10'
 category: tutorial
-video: TODO
 reels:
   - DZwM74ytJxF
 ---
 
-**Upload everything from the shoot into one project. Vyra transcribes the speech, looks at every scene, and makes thumbnails. By the time you type your first prompt it already knows what's in each clip.**
+**Add your original clips to one Vyra project, check that they are available and ask for a summary before editing. Keep the original files. If a clip has not finished arriving, check its progress before adding the same video again.**
 
 ## Before you start
 
-- Keep the original files from your phone or camera. Don't pre-trim or re-encode.
-- One shoot or one video idea per project.
-- Have your reference video ready if you want to match a style. It goes in separately.
-- On a slow connection, upload the longest clips first.
+Keep one shoot or video idea together so you can tell which footage belongs to the edit. On iPhone, select the clips you intend to use from Photos. On web, use the project's footage controls to add the files.
+
+Try a representative clip before a large shoot. Check it with sound so an unavailable or incomplete file does not go unnoticed until export.
 
 ## Steps
 
-1. **Create a project** and name it something you'll recognize later, like "studio vlog sept 24".
-2. **Drag your clips into the footage library.** MP4, MOV, and common phone formats work. (TODO confirm HEVC and ProRes)
-3. **Wait for processing.** Each clip shows upload, then processing, then ready. Processing transcribes speech, describes scenes, builds thumbnails, and makes a 720p proxy for editing. The original is used on export. A 35-minute file indexed in under 2 minutes in a side-by-side test.
-4. **Open a clip in the library.** Read the summary and scrub the thumbnails. That's what the agent sees.
-5. **Ask for a map.** Have the agent summarize the footage before you edit. Fix anything wrong, like who's who.
-6. **Attach a reference, if you have one,** in the Reference tab, not the footage library.
+1. **Create or open the project.** Give it a name you will recognize when you return.
+2. **Add the footage.** Choose the original clips you want edited and check that they are going to the intended project.
+3. **Check progress.** Distinguish footage still arriving from footage being prepared or already available.
+4. **Play the clips.** Check the opening, ending and a section with speech or other important sound.
+5. **Ask for a summary.** Have Vyra describe the footage before making changes. Correct names or details it misunderstood.
+6. **Add a reference separately if useful.** Explain which editing choices it should guide while keeping your footage as the subject.
 
 ## The prompt to use
 
 ```
-Summarize what is in my footage. How many clips, where they were shot, who is in them, which ones have me talking to camera, and the three strongest moments with timestamps. Do not edit anything yet.
+Summarize the footage I added. Identify the talking clips and the strongest moments with timestamps. Tell me if a clip I named is unavailable. Do not edit anything yet.
 ```
 
-## Check the result
+Review the summary against your clips. A description helps you plan the edit, but it is still worth checking the footage yourself.
 
-- Every clip shows ready with a thumbnail strip.
-- The summary gets the people, places, and topics right. Fix names now so captions spell them right later.
-- Search the library by content, like "canvas" or "night street," and see the right clips come back.
+## If a clip seems stuck
+
+Open the existing clip before adding it again. Check the original on your device, your connection and any progress or error message. Keep the project and originals while you use the [upload troubleshooting answer](/answers/why-is-my-video-upload-stuck).
 
 ## FAQ
 
 **Can I add more footage later?**
-Yes. New clips get processed the same way.
+Yes. Add it to the intended project and check that it is available before asking Vyra to use it.
 
-**Does silent b-roll get analyzed?**
-Yes. Scene analysis runs on the picture. Transcription is skipped when there's no speech.
+**Do silent clips still belong in the project?**
+Yes. Silent footage can be useful in the edit. Tell Vyra what the shot shows and where you want it used.
+
+**Should I upload everything again if one clip is incomplete?**
+Check the existing copies first. Keep the project organized and focus on the clip that has a problem rather than creating several copies of the whole shoot.
+
+**Can I leave the iPhone app while it works?**
+Vyra supports background editing on iPhone. Check upload progress separately and read the [background workflow](/answers/can-vyra-edit-in-background-on-iphone) before assuming every clip is ready.
+
+## Sources
+
+The [App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes adding and organizing footage. [Caleb's mobile release post](/blog/vyra-mobile) explains the mobile workflow. Checked November 10, 2026.
 
 ## Related
 
+- /answers/why-is-my-video-upload-stuck
+- /answers/what-video-formats-does-ai-editing-support
 - /tutorials/first-rough-cut
-- /features/footage-understanding
-- /answers/can-ai-understand-raw-footage
-- /docs/first-project
+- /answers/can-vyra-edit-in-background-on-iphone

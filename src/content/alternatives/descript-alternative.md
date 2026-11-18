@@ -1,7 +1,7 @@
 ---
 title: Best Descript alternatives in 2026 (for creators who edit real footage)
 description: "If you like describing the edit but need the AI to see your footage, Vyra is the closest Descript alternative. Riverside and Opus Clip cover podcasts."
-updated: '2026-09-23'
+updated: '2026-11-15'
 category: alternatives
 reels:
   - DZwM74ytJxF
@@ -14,7 +14,7 @@ reels:
 - Transcript only. Descript knows what was said, not what is on screen. B-roll, products, and action are invisible to it.
 - The MCP is a passthrough. External agents send prompts to Underlord. They do not get editing tools or see the footage.
 - Template-only graphics. A custom lower third or animated list needs another tool.
-- Slow on long files. In one direct test, Descript took about three times longer than Vyra on the same 35-minute file and returned only a transcript.
+- Different editing jobs. Compare how each workflow selects useful moments from your own recording and how much review the draft needs.
 
 ## The alternatives
 

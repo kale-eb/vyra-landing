@@ -1,7 +1,7 @@
 ---
 title: "Vyra vs ChatCut (2026): which chat-based video editor should you use?"
 description: "ChatCut and Vyra both edit real footage by chat, including from Claude Code or ChatGPT. Vyra adds scene analysis, a built-in AI, and reference matching."
-updated: '2026-09-24'
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
@@ -9,7 +9,7 @@ reels:
 
 **ChatCut and Vyra both let you edit real footage by chatting, including from Claude Code or the ChatGPT app. Vyra adds per-scene visual analysis, a built-in AI option, reference matching, and a full browser timeline. ChatCut is the lighter, more developer-flavored one.**
 
-This is a close comparison. Both products start from the same idea, that the editor should take instructions instead of clicks. ChatCut is a chat-driven editor you can also run from the ChatGPT desktop app and Claude Code. Vyra runs in the browser with its own agent chat, and over MCP from Claude, ChatGPT, or Cursor. The differences are what the agent knows about your footage and how far the editor goes after the first cut.
+This is a close comparison. Both products start from the same idea, that the editor should take instructions instead of clicks. ChatCut is a chat-driven editor you can also run from the ChatGPT desktop app and Claude Code. Vyra runs on web and iPhone with its own agent chat, and over MCP from Claude, ChatGPT, or Cursor. The differences are what the agent knows about your footage and how far the editor goes after the first cut.
 
 ## At a glance
 
@@ -73,7 +73,7 @@ Yes. ChatCut supports Claude Code directly. Vyra connects to Claude Code, Claude
 Either can be scripted through an assistant. Vyra also connects to Cursor and gives the agent the full tool set.
 
 **Which is cheaper?**
-ChatCut pricing is on its site. Vyra starts at $24/mo and is free to start.
+ChatCut pricing is on its site. Vyra has a 3-day free trial, then starts at $24/mo.
 
 ## Related
 

@@ -1,6 +1,6 @@
 ---
 title: Can I try a video editor before buying?
-description: "Yes. Nearly every video editor in 2026 is free to start. Test with one real video before you pay. Vyra is free to start with no external AI subscription needed."
+description: "Yes. Nearly every video editor in 2026 is free to start. Test with one real video before you pay. Vyra has a 3-day free trial on the web and needs no external AI subscription."
 updated: 2026-09-24
 category: answers
 ---
@@ -45,7 +45,7 @@ Export at 1080x1920. If anything I asked for isn't available on the free start, 
 ## FAQ
 
 **Does Vyra need a credit card to start?**
-Vyra is free to start. TODO, confirm whether a card is required at signup and any free-tier limits before publishing.
+The web app has a 3-day free trial. On iPhone, new accounts get 100 free credits, and free exports are 720p with a watermark.
 
 **Do I need Claude or ChatGPT to try Vyra?**
 No. The built-in AI works on its own. MCP plans are for people who already pay for one and want to drive Vyra from there.

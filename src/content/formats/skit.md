@@ -72,6 +72,9 @@ Write it first. Keep lines under 8 words. Comedy dies in the pauses.
 
 ## FAQ
 
+**What is a skit video?**
+A skit video is a short scripted comedy scene made for social, usually 20 to 60 seconds. Often one creator plays every character, switching a hat, a shirt, or a side of the frame for each one.
+
 **How do I keep characters distinct?**
 One prop and one side of the frame each. Same caption color every time helps.
 

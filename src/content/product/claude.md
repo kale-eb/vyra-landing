@@ -1,7 +1,7 @@
 ---
-title: Edit videos with Claude
+title: "Edit your own video footage with Claude over MCP"
 description: Connect Vyra to Claude Desktop, Claude Code, or claude.ai over MCP. Claude sees your clips, cuts the timeline, and exports.
-updated: 2026-10-24
+updated: '2026-11-14'
 category: product
 example: https://www.instagram.com/reel/DZumPohtfW8/
 reels:
@@ -24,7 +24,7 @@ Claude on its own can't open a video file. Vyra gives it an editor to work in. W
    claude mcp login Vyra
    ```
 
-2. Open `https://app.usevyra.com`, sign in with the same account, and open a project. A green dot appears top-right. Keep the tab open.
+2. Ask the agent to open a project or create one. Nothing has to stay open on your side. The agent edits on Vyra's servers, and the project shows up in the web and iPhone apps whenever you want to look.
 3. Upload your footage. Every clip gets transcribed and described.
 4. Tell Claude what to make. Ask for a plan first if the footage is long.
 5. Claude uses the editing tools. Add, trim, split, captions, masks, motion graphics, effects, export.
@@ -61,13 +61,12 @@ Look at the reference video attached to the project. In three lines, tell me its
 | --- | --- | --- | --- |
 | Claude's role | None | Forwards your prompt to the vendor's AI | Plans and executes the edit with real tools |
 | Sees the footage | No | No | Transcripts, scene descriptions, frames |
-| Where you work | The app | The app plus Claude | Claude, editor updates live |
+| Where you work | The app | The app plus Claude | Claude on desktop or phone, nothing else open |
 | Cost | App subscription | App plus Claude | Vyra MCP plan plus the Claude plan you already have |
 
 ## Limits
 
 - Claude edits footage you uploaded. It doesn't generate clips.
-- Keep a Vyra project open in a browser tab so changes apply live.
 - Claude may say a step is done before it is. Ask for the timeline read-back.
 
 ## Pricing
@@ -79,7 +78,7 @@ Look at the reference video attached to the project. In three lines, tell me its
 | Vyra AI Starter | $54/mo | Built-in AI, no external subscription needed | Up to 1440p |
 | Vyra AI Pro | $129/mo | Built-in AI | Up to 4K |
 
-Free to start. See /pricing for the full breakdown.
+3-day free trial, then plans from $24/mo. See /pricing for the full breakdown.
 
 ## FAQ
 
@@ -94,6 +93,8 @@ No. MCP plans are for people bringing their own Claude. Vyra AI plans include a 
 
 ## Related
 
+- /answers/video-editors-that-integrate-with-llms
+- /for/developers
 - /mcp
 - /docs/mcp
 - /prompts/how-to-prompt-vyra

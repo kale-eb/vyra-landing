@@ -1,13 +1,13 @@
 ---
 title: "Vyra vs Final Cut Pro (2026): which video editor should you use?"
-description: "Final Cut Pro is a professional Mac editor you drive by hand with some AI assists. Vyra is a browser editor where an AI that watched your footage does the edit."
-updated: '2026-09-24'
+description: "Final Cut Pro is a professional Mac editor you drive by hand with some AI assists. Vyra runs on web and iPhone, where an AI that watched your footage does the edit."
+updated: '2026-11-15'
 category: compare
 reels:
   - Da_tDQwtc-M
 ---
 
-**Final Cut Pro is a professional Mac editor you drive by hand, with a few strong AI assists. Vyra is a browser editor where an AI that has watched your footage does the edit from a description, and you open the timeline only to finish.**
+**Final Cut Pro is a professional Mac editor you drive by hand, with a few strong AI assists. Vyra runs on web and iPhone, where an AI that has watched your footage does the edit from a description, and you open the timeline only to finish.**
 
 These two are not really competing for the same afternoon. Final Cut Pro is for someone who wants to make every cut themselves on a Mac and needs deep effects, color, and multicam. Vyra is for someone with a card full of footage and a sentence describing the video they want. The overlap is the creator who owns Final Cut but is tired of spending evenings in it.
 
@@ -25,7 +25,7 @@ These two are not really competing for the same afternoon. Final Cut Pro is for 
 | Reference style matching | No | Yes |
 | Manual timeline | Yes, professional | Yes, full editor |
 | Export cap | Effectively unlimited | 1440p (AI Starter), 4K (AI Pro) |
-| Platform | Mac only, one-time purchase (see site) | Browser |
+| Platform | Mac only, one-time purchase (see site) | Web, iPhone and Android |
 | Best for | Hands-on pro editing on a Mac | AI-edited real footage from a brief |
 
 ## Where Final Cut Pro is stronger
@@ -73,6 +73,10 @@ Its AI features are Magnetic Mask, automatic captions, object tracker, auto refr
 
 **Is Vyra's timeline usable for manual editing?**
 Yes. Trims, transitions, effects, masks, keyframes, captions, and multi-track audio are all there.
+
+## Use Vyra on iPhone or web
+
+Vyra has a [native iPhone app](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) as well as the web editor. [Caleb’s mobile release post](https://www.usevyra.com/blog/vyra-mobile) documents the app and reference-sharing workflow. New iPhone accounts get 100 free credits, with free 720p watermarked exports. Web has a three-day trial followed by a paid plan. Vyra is also available on [Google Play](/answers/is-vyra-on-android). Platform information checked November 17, 2026.
 
 ## Related
 

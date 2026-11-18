@@ -2,14 +2,20 @@ import Link from "next/link";
 import Markdown from "./Markdown";
 import DirectoryNav from "./DirectoryNav";
 import Footer from "@/components/Footer";
+import IosAppButton from "@/components/IosAppButton";
+import WebSignupButton from "@/components/WebSignupButton";
 import ReelStrip from "./ReelStrip";
 import NewsletterCards from "./NewsletterCards";
+import MobileFaq from "./MobileFaq";
 import { reelEmbedUrl, reelUrl, resolveReels } from "@/lib/reels";
 import { getNewsletterPosts } from "@/lib/newsletter";
+import { childLinks } from "@/lib/pseo/links";
 import {
   SITE_URL,
   SECTIONS,
   extractFaq,
+  extractRanked,
+  extractIdeas,
   extractRelated,
   extractSteps,
   resolveUrl,
@@ -41,6 +47,7 @@ function buildJsonLd(entry: Entry) {
   const crumbs = [
     { name: "Vyra", item: SITE_URL },
     ...(sectionMeta ? [{ name: sectionMeta.label, item: `${SITE_URL}/${sectionMeta.key}` }] : []),
+    ...(entry.crumbs ?? []).map((c) => ({ name: c.label, item: `${SITE_URL}${c.href}` })),
     { name: entry.title, item: url },
   ];
   const breadcrumb = {
@@ -93,6 +100,30 @@ function buildJsonLd(entry: Entry) {
     graph.push({ ...base, "@type": "WebPage" });
   } else {
     graph.push({ ...base, "@type": "Article" });
+  }
+
+  const ranked = entry.section === "best" ? extractRanked(entry.body) : [];
+  if (ranked.length >= 2) {
+    graph.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: entry.title,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: ranked.length,
+      itemListElement: ranked.map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+    });
+  }
+
+  const ideas = entry.section === "ideas" ? extractIdeas(entry.body) : [];
+  if (ideas.length >= 2) {
+    graph.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: entry.title,
+      itemListOrder: "https://schema.org/ItemListUnordered",
+      numberOfItems: ideas.length,
+      itemListElement: ideas.map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+    });
   }
 
   if (faqs.length) {
@@ -148,17 +179,12 @@ function viewsToNumber(v: string): number {
   return Math.round(m[2].toUpperCase() === "M" ? n * 1e6 : m[2].toUpperCase() === "K" ? n * 1e3 : n);
 }
 
-/** The header already shows the description; drop a leading bold paragraph that repeats it. */
-function stripLeadingSummary(body: string, description: string): string {
-  const m = body.match(/^\*\*([\s\S]+?)\*\*\s*\n/);
-  if (!m) return body;
-  const norm = (s: string) => s.replace(/\s+/g, " ").replace(/[.…]+$/, "").trim().toLowerCase();
-  const lead = norm(m[1]);
-  const desc = norm(description.replace(/\.\.\.$/, ""));
-  if (lead === desc || lead.startsWith(desc) || desc.startsWith(lead)) {
-    return body.slice(m[0].length).trimStart();
-  }
-  return body;
+/** Show the complete opening answer before any optional media or supporting facts. */
+function openingAnswer(body: string, description: string) {
+  const match = body.match(/^\*\*([\s\S]+?)\*\*\s*(?:\n|$)/);
+  return match
+    ? { intro: match[1], body: body.slice(match[0].length).trimStart() }
+    : { intro: description, body };
 }
 
 function Meta({ entry }: { entry: Entry }) {
@@ -177,6 +203,12 @@ function Meta({ entry }: { entry: Entry }) {
 }
 
 export default function DirectoryPage({ entry }: { entry: Entry }) {
+  const isIphonePage = entry.data.platform === "iphone";
+  const isSupportPage = entry.data.support === true;
+  const isApiPage = entry.data.api === true;
+  const { intro, body: articleBody } = openingAnswer(entry.body, entry.description);
+  const faqBlock = isIphonePage || isSupportPage || isApiPage ? articleBody.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=^## |(?![\s\S]))/m) : null;
+  const mobileFaqs = faqBlock ? extractFaq(entry.body) : [];
   const sectionMeta = entry.section === "product" ? null : SECTIONS[entry.section as SectionKey];
   const related = extractRelated(entry.body, entry.url)
     .map(resolveUrl)
@@ -187,14 +219,15 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
   const newsletterPosts = entry.newsletter.length
     ? getNewsletterPosts().filter((p) => entry.newsletter.includes(p.slug)).slice(0, 2)
     : [];
-  const crumbs = sectionMeta ? [{ label: sectionMeta.label, href: `/${sectionMeta.key}` }] : [];
+  const crumbs = [...(sectionMeta ? [{ label: sectionMeta.label, href: `/${sectionMeta.key}` }] : []), ...(entry.crumbs ?? [])];
+  const children = childLinks(entry);
 
   return (
     <>
       {jsonLd.map((obj, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }} />
       ))}
-      <DirectoryNav crumbs={crumbs} />
+      <DirectoryNav crumbs={crumbs} sourcePage={entry.url} iphone={isIphonePage} support={isSupportPage} cta={isApiPage ? { href: "/docs/api", label: "Read API docs" } : undefined} />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <article>
           <header className="mb-10">
@@ -205,7 +238,27 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             >
               {entry.title}
             </h1>
-            <p className="text-[17px] leading-relaxed text-[var(--foreground-muted)]">{entry.description}</p>
+            <div data-opening-answer><Markdown source={intro} /></div>
+            {isApiPage ? (
+              <p className="mt-5 text-[14px]">
+                <Link href="/docs/api#get-a-key" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+                  Check API access and setup
+                </Link>
+              </p>
+            ) : isSupportPage ? (
+              <p className="mt-5 text-[14px]">
+                <Link href="/app-support" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+                  Get help with this problem
+                </Link>
+              </p>
+            ) : (
+              <div className="mt-5">
+                {isIphonePage ? <IosAppButton sourcePage={entry.url} placement="header" /> : <WebSignupButton sourcePage={entry.url} placement="header" />}
+                <p className="mt-2 text-[13px] text-[var(--foreground-muted)]">
+                  {isIphonePage ? "100 free credits for new accounts. Free exports are 720p with a watermark." : "Three-day web trial, then a paid plan. Bring your own footage."}
+                </p>
+              </div>
+            )}
             <p className="mt-4 text-[13px] text-[var(--foreground-subtle)]">
               By{" "}
               <Link href="/author/sulan" className="underline underline-offset-2 hover:text-[var(--foreground)]">
@@ -252,12 +305,41 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
             />
           )}
 
-          <ReelStrip reels={reels} />
+          {faqBlock && mobileFaqs.length ? (
+            <>
+              <Markdown source={articleBody.slice(0, faqBlock.index)} />
+              <MobileFaq
+                items={mobileFaqs.map(({ q, a }) => ({ q, answer: <Markdown source={a} /> }))}
+                sourcePage={entry.url}
+              />
+              <Markdown source={articleBody.slice((faqBlock.index ?? 0) + faqBlock[0].length)} />
+            </>
+          ) : <Markdown source={articleBody} />}
 
-          <Markdown source={stripLeadingSummary(entry.body, entry.description)} />
-
+          <ReelStrip reels={reels} heading="Finished edits made in Vyra" />
           <NewsletterCards posts={newsletterPosts} />
         </article>
+
+        {children.map((g) => (
+          <aside key={g.heading} className="mt-16 border-t border-[var(--surface-border)] pt-10">
+            <h2 className="mb-4 text-[13px] font-semibold tracking-wide text-[var(--foreground-subtle)] uppercase">
+              {g.heading}
+            </h2>
+            <ul className="flex flex-wrap gap-2">
+              {g.links.map((l) => (
+                <li key={l.url}>
+                  <Link
+                    href={l.url}
+                    title={l.description}
+                    className="inline-block rounded-full border border-[var(--surface-border)] bg-white px-4 py-2 text-[13px] font-medium text-[var(--foreground)] transition-colors hover:border-[var(--surface-border-hover)] hover:text-[var(--brand-blue)]"
+                  >
+                    {l.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        ))}
 
         {related.length > 0 && (
           <aside className="mt-16 border-t border-[var(--surface-border)] pt-10">
@@ -283,18 +365,47 @@ export default function DirectoryPage({ entry }: { entry: Entry }) {
           </aside>
         )}
 
-        <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
-          <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Try it on your own footage</h2>
+        {isApiPage ? (
+          <aside className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Build with the Vyra API</h2>
+            <p className="mb-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+              API access requires approval. Check the current setup, limits and API pricing before submitting footage.
+            </p>
+            <Link href="/docs/api" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+              Read the API docs
+            </Link>
+          </aside>
+        ) : isSupportPage ? (
+          <aside className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">Still need help?</h2>
+            <p className="mb-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+              Keep your project and original footage. Tell us what you were trying to do, the step that stopped,
+              your app version and any message shown. Crop personal details from screenshots.
+            </p>
+            <Link href="/app-support" className="font-medium text-[var(--brand-blue)] underline underline-offset-4">
+              Contact Vyra support
+            </Link>
+          </aside>
+        ) : <div className="mt-12 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)] p-8 text-center">
+          <h2 className="mb-2 text-2xl font-bold tracking-tight text-[var(--foreground)]">
+            {isIphonePage ? "Edit your footage on iPhone" : "Try it on your own footage"}
+          </h2>
           <p className="mb-5 text-[15px] text-[var(--foreground-muted)]">
-            Upload your clips, say what you want, get the edit back. Free to start.
+            {isIphonePage
+              ? "New mobile accounts get 100 free credits. Free exports are 720p with a watermark."
+              : "Upload your clips, say what you want, get the edit back. 3-day free trial."}
           </p>
-          <a
-            href="https://app.usevyra.com/signup"
-            className="inline-block rounded-full bg-[var(--foreground)] px-6 py-3 text-[14px] font-semibold text-white"
-          >
-            Start editing with Vyra
-          </a>
-        </div>
+          {isIphonePage ? (
+            <>
+              <IosAppButton sourcePage={entry.url} placement="footer" />
+              <p className="mt-4 text-[13px] text-[var(--foreground-muted)]">
+                Editing on a computer? <Link href="/ai-video-editor-online" className="underline underline-offset-2">Try the web editor</Link> with a 3-day free trial.
+              </p>
+            </>
+          ) : (
+            <WebSignupButton sourcePage={entry.url} placement="footer">Start editing with Vyra</WebSignupButton>
+          )}
+        </div>}
       </main>
       <Footer />
     </>

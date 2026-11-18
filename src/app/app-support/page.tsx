@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Support - Vyra",
   description:
-    "Get help with Vyra on iPhone, including your account, video edits, exports, and App Store purchases.",
+    "Get help with Vyra uploads, video edits, captions, references and exports on iPhone or web, plus account and App Store purchase questions.",
 };
 
 export default function SupportPage() {
@@ -30,11 +30,32 @@ export default function SupportPage() {
           Vyra support
         </h1>
         <p className="mb-12 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
-          Questions about Vyra on iPhone? Get help with your account, video edits,
-          exports, or purchases.
+          Get help with your footage, edit or finished video. Choose the problem
+          below, or contact us if you need help with your project or account.
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
+          <section aria-labelledby="troubleshooting-heading">
+            <h2 id="troubleshooting-heading" className="mb-3 text-lg font-semibold text-[var(--foreground)]">
+              Help with your video
+            </h2>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {[
+                { href: "/answers/why-is-my-video-upload-stuck", label: "My video upload is stuck" },
+                { href: "/answers/why-cant-i-export-video-on-iphone", label: "I cannot export or save on iPhone" },
+                { href: "/answers/why-does-my-exported-video-have-no-sound", label: "My exported video has no sound" },
+                { href: "/answers/why-are-my-captions-out-of-sync", label: "My captions are out of sync" },
+                { href: "/answers/why-wont-my-reference-video-open", label: "My reference video will not open" },
+                { href: "/answers/why-does-my-exported-video-look-blurry", label: "My exported video looks blurry" },
+              ].map((guide) => (
+                <li key={guide.href}>
+                  <Link href={guide.href} className="block rounded-xl border border-[var(--surface-border)] p-4 font-medium text-[var(--foreground)] hover:text-[var(--brand-blue)]">
+                    {guide.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
           <section>
             <h2 className="mb-3 text-lg font-semibold text-[var(--foreground)]">
               Contact us
@@ -42,7 +63,7 @@ export default function SupportPage() {
             <p>
               Email{" "}
               <a
-                href="mailto:caleb@usevyra.com?subject=Vyra%20iOS%20support"
+                href="mailto:caleb@usevyra.com?subject=Vyra%20support"
                 className="font-medium text-[var(--brand-blue)] underline underline-offset-4"
               >
                 caleb@usevyra.com
@@ -54,7 +75,13 @@ export default function SupportPage() {
               <li>Your iPhone model, iOS version, and Vyra app version.</li>
               <li>What you were trying to do and what happened.</li>
               <li>The error message or a screenshot, if relevant.</li>
+              <li>For web, your browser and device instead of an iPhone model.</li>
             </ul>
+            <p className="mt-3">
+              Keep your project and original footage while we help. Crop unrelated
+              personal information from screenshots. Ask us how to share further
+              material privately if needed.
+            </p>
           </section>
 
           <section>

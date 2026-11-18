@@ -1,7 +1,7 @@
 ---
 title: How to match a reference video's style in Vyra
 description: Attach a reference video, ask the agent to describe its pacing, captions, and music, then tell it exactly which of those properties to apply to your footage.
-updated: 2026-09-24
+updated: '2026-11-10'
 category: tutorial
 video: TODO
 reels:
@@ -12,7 +12,7 @@ reels:
 
 ## Before you start
 
-- Have the reference as a file. A link to a post isn't enough.
+- Have a reference you can open and have permission to use. On iPhone, you can share a Reel or TikTok to Vyra using the [reference workflow](/how-to/match-a-reference-video-on-iphone).
 - Your own footage is uploaded.
 - Decide what you actually want from it. Usually two or three things, not everything.
 
@@ -25,6 +25,8 @@ reels:
 5. **Say who wins.** "Where my instructions and the reference disagree, follow mine."
 6. **Run it.** Then compare a frame from each side by side.
 7. **Adjust one thing.** "Captions are right, cuts are too fast. Slow the middle."
+
+If the reference will not open or does not reach the project, use the [reference troubleshooting answer](/answers/why-wont-my-reference-video-open). Keep access problems separate from an edit following the wrong part of the style.
 
 ## The prompt to use
 

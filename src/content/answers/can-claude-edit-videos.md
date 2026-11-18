@@ -1,7 +1,7 @@
 ---
-title: "Can Claude edit videos? Yes, through MCP — here's how (2026)"
-description: "Claude can't cut video inside the Claude app. Connect it to Vyra over MCP and it edits your real footage: cuts, captions, beat sync, and motion graphics on a real timeline."
-updated: 2026-10-27
+title: "Can Claude edit videos? Connect it to an editor"
+description: "Connect Claude to Vyra over MCP to edit your own footage. Make cuts, add captions and music, then review the timeline and export your video."
+updated: '2026-11-14'
 category: answers
 ---
 
@@ -53,7 +53,7 @@ Yes — Vyra connects to ChatGPT and Cursor over the same protocol. See [Vyra fo
 No. Generators like Runway and Sora create synthetic footage from a prompt. Claude + Vyra edits the real footage you shot.
 
 **What does it cost to try?**
-Vyra is free to start. MCP plans start at $24/month; see [pricing](/pricing).
+Vyra has a 3-day free trial. MCP plans start at $24/month; see [pricing](/pricing).
 
 ## Related
 - [Vyra for Claude users](/for/claude-users)

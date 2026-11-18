@@ -9,7 +9,7 @@ facts:
   - "Output: 30 to 60 second vertical clips, MP4 up to 4K"
   - "Time: Minutes per clip once the episode is processed (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 ---
 
 **A podcast clip maker pulls short moments out of a long conversation. Vyra searches the transcript for the exchange you describe, or suggests candidates with reasons, then builds the clip with captions and the right camera angle.**

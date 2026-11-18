@@ -9,7 +9,7 @@ facts:
   - "Output: Burned-in captions in MP4 up to 4K, or WebM up to 1080p"
   - "Time: Under a minute once the transcript exists (TODO confirm)"
   - "Works with: Built-in chat, Claude, ChatGPT, Cursor over MCP"
-  - "Price: Free to start, plans from $24/mo"
+  - "Price: 3-day free trial, then plans from $24/mo"
 reels:
   - DdcjJBPva-m
 ---
@@ -51,9 +51,7 @@ Copy the caption look from the reference video: blocky all caps, soft glow, hard
 
 ## When to use something else
 
-- You want captions as a separate file for a platform's caption track (TODO confirm SRT export).
 - Several people talking over each other. Any transcript tool struggles with that. Clean the audio first.
-- Captions in a different language than the audio (TODO confirm).
 
 ## FAQ
 
@@ -68,6 +66,7 @@ Word-by-word or highlight for fast talking heads. Plain phrases for calmer expla
 
 ## Related
 
+- /how-to/add-captions-to-videos-on-iphone
 - /tools/add-subtitles-to-video
 - /features/ai-captions
 - /prompts/captions

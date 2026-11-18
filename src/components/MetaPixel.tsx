@@ -56,6 +56,9 @@ function loadPixel() {
     document.head.appendChild(script);
   }
 
+  // Our PageView and CTA Lead events are explicit. Avoid Meta's additional
+  // automatic button/metadata processing in every document click handler.
+  fbq("set", "autoConfig", false, PIXEL_ID);
   fbq("init", PIXEL_ID);
 }
 

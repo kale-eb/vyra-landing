@@ -60,7 +60,7 @@ None of the editors here. Keep a recording tool and pair it with the editor you 
 Vyra describes every scene on upload.
 
 **Which is cheapest for occasional podcasts?**
-Descript's free tier for light use, Vizard for clipping. Vyra is free to start.
+Descript's free tier for light use, Vizard for clipping. Vyra has a 3-day free trial.
 
 ## Related
 

@@ -66,6 +66,8 @@ Match the meaning. Cut "um" and repeats, but never change what was said.
 
 ## Related
 
+- /how-to/add-text-to-video-on-iphone
+- /how-to/add-captions-to-videos-on-iphone
 - /how-to/cut-a-talking-head
 - /how-to/make-motion-graphics
 - /formats/talking-head

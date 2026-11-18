@@ -71,7 +71,7 @@ Yes. Connect over MCP and Claude Code gets Vyra's editing tools. It also works f
 It is aimed at Claude Code and Codex users. Vyra's built-in chat needs no terminal.
 
 **Which is cheaper?**
-Daydream pricing is on its site. Vyra starts at $24/mo and is free to start.
+Daydream pricing is on its site. Vyra has a 3-day free trial, then starts at $24/mo.
 
 ## Related
 
