@@ -1,10 +1,10 @@
 "use client";
 
 import Reveal from "./Reveal";
-import IosAppButton from "./IosAppButton";
+import MobileAppButton from "./MobileAppButton";
 import { trackLead } from "./MetaPixel";
 
-export default function FinalCTA({ showIosDownload = true }: { showIosDownload?: boolean }) {
+export default function FinalCTA({ showMobileDownload = true }: { showMobileDownload?: boolean }) {
   return (
     <section className="relative overflow-hidden py-24 px-6 md:py-36">
       {/* Background gradient wash */}
@@ -38,7 +38,7 @@ export default function FinalCTA({ showIosDownload = true }: { showIosDownload?:
           Go from footage to finished in minutes.
         </Reveal>
 
-        <Reveal y={20} duration={0.6} delay={0.3} className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Reveal y={20} duration={0.6} delay={0.3} className="relative z-30 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href="https://app.usevyra.com/signup"
             onClick={() => trackLead()}
@@ -46,7 +46,7 @@ export default function FinalCTA({ showIosDownload = true }: { showIosDownload?:
           >
             Get started on web
           </a>
-          {showIosDownload && <IosAppButton />}
+          {showMobileDownload && <MobileAppButton />}
         </Reveal>
       </div>
     </section>
