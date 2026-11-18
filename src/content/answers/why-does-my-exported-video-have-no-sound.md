@@ -1,7 +1,7 @@
 ---
 title: "Why does my exported video have no sound?"
 description: "Compare sound in your original clip, project preview and saved video. Find where audio disappears before changing your edit or exporting again."
-updated: '2026-11-10'
+updated: '2026-11-18'
 category: answers
 support: true
 facts:
@@ -45,6 +45,9 @@ Keep my original speech audible throughout. Lower the music while I talk. Leave 
 ```
 
 ## FAQ
+
+**What should I check if only one clip is silent on iPhone?**
+Play the source in Photos. If it has sound, select the clip in Vyra and check Mute and Volume. Review any separate audio track from the recording before exporting again. See the [iPhone clip audio guide](/how-to/mute-a-video-on-iphone).
 
 **Can a video look finished and still have an audio problem?**
 Yes. Play the actual exported file with sound before posting. Check the beginning, the ending and any section where the audio changes.

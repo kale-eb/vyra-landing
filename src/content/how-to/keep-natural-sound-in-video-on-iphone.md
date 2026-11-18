@@ -67,6 +67,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/mute-a-video-on-iphone
+
 - /how-to/adjust-video-volume-on-iphone
 - /how-to/add-music-to-video-on-iphone
 - /how-to/export-video-to-photos-on-iphone
