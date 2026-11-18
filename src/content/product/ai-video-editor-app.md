@@ -189,6 +189,8 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 - [Extract audio from a video on iPhone](/how-to/extract-audio-from-video-on-iphone)
 - [Start the next shot’s sound early with a J-cut](/how-to/make-a-j-cut-on-iphone)
 
+- [Mute a video clip on iPhone](/how-to/mute-a-video-on-iphone)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone
