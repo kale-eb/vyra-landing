@@ -191,6 +191,29 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 
 - [Mute a video clip on iPhone](/how-to/mute-a-video-on-iphone)
 
+## More controls and library guides
+
+- [crop a video on iPhone](/how-to/crop-a-video-on-iphone)
+- [rotate a video on iPhone](/how-to/rotate-a-video-on-iphone)
+- [flip a video on iPhone](/how-to/flip-a-video-on-iphone)
+- [put two videos side by side on iPhone](/how-to/make-side-by-side-video-on-iphone)
+- [make a picture-in-picture video on iPhone](/how-to/make-picture-in-picture-on-iphone)
+- [make a square video on iPhone](/how-to/make-square-video-on-iphone)
+- [fix black bars around a video on iPhone](/how-to/fix-black-bars-on-video-on-iphone)
+- [change how long a photo stays in a video on iPhone](/how-to/change-photo-duration-in-video-on-iphone)
+- [duplicate a video clip on iPhone](/how-to/duplicate-video-clip-on-iphone)
+- [make a circular video overlay on iPhone](/how-to/make-circle-video-overlay-on-iphone)
+- [brighten a dark video on iPhone](/how-to/brighten-dark-video-on-iphone)
+- [fix an orange or blue video on iPhone](/how-to/fix-video-white-balance-on-iphone)
+- [fade music out at the end of a video on iPhone](/how-to/fade-music-out-on-iphone)
+- [make video text readable with a shadow on iPhone](/how-to/add-shadow-to-video-text-on-iphone)
+- [change a title font in a video on iPhone](/how-to/change-video-title-font-on-iphone)
+- [make a video overlay partly transparent on iPhone](/how-to/make-transparent-video-overlay-on-iphone)
+- [rename footage in Vyra on iPhone](/how-to/rename-video-assets-on-iphone)
+- [move footage into folders in Vyra on iPhone](/how-to/move-media-into-folders-on-iphone)
+- [add existing library footage to a Vyra project on iPhone](/how-to/add-library-media-to-project-on-iphone)
+- [caption only the voiceover on iPhone](/how-to/caption-only-voiceover-on-iphone)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone

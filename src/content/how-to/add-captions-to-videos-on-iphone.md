@@ -110,6 +110,8 @@ The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyr
 
 ## Related
 
+- /how-to/caption-only-voiceover-on-iphone
+
 - /how-to/keep-captions-clear-of-subject-on-iphone
 
 - /how-to/style-all-captions-on-iphone

@@ -67,6 +67,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/rename-video-assets-on-iphone
+
 - /how-to/trim-video-on-iphone
 - /how-to/edit-vlog-on-iphone
 - /how-to/export-video-to-photos-on-iphone

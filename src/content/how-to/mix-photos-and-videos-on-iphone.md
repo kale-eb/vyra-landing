@@ -67,6 +67,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/change-photo-duration-in-video-on-iphone
+
 - /how-to/make-vertical-video-on-iphone
 - /how-to/make-portfolio-video-on-iphone
 - /how-to/export-video-to-photos-on-iphone
