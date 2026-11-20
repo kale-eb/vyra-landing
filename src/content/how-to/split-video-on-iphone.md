@@ -61,6 +61,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/remove-middle-of-video-on-iphone
+
 - /how-to/trim-video-on-iphone
 - /how-to/combine-videos-on-iphone
 - /ai-video-editor-app

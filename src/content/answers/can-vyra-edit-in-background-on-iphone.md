@@ -1,7 +1,7 @@
 ---
 title: "Can an iPhone editor keep working in the background?"
 description: "Vyra runs AI editing on its servers, so you can leave the app after sending the footage and prompt. Check upload and export progress separately."
-updated: '2026-11-15'
+updated: '2026-11-20'
 category: answers
 platform: iphone
 facts:
@@ -37,6 +37,9 @@ Make the brief clear enough for the agent to continue. Name the clips to use, th
 When you return, review the actual draft. Background processing is about where the work runs. It does not remove the need to check the edit.
 
 ## FAQ
+
+**Can I export several alternate edits from iPhone without rendering each one on my phone?**
+In Vyra on iPhone version 0.1.8 and later, open Variations and choose Export all. Vyra’s in-app help says those exports render on its servers. Review the selected edits and check each completed file.
 
 **Does the iPhone app need to stay in the foreground during AI editing?**
 No. Caleb's mobile post says the agent work runs on Vyra's servers so you can leave the app after sending the footage and instructions.
