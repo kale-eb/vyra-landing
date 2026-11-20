@@ -55,6 +55,10 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/add-logo-to-video-on-iphone
+
+- /how-to/change-video-title-font-on-iphone
+
 - /how-to/add-end-credits-to-video-on-iphone
 - /how-to/add-step-labels-to-video-on-iphone
 - /how-to/add-captions-to-videos-on-iphone

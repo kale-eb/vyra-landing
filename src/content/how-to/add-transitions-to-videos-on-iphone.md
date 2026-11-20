@@ -97,6 +97,8 @@ The [Vyra App Store release notes](https://apps.apple.com/us/app/vyra-ai-video-e
 
 ## Related
 
+- /how-to/make-side-by-side-video-on-iphone
+
 - /how-to/make-a-j-cut-on-iphone
 
 - /how-to/make-match-cut-on-iphone

@@ -1,0 +1,242 @@
+[
+  {
+    "url": "/how-to/try-different-video-hooks-on-iphone",
+    "title": "How to try different video hooks on iPhone",
+    "job": "In Vyra on iPhone version 0.1.8 or later, open Variations in the editor\u2019s top bar. Make another version of the edit and try a different opening there. Preview the versions before choosing which one to export.",
+    "source": "Variations",
+    "demand": "editorial hypothesis",
+    "type": "guide"
+  },
+  {
+    "url": "/how-to/export-multiple-video-versions-on-iphone",
+    "title": "How to export several versions of a video on iPhone",
+    "job": "In Vyra on iPhone version 0.1.8 or later, open Variations and choose Export all. Review the versions selected for export and start the export for the set you want.",
+    "source": "Variations",
+    "demand": "editorial hypothesis",
+    "type": "guide"
+  },
+  {
+    "url": "/how-to/add-logo-to-video-on-iphone",
+    "title": "How to add your logo to a video on iPhone",
+    "job": "In Vyra on iPhone, add your logo image to the project and ask chat to place it over the footage. Specify the corner, size and the part of the video where it should appear.",
+    "source": "Library on iPhone and Properties panel",
+    "demand": "editorial hypothesis",
+    "type": "guide"
+  },
+  {
+    "url": "/how-to/remove-middle-of-video-on-iphone",
+    "title": "How to remove a section from the middle of a video on iPhone",
+    "job": "In Vyra on iPhone, split the clip at the beginning and end of the unwanted section, select the middle piece and delete it. Review the join and any remaining gap before exporting.",
+    "source": "Editing tools on iPhone and Timeline navigation and tools",
+    "demand": "editorial hypothesis",
+    "type": "guide"
+  },
+  {
+    "url": "/ideas/ceramics-video-ideas",
+    "title": "Ceramics video ideas to film with your phone",
+    "reader": "ceramic artists",
+    "job": "Start with a change the camera can show clearly. A clay wall becoming even, a trimmed foot or a glaze result gives a ceramics video a sequence to follow.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The rim before and after one pass",
+      "The foot you rarely see",
+      "A glaze prediction and its result"
+    ]
+  },
+  {
+    "url": "/ideas/sewing-video-ideas",
+    "title": "Sewing video ideas for a repair or finished garment",
+    "reader": "sewers and clothing makers",
+    "job": "A seam closing or a garment sitting differently can carry a sewing video. Choose one visible change and film the fabric before, during and after it.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "One seam that fixes the fit",
+      "The inside of a finished piece",
+      "The fabric choice you changed"
+    ]
+  },
+  {
+    "url": "/ideas/jewelry-video-ideas",
+    "title": "Jewelry video ideas that show scale and detail",
+    "reader": "jewelry makers",
+    "job": "Jewelry footage needs both a close view and a sense of scale. Give the viewer time to see the piece before asking them to read a caption.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "Small detail, full piece",
+      "The piece in the hand",
+      "A pair with a tiny difference"
+    ]
+  },
+  {
+    "url": "/ideas/printmaking-video-ideas",
+    "title": "Printmaking video ideas built around the reveal",
+    "reader": "printmakers",
+    "job": "A print reveal has a natural ending. Film enough of the setup and the lift that the viewer can connect the result with the block or plate.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "One pull from start to finish",
+      "The detail that did not print",
+      "One design, two papers"
+    ]
+  },
+  {
+    "url": "/ideas/woodworking-video-ideas",
+    "title": "Woodworking video ideas from the footage you already have",
+    "reader": "woodworkers",
+    "job": "Choose a visible join, surface change or working detail for the video. Give the finished object enough context that viewers can understand its size and purpose.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The joint before it closes",
+      "The surface across two stages",
+      "The object doing its job"
+    ]
+  },
+  {
+    "url": "/ideas/florist-video-ideas",
+    "title": "Florist video ideas for an arrangement or delivery",
+    "reader": "florists",
+    "job": "A flower video can follow a shape taking form or show how an arrangement belongs in its setting. Choose the story before cutting the stems and room shots together.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The shape from the side",
+      "One flower that changes the balance",
+      "From table to room"
+    ]
+  },
+  {
+    "url": "/ideas/nail-artist-video-ideas",
+    "title": "Nail artist video ideas for a finished set",
+    "reader": "nail artists",
+    "job": "Give a finished nail set a clear close-up and enough time to see the details. Film any process shots around the feature you want the viewer to notice.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The detail under a moving hand",
+      "One design across both hands",
+      "The color choice beside the result"
+    ]
+  },
+  {
+    "url": "/ideas/hair-stylist-video-ideas",
+    "title": "Hair stylist video ideas from a finished appointment",
+    "reader": "hair stylists",
+    "job": "Use consistent views to show the shape, length or finish you want people to notice. Keep enough of the final result on screen for the style to read.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The same turn before and after",
+      "The finished shape in motion",
+      "One detail and the whole style"
+    ]
+  },
+  {
+    "url": "/ideas/bakery-video-ideas",
+    "title": "Bakery video ideas for one product or a morning batch",
+    "reader": "bakers",
+    "job": "Build the video around something the viewer can see change. Dough becoming a shaped item, a cross-section or the first tray of the morning can each support a different edit.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The cross-section with a reason",
+      "One tray through the morning",
+      "The last finishing touch"
+    ]
+  },
+  {
+    "url": "/ideas/cafe-video-ideas",
+    "title": "Cafe video ideas beyond a fast drink montage",
+    "reader": "cafe owners and staff",
+    "job": "Pick a small moment that gives the cafe a recognizable story. A drink being finished, a counter opening or one regular order can work with a few phone clips.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "A drink in the place it belongs",
+      "The counter before the first order",
+      "One sound from the room"
+    ]
+  },
+  {
+    "url": "/ideas/thrift-shop-video-ideas",
+    "title": "Thrift shop video ideas for finds and collections",
+    "reader": "thrift sellers",
+    "job": "Show a find clearly before cutting into styling or story. A useful thrift video gives viewers enough detail to understand what makes the item worth showing.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The detail that made you stop",
+      "Three finds with different roles",
+      "One item across two looks"
+    ]
+  },
+  {
+    "url": "/ideas/bookshop-video-ideas",
+    "title": "Bookshop video ideas for shelves and recommendations",
+    "reader": "bookshop owners and booksellers",
+    "job": "A bookshop video works best when the viewer can follow one recommendation or shelf idea. Let the covers and your reason for choosing them stay readable.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "One recommendation, one reason",
+      "A shelf organized by a question",
+      "A display from empty to ready"
+    ]
+  },
+  {
+    "url": "/ideas/plant-shop-video-ideas",
+    "title": "Plant shop video ideas that show the actual plant",
+    "reader": "plant shop owners",
+    "job": "Show the plant\u2019s overall shape as well as the leaf or growth detail that interests you. A clear full view helps viewers understand the close-up.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "New growth in context",
+      "One shelf, different heights",
+      "The pot and plant together"
+    ]
+  },
+  {
+    "url": "/ideas/illustration-video-ideas",
+    "title": "Illustration video ideas from sketches and finished work",
+    "reader": "illustrators",
+    "job": "Choose one decision in the drawing that the footage or saved images can show. A changed composition or color choice gives the edit a clear beginning and result.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The composition you moved",
+      "One color that changed the mood",
+      "A detail with its reference"
+    ]
+  },
+  {
+    "url": "/ideas/craft-market-video-ideas",
+    "title": "Craft market video ideas before and after the doors open",
+    "reader": "makers selling at markets",
+    "job": "Give the market video a small story you can actually film. A stall being built, one product display or packing at the end can each make a complete sequence.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "The table becoming a stall",
+      "One product finding its place",
+      "What came home at closing"
+    ]
+  },
+  {
+    "url": "/ideas/art-exhibition-video-ideas",
+    "title": "Art exhibition video ideas for the work and the room",
+    "reader": "artists showing work",
+    "job": "An exhibition video should let viewers see both the artwork and its placement. Start with the part of the room or piece that gives the rest of the footage context.",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "concepts": [
+      "One wall from wide to detail",
+      "The hang before the opening",
+      "The work with the artist\u2019s words"
+    ]
+  }
+]

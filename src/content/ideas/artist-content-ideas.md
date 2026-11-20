@@ -298,6 +298,25 @@ No. Music, a short caption, and the work carry most art videos. Save a voiceover
 **What makes an art video get views?**
 A visible change from start to finish, shown fast. Reveals, recaps, and throwbacks all show change.
 
+## Ideas for specific kinds of work
+
+- [Ceramics video ideas to film with your phone](/ideas/ceramics-video-ideas)
+- [Sewing video ideas for a repair or finished garment](/ideas/sewing-video-ideas)
+- [Jewelry video ideas that show scale and detail](/ideas/jewelry-video-ideas)
+- [Printmaking video ideas built around the reveal](/ideas/printmaking-video-ideas)
+- [Woodworking video ideas from the footage you already have](/ideas/woodworking-video-ideas)
+- [Florist video ideas for an arrangement or delivery](/ideas/florist-video-ideas)
+- [Nail artist video ideas for a finished set](/ideas/nail-artist-video-ideas)
+- [Hair stylist video ideas from a finished appointment](/ideas/hair-stylist-video-ideas)
+- [Bakery video ideas for one product or a morning batch](/ideas/bakery-video-ideas)
+- [Cafe video ideas beyond a fast drink montage](/ideas/cafe-video-ideas)
+- [Thrift shop video ideas for finds and collections](/ideas/thrift-shop-video-ideas)
+- [Bookshop video ideas for shelves and recommendations](/ideas/bookshop-video-ideas)
+- [Plant shop video ideas that show the actual plant](/ideas/plant-shop-video-ideas)
+- [Illustration video ideas from sketches and finished work](/ideas/illustration-video-ideas)
+- [Craft market video ideas before and after the doors open](/ideas/craft-market-video-ideas)
+- [Art exhibition video ideas for the work and the room](/ideas/art-exhibition-video-ideas)
+
 ## Related
 
 - /formats/process-video

@@ -1,0 +1,222 @@
+[
+  {
+    "url": "/how-to/crop-a-video-on-iphone",
+    "title": "How to crop a video on iPhone",
+    "readerJob": "To crop a clip in Vyra on iPhone, select it and choose Crop. Vyra adds a rectangle mask that controls the visible area. Check the subject at the start and end of the shot before you keep the crop.",
+    "source": "Masks and Editing tools on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "make-vertical-video-on-iphone",
+      "trim-video-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/rotate-a-video-on-iphone",
+    "title": "How to rotate a video on iPhone",
+    "readerJob": "To turn a sideways clip upright in Vyra on iPhone, select the clip and use Transform, or ask chat to rotate that clip. Review the framing after rotation because the picture can leave empty space around it.",
+    "source": "Editing tools on iPhone and Properties panel",
+    "demand": "editorial hypothesis",
+    "related": [
+      "make-vertical-video-on-iphone",
+      "crop-a-video-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/flip-a-video-on-iphone",
+    "title": "How to flip a video on iPhone",
+    "readerJob": "To mirror a clip in Vyra on iPhone, ask chat to flip that clip horizontally. Check writing, logos and the direction of the action afterward. A horizontal flip changes which side of the frame everything appears on.",
+    "source": "Properties panel and Editing tools on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "rotate-a-video-on-iphone",
+      "edit-continuity-errors-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/make-side-by-side-video-on-iphone",
+    "title": "How to put two videos side by side on iPhone",
+    "readerJob": "In Vyra on iPhone, open Layout and ask for two clips side by side. Choose which recording goes in each cell, then check framing, timing and audio for both.",
+    "source": "Layouts",
+    "demand": "editorial hypothesis",
+    "related": [
+      "make-vertical-and-landscape-video-versions-on-iphone",
+      "adjust-video-volume-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/make-picture-in-picture-on-iphone",
+    "title": "How to make a picture-in-picture video on iPhone",
+    "readerJob": "Use Layout in Vyra on iPhone to put a small video over a larger one. Ask for a picture-in-picture arrangement and identify the main recording and the inset recording.",
+    "source": "Layouts",
+    "demand": "editorial hypothesis",
+    "related": [
+      "edit-screen-recording-demo-on-iphone",
+      "keep-captions-clear-of-subject-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/make-square-video-on-iphone",
+    "title": "How to make a square video on iPhone",
+    "readerJob": "To make a square video in Vyra on iPhone, tap the canvas size chip in the editor bar and choose the square canvas. Reframe each clip afterward so the subject fits.",
+    "source": "Canvas resize",
+    "demand": "editorial hypothesis",
+    "related": [
+      "make-vertical-video-on-iphone",
+      "export-video-to-photos-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/fix-black-bars-on-video-on-iphone",
+    "title": "How to fix black bars around a video on iPhone",
+    "readerJob": "In Vyra on iPhone, compare the clip shape with the canvas shape. Fit the whole picture when every edge matters, or enlarge and reframe the clip to fill the canvas when you can crop its edges.",
+    "source": "Canvas resize, Layouts and Properties panel",
+    "demand": "editorial hypothesis",
+    "related": [
+      "crop-a-video-on-iphone",
+      "make-square-video-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/change-photo-duration-in-video-on-iphone",
+    "title": "How to change how long a photo stays in a video on iPhone",
+    "readerJob": "In a Vyra iPhone project, change the duration of the photo item on the timeline or tell chat how long it should stay. Review the text and narration over the photo before shortening it.",
+    "source": "Timeline navigation and tools",
+    "demand": "editorial hypothesis",
+    "related": [
+      "mix-photos-and-videos-on-iphone",
+      "match-voiceover-length-to-footage-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/duplicate-video-clip-on-iphone",
+    "title": "How to duplicate a video clip on iPhone",
+    "readerJob": "To reuse a shot in Vyra on iPhone, select its timeline clip and choose Duplicate. Check where the new copy appears and decide which part of the original recording each copy should show.",
+    "source": "Editing tools on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "trim-video-on-iphone",
+      "make-looping-video-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/make-circle-video-overlay-on-iphone",
+    "title": "How to make a circular video overlay on iPhone",
+    "readerJob": "In Vyra on iPhone, use an ellipse mask to show a round area of a video, then position that masked clip over the main picture. Check the face throughout the shot.",
+    "source": "Masks",
+    "demand": "editorial hypothesis",
+    "related": [
+      "make-picture-in-picture-on-iphone",
+      "keep-captions-clear-of-subject-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/brighten-dark-video-on-iphone",
+    "title": "How to brighten a dark video on iPhone",
+    "readerJob": "In Vyra on iPhone, select the dark clip and open Adjust. Raise the brightness carefully while checking both the subject and the lightest parts of the image.",
+    "source": "Editing tools on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "apply-effect-to-multiple-clips-on-iphone",
+      "export-video-to-photos-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/fix-video-white-balance-on-iphone",
+    "title": "How to fix an orange or blue video on iPhone",
+    "readerJob": "In Vyra on iPhone, select the clip, open Adjust and use the WB controls to correct its color cast. Compare an area that should look neutral while keeping skin and important colors believable.",
+    "source": "Editing tools on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "brighten-dark-video-on-iphone",
+      "apply-effect-to-multiple-clips-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/fade-music-out-on-iphone",
+    "title": "How to fade music out at the end of a video on iPhone",
+    "readerJob": "In Vyra on iPhone, ask chat to lower the music gradually before the ending. Identify the music track and the point where it should become silent, then listen to the final export.",
+    "source": "Audio features",
+    "demand": "editorial hypothesis",
+    "related": [
+      "add-music-to-video-on-iphone",
+      "keep-natural-sound-in-video-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/add-shadow-to-video-text-on-iphone",
+    "title": "How to make video text readable with a shadow on iPhone",
+    "readerJob": "In Vyra on iPhone, ask chat for a small shadow behind the selected text. Review the words against the brightest and busiest frames the text crosses.",
+    "source": "Properties panel text controls",
+    "demand": "editorial hypothesis",
+    "related": [
+      "add-text-to-video-on-iphone",
+      "shorten-caption-lines-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/change-video-title-font-on-iphone",
+    "title": "How to change a title font in a video on iPhone",
+    "readerJob": "In Vyra on iPhone, identify the title by its words and ask chat to change its font. Use a font available in Vyra and review the new line breaks before keeping it.",
+    "source": "Properties panel text controls",
+    "demand": "editorial hypothesis",
+    "related": [
+      "add-text-to-video-on-iphone",
+      "add-chapter-cards-to-video-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/make-transparent-video-overlay-on-iphone",
+    "title": "How to make a video overlay partly transparent on iPhone",
+    "readerJob": "In Vyra on iPhone, place the overlay above the background and change the selected clip\u2019s Opacity. Review the resulting blend while both pictures move.",
+    "source": "Editing tools on iPhone and Masks",
+    "demand": "editorial hypothesis",
+    "related": [
+      "make-side-by-side-video-on-iphone",
+      "mix-photos-and-videos-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/rename-video-assets-on-iphone",
+    "title": "How to rename footage in Vyra on iPhone",
+    "readerJob": "To rename a media item in Vyra on iPhone, press and hold it in Library, open Assets and choose Rename from the item\u2019s actions. Give the recording a name that helps you distinguish it from similar clips.",
+    "source": "Library on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "choose-best-video-takes-on-iphone",
+      "add-library-media-to-project-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/move-media-into-folders-on-iphone",
+    "title": "How to move footage into folders in Vyra on iPhone",
+    "readerJob": "In Vyra on iPhone, press and hold an item in Library, choose Move and select its folder. When selecting several items, the library\u2019s bottom bar also offers Move.",
+    "source": "Library on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "rename-video-assets-on-iphone",
+      "choose-best-video-takes-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/add-library-media-to-project-on-iphone",
+    "title": "How to add existing library footage to a Vyra project on iPhone",
+    "readerJob": "In Vyra on iPhone, locate the item in Library, press and hold it and choose Add to project. Check the destination project before you continue editing.",
+    "source": "Library on iPhone",
+    "demand": "editorial hypothesis",
+    "related": [
+      "rename-video-assets-on-iphone",
+      "combine-videos-on-iphone"
+    ]
+  },
+  {
+    "url": "/how-to/caption-only-voiceover-on-iphone",
+    "title": "How to caption only the voiceover on iPhone",
+    "readerJob": "In Vyra on iPhone, open Captions and choose Voiceover under Generate from. Set the spoken language and caption style, generate the captions and check them against the voiceover.",
+    "source": "Captions",
+    "demand": "editorial hypothesis",
+    "related": [
+      "add-captions-to-videos-on-iphone",
+      "add-voiceover-to-video-on-iphone"
+    ]
+  }
+]
