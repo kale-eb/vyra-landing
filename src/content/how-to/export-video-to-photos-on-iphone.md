@@ -59,6 +59,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/export-multiple-video-versions-on-iphone
+
 - /how-to/revise-video-after-export-on-iphone
 - /ai-video-editor-app
 - /how-to/make-vertical-video-on-iphone

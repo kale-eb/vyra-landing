@@ -69,6 +69,8 @@ Draft five, post one. If it flops, re-cut the first 3 seconds before changing an
 
 ## Related
 
+- /how-to/try-different-video-hooks-on-iphone
+
 - /how-to/edit-for-retention
 - /how-to/pace-a-short-form-video
 - /formats/ugc-hook-and-demo
