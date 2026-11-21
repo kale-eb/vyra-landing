@@ -192,7 +192,8 @@ export VYRA_KEY=vyra_live_...`}</Code>
 }`}</Code>
             <p className="mt-3">
               A link lasts an hour. Ask for the video again and you get a fresh one, as many times as
-              you like.
+              you like. Videos and their files are kept: nothing expires, and <C>expires_at</C> is
+              always <C>null</C>.
             </p>
           </section>
 
@@ -257,7 +258,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
                 [<C key="a">aspect_ratio</C>, <span key="b"><C>9:16</C>, <C>16:9</C> or <C>1:1</C>. Or send <C>width</C> and <C>height</C> (even numbers, 320 to 3840, the shorter side at most 2160). Left out, the agent chooses from the footage and the request.</span>],
                 [<span key="a"><C>fps</C>, <C>resolution</C></span>, <span key="b">1 to 60 frames a second (default 30); <C>720p</C>, <C>1080p</C>, <C>1440p</C> or <C>4k</C>.</span>],
                 [<C key="a">variations</C>, <span key="b">1 to 20 cuts from the same footage. <C>variation_brief</C> says how they differ.</span>],
-                [<C key="a">variation_scope</C>, <span key="b"><C>portion</C> (the default): the cuts differ in one part, such as the hook or the ending, and are the same elsewhere. <C>full</C>: each cut is edited differently throughout. See <a href="#prices" className="text-[var(--brand-blue)] underline underline-offset-2">what each costs</a>.</span>],
+                [<C key="a">variation_scope</C>, <span key="b"><C>portion</C> (the default): every cut has the video&apos;s aspect ratio and size and runs within 25% of the first cut&apos;s length; anything else may differ, such as the hook, captions, music, pacing, text or colour. <C>full</C>: anything may differ, including the shape, the length (within <C>max_seconds</C>) and the structure. A <C>portion</C> request whose <C>variation_brief</C> asks for another shape or a very different length is refused with <C>VARIATION_SCOPE_MISMATCH</C>: send <C>full</C> for that. See <a href="#prices" className="text-[var(--brand-blue)] underline underline-offset-2">what each costs</a>.</span>],
                 [<C key="a">allow_generated_media</C>, <span key="b"><C>true</C> lets the agent generate music, voiceover, sound and images, which are charged. Off by default.</span>],
                 [<C key="a">generated_media_budget</C>, "Dollars. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of max_seconds ($0.40 for a video of up to a minute)."],
                 [<C key="a">max_price</C>, "Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing."],
@@ -437,7 +438,21 @@ function fromVyra(rawBody, header, secret) {
               up, it has a new file, and <C>last_change.price.total</C> is what the revision cost.
               With several variations, name the cut by its own id (<C>vid_8fK2mQ..._2</C>). A failed
               revision leaves the video as it was and costs nothing. A cut takes up to 10 changes,
-              one at a time: a second one sent meanwhile answers <C>409 VIDEO_BUSY</C>.
+              one at a time: a second one sent meanwhile answers <C>409 VIDEO_BUSY</C>. Each
+              cut&apos;s first revision is free.
+            </p>
+            <p className="mb-2">
+              <strong className="text-[var(--foreground)]">Revise several cuts at once.</strong> Send
+              the change to the video&apos;s id with <C>video_ids</C>, the cuts to change. One pass
+              makes it on each, and each gets its own new <C>revision</C> and file:
+            </p>
+            <Code>{`curl $VYRA_API/v1/videos/vid_8fK2mQ.../revisions \\
+  -H "Authorization: Bearer $VYRA_KEY" -H "Content-Type: application/json" \\
+  -d '{ "prompt": "Make the captions bigger.", "video_ids": ["vid_8fK2mQ..._2", "vid_8fK2mQ..._7"] }'`}</Code>
+            <p className="mt-3 mb-4">
+              It is one change with one <C>revision_id</C>: <C>change.video_ids</C> lists the cuts,
+              and <C>revisions</C> has an entry for each. Every cut named is priced as a revision of
+              its own (its first one free), and what you send with it is charged once.
             </p>
             <p className="mb-2">
               The video lists every revision it has had under <C>revisions</C>, oldest first, so you
@@ -452,7 +467,8 @@ function fromVyra(rawBody, header, secret) {
 ]`}</Code>
             <p className="mt-3 mb-4">
               A finished revision keeps its own file, which stays downloadable after a later revision
-              replaces the cut&apos;s. A failed one carries <C>error</C>. Each revision builds on the
+              replaces the cut&apos;s. A revision of several cuts has an entry for each, under its one
+              id, and the first carries what was sent with it. A failed one carries <C>error</C>. Each revision builds on the
               cut as the one before left it. Revisions made before November 15, 2026 are not listed.
             </p>
             <p className="mb-2">
@@ -555,7 +571,7 @@ function fromVyra(rawBody, header, secret) {
               <Table
                 head={["Status", "Meaning", "Common codes"]}
                 rows={[
-                  ["400", "The request cannot be taken as sent", <Codes key="c" list={["FOOTAGE_REQUIRED", "PROMPT_OR_REFERENCE_REQUIRED", "INVALID_SOURCE", "INVALID_MAX_SECONDS", "INVALID_SIZE", "UNKNOWN_FIELD", "FILE_NOT_UPLOADED", "FILE_ALREADY_USED", "CUT_REQUIRED"]} />],
+                  ["400", "The request cannot be taken as sent", <Codes key="c" list={["FOOTAGE_REQUIRED", "PROMPT_OR_REFERENCE_REQUIRED", "INVALID_SOURCE", "INVALID_MAX_SECONDS", "INVALID_SIZE", "UNKNOWN_FIELD", "FILE_NOT_UPLOADED", "FILE_ALREADY_USED", "VARIATION_SCOPE_MISMATCH", "CUT_REQUIRED", "INVALID_VIDEO_IDS"]} />],
                   ["401", "No key, or a key we do not know", <Codes key="c" list={["API_KEY_REQUIRED", "API_KEY_INVALID"]} />],
                   ["404", "No such video on your account", <Codes key="c" list={["VIDEO_NOT_FOUND"]} />],
                   ["409", "The video is busy or not finished", <Codes key="c" list={["VIDEO_BUSY", "VIDEO_NOT_FINISHED"]} />],
@@ -654,14 +670,16 @@ share = 0.10 for portion, 0.75 for full`}</Code>
             <Table
               head={["Change", "low", "high"]}
               rows={[
-                ["A revision of one cut", "$0.35", "$0.70"],
+                ["A cut's first revision", "Free", "Free"],
+                ["Each later revision of a cut", "$0.35", "$0.70"],
                 ["Another resolution of the same cut", "Free", "Free"],
                 ["A revision or a video that fails", "Free", "Free"],
               ]}
             />
             <p className="mt-3">
-              A revision is charged at the effort its video was made with. Footage or a reference
-              added in a revision is charged as media sent, below.
+              A revision is charged at the effort its video was made with. A revision of several cuts
+              is each cut&apos;s own price added up. Footage or a reference added in a revision is
+              charged as media sent, below, even on a free revision, and so is generated media.
             </p>
 
             <H3 className="mt-8">Media sent</H3>
@@ -752,7 +770,7 @@ share = 0.10 for portion, 0.75 for full`}</Code>
               />
               <Example
                 title="A revision that adds a clip"
-                request="a revision of a video made on high, with one new 2 min clip"
+                request="a second revision of a cut made on high, with one new 2 min clip"
                 lines={[["Revision, high", 70], ["Video sent, 2 min × $0.02", 4]]}
               />
               <Example
