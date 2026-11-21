@@ -118,8 +118,9 @@ export VYRA_KEY=vyra_live_...`}</Code>
             <p className="mt-4 mb-2">To get a key:</p>
             <ol className="mb-4 list-decimal space-y-2 pl-6">
               <li>
-                Sign in to the Vyra web app and open{" "}
-                <A href="https://app.usevyra.com/settings">Settings &rarr; Developer</A>.
+                <A href="https://app.usevyra.com/signup?for=api">Create a Vyra account</A>. It takes you to
+                Settings &rarr; Developer. If you already have an account, sign in and open{" "}
+                <A href="https://app.usevyra.com/settings/developer">Settings &rarr; Developer</A>.
               </li>
               <li>
                 Name a key, choose how many videos it may make at once, and press <strong>Create key</strong>.
