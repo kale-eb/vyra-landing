@@ -40,6 +40,7 @@ const SECTIONS = [
   ["examples", "Example requests"],
   ["result", "Getting the result"],
   ["changes", "Changing a finished video"],
+  ["guides", "Guides"],
   ["usage", "Listing and usage"],
   ["limits", "Limits"],
   ["retries", "Retrying safely"],
@@ -263,6 +264,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
                 [<C key="a">generated_media_budget</C>, "Dollars. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of max_seconds ($0.40 for a video of up to a minute)."],
                 [<C key="a">max_price</C>, "Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing."],
                 [<C key="a">webhook_url</C>, "Where to tell you when it is done."],
+                [<C key="a">guides</C>, <span key="b">Up to 3 saved <a href="#guides" className="text-[var(--brand-blue)] underline underline-offset-2">guides</a> to follow. A guide is direction enough without a prompt.</span>],
               ]}
             />
 
@@ -478,6 +480,42 @@ function fromVyra(rawBody, header, secret) {
             <Code>{`curl $VYRA_API/v1/videos/vid_8fK2mQ.../exports \\
   -H "Authorization: Bearer $VYRA_KEY" -H "Content-Type: application/json" \\
   -d '{ "resolution": "4k" }'`}</Code>
+          </section>
+
+          {/* Guides */}
+          <section>
+            <H2 id="guides">Guides</H2>
+            <p className="mb-2">
+              A guide is one of your finished videos, saved so later videos can be made like it, with
+              a note on what to follow. Save one with the id of the video, or of one cut when it has
+              several:
+            </p>
+            <Code>{`curl $VYRA_API/v1/guides \\
+  -H "Authorization: Bearer $VYRA_KEY" -H "Content-Type: application/json" \\
+  -d '{ "video_id": "vid_8fK2mQ..._1", "note": "The caption style and the pacing.", "name": "Launch ad" }'
+
+{ "id": "gd_7Qa1...", "video_id": "vid_8fK2mQ..._1", "revision": 2, "name": "Launch ad",
+  "note": "The caption style and the pacing.", "created_at": "..." }`}</Code>
+            <p className="mt-3 mb-2">Then name it when you make or revise a video:</p>
+            <Code>{`curl $VYRA_API/v1/videos \\
+  -H "Authorization: Bearer $VYRA_KEY" -H "Content-Type: application/json" \\
+  -d '{ "footage": ["https://example.com/new-take.mp4"], "prompt": "A 15-second ad for the spring sale.",
+        "guides": ["gd_7Qa1..."] }'`}</Code>
+            <p className="mt-3 mb-4">
+              The agent reads each guide&apos;s note and opens the guide&apos;s edit itself: its text,
+              timing and styles, and frames of it. It matches what the note asks for (with no note,
+              the guide&apos;s overall style) and keeps to your request where the two differ. Nothing
+              of the guide&apos;s footage is put in the new video. Saving a guide is free, and using
+              one adds nothing to the price.
+            </p>
+            <p className="mb-4">
+              A guide keeps the cut as it was when you saved it, so revising that video later does
+              not change it. <C>GET /v1/guides</C> lists your guides, <C>GET /v1/guides/{"{id}"}</C>{" "}
+              reads one and <C>DELETE /v1/guides/{"{id}"}</C> deletes one; deleting a guide leaves
+              its video as it is. An account keeps up to 100. Settings &rarr; Developer lists them too,
+              and saves one from a video&apos;s detail. Only a finished video of your own can be
+              saved, and a revision cannot name a guide saved from the same video.
+            </p>
           </section>
 
           {/* Usage */}
