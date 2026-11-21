@@ -539,6 +539,11 @@ function fromVyra(rawBody, header, secret) {
               </li>
               <li>Funds expire one year after you add them. The oldest funds are spent first.</li>
               <li>
+                The first 100 accounts get $20 of free credit when they create their first key. It is
+                spent before the funds you add, expires 30 days after you get it, and does not count
+                toward your tier or <C>paid_in</C>.
+              </li>
+              <li>
                 Your balance is not refundable. Questions about it:{" "}
                 <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A>.
               </li>
