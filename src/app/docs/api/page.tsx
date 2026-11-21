@@ -19,7 +19,7 @@ const BANDS = [
 ] as const;
 /** Where the API answers. The examples call it $VYRA_API. */
 const API_BASE = "https://vyra-public-api-dd677jigfq-uc.a.run.app";
-const SHARE = { portion: 0.25, full: 0.75 } as const;
+const SHARE = { portion: 0.1, full: 0.75 } as const;
 type Effort = "low" | "high";
 type Scope = keyof typeof SHARE;
 
@@ -27,7 +27,8 @@ const usd = (cents: number) => `$${(cents / 100).toFixed(2)}`;
 /** The fee for `cuts` cuts: the first at the band fee, each extra one a share of it, rounded up to a cent. */
 const feeFor = (fee: number, cuts: number, scope: Scope) =>
   fee + Math.ceil(fee * SHARE[scope] * (cuts - 1) - 1e-9);
-const CUTS = [1, 2, 3, 4, 5];
+const CUTS = [1, 2, 3, 5, 10, 20];
+const cutsLabel = (cuts: number) => (cuts === 1 ? "1 cut" : `${cuts} cuts`);
 const lengthLabel = (seconds: number) =>
   seconds < 120 ? `${seconds} seconds` : `${seconds / 60} minutes`;
 
@@ -255,7 +256,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
                 [<C key="a">target_seconds</C>, <span key="b">The length to aim for, within <C>max_seconds</C>.</span>],
                 [<C key="a">aspect_ratio</C>, <span key="b"><C>9:16</C>, <C>16:9</C> or <C>1:1</C>. Or send <C>width</C> and <C>height</C> (even numbers, 320 to 3840, the shorter side at most 2160). Left out, the agent chooses from the footage and the request.</span>],
                 [<span key="a"><C>fps</C>, <C>resolution</C></span>, <span key="b">1 to 60 frames a second (default 30); <C>720p</C>, <C>1080p</C>, <C>1440p</C> or <C>4k</C>.</span>],
-                [<C key="a">variations</C>, <span key="b">1 to 5 cuts from the same footage. <C>variation_brief</C> says how they differ.</span>],
+                [<C key="a">variations</C>, <span key="b">1 to 20 cuts from the same footage. <C>variation_brief</C> says how they differ.</span>],
                 [<C key="a">variation_scope</C>, <span key="b"><C>portion</C> (the default): the cuts differ in one part, such as the hook or the ending, and are the same elsewhere. <C>full</C>: each cut is edited differently throughout. See <a href="#prices" className="text-[var(--brand-blue)] underline underline-offset-2">what each costs</a>.</span>],
                 [<C key="a">allow_generated_media</C>, <span key="b"><C>true</C> lets the agent generate music, voiceover, sound and images, which are charged. Off by default.</span>],
                 [<C key="a">generated_media_budget</C>, "Dollars. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of max_seconds ($0.40 for a video of up to a minute)."],
@@ -507,7 +508,7 @@ function fromVyra(rawBody, header, secret) {
                 ["Footage", "200 entries, 5 hours of video"],
                 ["References", "5"],
                 ["Prompt", "8,000 characters"],
-                ["Variations", "5 cuts"],
+                ["Variations", "20 cuts"],
                 ["Changes to one cut", "10"],
                 ["Keys", "10 at once"],
               ]}
@@ -604,13 +605,13 @@ function fromVyra(rawBody, header, secret) {
             <H3 className="mt-8">Variations</H3>
             <p className="mb-3">
               The first cut costs the fee. Each extra cut adds a share of that fee:{" "}
-              <strong className="text-[var(--foreground)]">a quarter</strong> with{" "}
+              <strong className="text-[var(--foreground)]">a tenth</strong> with{" "}
               <C>variation_scope: &quot;portion&quot;</C> and{" "}
               <strong className="text-[var(--foreground)]">three quarters</strong> with{" "}
               <C>&quot;full&quot;</C>. The total is rounded up to the next cent.
             </p>
             <Code>{`fee for N cuts = band fee + band fee × share × (N − 1)
-share = 0.25 for portion, 0.75 for full`}</Code>
+share = 0.10 for portion, 0.75 for full`}</Code>
             <p className="mt-4 mb-3">
               For a video of up to 60 seconds, the fee for the whole request is:
             </p>
@@ -637,7 +638,7 @@ share = 0.25 for portion, 0.75 for full`}</Code>
                         {effort}, {scope}
                       </p>
                       <Table
-                        head={[<span key="h"><C>max_seconds</C> up to</span>, "1 cut", "2 cuts", "3 cuts", "4 cuts", "5 cuts"]}
+                        head={[<span key="h"><C>max_seconds</C> up to</span>, ...CUTS.map(cutsLabel)]}
                         rows={BANDS.map((band) => [
                           String(band.maxSeconds),
                           ...CUTS.map((cuts) => usd(feeFor(band[effort], cuts, scope))),
@@ -726,7 +727,7 @@ share = 0.25 for portion, 0.75 for full`}</Code>
               <Example
                 title="Three hooks"
                 request='effort high, max_seconds 30, variations 3, variation_scope "portion", 6 min of footage'
-                lines={[["Fee, up to 60 s, high", 100], ["Two extra cuts, 2 × a quarter of $1.00", 50], ["Video sent, 6 min × $0.02", 12]]}
+                lines={[["Fee, up to 60 s, high", 100], ["Two extra cuts, 2 × a tenth of $1.00", 20], ["Video sent, 6 min × $0.02", 12]]}
               />
               <Example
                 title="Three different edits"
