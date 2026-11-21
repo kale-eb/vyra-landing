@@ -1,7 +1,7 @@
 ---
 title: "AI video editor for your own footage on iPhone"
 description: "Vyra is an AI video editor app for iPhone. Describe the edit in chat, get a draft from your clips, then fine-tune it on a real timeline. Free to download."
-updated: '2026-11-14'
+updated: '2026-11-21'
 category: product
 platform: iphone
 facts:
@@ -127,6 +127,9 @@ Keep your project and original clips while you check the problem. Start with [up
 
 ## FAQ
 
+**Where can I find video ideas in the iPhone app?**
+Vyra for iPhone version 0.1.9 adds an Ideas tab with short videos picked for your niche. You can also tap the Vyra button on a main screen to ask for ideas. Use your own footage for the edit. A reference video’s view count does not predict the performance of your video.
+
 **Is the Vyra app free?**
 It's free to download. New accounts currently get 100 free credits, and free exports are 720p with a watermark. Plus and Pro plans in the App Store add more.
 
@@ -236,6 +239,33 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 - [Illustration video ideas from sketches and finished work](/ideas/illustration-video-ideas)
 - [Craft market video ideas before and after the doors open](/ideas/craft-market-video-ideas)
 - [Art exhibition video ideas for the work and the room](/ideas/art-exhibition-video-ideas)
+
+## More filming and editing jobs
+
+- [How to choose the spoken language for captions on iPhone](/how-to/choose-caption-language-on-iphone)
+- [How to remove captions from one section of a video on iPhone](/how-to/remove-captions-from-one-section-on-iphone)
+- [How to let speech continue over the next shot on iPhone](/how-to/make-an-l-cut-on-iphone)
+- [How to lower music only during speech on iPhone](/how-to/lower-music-during-speech-on-iphone)
+- [How to slow down one section of a video on iPhone](/how-to/slow-down-one-section-of-video-on-iphone)
+- [How to keep one music track playing across video cuts on iPhone](/how-to/keep-music-playing-across-video-cuts-on-iphone)
+- [How to make video text appear at the reveal on iPhone](/how-to/time-text-to-a-reveal-on-iphone)
+- [How to find video ideas inside Vyra on iPhone](/how-to/find-video-ideas-in-vyra-on-iphone)
+- [Photography video ideas that show how you made the image](/ideas/photography-video-ideas)
+- [Stop-motion behind-the-scenes video ideas](/ideas/stop-motion-behind-the-scenes-ideas)
+- [Language-learning video ideas from your own practice](/ideas/language-learning-video-ideas)
+- [Repair video ideas that show the fault and the result](/ideas/repair-video-ideas)
+- [Book review video ideas built around your own reading](/ideas/book-review-video-ideas)
+- [Walking-tour video ideas for one route or place](/ideas/walking-tour-video-ideas)
+- [Study video ideas with a clear task and stopping point](/ideas/study-video-ideas)
+- [Dance rehearsal video ideas from takes you already filmed](/ideas/dance-rehearsal-video-ideas)
+- [Gardening video ideas from changes you have recorded](/ideas/gardening-video-ideas)
+- [Cooking prep video ideas that keep the useful steps visible](/ideas/cooking-prep-video-ideas)
+- [Board-game video ideas for one turn or decision](/ideas/board-game-video-ideas)
+- [Skateboarding video ideas from a filmed session](/ideas/skateboarding-video-ideas)
+
+## Sources checked for this update
+
+The [official App Store version history](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012), checked November 21, 2026, documents the Ideas tab and assistant suggestions in version 0.1.9. The new FAQ describes that release.
 
 ## Related
 

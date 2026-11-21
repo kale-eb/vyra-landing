@@ -1,6 +1,6 @@
 ---
 title: "How to shorten video caption lines on iPhone"
-description: "To shorten caption lines in Vyra on iPhone, keep the spoken wording, review long words and adjust the text layout so each phrase fits without covering the."
+description: "Shorten caption lines in Vyra on iPhone while keeping the spoken wording. Review long words, phrase length and the space around your subject."
 updated: '2026-11-15'
 category: how-to
 platform: iphone

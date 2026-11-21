@@ -292,6 +292,21 @@ Find the moments that make sense without context, such as one step, one opinion,
 **Can I post the same short on TikTok and Reels?**
 Yes. Export a clean file with no watermark from another app, and rewrite the caption for each platform.
 
+## Ideas for a specific subject
+
+- [Photography video ideas that show how you made the image](/ideas/photography-video-ideas)
+- [Stop-motion behind-the-scenes video ideas](/ideas/stop-motion-behind-the-scenes-ideas)
+- [Language-learning video ideas from your own practice](/ideas/language-learning-video-ideas)
+- [Repair video ideas that show the fault and the result](/ideas/repair-video-ideas)
+- [Book review video ideas built around your own reading](/ideas/book-review-video-ideas)
+- [Walking-tour video ideas for one route or place](/ideas/walking-tour-video-ideas)
+- [Study video ideas with a clear task and stopping point](/ideas/study-video-ideas)
+- [Dance rehearsal video ideas from takes you already filmed](/ideas/dance-rehearsal-video-ideas)
+- [Gardening video ideas from changes you have recorded](/ideas/gardening-video-ideas)
+- [Cooking prep video ideas that keep the useful steps visible](/ideas/cooking-prep-video-ideas)
+- [Board-game video ideas for one turn or decision](/ideas/board-game-video-ideas)
+- [Skateboarding video ideas from a filmed session](/ideas/skateboarding-video-ideas)
+
 ## Related
 
 - /how-to/grow-on-youtube-shorts

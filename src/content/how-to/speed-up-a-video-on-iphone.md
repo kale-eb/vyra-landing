@@ -57,6 +57,8 @@ Checked November 16, 2026. [Apple Photos help](https://support.apple.com/en-gb/g
 
 ## Related
 
+- /how-to/slow-down-one-section-of-video-on-iphone
+
 - /ai-video-editor-app
 - /how-to/shorten-video-without-speeding-up-speech-on-iphone
 - /how-to/export-video-to-photos-on-iphone

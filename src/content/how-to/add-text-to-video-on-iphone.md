@@ -55,6 +55,8 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/time-text-to-a-reveal-on-iphone
+
 - /how-to/add-logo-to-video-on-iphone
 
 - /how-to/change-video-title-font-on-iphone

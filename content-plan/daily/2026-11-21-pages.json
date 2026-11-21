@@ -1,0 +1,182 @@
+[
+  {
+    "url": "/how-to/choose-caption-language-on-iphone",
+    "title": "How to choose the spoken language for captions on iPhone",
+    "job": "In Vyra on iPhone, tap Captions, choose the audio under Generate from and set Spoken language before generating the captions. Choose the language being spoken in the recording.",
+    "source": "Captions",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/add-captions-to-videos-on-iphone"
+  },
+  {
+    "url": "/how-to/remove-captions-from-one-section-on-iphone",
+    "title": "How to remove captions from one section of a video on iPhone",
+    "job": "In Vyra on iPhone, select the unwanted caption on the timeline and use Delete. Keep the underlying video and audio selected separately so the spoken recording stays in the edit.",
+    "source": "Captions",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/keep-captions-clear-of-subject-on-iphone"
+  },
+  {
+    "url": "/how-to/make-an-l-cut-on-iphone",
+    "title": "How to let speech continue over the next shot on iPhone",
+    "job": "To make an L-cut in Vyra on iPhone, keep the outgoing shot\u2019s speech playing while the picture changes to the next shot. Ask chat to preserve the complete sentence and change only the visible footage at that point.",
+    "source": "Audio features and Editing tools on iPhone",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/make-a-j-cut-on-iphone"
+  },
+  {
+    "url": "/how-to/lower-music-during-speech-on-iphone",
+    "title": "How to lower music only during speech on iPhone",
+    "job": "In Vyra on iPhone, ask chat to lower the music during the spoken passages and bring it back gradually in the gaps. Keep the voice track unchanged and review every transition by listening.",
+    "source": "Audio features",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/adjust-video-volume-on-iphone"
+  },
+  {
+    "url": "/how-to/slow-down-one-section-of-video-on-iphone",
+    "title": "How to slow down one section of a video on iPhone",
+    "job": "In Vyra on iPhone, identify the exact action and ask chat to slow only that section. Keep the surrounding clips at their original pace and check the sound at both boundaries.",
+    "source": "Audio features",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/speed-up-a-video-on-iphone"
+  },
+  {
+    "url": "/how-to/keep-music-playing-across-video-cuts-on-iphone",
+    "title": "How to keep one music track playing across video cuts on iPhone",
+    "job": "In Vyra on iPhone, add the chosen music once and ask chat to keep it continuous beneath the sequence of clips. Review each picture cut for duplicate music or a jump in the recording.",
+    "source": "Audio features",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/add-music-to-video-on-iphone"
+  },
+  {
+    "url": "/how-to/time-text-to-a-reveal-on-iphone",
+    "title": "How to make video text appear at the reveal on iPhone",
+    "job": "In Vyra on iPhone, add the text and ask chat to start it at the moment the result becomes visible. Specify when the text should disappear so it does not cover the setup or the next section.",
+    "source": "Getting the best AI results",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/add-text-to-video-on-iphone"
+  },
+  {
+    "url": "/how-to/find-video-ideas-in-vyra-on-iphone",
+    "title": "How to find video ideas inside Vyra on iPhone",
+    "job": "In Vyra for iPhone version 0.1.9, open the Ideas tab to browse short videos picked for your niche, or tap the Vyra button on a main screen to ask for ideas. Choose something you can make with your own footage.",
+    "source": "App Store version 0.1.9 release notes",
+    "demand": "editorial hypothesis",
+    "type": "guide",
+    "existingParent": "/how-to/turn-reference-into-editing-brief-on-iphone"
+  },
+  {
+    "url": "/ideas/photography-video-ideas",
+    "title": "Photography video ideas that show how you made the image",
+    "job": "Show the decision behind one photograph. A change in framing or light gives the viewer something specific to compare.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/stop-motion-behind-the-scenes-ideas",
+    "title": "Stop-motion behind-the-scenes video ideas",
+    "job": "Pair a finished stop-motion moment with the physical change that made it happen. Use your rendered animation as supplied footage and show the setup separately.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/language-learning-video-ideas",
+    "title": "Language-learning video ideas from your own practice",
+    "job": "Build a language-learning video around one real practice moment. Let the recorded phrase remain audible and keep any explanation clearly separate from the transcription.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/repair-video-ideas",
+    "title": "Repair video ideas that show the fault and the result",
+    "job": "A repair video needs a visible fault and a result that can be checked. Film those from comparable angles and keep any limits of the repair in your explanation.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/book-review-video-ideas",
+    "title": "Book review video ideas built around your own reading",
+    "job": "Choose one observation you can explain from your reading. A clear reason to recommend or hesitate helps more than a fast stack of covers.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/walking-tour-video-ideas",
+    "title": "Walking-tour video ideas for one route or place",
+    "job": "Give a walking video a route the viewer can follow. Use a beginning, a recognizable stop and an ending rather than implying that unrelated locations sit beside each other.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/study-video-ideas",
+    "title": "Study video ideas with a clear task and stopping point",
+    "job": "Show the task you started, the point where you checked your understanding and the work you actually finished. A tidy desk alone cannot show what you learned.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/dance-rehearsal-video-ideas",
+    "title": "Dance rehearsal video ideas from takes you already filmed",
+    "job": "Choose one phrase of movement and let it play long enough to follow. Use the rehearsal recordings to show a decision without presenting an edited sequence as one continuous take.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/gardening-video-ideas",
+    "title": "Gardening video ideas from changes you have recorded",
+    "job": "Use the same view across recorded dates to show a change in the garden. Label the actual interval instead of making a short montage stand in for unrecorded growth.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/cooking-prep-video-ideas",
+    "title": "Cooking prep video ideas that keep the useful steps visible",
+    "job": "Give a cooking-prep video one practical outcome. Keep the step or texture change the viewer needs to see, even when the rest of the preparation is shortened.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/board-game-video-ideas",
+    "title": "Board-game video ideas for one turn or decision",
+    "job": "Explain one decision at the table. Keep the relevant pieces visible and distinguish your personal strategy from the game\u2019s official rules.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  },
+  {
+    "url": "/ideas/skateboarding-video-ideas",
+    "title": "Skateboarding video ideas from a filmed session",
+    "job": "Keep the full recorded attempt visible when the landing matters. A sequence can show effort and context without using cuts that make an incomplete attempt look complete.",
+    "source": "App Store native editing listing",
+    "demand": "editorial hypothesis",
+    "type": "ideas",
+    "existingParent": "/ideas/youtube-shorts-ideas"
+  }
+]
