@@ -43,6 +43,8 @@ Checked November 17, 2026. Vyra's in-app help documents Extract audio in the iPh
 
 ## Related
 
+- /how-to/make-an-l-cut-on-iphone
+
 - /how-to/extract-audio-from-video-on-iphone
 - /how-to/add-transitions-to-videos-on-iphone
 - /glossary/l-cut

@@ -1,7 +1,7 @@
 ---
 title: How to add captions to videos on iPhone
 description: "Generate captions from your footage in the Vyra iPhone app, check the words, style the track and save the captioned video to Photos."
-updated: '2026-11-12'
+updated: '2026-11-21'
 category: how-to
 platform: iphone
 level: beginner
@@ -80,6 +80,9 @@ The examples above show captioned Vyra edits. They are not recordings of the mob
 
 ## FAQ
 
+**Can I choose the spoken language before generating captions?**
+Yes. In Vyra on iPhone, tap Captions, choose the audio source and set Spoken language before generating. Use the language spoken in the recording and review the transcript afterwards. This setting does not establish translation or dubbing.
+
 **Can Vyra automatically caption a video on iPhone?**
 Yes. Add your video and ask for captions in chat. Vyra generates captions from the spoken audio, and you can review and style them before exporting.
 
@@ -109,6 +112,9 @@ No. Vyra's native iPhone app has built-in chat. External AI integrations are a s
 The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. [Apple's Live Captions guide](https://support.apple.com/en-ae/guide/iphone/iphe0990f7bb/27/ios/27) describes the transcription displayed during listening. Checked November 12, 2026.
 
 ## Related
+
+- /how-to/choose-caption-language-on-iphone
+- /how-to/remove-captions-from-one-section-on-iphone
 
 - /how-to/caption-only-voiceover-on-iphone
 
