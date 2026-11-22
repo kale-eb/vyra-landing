@@ -49,6 +49,9 @@ Checked November 19, 2026. Vyra’s in-app help sections “Editing tools on iPh
 
 ## Related
 
+- /how-to/adjust-one-color-in-video-on-iphone
+- /how-to/make-black-and-white-video-on-iphone
+
 - /ai-video-editor-app
 - /how-to/brighten-dark-video-on-iphone
 - /how-to/apply-effect-to-multiple-clips-on-iphone
