@@ -317,6 +317,17 @@ A visible change from start to finish, shown fast. Reveals, recaps, and throwbac
 - [Craft market video ideas before and after the doors open](/ideas/craft-market-video-ideas)
 - [Art exhibition video ideas for the work and the room](/ideas/art-exhibition-video-ideas)
 
+## Ideas for a particular part of the work
+
+- [First commission video ideas from the work you made](/ideas/first-commission-video-ideas)
+- [Video ideas for an art attempt that did not work](/ideas/failed-art-attempt-video-ideas)
+- [Material-test video ideas with a fair comparison](/ideas/material-test-video-ideas)
+- [Workshop recap video ideas from footage you can share](/ideas/workshop-recap-video-ideas)
+- [Packing art order video ideas that keep private details out](/ideas/packing-art-orders-video-ideas)
+- [Open studio video ideas for the work and the room](/ideas/open-studio-video-ideas)
+- [Portfolio selection video ideas that explain your choices](/ideas/portfolio-selection-video-ideas)
+- [Art project cost video ideas using your own records](/ideas/art-project-cost-video-ideas)
+
 ## Related
 
 - /formats/process-video

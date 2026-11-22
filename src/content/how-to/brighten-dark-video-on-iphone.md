@@ -49,6 +49,9 @@ Checked November 19, 2026. Vyra’s in-app help sections “Editing tools on iPh
 
 ## Related
 
+- /how-to/reduce-bright-highlights-on-iphone
+- /how-to/lift-video-shadows-on-iphone
+
 - /ai-video-editor-app
 - /how-to/apply-effect-to-multiple-clips-on-iphone
 - /how-to/export-video-to-photos-on-iphone

@@ -1,0 +1,222 @@
+[
+  {
+    "url": "/how-to/make-black-and-white-video-on-iphone",
+    "title": "How to make a black-and-white video on iPhone",
+    "reader": "Creator choosing a monochrome look",
+    "job": "In Vyra on iPhone, select the intended clip and ask chat to apply a grayscale look. Preview the result before applying the same treatment to the rest of the sequence.",
+    "source": "Effects and Color and the Adjust panel",
+    "existingParent": "/how-to/fix-video-white-balance-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/reduce-bright-highlights-on-iphone",
+    "title": "How to reduce bright highlights in a video on iPhone",
+    "reader": "Person correcting a bright window in an indoor shot",
+    "job": "In Vyra on iPhone, select the clip and ask chat to reduce its highlights while keeping the subject\u2019s overall brightness usable. Check the brightest area for recorded detail before making a stronger adjustment.",
+    "source": "Color and the Adjust panel",
+    "existingParent": "/how-to/brighten-dark-video-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/lift-video-shadows-on-iphone",
+    "title": "How to brighten video shadows without washing out the whole shot",
+    "reader": "Maker showing detail in a dark recording",
+    "job": "In Vyra on iPhone, ask chat to lift the shadows in the selected clip while keeping the brighter parts of the picture stable. Review dark textures and noise before increasing the adjustment.",
+    "source": "Color and the Adjust panel",
+    "existingParent": "/how-to/brighten-dark-video-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/adjust-one-color-in-video-on-iphone",
+    "title": "How to adjust one color range in a video on iPhone",
+    "reader": "Product creator correcting one vivid color range",
+    "job": "In Vyra on iPhone, open the selected clip\u2019s Adjust controls and HSL tab, or ask chat to change the intended color range. Review other objects that share that color before keeping the change.",
+    "source": "Color and the Adjust panel",
+    "existingParent": "/how-to/fix-video-white-balance-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/reduce-low-rumble-in-video-on-iphone",
+    "title": "How to reduce low rumble in video audio on iPhone",
+    "reader": "Speaker with low mechanical rumble in a recording",
+    "job": "In Vyra on iPhone, select the recording and use the Audio category in Add effect, or ask chat for a gentle low-cut filter. Compare the voice before and after so the treatment does not make it sound thin.",
+    "source": "Audio features",
+    "existingParent": "/how-to/adjust-video-volume-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/add-reverb-to-audio-on-iphone",
+    "title": "How to add reverb to a video\u2019s audio on iPhone",
+    "reader": "Creator treating an isolated sound with reverb",
+    "job": "In Vyra on iPhone, select the intended recording, open Effects and its Audio category, then use Reverb or ask chat for the sound you want. Keep speech understandable and compare the ending of each phrase.",
+    "source": "Audio features",
+    "existingParent": "/how-to/keep-natural-sound-in-video-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/add-speech-bubble-to-video-on-iphone",
+    "title": "How to add a speech bubble to a video on iPhone",
+    "reader": "Skit creator adding a short thought bubble",
+    "job": "In Vyra on iPhone, open Elements to choose a text bubble, or ask chat to add one with your wording and timing. Position it beside the subject and review where its pointer appears.",
+    "source": "Elements and Editing tools on iPhone",
+    "existingParent": "/how-to/highlight-detail-with-stickers-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/how-to/make-video-end-card-on-iphone",
+    "title": "How to make a readable video end card on iPhone",
+    "reader": "Artist adding a readable next action at the ending",
+    "job": "In Vyra on iPhone, use the final shot or a supplied image as the background and add a short text instruction. Ask chat to hold that ending long enough to read before exporting.",
+    "source": "App Store native text and timeline editing",
+    "existingParent": "/how-to/add-text-to-video-on-iphone",
+    "type": "guide",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/answers/can-you-still-download-apple-clips",
+    "title": "Can you still download Apple Clips for iPhone?",
+    "reader": "New iPhone user following an older Apple Clips tutorial",
+    "job": "Apple says Clips stopped being updated and became unavailable to new users on October 10, 2025. People who downloaded Clips previously can still redownload it through their Apple account, according to Apple\u2019s support guidance.",
+    "source": "[Apple\u2019s Clips guidance](https://support.apple.com/en-am/123359) supports availability and saving options. The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) supports importing supplied footage and generating captions.",
+    "existingParent": "/how-to/add-captions-to-videos-on-iphone",
+    "type": "answer",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/answers/iphone-photos-caption-vs-video-subtitles",
+    "title": "Does Add a Caption in Photos put subtitles on my video?",
+    "reader": "Person whose Photos note is missing from the played video",
+    "job": "The caption field in iPhone Photos is descriptive metadata for finding a photo or video. It does not place timed words into the video picture. To share visible subtitles, add them in a video editor and export a captioned copy.",
+    "source": "[Apple\u2019s photo-information guide](https://support.apple.com/en-asia/guide/iphone/iph0edb9c18f/27/ios/27) supports the metadata purpose. The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) supports generated captions and export.",
+    "existingParent": "/answers/are-iphone-live-captions-saved-in-my-video",
+    "type": "answer",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/answers/can-you-edit-burned-in-video-captions",
+    "title": "Can I change captions already burned into a video?",
+    "reader": "Editor correcting a word after a captioned export",
+    "job": "Captions burned into a video are part of its image. To change the wording cleanly, return to the editable project or a source recording without those words, correct the caption track and export again.",
+    "source": "[HandBrake\u2019s subtitle documentation](https://handbrake.fr/docs/en/latest/advanced/subtitles.html) supports the hard-burn versus selectable-track distinction. The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) supports caption and timeline editing, not automatic burned-text removal.",
+    "existingParent": "/how-to/revise-video-after-export-on-iphone",
+    "type": "answer",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/answers/can-i-import-a-lut-on-vyra-iphone",
+    "title": "Can I import a custom LUT into Vyra on iPhone?",
+    "reader": "iPhone creator with a custom .cube LUT file",
+    "job": "Vyra\u2019s current help says custom .cube LUT import is available on the web, not directly in the iPhone or Android app. A LUT added to the project on the web still appears and exports from the iPhone app.",
+    "source": "Vyra\u2019s current in-app help, Color and the Adjust panel, supports the platform limitation and native controls. The [App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) supports general native editing.",
+    "existingParent": "/how-to/fix-video-white-balance-on-iphone",
+    "type": "answer",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/first-commission-video-ideas",
+    "title": "First commission video ideas from the work you made",
+    "reader": "Artist documenting an early commission",
+    "job": "Build a commission video around one decision you can show. Use your own work and describe the brief without exposing private client information.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/failed-art-attempt-video-ideas",
+    "title": "Video ideas for an art attempt that did not work",
+    "reader": "Maker explaining an unsuccessful attempt",
+    "job": "Show the result that failed and the part of the process that helps explain it. Keep what you know separate from what you are still testing.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/material-test-video-ideas",
+    "title": "Material-test video ideas with a fair comparison",
+    "reader": "Artist comparing recorded material samples",
+    "job": "Keep the conditions of a material comparison visible. Show the same kind of mark or action so viewers can see what changed and what stayed the same.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/workshop-recap-video-ideas",
+    "title": "Workshop recap video ideas from footage you can share",
+    "reader": "Participant making a workshop recap",
+    "job": "Give a workshop recap one observable takeaway. Use footage you have permission to share and keep participant work attached to the right person or anonymous.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/packing-art-orders-video-ideas",
+    "title": "Packing art order video ideas that keep private details out",
+    "reader": "Maker filming an order being packed",
+    "job": "Show the care and sequence of packing while keeping addresses, order numbers and private notes outside the published frame.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/open-studio-video-ideas",
+    "title": "Open studio video ideas for the work and the room",
+    "reader": "Artist introducing an open studio",
+    "job": "Help the viewer understand where to look in the studio. Use a wider view for context and a detail that explains one piece of work.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/portfolio-selection-video-ideas",
+    "title": "Portfolio selection video ideas that explain your choices",
+    "reader": "Creator selecting work for a portfolio",
+    "job": "Explain why a piece belongs in a particular portfolio. Give each example enough time to show the skill or decision you are discussing.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  },
+  {
+    "url": "/ideas/art-project-cost-video-ideas",
+    "title": "Art project cost video ideas using your own records",
+    "reader": "Maker explaining recorded project costs",
+    "job": "Use costs you actually recorded and label what is included. Keep materials, time and an eventual sale price distinct so the comparison makes sense.",
+    "source": "App Store native editing listing",
+    "existingParent": "/ideas/artist-content-ideas",
+    "type": "ideas",
+    "demand": "editorial hypothesis; product facts verified separately",
+    "nextAction": "Review the task and use the appropriate native or web workflow"
+  }
+]

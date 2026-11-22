@@ -1,7 +1,7 @@
 ---
 title: "AI video editor for your own footage on iPhone"
 description: "Vyra is an AI video editor app for iPhone. Describe the edit in chat, get a draft from your clips, then fine-tune it on a real timeline. Free to download."
-updated: '2026-11-21'
+updated: '2026-11-22'
 category: product
 platform: iphone
 facts:
@@ -126,6 +126,9 @@ Pick the job that matches your footage. Each guide includes an editing sequence,
 Keep your project and original clips while you check the problem. Start with [upload progress](/answers/why-is-my-video-upload-stuck) or [export and saving on iPhone](/answers/why-cant-i-export-video-on-iphone). For a finished file, compare [sound](/answers/why-does-my-exported-video-have-no-sound), [caption timing](/answers/why-are-my-captions-out-of-sync) and [image quality](/answers/why-does-my-exported-video-look-blurry) separately. [Vyra support](/app-support) can help if the problem remains.
 
 ## FAQ
+
+**Can I import a custom .cube LUT directly on iPhone?**
+Vyra’s current help limits custom LUT import to the web. A LUT added to the project on the web still appears and exports from iPhone. Use native color adjustments for other corrections.
 
 **Where can I find video ideas in the iPhone app?**
 Vyra for iPhone version 0.1.9 adds an Ideas tab with short videos picked for your niche. You can also tap the Vyra button on a main screen to ask for ideas. Use your own footage for the edit. A reference video’s view count does not predict the performance of your video.
@@ -266,6 +269,29 @@ Yes. Share it to Vyra, add your own footage and say what to follow, such as paci
 ## Sources checked for this update
 
 The [official App Store version history](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012), checked November 21, 2026, documents the Ideas tab and assistant suggestions in version 0.1.9. The new FAQ describes that release.
+
+## More specific editing questions and filming jobs
+
+- [How to make a black-and-white video on iPhone](/how-to/make-black-and-white-video-on-iphone)
+- [How to reduce bright highlights in a video on iPhone](/how-to/reduce-bright-highlights-on-iphone)
+- [How to brighten video shadows without washing out the whole shot](/how-to/lift-video-shadows-on-iphone)
+- [How to adjust one color range in a video on iPhone](/how-to/adjust-one-color-in-video-on-iphone)
+- [How to reduce low rumble in video audio on iPhone](/how-to/reduce-low-rumble-in-video-on-iphone)
+- [How to add reverb to a video’s audio on iPhone](/how-to/add-reverb-to-audio-on-iphone)
+- [How to add a speech bubble to a video on iPhone](/how-to/add-speech-bubble-to-video-on-iphone)
+- [How to make a readable video end card on iPhone](/how-to/make-video-end-card-on-iphone)
+- [Can you still download Apple Clips for iPhone?](/answers/can-you-still-download-apple-clips)
+- [Does Add a Caption in Photos put subtitles on my video?](/answers/iphone-photos-caption-vs-video-subtitles)
+- [Can I change captions already burned into a video?](/answers/can-you-edit-burned-in-video-captions)
+- [Can I import a custom LUT into Vyra on iPhone?](/answers/can-i-import-a-lut-on-vyra-iphone)
+- [First commission video ideas from the work you made](/ideas/first-commission-video-ideas)
+- [Video ideas for an art attempt that did not work](/ideas/failed-art-attempt-video-ideas)
+- [Material-test video ideas with a fair comparison](/ideas/material-test-video-ideas)
+- [Workshop recap video ideas from footage you can share](/ideas/workshop-recap-video-ideas)
+- [Packing art order video ideas that keep private details out](/ideas/packing-art-orders-video-ideas)
+- [Open studio video ideas for the work and the room](/ideas/open-studio-video-ideas)
+- [Portfolio selection video ideas that explain your choices](/ideas/portfolio-selection-video-ideas)
+- [Art project cost video ideas using your own records](/ideas/art-project-cost-video-ideas)
 
 ## Related
 
