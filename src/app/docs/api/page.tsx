@@ -45,6 +45,8 @@ const SECTIONS = [
   ["retries", "Retrying safely"],
   ["errors", "Errors"],
   ["prices", "Prices"],
+  ["balance", "Paying from a balance"],
+  ["check-balance", "Checking your balance"],
   ["price-examples", "Price examples"],
 ] as const;
 
@@ -104,9 +106,10 @@ export default function ApiDocsPage() {
           <section>
             <H2 id="get-a-key">Get a key</H2>
             <p className="mb-4">
-              The API is open to accounts we have approved. To ask for access, email{" "}
-              <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A> from the address of your Vyra
-              account.
+              Anyone with a Vyra account can use the API. You add funds to a balance and each video
+              is paid from it; see <a href="#balance" className="text-[var(--brand-blue)] underline underline-offset-2">paying from a balance</a>.
+              No account yet? <A href="https://app.usevyra.com/?for=api">Sign up here</A> and you are
+              taken straight to API setup.
             </p>
             <p className="mb-2">Every call goes to one base address over HTTPS, under <C>/v1</C>:</p>
             <Code>{API_BASE}</Code>
@@ -122,17 +125,29 @@ export VYRA_KEY=vyra_live_...`}</Code>
                 <A href="https://app.usevyra.com/settings">Settings &rarr; Developer</A>.
               </li>
               <li>
-                Name a key, choose how many videos it may make at once, and press <strong>Create key</strong>.
+                Name the key and press <strong>Create key</strong>. You can also set how many videos
+                it may make at once; if you leave that out, it may use your account&apos;s whole limit.
               </li>
               <li>
                 Copy the key and its webhook secret. They are shown once and cannot be shown again.
               </li>
+              <li>
+                Add funds on the same page when you need them.
+              </li>
             </ol>
+            <p className="mb-4">
+              While the launch offer lasts, the first 100 accounts get $20 of credit with their first
+              key. It is used before your own funds and runs out 30 days after you get it.
+            </p>
             <p className="mb-2">Send the key with every call:</p>
             <Code>{`Authorization: Bearer vyra_live_...`}</Code>
-            <p className="mt-4">
+            <p className="mt-4 mb-4">
+              Call the API from your server. It does not answer browsers (it sends no CORS headers),
+              and a key put in a web page can be copied by anyone who opens it.
+            </p>
+            <p>
               You can hold up to 10 keys and revoke any of them from the same page. Settings &rarr;
-              Developer also shows your usage by key and by day, what you owe so far, and every video
+              Developer also shows your balance, your usage by key and by day, and every video
               with what you sent, what it cost and its files. Any key on your account can read,
               revise and re-export a video another of your keys made.
             </p>
@@ -291,12 +306,19 @@ export VYRA_KEY=vyra_live_...`}</Code>
               </li>
               <li>
                 <strong className="text-[var(--foreground)]">Ask for what your footage holds.</strong>{" "}
-                A request for something the clips do not show fails with <C>CANNOT_BE_MADE</C> and costs nothing.
+                Something the clips do not show is filled with stock footage, or left out and listed in{" "}
+                <C>notes.did_not_match</C>. If the video cannot be made without it, it fails with{" "}
+                <C>CANNOT_BE_MADE</C> and costs nothing.
               </li>
             </ul>
-            <p className="mt-4">
+            <p className="mt-4 mb-4">
               The agent tells you what it assumed and what it could not do in <C>notes</C>. Read{" "}
               <C>notes.did_not_match</C> before you pass a video on to someone.
+            </p>
+            <p>
+              When your footage lacks a shot the video needs, the agent may add stock footage or images,
+              and says so in <C>notes.assumed</C>. There is no field to turn this off. If the video must
+              use only your own footage, say so in the prompt.
             </p>
           </section>
 
@@ -389,8 +411,10 @@ export VYRA_KEY=vyra_live_...`}</Code>
               <C>video</C> is what <C>GET /v1/videos/{"{id}"}</C> answers. Events:{" "}
               <C>video.completed</C>, <C>video.failed</C>, <C>video.revised</C>,{" "}
               <C>video.revision_failed</C>, <C>video.exported</C>, <C>video.export_failed</C>. Answer
-              with a 2xx. Anything else is tried again, further apart each time, for about a day. The
-              address must be on the public internet. The two revision events also carry{" "}
+              with a 2xx within 10 seconds. Anything else is tried again, 12 attempts in all: the
+              second 30 seconds after the first, then twice as long each time, up to an hour between
+              attempts. The last attempt is about 5 hours after the first. The address must be https and
+              on the public internet, and redirects are not followed. The two revision events also carry{" "}
               <C>revision_id</C>.
             </p>
             <p className="mb-2">
@@ -517,8 +541,8 @@ function fromVyra(rawBody, header, secret) {
             <Table
               head={["Limit", "Amount"]}
               rows={[
-                ["Videos being made at once, per account", "25. Ask us if you need more."],
-                ["Videos being made at once, per key", "5 by default. Set it when you create the key or change it later in Settings → Developer. Your keys' limits together cannot pass your account's."],
+                ["Videos being made at once, per account", "3 to 50, set by how much you have added in all. See paying from a balance."],
+                ["Videos being made at once, per key", "No limit of its own unless you set one in Settings → Developer."],
                 ["Calls a minute, per key", "3,000"],
                 ["Request body", "1 MB"],
                 ["Footage", "200 entries, 5 hours of video"],
@@ -542,9 +566,9 @@ function fromVyra(rawBody, header, secret) {
             <H2 id="retries">Retrying safely</H2>
             <p className="mb-4">
               Send <C>Idempotency-Key: &lt;your own id for this video&gt;</C> with every create (1 to
-              255 characters, no spaces). If
-              the same key arrives again within a day, after a timeout or a dropped connection, you
-              get the video the first call made, with <C>Idempotent-Replayed: true</C>, and nothing more
+              255 characters, no spaces). If the same <C>Idempotency-Key</C> value arrives again from
+              the same API key within a day, after a timeout or a dropped connection, you get the video
+              the first call made, with <C>Idempotent-Replayed: true</C>, and nothing more
               is made or charged.
             </p>
             <p className="mb-4">
@@ -552,12 +576,12 @@ function fromVyra(rawBody, header, secret) {
               you saw the answer.
             </p>
             <p className="mb-4">
-              To try again after a video failed, use a new key: the old one keeps answering with the
-              failed video.
+              To try again after a video failed, use a new <C>Idempotency-Key</C> value: the old one
+              keeps answering with the failed video.
             </p>
             <p>
-              A revision takes the header the same way. The same key sent again for the same video
-              within a day answers with the first revision&apos;s <C>revision_id</C>, whether it is
+              A revision takes the header the same way. The same <C>Idempotency-Key</C> value from the
+              same API key, sent again for the same video within a day, answers with the first revision&apos;s <C>revision_id</C>, whether it is
               under way, finished or failed, and nothing more is started or charged.
             </p>
           </section>
@@ -573,6 +597,7 @@ function fromVyra(rawBody, header, secret) {
                 rows={[
                   ["400", "The request cannot be taken as sent", <Codes key="c" list={["FOOTAGE_REQUIRED", "PROMPT_OR_REFERENCE_REQUIRED", "INVALID_SOURCE", "INVALID_MAX_SECONDS", "INVALID_SIZE", "UNKNOWN_FIELD", "FILE_NOT_UPLOADED", "FILE_ALREADY_USED", "VARIATION_SCOPE_MISMATCH", "CUT_REQUIRED", "INVALID_VIDEO_IDS"]} />],
                   ["401", "No key, or a key we do not know", <Codes key="c" list={["API_KEY_REQUIRED", "API_KEY_INVALID"]} />],
+                  ["402", "Your balance does not cover the fee", <Codes key="c" list={["INSUFFICIENT_BALANCE"]} />],
                   ["404", "No such video on your account", <Codes key="c" list={["VIDEO_NOT_FOUND"]} />],
                   ["409", "The video is busy or not finished", <Codes key="c" list={["VIDEO_BUSY", "VIDEO_NOT_FINISHED"]} />],
                   ["413", "Body over 1 MB", <Codes key="c" list={["INVALID_REQUEST"]} />],
@@ -585,15 +610,24 @@ function fromVyra(rawBody, header, secret) {
             <Table
               head={["Code", "What happened"]}
               rows={[
-                [<Codes key="c" list={["LINK_NOT_FOUND", "LINK_NOT_PUBLIC", "NOT_MEDIA", "DOWNLOAD_FAILED"]} />, "A link could not be brought in. The message names the entry."],
+                [<Codes key="c" list={["LINK_INVALID", "LINK_NOT_FOUND", "LINK_NOT_PUBLIC", "NOT_MEDIA", "DOWNLOAD_FAILED"]} />, "A link could not be brought in. The message names the entry."],
+                [<Codes key="c" list={["FILE_NOT_FOUND"]} />, "An uploaded file is no longer there. Upload it again and start the video again."],
                 [<Codes key="c" list={["PROCESSING_FAILED"]} />, "A file is broken, or is not what its content_type said."],
                 [<Codes key="c" list={["REFERENCE_..."]} />, "An Instagram, TikTok or YouTube video could not be used: private, removed, or over 20 minutes."],
+                [<Codes key="c" list={["IMPORT_LINK_UNAVAILABLE"]} />, "An Instagram, TikTok or YouTube video could not be downloaded just then. Try again in a few minutes, or upload it as a file."],
+                [<Codes key="c" list={["IMPORT_TIMED_OUT"]} />, "The footage took too long to download or be analysed. Try again, with a smaller copy of a very large file."],
+                [<Codes key="c" list={["UNAVAILABLE"]} />, "The footage could not be brought in just then. Start it again."],
                 [<Codes key="c" list={["FOOTAGE_TOO_LONG"]} />, "More than 5 hours of video."],
                 [<Codes key="c" list={["MAX_PRICE_EXCEEDED"]} />, "The footage would cost more than your max_price. Nothing was charged."],
+                [<Codes key="c" list={["INSUFFICIENT_BALANCE"]} />, "Once the footage was measured, your balance did not cover the most the video could cost. Nothing was charged."],
                 [<Codes key="c" list={["CANNOT_BE_MADE"]} />, "The agent could not make it from what was sent, and says why."],
-                [<Codes key="c" list={["AGENT_DID_NOT_FINISH", "RENDER_FAILED", "INTERNAL"]} />, "Ours. Start it again."],
+                [<Codes key="c" list={["AGENT_DID_NOT_FINISH", "RENDER_FAILED", "RENDER_TIMED_OUT", "INTERNAL"]} />, "Ours. Nothing was charged; start it again."],
               ]}
             />
+            <p className="mt-4">
+              Other codes may appear. Each failed video&apos;s <C>message</C> says what happened and
+              what to do.
+            </p>
           </section>
 
           {/* Prices */}
@@ -725,6 +759,70 @@ share = 0.10 for portion, 0.75 for full`}</Code>
               amount as <C>max_price</C> and you are never charged more: footage longer than you
               expected fails the video before any editing, at no charge. What you are charged is what
               was used, shown in <C>price.total</C> once the video is finished.
+            </p>
+          </section>
+
+          {/* Paying from a balance */}
+          <section>
+            <H2 id="balance">Paying from a balance</H2>
+            <p className="mb-4">
+              Add funds in Settings &rarr; Developer, through Stripe, $10 to $5,000 at a time. Nothing
+              is charged that your balance does not cover.
+            </p>
+            <ul className="mb-4 list-disc space-y-2 pl-6">
+              <li>
+                Creating a video or a paid revision holds its fee. Without the fee in your balance the
+                call answers <C>402 INSUFFICIENT_BALANCE</C> and nothing starts.
+              </li>
+              <li>
+                Once your footage is measured, the video holds the most it can cost. If your balance does
+                not cover that, the video fails with <C>INSUFFICIENT_BALANCE</C> and costs nothing.
+              </li>
+              <li>
+                A finished video is charged what it cost and the rest of the hold comes back. A failed
+                video gives the whole hold back.
+              </li>
+              <li>
+                Funds run out a year after you add them. The oldest are spent first.
+              </li>
+              <li>
+                The balance is not refundable. Questions about it go to{" "}
+                <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A>.
+              </li>
+            </ul>
+            <p className="mb-3">
+              How much you have added in all sets how many videos you can have being made at once.
+              Variations of one video count once. Spending does not lower it.
+            </p>
+            <Table
+              head={["Added in all", "Videos at once"]}
+              rows={[
+                ["Under $50", "3"],
+                ["$50", "10"],
+                ["$250", "20"],
+                ["$1,000", "50"],
+              ]}
+            />
+            <p className="mt-4">
+              Need more than 50? Email <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A>.
+              When we are very busy, a new video waits as <C>queued</C> until one finishes.
+            </p>
+          </section>
+
+          {/* Checking your balance */}
+          <section>
+            <H2 id="check-balance">Checking your balance</H2>
+            <p className="mb-2">Any of your keys can read the account&apos;s balance and limit:</p>
+            <Code>{`curl $VYRA_API/v1/balance \\
+  -H "Authorization: Bearer $VYRA_KEY"`}</Code>
+            <Code>{`{ "currency": "USD", "balance": 42.1, "held": 1.19, "paid_in": 60, "tier": 2, "max_running": 10,
+  "next_tier": { "tier": 3, "paid_in": 250, "max_running": 20 } }`}</Code>
+            <p className="mt-3">
+              Amounts are in dollars. <C>balance</C> is what is free to spend, launch credit included.{" "}
+              <C>held</C> is what videos being made are holding. <C>paid_in</C> is everything you have
+              added, less refunds, and sets <C>tier</C>. <C>max_running</C> is how many videos the
+              account may have being made at once. <C>next_tier</C> says what you need to have added
+              for the next tier, and is <C>null</C> at the top one.
             </p>
           </section>
 
