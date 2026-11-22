@@ -42,6 +42,7 @@ const SECTIONS = [
   ["changes", "Changing a finished video"],
   ["usage", "Listing and usage"],
   ["limits", "Limits"],
+  ["balance", "Paying from a balance"],
   ["retries", "Retrying safely"],
   ["errors", "Errors"],
   ["prices", "Prices"],
@@ -104,9 +105,9 @@ export default function ApiDocsPage() {
           <section>
             <H2 id="get-a-key">Get a key</H2>
             <p className="mb-4">
-              The API is open to accounts we have approved. To ask for access, email{" "}
-              <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A> from the address of your Vyra
-              account.
+              Any Vyra account can use the API. Videos are paid from an API balance you add funds to in
+              Settings &rarr; Developer, apart from your Vyra plan and credits (see{" "}
+              <a href="#balance" className="text-[var(--brand-blue)] underline underline-offset-2">Paying from a balance</a>).
             </p>
             <p className="mb-2">Every call goes to one base address over HTTPS, under <C>/v1</C>:</p>
             <Code>{API_BASE}</Code>
@@ -118,8 +119,9 @@ export VYRA_KEY=vyra_live_...`}</Code>
             <p className="mt-4 mb-2">To get a key:</p>
             <ol className="mb-4 list-decimal space-y-2 pl-6">
               <li>
-                Sign in to the Vyra web app and open{" "}
-                <A href="https://app.usevyra.com/settings">Settings &rarr; Developer</A>.
+                <A href="https://app.usevyra.com/signup?for=api">Create a Vyra account</A>. It takes you to
+                Settings &rarr; Developer. If you already have an account, sign in and open{" "}
+                <A href="https://app.usevyra.com/settings/developer">Settings &rarr; Developer</A>.
               </li>
               <li>
                 Name a key, choose how many videos it may make at once, and press <strong>Create key</strong>.
@@ -132,7 +134,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
             <Code>{`Authorization: Bearer vyra_live_...`}</Code>
             <p className="mt-4">
               You can hold up to 10 keys and revoke any of them from the same page. Settings &rarr;
-              Developer also shows your usage by key and by day, what you owe so far, and every video
+              Developer also shows your usage by key and by day, your balance, and every video
               with what you sent, what it cost and its files. Any key on your account can read,
               revise and re-export a video another of your keys made.
             </p>
@@ -517,8 +519,8 @@ function fromVyra(rawBody, header, secret) {
             <Table
               head={["Limit", "Amount"]}
               rows={[
-                ["Videos being made at once, per account", "25. Ask us if you need more."],
-                ["Videos being made at once, per key", "5 by default. Set it when you create the key or change it later in Settings → Developer. Your keys' limits together cannot pass your account's."],
+                ["Videos being made at once, per account", "3 to 50, by your tier (see Paying from a balance). Ask us if you need more."],
+                ["Videos being made at once, per key", "None unless you set one when you create the key or later in Settings → Developer."],
                 ["Calls a minute, per key", "3,000"],
                 ["Request body", "1 MB"],
                 ["Footage", "200 entries, 5 hours of video"],
@@ -534,6 +536,54 @@ function fromVyra(rawBody, header, secret) {
               message says whether it was the key&apos;s limit or the account&apos;s. Wait for one to
               finish and send it again. A call past 3,000 a minute answers <C>429 RATE_LIMITED</C> with{" "}
               <C>Retry-After</C>.
+            </p>
+          </section>
+
+          {/* Paying from a balance */}
+          <section>
+            <H2 id="balance">Paying from a balance</H2>
+            <p className="mb-4">
+              Add funds in Settings &rarr; Developer, by card through Stripe: $10 to $5,000 at a time.
+              You are never charged more than your balance covers.
+            </p>
+            <ul className="mb-4 list-disc space-y-2 pl-6">
+              <li>
+                Creating or revising a video needs its fee in your balance, and holds it. Without it the
+                call answers <C>402 INSUFFICIENT_BALANCE</C> and nothing starts.
+              </li>
+              <li>
+                Once your footage is measured, the video holds the most it can cost. A finished video is
+                charged what it cost and the rest comes back. A failed video is never charged.
+              </li>
+              <li>Funds expire one year after you add them. The oldest funds are spent first.</li>
+              <li>
+                Your balance is not refundable. Questions about it:{" "}
+                <A href="mailto:caleb@usevyra.com">caleb@usevyra.com</A>.
+              </li>
+            </ul>
+            <p className="mb-3">
+              Everything you have added sets how many videos you may have being made at once. Spending
+              does not lower it. Variations of one video count once.
+            </p>
+            <Table
+              head={["Tier", "Added so far", "Videos at once"]}
+              rows={[
+                ["1", "Under $50", "3"],
+                ["2", "$50", "10"],
+                ["3", "$250", "20"],
+                ["4", "$1,000", "50"],
+              ]}
+            />
+            <p className="mt-4 mb-2">
+              Past 50, email us. To read your balance and tier:
+            </p>
+            <Code>{`GET /v1/balance
+
+{ "currency": "USD", "balance": 42.1, "held": 1.19, "paid_in": 60, "tier": 2, "max_running": 10,
+  "next_tier": { "tier": 3, "paid_in": 250, "max_running": 20 } }`}</Code>
+            <p className="mt-3">
+              <C>balance</C> is free to spend, <C>held</C> is what videos being made hold, and{" "}
+              <C>paid_in</C> is everything you have added, less refunds.
             </p>
           </section>
 
@@ -573,6 +623,7 @@ function fromVyra(rawBody, header, secret) {
                 rows={[
                   ["400", "The request cannot be taken as sent", <Codes key="c" list={["FOOTAGE_REQUIRED", "PROMPT_OR_REFERENCE_REQUIRED", "INVALID_SOURCE", "INVALID_MAX_SECONDS", "INVALID_SIZE", "UNKNOWN_FIELD", "FILE_NOT_UPLOADED", "FILE_ALREADY_USED", "VARIATION_SCOPE_MISMATCH", "CUT_REQUIRED", "INVALID_VIDEO_IDS"]} />],
                   ["401", "No key, or a key we do not know", <Codes key="c" list={["API_KEY_REQUIRED", "API_KEY_INVALID"]} />],
+                  ["402", "Your balance does not cover the fee", <Codes key="c" list={["INSUFFICIENT_BALANCE"]} />],
                   ["404", "No such video on your account", <Codes key="c" list={["VIDEO_NOT_FOUND"]} />],
                   ["409", "The video is busy or not finished", <Codes key="c" list={["VIDEO_BUSY", "VIDEO_NOT_FINISHED"]} />],
                   ["413", "Body over 1 MB", <Codes key="c" list={["INVALID_REQUEST"]} />],
