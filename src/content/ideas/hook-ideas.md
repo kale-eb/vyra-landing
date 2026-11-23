@@ -1,7 +1,7 @@
 ---
 title: "Hook ideas: 30 video hooks for TikTok, Reels, and YouTube, with edit prompts"
 description: "30 hook ideas grouped by type, with real examples from reels that hit 8.7M views, and a prompt for each that cuts the opening in Vyra."
-updated: 2026-10-28
+updated: '2026-11-23'
 category: ideas
 facts:
   - "Ideas: 30 hooks in 6 types"
@@ -309,6 +309,9 @@ Open on the question as large text over the first second of the demo. No music u
 
 ## FAQ
 
+**Can I test different openings from the same footage on iPhone?**
+Vyra’s current help documents Variations on iPhone version 0.1.8 and later. Make another version for the alternate opening, keep the rest comparable and preview both before choosing an export. Comparing two edits does not establish which will perform better with an audience.
+
 **How long should a hook be?**
 One to three seconds on TikTok, Reels, and Shorts. On YouTube, the first 15 seconds should pay off the title.
 
@@ -321,7 +324,13 @@ Yes. Move a strong moment from later in the video to the front, then let the vid
 **What's the most common mistake?**
 Starting before the hook. A breath, a "hey guys", or a slow first shot loses people before the hook plays.
 
+## Sources for hook testing
+
+Vyra’s in-app help, Variations, checked November 23, 2026, documents alternate native edits. The [official iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) supports the native editing workflow.
+
 ## Related
+
+- /how-to/try-different-video-hooks-on-iphone
 
 - /how-to/write-a-hook
 - /how-to/edit-for-retention
