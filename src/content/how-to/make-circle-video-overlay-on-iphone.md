@@ -49,6 +49,8 @@ Checked November 19, 2026. Vyra’s in-app help sections “Masks” support the
 
 ## Related
 
+- /how-to/soften-video-overlay-edges-on-iphone
+
 - /ai-video-editor-app
 - /how-to/make-picture-in-picture-on-iphone
 - /how-to/keep-captions-clear-of-subject-on-iphone

@@ -328,6 +328,17 @@ A visible change from start to finish, shown fast. Reveals, recaps, and throwbac
 - [Portfolio selection video ideas that explain your choices](/ideas/portfolio-selection-video-ideas)
 - [Art project cost video ideas using your own records](/ideas/art-project-cost-video-ideas)
 
+## More stories from your own work
+
+- [Artist introduction video ideas beyond a finished-work montage](/ideas/artist-introduction-video-ideas)
+- [Video ideas for answering a question about your creative work](/ideas/answer-audience-question-video-ideas)
+- [Video ideas for revisiting your older artwork](/ideas/revisit-old-artwork-video-ideas)
+- [Video ideas from your first use of an art tool](/ideas/first-use-new-art-tool-video-ideas)
+- [Creative collaboration video ideas that show each contribution](/ideas/creative-collaboration-video-ideas)
+- [Video ideas from a short creative session](/ideas/short-creative-session-video-ideas)
+- [Creative project update video ideas for an ongoing series](/ideas/creative-project-update-video-ideas)
+- [Silent art process video ideas that explain the visible change](/ideas/silent-art-process-video-ideas)
+
 ## Related
 
 - /formats/process-video

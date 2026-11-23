@@ -1,7 +1,7 @@
 ---
 title: "How to undo video edits on iPhone"
 description: "To undo an edit in Vyra on iPhone, use Undo for a recent change or open History to return to an earlier saved version of the project."
-updated: '2026-11-14'
+updated: '2026-11-23'
 category: how-to
 platform: iphone
 level: beginner
@@ -52,6 +52,9 @@ The related reel is an existing creator example. It is not a recording of this e
 
 ## FAQ
 
+**Can History be unavailable while Vyra is editing?**
+Yes. The current help says History is greyed out during an active Vyra edit. Try again when it finishes, then review the intended version before restoring it.
+
 **Does History contain every individual action?**
 The release notes describe earlier project saves. Do not assume every action creates a separate save.
 
@@ -63,9 +66,11 @@ Check Undo and History first. Deleting the project removes the place where you w
 
 ## Sources
 
-The [Vyra App Store listing and version history](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) support the native controls described above. [Caleb’s mobile introduction](https://www.usevyra.com/blog/vyra-mobile) describes the native app and its chat workflow. Checked November 14, 2026. The example brief is a starting point to review with your own material.
+The [Vyra App Store listing and version history](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) support the native controls described above. [Caleb’s mobile introduction](https://www.usevyra.com/blog/vyra-mobile) describes the native app and its chat workflow. Checked November 23, 2026. Vyra’s current Saving and History help confirms the active-editing restriction. The example brief is a starting point to review with your own material.
 
 ## Related
+
+- /answers/why-is-vyra-history-greyed-out-on-iphone
 
 - /how-to/revise-video-after-export-on-iphone
 - /how-to/trim-video-on-iphone

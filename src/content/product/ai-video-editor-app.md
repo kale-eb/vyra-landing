@@ -293,6 +293,28 @@ The [official App Store version history](https://apps.apple.com/us/app/vyra-ai-v
 - [Portfolio selection video ideas that explain your choices](/ideas/portfolio-selection-video-ideas)
 - [Art project cost video ideas using your own records](/ideas/art-project-cost-video-ideas)
 
+## More editing and storytelling jobs
+
+- [How to find and share an earlier Vyra export on iPhone](/how-to/find-and-share-previous-exports-on-iphone)
+- [How to fade a video to black on iPhone](/how-to/fade-video-to-black-on-iphone)
+- [How to add a slow zoom to a photo in a video on iPhone](/how-to/animate-a-photo-on-iphone)
+- [How to animate a text entrance on iPhone](/how-to/animate-video-text-entrance-on-iphone)
+- [How to add a vignette to a video on iPhone](/how-to/add-vignette-to-video-on-iphone)
+- [How to add film grain to a video on iPhone](/how-to/add-film-grain-to-video-on-iphone)
+- [How to sharpen a video on iPhone without harsh edges](/how-to/sharpen-video-on-iphone)
+- [How to soften a video overlay’s edge on iPhone](/how-to/soften-video-overlay-edges-on-iphone)
+- [Why is History greyed out in Vyra on iPhone?](/answers/why-is-vyra-history-greyed-out-on-iphone)
+- [Can Vyra’s AI edit videos offline on iPhone?](/answers/can-vyra-ai-edit-video-offline-on-iphone)
+- [Should I use a reference video or a template in Vyra?](/answers/reference-video-vs-template-in-vyra)
+- [Artist introduction video ideas beyond a finished-work montage](/ideas/artist-introduction-video-ideas)
+- [Video ideas for answering a question about your creative work](/ideas/answer-audience-question-video-ideas)
+- [Video ideas for revisiting your older artwork](/ideas/revisit-old-artwork-video-ideas)
+- [Video ideas from your first use of an art tool](/ideas/first-use-new-art-tool-video-ideas)
+- [Creative collaboration video ideas that show each contribution](/ideas/creative-collaboration-video-ideas)
+- [Video ideas from a short creative session](/ideas/short-creative-session-video-ideas)
+- [Creative project update video ideas for an ongoing series](/ideas/creative-project-update-video-ideas)
+- [Silent art process video ideas that explain the visible change](/ideas/silent-art-process-video-ideas)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone
