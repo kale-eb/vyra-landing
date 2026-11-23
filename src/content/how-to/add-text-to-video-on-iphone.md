@@ -55,6 +55,13 @@ The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/
 
 ## Related
 
+- /how-to/animate-video-text-entrance-on-iphone
+
+- /how-to/add-speech-bubble-to-video-on-iphone
+- /how-to/make-video-end-card-on-iphone
+
+- /how-to/time-text-to-a-reveal-on-iphone
+
 - /how-to/add-logo-to-video-on-iphone
 
 - /how-to/change-video-title-font-on-iphone

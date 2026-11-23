@@ -4,6 +4,9 @@ import { promptOverrideRedirects } from "./src/lib/pseo/overrides";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // The API launch link: usevyra.com/api opens the app's sign-up with the API path chosen. First, so the
+      // bare domain gets it in one hop. Exact path only: /docs/api and anything under /api/ are untouched.
+      { source: "/api", destination: "https://app.usevyra.com/signup?for=api", statusCode: 302 },
       // Canonical host is www. Make the bare-domain redirect permanent (308).
       {
         source: "/:path*",

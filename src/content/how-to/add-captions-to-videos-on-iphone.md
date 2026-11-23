@@ -1,7 +1,7 @@
 ---
 title: How to add captions to videos on iPhone
 description: "Generate captions from your footage in the Vyra iPhone app, check the words, style the track and save the captioned video to Photos."
-updated: '2026-11-12'
+updated: '2026-11-22'
 category: how-to
 platform: iphone
 level: beginner
@@ -29,9 +29,20 @@ For a first edit, use a clip with one speaker and clear audio. Get the transcrip
 5. **Check the whole frame.** Keep captions away from your face, the object you are showing and the area where TikTok or Reels puts its buttons.
 6. **Export and check.** Save the video to Photos or share it from your iPhone. Watch it muted once to check readability, then with sound to check timing.
 
-## Captions for watching or for sharing
+## Choose the text workflow you need
 
-If you only need help following speech while watching, iPhone's Live Captions can display a transcription. To put captions in the video you share, caption the footage in an editor and export it. The [Live Captions and saved-video explanation](/answers/are-iphone-live-captions-saved-in-my-video) helps you choose the right workflow.
+| What you need | Documented workflow |
+| --- | --- |
+| Find a clip in Photos later | Use the description field in the clip’s information |
+| Follow speech playing on your phone | Use Live Captions where available |
+| Add a few typed labels in iMovie | Add and edit a title in the project |
+| Generate timed words from recorded speech in Vyra | Add the clip, generate captions, review and export |
+
+Apple’s [Photos information guide](https://support.apple.com/en-asia/guide/iphone/iph0edb9c18f/27/ios/27) describes a searchable metadata caption. Its [iMovie titles guide](https://support.apple.com/en-sg/guide/imovie-iphone/kna14aaa4db/ios) explains adding and editing title text. Those are different jobs from generating a transcript for an entire recording.
+
+Some older tutorials recommend Apple Clips for Live Titles. [Apple says Clips stopped being updated and became unavailable to new users on October 10, 2025](https://support.apple.com/en-am/123359). Check the current availability before following an older download instruction.
+
+For the words to stay visible when you share the file, review the exported video itself. The [Live Captions explanation](/answers/are-iphone-live-captions-saved-in-my-video) covers the playback distinction.
 
 ## A simple caption style to start with
 
@@ -80,6 +91,18 @@ The examples above show captioned Vyra edits. They are not recordings of the mob
 
 ## FAQ
 
+**Does Add a Caption in Photos put timed words on the video?**
+No. Apple describes that field as metadata for describing and finding the item. Use a video editor to add timed visible captions, then inspect the exported copy.
+
+**Can a new user still download Apple Clips for Live Titles?**
+Apple’s support guidance says Clips became unavailable to new users on October 10, 2025. Previous users can redownload it through their Apple account. Check Apple’s current guidance for your device.
+
+**Can I use an iMovie title for a short label?**
+Yes. Apple documents adding a title to a video clip or photo and editing its wording. A typed label can suit a short name or explanation. For a long spoken recording, choose a workflow that generates and reviews timed captions.
+
+**Can I choose the spoken language before generating captions?**
+Yes. In Vyra on iPhone, tap Captions, choose the audio source and set Spoken language before generating. Use the language spoken in the recording and review the transcript afterwards. This setting does not establish translation or dubbing.
+
 **Can Vyra automatically caption a video on iPhone?**
 Yes. Add your video and ask for captions in chat. Vyra generates captions from the spoken audio, and you can review and style them before exporting.
 
@@ -106,9 +129,16 @@ No. Vyra's native iPhone app has built-in chat. External AI integrations are a s
 
 ## Sources
 
-The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. [Apple's Live Captions guide](https://support.apple.com/en-ae/guide/iphone/iphe0990f7bb/27/ios/27) describes the transcription displayed during listening. Checked November 12, 2026.
+The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. [Apple's Live Captions guide](https://support.apple.com/en-ae/guide/iphone/iphe0990f7bb/27/ios/27) describes the transcription displayed during listening. Checked November 22, 2026. Apple’s linked Photos, iMovie and Clips support pages substantiate the workflow distinctions and availability note.
 
 ## Related
+
+- /answers/can-you-still-download-apple-clips
+- /answers/iphone-photos-caption-vs-video-subtitles
+- /answers/can-you-edit-burned-in-video-captions
+
+- /how-to/choose-caption-language-on-iphone
+- /how-to/remove-captions-from-one-section-on-iphone
 
 - /how-to/caption-only-voiceover-on-iphone
 

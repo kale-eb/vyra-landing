@@ -317,6 +317,28 @@ A visible change from start to finish, shown fast. Reveals, recaps, and throwbac
 - [Craft market video ideas before and after the doors open](/ideas/craft-market-video-ideas)
 - [Art exhibition video ideas for the work and the room](/ideas/art-exhibition-video-ideas)
 
+## Ideas for a particular part of the work
+
+- [First commission video ideas from the work you made](/ideas/first-commission-video-ideas)
+- [Video ideas for an art attempt that did not work](/ideas/failed-art-attempt-video-ideas)
+- [Material-test video ideas with a fair comparison](/ideas/material-test-video-ideas)
+- [Workshop recap video ideas from footage you can share](/ideas/workshop-recap-video-ideas)
+- [Packing art order video ideas that keep private details out](/ideas/packing-art-orders-video-ideas)
+- [Open studio video ideas for the work and the room](/ideas/open-studio-video-ideas)
+- [Portfolio selection video ideas that explain your choices](/ideas/portfolio-selection-video-ideas)
+- [Art project cost video ideas using your own records](/ideas/art-project-cost-video-ideas)
+
+## More stories from your own work
+
+- [Artist introduction video ideas beyond a finished-work montage](/ideas/artist-introduction-video-ideas)
+- [Video ideas for answering a question about your creative work](/ideas/answer-audience-question-video-ideas)
+- [Video ideas for revisiting your older artwork](/ideas/revisit-old-artwork-video-ideas)
+- [Video ideas from your first use of an art tool](/ideas/first-use-new-art-tool-video-ideas)
+- [Creative collaboration video ideas that show each contribution](/ideas/creative-collaboration-video-ideas)
+- [Video ideas from a short creative session](/ideas/short-creative-session-video-ideas)
+- [Creative project update video ideas for an ongoing series](/ideas/creative-project-update-video-ideas)
+- [Silent art process video ideas that explain the visible change](/ideas/silent-art-process-video-ideas)
+
 ## Related
 
 - /formats/process-video
