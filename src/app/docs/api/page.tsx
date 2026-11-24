@@ -216,7 +216,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
           <section>
             <H2 id="footage">Sending footage</H2>
             <p className="mb-4">
-              <C>footage</C> takes up to 200 entries and 5 hours of video in all. Each entry is one of:
+              <C>footage</C> takes up to 200 entries and 3 hours of video in all. Each entry is one of:
             </p>
             <Table
               head={["What you send", "Notes"]}
@@ -545,7 +545,7 @@ function fromVyra(rawBody, header, secret) {
                 ["Videos being made at once, per key", "No limit of its own unless you set one in Settings → Developer."],
                 ["Calls a minute, per key", "3,000"],
                 ["Request body", "1 MB"],
-                ["Footage", "200 entries, 5 hours of video"],
+                ["Footage", "200 entries, 3 hours of video"],
                 ["References", "5"],
                 ["Prompt", "8,000 characters"],
                 ["Variations", "20 cuts"],
@@ -612,12 +612,12 @@ function fromVyra(rawBody, header, secret) {
               rows={[
                 [<Codes key="c" list={["LINK_INVALID", "LINK_NOT_FOUND", "LINK_NOT_PUBLIC", "NOT_MEDIA", "DOWNLOAD_FAILED"]} />, "A link could not be brought in. The message names the entry."],
                 [<Codes key="c" list={["FILE_NOT_FOUND"]} />, "An uploaded file is no longer there. Upload it again and start the video again."],
-                [<Codes key="c" list={["PROCESSING_FAILED"]} />, "A file is broken, or is not what its content_type said."],
+                [<Codes key="c" list={["PROCESSING_FAILED"]} />, "A file is broken, is not what its content_type said, or could not be analysed. Nothing was charged; send it again, or in parts under 3 hours."],
                 [<Codes key="c" list={["REFERENCE_..."]} />, "An Instagram, TikTok or YouTube video could not be used: private, removed, or over 20 minutes."],
                 [<Codes key="c" list={["IMPORT_LINK_UNAVAILABLE"]} />, "An Instagram, TikTok or YouTube video could not be downloaded just then. Try again in a few minutes, or upload it as a file."],
                 [<Codes key="c" list={["IMPORT_TIMED_OUT"]} />, "The footage took too long to download or be analysed. Try again, with a smaller copy of a very large file."],
                 [<Codes key="c" list={["UNAVAILABLE"]} />, "The footage could not be brought in just then. Start it again."],
-                [<Codes key="c" list={["FOOTAGE_TOO_LONG"]} />, "More than 5 hours of video."],
+                [<Codes key="c" list={["FOOTAGE_TOO_LONG"]} />, "More than 3 hours of video in all. Found as soon as the files are measured, before any analysis or editing. Nothing was charged; send it in parts under 3 hours."],
                 [<Codes key="c" list={["MAX_PRICE_EXCEEDED"]} />, "The footage would cost more than your max_price. Nothing was charged."],
                 [<Codes key="c" list={["INSUFFICIENT_BALANCE"]} />, "Once the footage was measured, your balance did not cover the most the video could cost. Nothing was charged."],
                 [<Codes key="c" list={["CANNOT_BE_MADE"]} />, "The agent could not make it from what was sent, and says why."],
