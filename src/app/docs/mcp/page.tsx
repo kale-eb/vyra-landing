@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ClientTabs } from "./client-tabs";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "MCP Server - Vyra Docs",
   description:
     "Connect Claude Code, Codex, or any MCP-compatible agent to control the Vyra video editor.",
+  alternates: { canonical: `${SITE_URL}/docs/mcp` },
 };
 
 export default function McpDocsPage() {

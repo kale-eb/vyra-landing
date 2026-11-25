@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Vyra",
   description:
     "Learn how Vyra collects, uses, and protects your information when you use our video editing platform.",
+  alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
 export default function PrivacyPage() {
@@ -31,7 +33,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mb-12 text-[15px] text-[var(--foreground-subtle)]">
-          Effective Date: November 8, 2026
+          Effective Date: November 25, 2026
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
@@ -305,24 +307,69 @@ export default function PrivacyPage() {
               7. Connected Instagram Accounts
             </h2>
             <p className="mb-3">
-              If you connect an Instagram professional account, we store its
-              Instagram user ID, username, account type and profile picture, plus
-              an access token that we keep encrypted. We use it only to do what you
-              ask:
+              You can connect an Instagram professional account (Creator or
+              Business) in Account &rarr; Instagram. Vyra only reads and acts on
+              the account you connect, and only for you.
             </p>
+            <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
+              What we access
+            </h3>
             <ul className="list-disc space-y-1 pl-6">
-              <li>Publish a video you finished in Vyra as a Reel on your account, when you tap Post or ask the Vyra assistant to post it</li>
-              <li>When you choose &quot;Create a template from your Instagram&quot;, read your own newest Reels to make an editing template in your style. Those Reels are saved to your references like any other reference</li>
-              <li>Keep a record of the posts we publish for you (the Instagram post ID and link)</li>
+              <li>Your profile: Instagram user ID, username, account type, profile picture, follower and post counts. Your access token is stored encrypted.</li>
+              <li>Your posts: captions, type, date, link, cover image, likes and comment counts.</li>
+              <li>Your insights: for your posts, views, reach, saves, shares, average watch time and skip rate. For your account, daily views, reach, accounts engaged, interactions, follows and unfollows and link taps, and the age, gender, country and city breakdown of your followers. Instagram gives these as totals; we don&apos;t receive who viewed or followed you.</li>
+              <li>Comments on your posts: their text, the commenter&apos;s username and Instagram ID, time, likes and whether they&apos;re hidden.</li>
+              <li>Your direct messages: who each conversation is with (their username and, when Instagram gives it, follower count), and the messages&apos; text, sender and time.</li>
+              <li>For automations: whether a message Vyra sent was seen, reactions to messages, buttons or quick replies people tap, and the link or ad that opened a conversation. When an automation is limited to followers, Vyra checks through Instagram whether the person who messaged you follows you.</li>
+            </ul>
+            <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
+              How we get it
+            </h3>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>When you connect, we read your newest 100 posts with their numbers, the comments on your posts from the last 30 days, and your account&apos;s numbers for the last 90 days. We don&apos;t read your past direct messages.</li>
+              <li>After that, Instagram sends Vyra new comments and direct messages as they arrive, and we read more when you or the assistant ask for it.</li>
+            </ul>
+            <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
+              How we use it
+            </h3>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>To publish a finished video as a Reel, only when you tap Post or ask the assistant to post it.</li>
+              <li>So the assistant can tell you how your posts and account are doing, answer questions about your comments and messages, and learn your style. To do that it reads your recent Reels: it downloads them, transcribes what is said and looks at frames. It writes a short profile of your content to your Vyra memory.</li>
+              <li>To reply to, post, hide or delete comments, turn comments off on a post, or send a direct message from your account, only when you ask the assistant to. In Account &rarr; Instagram you choose what the assistant may do; by default it shows you each reply or message and sends it only when you approve.</li>
+              <li>To run automations you set up with the assistant (for example, a private reply to people who comment a word, or a ping when someone asks about prices). Once you approve an automation, Vyra sends its replies and messages from your account each time it applies, only as the approved automation describes. If its messages or actions change, it waits for your approval again.</li>
+              <li>To make an editing template from your newest Reels, when you choose &quot;Create a template from your Instagram&quot;.</li>
             </ul>
             <p className="mt-3">
-              We never read other people&apos;s accounts, and we don&apos;t post
-              anything you didn&apos;t ask for. You can disconnect at any time in
-              Account &rarr; Instagram, which deletes the access token. You can also
-              remove Vyra in Instagram under Settings &rarr; Apps and websites; when
-              Instagram tells us, we delete the connection and our records of your
-              posts. To ask us to delete anything else, contact us at the address
-              below.
+              <span className="font-medium text-[var(--foreground)]">
+                Instagram data is never used for advertising, never sold, and never
+                used to train AI models.
+              </span>
+            </p>
+            <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
+              How long we keep it
+            </h3>
+            <ul className="list-disc space-y-1 pl-6">
+              <li>Your post list and its numbers, your account&apos;s numbers, comments and direct messages are kept while you&apos;re connected, and updated as Instagram sends changes.</li>
+              <li>Downloaded copies of your Reels are deleted after 30 days. Their transcripts are kept until you disconnect.</li>
+              <li>Lists the assistant saves while working (for example, comments it picked out) are deleted after 7 days.</li>
+              <li>A record of each automated action (who it went to, the message, and how they responded) is kept while you&apos;re connected, so you and the assistant can see how automations do.</li>
+            </ul>
+            <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
+              Deleting it
+            </h3>
+            <p>
+              Disconnect in Account &rarr; Instagram, or remove Vyra in
+              Instagram&apos;s Settings &rarr; Apps and websites. Either way we
+              delete your token, your post list and numbers, the comments and
+              direct messages we kept, the downloaded Reels and their transcripts,
+              the lists the assistant saved, and your automations and their
+              records. What you and the assistant said in
+              chat stays in your chat history like any other message, until you
+              delete it or your account. For anything else, email{" "}
+              <a href="mailto:caleb@usevyra.com" className="underline">
+                caleb@usevyra.com
+              </a>
+              .
             </p>
           </section>
 
