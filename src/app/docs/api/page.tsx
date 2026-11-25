@@ -1,25 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { API_BASE, API_DOCS_URL, API_MARKDOWN_URL, BANDS, OPENAPI_URL, SHARE } from "@/lib/vyra-api";
 
 export const metadata: Metadata = {
   title: "Vyra API - Vyra Docs",
   description:
     "Send footage and a prompt, get a finished video back. Calls, limits, webhooks, errors and prices for the Vyra API.",
+  alternates: {
+    canonical: API_DOCS_URL,
+    types: { "text/markdown": API_MARKDOWN_URL },
+  },
 };
 
-/* ── Prices, in cents. The same list and arithmetic the API charges with. ── */
+/* What search engines and API directories read about the API (schema.org WebAPI). The provider is the
+   Organization the root layout describes. */
+const WEB_API_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  "@id": `${API_DOCS_URL}#webapi`,
+  name: "Vyra API",
+  description:
+    "An HTTP API that edits video. You send footage and a prompt or a reference video, and Vyra's editor agent cuts, captions, reframes and exports it, then returns the finished file. Videos are paid from a prepaid balance, and a failed video costs nothing.",
+  url: API_DOCS_URL,
+  documentation: [
+    API_DOCS_URL,
+    { "@type": "CreativeWork", name: "Vyra API reference (Markdown)", url: API_MARKDOWN_URL, encodingFormat: "text/markdown" },
+    { "@type": "CreativeWork", name: "Vyra API OpenAPI 3.1 specification", url: OPENAPI_URL, encodingFormat: "application/vnd.oai.openapi+json" },
+  ],
+  termsOfService: "https://www.usevyra.com/terms",
+  provider: { "@type": "Organization", "@id": "https://www.usevyra.com/#organization", name: "Vyra", url: "https://www.usevyra.com" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    lowPrice: (BANDS[0].low / 100).toFixed(2),
+    highPrice: (BANDS[BANDS.length - 1].high / 100).toFixed(2),
+    url: `${API_DOCS_URL}#prices`,
+    description:
+      "Per video, from a prepaid balance: a fee of $0.50 to $4.50 by length and effort, plus $0.02 a minute of video and $0.01 a minute of audio sent. A failed video costs nothing.",
+  },
+};
 
-const BANDS = [
-  { maxSeconds: 60, low: 50, high: 100 },
-  { maxSeconds: 120, low: 65, high: 125 },
-  { maxSeconds: 300, low: 90, high: 175 },
-  { maxSeconds: 600, low: 125, high: 250 },
-  { maxSeconds: 900, low: 165, high: 325 },
-  { maxSeconds: 1800, low: 225, high: 450 },
-] as const;
-/** Where the API answers. The examples call it $VYRA_API. */
-const API_BASE = "https://vyra-public-api-dd677jigfq-uc.a.run.app";
-const SHARE = { portion: 0.1, full: 0.75 } as const;
+/* ── Prices, in cents. The same list and arithmetic the API charges with (src/lib/vyra-api.ts). ── */
+
 type Effort = "low" | "high";
 type Scope = keyof typeof SHARE;
 
@@ -79,12 +101,22 @@ export default function ApiDocsPage() {
         >
           Vyra API
         </h1>
-        <p className="mb-8 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
+        <p className="mb-4 text-[15px] leading-relaxed text-[var(--foreground-muted)]">
           Send footage and say what you want. Get a finished video back. The API runs the same
           editor agent as the Vyra app: you send clips, images or audio with a prompt or a reference
           video, and the agent cuts, captions, reframes and exports it. Most videos finish in 7 to
           15 minutes.
         </p>
+        <p className="mb-8 text-[14px] leading-relaxed text-[var(--foreground-muted)]">
+          This guide is also available as <A href="/docs/api.md">Markdown</A>, and the API is described
+          in an <A href="/openapi.json">OpenAPI 3.1 spec</A> you can import into Postman or an SDK
+          generator.
+        </p>
+        <link rel="service-desc" type="application/openapi+json" href={OPENAPI_URL} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEB_API_JSON_LD) }}
+        />
 
         <div className="mb-12 rounded-xl border border-[var(--surface-border)] bg-white p-5">
           <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-[var(--foreground-subtle)]">

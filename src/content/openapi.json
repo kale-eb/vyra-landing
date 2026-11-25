@@ -1,0 +1,2425 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vyra API",
+    "version": "1.0.0",
+    "summary": "Send footage and say what you want, and get a finished video back.",
+    "description": "The Vyra API runs the same editor agent as the Vyra app. You send clips, images or audio with a prompt or a reference video, and the agent cuts, captions, reframes and exports it. Most videos finish in 7 to 15 minutes.\n\n**Keys.** Anyone with a Vyra account can make a key in the web app under Settings → Developer (https://app.usevyra.com/settings). Send it with every call as `Authorization: Bearer vyra_live_…`. Call the API from your server: it sends no CORS headers.\n\n**Paying.** Videos are paid from a prepaid balance you add funds to in Settings → Developer ($10 to $5,000 at a time). A video costs a fee set by `max_seconds` and `effort` ($0.50 to $4.50), plus $0.02 a minute of video and $0.01 a minute of audio you send, plus any media the agent generates when you allow it. A failed video costs nothing. While the launch offer lasts, the first 100 accounts get $20 of credit with their first key.\n\n**Limits.** 3,000 calls a minute per key, a 1 MB request body, 200 footage entries and 3 hours of video per request, 5 references, 20 variations, 10 changes to one cut, 10 keys. Videos being made at once: 3 to 50 per account, set by how much you have added in all.\n\n**Errors.** Every refusal is `{ \"error\": { \"code\", \"message\", \"param\" } }`. `message` says what to do and `param` names the field at fault. A video that fails carries `error` with a code such as `LINK_NOT_FOUND`, `FOOTAGE_TOO_LONG`, `MAX_PRICE_EXCEEDED` or `RENDER_FAILED`.\n\nThe full guide, with prices and examples: https://www.usevyra.com/docs/api. The same guide as Markdown: https://www.usevyra.com/docs/api.md.",
+    "termsOfService": "https://www.usevyra.com/terms",
+    "contact": {
+      "name": "Vyra",
+      "url": "https://www.usevyra.com/docs/api",
+      "email": "caleb@usevyra.com"
+    }
+  },
+  "externalDocs": {
+    "description": "Vyra API guide",
+    "url": "https://www.usevyra.com/docs/api"
+  },
+  "servers": [
+    {
+      "url": "https://vyra-public-api-dd677jigfq-uc.a.run.app",
+      "description": "Production. Every call is under /v1."
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Videos",
+      "description": "Make, read, list, revise and re-export videos."
+    },
+    {
+      "name": "Uploads",
+      "description": "Upload files that have no link."
+    },
+    {
+      "name": "Account",
+      "description": "Balance and usage."
+    }
+  ],
+  "paths": {
+    "/v1/uploads": {
+      "post": {
+        "tags": [
+          "Uploads"
+        ],
+        "operationId": "createUpload",
+        "summary": "Get upload links for files that have no link",
+        "description": "For files on your machine. Footage that already has an https link needs no upload. Send each file's bytes with a `PUT` to the `upload.url` returned, with exactly the headers given. A file over 4 GB comes back with `parts`: send that many bytes of the file, in order, to each part's link. There is no call to say an upload is finished. A link lasts a day, and a `file_id` is used by one video. A key may hold up to 200 GiB of files no video has used yet.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadRequest"
+              },
+              "example": {
+                "files": [
+                  {
+                    "name": "take-1.mov",
+                    "size_bytes": 812345678,
+                    "content_type": "video/quicktime"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "A `file_id` and where to send the bytes, for each file.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadResponse"
+                },
+                "example": {
+                  "files": [
+                    {
+                      "file_id": "file_3hT9xQ2mKp8LwZ4vB7nR1s",
+                      "name": "take-1.mov",
+                      "expires_at": "2026-11-26T18:02:11.000Z",
+                      "upload": {
+                        "method": "PUT",
+                        "url": "https://storage.googleapis.com/example/take-1.mp4?X-Goog-Signature=abc",
+                        "headers": {
+                          "Content-Type": "video/quicktime"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The files cannot be taken as sent. Codes: `FILES_REQUIRED`, `TOO_MANY_FILES`, `INVALID_FILE`, `FILE_TOO_LARGE`, `INVALID_BODY`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "413": {
+            "$ref": "#/components/responses/PayloadTooLarge"
+          },
+          "429": {
+            "description": "A limit. `UPLOAD_LIMIT` is 200 GiB of files no video has used yet on this key. Codes: `UPLOAD_LIMIT`, `RATE_LIMITED`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    },
+    "/v1/videos": {
+      "post": {
+        "tags": [
+          "Videos"
+        ],
+        "operationId": "createVideo",
+        "summary": "Start a video",
+        "description": "Answers at once with the video, `queued`. Then ask for it with `GET /v1/videos/{id}` every 15 to 30 seconds, or send `webhook_url` and wait for `video.completed` or `video.failed`. Every file sent must import: a dead link or a broken file fails the video before any editing, at no charge, and the error names the entry (`footage[3]`).",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "description": "Your own id for this request, 1 to 255 characters with no spaces. Sent again from the same API key within a day (after a timeout or a dropped connection, say), it answers with what the first call made, with `Idempotent-Replayed: true`, and nothing more is made or charged. To try again after a failure, use a new value.",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 255,
+              "pattern": "^[\\x21-\\x7e]+$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateVideoRequest"
+              },
+              "example": {
+                "footage": [
+                  "https://files.example.com/pour-shot.mp4",
+                  "https://files.example.com/desk-broll.mov",
+                  "https://files.example.com/logo.png"
+                ],
+                "prompt": "A 30-second vertical ad for the Halo water bottle. Open on the pour shot, end on the logo. Captions on everything said. No music.",
+                "effort": "low",
+                "max_seconds": 30,
+                "aspect_ratio": "9:16"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "The video, `queued`.",
+            "headers": {
+              "Idempotent-Replayed": {
+                "description": "`true` when this answer is the one an earlier call with the same Idempotency-Key got.",
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "true"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                },
+                "example": {
+                  "id": "vid_8fK2mQ7xPz1LwR4tY9bN3c",
+                  "status": "queued",
+                  "effort": "low",
+                  "max_seconds": 30,
+                  "videos": [],
+                  "price": {
+                    "currency": "USD",
+                    "video": 0.5,
+                    "per_video_minute": 0.02,
+                    "per_audio_minute": 0.01,
+                    "media_minutes": null,
+                    "media": null,
+                    "per_generated_credit": 0.01,
+                    "generated_media_budget": null,
+                    "generated_media": null,
+                    "total": null
+                  },
+                  "created_at": "2026-11-25T18:02:11.000Z",
+                  "expires_at": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request cannot be taken as sent. `param` names the field. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `FOOTAGE_REQUIRED`, `PROMPT_OR_REFERENCE_REQUIRED`, `INVALID_SOURCE`, `TOO_MANY_SOURCES`, `INVALID_TEXT`, `TEXT_TOO_LONG`, `INVALID_EFFORT`, `INVALID_MAX_SECONDS`, `INVALID_NUMBER`, `INVALID_OPTION`, `INVALID_SIZE`, `INVALID_VARIATIONS`, `INVALID_VARIATION_BRIEF`, `INVALID_VARIATION_SCOPE`, `VARIATION_SCOPE_MISMATCH`, `INVALID_GENERATED_MEDIA_BUDGET`, `INVALID_MAX_PRICE`, `INVALID_WEBHOOK_URL`, `INVALID_IDEMPOTENCY_KEY`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`, `FILE_ALREADY_USED`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": {
+                    "code": "INVALID_MAX_SECONDS",
+                    "message": "max_seconds is a whole number of seconds from 1 to 1800.",
+                    "param": "max_seconds"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/PaymentRequired"
+          },
+          "413": {
+            "$ref": "#/components/responses/PayloadTooLarge"
+          },
+          "429": {
+            "description": "Too many videos being made at once on this key or account (`TOO_MANY_RUNNING`; the message says which), or over 3,000 calls a minute (`RATE_LIMITED`, with `Retry-After`). Codes: `TOO_MANY_RUNNING`, `RATE_LIMITED`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Videos"
+        ],
+        "operationId": "listVideos",
+        "summary": "List the account's videos",
+        "description": "Newest first, whichever of the account's keys made them. A listed video has no download links, notes or revisions: ask for the one video for those. A full page carries `next_before`; send it as `before` for the next page.",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "A video status, or `working` for every video still being made (a finished video with a change under way counts as working).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "working",
+                "queued",
+                "importing",
+                "analysing",
+                "editing",
+                "rendering",
+                "completed",
+                "failed"
+              ]
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "The first UTC day counted, such as 2026-11-01.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "The day after the last one counted.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "The `next_before` of the page before this one.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Videos a page, 1 to 100.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of videos.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A query value cannot be taken. Codes: `INVALID_OPTION`, `INVALID_RANGE`, `INVALID_NUMBER`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    },
+    "/v1/videos/{id}": {
+      "get": {
+        "tags": [
+          "Videos"
+        ],
+        "operationId": "getVideo",
+        "summary": "Get a video",
+        "description": "Where the video is, and its files once it is done. Each download link lasts an hour; ask again for a fresh one, as often as you like. Videos and their files are kept and nothing expires. Stop asking when `status` is `completed` or `failed` and there is no `change`.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "A video's id (`vid_…`), or one of its cuts' ids (`vid_…_2`).",
+            "schema": {
+              "type": "string",
+              "pattern": "^vid_[A-Za-z0-9]{22}(_[1-9][0-9]?)?$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The video as it stands.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                },
+                "example": {
+                  "id": "vid_8fK2mQ7xPz1LwR4tY9bN3c",
+                  "status": "completed",
+                  "effort": "low",
+                  "max_seconds": 30,
+                  "videos": [
+                    {
+                      "id": "vid_8fK2mQ7xPz1LwR4tY9bN3c_1",
+                      "revision": 1,
+                      "length_seconds": 29.6,
+                      "exports": [
+                        {
+                          "resolution": "original",
+                          "status": "completed",
+                          "url": "https://storage.googleapis.com/example/take-1.mp4?X-Goog-Signature=abc",
+                          "url_expires_at": "2026-11-25T19:20:00.000Z"
+                        }
+                      ]
+                    }
+                  ],
+                  "notes": {
+                    "summary": "A 30-second vertical ad that opens on the pour and ends on the logo.",
+                    "assumed": [
+                      "Used the second pour take; the first is out of focus."
+                    ],
+                    "did_not_match": []
+                  },
+                  "price": {
+                    "currency": "USD",
+                    "video": 0.5,
+                    "per_video_minute": 0.02,
+                    "per_audio_minute": 0.01,
+                    "media_minutes": {
+                      "video": 4.5,
+                      "audio": 0
+                    },
+                    "media": 0.09,
+                    "per_generated_credit": 0.01,
+                    "generated_media_budget": null,
+                    "generated_media": null,
+                    "total": 0.59
+                  },
+                  "created_at": "2026-11-25T18:02:11.000Z",
+                  "completed_at": "2026-11-25T18:10:40.000Z",
+                  "expires_at": null
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/VideoNotFound"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    },
+    "/v1/videos/{id}/revisions": {
+      "post": {
+        "tags": [
+          "Videos"
+        ],
+        "operationId": "reviseVideo",
+        "summary": "Revise a finished cut",
+        "description": "Say what to change. You can add footage or a reference, or send a marked-up frame as an image. Name one cut by its own id (`vid_…_2`); a video with one cut can be named by the video's id. To make the same change to several cuts, send it to the video's id with `video_ids`. The video stays `completed` and downloadable while the change is made, and `change` shows how it stands. Each cut's first revision is free; after that a revision is $0.35 a cut on low and $0.70 on high. A cut takes up to 10 changes, one at a time. A failed revision leaves the video as it was and costs nothing.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "A video's id (`vid_…`), or one of its cuts' ids (`vid_…_2`).",
+            "schema": {
+              "type": "string",
+              "pattern": "^vid_[A-Za-z0-9]{22}(_[1-9][0-9]?)?$"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "description": "Your own id for this request, 1 to 255 characters with no spaces. Sent again from the same API key within a day (after a timeout or a dropped connection, say), it answers with what the first call made, with `Idempotent-Replayed: true`, and nothing more is made or charged. To try again after a failure, use a new value.",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 255,
+              "pattern": "^[\\x21-\\x7e]+$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevisionRequest"
+              },
+              "example": {
+                "prompt": "Shorten the quote to one line and make the captions bigger."
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "The video with `revision_id`, this revision's own id, and `change`.",
+            "headers": {
+              "Idempotent-Replayed": {
+                "description": "`true` when this answer is the one an earlier call with the same Idempotency-Key got.",
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "true"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The change cannot be taken as sent. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `CHANGE_REQUIRED`, `CUT_REQUIRED`, `INVALID_VIDEO_IDS`, `REVISION_LIMIT`, `INVALID_SOURCE`, `TOO_MANY_SOURCES`, `INVALID_TEXT`, `TEXT_TOO_LONG`, `INVALID_MAX_PRICE`, `INVALID_IDEMPOTENCY_KEY`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`, `FILE_ALREADY_USED`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/PaymentRequired"
+          },
+          "404": {
+            "$ref": "#/components/responses/VideoNotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/VideoBusy"
+          },
+          "410": {
+            "$ref": "#/components/responses/VideoExpired"
+          },
+          "413": {
+            "$ref": "#/components/responses/PayloadTooLarge"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    },
+    "/v1/videos/{id}/exports": {
+      "post": {
+        "tags": [
+          "Videos"
+        ],
+        "operationId": "exportVideo",
+        "summary": "Render a finished cut at another resolution",
+        "description": "Free, and takes seconds. No agent runs. Asking for a resolution the cut already has answers with the video as it is. It cannot change the shape or the frame rate: that is a revision.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "A video's id (`vid_…`), or one of its cuts' ids (`vid_…_2`).",
+            "schema": {
+              "type": "string",
+              "pattern": "^vid_[A-Za-z0-9]{22}(_[1-9][0-9]?)?$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportRequest"
+              },
+              "example": {
+                "resolution": "4k"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "The video, with `change` while the file is made.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request cannot be taken as sent. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `RESOLUTION_REQUIRED`, `INVALID_OPTION`, `CUT_REQUIRED`, `REVISION_LIMIT`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/VideoNotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/VideoBusy"
+          },
+          "410": {
+            "$ref": "#/components/responses/VideoExpired"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    },
+    "/v1/balance": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getBalance",
+        "summary": "Get the account's balance and limit",
+        "description": "Any of the account's keys can read it. Amounts are in dollars.",
+        "responses": {
+          "200": {
+            "description": "The balance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                },
+                "example": {
+                  "currency": "USD",
+                  "balance": 42.1,
+                  "held": 1.19,
+                  "paid_in": 60,
+                  "tier": 2,
+                  "max_running": 10,
+                  "next_tier": {
+                    "tier": 3,
+                    "paid_in": 250,
+                    "max_running": 20
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An account Vyra bills afterwards from the price list has no balance. Codes: `NO_BALANCE`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    },
+    "/v1/usage": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "operationId": "getUsage",
+        "summary": "Get what the account made and was charged",
+        "description": "Counts every key of the account. With no dates it covers this month so far, today included. A range is at most 366 days. A video is counted on the day it was created, and a charge on the day it was made.",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "description": "The first UTC day counted, such as 2026-11-01.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "The day after the last one counted.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Totals for the range, and each day something was made or charged.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usage"
+                },
+                "example": {
+                  "from": "2026-11-01",
+                  "to": "2026-12-01",
+                  "currency": "USD",
+                  "videos": 42,
+                  "completed": 38,
+                  "failed": 3,
+                  "working": 1,
+                  "charged": 51.37,
+                  "days": [
+                    {
+                      "day": "2026-11-12",
+                      "videos": 4,
+                      "completed": 3,
+                      "failed": 1,
+                      "charged": 4.12
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The range cannot be taken. Codes: `INVALID_RANGE`.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "webhooks": {
+    "video.completed": {
+      "post": {
+        "operationId": "webhook_video_completed",
+        "summary": "video.completed",
+        "description": "The video finished. `video` holds its files. Sent to the `webhook_url` of the video's create. Check `Vyra-Signature` before you trust it. Answer with a 2xx within 10 seconds; anything else is tried again, 12 attempts in all, the second 30 seconds after the first and then twice as long each time, up to an hour apart. Redirects are not followed.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Vyra-Event",
+            "in": "header",
+            "required": true,
+            "description": "The event, as in the body.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "video.completed"
+              ]
+            }
+          },
+          {
+            "name": "Vyra-Delivery",
+            "in": "header",
+            "required": true,
+            "description": "This notice's id, the same on every attempt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Vyra-Signature",
+            "in": "header",
+            "required": true,
+            "description": "`t=<unix seconds>,v1=<hex>`. `v1` is the HMAC-SHA256 of `<t>.<raw body>` with your key's webhook secret.",
+            "schema": {
+              "type": "string",
+              "pattern": "^t=[0-9]+,v1=[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Received. Anything else is tried again."
+          }
+        }
+      }
+    },
+    "video.failed": {
+      "post": {
+        "operationId": "webhook_video_failed",
+        "summary": "video.failed",
+        "description": "The video failed. It costs nothing, and `error` says why. Sent to the `webhook_url` of the video's create. Check `Vyra-Signature` before you trust it. Answer with a 2xx within 10 seconds; anything else is tried again, 12 attempts in all, the second 30 seconds after the first and then twice as long each time, up to an hour apart. Redirects are not followed.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Vyra-Event",
+            "in": "header",
+            "required": true,
+            "description": "The event, as in the body.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "video.failed"
+              ]
+            }
+          },
+          {
+            "name": "Vyra-Delivery",
+            "in": "header",
+            "required": true,
+            "description": "This notice's id, the same on every attempt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Vyra-Signature",
+            "in": "header",
+            "required": true,
+            "description": "`t=<unix seconds>,v1=<hex>`. `v1` is the HMAC-SHA256 of `<t>.<raw body>` with your key's webhook secret.",
+            "schema": {
+              "type": "string",
+              "pattern": "^t=[0-9]+,v1=[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Received. Anything else is tried again."
+          }
+        }
+      }
+    },
+    "video.revised": {
+      "post": {
+        "operationId": "webhook_video_revised",
+        "summary": "video.revised",
+        "description": "A revision finished. `revision_id` names it. Sent to the `webhook_url` of the video's create. Check `Vyra-Signature` before you trust it. Answer with a 2xx within 10 seconds; anything else is tried again, 12 attempts in all, the second 30 seconds after the first and then twice as long each time, up to an hour apart. Redirects are not followed.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Vyra-Event",
+            "in": "header",
+            "required": true,
+            "description": "The event, as in the body.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "video.revised"
+              ]
+            }
+          },
+          {
+            "name": "Vyra-Delivery",
+            "in": "header",
+            "required": true,
+            "description": "This notice's id, the same on every attempt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Vyra-Signature",
+            "in": "header",
+            "required": true,
+            "description": "`t=<unix seconds>,v1=<hex>`. `v1` is the HMAC-SHA256 of `<t>.<raw body>` with your key's webhook secret.",
+            "schema": {
+              "type": "string",
+              "pattern": "^t=[0-9]+,v1=[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Received. Anything else is tried again."
+          }
+        }
+      }
+    },
+    "video.revision_failed": {
+      "post": {
+        "operationId": "webhook_video_revision_failed",
+        "summary": "video.revision_failed",
+        "description": "A revision failed. The video is as it was, nothing is charged, and `error` says why. Sent to the `webhook_url` of the video's create. Check `Vyra-Signature` before you trust it. Answer with a 2xx within 10 seconds; anything else is tried again, 12 attempts in all, the second 30 seconds after the first and then twice as long each time, up to an hour apart. Redirects are not followed.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Vyra-Event",
+            "in": "header",
+            "required": true,
+            "description": "The event, as in the body.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "video.revision_failed"
+              ]
+            }
+          },
+          {
+            "name": "Vyra-Delivery",
+            "in": "header",
+            "required": true,
+            "description": "This notice's id, the same on every attempt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Vyra-Signature",
+            "in": "header",
+            "required": true,
+            "description": "`t=<unix seconds>,v1=<hex>`. `v1` is the HMAC-SHA256 of `<t>.<raw body>` with your key's webhook secret.",
+            "schema": {
+              "type": "string",
+              "pattern": "^t=[0-9]+,v1=[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Received. Anything else is tried again."
+          }
+        }
+      }
+    },
+    "video.exported": {
+      "post": {
+        "operationId": "webhook_video_exported",
+        "summary": "video.exported",
+        "description": "A file at another resolution is ready. Sent to the `webhook_url` of the video's create. Check `Vyra-Signature` before you trust it. Answer with a 2xx within 10 seconds; anything else is tried again, 12 attempts in all, the second 30 seconds after the first and then twice as long each time, up to an hour apart. Redirects are not followed.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Vyra-Event",
+            "in": "header",
+            "required": true,
+            "description": "The event, as in the body.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "video.exported"
+              ]
+            }
+          },
+          {
+            "name": "Vyra-Delivery",
+            "in": "header",
+            "required": true,
+            "description": "This notice's id, the same on every attempt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Vyra-Signature",
+            "in": "header",
+            "required": true,
+            "description": "`t=<unix seconds>,v1=<hex>`. `v1` is the HMAC-SHA256 of `<t>.<raw body>` with your key's webhook secret.",
+            "schema": {
+              "type": "string",
+              "pattern": "^t=[0-9]+,v1=[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Received. Anything else is tried again."
+          }
+        }
+      }
+    },
+    "video.export_failed": {
+      "post": {
+        "operationId": "webhook_video_export_failed",
+        "summary": "video.export_failed",
+        "description": "A file at another resolution could not be made. `error` says why. Sent to the `webhook_url` of the video's create. Check `Vyra-Signature` before you trust it. Answer with a 2xx within 10 seconds; anything else is tried again, 12 attempts in all, the second 30 seconds after the first and then twice as long each time, up to an hour apart. Redirects are not followed.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Vyra-Event",
+            "in": "header",
+            "required": true,
+            "description": "The event, as in the body.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "video.export_failed"
+              ]
+            }
+          },
+          {
+            "name": "Vyra-Delivery",
+            "in": "header",
+            "required": true,
+            "description": "This notice's id, the same on every attempt.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Vyra-Signature",
+            "in": "header",
+            "required": true,
+            "description": "`t=<unix seconds>,v1=<hex>`. `v1` is the HMAC-SHA256 of `<t>.<raw body>` with your key's webhook secret.",
+            "schema": {
+              "type": "string",
+              "pattern": "^t=[0-9]+,v1=[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Received. Anything else is tried again."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "vyra_live_…",
+        "description": "Make a key in the Vyra web app under Settings → Developer. It is shown once. Send it as `Authorization: Bearer vyra_live_…`."
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "No key, or a key we do not know or that was revoked. Codes: `API_KEY_REQUIRED`, `API_KEY_INVALID`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "API_KEY_REQUIRED",
+                "message": "Send your API key as \"Authorization: Bearer <key>\"."
+              }
+            }
+          }
+        }
+      },
+      "PaymentRequired": {
+        "description": "Your balance does not cover the fee. Nothing started. Add funds in Settings → Developer and send it again. Codes: `INSUFFICIENT_BALANCE`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "VideoNotFound": {
+        "description": "No such video on this account. Codes: `VIDEO_NOT_FOUND`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "VideoBusy": {
+        "description": "The video is still being made, a change to it is under way, or it failed and cannot be changed. Codes: `VIDEO_BUSY`, `VIDEO_NOT_FINISHED`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "VideoExpired": {
+        "description": "Only a video whose files were removed while videos expired after a week. None expires now. Codes: `VIDEO_EXPIRED`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "PayloadTooLarge": {
+        "description": "The body is over 1 MB. Codes: `INVALID_REQUEST`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "RateLimited": {
+        "description": "More than 3,000 calls a minute on this key. Code: `RATE_LIMITED`.",
+        "headers": {
+          "Retry-After": {
+            "description": "Seconds to wait.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "ServerError": {
+        "description": "Ours. Try again. Codes: `INTERNAL`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Unavailable": {
+        "description": "Ours, for a moment. Try again shortly. Codes: `UNAVAILABLE`.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "$ref": "#/components/schemas/ErrorCode"
+              },
+              "message": {
+                "type": "string",
+                "description": "What went wrong and what to do."
+              },
+              "param": {
+                "type": "string",
+                "description": "The field at fault, such as `max_seconds` or `footage[3]`."
+              }
+            }
+          }
+        }
+      },
+      "ErrorCode": {
+        "description": "Why a call was refused. Other codes may appear; `message` always says what to do.",
+        "anyOf": [
+          {
+            "type": "string",
+            "enum": [
+              "INVALID_BODY",
+              "UNKNOWN_FIELD",
+              "INVALID_TEXT",
+              "TEXT_TOO_LONG",
+              "INVALID_NUMBER",
+              "INVALID_OPTION",
+              "INVALID_IDEMPOTENCY_KEY",
+              "INVALID_RANGE",
+              "FOOTAGE_REQUIRED",
+              "PROMPT_OR_REFERENCE_REQUIRED",
+              "INVALID_SOURCE",
+              "TOO_MANY_SOURCES",
+              "FILE_NOT_FOUND",
+              "FILE_NOT_UPLOADED",
+              "FILE_EXPIRED",
+              "FILE_ALREADY_USED",
+              "INVALID_EFFORT",
+              "INVALID_MAX_SECONDS",
+              "INVALID_VARIATIONS",
+              "INVALID_VARIATION_BRIEF",
+              "INVALID_VARIATION_SCOPE",
+              "VARIATION_SCOPE_MISMATCH",
+              "INVALID_SIZE",
+              "INVALID_GENERATED_MEDIA_BUDGET",
+              "INVALID_MAX_PRICE",
+              "INVALID_WEBHOOK_URL",
+              "FILES_REQUIRED",
+              "TOO_MANY_FILES",
+              "INVALID_FILE",
+              "FILE_TOO_LARGE",
+              "CHANGE_REQUIRED",
+              "CUT_REQUIRED",
+              "INVALID_VIDEO_IDS",
+              "RESOLUTION_REQUIRED",
+              "REVISION_LIMIT",
+              "NO_BALANCE",
+              "INVALID_REQUEST",
+              "API_KEY_REQUIRED",
+              "API_KEY_INVALID",
+              "INSUFFICIENT_BALANCE",
+              "VIDEO_NOT_FOUND",
+              "NOT_FOUND",
+              "VIDEO_BUSY",
+              "VIDEO_NOT_FINISHED",
+              "VIDEO_EXPIRED",
+              "RATE_LIMITED",
+              "TOO_MANY_RUNNING",
+              "UPLOAD_LIMIT",
+              "INTERNAL",
+              "UNAVAILABLE"
+            ]
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "FailureCode": {
+        "description": "Why a video, revision or export failed. Link and file codes (`LINK_INVALID`, `LINK_NOT_FOUND`, `LINK_NOT_PUBLIC`, `NOT_MEDIA`, `DOWNLOAD_FAILED`, `FILE_NOT_FOUND`, `PROCESSING_FAILED`) name the entry in `message`. A `REFERENCE_…` code is an Instagram, TikTok or YouTube video that could not be used: private, removed, or over 20 minutes. `FOOTAGE_TOO_LONG` is more than 3 hours of video in all, found before any analysis. `MAX_PRICE_EXCEEDED` is footage that would cost more than `max_price`. `CANNOT_BE_MADE` is the agent saying it could not make the video from what was sent, and why. `AGENT_DID_NOT_FINISH`, `RENDER_FAILED`, `RENDER_TIMED_OUT` and `INTERNAL` are ours: start it again. A failed video is never charged. Other codes may appear.",
+        "anyOf": [
+          {
+            "type": "string",
+            "enum": [
+              "LINK_INVALID",
+              "LINK_NOT_FOUND",
+              "LINK_NOT_PUBLIC",
+              "NOT_MEDIA",
+              "DOWNLOAD_FAILED",
+              "FILE_NOT_FOUND",
+              "PROCESSING_FAILED",
+              "REFERENCE_VIDEO_UNAVAILABLE",
+              "REFERENCE_DURATION_LIMIT",
+              "IMPORT_LINK_UNAVAILABLE",
+              "IMPORT_TIMED_OUT",
+              "UNAVAILABLE",
+              "FOOTAGE_TOO_LONG",
+              "MAX_PRICE_EXCEEDED",
+              "INSUFFICIENT_BALANCE",
+              "CANNOT_BE_MADE",
+              "AGENT_DID_NOT_FINISH",
+              "RENDER_FAILED",
+              "RENDER_TIMED_OUT",
+              "INTERNAL",
+              "FAILED"
+            ]
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "Source": {
+        "type": "string",
+        "maxLength": 2048,
+        "description": "A `file_id` from `POST /v1/uploads`, or an https link on the public internet: a direct link to a file (redirects are followed), a Google Drive file or folder shared with anyone who has the link, a Dropbox file link, or a public Instagram, TikTok or YouTube video of up to 20 minutes. Video: MP4 (H.264, HEVC), MOV (ProRes included), WebM, MKV, AVI. Images: JPG, PNG, WebP, HEIC, GIF. Audio: WAV, MP3, M4A, FLAC.",
+        "anyOf": [
+          {
+            "pattern": "^file_[A-Za-z0-9]{22}$"
+          },
+          {
+            "pattern": "^https://",
+            "format": "uri"
+          }
+        ],
+        "examples": [
+          "https://drive.google.com/file/d/1AbC/view",
+          "file_3hT9xQ2mKp8LwZ4vB7nR1s"
+        ]
+      },
+      "Effort": {
+        "type": "string",
+        "enum": [
+          "low",
+          "high"
+        ],
+        "description": "`high` follows a detailed request or a reference more closely, in about 14 minutes. `low` costs half as much and takes about 8. `medium` is taken as `low`."
+      },
+      "VideoStatus": {
+        "type": "string",
+        "enum": [
+          "queued",
+          "importing",
+          "analysing",
+          "editing",
+          "rendering",
+          "completed",
+          "failed"
+        ],
+        "description": "Moves through `queued`, `importing`, `analysing`, `editing` and `rendering`, and ends at `completed` or `failed`."
+      },
+      "Resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p",
+          "1440p",
+          "4k"
+        ],
+        "description": "The short edge of a 16:9 or 9:16 video: `720p` is 1280×720 or 720×1280, and 1280×1280 for a square. `4k` is at most 3840×2160 (a square is 2880×2880)."
+      },
+      "CreateVideoRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "footage"
+        ],
+        "description": "Send `prompt`, `references`, or both.",
+        "properties": {
+          "footage": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 200,
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "description": "Up to 200 entries and 3 hours of video in all. Footage needs a picture: audio alone cannot make a video."
+          },
+          "prompt": {
+            "type": "string",
+            "maxLength": 8000,
+            "description": "What to make. Required unless you send a reference. Say what the video is and how long, name the files that matter, and say what you do not want."
+          },
+          "references": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "description": "Videos to make it look like. Up to 20 minutes each."
+          },
+          "effort": {
+            "$ref": "#/components/schemas/Effort",
+            "default": "high"
+          },
+          "max_seconds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1800,
+            "default": 60,
+            "description": "The longest the video may run. It is never exceeded, and it sets the price band."
+          },
+          "target_seconds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1800,
+            "description": "The length to aim for, within `max_seconds`."
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "enum": [
+              "9:16",
+              "16:9",
+              "1:1"
+            ],
+            "description": "Or send `width` and `height`, not both. Left out, the agent chooses from the footage and the request."
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 320,
+            "maximum": 3840,
+            "multipleOf": 2,
+            "description": "Sent with `height`. Even, and the shorter of the two at most 2160."
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 320,
+            "maximum": 3840,
+            "multipleOf": 2,
+            "description": "Sent with `width`. Even, and the shorter of the two at most 2160."
+          },
+          "fps": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 60,
+            "default": 30
+          },
+          "resolution": {
+            "$ref": "#/components/schemas/Resolution"
+          },
+          "variations": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 1,
+            "description": "How many cuts to make from the same footage."
+          },
+          "variation_brief": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "How the cuts differ. Needs `variations` of 2 or more."
+          },
+          "variation_scope": {
+            "type": "string",
+            "enum": [
+              "portion",
+              "full"
+            ],
+            "description": "With `variations` of 2 or more; `portion` when left out. `portion`: every cut has the video's aspect ratio and size and runs within 25% of the first cut's length, and anything else may differ (hook, captions, music, pacing, text, colour). Each extra cut adds a tenth of the fee. `full`: anything may differ, including the shape, the length and the structure. Each extra cut adds three quarters of the fee. A `portion` request whose brief asks for another shape or a very different length is refused with `VARIATION_SCOPE_MISMATCH`."
+          },
+          "allow_generated_media": {
+            "type": "boolean",
+            "default": false,
+            "description": "Lets the agent generate music, voiceover, sound and images, which are charged."
+          },
+          "generated_media_budget": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000,
+            "description": "Dollars, with `allow_generated_media`. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of `max_seconds`."
+          },
+          "max_price": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10000,
+            "description": "Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing."
+          },
+          "webhook_url": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 2048,
+            "pattern": "^https://",
+            "description": "An https address on the public internet, told when the video completes or fails."
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "prompt"
+            ]
+          },
+          {
+            "required": [
+              "references"
+            ]
+          }
+        ]
+      },
+      "RevisionRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Send at least one of `prompt`, `footage` and `references`.",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "maxLength": 8000,
+            "description": "What to change."
+          },
+          "footage": {
+            "type": "array",
+            "maxItems": 200,
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "description": "More footage, or an image of a marked-up frame showing what to change. Charged as media sent, even on a free revision."
+          },
+          "references": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
+          },
+          "max_price": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 10000,
+            "description": "Dollars. The most this revision may cost."
+          },
+          "video_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 20,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+            },
+            "description": "The cuts of this video to change, for one change made on several cuts. Each is priced as a revision of its own."
+          }
+        }
+      },
+      "ExportRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resolution"
+        ],
+        "properties": {
+          "resolution": {
+            "$ref": "#/components/schemas/Resolution"
+          }
+        }
+      },
+      "UploadRequest": {
+        "type": "object",
+        "required": [
+          "files"
+        ],
+        "properties": {
+          "files": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "size_bytes",
+                "content_type"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 1024
+                },
+                "size_bytes": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10737418240,
+                  "description": "The file's exact size. Up to 10 GB."
+                },
+                "content_type": {
+                  "type": "string",
+                  "description": "A video, audio or image type that is what the file really is, such as `video/mp4`."
+                }
+              }
+            }
+          }
+        }
+      },
+      "UploadResponse": {
+        "type": "object",
+        "required": [
+          "files"
+        ],
+        "properties": {
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "file_id",
+                "name",
+                "expires_at"
+              ],
+              "properties": {
+                "file_id": {
+                  "type": "string",
+                  "pattern": "^file_[A-Za-z0-9]{22}$"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "expires_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "A file no video has used by then is removed."
+                },
+                "upload": {
+                  "type": "object",
+                  "description": "For a file of up to 4 GB: send the bytes here.",
+                  "required": [
+                    "method",
+                    "url",
+                    "headers"
+                  ],
+                  "properties": {
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "PUT"
+                      ]
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "headers": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "part_size": {
+                  "type": "integer",
+                  "description": "For a file over 4 GB: the size of each part but the last."
+                },
+                "parts": {
+                  "type": "array",
+                  "description": "For a file over 4 GB: send each part's bytes, in order, to its link.",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "part_number",
+                      "method",
+                      "url",
+                      "size_bytes"
+                    ],
+                    "properties": {
+                      "part_number": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "method": {
+                        "type": "string",
+                        "enum": [
+                          "PUT"
+                        ]
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "size_bytes": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Price": {
+        "type": "object",
+        "description": "In US dollars. `total` is null until the footage has been measured, which is before any editing. A failed video shows `total` 0.",
+        "required": [
+          "currency",
+          "video",
+          "total"
+        ],
+        "properties": {
+          "currency": {
+            "type": "string",
+            "enum": [
+              "USD"
+            ]
+          },
+          "video": {
+            "type": "number",
+            "description": "The fee: the band `max_seconds` falls in, by effort, plus each extra cut's share."
+          },
+          "per_video_minute": {
+            "type": "number"
+          },
+          "per_audio_minute": {
+            "type": "number"
+          },
+          "media_minutes": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "video": {
+                "type": "number"
+              },
+              "audio": {
+                "type": "number"
+              }
+            }
+          },
+          "media": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "What the media sent cost."
+          },
+          "per_generated_credit": {
+            "type": "number"
+          },
+          "generated_media_budget": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "The most generated media can add. Null without `allow_generated_media`."
+          },
+          "generated_media": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "What generated media cost. Null until the video is finished."
+          },
+          "total": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      },
+      "ChargedPrice": {
+        "type": "object",
+        "required": [
+          "currency",
+          "total"
+        ],
+        "properties": {
+          "currency": {
+            "type": "string",
+            "enum": [
+              "USD"
+            ]
+          },
+          "total": {
+            "type": "number"
+          }
+        }
+      },
+      "File": {
+        "type": "object",
+        "required": [
+          "resolution",
+          "status"
+        ],
+        "properties": {
+          "resolution": {
+            "type": "string",
+            "description": "`original`, or the resolution asked for with an export.",
+            "examples": [
+              "original",
+              "4k"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "examples": [
+              "completed"
+            ]
+          },
+          "progress": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Download link. Lasts an hour; ask for the video again for a fresh one."
+          },
+          "url_expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Cut": {
+        "type": "object",
+        "required": [
+          "id",
+          "revision",
+          "exports"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Goes up with each finished revision."
+          },
+          "difference": {
+            "type": "string",
+            "description": "With variations: how this cut differs."
+          },
+          "length_seconds": {
+            "type": "number"
+          },
+          "exports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/File"
+            }
+          }
+        }
+      },
+      "Notes": {
+        "type": "object",
+        "description": "What the agent made, what it assumed, and what it could not do. Read `did_not_match` before you pass a video on.",
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "assumed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "did_not_match": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "VideoError": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/FailureCode"
+          },
+          "message": {
+            "type": "string",
+            "description": "What happened and what to do. Names the entry (`footage[2]`) for a link or file."
+          }
+        }
+      },
+      "Change": {
+        "type": "object",
+        "description": "A revision or export under way. The video stays `completed` meanwhile.",
+        "required": [
+          "kind",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The revision's id (`rev_…`). Revisions only."
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "revision",
+              "export"
+            ]
+          },
+          "video_id": {
+            "type": "string",
+            "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+          },
+          "video_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/VideoStatus"
+          },
+          "price": {
+            "$ref": "#/components/schemas/Price"
+          },
+          "resolution": {
+            "type": "string",
+            "description": "Exports only."
+          }
+        }
+      },
+      "LastChange": {
+        "type": "object",
+        "description": "How the last revision or export ended: what a finished revision was charged, or why one failed.",
+        "required": [
+          "kind",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "revision",
+              "export"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "completed",
+              "failed"
+            ]
+          },
+          "video_id": {
+            "type": "string",
+            "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+          },
+          "video_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+            }
+          },
+          "price": {
+            "$ref": "#/components/schemas/ChargedPrice"
+          },
+          "error": {
+            "$ref": "#/components/schemas/VideoError"
+          }
+        }
+      },
+      "Revision": {
+        "type": "object",
+        "description": "One revision, kept with its own file after later revisions replace the cut's. A revision of several cuts has an entry for each, under one id.",
+        "required": [
+          "id",
+          "video_id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "video_id": {
+            "type": "string",
+            "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
+          },
+          "status": {
+            "$ref": "#/components/schemas/VideoStatus"
+          },
+          "revision": {
+            "type": "integer"
+          },
+          "price": {
+            "$ref": "#/components/schemas/ChargedPrice"
+          },
+          "exports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/File"
+            }
+          },
+          "error": {
+            "$ref": "#/components/schemas/VideoError"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Video": {
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "effort",
+          "max_seconds",
+          "videos",
+          "price",
+          "created_at",
+          "expires_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^vid_[A-Za-z0-9]{22}$"
+          },
+          "status": {
+            "$ref": "#/components/schemas/VideoStatus"
+          },
+          "progress": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "While it is being made, when known."
+          },
+          "effort": {
+            "$ref": "#/components/schemas/Effort"
+          },
+          "max_seconds": {
+            "type": "integer"
+          },
+          "variation_scope": {
+            "type": "string",
+            "enum": [
+              "portion",
+              "full"
+            ],
+            "description": "With variations: what the extra cuts were priced as."
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cut"
+            },
+            "description": "One entry for each cut. Empty until the video is done."
+          },
+          "notes": {
+            "$ref": "#/components/schemas/Notes"
+          },
+          "price": {
+            "$ref": "#/components/schemas/Price"
+          },
+          "change": {
+            "$ref": "#/components/schemas/Change"
+          },
+          "last_change": {
+            "$ref": "#/components/schemas/LastChange"
+          },
+          "revisions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Revision"
+            },
+            "description": "Every revision since November 15, 2026, oldest first. The last 50 are kept."
+          },
+          "revision_id": {
+            "type": "string",
+            "description": "Only in the answer to `POST /v1/videos/{id}/revisions`: this revision's id."
+          },
+          "error": {
+            "$ref": "#/components/schemas/VideoError"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expires_at": {
+            "type": "null",
+            "description": "Always null. Videos and their files are kept."
+          }
+        }
+      },
+      "ListedVideo": {
+        "type": "object",
+        "description": "A video as a list shows it: no files, notes, change or revisions.",
+        "required": [
+          "id",
+          "status",
+          "effort",
+          "max_seconds",
+          "videos",
+          "price",
+          "created_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/VideoStatus"
+          },
+          "progress": {
+            "type": "number"
+          },
+          "effort": {
+            "$ref": "#/components/schemas/Effort"
+          },
+          "max_seconds": {
+            "type": "integer"
+          },
+          "variation_scope": {
+            "type": "string",
+            "enum": [
+              "portion",
+              "full"
+            ]
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "revision": {
+                  "type": "integer"
+                },
+                "difference": {
+                  "type": "string"
+                },
+                "length_seconds": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "price": {
+            "$ref": "#/components/schemas/Price"
+          },
+          "error": {
+            "$ref": "#/components/schemas/VideoError"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "VideoList": {
+        "type": "object",
+        "required": [
+          "videos",
+          "next_before"
+        ],
+        "properties": {
+          "videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListedVideo"
+            }
+          },
+          "next_before": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time",
+            "description": "Send as `before` for the next page. Null on the last page."
+          }
+        }
+      },
+      "Balance": {
+        "type": "object",
+        "required": [
+          "currency",
+          "balance",
+          "held",
+          "paid_in",
+          "tier",
+          "max_running",
+          "next_tier"
+        ],
+        "properties": {
+          "currency": {
+            "type": "string",
+            "enum": [
+              "USD"
+            ]
+          },
+          "balance": {
+            "type": "number",
+            "description": "Free to spend, launch credit included."
+          },
+          "held": {
+            "type": "number",
+            "description": "What videos being made are holding."
+          },
+          "paid_in": {
+            "type": "number",
+            "description": "Everything added, less refunds. Sets the tier."
+          },
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "max_running": {
+            "type": "integer",
+            "description": "Videos the account may have being made at once."
+          },
+          "next_tier": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "What you need to have added for the next tier. Null at the top one.",
+            "properties": {
+              "tier": {
+                "type": "integer"
+              },
+              "paid_in": {
+                "type": "number"
+              },
+              "max_running": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "Usage": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "currency",
+          "videos",
+          "completed",
+          "failed",
+          "working",
+          "charged",
+          "days"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "format": "date"
+          },
+          "to": {
+            "type": "string",
+            "format": "date"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "USD"
+            ]
+          },
+          "videos": {
+            "type": "integer"
+          },
+          "completed": {
+            "type": "integer"
+          },
+          "failed": {
+            "type": "integer"
+          },
+          "working": {
+            "type": "integer"
+          },
+          "charged": {
+            "type": "number",
+            "description": "Dollars, revisions included."
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "day",
+                "videos",
+                "completed",
+                "failed",
+                "charged"
+              ],
+              "properties": {
+                "day": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "videos": {
+                  "type": "integer"
+                },
+                "completed": {
+                  "type": "integer"
+                },
+                "failed": {
+                  "type": "integer"
+                },
+                "charged": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "WebhookEvent": {
+        "type": "object",
+        "required": [
+          "id",
+          "event",
+          "created_at",
+          "video"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "This notice's id."
+          },
+          "event": {
+            "type": "string",
+            "enum": [
+              "video.completed",
+              "video.failed",
+              "video.revised",
+              "video.revision_failed",
+              "video.exported",
+              "video.export_failed"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "video": {
+            "$ref": "#/components/schemas/Video",
+            "description": "What `GET /v1/videos/{id}` answers."
+          },
+          "error": {
+            "$ref": "#/components/schemas/VideoError"
+          },
+          "revision_id": {
+            "type": "string",
+            "description": "With `video.revised` and `video.revision_failed`."
+          }
+        }
+      }
+    }
+  }
+}
