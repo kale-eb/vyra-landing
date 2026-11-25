@@ -3,6 +3,7 @@ import path from "node:path";
 import { SECTIONS, SECTION_KEYS, SITE_URL, getEntries } from "@/lib/content";
 import { getNewsletterPosts } from "@/lib/newsletter";
 import { getListedPosts } from "@/lib/blog";
+import { API_BASE, API_DOCS_URL, API_MARKDOWN_URL, OPENAPI_URL } from "@/lib/vyra-api";
 
 export const dynamic = "force-static";
 
@@ -15,6 +16,14 @@ export async function GET() {
   lines.push(
     "> Vyra is an AI video editor that edits your real footage from a plain-language description. It transcribes every word and analyzes every scene on upload, then cuts, captions, syncs to music, builds motion graphics, and matches a reference video's style. Use the built-in AI chat, or drive it from Claude, ChatGPT, or Cursor over MCP. 3-day free trial on the web, and a free tier with 100 credits in the iPhone app; MCP plans from $24/mo, built-in AI plans from $54/mo."
   );
+  lines.push("");
+  lines.push("## Vyra API");
+  lines.push(
+    `An HTTP API for editing video: send footage and a prompt or a reference video, and get a finished video back. Base address ${API_BASE}, every call under /v1, with "Authorization: Bearer vyra_live_..." from a key made in Settings → Developer. Paid per video from a prepaid balance: $0.50 to $4.50 a video by length and effort, plus $0.02 a minute of video sent; a failed video costs nothing.`
+  );
+  lines.push(`- [Vyra API guide](${API_DOCS_URL}): Calls, limits, webhooks, errors and prices`);
+  lines.push(`- [Vyra API guide as Markdown](${API_MARKDOWN_URL}): The same guide in plain Markdown, for agents`);
+  lines.push(`- [OpenAPI 3.1 spec](${OPENAPI_URL}): Every /v1 call, its request and answer, error codes and webhooks`);
   lines.push("");
   lines.push("## Core");
   lines.push(`- [Home](${SITE_URL}/): AI video editor that edits your real footage by chat`);
