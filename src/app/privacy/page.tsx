@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mb-12 text-[15px] text-[var(--foreground-subtle)]">
-          Effective Date: November 24, 2026
+          Effective Date: November 25, 2026
         </p>
 
         <div className="space-y-10 text-[15px] leading-[1.8] text-[var(--foreground-muted)]">
@@ -318,6 +318,7 @@ export default function PrivacyPage() {
               <li>Your insights: for your posts, views, reach, saves, shares, average watch time and skip rate. For your account, daily views, reach, accounts engaged, interactions, follows and unfollows and link taps, and the age, gender, country and city breakdown of your followers. Instagram gives these as totals; we don&apos;t receive who viewed or followed you.</li>
               <li>Comments on your posts: their text, the commenter&apos;s username and Instagram ID, time, likes and whether they&apos;re hidden.</li>
               <li>Your direct messages: who each conversation is with (their username and, when Instagram gives it, follower count), and the messages&apos; text, sender and time.</li>
+              <li>For automations: whether a message Vyra sent was seen, reactions to messages, buttons or quick replies people tap, and the link or ad that opened a conversation. When an automation is limited to followers, Vyra checks through Instagram whether the person who messaged you follows you.</li>
             </ul>
             <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
               How we get it
@@ -333,6 +334,7 @@ export default function PrivacyPage() {
               <li>To publish a finished video as a Reel, only when you tap Post or ask the assistant to post it.</li>
               <li>So the assistant can tell you how your posts and account are doing, answer questions about your comments and messages, and learn your style. To do that it reads your recent Reels: it downloads them, transcribes what is said and looks at frames. It writes a short profile of your content to your Vyra memory.</li>
               <li>To reply to, post, hide or delete comments, turn comments off on a post, or send a direct message from your account, only when you ask the assistant to. In Account &rarr; Instagram you choose what the assistant may do; by default it shows you each reply or message and sends it only when you approve.</li>
+              <li>To run automations you set up with the assistant (for example, a private reply to people who comment a word, or a ping when someone asks about prices). Once you approve an automation, Vyra sends its replies and messages from your account each time it applies, only as the approved automation describes. If its messages or actions change, it waits for your approval again.</li>
               <li>To make an editing template from your newest Reels, when you choose &quot;Create a template from your Instagram&quot;.</li>
             </ul>
             <p className="mt-3">
@@ -348,6 +350,7 @@ export default function PrivacyPage() {
               <li>Your post list and its numbers, your account&apos;s numbers, comments and direct messages are kept while you&apos;re connected, and updated as Instagram sends changes.</li>
               <li>Downloaded copies of your Reels are deleted after 30 days. Their transcripts are kept until you disconnect.</li>
               <li>Lists the assistant saves while working (for example, comments it picked out) are deleted after 7 days.</li>
+              <li>A record of each automated action (who it went to, the message, and how they responded) is kept while you&apos;re connected, so you and the assistant can see how automations do.</li>
             </ul>
             <h3 className="mt-4 mb-2 text-[15px] font-semibold text-[var(--foreground)]">
               Deleting it
@@ -357,7 +360,8 @@ export default function PrivacyPage() {
               Instagram&apos;s Settings &rarr; Apps and websites. Either way we
               delete your token, your post list and numbers, the comments and
               direct messages we kept, the downloaded Reels and their transcripts,
-              and the lists the assistant saved. What you and the assistant said in
+              the lists the assistant saved, and your automations and their
+              records. What you and the assistant said in
               chat stays in your chat history like any other message, until you
               delete it or your account. For anything else, email{" "}
               <a href="mailto:caleb@usevyra.com" className="underline">
