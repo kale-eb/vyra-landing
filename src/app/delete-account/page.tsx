@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Delete Your Account - Vyra",
   description:
     "How to delete your Vyra account on Android, iPhone, or the web, what gets deleted, and what we keep.",
+  alternates: { canonical: `${SITE_URL}/delete-account` },
 };
 
 const linkClass =

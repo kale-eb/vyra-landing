@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TabbedCapabilities } from "./tabbed-capabilities";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Getting Started - Vyra Docs",
   description:
     "Everything you need to know to start editing with AI - from uploading footage to getting the most out of the agent.",
+  alternates: { canonical: `${SITE_URL}/docs/guide` },
 };
 
 export default function GuidePage() {

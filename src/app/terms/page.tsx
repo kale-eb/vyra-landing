@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Terms of Service - Vyra",
   description:
     "Terms of Service for Vyra, the AI-powered video editing platform.",
+  alternates: { canonical: `${SITE_URL}/terms` },
 };
 
 export default function TermsPage() {

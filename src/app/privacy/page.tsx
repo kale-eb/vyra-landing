@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Vyra",
   description:
     "Learn how Vyra collects, uses, and protects your information when you use our video editing platform.",
+  alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
 export default function PrivacyPage() {

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Documentation - Vyra",
   description: "Guides and documentation for the Vyra video editor.",
+  alternates: { canonical: `${SITE_URL}/docs` },
 };
 
 function BookIcon({ className }: { className?: string }) {
