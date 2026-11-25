@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PathTabs } from "./PathTabs";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Your First Project - Vyra Docs",
   description:
     "A step-by-step walkthrough for creating your first video project in Vyra - with the built-in Vyra AI agent or your own MCP client.",
+  alternates: { canonical: `${SITE_URL}/docs/first-project` },
 };
 
 export default function FirstProjectPage() {

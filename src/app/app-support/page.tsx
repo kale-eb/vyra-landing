@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Support - Vyra",
   description:
     "Get help with Vyra uploads, video edits, captions, references and exports on iPhone or web, plus account and App Store purchase questions.",
+  alternates: { canonical: `${SITE_URL}/app-support` },
 };
 
 export default function SupportPage() {
