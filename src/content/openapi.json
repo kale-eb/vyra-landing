@@ -49,7 +49,7 @@
         ],
         "operationId": "createUpload",
         "summary": "Get upload links for files that have no link",
-        "description": "For files on your machine. Footage that already has an https link needs no upload. Send each file's bytes with a `PUT` to the `upload.url` returned, with exactly the headers given. A file over 4 GB comes back with `parts`: send that many bytes of the file, in order, to each part's link. There is no call to say an upload is finished. A link lasts a day, and a `file_id` is used by one video. A key may hold up to 200 GiB of files no video has used yet.",
+        "description": "For files on your machine. Footage that already has an https link needs no upload. Send each file's bytes with a `PUT` to the `upload.url` returned, with exactly the headers given. A file over 4 GB comes back with `parts`: send that many bytes of the file, in order, to each part's link. There is no call to say an upload is finished; the links last a day (`expires_at`).\n\n**A `file_id` can be used again.** Send it in `footage` or `references` of any number of videos and revisions on the same account. The first video that uses it brings it in and analyses it, and is charged its media minutes; every later use attaches the same analysed file, with nothing uploaded or analysed again, and its media minutes at $0 (`price.reused_media`).\n\n**The file is kept 7 days after its last use** (`file_expires_at` for one no video has used yet). Each video or revision that uses it, or that revises or re-exports a video made from it, keeps it 7 days from then. After 7 days without use its video is removed, and using the `file_id` answers `400 FILE_EXPIRED`: upload the file again with a new `create_upload`, which gives a new `file_id`. A key may hold up to 1,024 GB of uploads at once.",
         "requestBody": {
           "required": true,
           "content": {
@@ -83,6 +83,7 @@
                       "file_id": "file_3hT9xQ2mKp8LwZ4vB7nR1s",
                       "name": "take-1.mov",
                       "expires_at": "2026-11-26T18:02:11.000Z",
+                      "file_expires_at": "2026-12-02T18:02:11.000Z",
                       "upload": {
                         "method": "PUT",
                         "url": "https://storage.googleapis.com/example/take-1.mp4?X-Goog-Signature=abc",
@@ -113,7 +114,7 @@
             "$ref": "#/components/responses/PayloadTooLarge"
           },
           "429": {
-            "description": "A limit. `UPLOAD_LIMIT` is 200 GiB of files no video has used yet on this key. Codes: `UPLOAD_LIMIT`, `RATE_LIMITED`.",
+            "description": "A limit. `UPLOAD_LIMIT` is 1,024 GB of uploads a key holds in storage at once. Codes: `UPLOAD_LIMIT`, `RATE_LIMITED`.",
             "content": {
               "application/json": {
                 "schema": {
@@ -218,7 +219,7 @@
             }
           },
           "400": {
-            "description": "The request cannot be taken as sent. `param` names the field. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `FOOTAGE_REQUIRED`, `PROMPT_OR_REFERENCE_REQUIRED`, `INVALID_SOURCE`, `TOO_MANY_SOURCES`, `INVALID_TEXT`, `TEXT_TOO_LONG`, `INVALID_EFFORT`, `INVALID_MAX_SECONDS`, `INVALID_NUMBER`, `INVALID_OPTION`, `INVALID_SIZE`, `INVALID_VARIATIONS`, `INVALID_VARIATION_BRIEF`, `INVALID_VARIATION_SCOPE`, `VARIATION_SCOPE_MISMATCH`, `INVALID_GENERATED_MEDIA_BUDGET`, `INVALID_MAX_PRICE`, `INVALID_WEBHOOK_URL`, `INVALID_IDEMPOTENCY_KEY`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`, `FILE_ALREADY_USED`.",
+            "description": "The request cannot be taken as sent. `param` names the field. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `FOOTAGE_REQUIRED`, `PROMPT_OR_REFERENCE_REQUIRED`, `INVALID_SOURCE`, `TOO_MANY_SOURCES`, `INVALID_TEXT`, `TEXT_TOO_LONG`, `INVALID_EFFORT`, `INVALID_MAX_SECONDS`, `INVALID_NUMBER`, `INVALID_OPTION`, `INVALID_SIZE`, `INVALID_VARIATIONS`, `INVALID_VARIATION_BRIEF`, `INVALID_VARIATION_SCOPE`, `VARIATION_SCOPE_MISMATCH`, `INVALID_GENERATED_MEDIA_BUDGET`, `INVALID_MAX_PRICE`, `INVALID_WEBHOOK_URL`, `INVALID_FILENAME`, `INVALID_IDEMPOTENCY_KEY`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`.",
             "content": {
               "application/json": {
                 "schema": {
@@ -525,7 +526,7 @@
             }
           },
           "400": {
-            "description": "The change cannot be taken as sent. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `CHANGE_REQUIRED`, `CUT_REQUIRED`, `INVALID_VIDEO_IDS`, `REVISION_LIMIT`, `INVALID_SOURCE`, `TOO_MANY_SOURCES`, `INVALID_TEXT`, `TEXT_TOO_LONG`, `INVALID_MAX_PRICE`, `INVALID_IDEMPOTENCY_KEY`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`, `FILE_ALREADY_USED`.",
+            "description": "The change cannot be taken as sent. Codes: `INVALID_BODY`, `UNKNOWN_FIELD`, `CHANGE_REQUIRED`, `CUT_REQUIRED`, `INVALID_VIDEO_IDS`, `REVISION_LIMIT`, `INVALID_SOURCE`, `TOO_MANY_SOURCES`, `INVALID_TEXT`, `TEXT_TOO_LONG`, `INVALID_MAX_PRICE`, `INVALID_FILENAME`, `INVALID_IDEMPOTENCY_KEY`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`.",
             "content": {
               "application/json": {
                 "schema": {
@@ -648,8 +649,8 @@
           "Account"
         ],
         "operationId": "getBalance",
-        "summary": "Get the account's balance and limit",
-        "description": "Any of the account's keys can read it. Amounts are in dollars.",
+        "summary": "Get the account's billing, limit and balance",
+        "description": "Any of the account's keys can read it. Amounts are in dollars. `max_running` is answered for every account; the balance and tier are a prepaid account's.",
         "responses": {
           "200": {
             "description": "The balance.",
@@ -658,28 +659,37 @@
                 "schema": {
                   "$ref": "#/components/schemas/Balance"
                 },
-                "example": {
-                  "currency": "USD",
-                  "balance": 42.1,
-                  "held": 1.19,
-                  "paid_in": 60,
-                  "tier": 2,
-                  "max_running": 10,
-                  "next_tier": {
-                    "tier": 3,
-                    "paid_in": 250,
-                    "max_running": 20
+                "examples": {
+                  "prepaid": {
+                    "summary": "A prepaid account",
+                    "value": {
+                      "billing": "prepaid",
+                      "currency": "USD",
+                      "balance": 42.1,
+                      "held": 1.19,
+                      "paid_in": 60,
+                      "tier": 2,
+                      "max_running": 10,
+                      "next_tier": {
+                        "tier": 3,
+                        "paid_in": 250,
+                        "max_running": 20
+                      }
+                    }
+                  },
+                  "partner": {
+                    "summary": "A partner account",
+                    "value": {
+                      "billing": "partner",
+                      "currency": "USD",
+                      "balance": null,
+                      "held": null,
+                      "paid_in": null,
+                      "tier": null,
+                      "max_running": 25,
+                      "next_tier": null
+                    }
                   }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "An account Vyra bills afterwards from the price list has no balance. Codes: `NO_BALANCE`.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -739,6 +749,7 @@
                   "from": "2026-11-01",
                   "to": "2026-12-01",
                   "currency": "USD",
+                  "price_multiplier": 1,
                   "videos": 42,
                   "completed": 38,
                   "failed": 3,
@@ -1259,7 +1270,7 @@
               },
               "param": {
                 "type": "string",
-                "description": "The field at fault, such as `max_seconds` or `footage[3]`."
+                "description": "The field at fault, such as `max_seconds`, or the entry for a file refusal (`FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`), such as `footage[3]` or `references[0]`."
               }
             }
           }
@@ -1286,7 +1297,6 @@
               "FILE_NOT_FOUND",
               "FILE_NOT_UPLOADED",
               "FILE_EXPIRED",
-              "FILE_ALREADY_USED",
               "INVALID_EFFORT",
               "INVALID_MAX_SECONDS",
               "INVALID_VARIATIONS",
@@ -1297,6 +1307,7 @@
               "INVALID_GENERATED_MEDIA_BUDGET",
               "INVALID_MAX_PRICE",
               "INVALID_WEBHOOK_URL",
+              "INVALID_FILENAME",
               "FILES_REQUIRED",
               "TOO_MANY_FILES",
               "INVALID_FILE",
@@ -1533,6 +1544,11 @@
             "maxLength": 2048,
             "pattern": "^https://",
             "description": "An https address on the public internet, told when the video completes or fails."
+          },
+          "filename": {
+            "type": "string",
+            "maxLength": 1024,
+            "description": "The name the finished file downloads as. Default `video.mp4`, and `video-2.mp4` and on for a video's later cuts; with a name, cut 2 is `<name>-2.mp4`. Folders, control characters and quotes are taken out, it is cut to 120 characters, and it always ends `.mp4`. In the download, characters other than letters, digits, spaces and `. _ ( ) -` become `-`. A name with nothing left is refused `INVALID_FILENAME`."
           }
         },
         "anyOf": [
@@ -1589,6 +1605,11 @@
               "pattern": "^vid_[A-Za-z0-9]{22}_[1-9][0-9]?$"
             },
             "description": "The cuts of this video to change, for one change made on several cuts. Each is priced as a revision of its own."
+          },
+          "filename": {
+            "type": "string",
+            "maxLength": 1024,
+            "description": "The name the files this revision renders download as. Left out, the create's `filename` (or `video.mp4`)."
           }
         }
       },
@@ -1601,6 +1622,11 @@
         "properties": {
           "resolution": {
             "$ref": "#/components/schemas/Resolution"
+          },
+          "filename": {
+            "type": "string",
+            "maxLength": 1024,
+            "description": "The name the file this export renders downloads as. Left out, the create's `filename` (or `video.mp4`). A resolution the cut already has answers with its file as it is."
           }
         }
       },
@@ -1654,7 +1680,8 @@
               "required": [
                 "file_id",
                 "name",
-                "expires_at"
+                "expires_at",
+                "file_expires_at"
               ],
               "properties": {
                 "file_id": {
@@ -1667,7 +1694,12 @@
                 "expires_at": {
                   "type": "string",
                   "format": "date-time",
-                  "description": "A file no video has used by then is removed."
+                  "description": "When the upload links lapse: a day."
+                },
+                "file_expires_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "When the file is removed if no video uses it first. Each use keeps it 7 days from then."
                 },
                 "upload": {
                   "type": "object",
@@ -1781,7 +1813,41 @@
               "number",
               "null"
             ],
-            "description": "What the media sent cost."
+            "description": "What the media sent cost. An uploaded file is charged once: by the first video or revision that uses it and completes."
+          },
+          "reused_media": {
+            "type": "object",
+            "description": "Uploaded files sent again whose media minutes an earlier video or revision was charged: listed here at $0, and not counted in `media_minutes` or `media`. Present only when a `file_id` was reused.",
+            "required": [
+              "files",
+              "media_minutes",
+              "media"
+            ],
+            "properties": {
+              "files": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "media_minutes": {
+                "type": "object",
+                "properties": {
+                  "video": {
+                    "type": "number"
+                  },
+                  "audio": {
+                    "type": "number"
+                  }
+                }
+              },
+              "media": {
+                "type": "number",
+                "enum": [
+                  0
+                ]
+              }
+            }
           },
           "per_generated_credit": {
             "type": "number"
@@ -2246,6 +2312,7 @@
       "Balance": {
         "type": "object",
         "required": [
+          "billing",
           "currency",
           "balance",
           "held",
@@ -2255,6 +2322,14 @@
           "next_tier"
         ],
         "properties": {
+          "billing": {
+            "type": "string",
+            "enum": [
+              "prepaid",
+              "partner"
+            ],
+            "description": "How the account is billed. A partner is billed afterwards from the price list: its `balance`, `held`, `paid_in`, `tier` and `next_tier` are null."
+          },
           "currency": {
             "type": "string",
             "enum": [
@@ -2262,32 +2337,45 @@
             ]
           },
           "balance": {
-            "type": "number",
-            "description": "Free to spend, launch credit included."
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Free to spend, launch credit included. Prepaid only; null for a partner."
           },
           "held": {
-            "type": "number",
-            "description": "What videos being made are holding."
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "What videos being made are holding. Prepaid only; null for a partner."
           },
           "paid_in": {
-            "type": "number",
-            "description": "Everything added, less refunds. Sets the tier."
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Everything added, less refunds. Sets the tier. Prepaid only; null for a partner."
           },
           "tier": {
-            "type": "integer",
+            "type": [
+              "integer",
+              "null"
+            ],
             "minimum": 1,
-            "maximum": 4
+            "maximum": 4,
+            "description": "Prepaid only; null for a partner."
           },
           "max_running": {
             "type": "integer",
-            "description": "Videos the account may have being made at once."
+            "description": "Videos the account may have being made at once. Prepaid and partner alike."
           },
           "next_tier": {
             "type": [
               "object",
               "null"
             ],
-            "description": "What you need to have added for the next tier. Null at the top one.",
+            "description": "What you need to have added for the next tier. Null at the top one. Null for a partner.",
             "properties": {
               "tier": {
                 "type": "integer"
@@ -2308,6 +2396,7 @@
           "from",
           "to",
           "currency",
+          "price_multiplier",
           "videos",
           "completed",
           "failed",
@@ -2329,6 +2418,10 @@
             "enum": [
               "USD"
             ]
+          },
+          "price_multiplier": {
+            "type": "number",
+            "description": "The account's rate on the price list: 1, or a partner rate Vyra set. Every charge counted here was made at it."
           },
           "videos": {
             "type": "integer"
