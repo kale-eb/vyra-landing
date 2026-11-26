@@ -54,7 +54,7 @@ You can hold up to 10 keys and revoke any of them from the same page. Settings �
 | `GET /v1/videos/{id}` | Get a video as it stands, with its files once it is done. |
 | `POST /v1/videos/{id}/revisions` | Revise a finished cut. Answers `202`. |
 | `POST /v1/videos/{id}/exports` | Render a finished cut at another resolution. Free. Answers `202`. |
-| `GET /v1/balance` | The account's balance, tier and limit. |
+| `GET /v1/balance` | How the account is billed, its limit of videos at once, and a prepaid account's balance and tier. |
 | `GET /v1/usage` | What the account made and was charged. |
 
 ## Make your first video
@@ -123,6 +123,8 @@ A completed video carries a link for each file:
 
 A link lasts an hour. Ask for the video again and you get a fresh one, as many times as you like. Videos and their files are kept: nothing expires, and `expires_at` is always `null`.
 
+**The file's name.** A finished file downloads as `video.mp4`, and a video's second and later cuts as `video-2.mp4`, `video-3.mp4` and on. Nothing in it names Vyra or an id. Send `filename` with the create, a revision or an export to name it yourself: `"filename": "spring-launch.mp4"` downloads as `spring-launch.mp4`, and cut 2 as `spring-launch-2.mp4`. Folders, control characters and quotes are taken out, the name is cut to 120 characters, and it always ends `.mp4` (a `.mov` becomes `.mp4`). In the download, characters other than letters, digits, spaces and `. _ ( ) -` become `-`. A revision or export without `filename` keeps the create's.
+
 ## Sending footage
 
 `footage` takes up to 200 entries and 3 hours of video in all. Each entry is one of:
@@ -159,7 +161,13 @@ You get back a `file_id` and where to send the bytes:
 curl -X PUT "<upload.url>" -H "Content-Type: video/quicktime" --data-binary @take-1.mov
 ```
 
-Then use the `file_id` in `footage` or `references`. Up to 50 files a call and 10 GB a file; a file over 4 GB is sent in parts, and the answer lists a link for each part (`part_size`, and `parts` with `part_number`, `url` and `size_bytes`). `content_type` must be what the file really is, and `size_bytes` its exact size. An upload link lasts a day, and a `file_id` is used by one video.
+Then use the `file_id` in `footage` or `references`. Up to 50 files a call and 10 GB a file; a file over 4 GB is sent in parts, and the answer lists a link for each part (`part_size`, and `parts` with `part_number`, `url` and `size_bytes`). `content_type` must be what the file really is, and `size_bytes` its exact size. The upload links last a day.
+
+**A `file_id` can be used again.** Send it in `footage` or `references` of as many videos and revisions as you like. The first video that uses it brings the file in and analyses it, and is charged its media minutes. Every later video attaches the same analysed file: nothing is uploaded or analysed again, and the file's media minutes are $0, listed under `price.reused_media`.
+
+**A file is kept 7 days after its last use.** One no video has used yet is kept 7 days from the upload (`file_expires_at` in the answer). Each video or revision that uses it, or that revises or re-exports a video made from it, keeps it 7 days from then. After 7 days without use its video is removed, and the `file_id` answers `400 FILE_EXPIRED`: "This file's video was removed after 7 days without use. Request a new upload link with create_upload and send it again." The file uploaded again gets a new `file_id` and is analysed and charged as new. A video made from a removed file can no longer be revised or re-exported (`409 FILE_EXPIRED`); its finished files stay downloadable. A key may hold up to 1,024 GB of uploads at once (`UPLOAD_LIMIT`).
+
+A refusal about an uploaded file (`FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`) names the entry in `param`, such as `footage[2]` or `references[0]`.
 
 ## Saying what you want
 
@@ -181,6 +189,7 @@ The body of `POST /v1/videos`:
 | `generated_media_budget` | Dollars. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of `max_seconds` ($0.40 for a video of up to a minute). |
 | `max_price` | Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing. |
 | `webhook_url` | Where to tell you when it is done. |
+| `filename` | The name the finished file downloads as. Default `video.mp4`. See "The file's name". |
 
 A field the call does not take is refused with `UNKNOWN_FIELD`.
 
@@ -327,7 +336,7 @@ curl $VYRA_API/v1/videos/vid_8fK2mQ.../revisions \
   -d '{ "prompt": "Shorten the quote to one line and make the captions bigger." }'
 ```
 
-A revision takes `prompt`, `footage`, `references`, `max_price` and `video_ids`. The answer is the video with `revision_id`, this revision's own id. The video stays `completed` and downloadable while the change is made; `change` shows how it stands. When it is done the cut's `revision` goes up, it has a new file, and `last_change.price.total` is what the revision cost. With several variations, name the cut by its own id (`vid_8fK2mQ..._2`). A failed revision leaves the video as it was and costs nothing. A cut takes up to 10 changes, one at a time: a second one sent meanwhile answers `409 VIDEO_BUSY`. Each cut's first revision is free.
+A revision takes `prompt`, `footage`, `references`, `max_price`, `video_ids` and `filename`. The answer is the video with `revision_id`, this revision's own id. The video stays `completed` and downloadable while the change is made; `change` shows how it stands. When it is done the cut's `revision` goes up, it has a new file, and `last_change.price.total` is what the revision cost. With several variations, name the cut by its own id (`vid_8fK2mQ..._2`). A failed revision leaves the video as it was and costs nothing. A cut takes up to 10 changes, one at a time: a second one sent meanwhile answers `409 VIDEO_BUSY`. Each cut's first revision is free.
 
 **Revise several cuts at once.** Send the change to the video's id with `video_ids`, the cuts to change. One pass makes it on each, and each gets its own new `revision` and file:
 
@@ -361,6 +370,8 @@ curl $VYRA_API/v1/videos/vid_8fK2mQ.../exports \
   -d '{ "resolution": "4k" }'
 ```
 
+It takes `filename` too, for the file it renders.
+
 ## Listing and usage
 
 **Your videos,** newest first, whichever of your keys made them:
@@ -383,12 +394,12 @@ GET /v1/usage?from=2026-11-01&to=2026-12-01
 ```
 
 ```json
-{ "from": "2026-11-01", "to": "2026-12-01", "currency": "USD",
+{ "from": "2026-11-01", "to": "2026-12-01", "currency": "USD", "price_multiplier": 1,
   "videos": 42, "completed": 38, "failed": 3, "working": 1, "charged": 51.37,
   "days": [ { "day": "2026-11-12", "videos": 4, "completed": 3, "failed": 1, "charged": 4.12 } ] }
 ```
 
-`from` and `to` are UTC days, and `to` is the day after the last one counted. With no dates it covers this month so far. The same numbers, with each video's detail, are in Settings → Developer.
+`from` and `to` are UTC days, and `to` is the day after the last one counted. With no dates it covers this month so far. The same numbers, with each video's detail, are in Settings → Developer. `price_multiplier` is the account's rate on the price list: 1, or a partner rate Vyra set, at which every charge was made.
 
 ## Limits
 
@@ -427,16 +438,16 @@ Every refusal has the same shape. `message` says what to do; `param` names the f
 
 | Status | Meaning | Common codes |
 |---|---|---|
-| 400 | The request cannot be taken as sent | `FOOTAGE_REQUIRED`, `PROMPT_OR_REFERENCE_REQUIRED`, `INVALID_SOURCE`, `INVALID_MAX_SECONDS`, `INVALID_SIZE`, `UNKNOWN_FIELD`, `FILE_NOT_UPLOADED`, `FILE_ALREADY_USED`, `VARIATION_SCOPE_MISMATCH`, `CUT_REQUIRED`, `INVALID_VIDEO_IDS`, `NO_BALANCE` |
+| 400 | The request cannot be taken as sent | `FOOTAGE_REQUIRED`, `PROMPT_OR_REFERENCE_REQUIRED`, `INVALID_SOURCE`, `INVALID_MAX_SECONDS`, `INVALID_SIZE`, `UNKNOWN_FIELD`, `FILE_NOT_FOUND`, `FILE_NOT_UPLOADED`, `FILE_EXPIRED`, `INVALID_FILENAME`, `VARIATION_SCOPE_MISMATCH`, `CUT_REQUIRED`, `INVALID_VIDEO_IDS` |
 | 401 | No key, or a key we do not know | `API_KEY_REQUIRED`, `API_KEY_INVALID` |
 | 402 | Your balance does not cover the fee | `INSUFFICIENT_BALANCE` |
 | 404 | No such video on your account | `VIDEO_NOT_FOUND` |
-| 409 | The video is busy or not finished | `VIDEO_BUSY`, `VIDEO_NOT_FINISHED` |
+| 409 | The video is busy or not finished, or a file it was made from was removed | `VIDEO_BUSY`, `VIDEO_NOT_FINISHED`, `FILE_EXPIRED` |
 | 413 | Body over 1 MB | `INVALID_REQUEST` |
 | 429 | A limit | `RATE_LIMITED`, `TOO_MANY_RUNNING`, `UPLOAD_LIMIT` |
 | 500, 503 | Ours. Try again. | `INTERNAL`, `UNAVAILABLE` |
 
-`NO_BALANCE` is `GET /v1/balance` on an account Vyra bills afterwards, which has no balance. The OpenAPI spec lists every code each call can answer.
+The OpenAPI spec lists every code each call can answer.
 
 A video that fails says why in `error.code`:
 
@@ -444,6 +455,7 @@ A video that fails says why in `error.code`:
 |---|---|
 | `LINK_INVALID`, `LINK_NOT_FOUND`, `LINK_NOT_PUBLIC`, `NOT_MEDIA`, `DOWNLOAD_FAILED` | A link could not be brought in. The message names the entry. |
 | `FILE_NOT_FOUND` | An uploaded file is no longer there. Upload it again and start the video again. |
+| `FILE_EXPIRED` | An uploaded file was removed after 7 days without use before it was brought in. Upload it again and start the video again. |
 | `PROCESSING_FAILED` | A file is broken, is not what its content_type said, or could not be analysed. Nothing was charged; send it again, or in parts under 3 hours. |
 | `REFERENCE_...` | An Instagram, TikTok or YouTube video could not be used: private, removed, or over 20 minutes. |
 | `IMPORT_LINK_UNAVAILABLE` | An Instagram, TikTok or YouTube video could not be downloaded just then. Try again in a few minutes, or upload it as a file. |
@@ -515,6 +527,12 @@ A revision is charged at the effort its video was made with. A revision of sever
 
 Each kind is added up across the request and rounded up to the next cent: 4 minutes 30 seconds of video is $0.09, and 12 minutes 45 seconds is $0.26.
 
+An uploaded file is charged once, by the first video or revision that uses it and completes. A later one that sends the same `file_id` is not charged its minutes again; its price lists them at $0:
+
+```json
+"reused_media": { "files": ["file_3Hq9..."], "media_minutes": { "video": 9.5, "audio": 0 }, "media": 0 }
+```
+
 ### Generated media
 
 Only with `allow_generated_media: true`, and charged for what was made, never more than the budget.
@@ -561,7 +579,7 @@ Need more than 50? Email caleb@usevyra.com. When we are very busy, a new video w
 
 ## Checking your balance
 
-Any of your keys can read the account's balance and limit:
+Any of your keys can read how the account is billed, its limit and its balance:
 
 ```sh
 curl $VYRA_API/v1/balance \
@@ -569,11 +587,11 @@ curl $VYRA_API/v1/balance \
 ```
 
 ```json
-{ "currency": "USD", "balance": 42.1, "held": 1.19, "paid_in": 60, "tier": 2, "max_running": 10,
+{ "billing": "prepaid", "currency": "USD", "balance": 42.1, "held": 1.19, "paid_in": 60, "tier": 2, "max_running": 10,
   "next_tier": { "tier": 3, "paid_in": 250, "max_running": 20 } }
 ```
 
-Amounts are in dollars. `balance` is what is free to spend, launch credit included. `held` is what videos being made are holding. `paid_in` is everything you have added, less refunds, and sets `tier`. `max_running` is how many videos the account may have being made at once. `next_tier` says what you need to have added for the next tier, and is `null` at the top one.
+Amounts are in dollars. `balance` is what is free to spend, launch credit included. `held` is what videos being made are holding. `paid_in` is everything you have added, less refunds, and sets `tier`. `max_running` is how many videos the account may have being made at once. `next_tier` says what you need to have added for the next tier, and is `null` at the top one. `billing` is `prepaid`, or `partner` for an account Vyra bills afterwards from the price list: a partner gets `max_running`, and `null` for `balance`, `held`, `paid_in`, `tier` and `next_tier`.
 
 ## Price examples
 
