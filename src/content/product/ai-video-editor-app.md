@@ -1,7 +1,7 @@
 ---
 title: "AI video editor for your own footage on iPhone"
 description: "Vyra is an AI video editor app for iPhone. Describe the edit in chat, get a draft from your clips, then fine-tune it on a real timeline. Free to download."
-updated: '2026-11-22'
+updated: '2026-11-26'
 category: product
 platform: iphone
 facts:
@@ -32,6 +32,12 @@ reels:
 | Camera | Record straight onto the timeline |
 | Templates and references | Start from a template, or attach a reference video to guide the edit |
 | Export | Save to Photos or share straight to an app |
+
+## Give it your clips, a reference and your audio
+
+If you have the footage, an example video and the song you want to use, give Vyra all three and ask it to put the edit together. Identify the example as a reference and tell it to use your own clips and soundtrack.
+
+Follow the [clips, reference and audio guide](/how-to/match-a-reference-video-on-iphone) for the input roles, a copyable request and ways to refine the draft.
 
 ## How it works
 
@@ -335,6 +341,10 @@ The [official App Store version history](https://apps.apple.com/us/app/vyra-ai-v
 - [Reading annotation video ideas about one observation](/ideas/reading-annotation-video-ideas)
 - [Workspace reset video ideas that show a useful change](/ideas/workspace-reset-video-ideas)
 - [Tool care video ideas from the routine you actually use](/ideas/tool-care-routine-video-ideas)
+
+## Sources
+
+The clips, reference and audio workflow was checked November 26, 2026, against Vyra’s current Uploading assets, Reference videos and Audio features help. The [official iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) corroborates native supplied-media editing.
 
 ## Related
 

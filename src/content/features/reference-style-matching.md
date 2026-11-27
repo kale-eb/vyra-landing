@@ -1,7 +1,7 @@
 ---
 title: "Match a reference video's style to your footage"
 description: Attach a reference video and tell Vyra what to copy. Pacing, captions, music behavior, color. It applies that to your own footage.
-updated: '2026-11-14'
+updated: '2026-11-26'
 category: feature
 reels:
   - DY75P9PtMhO
@@ -9,6 +9,12 @@ reels:
 ---
 
 **Attach the video you want yours to feel like, say what to copy, and Vyra applies that video's cut rhythm, caption style, music behavior, and color to your footage. Your clips, your order, their style. Attaching it isn't enough on its own. You have to tell it what to take.**
+
+## Bring your clips, a reference and your own audio
+
+Give Vyra the clips you filmed, an example of the edit you want and the song or voiceover to use. Ask it to assemble your footage, follow the reference’s pacing and transitions, and time the cuts to your audio. Identify the reference as a guide so its footage and soundtrack stay separate from your inputs.
+
+The [clips, reference and audio workflow](/how-to/match-a-reference-video-on-iphone) includes the iPhone steps and a request you can copy.
 
 ## How it works
 
@@ -67,6 +73,10 @@ Whichever you say. Add "where they disagree, follow my instructions."
 
 **Can I match only the captions?**
 Yes. "Copy the caption style only. Keep my pacing and music."
+
+## Sources
+
+The clips, reference and audio workflow was checked November 26, 2026, against Vyra’s current Uploading assets, Reference videos and Audio features help. The [official iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) corroborates native supplied-media editing.
 
 ## Related
 
