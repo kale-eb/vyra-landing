@@ -77,6 +77,9 @@ Do not assume that it does. API access and charges are documented separately fro
 
 ## Related
 
+- /answers/why-vyra-api-says-footage-too-long
+- /answers/why-vyra-api-file-expired
+
 - /answers/does-vyra-api-require-web-subscription
 
 - /for/developers

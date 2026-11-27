@@ -307,6 +307,19 @@ Yes. Export a clean file with no watermark from another app, and rewrite the cap
 - [Board-game video ideas for one turn or decision](/ideas/board-game-video-ideas)
 - [Skateboarding video ideas from a filmed session](/ideas/skateboarding-video-ideas)
 
+## Stories from the clips you already have
+
+- [Sketchbook flipthrough video ideas that give each page time](/ideas/sketchbook-flipthrough-video-ideas)
+- [Handmade gift video ideas from the choice to the finished piece](/ideas/handmade-gift-video-ideas)
+- [Travel video postcard ideas from a few phone clips](/ideas/travel-video-postcard-ideas)
+- [Family recipe video ideas that preserve the explanation](/ideas/family-recipe-story-video-ideas)
+- [Pet milestone video ideas using moments you already recorded](/ideas/pet-milestone-video-ideas)
+- [Collection tour video ideas that explain why you kept the objects](/ideas/collection-tour-video-ideas)
+- [Walking sound diary video ideas with matching pictures](/ideas/walking-sound-diary-video-ideas)
+- [Reading annotation video ideas about one observation](/ideas/reading-annotation-video-ideas)
+- [Workspace reset video ideas that show a useful change](/ideas/workspace-reset-video-ideas)
+- [Tool care video ideas from the routine you actually use](/ideas/tool-care-routine-video-ideas)
+
 ## Related
 
 - /how-to/grow-on-youtube-shorts
