@@ -315,6 +315,27 @@ The [official App Store version history](https://apps.apple.com/us/app/vyra-ai-v
 - [Creative project update video ideas for an ongoing series](/ideas/creative-project-update-video-ideas)
 - [Silent art process video ideas that explain the visible change](/ideas/silent-art-process-video-ideas)
 
+## More caption and footage jobs
+
+- [How to make one-word video captions on iPhone](/how-to/make-one-word-video-captions-on-iphone)
+- [How to split a caption into two readable parts on iPhone](/how-to/split-a-video-caption-on-iphone)
+- [How to reduce overly strong video colors on iPhone](/how-to/reduce-video-saturation-on-iphone)
+- [How to give a recorded video a sepia look on iPhone](/how-to/make-sepia-video-on-iphone)
+- [How to reveal the outside of a video mask on iPhone](/how-to/invert-video-overlay-mask-on-iphone)
+- [How to blur a background photo behind text on iPhone](/how-to/blur-background-photo-in-video-on-iphone)
+- [Should I use speech captions or a label in my iPhone video?](/answers/video-captions-vs-on-screen-labels)
+- [Should Vyra caption the song or the spoken voice on iPhone?](/answers/music-lyrics-vs-speech-captions-on-iphone)
+- [Sketchbook flipthrough video ideas that give each page time](/ideas/sketchbook-flipthrough-video-ideas)
+- [Handmade gift video ideas from the choice to the finished piece](/ideas/handmade-gift-video-ideas)
+- [Travel video postcard ideas from a few phone clips](/ideas/travel-video-postcard-ideas)
+- [Family recipe video ideas that preserve the explanation](/ideas/family-recipe-story-video-ideas)
+- [Pet milestone video ideas using moments you already recorded](/ideas/pet-milestone-video-ideas)
+- [Collection tour video ideas that explain why you kept the objects](/ideas/collection-tour-video-ideas)
+- [Walking sound diary video ideas with matching pictures](/ideas/walking-sound-diary-video-ideas)
+- [Reading annotation video ideas about one observation](/ideas/reading-annotation-video-ideas)
+- [Workspace reset video ideas that show a useful change](/ideas/workspace-reset-video-ideas)
+- [Tool care video ideas from the routine you actually use](/ideas/tool-care-routine-video-ideas)
+
 ## Related
 
 - /how-to/add-transitions-to-videos-on-iphone

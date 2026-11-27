@@ -1,7 +1,7 @@
 ---
 title: How to add captions to videos on iPhone
 description: "Generate captions from your footage in the Vyra iPhone app, check the words, style the track and save the captioned video to Photos."
-updated: '2026-11-22'
+updated: '2026-11-26'
 category: how-to
 platform: iphone
 level: beginner
@@ -91,6 +91,9 @@ The examples above show captioned Vyra edits. They are not recordings of the mob
 
 ## FAQ
 
+**Can I choose whether the captions follow lyrics or voiceover?**
+Yes. The current iPhone Captions help lists Generate from choices including Music lyrics and Voiceover. Choose the intended source and review the resulting words. A source choice does not establish translation or perfect recognition.
+
 **Does Add a Caption in Photos put timed words on the video?**
 No. Apple describes that field as metadata for describing and finding the item. Use a video editor to add timed visible captions, then inspect the exported copy.
 
@@ -129,9 +132,14 @@ No. Vyra's native iPhone app has built-in chat. External AI integrations are a s
 
 ## Sources
 
-The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. [Apple's Live Captions guide](https://support.apple.com/en-ae/guide/iphone/iphe0990f7bb/27/ios/27) describes the transcription displayed during listening. Checked November 22, 2026. Apple’s linked Photos, iMovie and Clips support pages substantiate the workflow distinctions and availability note.
+The [Vyra App Store listing and release notes](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describe generated captions, styling and applying a caption change to the track. [Apple's Live Captions guide](https://support.apple.com/en-ae/guide/iphone/iphe0990f7bb/27/ios/27) describes the transcription displayed during listening. Apple guidance checked November 22, 2026. Vyra’s in-app Captions help checked November 26, 2026, also verifies the native audio-source choices. Apple’s linked Photos, iMovie and Clips support pages substantiate the workflow distinctions and availability note.
 
 ## Related
+
+- /how-to/make-one-word-video-captions-on-iphone
+- /how-to/split-a-video-caption-on-iphone
+- /answers/video-captions-vs-on-screen-labels
+- /answers/music-lyrics-vs-speech-captions-on-iphone
 
 - /answers/can-you-still-download-apple-clips
 - /answers/iphone-photos-caption-vs-video-subtitles
