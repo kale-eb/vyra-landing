@@ -58,3 +58,5 @@ No. One per format. Change the length or the hook line when needed.
 - /formats/talking-head
 - /formats/ugc-hook-and-demo
 - /prompts/rough-cut
+- /how-to/automate-video-editing-with-claude-code
+- /tools/batch-caption-videos
