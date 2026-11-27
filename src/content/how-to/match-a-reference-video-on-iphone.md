@@ -41,7 +41,7 @@ Say explicitly that the reference is a reference. Vyra’s current help distingu
 5. **Review the first draft.** Watch for the right moments, cuts that fit your audio, readable captions and a complete ending. Ask for a focused change where something is wrong.
 6. **Export and check the file.** Review the finished video in Photos before posting it. Check the sound as well as the picture.
 
-The current in-app help documents [asset imports and reference roles](#sources). [Caleb’s mobile release post](/blog/vyra-mobile) also explains sharing an Instagram or TikTok video to Vyra, then saving it or starting a project. If the reference will not open, use the [reference troubleshooting guide](/answers/why-wont-my-reference-video-open).
+The current in-app help documents asset imports and reference roles. [Caleb’s mobile release post](/blog/vyra-mobile) also explains sharing an Instagram or TikTok video to Vyra, then saving it or starting a project. If the reference will not open, use the [reference troubleshooting guide](/answers/why-wont-my-reference-video-open).
 
 ## A request you can copy
 
