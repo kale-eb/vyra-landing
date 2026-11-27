@@ -266,7 +266,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
               head={["What you send", "Notes"]}
               rows={[
                 ["A direct https link to a file", "Redirects are followed. The link must be reachable from the public internet."],
-                ["A Google Drive file or folder link, or a Dropbox file link", "Shared so that anyone with the link can open it. A folder brings in every file in it."],
+                ["A Google Drive file or folder link, or a Dropbox file link", <span key="n">Shared so that anyone with the link can open it. A folder of up to 20 media files and 30 minutes of video is brought in whole; the agent picks what it needs from a larger one (see <C>footage_mode</C>).</span>],
                 ["An Instagram, TikTok or YouTube video link", "A public video of up to 20 minutes."],
                 [<span key="f">A <C>file_id</C> from an upload</span>, "For files that have no link. See below."],
               ]}
@@ -344,7 +344,8 @@ export VYRA_KEY=vyra_live_...`}</Code>
                 [<C key="a">variation_scope</C>, <span key="b"><C>portion</C> (the default): every cut has the video&apos;s aspect ratio and size and runs within 25% of the first cut&apos;s length; anything else may differ, such as the hook, captions, music, pacing, text or colour. <C>full</C>: anything may differ, including the shape, the length (within <C>max_seconds</C>) and the structure. A <C>portion</C> request whose <C>variation_brief</C> asks for another shape or a very different length is refused with <C>VARIATION_SCOPE_MISMATCH</C>: send <C>full</C> for that. See <a href="#prices" className="text-[var(--brand-blue)] underline underline-offset-2">what each costs</a>.</span>],
                 [<C key="a">allow_generated_media</C>, <span key="b"><C>true</C> lets the agent generate music, voiceover, sound and images, which are charged. Off by default.</span>],
                 [<C key="a">generated_media_budget</C>, "Dollars. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of max_seconds ($0.40 for a video of up to a minute)."],
-                [<C key="a">max_price</C>, "Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing."],
+                [<C key="a">footage_mode</C>, <span key="b">For Google Drive folders in <C>footage</C>. <C>all</C>: every media file is brought in before editing. <C>pick</C>: nothing is brought in up front; the agent reads the folder (its files, notes and docs, frames of its videos) and brings in only what the edit uses, charged per minute like footage sent. Left out, a folder of up to 20 media files and 30 minutes of video is brought in whole and a larger one is picked from. Single files and social links are always brought in. Also taken by revisions.</span>],
+                [<C key="a">max_price</C>, "Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing. Picked footage and generated media get only what it leaves."],
                 [<C key="a">webhook_url</C>, "Where to tell you when it is done."],
                 [<C key="a">filename</C>, <span key="b">The name the finished file downloads as. Default <C>video.mp4</C>. See <a href="#first-video" className="text-[var(--brand-blue)] underline underline-offset-2">the file&apos;s name</a>.</span>],
               ]}
@@ -830,9 +831,13 @@ share = 0.10 for portion, 0.75 for full`}</Code>
 
             <H3 className="mt-8">The most a video can cost</H3>
             <p className="mb-2">Known before it starts:</p>
-            <Code>{`fee + $0.02 × video minutes sent + $0.01 × audio minutes sent + generated media budget`}</Code>
+            <Code>{`fee + $0.02 × video minutes sent + $0.01 × audio minutes sent + picked media budget + generated media budget`}</Code>
             <p className="mt-3">
-              The last term is zero without <C>allow_generated_media</C>. Lengths are measured by
+              Footage picked from a folder is charged per minute for what the agent brought in, never
+              for the rest of the folder, up to a ceiling fixed before editing: 30 minutes of video
+              ($0.60), or less when the folder holds less or <C>max_price</C> leaves less. It shows as{" "}
+              <C>price.picked_media_budget</C> while the video is made. The picked term is zero unless a
+              folder is picked from, and the last term is zero without <C>allow_generated_media</C>. Lengths are measured by
               Vyra and can differ from yours by a fraction of a second, so add a few cents. Send that
               amount as <C>max_price</C> and you are never charged more: footage longer than you
               expected fails the video before any editing, at no charge. What you are charged is what
