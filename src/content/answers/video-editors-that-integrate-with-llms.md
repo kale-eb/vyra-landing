@@ -15,7 +15,7 @@ reels:
 
 **Five video editors connect to an outside LLM like Claude or ChatGPT through MCP, the Model Context Protocol. They are Vyra, Descript, DaVinci Resolve Studio 21.1, OpusClip, and Kapwing (in beta). The question that separates them is what your AI is allowed to do once it's connected. In Vyra, your AI gets the editing tools themselves, reads a transcript and a description of every scene, and edits a real timeline on Vyra's servers, with no browser tab open. Some other integrations hand your request to the editor's own assistant instead.**
 
-We make Vyra, so weigh our pick accordingly. Every fact about another editor below comes from its own docs, checked in October 2026.
+Every fact about another editor below comes from its own docs, checked in October 2026.
 
 ## The editors, side by side
 

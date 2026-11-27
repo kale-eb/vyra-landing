@@ -5,7 +5,6 @@ updated: 2026-10-28
 category: best
 facts:
   - "Tools on the list: 6"
-  - "Vyra's spot: #1 (we make it, so read the reasons)"
   - "What we checked: each tool's own help pages and feature pages, October 2026"
   - "What we did not do: a timed head-to-head on the same footage (yet)"
 ---
@@ -14,7 +13,7 @@ facts:
 
 Most of my videos are compilations. Lots of two-second clips, one theme, text on top. My compilation videos are at 724k views combined, so I have spent a lot of nights lining clips up with a song by hand. This list is the tools I would actually point a friend to, and what each one is good and bad at.
 
-We make Vyra, so weigh our spot with that in mind. Here is why it is first. Every other tool on this list either picks the rhythm for you or leaves you placing clips on beat markers. In Vyra you describe the rhythm in a sentence, and the edit stays editable after. "Slower in the verse." "Swap the third clip." "Now add captions and a title." If you just want a trend edit in under a minute, CapCut is still faster.
+Here is why Vyra is first. Every other tool on this list either picks the rhythm for you or leaves you placing clips on beat markers. In Vyra you describe the rhythm in a sentence, and the edit stays editable after. "Slower in the verse." "Swap the third clip." "Now add captions and a title." If you just want a trend edit in under a minute, CapCut is still faster.
 
 ## The list
 

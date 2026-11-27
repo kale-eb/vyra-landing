@@ -20,7 +20,7 @@ category: answers
 ## Why most "best AI editor" lists mislead
 
 - They mix generators (make synthetic footage) with editors (cut your real footage). Different jobs entirely — see [what is an agentic video editor](/answers/what-is-an-agentic-video-editor).
-- Most are written by a vendor ranking itself first. (Disclosure: this page is written by Vyra, so weigh our self-pick the same way — then test it free.)
+- Most never tell you when to pick something else.
 - "AI features" is doing a lot of work: a template picker and an agent that executes a multi-step brief on your footage both get called AI.
 
 ## What to do about it
