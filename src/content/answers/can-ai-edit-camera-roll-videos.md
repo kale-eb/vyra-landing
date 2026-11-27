@@ -1,7 +1,7 @@
 ---
 title: "Can AI edit videos from my iPhone camera roll?"
 description: "Yes. Add your own footage from Photos to Vyra on iPhone, describe the edit and review the result in chat or on the timeline."
-updated: '2026-11-09'
+updated: '2026-11-26'
 category: answers
 platform: iphone
 facts:
@@ -39,6 +39,9 @@ Vyra has those phone editing workflows. Free mobile exports are 720p with a wate
 
 ## FAQ
 
+**Can I add a reference video and my own soundtrack too?**
+Yes. Give Vyra the reference as an editing guide, your clips as the picture source and your supplied audio as the soundtrack. Ask it to assemble the footage and time the cuts to that audio, then review the draft.
+
 **Does Vyra generate replacement video footage?**
 No. Vyra edits footage you provide. If an important shot is missing, record it and add it to the project.
 
@@ -53,9 +56,13 @@ AI analysis and editing require an internet connection. Do not assume the AI can
 
 ## Sources
 
+The three-input workflow was checked November 26, 2026, against Vyra’s current Uploading assets, Reference videos and Audio features help. The [official iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) corroborates native supplied-media editing.
+
 The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 9, 2026.
 
 ## Related
+
+- /how-to/match-a-reference-video-on-iphone
 
 - /ai-video-editor-app
 - /how-to/combine-videos-on-iphone

@@ -242,6 +242,18 @@ export VYRA_KEY=vyra_live_...`}</Code>
               you like. Videos and their files are kept: nothing expires, and <C>expires_at</C> is
               always <C>null</C>.
             </p>
+            <p className="mt-3">
+              <strong className="text-[var(--foreground)]">The file&apos;s name.</strong> A finished file
+              downloads as <C>video.mp4</C>, and a video&apos;s second and later cuts as{" "}
+              <C>video-2.mp4</C>, <C>video-3.mp4</C> and on. Nothing in it names Vyra or an id. Send{" "}
+              <C>filename</C> with the create, a revision or an export to name it yourself:{" "}
+              <C>&quot;filename&quot;: &quot;spring-launch.mp4&quot;</C> downloads as{" "}
+              <C>spring-launch.mp4</C>, and cut 2 as <C>spring-launch-2.mp4</C>. Folders, control
+              characters and quotes are taken out, the name is cut to 120 characters, and it always
+              ends <C>.mp4</C> (a <C>.mov</C> becomes <C>.mp4</C>). In the download, characters other
+              than letters, digits, spaces and <C>. _ ( ) -</C> become <C>-</C>. A revision or export
+              without <C>filename</C> keeps the create&apos;s.
+            </p>
           </section>
 
           {/* Footage */}
@@ -286,8 +298,32 @@ export VYRA_KEY=vyra_live_...`}</Code>
               Then use the <C>file_id</C> in <C>footage</C> or <C>references</C>. Up to 50 files a
               call and 10 GB a file; a file over 4 GB is sent in parts, and the answer lists a link
               for each part. <C>content_type</C> must be what the file really is, and{" "}
-              <C>size_bytes</C> its exact size. An upload link lasts a day, and a <C>file_id</C> is used
-              by one video.
+              <C>size_bytes</C> its exact size. The upload links last a day.
+            </p>
+            <p className="mt-3">
+              <strong className="text-[var(--foreground)]">A <C>file_id</C> can be used again.</strong>{" "}
+              Send it in <C>footage</C> or <C>references</C> of as many videos and revisions as you
+              like. The first video that uses it brings the file in and analyses it, and is charged its
+              media minutes. Every later video attaches the same analysed file: nothing is uploaded or
+              analysed again, and the file&apos;s media minutes are $0, listed under{" "}
+              <C>price.reused_media</C>.
+            </p>
+            <p className="mt-3">
+              <strong className="text-[var(--foreground)]">A file is kept 7 days after its last use.</strong>{" "}
+              One no video has used yet is kept 7 days from the upload (<C>file_expires_at</C> in the
+              answer). Each video or revision that uses it, or that revises or re-exports a video made
+              from it, keeps it 7 days from then. After 7 days without use its video is removed, and the{" "}
+              <C>file_id</C> answers <C>400 FILE_EXPIRED</C>: &quot;This file&apos;s video was removed
+              after 7 days without use. Request a new upload link with create_upload and send it
+              again.&quot; The file uploaded again gets a new <C>file_id</C> and is analysed and charged
+              as new. A video made from a removed file can no longer be revised or re-exported (
+              <C>409 FILE_EXPIRED</C>); its finished files stay downloadable. A key may hold up to
+              1,024 GB of uploads at once (<C>UPLOAD_LIMIT</C>).
+            </p>
+            <p className="mt-3">
+              A refusal about an uploaded file (<C>FILE_NOT_FOUND</C>, <C>FILE_NOT_UPLOADED</C>,{" "}
+              <C>FILE_EXPIRED</C>) names the entry in <C>param</C>, such as <C>footage[2]</C> or{" "}
+              <C>references[0]</C>.
             </p>
           </section>
 
@@ -310,6 +346,7 @@ export VYRA_KEY=vyra_live_...`}</Code>
                 [<C key="a">generated_media_budget</C>, "Dollars. The most generated media may add. Left out, $0.30 plus $0.10 for each minute of max_seconds ($0.40 for a video of up to a minute)."],
                 [<C key="a">max_price</C>, "Dollars. The most the video may cost in all. If your footage would take it over, the video fails before any editing and costs nothing."],
                 [<C key="a">webhook_url</C>, "Where to tell you when it is done."],
+                [<C key="a">filename</C>, <span key="b">The name the finished file downloads as. Default <C>video.mp4</C>. See <a href="#first-video" className="text-[var(--brand-blue)] underline underline-offset-2">the file&apos;s name</a>.</span>],
               ]}
             />
 
@@ -495,7 +532,7 @@ function fromVyra(rawBody, header, secret) {
               With several variations, name the cut by its own id (<C>vid_8fK2mQ..._2</C>). A failed
               revision leaves the video as it was and costs nothing. A cut takes up to 10 changes,
               one at a time: a second one sent meanwhile answers <C>409 VIDEO_BUSY</C>. Each
-              cut&apos;s first revision is free.
+              cut&apos;s first revision is free. A revision takes <C>filename</C> too.
             </p>
             <p className="mb-2">
               <strong className="text-[var(--foreground)]">Revise several cuts at once.</strong> Send
@@ -534,6 +571,7 @@ function fromVyra(rawBody, header, secret) {
             <Code>{`curl $VYRA_API/v1/videos/vid_8fK2mQ.../exports \\
   -H "Authorization: Bearer $VYRA_KEY" -H "Content-Type: application/json" \\
   -d '{ "resolution": "4k" }'`}</Code>
+            <p className="mt-3">It takes <C>filename</C> too, for the file it renders.</p>
           </section>
 
           {/* Usage */}
@@ -558,12 +596,13 @@ function fromVyra(rawBody, header, secret) {
             </p>
             <Code>{`GET /v1/usage?from=2026-11-01&to=2026-12-01
 
-{ "from": "2026-11-01", "to": "2026-12-01", "currency": "USD",
+{ "from": "2026-11-01", "to": "2026-12-01", "currency": "USD", "price_multiplier": 1,
   "videos": 42, "completed": 38, "failed": 3, "working": 1, "charged": 51.37,
   "days": [ { "day": "2026-11-12", "videos": 4, "completed": 3, "failed": 1, "charged": 4.12 } ] }`}</Code>
             <p className="mt-3">
               With no dates it covers this month so far. The same numbers, with each video&apos;s
-              detail, are in Settings &rarr; Developer.
+              detail, are in Settings &rarr; Developer. <C>price_multiplier</C> is the account&apos;s
+              rate on the price list: 1, or a partner rate Vyra set, at which every charge was made.
             </p>
           </section>
 
@@ -627,11 +666,11 @@ function fromVyra(rawBody, header, secret) {
               <Table
                 head={["Status", "Meaning", "Common codes"]}
                 rows={[
-                  ["400", "The request cannot be taken as sent", <Codes key="c" list={["FOOTAGE_REQUIRED", "PROMPT_OR_REFERENCE_REQUIRED", "INVALID_SOURCE", "INVALID_MAX_SECONDS", "INVALID_SIZE", "UNKNOWN_FIELD", "FILE_NOT_UPLOADED", "FILE_ALREADY_USED", "VARIATION_SCOPE_MISMATCH", "CUT_REQUIRED", "INVALID_VIDEO_IDS"]} />],
+                  ["400", "The request cannot be taken as sent", <Codes key="c" list={["FOOTAGE_REQUIRED", "PROMPT_OR_REFERENCE_REQUIRED", "INVALID_SOURCE", "INVALID_MAX_SECONDS", "INVALID_SIZE", "UNKNOWN_FIELD", "FILE_NOT_FOUND", "FILE_NOT_UPLOADED", "FILE_EXPIRED", "INVALID_FILENAME", "VARIATION_SCOPE_MISMATCH", "CUT_REQUIRED", "INVALID_VIDEO_IDS"]} />],
                   ["401", "No key, or a key we do not know", <Codes key="c" list={["API_KEY_REQUIRED", "API_KEY_INVALID"]} />],
                   ["402", "Your balance does not cover the fee", <Codes key="c" list={["INSUFFICIENT_BALANCE"]} />],
                   ["404", "No such video on your account", <Codes key="c" list={["VIDEO_NOT_FOUND"]} />],
-                  ["409", "The video is busy or not finished", <Codes key="c" list={["VIDEO_BUSY", "VIDEO_NOT_FINISHED"]} />],
+                  ["409", "The video is busy or not finished, or a file it was made from was removed", <Codes key="c" list={["VIDEO_BUSY", "VIDEO_NOT_FINISHED", "FILE_EXPIRED"]} />],
                   ["413", "Body over 1 MB", <Codes key="c" list={["INVALID_REQUEST"]} />],
                   ["429", "A limit", <Codes key="c" list={["RATE_LIMITED", "TOO_MANY_RUNNING", "UPLOAD_LIMIT"]} />],
                   ["500, 503", "Ours. Try again.", <Codes key="c" list={["INTERNAL", "UNAVAILABLE"]} />],
@@ -644,6 +683,7 @@ function fromVyra(rawBody, header, secret) {
               rows={[
                 [<Codes key="c" list={["LINK_INVALID", "LINK_NOT_FOUND", "LINK_NOT_PUBLIC", "NOT_MEDIA", "DOWNLOAD_FAILED"]} />, "A link could not be brought in. The message names the entry."],
                 [<Codes key="c" list={["FILE_NOT_FOUND"]} />, "An uploaded file is no longer there. Upload it again and start the video again."],
+                [<Codes key="c" list={["FILE_EXPIRED"]} />, "An uploaded file was removed after 7 days without use before it was brought in. Upload it again and start the video again."],
                 [<Codes key="c" list={["PROCESSING_FAILED"]} />, "A file is broken, is not what its content_type said, or could not be analysed. Nothing was charged; send it again, or in parts under 3 hours."],
                 [<Codes key="c" list={["REFERENCE_..."]} />, "An Instagram, TikTok or YouTube video could not be used: private, removed, or over 20 minutes."],
                 [<Codes key="c" list={["IMPORT_LINK_UNAVAILABLE"]} />, "An Instagram, TikTok or YouTube video could not be downloaded just then. Try again in a few minutes, or upload it as a file."],
@@ -761,6 +801,12 @@ share = 0.10 for portion, 0.75 for full`}</Code>
               Each kind is added up across the request and rounded up to the next cent: 4 minutes 30
               seconds of video is $0.09, and 12 minutes 45 seconds is $0.26.
             </p>
+            <p className="mt-3 mb-2">
+              An uploaded file is charged once, by the first video or revision that uses it and
+              completes. A later one that sends the same <C>file_id</C> is not charged its minutes
+              again; its price lists them at $0:
+            </p>
+            <Code>{`"reused_media": { "files": ["file_3Hq9..."], "media_minutes": { "video": 9.5, "audio": 0 }, "media": 0 }`}</Code>
 
             <H3 className="mt-8">Generated media</H3>
             <p className="mb-3">
@@ -844,17 +890,20 @@ share = 0.10 for portion, 0.75 for full`}</Code>
           {/* Checking your balance */}
           <section>
             <H2 id="check-balance">Checking your balance</H2>
-            <p className="mb-2">Any of your keys can read the account&apos;s balance and limit:</p>
+            <p className="mb-2">Any of your keys can read how the account is billed, its limit and its balance:</p>
             <Code>{`curl $VYRA_API/v1/balance \\
   -H "Authorization: Bearer $VYRA_KEY"`}</Code>
-            <Code>{`{ "currency": "USD", "balance": 42.1, "held": 1.19, "paid_in": 60, "tier": 2, "max_running": 10,
+            <Code>{`{ "billing": "prepaid", "currency": "USD", "balance": 42.1, "held": 1.19, "paid_in": 60, "tier": 2, "max_running": 10,
   "next_tier": { "tier": 3, "paid_in": 250, "max_running": 20 } }`}</Code>
             <p className="mt-3">
               Amounts are in dollars. <C>balance</C> is what is free to spend, launch credit included.{" "}
               <C>held</C> is what videos being made are holding. <C>paid_in</C> is everything you have
               added, less refunds, and sets <C>tier</C>. <C>max_running</C> is how many videos the
               account may have being made at once. <C>next_tier</C> says what you need to have added
-              for the next tier, and is <C>null</C> at the top one.
+              for the next tier, and is <C>null</C> at the top one. <C>billing</C> is{" "}
+              <C>prepaid</C>, or <C>partner</C> for an account Vyra bills afterwards from the price
+              list: a partner gets <C>max_running</C>, and <C>null</C> for <C>balance</C>,{" "}
+              <C>held</C>, <C>paid_in</C>, <C>tier</C> and <C>next_tier</C>.
             </p>
           </section>
 

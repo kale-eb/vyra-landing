@@ -1,7 +1,7 @@
 ---
 title: "How to add music to a video on iPhone without covering your voice"
 description: "Add a music track to your footage in Vyra on iPhone, lower it under speech and check the balance before exporting."
-updated: '2026-11-09'
+updated: '2026-11-26'
 category: how-to
 platform: iphone
 level: beginner
@@ -16,6 +16,10 @@ reels:
 **To add music to a video on iPhone with Vyra, add your footage and a music track to the project, then set the track below your speech. Ask chat where the music should start, become quieter and end. Play the result on your phone before exporting.**
 
 The music can sound fine during a silent shot and still hide every other word when you start talking. Check a spoken section first. Once the voice is clear, listen to the quiet sections and decide how much music they need.
+
+## Use your song with a reference video
+
+If you already have an example of the edit you want, add that reference alongside your footage and audio. Ask Vyra to follow the example’s changes in energy while timing the actual cuts to your supplied track. The [three-input editing guide](/how-to/match-a-reference-video-on-iphone) walks through the complete request.
 
 ## Add a track and balance it
 
@@ -54,6 +58,8 @@ You can describe those changes in chat, such as quieter under speech and louder 
 No. Free mobile exports are 720p with a watermark. New accounts currently get 100 free credits; paid plans are available in the App Store.
 
 ## Sources
+
+The three-input workflow was checked November 26, 2026, against Vyra’s current Uploading assets, Reference videos and Audio features help. The [official iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) corroborates native supplied-media editing.
 
 The [Vyra App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes the native editing and export features. [Caleb's mobile post](/blog/vyra-mobile) explains the background and reference workflows. Checked November 9, 2026.
 

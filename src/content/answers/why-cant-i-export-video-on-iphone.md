@@ -1,7 +1,7 @@
 ---
 title: "Why can't I export my video on iPhone?"
 description: "Separate an unfinished export from a video that finished but did not save to Photos. Check the project, available storage and any permission request."
-updated: '2026-11-10'
+updated: '2026-11-26'
 category: answers
 platform: iphone
 support: true
@@ -43,6 +43,9 @@ Saving and posting are separate actions. For the ordinary steps, see [saving a V
 
 ## FAQ
 
+**Is there a server option if an iPhone export fails?**
+Vyra’s current Exporting on iPhone help says a failed iPhone export can offer Export on our servers or Try iPhone again. Use the option actually shown for your project, then check the completed result before saving or sharing it.
+
 **Does a finished edit mean the video is already in Photos?**
 No. Finish the export and save the resulting video. Confirm the file is present and plays in Photos.
 
@@ -60,7 +63,7 @@ Include your iPhone model, iOS and Vyra versions, approximate time, visible erro
 
 ## Sources
 
-The [App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes saving and sharing finished videos. [Vyra support](/app-support) lists the details useful when requesting help. Checked November 10, 2026.
+The [App Store listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) describes saving and sharing finished videos. [Vyra support](/app-support) lists the details useful when requesting help. Checked November 26, 2026. The current in-app Exporting on iPhone help documents the failed-export options.
 
 ## Related
 

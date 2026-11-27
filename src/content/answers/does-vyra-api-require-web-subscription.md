@@ -47,6 +47,9 @@ Checked November 23, 2026. The [official API documentation](https://www.usevyra.
 
 ## Related
 
+- /answers/why-vyra-api-says-footage-too-long
+- /answers/why-vyra-api-file-expired
+
 - /answers/does-vyra-have-a-video-editing-api
 - /docs/api
 - /mcp

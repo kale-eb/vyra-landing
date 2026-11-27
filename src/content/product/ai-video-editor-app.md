@@ -1,7 +1,7 @@
 ---
 title: "AI video editor for your own footage on iPhone"
 description: "Vyra is an AI video editor app for iPhone. Describe the edit in chat, get a draft from your clips, then fine-tune it on a real timeline. Free to download."
-updated: '2026-11-22'
+updated: '2026-11-26'
 category: product
 platform: iphone
 facts:
@@ -32,6 +32,12 @@ reels:
 | Camera | Record straight onto the timeline |
 | Templates and references | Start from a template, or attach a reference video to guide the edit |
 | Export | Save to Photos or share straight to an app |
+
+## Give it your clips, a reference and your audio
+
+If you have the footage, an example video and the song you want to use, give Vyra all three and ask it to put the edit together. Identify the example as a reference and tell it to use your own clips and soundtrack.
+
+Follow the [clips, reference and audio guide](/how-to/match-a-reference-video-on-iphone) for the input roles, a copyable request and ways to refine the draft.
 
 ## How it works
 
@@ -314,6 +320,31 @@ The [official App Store version history](https://apps.apple.com/us/app/vyra-ai-v
 - [Video ideas from a short creative session](/ideas/short-creative-session-video-ideas)
 - [Creative project update video ideas for an ongoing series](/ideas/creative-project-update-video-ideas)
 - [Silent art process video ideas that explain the visible change](/ideas/silent-art-process-video-ideas)
+
+## More caption and footage jobs
+
+- [How to make one-word video captions on iPhone](/how-to/make-one-word-video-captions-on-iphone)
+- [How to split a caption into two readable parts on iPhone](/how-to/split-a-video-caption-on-iphone)
+- [How to reduce overly strong video colors on iPhone](/how-to/reduce-video-saturation-on-iphone)
+- [How to give a recorded video a sepia look on iPhone](/how-to/make-sepia-video-on-iphone)
+- [How to reveal the outside of a video mask on iPhone](/how-to/invert-video-overlay-mask-on-iphone)
+- [How to blur a background photo behind text on iPhone](/how-to/blur-background-photo-in-video-on-iphone)
+- [Should I use speech captions or a label in my iPhone video?](/answers/video-captions-vs-on-screen-labels)
+- [Should Vyra caption the song or the spoken voice on iPhone?](/answers/music-lyrics-vs-speech-captions-on-iphone)
+- [Sketchbook flipthrough video ideas that give each page time](/ideas/sketchbook-flipthrough-video-ideas)
+- [Handmade gift video ideas from the choice to the finished piece](/ideas/handmade-gift-video-ideas)
+- [Travel video postcard ideas from a few phone clips](/ideas/travel-video-postcard-ideas)
+- [Family recipe video ideas that preserve the explanation](/ideas/family-recipe-story-video-ideas)
+- [Pet milestone video ideas using moments you already recorded](/ideas/pet-milestone-video-ideas)
+- [Collection tour video ideas that explain why you kept the objects](/ideas/collection-tour-video-ideas)
+- [Walking sound diary video ideas with matching pictures](/ideas/walking-sound-diary-video-ideas)
+- [Reading annotation video ideas about one observation](/ideas/reading-annotation-video-ideas)
+- [Workspace reset video ideas that show a useful change](/ideas/workspace-reset-video-ideas)
+- [Tool care video ideas from the routine you actually use](/ideas/tool-care-routine-video-ideas)
+
+## Sources
+
+The clips, reference and audio workflow was checked November 26, 2026, against Vyra’s current Uploading assets, Reference videos and Audio features help. The [official iPhone listing](https://apps.apple.com/us/app/vyra-ai-video-editor/id6808889012) corroborates native supplied-media editing.
 
 ## Related
 
